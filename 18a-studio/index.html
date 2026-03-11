@@ -1,0 +1,2388 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18a.studio x Grundwerk Digital — Angebot</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        :root {
+            --bg: #0a0a0a;
+            --bg-card: #111111;
+            --bg-card-hover: #161616;
+            --bg-accent: #1a1a2e;
+            --text: #f0f0f0;
+            --text-muted: #888;
+            --text-dim: #666;
+            --accent: #004AAD;
+            --accent-glow: rgba(0, 74, 173, 0.2);
+            --green: #22c55e;
+            --green-glow: rgba(34, 197, 94, 0.15);
+            --red: #ef4444;
+            --red-dim: rgba(239, 68, 68, 0.15);
+            --yellow: #eab308;
+            --border: rgba(255, 255, 255, 0.06);
+            --border-accent: rgba(0, 74, 173, 0.4);
+            --radius: 16px;
+            --radius-sm: 10px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; font-size: 16px; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- NAV --- */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-logo {
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: -0.02em;
+        }
+        .nav-cta {
+            background: var(--accent);
+            color: #fff;
+            padding: 0.5rem 1.25rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: opacity 0.2s;
+        }
+        .nav-cta:hover { opacity: 0.85; }
+
+        /* --- GENERAL --- */
+        section {
+            padding: 100px 2rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        .section-title {
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.2;
+            margin-bottom: 1.25rem;
+        }
+        .section-subtitle {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 700px;
+            line-height: 1.7;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, var(--accent), #3b7de0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* --- FADE IN --- */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- HERO --- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 40%, transparent 75%);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 40%, transparent 75%);
+            pointer-events: none;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 850px;
+        }
+        .hero-banner {
+            max-width: 160px;
+            width: 100%;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+        }
+        .hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.15;
+            margin-bottom: 1.25rem;
+        }
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.7;
+        }
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            background: var(--accent);
+            color: #fff;
+            padding: 0.85rem 2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover { opacity: 0.85; transform: translateY(-1px); }
+        .btn-secondary {
+            background: transparent;
+            color: var(--text);
+            padding: 0.85rem 2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 1px solid var(--border);
+            transition: all 0.2s;
+        }
+        .btn-secondary:hover { border-color: var(--text-muted); }
+
+        /* --- STAT BAR --- */
+        .stat-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+        .stat-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.75rem;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent);
+            letter-spacing: -0.03em;
+        }
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+        }
+
+        /* --- PROBLEM --- */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .problem-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+        .problem-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+        .problem-card .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
+            background: var(--red-dim);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .problem-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.35rem;
+        }
+        .problem-card p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        .solution-box {
+            background: linear-gradient(135deg, var(--accent-glow), rgba(79, 125, 249, 0.05));
+            border: 1px solid var(--border-accent);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .solution-box h3 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        .solution-box p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+        }
+        .compare-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+        .compare-bad {
+            color: var(--red);
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+        .compare-arrow {
+            color: var(--text-dim);
+            font-size: 1.2rem;
+        }
+        .compare-good {
+            color: var(--green);
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        /* --- COLD EMAIL EXPLAINER --- */
+        .explainer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .explainer-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2rem;
+        }
+        .explainer-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+        .explainer-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        .explainer-card ul {
+            list-style: none;
+            margin-top: 0.75rem;
+        }
+        .explainer-card ul li {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            padding: 0.35rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .explainer-card ul li::before {
+            content: '\2713';
+            color: var(--green);
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+        }
+
+        /* --- PROCESS --- */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1.25rem;
+            margin-top: 3rem;
+        }
+        .process-step {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.75rem 1.25rem;
+            text-align: center;
+        }
+        .step-num {
+            width: 40px;
+            height: 40px;
+            background: var(--accent);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1rem;
+            margin: 0 auto 1rem;
+        }
+        .process-step h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .process-step p {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        /* --- CAMPAIGN STRATEGY --- */
+        .campaign-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.25rem;
+            margin-top: 3rem;
+        }
+        .campaign-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2rem;
+        }
+        .campaign-card .card-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .campaign-card h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .campaign-card .target {
+            color: var(--accent);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+        .campaign-card p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* --- ROADMAP --- */
+        .roadmap-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .roadmap-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .roadmap-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--accent);
+        }
+        .roadmap-card.highlight::before {
+            background: var(--green);
+        }
+        .roadmap-month {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .roadmap-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+        .roadmap-card ul {
+            list-style: none;
+        }
+        .roadmap-card ul li {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            padding: 0.3rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .roadmap-card ul li::before {
+            content: '\2713';
+            color: var(--green);
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+        }
+
+        /* --- LEAD FORECAST --- */
+        .forecast-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-top: 3rem;
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        .forecast-table th, .forecast-table td {
+            padding: 1rem 1.25rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        .forecast-table th {
+            background: var(--bg-card);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+        }
+        .forecast-table td {
+            background: var(--bg);
+            font-size: 0.95rem;
+        }
+        .forecast-table tr:last-child td {
+            border-bottom: none;
+            font-weight: 700;
+            background: var(--bg-card);
+        }
+        .forecast-highlight {
+            background: linear-gradient(135deg, var(--green-glow), transparent);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            border-radius: var(--radius);
+            padding: 2rem;
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        .forecast-compare {
+            text-align: center;
+        }
+        .forecast-compare .label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+        .forecast-compare .value {
+            font-size: 2rem;
+            font-weight: 800;
+        }
+        .forecast-compare .value.bad { color: var(--red); }
+        .forecast-compare .value.good { color: var(--green); }
+        .forecast-compare .detail {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            margin-top: 0.25rem;
+        }
+
+        /* --- SOCIAL PROOF --- */
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+            margin-top: 3rem;
+        }
+        .proof-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.75rem;
+        }
+        .proof-result {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--green);
+            margin-bottom: 0.25rem;
+        }
+        .proof-time {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            margin-bottom: 0.75rem;
+        }
+        .proof-company {
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+        .proof-city {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        /* --- TEAM --- */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+            margin-top: 3rem;
+        }
+        .team-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2rem;
+            text-align: center;
+        }
+        .team-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .team-card h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .team-card p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        .provision-banner {
+            background: var(--green-glow);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            border-radius: var(--radius);
+            padding: 1.25rem 2rem;
+            text-align: center;
+            margin-top: 1.5rem;
+            font-weight: 600;
+            color: var(--green);
+        }
+
+        /* --- SALES SUPPORT --- */
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.25rem;
+            margin-top: 3rem;
+        }
+        .support-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.75rem;
+        }
+        .support-card .card-icon {
+            font-size: 1.75rem;
+            margin-bottom: 0.75rem;
+        }
+        .support-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .support-card p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* --- OFFER --- */
+        .offer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .offer-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            position: relative;
+        }
+        .offer-card.recommended {
+            border-color: var(--border-accent);
+            background: linear-gradient(180deg, rgba(79, 125, 249, 0.08) 0%, var(--bg-card) 40%);
+        }
+        .offer-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: #fff;
+            padding: 0.35rem 1.25rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+        .offer-card h3 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        .offer-card .offer-desc {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+        }
+        .offer-price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.25rem;
+        }
+        .offer-price-hint {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            margin-bottom: 1.5rem;
+        }
+        .effective-price {
+            background: var(--green-glow);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            border-radius: var(--radius-sm);
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .effective-price .label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+        }
+        .effective-price .value {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--green);
+        }
+        .offer-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        .offer-features li {
+            padding: 0.4rem 0;
+            padding-left: 1.75rem;
+            position: relative;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .offer-features li::before {
+            content: '\2713';
+            color: var(--green);
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+        }
+        .offer-features li.highlight-feature {
+            color: var(--text);
+            font-weight: 600;
+        }
+        .offer-ideal {
+            background: rgba(255,255,255,0.03);
+            border-radius: var(--radius-sm);
+            padding: 0.75rem 1rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        .offer-ideal strong {
+            color: var(--text);
+        }
+
+        /* --- BAFA --- */
+        .bafa-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 3rem;
+            margin-top: 3rem;
+        }
+        .bafa-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+        .bafa-checklist {
+            list-style: none;
+        }
+        .bafa-checklist li {
+            padding: 0.5rem 0;
+            padding-left: 1.75rem;
+            position: relative;
+            font-size: 0.9rem;
+        }
+        .bafa-checklist li::before {
+            content: '\2713';
+            color: var(--green);
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+        }
+        .bafa-calc {
+            background: rgba(255,255,255,0.02);
+            border-radius: var(--radius-sm);
+            padding: 1.5rem;
+        }
+        .bafa-calc-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+        .bafa-calc-row:last-child {
+            border-bottom: none;
+            font-weight: 700;
+            color: var(--green);
+            font-size: 1.1rem;
+            padding-top: 0.75rem;
+        }
+        .bafa-steps {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1rem;
+            margin-top: 2.5rem;
+        }
+        .bafa-step {
+            text-align: center;
+        }
+        .bafa-step-num {
+            width: 36px;
+            height: 36px;
+            background: var(--green);
+            color: #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.85rem;
+            margin: 0 auto 0.75rem;
+        }
+        .bafa-step h4 {
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+        .bafa-step p {
+            color: var(--text-muted);
+            font-size: 0.75rem;
+        }
+        .bafa-note {
+            background: rgba(234, 179, 8, 0.08);
+            border: 1px solid rgba(234, 179, 8, 0.15);
+            border-radius: var(--radius-sm);
+            padding: 1rem 1.25rem;
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* --- GUARANTEE --- */
+        .guarantee-section {
+            text-align: center;
+            padding: 80px 2rem;
+        }
+        .guarantee-badge {
+            display: inline-block;
+            background: var(--green-glow);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            color: var(--green);
+            padding: 0.4rem 1.25rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 1.5rem;
+        }
+        .guarantee-section h2 {
+            font-size: clamp(1.6rem, 3vw, 2.4rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            max-width: 700px;
+            margin: 0 auto 1.25rem;
+        }
+        .guarantee-section p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* --- ROI --- */
+        .roi-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .roi-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2rem;
+            text-align: center;
+        }
+        .roi-card.highlight {
+            border-color: var(--border-accent);
+            background: linear-gradient(180deg, var(--accent-glow) 0%, var(--bg-card) 50%);
+        }
+        .roi-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+        .roi-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--green);
+            margin-bottom: 0.25rem;
+        }
+        .roi-detail {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+        .roi-sub {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+        }
+
+        /* --- COMPARISON TABLE --- */
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-top: 3rem;
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        .comparison-table th, .comparison-table td {
+            padding: 0.9rem 1.25rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+        .comparison-table th {
+            background: var(--bg-card);
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+        }
+        .comparison-table th:last-child {
+            color: var(--accent);
+        }
+        .comparison-table td {
+            background: var(--bg);
+        }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table .good { color: var(--green); font-weight: 600; }
+        .comparison-table .bad { color: var(--red); font-weight: 600; }
+        .comparison-table .meh { color: var(--yellow); font-weight: 600; }
+
+        /* --- LIQUIDITY --- */
+        .liquidity-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.25rem;
+            margin-top: 3rem;
+        }
+        .liquidity-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.75rem;
+            text-align: center;
+        }
+        .liquidity-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+        .liquidity-value {
+            font-size: 1.8rem;
+            font-weight: 800;
+        }
+        .liquidity-value.negative { color: var(--red); }
+        .liquidity-value.positive { color: var(--green); }
+        .liquidity-value.accent { color: var(--accent); }
+        .liquidity-detail {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            margin-top: 0.35rem;
+        }
+
+        /* --- BONUSES --- */
+        .bonus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+        .bonus-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        .bonus-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        .bonus-item h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 0.15rem;
+        }
+        .bonus-item p {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        /* --- FAQ --- */
+        .faq-list {
+            margin-top: 3rem;
+            max-width: 800px;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+        }
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 1.25rem 0;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--text-muted);
+            transition: transform 0.3s;
+        }
+        .faq-item.open .faq-question::after {
+            transform: rotate(45deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .faq-answer-inner {
+            padding-bottom: 1.25rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+        .faq-item.open .faq-answer {
+            max-height: 500px;
+        }
+
+        /* --- TIMELINE --- */
+        .timeline {
+            margin-top: 3rem;
+            position: relative;
+            padding-left: 2.5rem;
+            max-width: 700px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border-accent);
+        }
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 4px;
+            width: 18px;
+            height: 18px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 3px solid var(--bg);
+        }
+        .timeline-item.done::before {
+            background: var(--green);
+            content: '\2713';
+            color: #fff;
+            font-size: 0.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .timeline-item.done h4 {
+            color: var(--green);
+        }
+        .timeline-item.done p {
+            color: var(--text-dim);
+        }
+        .timeline-item h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+        .timeline-item p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        .timeline-highlight {
+            background: var(--green-glow);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            border-radius: var(--radius);
+            padding: 1.25rem 1.75rem;
+            margin-top: 2rem;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--green);
+        }
+
+        /* --- CTA --- */
+        .cta-section {
+            text-align: center;
+            padding: 100px 2rem;
+        }
+        .cta-section h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 1rem;
+        }
+        .cta-section p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 2.5rem;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cta-contact {
+            margin-top: 2.5rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        .cta-contact strong {
+            color: var(--text);
+        }
+        .cta-contact a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-dim);
+            font-size: 0.8rem;
+        }
+
+        /* --- TOOL TICKER --- */
+        .tool-ticker {
+            padding: 60px 0;
+            overflow: hidden;
+            position: relative;
+            background: var(--bg);
+        }
+        .tool-ticker::before,
+        .tool-ticker::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 15%;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .tool-ticker::before {
+            left: 0;
+            background: linear-gradient(to right, var(--bg), transparent);
+        }
+        .tool-ticker::after {
+            right: 0;
+            background: linear-gradient(to left, var(--bg), transparent);
+        }
+        .ticker-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .ticker-header h3 {
+            font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+        .ticker-header h3 span {
+            color: var(--accent);
+        }
+        .ticker-label {
+            text-align: center;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--text-dim);
+            font-weight: 500;
+        }
+        .ticker-track {
+            display: flex;
+            width: max-content;
+            gap: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+        .ticker-track.forward {
+            animation: tickerForward 35s linear infinite;
+        }
+        .ticker-track.reverse {
+            animation: tickerReverse 40s linear infinite;
+        }
+        .ticker-pill {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.55rem 1.1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+            flex-shrink: 0;
+            font-weight: 500;
+            transition: border-color 0.3s, color 0.3s;
+        }
+        .ticker-pill:hover {
+            border-color: var(--border-accent);
+            color: var(--text);
+        }
+        .ticker-pill .pill-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .pill-dot.blue { background: var(--accent); }
+        .pill-dot.green { background: var(--green); }
+        .pill-dot.purple { background: #8b5cf6; }
+        .pill-dot.orange { background: #f59e0b; }
+        .pill-dot.red { background: var(--red); }
+        .pill-dot.cyan { background: #06b6d4; }
+
+        @keyframes tickerForward {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        @keyframes tickerReverse {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
+
+        /* --- CLIENT LOGO TICKER --- */
+        .client-ticker {
+            padding: 20px 0 80px;
+            overflow: hidden;
+            position: relative;
+            background: var(--bg);
+        }
+        .client-ticker::before,
+        .client-ticker::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 15%;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .client-ticker::before { left: 0; background: linear-gradient(to right, var(--bg), transparent); }
+        .client-ticker::after { right: 0; background: linear-gradient(to left, var(--bg), transparent); }
+        .client-track {
+            display: flex;
+            width: max-content;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 1.25rem;
+        }
+        .client-track.forward { animation: tickerForward 40s linear infinite; }
+        .client-track.reverse { animation: tickerReverse 45s linear infinite; }
+        .client-logo {
+            height: 28px;
+            opacity: 0.4;
+            filter: grayscale(100%) brightness(2);
+            transition: opacity 0.3s, filter 0.3s;
+            flex-shrink: 0;
+        }
+        .client-logo:hover {
+            opacity: 0.8;
+            filter: grayscale(0%) brightness(1);
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+            .problem-grid, .offer-grid, .bafa-grid, .explainer-grid { grid-template-columns: 1fr; }
+            .process-steps { grid-template-columns: repeat(2, 1fr); }
+            .team-grid, .roi-grid, .roadmap-grid { grid-template-columns: 1fr; }
+            .stat-bar { grid-template-columns: repeat(2, 1fr); }
+            .bafa-steps { grid-template-columns: repeat(2, 1fr); }
+            .liquidity-grid { grid-template-columns: repeat(2, 1fr); }
+            .forecast-highlight { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 600px) {
+            section { padding: 60px 1.25rem; }
+            .process-steps { grid-template-columns: 1fr; }
+            .stat-bar { grid-template-columns: 1fr; }
+            .bafa-steps { grid-template-columns: 1fr; }
+            .liquidity-grid { grid-template-columns: 1fr; }
+            .comparison-table { font-size: 0.8rem; }
+            .comparison-table th, .comparison-table td { padding: 0.65rem 0.75rem; }
+        }
+
+        /* --- DOT NAV --- */
+        .dot-nav {
+            position: fixed;
+            left: 1.25rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 99;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .dot-nav a {
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s;
+            position: relative;
+        }
+        .dot-nav a:hover {
+            background: rgba(255,255,255,0.4);
+            transform: scale(1.3);
+        }
+        .dot-nav a.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            transform: scale(1.3);
+        }
+        .dot-nav a .dot-tooltip {
+            position: absolute;
+            left: 22px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s;
+        }
+        .dot-nav a:hover .dot-tooltip {
+            opacity: 1;
+        }
+        @media (max-width: 900px) {
+            .dot-nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- DOT NAV -->
+<div class="dot-nav" id="dotNav">
+    <a href="#hero" data-section="hero"><span class="dot-tooltip">Start</span></a>
+    <a href="#problem" data-section="problem"><span class="dot-tooltip">Problem</span></a>
+    <a href="#cold-email" data-section="cold-email"><span class="dot-tooltip">Cold Email</span></a>
+    <a href="#prozess" data-section="prozess"><span class="dot-tooltip">Prozess</span></a>
+    <a href="#strategie" data-section="strategie"><span class="dot-tooltip">Strategie</span></a>
+    <a href="#roadmap" data-section="roadmap"><span class="dot-tooltip">Roadmap</span></a>
+    <a href="#prognose" data-section="prognose"><span class="dot-tooltip">Prognose</span></a>
+    <a href="#ergebnisse" data-section="ergebnisse"><span class="dot-tooltip">Ergebnisse</span></a>
+    <a href="#team" data-section="team"><span class="dot-tooltip">Team</span></a>
+    <a href="#sales-support" data-section="sales-support"><span class="dot-tooltip">Sales Support</span></a>
+    <a href="#angebot" data-section="angebot"><span class="dot-tooltip">Angebot</span></a>
+    <a href="#bafa" data-section="bafa"><span class="dot-tooltip">BAFA</span></a>
+    <a href="#roi" data-section="roi"><span class="dot-tooltip">ROI</span></a>
+    <a href="#vergleich" data-section="vergleich"><span class="dot-tooltip">Vergleich</span></a>
+    <a href="#cashflow" data-section="cashflow"><span class="dot-tooltip">Cashflow</span></a>
+    <a href="#assets" data-section="assets"><span class="dot-tooltip">Assets</span></a>
+    <a href="#faq" data-section="faq"><span class="dot-tooltip">FAQ</span></a>
+    <a href="#schritte" data-section="schritte"><span class="dot-tooltip">Nächste Schritte</span></a>
+    <a href="#cta" data-section="cta"><span class="dot-tooltip">Kontakt</span></a>
+</div>
+
+<!-- NAV -->
+<nav>
+    <div class="nav-inner">
+        <div class="nav-logo"><span style="color: var(--accent); font-weight: 800;">18a.studio</span> x Grundwerk Digital</div>
+        <a href="#angebot" class="nav-cta">Zum Angebot</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+    <div class="hero-content fade-in">
+        <img src="https://18a.studio/wp-content/uploads/2025/06/logo_bildmarke.jpg" alt="18a.studio" class="hero-banner">
+        <h1>Planbare Neukunden<br><span class="gradient-text">für 18a.studio</span></h1>
+        <p>Schluss mit 1.750 EUR pro qualifiziertem Termin über Meta Ads. Wir bringen euch direkt vor die richtigen Entscheider &mdash; planbar, messbar und ohne Streuverlust.</p>
+        <div class="hero-ctas">
+            <a href="#angebot" class="btn-primary">Angebot ansehen</a>
+            <a href="#prozess" class="btn-secondary">Wie funktioniert das?</a>
+        </div>
+    </div>
+</section>
+
+<!-- CLIENT LOGO TICKER -->
+<div class="client-ticker">
+    <div class="client-track forward">
+        <img src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel" class="client-logo">
+        <img src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes" class="client-logo">
+        <img src="https://www.hrs.de/_next/static/media/hrs_logo_red.7cccdfd9.svg" alt="HRS" class="client-logo">
+        <img src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO" class="client-logo">
+        <img src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview" class="client-logo">
+        <img src="https://cdn.prod.website-files.com/673602757a06be245e484913/678d467526d221b55f5dc3e0_mc-logo-1-black.svg" alt="Michelscom" class="client-logo">
+        <img src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang" class="client-logo">
+        <!-- Duplicate -->
+        <img src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel" class="client-logo">
+        <img src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes" class="client-logo">
+        <img src="https://www.hrs.de/_next/static/media/hrs_logo_red.7cccdfd9.svg" alt="HRS" class="client-logo">
+        <img src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO" class="client-logo">
+        <img src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview" class="client-logo">
+        <img src="https://cdn.prod.website-files.com/673602757a06be245e484913/678d467526d221b55f5dc3e0_mc-logo-1-black.svg" alt="Michelscom" class="client-logo">
+        <img src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang" class="client-logo">
+    </div>
+    <div class="client-track reverse">
+        <img src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges" class="client-logo">
+        <img src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios" class="client-logo">
+        <img src="https://d2bw95mh2ee04s.cloudfront.net/prod/content/wp-content/uploads/2025/01/02134814/Property-Logo-Main.svg" alt="SellerLogic" class="client-logo">
+        <img src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly" class="client-logo">
+        <img src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy" class="client-logo">
+        <img src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic" class="client-logo">
+        <img src="https://digitalnow.online/logo.png" alt="Digital Now" class="client-logo">
+        <!-- Duplicate -->
+        <img src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges" class="client-logo">
+        <img src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios" class="client-logo">
+        <img src="https://d2bw95mh2ee04s.cloudfront.net/prod/content/wp-content/uploads/2025/01/02134814/Property-Logo-Main.svg" alt="SellerLogic" class="client-logo">
+        <img src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly" class="client-logo">
+        <img src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy" class="client-logo">
+        <img src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic" class="client-logo">
+        <img src="https://digitalnow.online/logo.png" alt="Digital Now" class="client-logo">
+    </div>
+</div>
+
+<!-- STAT BAR -->
+<section style="padding-top: 0;">
+    <div class="container">
+        <div class="stat-bar fade-in">
+            <div class="stat-item">
+                <div class="stat-number">10 Mio.+</div>
+                <div class="stat-label">E-Mails versendet</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">20+</div>
+                <div class="stat-label">Aktive B2B-Kunden</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Experten pro Account</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">BAFA</div>
+                <div class="stat-label">Registrierter Berater</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROBLEM -->
+<section id="problem">
+    <div class="container">
+        <div class="section-label fade-in">Das Problem</div>
+        <h2 class="section-title fade-in">Warum Meta Ads euch nicht<br>die richtigen Kunden bringen</h2>
+        <div class="problem-grid">
+            <div class="problem-cards fade-in">
+                <div class="problem-card">
+                    <div class="icon">&#128176;</div>
+                    <div>
+                        <h3>1.750 EUR pro qualifiziertem Termin</h3>
+                        <p>Bei 3.500 EUR Werbebudget pro Monat bekommt ihr 15-20 Anfragen &mdash; aber nur 2 davon passen. Die Kosten pro echtem Termin sind enorm.</p>
+                    </div>
+                </div>
+                <div class="problem-card">
+                    <div class="icon">&#128683;</div>
+                    <div>
+                        <h3>90% der Leads passen nicht</h3>
+                        <p>Zu kleine Unternehmen ohne Budget für professionelle Videoproduktion. Mehr Werbebudget bringt mehr vom Gleichen &mdash; nicht bessere Leads.</p>
+                    </div>
+                </div>
+                <div class="problem-card">
+                    <div class="icon">&#128200;</div>
+                    <div>
+                        <h3>Pipeline nicht planbar</h3>
+                        <p>Januar 10k, Februar 10k, März 0 &mdash; der Umsatz ist unberechenbar. Ohne skalierbaren Vertriebskanal fehlt euch die Grundlage für Wachstum.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="solution-box fade-in">
+                <h3>Die Lösung</h3>
+                <p>Statt darauf zu warten, dass die richtigen Unternehmen euch finden, kontaktieren wir sie direkt. Gezielt, personalisiert und an die Entscheider &mdash; CMOs, Marketing-Leiter und Head of Content.</p>
+                <p style="margin-bottom: 0.5rem;">Kosten pro Termin:</p>
+                <div class="compare-row">
+                    <span class="compare-bad">1.750 EUR (Meta Ads)</span>
+                    <span class="compare-arrow">&rarr;</span>
+                    <span class="compare-good">~200 EUR (Cold Outreach)</span>
+                </div>
+                <p style="font-size: 0.8rem; color: var(--text-dim); margin-top: 0.5rem;">Lead ≈ 100 EUR &middot; ca. 50% der Leads werden zum Termin &middot; Faktor 8-9x effizienter</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WAS IST COLD EMAIL? -->
+<section id="cold-email">
+    <div class="container">
+        <div class="section-label fade-in">Cold Email erklärt</div>
+        <h2 class="section-title fade-in">Was ist Cold Email Outreach &mdash;<br>und warum funktioniert es?</h2>
+        <p class="section-subtitle fade-in">Cold Email ist die effizienteste Methode im B2B, um Entscheider direkt zu erreichen. Keine Werbeanzeigen, keine Algorithmen &mdash; ihr landet direkt im Postfach der richtigen Person.</p>
+        <div class="explainer-grid fade-in">
+            <div class="explainer-card">
+                <h3>So funktioniert es</h3>
+                <p>Wir identifizieren eure Traumkunden anhand von Branche, Unternehmensgröße, Standort und Rolle. Dann schreiben wir personalisierte E-Mails an die Entscheider &mdash; keine generischen Massenmails.</p>
+                <ul>
+                    <li>Personalisiert auf Unternehmen und Person</li>
+                    <li>Direkt an CMOs, Marketing-Leiter, GFs</li>
+                    <li>Automatisierte Follow-Up-Sequenzen</li>
+                    <li>KI-gestütztes Lead-Scoring</li>
+                </ul>
+            </div>
+            <div class="explainer-card">
+                <h3>Warum es für Videoproduktionen ideal ist</h3>
+                <p>Videoproduktion ist ein hochpreisiges, erklärungsbedürftiges Produkt. Die Kunden kommen nicht über eine Werbeanzeige &mdash; sie müssen direkt angesprochen werden.</p>
+                <ul>
+                    <li>Hohe Projektwerke (8.000-15.000 EUR) rechtfertigen den Aufwand</li>
+                    <li>Entscheider reagieren auf personalisierte Ansprache</li>
+                    <li>Portfolio als Proof &mdash; Referenzprojekte öffnen Türen</li>
+                    <li>Skalierbar: Mehr Kampagnen = mehr Leads</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROZESS -->
+<section id="prozess">
+    <div class="container">
+        <div class="section-label fade-in">Unser Prozess</div>
+        <h2 class="section-title fade-in">In 5 Schritten zu<br><span class="gradient-text">planbaren Neukunden</span></h2>
+        <div class="process-steps fade-in">
+            <div class="process-step">
+                <div class="step-num">1</div>
+                <h4>Zielgruppe definieren</h4>
+                <p>ICP-Workshop: Welche Unternehmen sind eure Traumkunden? Branche, Größe, Budget.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-num">2</div>
+                <h4>Entscheider finden</h4>
+                <p>Leadlisten mit verifizierten E-Mail-Adressen und direkten Telefonnummern der Entscheider.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-num">3</div>
+                <h4>Kampagnen starten</h4>
+                <p>Personalisierte E-Mail-Sequenzen, die auf eure Branche und Referenzen zugeschnitten sind.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-num">4</div>
+                <h4>MasterInbox</h4>
+                <p>Alle Antworten landen in einer zentralen Inbox mit KI-Labels: Interesse, Rückfrage, Absage.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-num">5</div>
+                <h4>Warme Leads</h4>
+                <p>Ihr bekommt qualifizierte Leads, die aktiv Interesse an Videoproduktion gezeigt haben.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TOOL TICKER -->
+<div class="tool-ticker">
+    <div class="ticker-header">
+        <h3>75+ Tools &amp; Datenanbieter &rarr; <span>0&euro; Fixkosten</span></h3>
+        <div class="ticker-label">Enterprise-GTM-Setup &mdash; wir tragen die Kosten</div>
+    </div>
+
+    <div class="ticker-track forward">
+        <span class="ticker-pill"><span class="pill-dot blue"></span>Apollo.io</span>
+        <span class="ticker-pill"><span class="pill-dot green"></span>Clay</span>
+        <span class="ticker-pill"><span class="pill-dot purple"></span>Instantly</span>
+        <span class="ticker-pill"><span class="pill-dot orange"></span>OpenAI</span>
+        <span class="ticker-pill"><span class="pill-dot cyan"></span>Findymail</span>
+        <span class="ticker-pill"><span class="pill-dot red"></span>MasterInbox</span>
+        <span class="ticker-pill"><span class="pill-dot blue"></span>Heyreach</span>
+        <span class="ticker-pill"><span class="pill-dot green"></span>RevyOps</span>
+        <span class="ticker-pill"><span class="pill-dot purple"></span>Supabase</span>
+        <span class="ticker-pill"><span class="pill-dot orange"></span>LinkedIn Sales Nav</span>
+        <span class="ticker-pill"><span class="pill-dot cyan"></span>Prospeo</span>
+        <span class="ticker-pill"><span class="pill-dot red"></span>Millionverifier</span>
+        <!-- Duplicate for seamless loop -->
+        <span class="ticker-pill"><span class="pill-dot blue"></span>Apollo.io</span>
+        <span class="ticker-pill"><span class="pill-dot green"></span>Clay</span>
+        <span class="ticker-pill"><span class="pill-dot purple"></span>Instantly</span>
+        <span class="ticker-pill"><span class="pill-dot orange"></span>OpenAI</span>
+        <span class="ticker-pill"><span class="pill-dot cyan"></span>Findymail</span>
+        <span class="ticker-pill"><span class="pill-dot red"></span>MasterInbox</span>
+        <span class="ticker-pill"><span class="pill-dot blue"></span>Heyreach</span>
+        <span class="ticker-pill"><span class="pill-dot green"></span>RevyOps</span>
+        <span class="ticker-pill"><span class="pill-dot purple"></span>Supabase</span>
+        <span class="ticker-pill"><span class="pill-dot orange"></span>LinkedIn Sales Nav</span>
+        <span class="ticker-pill"><span class="pill-dot cyan"></span>Prospeo</span>
+        <span class="ticker-pill"><span class="pill-dot red"></span>Millionverifier</span>
+    </div>
+
+    <div class="ticker-track reverse">
+        <span class="ticker-pill"><span class="pill-dot orange"></span>Claude</span>
+        <span class="ticker-pill"><span class="pill-dot blue"></span>Northdata</span>
+        <span class="ticker-pill"><span class="pill-dot green"></span>n8n</span>
+        <span class="ticker-pill"><span class="pill-dot purple"></span>Mailreach</span>
+        <span class="ticker-pill"><span class="pill-dot cyan"></span>Lusha</span>
+        <span class="ticker-pill"><span class="pill-dot red"></span>BounceBan</span>
+        <span class="ticker-pill"><span class="pill-dot orange"></span>Perplexity</span>
+        <span class="ticker-pill"><span class="pill-dot blue"></span>Brightdata</span>
+        <span class="ticker-pill"><span class="pill-dot green"></span>Make</span>
+        <span class="ticker-pill"><span class="pill-dot purple"></span>Ocean.io</span>
+        <span class="ticker-pill"><span class="pill-dot cyan"></span>Bettercontact</span>
+        <span class="ticker-pill"><span class="pill-dot red"></span>Icypeas</span>
+        <!-- Duplicate for seamless loop -->
+        <span class="ticker-pill"><span class="pill-dot orange"></span>Claude</span>
+        <span class="ticker-pill"><span class="pill-dot blue"></span>Northdata</span>
+        <span class="ticker-pill"><span class="pill-dot green"></span>n8n</span>
+        <span class="ticker-pill"><span class="pill-dot purple"></span>Mailreach</span>
+        <span class="ticker-pill"><span class="pill-dot cyan"></span>Lusha</span>
+        <span class="ticker-pill"><span class="pill-dot red"></span>BounceBan</span>
+        <span class="ticker-pill"><span class="pill-dot orange"></span>Perplexity</span>
+        <span class="ticker-pill"><span class="pill-dot blue"></span>Brightdata</span>
+        <span class="ticker-pill"><span class="pill-dot green"></span>Make</span>
+        <span class="ticker-pill"><span class="pill-dot purple"></span>Ocean.io</span>
+        <span class="ticker-pill"><span class="pill-dot cyan"></span>Bettercontact</span>
+        <span class="ticker-pill"><span class="pill-dot red"></span>Icypeas</span>
+    </div>
+</div>
+
+<!-- KAMPAGNENSTRATEGIE -->
+<section id="strategie">
+    <div class="container">
+        <div class="section-label fade-in">Strategie</div>
+        <h2 class="section-title fade-in">4 Kampagnen-Cluster<br>für maximale Abdeckung</h2>
+        <p class="section-subtitle fade-in">Jeder Cluster spricht eine andere Zielgruppe mit eigenem Messaging an &mdash; so maximieren wir die Resonanz in eurem Markt.</p>
+        <div class="campaign-grid fade-in">
+            <div class="campaign-card">
+                <div class="card-icon">&#127970;</div>
+                <div class="target">Cluster 1: Mittelstand</div>
+                <h3>Tech, SaaS, E-Commerce</h3>
+                <p>Unternehmen mit 50-500 MA, die professionellen Video-Content für Marketing und Employer Branding brauchen. Entscheider: CMOs, Marketing-Leiter.</p>
+            </div>
+            <div class="campaign-card">
+                <div class="card-icon">&#127915;</div>
+                <div class="target">Cluster 2: Events</div>
+                <h3>Messen, Konferenzen, Corporate</h3>
+                <p>Event-Veranstalter und Unternehmen, die ihre Events professionell dokumentieren wollen. Entscheider: Event-Manager, Geschäftsführer.</p>
+            </div>
+            <div class="campaign-card">
+                <div class="card-icon">&#128241;</div>
+                <div class="target">Cluster 3: Social Media</div>
+                <h3>D2C-Brands, Lifestyle, Fashion</h3>
+                <p>Marken, die laufend Video-Content für Social Media brauchen &mdash; Reels, TikToks, Kampagnen. Entscheider: Social Media Manager, Brand Manager.</p>
+            </div>
+            <div class="campaign-card">
+                <div class="card-icon">&#129309;</div>
+                <div class="target">Cluster 4: Agenturen</div>
+                <h3>White-Label-Partnerschaften</h3>
+                <p>Marketing-Agenturen und Beratungen, die Videoproduktion als Service anbieten, aber keine eigene Produktion haben. Entscheider: Geschäftsführer.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MONATS-ROADMAP -->
+<section id="roadmap">
+    <div class="container">
+        <div class="section-label fade-in">Roadmap</div>
+        <h2 class="section-title fade-in">Was passiert wann?</h2>
+        <p class="section-subtitle fade-in">Ein klarer Fahrplan für die ersten 3 Monate &mdash; damit ihr genau wisst, was wann passiert.</p>
+        <div class="roadmap-grid fade-in">
+            <div class="roadmap-card">
+                <div class="roadmap-month">Monat 1 &mdash; Setup</div>
+                <h3>Fundament bauen</h3>
+                <ul>
+                    <li>KickOff-Workshop (ICP &amp; Strategie)</li>
+                    <li>Leadlisten für alle 4 Cluster</li>
+                    <li>E-Mail-Infrastruktur aufbauen</li>
+                    <li>Domains &amp; Inboxen aufwärmen</li>
+                    <li>Copywriting &amp; Sequenzen</li>
+                    <li>CRM-Setup &amp; Prozesse</li>
+                    <li>Kampagnenstart Ende Monat 1</li>
+                </ul>
+            </div>
+            <div class="roadmap-card">
+                <div class="roadmap-month">Monat 2 &mdash; Erste Leads</div>
+                <h3>Kampagnen laufen</h3>
+                <ul>
+                    <li>Erste Kampagnen sind live</li>
+                    <li>5.000+ Prospects kontaktiert</li>
+                    <li>Kampagnen-Performance analysieren</li>
+                    <li>A/B-Tests auf Messaging</li>
+                    <li>Pipeline-Calls &amp; Sales-Coaching</li>
+                    <li>20-30 erste Leads erwartet</li>
+                </ul>
+            </div>
+            <div class="roadmap-card highlight">
+                <div class="roadmap-month" style="color: var(--green);">Monat 3 &mdash; Volle Pipeline</div>
+                <h3>Skalierung &amp; Abschlüsse</h3>
+                <ul>
+                    <li>Beste Cluster verstärken</li>
+                    <li>5.000+ weitere Prospects</li>
+                    <li>Follow-Up-Automatisierungen aktiv</li>
+                    <li>Erste Abschlüsse erwartet</li>
+                    <li>30-45 weitere Leads</li>
+                    <li>Gesamt: 60-75 qualifizierte Leads</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- LEAD-PROGNOSE -->
+<section id="prognose">
+    <div class="container">
+        <div class="section-label fade-in">Prognose</div>
+        <h2 class="section-title fade-in">Lead-Prognose über 3 Monate</h2>
+        <table class="forecast-table fade-in">
+            <thead>
+                <tr>
+                    <th>Monat</th>
+                    <th>Prospects kontaktiert</th>
+                    <th>Erwartete Leads</th>
+                    <th>Kumuliert</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Monat 1 (Setup)</td>
+                    <td>&mdash;</td>
+                    <td>0 (Setup-Phase)</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>Monat 2</td>
+                    <td>5.000+</td>
+                    <td>20-30</td>
+                    <td>20-30</td>
+                </tr>
+                <tr>
+                    <td>Monat 3</td>
+                    <td>5.000+</td>
+                    <td>30-45</td>
+                    <td>50-75</td>
+                </tr>
+                <tr>
+                    <td><strong>Gesamt</strong></td>
+                    <td><strong>10.000+</strong></td>
+                    <td><strong>50-75</strong></td>
+                    <td><strong>50-75 Leads</strong></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="forecast-highlight fade-in">
+            <div class="forecast-compare">
+                <div class="label">Gleiche Leads via Meta Ads</div>
+                <div class="value bad">87.500 &ndash; 131.250 EUR</div>
+                <div class="detail">Bei ca. 1.750 EUR pro Lead (Meta Ads Durchschnitt B2B)</div>
+            </div>
+            <div class="forecast-compare">
+                <div class="label">Mit Cold Outreach</div>
+                <div class="value good">~100 EUR pro Lead</div>
+                <div class="detail">Faktor 17x effizienter</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section id="ergebnisse">
+    <div class="container">
+        <div class="section-label fade-in">Ergebnisse</div>
+        <h2 class="section-title fade-in">Was unsere Kunden erreichen</h2>
+        <p class="section-subtitle fade-in">Echte Ergebnisse von echten Kunden. Keine erfundenen Zahlen.</p>
+        <div class="proof-grid fade-in">
+            <div class="proof-card">
+                <div class="proof-result">397 Leads</div>
+                <div class="proof-time">in 3 Monaten</div>
+                <div class="proof-company">Smart Bridges GmbH</div>
+                <div class="proof-city">Berlin</div>
+            </div>
+            <div class="proof-card">
+                <div class="proof-result">172 Leads &amp; 14 Aufträge</div>
+                <div class="proof-time">in 3 Monaten</div>
+                <div class="proof-company">Greenlovers</div>
+                <div class="proof-city">Hamburg</div>
+            </div>
+            <div class="proof-card">
+                <div class="proof-result">100.000 EUR Auftragswert</div>
+                <div class="proof-time">in 9 Monaten</div>
+                <div class="proof-company">Hivebuy</div>
+                <div class="proof-city">Berlin</div>
+            </div>
+            <div class="proof-card">
+                <div class="proof-result">28 Termine</div>
+                <div class="proof-time">in 3 Monaten</div>
+                <div class="proof-company">Birdsview GmbH</div>
+            </div>
+            <div class="proof-card">
+                <div class="proof-result">20 Opportunities</div>
+                <div class="proof-time">in 13 Tagen</div>
+                <div class="proof-company">Peer Studios GbR</div>
+                <div class="proof-city">Berlin</div>
+            </div>
+            <div class="proof-card">
+                <div class="proof-result">ROI von 2,7x</div>
+                <div class="proof-time">in 3 Monaten</div>
+                <div class="proof-company">Cervis</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+    <div class="container">
+        <div class="section-label fade-in">Euer Team</div>
+        <h2 class="section-title fade-in">Das Execution-Team<br>hinter dem Erfolg</h2>
+        <div class="team-grid fade-in">
+            <div class="team-card">
+                <div class="team-icon">&#128188;</div>
+                <h3>Account Manager</h3>
+                <p>Strategie, wöchentliche Pipeline-Calls, Kampagnen-Optimierung und Sales-Coaching. Euer direkter Ansprechpartner.</p>
+            </div>
+            <div class="team-card">
+                <div class="team-icon">&#128202;</div>
+                <h3>Clay Engineer</h3>
+                <p>Daten, Leadlisten-Generierung, Enrichment und Kontakt-Verifizierung. Findet die richtigen Entscheider.</p>
+            </div>
+            <div class="team-card">
+                <div class="team-icon">&#9881;</div>
+                <h3>Automations Expert</h3>
+                <p>Technische Infrastruktur, Kampagnen-Setup, Deliverability und E-Mail-Optimierung.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SALES SUPPORT -->
+<section id="sales-support">
+    <div class="container">
+        <div class="section-label fade-in">Sales Support</div>
+        <h2 class="section-title fade-in">Wir begleiten euch auch<br>beim Abschließen</h2>
+        <p class="section-subtitle fade-in">Leads generieren ist nur die halbe Miete. Wir helfen euch, aus Leads Kunden zu machen &mdash; mit Tools, Coaching und Strukturen.</p>
+        <div class="support-grid fade-in">
+            <div class="support-card">
+                <div class="card-icon">&#128222;</div>
+                <h3>Wöchentliche Pipeline-Calls</h3>
+                <p>Gemeinsam priorisieren wir eure Leads, besprechen Follow-Ups und optimieren eure Abschlussrate.</p>
+            </div>
+            <div class="support-card">
+                <div class="card-icon">&#128187;</div>
+                <h3>Close-CRM eingerichtet</h3>
+                <p>Euer CRM wird komplett für den Outbound-Prozess aufgesetzt &mdash; Pipeline, Automationen, Reporting.</p>
+            </div>
+            <div class="support-card">
+                <div class="card-icon">&#129302;</div>
+                <h3>Sales-Call-Analyse ChatBot</h3>
+                <p>Ladet eure Sales Calls hoch und bekommt automatisiert Feedback, Tipps und Verbesserungsvorschläge.</p>
+            </div>
+            <div class="support-card">
+                <div class="card-icon">&#128218;</div>
+                <h3>15+ Sales Guides</h3>
+                <p>Einwandbehandlung, Abschlusstechniken, Follow-Up-Vorlagen, Preisverhandlung und mehr &mdash; direkt nutzbar.</p>
+            </div>
+            <div class="support-card">
+                <div class="card-icon">&#128200;</div>
+                <h3>Sales Projections &amp; Tracking</h3>
+                <p>Transparentes Dashboard mit Prognosen, KPIs und Fortschritt &mdash; auf wöchentlicher Basis.</p>
+            </div>
+            <div class="support-card">
+                <div class="card-icon">&#128197;</div>
+                <h3>Calendly &amp; Showup-Maximierung</h3>
+                <p>Terminbuchung mit Erinnerungen, WhatsApp-Confirms und Strategien für maximale Showup-Rate.</p>
+            </div>
+            <div class="support-card">
+                <div class="card-icon">&#128241;</div>
+                <h3>Grundwerk Web App</h3>
+                <p>Eigene Web App mit C-Level-Reporting, Live Analytics und CRM-Integration &mdash; euer Outbound-Cockpit in Echtzeit.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ANGEBOT -->
+<section id="angebot">
+    <div class="container">
+        <div class="section-label fade-in">Das Angebot</div>
+        <h2 class="section-title fade-in">Zwei Optionen für 18a.studio</h2>
+        <div class="offer-grid fade-in">
+            <!-- OPTION 1: STANDARD -->
+            <div class="offer-card">
+                <h3>Option 1: Standard Cold Email</h3>
+                <p class="offer-desc">E-Mail-Outreach-Kampagnen mit wöchentlicher Betreuung.</p>
+                <div class="offer-price">2.000 EUR<span style="font-size: 1rem; font-weight: 400; color: var(--text-muted);">/Monat</span></div>
+                <div class="offer-price-hint">+ 15% Closing-Provision &middot; 3 Monate Laufzeit &middot; ca. 6.600-6.900 EUR inkl. Tools</div>
+                <ul class="offer-features">
+                    <li>E-Mail-Outreach-Kampagnen</li>
+                    <li>KickOff-Workshop</li>
+                    <li>Wöchentliche Betreuung (15min Call)</li>
+                    <li>MasterInbox mit KI-Labels</li>
+                    <li>Kampagnen-Monitoring &amp; Optimierung</li>
+                    <li>CSV-Export aller Kontakte</li>
+                    <li>Grundwerk Web App</li>
+                </ul>
+                <div class="offer-ideal"><strong>Ideal für:</strong> Unternehmen, die schnell und einfach starten wollen und bereits Sales-Erfahrung haben.</div>
+            </div>
+
+            <!-- OPTION 2: BAFA -->
+            <div class="offer-card recommended">
+                <div class="offer-badge">Empfohlen</div>
+                <h3>Option 2: BAFA-Paket</h3>
+                <p class="offer-desc">Alles aus Option 1, plus kompletter Sales-Aufbau &mdash; mit staatlicher Förderung.</p>
+                <div class="offer-price">7.000 EUR<span style="font-size: 1rem; font-weight: 400; color: var(--text-muted);"> einmalig</span></div>
+                <div class="offer-price-hint">Bis zu 3.500 EUR BAFA-Förderung zurück (50% in Berlin)</div>
+                <div class="effective-price">
+                    <div class="label">Effektiver Preis nach Förderung</div>
+                    <div class="value">3.500 EUR</div>
+                </div>
+                <ul class="offer-features">
+                    <li class="highlight-feature">Alles aus Option 1</li>
+                    <li class="highlight-feature">Intensiver Sales Support &amp; Pipeline-Calls</li>
+                    <li class="highlight-feature">Close-CRM komplett eingerichtet</li>
+                    <li>Sales Projections &amp; Tracking</li>
+                    <li>Sales-Call-Analyse ChatBot</li>
+                    <li>PandaDoc Vertragsvorlagen</li>
+                    <li>Calendly mit Showup-Maximierung</li>
+                    <li>Follow-Up-Strukturen &amp; Automations</li>
+                    <li>Loom Setup für High-Value-Accounts</li>
+                    <li>15+ Sales Guides &amp; Nachschlagewerke</li>
+                    <li>Grundwerk Web App</li>
+                    <li>ICP-Leadlisten (Daten gehören 18a.studio)</li>
+                    <li>Partner-Bonusse</li>
+                </ul>
+                <div class="offer-ideal"><strong>Ideal für:</strong> Unternehmen, die noch keinen strukturierten Vertrieb haben und alles aus einer Hand aufbauen wollen &mdash; wie 18a.studio.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BAFA -->
+<section id="bafa">
+    <div class="container">
+        <div class="section-label fade-in">BAFA-Förderung</div>
+        <h2 class="section-title fade-in">3.500 EUR vom Staat zurück &mdash;<br>so funktioniert es</h2>
+        <p class="section-subtitle fade-in">Das Bundesamt für Wirtschaft und Ausfuhrkontrolle (BAFA) fördert Unternehmensberatungen für KMU. Als registrierter BAFA-Berater (ID: 213712) übernehmen wir den gesamten Antragsprozess.</p>
+        <div class="bafa-section fade-in">
+            <div class="bafa-grid">
+                <div>
+                    <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem;">18a.studio qualifiziert sich, weil:</h3>
+                    <ul class="bafa-checklist">
+                        <li>KMU mit Sitz in Deutschland</li>
+                        <li>Weniger als 250 Mitarbeitende</li>
+                        <li>Auch als junges Unternehmen förderfähig (Infogespräch bei IHK nötig)</li>
+                        <li>Berlin = 50% Fördersatz</li>
+                        <li>Videoproduktion (kein Beratungsunternehmen)</li>
+                        <li>Kein Insolvenzverfahren</li>
+                    </ul>
+                </div>
+                <div class="bafa-calc">
+                    <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem;">Rechnung</h3>
+                    <div class="bafa-calc-row">
+                        <span>Investition</span>
+                        <span>7.000 EUR</span>
+                    </div>
+                    <div class="bafa-calc-row">
+                        <span>BAFA-Förderung (50%)</span>
+                        <span style="color: var(--green);">-3.500 EUR</span>
+                    </div>
+                    <div class="bafa-calc-row">
+                        <span>Effektive Kosten</span>
+                        <span>3.500 EUR</span>
+                    </div>
+                </div>
+            </div>
+            <div class="bafa-steps">
+                <div class="bafa-step">
+                    <div class="bafa-step-num">1</div>
+                    <h4>Antrag stellen</h4>
+                    <p>Wir übernehmen die Antragstellung. Euer Aufwand: 5 Minuten Daten.</p>
+                </div>
+                <div class="bafa-step">
+                    <div class="bafa-step-num">2</div>
+                    <h4>Bescheid erhalten</h4>
+                    <p>Zuwendungs-bescheid kommt innerhalb von ca. 1 Tag.</p>
+                </div>
+                <div class="bafa-step">
+                    <div class="bafa-step-num">3</div>
+                    <h4>Beratung durchführen</h4>
+                    <p>KickOff-Workshop &amp; Strategie-Beratung.</p>
+                </div>
+                <div class="bafa-step">
+                    <div class="bafa-step-num">4</div>
+                    <h4>Nachweis einreichen</h4>
+                    <p>Wir dokumentieren alles und reichen den Verwendungs-nachweis ein.</p>
+                </div>
+                <div class="bafa-step">
+                    <div class="bafa-step-num">5</div>
+                    <h4>Geld zurück</h4>
+                    <p>3.500 EUR auf euer Konto &mdash; Auszahlung in 2-6 Wochen.</p>
+                </div>
+            </div>
+            <div class="bafa-note">
+                <strong>Hinweis:</strong> Grundwerk Digital ist registrierter BAFA-Berater (nicht zertifiziert). Die Bewilligung liegt beim BAFA. Die Förderrichtlinie gilt bis 31.12.2026. Euer Aufwand: Daten übermitteln und Dokumente unterschreiben &mdash; alles andere machen wir.
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ROI -->
+<section id="roi">
+    <div class="container">
+        <div class="section-label fade-in">Return on Investment</div>
+        <h2 class="section-title fade-in">Was bringt die Investition?</h2>
+        <p class="section-subtitle fade-in">Basierend auf 3.500 EUR effektiver Investition (BAFA-Paket) und eurem durchschnittlichen Projektwert von 8.000-15.000 EUR.</p>
+        <div class="roi-grid fade-in">
+            <div class="roi-card">
+                <div class="roi-label">Konservativ</div>
+                <div class="roi-value">4,5x ROI</div>
+                <div class="roi-detail">2 Abschlüsse &middot; 8.000 EUR</div>
+                <div class="roi-sub">= 16.000 EUR Umsatz</div>
+            </div>
+            <div class="roi-card highlight">
+                <div class="roi-label">Realistisch</div>
+                <div class="roi-value">11x ROI</div>
+                <div class="roi-detail">4 Abschlüsse &middot; 10.000 EUR</div>
+                <div class="roi-sub">= 40.000 EUR Umsatz</div>
+            </div>
+            <div class="roi-card">
+                <div class="roi-label">Optimistisch</div>
+                <div class="roi-value">20x ROI</div>
+                <div class="roi-detail">6+ Abschlüsse &middot; 12.000 EUR</div>
+                <div class="roi-sub">= 72.000 EUR Umsatz</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- VERGLEICHSTABELLE -->
+<section id="vergleich">
+    <div class="container">
+        <div class="section-label fade-in">Vergleich</div>
+        <h2 class="section-title fade-in">Meta Ads vs. Standard vs. BAFA-Paket</h2>
+        <table class="comparison-table fade-in">
+            <thead>
+                <tr>
+                    <th>Kriterium</th>
+                    <th>Meta Ads (aktuell)</th>
+                    <th>Standard</th>
+                    <th>BAFA-Paket</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Kosten (3 Monate)</td>
+                    <td class="bad">10.500 EUR+</td>
+                    <td class="meh">6.600-6.900 EUR</td>
+                    <td class="good">3.500 EUR (effektiv)</td>
+                </tr>
+                <tr>
+                    <td>Kosten pro Lead</td>
+                    <td class="bad">~1.750 EUR</td>
+                    <td class="good">~100 EUR</td>
+                    <td class="good">~58 EUR</td>
+                </tr>
+                <tr>
+                    <td>Zielgenauigkeit</td>
+                    <td class="bad">10% passend</td>
+                    <td class="good">Hoch</td>
+                    <td class="good">Hoch</td>
+                </tr>
+                <tr>
+                    <td>Sales-Support</td>
+                    <td class="bad">Keiner</td>
+                    <td class="meh">Basis (Weekly)</td>
+                    <td class="good">Intensiv (CRM, Coaching, Tools)</td>
+                </tr>
+                <tr>
+                    <td>Verbleibende Assets</td>
+                    <td class="bad">Keine</td>
+                    <td class="meh">Kontaktlisten</td>
+                    <td class="good">14 dauerhafte Assets</td>
+                </tr>
+                <tr>
+                    <td>CRM-Setup</td>
+                    <td class="bad">Nein</td>
+                    <td class="bad">Nein</td>
+                    <td class="good">Close-CRM komplett</td>
+                </tr>
+                <tr>
+                    <td>BAFA-Förderung</td>
+                    <td class="bad">Nicht möglich</td>
+                    <td class="bad">Nicht möglich</td>
+                    <td class="good">3.500 EUR zurück</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- LIQUIDITAETSPLANUNG -->
+<section id="cashflow">
+    <div class="container">
+        <div class="section-label fade-in">Cashflow</div>
+        <h2 class="section-title fade-in">Liquiditätsplanung (BAFA-Paket)</h2>
+        <div class="liquidity-grid fade-in">
+            <div class="liquidity-item">
+                <div class="liquidity-label">Tag 0</div>
+                <div class="liquidity-value negative">-7.000 EUR</div>
+                <div class="liquidity-detail">Investition</div>
+            </div>
+            <div class="liquidity-item">
+                <div class="liquidity-label">Monat 2-3</div>
+                <div class="liquidity-value positive">+3.500 EUR</div>
+                <div class="liquidity-detail">BAFA-Förderung zurück</div>
+            </div>
+            <div class="liquidity-item">
+                <div class="liquidity-label">Effektive Investition</div>
+                <div class="liquidity-value accent">-3.500 EUR</div>
+                <div class="liquidity-detail">Netto-Kosten</div>
+            </div>
+            <div class="liquidity-item">
+                <div class="liquidity-label">1 Abschluss</div>
+                <div class="liquidity-value positive">+8.000-15.000 EUR</div>
+                <div class="liquidity-detail">= Break-Even</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BONUSSE -->
+<section id="assets">
+    <div class="container">
+        <div class="section-label fade-in">Dauerhaft bleibende Assets</div>
+        <h2 class="section-title fade-in">14 Assets, die euch gehören &mdash;<br>auch nach der Zusammenarbeit</h2>
+        <div class="bonus-grid fade-in">
+            <div class="bonus-item">
+                <div class="bonus-icon">&#127919;</div>
+                <div><h4>Komplette ICP-Definition</h4><p>Exakt dokumentiert, wer eure Traumkunden sind.</p></div>
+            </div>
+            <div class="bonus-item">
+                <div class="bonus-icon">&#9993;</div>
+                <div><h4>Getestete E-Mail-Sequenzen</h4><p>Bewiesene Copy, die Antworten generiert.</p></div>
+            </div>
+            <div class="bonus-item">
+                <div class="bonus-icon">&#128203;</div>
+                <div><h4>Sales-Prozess dokumentiert</h4><p>Schritt-für-Schritt euer Vertriebsprozess.</p></div>
+            </div>
+            <div class="bonus-item">
+                <div class="bonus-icon">&#128170;</div>
+                <div><h4>Einwandbehandlung</h4><p>Antworten auf die häufigsten Einwände.</p></div>
+            </div>
+            <div class="bonus-item">
+                <div class="bonus-icon">&#128196;</div>
+                <div><h4>ICP-Leadlisten</h4><p>Tausende verifizierte Entscheider-Kontakte.</p></div>
+            </div>
+            <div class="bonus-item">
+                <div class="bonus-icon">&#128202;</div>
+                <div><h4>Marktdaten &amp; Insights</h4><p>Kampagnen-Daten und Marktanalyse.</p></div>
+            </div>
+            <div class="bonus-item">
+                <div class="bonus-icon">&#128187;</div>
+                <div><h4>Close-CRM eingerichtet</h4><p>Komplett konfiguriert für euren Prozess.</p></div>
+            </div>
+            <div class="bonus-item">
+                <div class="bonus-icon">&#128221;</div>
+                <div><h4>PandaDoc Vertragsvorlagen</h4><p>Professionelle Verträge zum Sofort-Senden.</p></div>
+            </div>
+            <div class="bonus-item">
+                <div class="bonus-icon">&#128197;</div>
+                <div><h4>Calendly + Showup-Max.</h4><p>Terminbuchung mit maximaler Showup-Rate.</p></div>
+            </div>
+            <div class="bonus-item">
+                <div class="bonus-icon">&#129302;</div>
+                <div><h4>Sales-Call-Analyse ChatBot</h4><p>Automatisiertes Feedback für jeden Call.</p></div>
+            </div>
+            <div class="bonus-item">
+                <div class="bonus-icon">&#128218;</div>
+                <div><h4>15+ Sales Guides</h4><p>Sofort nutzbare Nachschlagewerke.</p></div>
+            </div>
+            <div class="bonus-item">
+                <div class="bonus-icon">&#127891;</div>
+                <div><h4>Outbound-Kompetenz</h4><p>Wissen und Fähigkeiten für euer Team.</p></div>
+            </div>
+            <div class="bonus-item">
+                <div class="bonus-icon">&#9889;</div>
+                <div><h4>Follow-Up-Automations</h4><p>Automatisierte Nachfass-Strukturen.</p></div>
+            </div>
+            <div class="bonus-item">
+                <div class="bonus-icon">&#128241;</div>
+                <div><h4>Grundwerk Web App</h4><p>C-Level-Reporting, Live Analytics und CRM-Integration.</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+    <div class="container">
+        <div class="section-label fade-in">FAQ</div>
+        <h2 class="section-title fade-in">Häufige Fragen</h2>
+        <div class="faq-list fade-in">
+            <div class="faq-item">
+                <button class="faq-question">Wie schnell kommen die ersten Leads?</button>
+                <div class="faq-answer"><div class="faq-answer-inner">Der erste Monat ist reine Setup-Phase: KickOff-Workshop, Infrastruktur, Leadlisten und Copywriting. Die Kampagnen starten nach ca. 4 Wochen. Erste Leads könnt ihr ab Monat 2 erwarten. Der volle Effekt entfaltet sich ab Monat 2, wenn die Kampagnen optimiert und skaliert werden.</div></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Was genau ist ein "qualifizierter Lead"?</button>
+                <div class="faq-answer"><div class="faq-answer-inner">Ein Unternehmen, das aktiv Interesse an euren Dienstleistungen zeigt: Sie antworten positiv auf unsere E-Mails, sind auf Entscheider-Level (CMO, Marketing-Leiter, Head of Content) und haben das Budget für professionelle Videoproduktion. Keine generischen Newsletter-Anmeldungen oder unqualifizierte Anfragen.</div></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Müssen wir selbst E-Mails schreiben oder verschicken?</button>
+                <div class="faq-answer"><div class="faq-answer-inner">Nein. Wir übernehmen alles: Copywriting, Kampagnen-Setup, Versand, Monitoring und Optimierung. Ihr bekommt die warmen Leads direkt in eure MasterInbox oder euer CRM. Euer einziger Aufwand: Die Leads kontaktieren und Termine vereinbaren.</div></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Ist Cold Email rechtlich sicher?</button>
+                <div class="faq-answer"><div class="faq-answer-inner">Transparenz ist uns wichtig: Datenschutzrechtlich (DSGVO) ist B2B Cold Email unproblematisch &mdash; geschäftliche E-Mail-Adressen von Entscheidern fallen unter das berechtigte Interesse (Art. 6 Abs. 1 lit. f).<br><br>Wettbewerbsrechtlich (UWG §7) bewegen sich unverlangte geschäftliche E-Mails an Unternehmen in einem Graubereich und der Empfänger kann bitten, nicht wieder kontaktiert zu werden.<br><br>Wir minimieren das Risiko durch gezielte Ansprache (keine Massen-Spam), relevante Inhalte und professionelle Absender-Infrastruktur. Ein Restrisiko besteht &mdash; das sollte bei der Entscheidung berücksichtigt werden.</div></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Was ist die BAFA-Förderung und wie läuft der Antrag?</button>
+                <div class="faq-answer"><div class="faq-answer-inner">Die BAFA fördert Unternehmensberatungen für KMU mit bis zu 50% der Kosten (in Berlin). Als registrierter BAFA-Berater stellen wir den Antrag für euch, führen die Beratung durch und reichen den Verwendungsnachweis ein. Euer Aufwand: 5 Minuten Daten übermitteln und Dokumente unterschreiben. Die Förderrichtlinie gilt bis 31.12.2026.</div></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Was passiert nach den 3 Monaten?</button>
+                <div class="faq-answer"><div class="faq-answer-inner">Alle Assets (Leadlisten, CRM, Sequenzen, Prozesse) gehören euch dauerhaft. Ihr könnt den Outbound-Prozess selbst weiterführen oder mit uns einen Retainer vereinbaren. Viele Kunden entscheiden sich für eine Verlängerung, weil die Pipeline dann läuft &mdash; aber es gibt keine Pflicht.</div></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Wie unterscheidet sich das von einer klassischen Agentur?</button>
+                <div class="faq-answer"><div class="faq-answer-inner">Drei Dinge: Erstens, alle unsere Mitarbeiter sind provisionsbasiert an eurem Erfolg beteiligt &mdash; sie verdienen nur, wenn ihr Ergebnisse bekommt. Zweitens, ihr bekommt 3 Spezialisten statt eines generischen "Account Managers". Drittens, alles was wir aufbauen gehört euch &mdash; keine Lock-in-Effekte.</div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="schritte">
+    <div class="container">
+        <div class="section-label fade-in">Nächste Schritte</div>
+        <h2 class="section-title fade-in">Vom Ja zum ersten Lead</h2>
+        <div class="timeline fade-in">
+            <div class="timeline-item done">
+                <h4>Beratungsgespräch</h4>
+                <p>Erstgespräch geführt, Anforderungen besprochen.</p>
+            </div>
+            <div class="timeline-item done">
+                <h4>Individuelles Angebot</h4>
+                <p>Ihr seid hier — das Angebot liegt vor.</p>
+            </div>
+            <div class="timeline-item">
+                <h4>Vertragsgespräch</h4>
+                <p>Letzte Details klären und Vertrag unterzeichnen.</p>
+            </div>
+            <div class="timeline-item">
+                <h4>BAFA-Antrag stellen</h4>
+                <p>Wir übernehmen die Antragstellung. Euer Aufwand: 5 Minuten Daten.</p>
+            </div>
+            <div class="timeline-item">
+                <h4>KickOff-Workshop</h4>
+                <p>ICP-Definition, Kampagnenstrategie, CRM-Setup.</p>
+            </div>
+            <div class="timeline-item">
+                <h4>Leadliste &amp; Copywriting</h4>
+                <p>Zielgruppen-Recherche und E-Mail-Sequenzen für alle 4 Cluster.</p>
+            </div>
+            <div class="timeline-item">
+                <h4>Kampagnenstart</h4>
+                <p>Infrastruktur steht, Kampagnen gehen live.</p>
+            </div>
+            <div class="timeline-item">
+                <h4>Erste Leads</h4>
+                <p>Ab Monat 2, wenn die Kampagnen laufen.</p>
+            </div>
+        </div>
+        <div class="timeline-highlight fade-in">
+            Monat 1 = Setup. Ab Monat 2 kommen die ersten Leads.
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="cta">
+    <div class="container fade-in">
+        <h2>Bereit für planbare Neukunden?</h2>
+        <p>Lasst uns in einem kurzen Gespräch die letzten Details klären und den nächsten Schritt machen.</p>
+        <a href="https://calendly.com/tom-soto-schiller/grundwerk-next-steps" class="btn-primary" target="_blank">Termin buchen</a>
+        <div class="cta-contact">
+            <strong>Tom Soto Schiller</strong> &middot; Geschäftsführer, Grundwerk Digital<br>
+            <a href="mailto:tom.schiller@grundwerk.digital">tom.schiller@grundwerk.digital</a> &middot; <a href="tel:+4915566331147">+49 155 6633 1147</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    &copy; 2026 Grundwerk Digital &middot; Alle Rechte vorbehalten
+</footer>
+
+<script>
+    // Fade-in animation
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const item = btn.parentElement;
+            const wasOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+            if (!wasOpen) item.classList.add('open');
+        });
+    });
+
+    // Dot navigation — highlight active section
+    const dotLinks = document.querySelectorAll('.dot-nav a');
+    const sections = [];
+    dotLinks.forEach(link => {
+        const id = link.getAttribute('data-section');
+        const el = document.getElementById(id);
+        if (el) sections.push({ id, el, link });
+    });
+
+    function updateDots() {
+        const scrollY = window.scrollY + window.innerHeight / 3;
+        let active = sections[0];
+        for (const s of sections) {
+            if (s.el.offsetTop <= scrollY) active = s;
+        }
+        dotLinks.forEach(l => l.classList.remove('active'));
+        if (active) active.link.classList.add('active');
+    }
+
+    window.addEventListener('scroll', updateDots, { passive: true });
+    updateDots();
+</script>
+
+</body>
+</html>

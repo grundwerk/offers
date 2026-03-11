@@ -1,0 +1,6 @@
+# Only track index.html files and CNAME
+*
+!*/
+!*/index.html
+!CNAME
+!.gitignore
