@@ -7,7 +7,7 @@
     <link rel="icon" href="https://www.elitecag.com/Portal/elitecag/Images/Elemente/elitecag_Logo.svg" type="image/svg+xml">
     <script>
         (function(){
-            var code = '6960714412';
+            var code = '4827193056';
             var params = new URLSearchParams(window.location.search);
             if(params.get('secure') !== code){
                 document.documentElement.style.display='none';
@@ -43,860 +43,563 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', -apple-system, sans-serif;
             background: var(--bg);
             color: var(--text);
             font-size: 16px;
             line-height: 1.7;
             font-weight: 400;
-            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
 
-        /* ── Navigation ── */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            background: rgba(10, 10, 10, 0.85);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
-        }
-        .nav-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            height: 64px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .nav-logo {
-            font-weight: 700;
-            font-size: 0.95rem;
-            letter-spacing: -0.02em;
-        }
-        .nav-logo span { color: var(--accent); }
-        .nav-cta {
-            background: var(--accent);
-            color: #fff;
-            padding: 8px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 600;
-            transition: opacity 0.2s;
-        }
-        .nav-cta:hover { opacity: 0.85; }
-
-        /* ── Dot Navigation ── */
+        /* ═══ DOT NAVIGATION ═══ */
         .dot-nav {
             position: fixed;
-            left: 2rem;
+            left: 24px;
             top: 50%;
             transform: translateY(-50%);
             display: flex;
             flex-direction: column;
-            gap: 0.6rem;
-            z-index: 999;
+            gap: 14px;
+            z-index: 1000;
         }
-        .dot-link { text-decoration: none; display: flex; align-items: center; gap: 10px; position: relative; }
-        .dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.2); transition: all 0.3s; }
-        .dot-link.active .dot { background: var(--accent); box-shadow: 0 0 8px var(--accent-glow); transform: scale(1.3); }
-        .dot-link:hover .dot { background: rgba(255,255,255,0.5); }
-        .dot-tooltip {
-            font-size: 0.7rem; color: var(--text-muted); opacity: 0; transition: opacity 0.2s;
-            white-space: nowrap; pointer-events: none;
+        .dot-link { position: relative; display: flex; align-items: center; text-decoration: none; }
+        .dot-link .dot {
+            width: 10px; height: 10px; border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            transition: all 0.3s;
+        }
+        .dot-link.active .dot, .dot-link:hover .dot {
+            background: var(--accent);
+            box-shadow: 0 0 8px var(--accent-glow);
+            transform: scale(1.3);
+        }
+        .dot-link .dot-tooltip {
+            position: absolute; left: 22px; white-space: nowrap;
+            background: var(--bg-card); color: var(--text); padding: 4px 10px;
+            border-radius: 6px; font-size: 0.7rem; opacity: 0;
+            pointer-events: none; transition: opacity 0.2s;
+            border: 1px solid var(--border);
         }
         .dot-link:hover .dot-tooltip { opacity: 1; }
         @media (max-width: 900px) { .dot-nav { display: none; } }
 
-        /* ── Sections ── */
-        section {
-            padding: 100px 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+        /* ═══ NAVIGATION ═══ */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
         }
-        .section-label {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: var(--accent);
-            font-weight: 600;
-            margin-bottom: 12px;
+        .nav-inner {
+            max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+            display: flex; align-items: center; justify-content: space-between;
+            height: 64px;
         }
-        .section-title {
-            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-            font-weight: 800;
-            letter-spacing: -0.03em;
-            line-height: 1.2;
-            margin-bottom: 20px;
+        .nav-logo { font-weight: 600; font-size: 0.95rem; color: var(--text); }
+        .nav-cta {
+            padding: 8px 20px; background: var(--accent); color: #fff;
+            border-radius: 8px; text-decoration: none; font-weight: 600;
+            font-size: 0.85rem; transition: opacity 0.2s;
         }
-        .section-subtitle {
-            font-size: 1.05rem;
-            color: var(--text-muted);
-            max-width: 700px;
-            line-height: 1.7;
-        }
+        .nav-cta:hover { opacity: 0.85; }
 
-        /* ── Hero ── */
+        /* ═══ HERO ═══ */
         .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding-top: 100px;
-            position: relative;
-            overflow: hidden;
+            min-height: 100vh; display: flex; flex-direction: column;
+            align-items: center; justify-content: center; text-align: center;
+            padding: 120px 2rem 80px; position: relative;
+            background: radial-gradient(ellipse at 50% 30%, rgba(0, 74, 173, 0.12) 0%, transparent 60%);
         }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -200px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+        .hero::after {
+            content: ''; position: absolute; inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 40%, transparent 75%);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 40%, transparent 75%);
             pointer-events: none;
         }
         .hero-logo {
-            max-width: 280px;
-            margin-bottom: 40px;
-            position: relative;
-            z-index: 1;
+            max-width: 160px; margin-bottom: 32px; border-radius: 12px;
+            position: relative; z-index: 1;
         }
         .hero h1 {
-            font-size: clamp(2.2rem, 5vw, 3.5rem);
-            font-weight: 800;
-            letter-spacing: -0.03em;
-            line-height: 1.15;
-            max-width: 850px;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
+            font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 800;
+            letter-spacing: -0.03em; line-height: 1.15; max-width: 800px;
+            margin-bottom: 20px; position: relative; z-index: 1;
         }
-        .hero h1 .gradient {
-            background: linear-gradient(135deg, var(--accent), #818cf8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .gradient {
+            background: linear-gradient(135deg, var(--accent), #60a5fa);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             background-clip: text;
         }
         .hero-sub {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            max-width: 620px;
-            margin-bottom: 40px;
-            position: relative;
-            z-index: 1;
+            font-size: 1.1rem; color: var(--text-muted); max-width: 600px;
+            margin-bottom: 36px; position: relative; z-index: 1;
         }
         .hero-ctas {
-            display: flex;
-            gap: 16px;
-            position: relative;
-            z-index: 1;
+            display: flex; gap: 16px; flex-wrap: wrap;
+            justify-content: center; position: relative; z-index: 1;
         }
         .btn-primary {
-            background: var(--accent);
-            color: #fff;
-            padding: 14px 32px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: opacity 0.2s;
+            padding: 14px 32px; background: var(--accent); color: #fff;
+            border-radius: 10px; text-decoration: none; font-weight: 700;
+            font-size: 0.95rem; transition: opacity 0.2s;
         }
         .btn-primary:hover { opacity: 0.85; }
         .btn-secondary {
-            background: transparent;
-            color: var(--text);
-            padding: 14px 32px;
-            border-radius: 10px;
-            border: 1px solid var(--border);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
+            padding: 14px 32px; background: transparent; color: var(--text);
+            border: 1px solid var(--border); border-radius: 10px;
+            text-decoration: none; font-weight: 600; font-size: 0.95rem;
             transition: border-color 0.2s;
         }
-        .btn-secondary:hover { border-color: var(--text-muted); }
+        .btn-secondary:hover { border-color: var(--accent); }
 
-        /* ── Stat Bar ── */
+        /* ═══ LOGO TICKER ═══ */
+        .logo-ticker {
+            padding: 20px 0 80px; overflow: hidden; position: relative;
+        }
+        .logo-ticker::before, .logo-ticker::after {
+            content: ''; position: absolute; top: 0; bottom: 0; width: 20%; z-index: 2;
+            pointer-events: none;
+        }
+        .logo-ticker::before { left: 0; background: linear-gradient(to right, var(--bg) 60%, transparent); }
+        .logo-ticker::after { right: 0; background: linear-gradient(to left, var(--bg) 60%, transparent); }
+        .ticker-row {
+            display: flex; align-items: center; gap: 60px;
+            width: max-content;
+        }
+        .ticker-row.forward { animation: tickerForward 40s linear infinite; }
+        .ticker-row.reverse { animation: tickerReverse 45s linear infinite; margin-top: 20px; }
+        @keyframes tickerForward { from { transform: translateX(-25%); } to { transform: translateX(-75%); } }
+        @keyframes tickerReverse { from { transform: translateX(-75%); } to { transform: translateX(-25%); } }
+        .client-logo {
+            height: 28px; opacity: 0.4;
+            filter: grayscale(100%) brightness(2);
+            transition: opacity 0.3s, filter 0.3s;
+            flex-shrink: 0;
+        }
+        .client-logo:hover { opacity: 0.8; filter: grayscale(0%) brightness(1); }
+
+        /* ═══ STAT BAR ═══ */
         .stat-bar {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-            padding: 60px 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
         }
         .stat-item {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 28px 24px;
-            text-align: center;
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 28px 20px; text-align: center;
         }
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--accent);
-            letter-spacing: -0.03em;
-        }
-        .stat-label {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-top: 4px;
-        }
+        .stat-number { font-size: 2.5rem; font-weight: 800; color: var(--accent); }
+        .stat-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; }
 
-        /* ── Problem Section ── */
-        .problem-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 32px;
-            margin-top: 48px;
+        /* ═══ SECTIONS ═══ */
+        section { padding: 100px 2rem; max-width: 1200px; margin: 0 auto; }
+        .section-label {
+            font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em;
+            color: var(--accent); margin-bottom: 12px; font-weight: 600;
         }
-        .problem-cards { display: flex; flex-direction: column; gap: 20px; }
+        .section-title {
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 800;
+            letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 16px;
+        }
+        .section-subtitle {
+            font-size: 1rem; color: var(--text-muted); max-width: 700px;
+            margin-bottom: 48px;
+        }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* ═══ PROBLEM ═══ */
+        .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        .problem-cards { display: flex; flex-direction: column; gap: 16px; }
         .problem-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 28px;
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 24px;
         }
-        .problem-card .icon {
-            font-size: 1.5rem;
-            margin-bottom: 12px;
-        }
-        .problem-card h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-        .problem-card p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
+        .problem-card .icon { font-size: 1.5rem; margin-bottom: 12px; }
+        .problem-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+        .problem-card p { font-size: 0.85rem; color: var(--text-muted); }
         .solution-box {
-            background: var(--accent-glow);
-            border: 1px solid var(--border-accent);
-            border-radius: var(--radius);
-            padding: 36px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            background: linear-gradient(135deg, var(--accent-glow), rgba(0, 74, 173, 0.08));
+            border: 1px solid var(--border-accent); border-radius: var(--radius);
+            padding: 32px;
         }
-        .solution-box h3 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 16px;
-            color: var(--accent);
-        }
-        .solution-box p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            margin-bottom: 16px;
-        }
+        .solution-box h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 16px; color: var(--accent); }
+        .solution-box p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 16px; }
         .solution-highlight {
-            background: var(--bg-card);
-            border-radius: var(--radius-sm);
-            padding: 16px 20px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-top: 8px;
+            background: rgba(0,0,0,0.3); border-radius: var(--radius-sm);
+            padding: 16px 20px; display: flex; align-items: center; gap: 16px;
         }
-        .solution-highlight .num {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: var(--green);
-        }
-        .solution-highlight .label {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
+        .solution-highlight .num { font-size: 1.5rem; font-weight: 800; color: var(--green); }
+        .solution-highlight .label { font-size: 0.8rem; color: var(--text-muted); }
 
-        /* ── Explainer Section ── */
-        .explainer-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin-top: 48px;
-        }
-        .explainer-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 28px;
-        }
-        .explainer-card .icon { font-size: 2rem; margin-bottom: 16px; }
-        .explainer-card h4 { font-weight: 700; margin-bottom: 8px; }
-        .explainer-card p { font-size: 0.88rem; color: var(--text-muted); }
-
-        /* ── Process Steps ── */
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 20px;
-            margin-top: 48px;
-        }
-        .process-step {
-            text-align: center;
-            position: relative;
-        }
-        .step-num {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: var(--accent);
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin: 0 auto 16px;
-        }
-        .process-step h4 {
-            font-size: 0.95rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-        .process-step p {
-            font-size: 0.82rem;
-            color: var(--text-muted);
-        }
-
-        /* ── Campaign Cards ── */
-        .campaign-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin-top: 48px;
-        }
-        .campaign-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 28px;
-        }
-        .campaign-card .icon { font-size: 2rem; margin-bottom: 12px; }
-        .campaign-card h4 { font-weight: 700; margin-bottom: 8px; }
-        .campaign-card p { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 8px; }
-        .campaign-tag {
-            display: inline-block;
-            background: var(--accent-glow);
-            color: var(--accent);
-            font-size: 0.75rem;
-            font-weight: 600;
-            padding: 4px 10px;
-            border-radius: 6px;
-            margin-right: 6px;
-            margin-top: 6px;
-        }
-
-        /* ── Prognose ── */
-        .prognose-table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
-            margin-top: 48px;
-            border-radius: var(--radius);
-            overflow: hidden;
-            border: 1px solid var(--border);
-        }
-        .prognose-table th, .prognose-table td {
-            padding: 16px 24px;
-            text-align: left;
-            border-bottom: 1px solid var(--border);
-        }
-        .prognose-table th {
-            background: var(--bg-card);
-            font-weight: 700;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            color: var(--text-muted);
-        }
-        .prognose-table td { background: var(--bg); font-size: 0.95rem; }
-        .prognose-table tr:last-child td {
-            font-weight: 700;
-            background: var(--accent-glow);
-            border-bottom: none;
-        }
-
-        /* ── Social Proof ── */
-        .proof-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin-top: 48px;
-        }
-        .proof-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 28px;
-        }
-        .proof-result {
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: var(--green);
-            margin-bottom: 4px;
-        }
-        .proof-time {
-            font-size: 0.82rem;
-            color: var(--text-muted);
-            margin-bottom: 16px;
-        }
-        .proof-company {
-            font-size: 0.95rem;
-            font-weight: 600;
-        }
-        .proof-city {
-            font-size: 0.8rem;
-            color: var(--text-dim);
-        }
-
-        /* ── Team ── */
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin-top: 48px;
-        }
-        .team-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 28px;
-            text-align: center;
-        }
-        .team-icon {
-            font-size: 2.5rem;
-            margin-bottom: 16px;
-        }
-        .team-card h4 { font-weight: 700; margin-bottom: 8px; }
-        .team-card p { font-size: 0.88rem; color: var(--text-muted); }
-        .team-banner {
-            background: var(--green-glow);
-            border: 1px solid rgba(34, 197, 94, 0.2);
-            border-radius: var(--radius);
-            padding: 20px 28px;
-            margin-top: 24px;
-            text-align: center;
-            font-weight: 600;
-            color: var(--green);
-        }
-
-        /* ── Datenschutz ── */
-        .dsgvo-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
-            margin-top: 48px;
-        }
-        .dsgvo-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 28px;
-        }
-        .dsgvo-card h4 {
-            font-weight: 700;
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .dsgvo-list {
-            list-style: none;
-        }
-        .dsgvo-list li {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            padding: 8px 0;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-        }
-        .dsgvo-list li:last-child { border-bottom: none; }
-        .dsgvo-check { color: var(--green); font-weight: 700; flex-shrink: 0; }
-        .dsgvo-banner {
-            background: var(--accent-glow);
-            border: 1px solid var(--border-accent);
-            border-radius: var(--radius);
-            padding: 24px 28px;
-            margin-top: 24px;
-            text-align: center;
-        }
-        .dsgvo-banner p { font-size: 0.9rem; color: var(--text-muted); }
-        .dsgvo-banner strong { color: var(--accent); }
-
-        /* ── Offer ── */
-        .offer-card {
-            background: var(--bg-card);
-            border: 2px solid var(--border-accent);
-            border-radius: var(--radius);
-            padding: 40px;
-            max-width: 700px;
-            margin: 48px auto 0;
-            position: relative;
-        }
-        .offer-badge {
-            position: absolute;
-            top: -14px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--accent);
-            color: #fff;
-            font-size: 0.78rem;
-            font-weight: 700;
-            padding: 6px 20px;
-            border-radius: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-        }
-        .offer-card h3 {
-            font-size: 1.4rem;
-            font-weight: 800;
-            text-align: center;
-            margin-bottom: 8px;
-        }
-        .offer-card .offer-desc {
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 28px;
-        }
-        .offer-price {
-            text-align: center;
-            margin-bottom: 28px;
-        }
-        .offer-price .price {
-            font-size: 2.5rem;
-            font-weight: 800;
-        }
-        .offer-price .price-note {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-        .offer-features {
-            list-style: none;
-            margin-bottom: 28px;
-        }
-        .offer-features li {
-            padding: 10px 0;
-            border-bottom: 1px solid var(--border);
-            font-size: 0.92rem;
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-        }
-        .offer-features li:last-child { border-bottom: none; }
-        .feature-check { color: var(--green); font-weight: 700; flex-shrink: 0; }
-        .offer-total {
-            background: var(--accent-glow);
-            border-radius: var(--radius-sm);
-            padding: 20px;
-            text-align: center;
-            margin-top: 16px;
-        }
-        .offer-total .total-label { font-size: 0.85rem; color: var(--text-muted); }
-        .offer-total .total-price { font-size: 1.8rem; font-weight: 800; color: var(--accent); }
-
-        /* ── Guarantee ── */
-        .guarantee {
-            text-align: center;
-            padding: 80px 2rem;
-        }
-        .guarantee-badge {
-            display: inline-block;
-            background: var(--green-glow);
-            color: var(--green);
-            font-size: 0.8rem;
-            font-weight: 700;
-            padding: 8px 20px;
-            border-radius: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            margin-bottom: 20px;
-        }
-        .guarantee h2 {
-            font-size: clamp(1.6rem, 3vw, 2.4rem);
-            font-weight: 800;
-            letter-spacing: -0.03em;
-            max-width: 750px;
-            margin: 0 auto 16px;
-        }
-        .guarantee p {
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* ── ROI ── */
-        .roi-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin-top: 48px;
-        }
-        .roi-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 28px;
-            text-align: center;
-        }
-        .roi-card.highlight {
-            border-color: var(--border-accent);
-            background: linear-gradient(180deg, var(--accent-glow), var(--bg-card));
-        }
-        .roi-label {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--text-muted);
-            margin-bottom: 12px;
-            font-weight: 600;
-        }
-        .roi-number {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--green);
-            margin-bottom: 8px;
-        }
-        .roi-detail {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        /* ── Comparison Table ── */
-        .comparison-table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
-            margin-top: 48px;
-            border-radius: var(--radius);
-            overflow: hidden;
-            border: 1px solid var(--border);
-        }
-        .comparison-table th, .comparison-table td {
-            padding: 16px 20px;
-            text-align: left;
-            border-bottom: 1px solid var(--border);
-            font-size: 0.9rem;
-        }
-        .comparison-table th {
-            background: var(--bg-card);
-            font-weight: 700;
-            font-size: 0.82rem;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            color: var(--text-muted);
-        }
-        .comparison-table td { background: var(--bg); }
-        .comparison-table tr:last-child td { border-bottom: none; }
-        .comparison-table .good { color: var(--green); font-weight: 600; }
-        .comparison-table .bad { color: var(--red); font-weight: 600; }
-        .comparison-table .recommended {
-            background: var(--accent-glow);
-            font-weight: 600;
-        }
-
-        /* ── Bonuses ── */
-        .bonus-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
-            margin-top: 48px;
-        }
-        .bonus-item {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-            padding: 20px 24px;
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-        }
-        .bonus-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 2px; }
-        .bonus-item h4 { font-size: 0.92rem; font-weight: 700; margin-bottom: 4px; }
-        .bonus-item p { font-size: 0.82rem; color: var(--text-muted); }
-
-        /* ── Timeline ── */
-        .timeline {
-            margin-top: 48px;
-            position: relative;
-            padding-left: 36px;
-        }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 12px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--border);
-        }
-        .timeline-item {
-            position: relative;
-            margin-bottom: 32px;
-        }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -30px;
-            top: 6px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--accent);
-            border: 3px solid var(--bg);
-        }
-        .timeline-item h4 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
-        .timeline-item p { font-size: 0.88rem; color: var(--text-muted); }
-        .timeline-item.done::before { background: var(--green); content: '\2713'; color: #fff; font-size: 8px; display: flex; align-items: center; justify-content: center; }
-        .timeline-item.done h4 { color: var(--green); }
-        .timeline-highlight {
-            background: var(--green-glow);
-            border: 1px solid rgba(34, 197, 94, 0.2);
-            border-radius: var(--radius);
-            padding: 20px 28px;
-            margin-top: 32px;
-            text-align: center;
-            margin-left: -36px;
-        }
-        .timeline-highlight p { font-weight: 600; color: var(--green); }
-
-        /* ── FAQ ── */
-        .faq-list { margin-top: 48px; }
-        .faq-item {
-            border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-            margin-bottom: 12px;
-            overflow: hidden;
-        }
-        .faq-question {
-            width: 100%;
-            background: var(--bg-card);
-            border: none;
-            color: var(--text);
-            font-family: 'Inter', sans-serif;
-            font-size: 0.95rem;
-            font-weight: 600;
-            padding: 20px 24px;
-            text-align: left;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .faq-question:hover { background: var(--bg-card-hover); }
-        .faq-arrow {
-            transition: transform 0.3s;
-            color: var(--text-muted);
-        }
-        .faq-item.open .faq-arrow { transform: rotate(180deg); }
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-        .faq-answer-inner {
-            padding: 0 24px 20px;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        /* ── CTA ── */
-        .cta-section {
-            text-align: center;
-            padding: 100px 2rem;
-        }
-        .cta-section h2 {
-            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-            font-weight: 800;
-            letter-spacing: -0.03em;
-            margin-bottom: 16px;
-        }
-        .cta-section .cta-sub {
-            color: var(--text-muted);
-            margin-bottom: 32px;
-            font-size: 1.05rem;
-        }
-        .cta-contact {
-            margin-top: 32px;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-        .cta-contact a { color: var(--accent); text-decoration: none; }
-
-        /* ── Footer ── */
-        footer {
-            text-align: center;
-            padding: 32px 2rem;
-            border-top: 1px solid var(--border);
-            font-size: 0.8rem;
-            color: var(--text-dim);
-        }
-
-        /* ── Fade In ── */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ── Context Boxes (Nachversand mode) ── */
+        /* ═══ CONTEXT BOX ═══ */
         .context-box {
-            background: var(--bg-accent);
-            border-left: 3px solid var(--accent);
-            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-            padding: 16px 20px;
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-left: 3px solid var(--accent); border-radius: var(--radius-sm);
+            padding: 20px 24px; font-size: 0.9rem; color: var(--text-muted);
             margin-top: 24px;
-            font-size: 0.88rem;
-            color: var(--text-muted);
         }
         .context-box strong { color: var(--text); }
 
-        /* ── Responsive ── */
+        /* ═══ EXPLAINER (Was ist Cold Email?) ═══ */
+        .explainer-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px; margin-bottom: 32px;
+        }
+        .explainer-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 28px;
+        }
+        .explainer-card .icon { font-size: 1.5rem; margin-bottom: 12px; }
+        .explainer-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+        .explainer-card p { font-size: 0.85rem; color: var(--text-muted); }
+
+        /* ═══ PROCESS ═══ */
+        .process-steps {
+            display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px;
+        }
+        .process-step {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 28px 20px; text-align: center;
+        }
+        .step-num {
+            width: 40px; height: 40px; border-radius: 50%;
+            background: var(--accent); color: #fff; display: flex;
+            align-items: center; justify-content: center; font-weight: 800;
+            margin: 0 auto 16px; font-size: 1rem;
+        }
+        .process-step h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; }
+        .process-step p { font-size: 0.8rem; color: var(--text-muted); }
+
+        /* ═══ TOOL TICKER ═══ */
+        .tool-ticker {
+            padding: 60px 0; overflow: hidden; position: relative;
+            max-width: 100vw;
+        }
+        .ticker-header {
+            text-align: center; padding: 0 2rem; margin-bottom: 32px;
+        }
+        .ticker-header h3 {
+            font-size: 1.3rem; font-weight: 700;
+        }
+        .ticker-header h3 span { color: var(--green); }
+        .ticker-label {
+            font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;
+        }
+        .tool-ticker::before, .tool-ticker::after {
+            content: ''; position: absolute; top: 0; bottom: 0; width: 20%;
+            z-index: 2; pointer-events: none;
+        }
+        .tool-ticker::before { left: 0; background: linear-gradient(to right, var(--bg) 60%, transparent); }
+        .tool-ticker::after { right: 0; background: linear-gradient(to left, var(--bg) 60%, transparent); }
+        .tool-row {
+            display: flex; align-items: center; gap: 16px;
+            width: max-content;
+        }
+        .tool-row.forward { animation: tickerForward 35s linear infinite; }
+        .tool-row.reverse { animation: tickerReverse 40s linear infinite; margin-top: 12px; }
+        .tool-pill {
+            display: flex; align-items: center; gap: 8px;
+            padding: 8px 18px; border-radius: 100px;
+            border: 1px solid var(--border); background: var(--bg-card);
+            font-size: 0.8rem; font-weight: 500; white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .tool-dot {
+            width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+        }
+        .tool-dot.blue { background: #3b82f6; }
+        .tool-dot.green { background: #22c55e; }
+        .tool-dot.purple { background: #a855f7; }
+        .tool-dot.orange { background: #f97316; }
+        .tool-dot.cyan { background: #06b6d4; }
+        .tool-dot.red { background: #ef4444; }
+
+        /* ═══ CAMPAIGN ═══ */
+        .campaign-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .campaign-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 32px;
+        }
+        .campaign-card .icon { font-size: 1.5rem; margin-bottom: 12px; }
+        .campaign-card h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+        .campaign-card p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px; }
+        .campaign-tag {
+            display: inline-block; padding: 4px 12px; border-radius: 100px;
+            background: var(--accent-glow); color: var(--accent);
+            font-size: 0.7rem; font-weight: 600; margin-right: 6px;
+        }
+
+        /* ═══ PROGNOSE TABLE ═══ */
+        .prognose-table {
+            width: 100%; border-collapse: collapse; margin-top: 32px;
+        }
+        .prognose-table th, .prognose-table td {
+            padding: 14px 20px; text-align: left; font-size: 0.9rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .prognose-table th {
+            font-weight: 700; font-size: 0.8rem; text-transform: uppercase;
+            letter-spacing: 0.05em; color: var(--text-muted);
+        }
+        .prognose-table tbody tr:last-child {
+            font-weight: 700; background: var(--accent-glow);
+        }
+        .prognose-table tbody tr:last-child td { border-bottom: none; color: var(--accent); }
+
+        /* ═══ SOCIAL PROOF ═══ */
+        .proof-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .proof-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 28px;
+        }
+        .proof-result { font-size: 1.5rem; font-weight: 800; color: var(--green); }
+        .proof-time { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 12px; }
+        .proof-company { font-weight: 600; font-size: 0.95rem; }
+        .proof-city { font-size: 0.8rem; color: var(--text-dim); }
+
+        /* ═══ TEAM ═══ */
+        .team-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .team-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 32px; text-align: center;
+        }
+        .team-icon { font-size: 2rem; margin-bottom: 16px; }
+        .team-card h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+        .team-card p { font-size: 0.85rem; color: var(--text-muted); }
+        .team-banner {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius-sm); padding: 20px; text-align: center;
+            margin-top: 20px; font-size: 0.85rem; color: var(--text-muted);
+        }
+
+        /* ═══ DSGVO ═══ */
+        .dsgvo-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+        }
+        .dsgvo-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 32px;
+        }
+        .dsgvo-card h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; }
+        .dsgvo-list { list-style: none; }
+        .dsgvo-list li {
+            display: flex; align-items: flex-start; gap: 10px;
+            margin-bottom: 12px; font-size: 0.85rem; color: var(--text-muted);
+        }
+        .dsgvo-check { color: var(--green); font-weight: 700; flex-shrink: 0; }
+        .dsgvo-banner {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius-sm); padding: 24px; margin-top: 24px;
+            font-size: 0.85rem; color: var(--text-muted);
+        }
+        .dsgvo-banner strong { color: var(--text); }
+
+        /* ═══ OFFER ═══ */
+        .offer-card {
+            max-width: 700px; margin: 0 auto;
+            background: linear-gradient(135deg, var(--accent-glow), rgba(0, 74, 173, 0.06));
+            border: 1px solid var(--border-accent);
+            border-radius: var(--radius); padding: 40px; position: relative;
+        }
+        .offer-badge {
+            position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+            background: var(--accent); color: #fff; padding: 6px 20px;
+            border-radius: 100px; font-size: 0.75rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.05em;
+        }
+        .offer-card h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 8px; text-align: center; }
+        .offer-desc { font-size: 0.9rem; color: var(--text-muted); text-align: center; margin-bottom: 28px; }
+        .offer-price { text-align: center; margin-bottom: 28px; }
+        .offer-price .price { font-size: 2.5rem; font-weight: 800; }
+        .offer-price .price span { font-size: 1rem; font-weight: 400; color: var(--text-muted); }
+        .offer-price .price-note { font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; }
+        .offer-features { list-style: none; margin-bottom: 28px; }
+        .offer-features li {
+            display: flex; align-items: flex-start; gap: 10px;
+            margin-bottom: 10px; font-size: 0.9rem;
+        }
+        .feature-check { color: var(--green); font-weight: 700; flex-shrink: 0; }
+        .offer-totals { display: flex; gap: 16px; margin-top: 8px; }
+        .offer-total {
+            flex: 1; background: rgba(0,0,0,0.3); border-radius: var(--radius-sm);
+            padding: 20px; text-align: center;
+        }
+        .total-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+        .total-price { font-size: 1.4rem; font-weight: 800; margin: 4px 0; }
+
+        /* ═══ GUARANTEE ═══ */
+        .guarantee {
+            text-align: center; padding: 80px 2rem;
+            background: radial-gradient(ellipse at 50% 50%, var(--green-glow) 0%, transparent 70%);
+        }
+        .guarantee-badge {
+            display: inline-block; padding: 8px 24px; border-radius: 100px;
+            background: var(--green-glow); color: var(--green);
+            font-weight: 700; font-size: 0.85rem; margin-bottom: 20px;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+        .guarantee h2 {
+            font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800;
+            max-width: 700px; margin: 0 auto 16px; line-height: 1.3;
+        }
+        .guarantee p { font-size: 0.9rem; color: var(--text-muted); max-width: 600px; margin: 0 auto; }
+
+        /* ═══ ROI ═══ */
+        .roi-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .roi-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 32px; text-align: center;
+        }
+        .roi-card.highlight {
+            border-color: var(--border-accent);
+            background: linear-gradient(135deg, var(--accent-glow), var(--bg-card));
+        }
+        .roi-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 8px; }
+        .roi-number { font-size: 2rem; font-weight: 800; color: var(--green); margin-bottom: 12px; }
+        .roi-detail { font-size: 0.85rem; color: var(--text-muted); }
+
+        /* ═══ COMPARISON TABLE ═══ */
+        .comparison-table {
+            width: 100%; border-collapse: separate; border-spacing: 0;
+            border-radius: var(--radius); overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        .comparison-table th, .comparison-table td {
+            padding: 14px 20px; text-align: left; font-size: 0.85rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .comparison-table thead th {
+            background: var(--bg-card); font-weight: 700; font-size: 0.8rem;
+            text-transform: uppercase; letter-spacing: 0.05em;
+        }
+        .comparison-table thead th.recommended {
+            background: var(--accent-glow); color: var(--accent);
+        }
+        .comparison-table tbody tr:last-child td { border-bottom: none; }
+        .comparison-table td.recommended { background: rgba(0, 74, 173, 0.04); }
+        .comparison-table .good { color: var(--green); }
+        .comparison-table .bad { color: var(--red); }
+
+        /* ═══ BONUS ═══ */
+        .bonus-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 16px;
+        }
+        .bonus-item {
+            display: flex; align-items: flex-start; gap: 16px;
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 24px;
+        }
+        .bonus-icon { font-size: 1.5rem; flex-shrink: 0; }
+        .bonus-item h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 4px; }
+        .bonus-item p { font-size: 0.8rem; color: var(--text-muted); }
+
+        /* ═══ TIMELINE ═══ */
+        .timeline { position: relative; padding-left: 40px; }
+        .timeline::before {
+            content: ''; position: absolute; left: 14px; top: 0; bottom: 0;
+            width: 2px; background: var(--border);
+        }
+        .timeline-item {
+            position: relative; margin-bottom: 32px; padding: 20px 24px;
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+        }
+        .timeline-item::before {
+            content: ''; position: absolute; left: -34px; top: 24px;
+            width: 12px; height: 12px; border-radius: 50%;
+            background: var(--accent); border: 2px solid var(--bg);
+        }
+        .timeline-item h4 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+        .timeline-item p { font-size: 0.85rem; color: var(--text-muted); }
+        .timeline-item.done::before {
+            background: var(--green); content: '\2713'; color: #fff;
+            font-size: 0.6rem; display: flex; align-items: center;
+            justify-content: center; width: 16px; height: 16px; left: -36px; top: 22px;
+        }
+        .timeline-item.done h4 { color: var(--green); }
+        .timeline-highlight {
+            background: var(--accent-glow); border: 1px solid var(--border-accent);
+            border-radius: var(--radius-sm); padding: 20px; text-align: center;
+            margin-top: 16px; font-weight: 600;
+        }
+
+        /* ═══ FAQ ═══ */
+        .faq-list { max-width: 800px; }
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+        }
+        .faq-question {
+            width: 100%; padding: 20px 0; background: none; border: none;
+            color: var(--text); font-size: 0.95rem; font-weight: 600;
+            text-align: left; cursor: pointer; display: flex;
+            justify-content: space-between; align-items: center;
+            font-family: inherit;
+        }
+        .faq-arrow { font-size: 0.7rem; transition: transform 0.3s; color: var(--text-muted); }
+        .faq-item.open .faq-arrow { transform: rotate(180deg); }
+        .faq-answer {
+            max-height: 0; overflow: hidden; transition: max-height 0.3s ease;
+        }
+        .faq-answer-inner {
+            padding: 0 0 20px; font-size: 0.85rem; color: var(--text-muted); line-height: 1.7;
+        }
+
+        /* ═══ CTA ═══ */
+        .cta-section { text-align: center; padding: 100px 2rem; }
+        .cta-section h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 800;
+            margin-bottom: 16px;
+        }
+        .cta-sub { font-size: 1rem; color: var(--text-muted); margin-bottom: 32px; }
+        .cta-contact { margin-top: 32px; font-size: 0.85rem; color: var(--text-muted); }
+        .cta-contact a { color: var(--accent); text-decoration: none; }
+        .cta-contact p { margin-bottom: 4px; }
+
+        /* ═══ FOOTER ═══ */
+        footer {
+            text-align: center; padding: 40px 2rem; font-size: 0.75rem;
+            color: var(--text-dim); border-top: 1px solid var(--border);
+        }
+
+        /* ═══ RESPONSIVE ═══ */
         @media (max-width: 900px) {
             .problem-grid, .dsgvo-grid { grid-template-columns: 1fr; }
             .process-steps { grid-template-columns: repeat(2, 1fr); }
-            .team-grid, .roi-grid, .proof-grid, .campaign-grid, .explainer-grid { grid-template-columns: 1fr; }
-            .bonus-grid { grid-template-columns: 1fr; }
+            .team-grid, .roi-grid { grid-template-columns: 1fr; }
+            .offer-totals { flex-direction: column; }
             .stat-bar { grid-template-columns: repeat(2, 1fr); }
-            .comparison-table { font-size: 0.82rem; }
         }
         @media (max-width: 600px) {
             section { padding: 60px 1.25rem; }
             .process-steps { grid-template-columns: 1fr; }
-            .stat-bar { grid-template-columns: repeat(2, 1fr); }
-            .hero-ctas { flex-direction: column; }
+            .hero-ctas { flex-direction: column; align-items: center; }
         }
     </style>
 </head>
 <body>
 
-<!-- ══════════════════ NAV ══════════════════ -->
-<nav>
-    <div class="nav-inner">
-        <div class="nav-logo"><span style="color: var(--accent); font-weight: 800;">elitec AG</span> x Grundwerk Digital</div>
-        <a href="#angebot" class="nav-cta">Zum Angebot</a>
-    </div>
-</nav>
-
-<!-- ══════════════════ DOT NAV ══════════════════ -->
+<!-- ═══ DOT NAVIGATION ═══ -->
 <div class="dot-nav">
-    <a href="#hero" class="dot-link active" data-section="hero"><span class="dot"></span><span class="dot-tooltip">Start</span></a>
+    <a href="#hero" class="dot-link" data-section="hero"><span class="dot"></span><span class="dot-tooltip">Start</span></a>
     <a href="#stats" class="dot-link" data-section="stats"><span class="dot"></span><span class="dot-tooltip">Fakten</span></a>
     <a href="#problem" class="dot-link" data-section="problem"><span class="dot"></span><span class="dot-tooltip">Problem</span></a>
     <a href="#prozess" class="dot-link" data-section="prozess"><span class="dot"></span><span class="dot-tooltip">Prozess</span></a>
@@ -906,10 +609,18 @@
     <a href="#timeline" class="dot-link" data-section="timeline"><span class="dot"></span><span class="dot-tooltip">Ablauf</span></a>
 </div>
 
-<!-- ══════════════════ HERO ══════════════════ -->
+<!-- ═══ NAVIGATION ═══ -->
+<nav>
+    <div class="nav-inner">
+        <div class="nav-logo"><span style="color: var(--accent); font-weight: 800;">elitec AG</span> x Grundwerk Digital</div>
+        <a href="#angebot" class="nav-cta">Zum Angebot</a>
+    </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
 <section id="hero" class="hero">
     <img src="https://www.elitecag.com/Portal/elitecag/Images/Elemente/elitecag_Logo_negativ.svg" alt="elitec AG Logo" class="hero-logo">
-    <h1>Mehr Neukunden-Termine <span class="gradient">ohne zusaetzlichen Aufwand</span> fuer den Aussendienst</h1>
+    <h1>Mehr Neukunden-Termine <span class="gradient">ohne zusätzlichen Aufwand</span> für den Außendienst</h1>
     <p class="hero-sub">Wir finden automatisiert die richtigen Ansprechpartner, kontaktieren sie per E-Mail und LinkedIn — und liefern qualifizierte Termine direkt in eure Pipeline.</p>
     <div class="hero-ctas">
         <a href="#angebot" class="btn-primary">Angebot ansehen</a>
@@ -917,7 +628,71 @@
     </div>
 </section>
 
-<!-- ══════════════════ STAT BAR ══════════════════ -->
+<!-- ═══ KUNDEN-LOGO-TICKER ═══ -->
+<div class="logo-ticker">
+    <div class="ticker-row forward">
+        <img src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel" class="client-logo">
+        <img src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes" class="client-logo">
+        <img src="https://www.hrs.de/_next/static/media/hrs_logo_red.7cccdfd9.svg" alt="HRS" class="client-logo">
+        <img src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO" class="client-logo">
+        <img src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview" class="client-logo">
+        <img src="https://cdn.prod.website-files.com/673602757a06be245e484913/678d467526d221b55f5dc3e0_mc-logo-1-black.svg" alt="Michelscom" class="client-logo">
+        <img src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang" class="client-logo">
+        <img src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel" class="client-logo">
+        <img src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes" class="client-logo">
+        <img src="https://www.hrs.de/_next/static/media/hrs_logo_red.7cccdfd9.svg" alt="HRS" class="client-logo">
+        <img src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO" class="client-logo">
+        <img src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview" class="client-logo">
+        <img src="https://cdn.prod.website-files.com/673602757a06be245e484913/678d467526d221b55f5dc3e0_mc-logo-1-black.svg" alt="Michelscom" class="client-logo">
+        <img src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang" class="client-logo">
+        <img src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel" class="client-logo">
+        <img src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes" class="client-logo">
+        <img src="https://www.hrs.de/_next/static/media/hrs_logo_red.7cccdfd9.svg" alt="HRS" class="client-logo">
+        <img src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO" class="client-logo">
+        <img src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview" class="client-logo">
+        <img src="https://cdn.prod.website-files.com/673602757a06be245e484913/678d467526d221b55f5dc3e0_mc-logo-1-black.svg" alt="Michelscom" class="client-logo">
+        <img src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang" class="client-logo">
+        <img src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel" class="client-logo">
+        <img src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes" class="client-logo">
+        <img src="https://www.hrs.de/_next/static/media/hrs_logo_red.7cccdfd9.svg" alt="HRS" class="client-logo">
+        <img src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO" class="client-logo">
+        <img src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview" class="client-logo">
+        <img src="https://cdn.prod.website-files.com/673602757a06be245e484913/678d467526d221b55f5dc3e0_mc-logo-1-black.svg" alt="Michelscom" class="client-logo">
+        <img src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang" class="client-logo">
+    </div>
+    <div class="ticker-row reverse">
+        <img src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges" class="client-logo">
+        <img src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios" class="client-logo">
+        <img src="https://d2bw95mh2ee04s.cloudfront.net/prod/content/wp-content/uploads/2025/01/02134814/Property-Logo-Main.svg" alt="SellerLogic" class="client-logo">
+        <img src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly" class="client-logo">
+        <img src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy" class="client-logo">
+        <img src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic" class="client-logo">
+        <img src="https://digitalnow.online/logo.png" alt="Digital Now" class="client-logo">
+        <img src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges" class="client-logo">
+        <img src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios" class="client-logo">
+        <img src="https://d2bw95mh2ee04s.cloudfront.net/prod/content/wp-content/uploads/2025/01/02134814/Property-Logo-Main.svg" alt="SellerLogic" class="client-logo">
+        <img src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly" class="client-logo">
+        <img src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy" class="client-logo">
+        <img src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic" class="client-logo">
+        <img src="https://digitalnow.online/logo.png" alt="Digital Now" class="client-logo">
+        <img src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges" class="client-logo">
+        <img src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios" class="client-logo">
+        <img src="https://d2bw95mh2ee04s.cloudfront.net/prod/content/wp-content/uploads/2025/01/02134814/Property-Logo-Main.svg" alt="SellerLogic" class="client-logo">
+        <img src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly" class="client-logo">
+        <img src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy" class="client-logo">
+        <img src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic" class="client-logo">
+        <img src="https://digitalnow.online/logo.png" alt="Digital Now" class="client-logo">
+        <img src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges" class="client-logo">
+        <img src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios" class="client-logo">
+        <img src="https://d2bw95mh2ee04s.cloudfront.net/prod/content/wp-content/uploads/2025/01/02134814/Property-Logo-Main.svg" alt="SellerLogic" class="client-logo">
+        <img src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly" class="client-logo">
+        <img src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy" class="client-logo">
+        <img src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic" class="client-logo">
+        <img src="https://digitalnow.online/logo.png" alt="Digital Now" class="client-logo">
+    </div>
+</div>
+
+<!-- ═══ STAT BAR ═══ -->
 <div id="stats" class="stat-bar fade-in">
     <div class="stat-item">
         <div class="stat-number">500k+</div>
@@ -937,33 +712,38 @@
     </div>
 </div>
 
-<!-- ══════════════════ PROBLEM ══════════════════ -->
+<!-- ═══ PROBLEM ═══ -->
 <section id="problem" class="fade-in">
     <div class="section-label">Die Herausforderung</div>
-    <div class="section-title">Warum der Aussendienst heute nicht ausgelastet ist</div>
+    <div class="section-title">Warum der Außendienst heute nicht ausgelastet ist</div>
     <div class="section-subtitle">Euer Team ist stark in der Projektarbeit — aber die Neukundengewinnung bleibt auf der Strecke.</div>
 
     <div class="problem-grid">
         <div class="problem-cards">
             <div class="problem-card">
                 <div class="icon">&#9200;</div>
-                <h3>Zeitaufwaendige manuelle Recherche</h3>
-                <p>12 Euro pro Datensatz, nur 5% Trefferquote auf den richtigen Ansprechpartner. Stunden gehen fuer Google-Suche und LinkedIn-Recherche drauf — Zeit, die im Aussendienst fehlt.</p>
+                <h3>Zeitaufwändige manuelle Recherche</h3>
+                <p>12 Euro pro Datensatz, nur 5% Trefferquote auf den richtigen Ansprechpartner. Stunden gehen für Google-Suche und LinkedIn-Recherche drauf — Zeit, die im Außendienst fehlt.</p>
             </div>
             <div class="problem-card">
                 <div class="icon">&#128200;</div>
                 <h3>Zu wenig Neukunden-Termine</h3>
-                <p>8 Termine pro Woche statt 15-30. 90 fehlende Termine pro Monat ueber 3 Aussendienstler. Im Januar allein 100.000 Euro unter Budget.</p>
+                <p>Nur 6-7 Neukunden-Termine pro Woche statt 15-30. Im letzten Jahr wurden 90 Termine zu wenig generiert. Das bremst das Wachstum erheblich.</p>
             </div>
             <div class="problem-card">
                 <div class="icon">&#128260;</div>
                 <h3>Projektarbeit frisst Akquise-Zeit</h3>
-                <p>Die Betreuung bestehender Projekte laesst kaum Raum fuer Neukundengewinnung. 8-9 von 15 Terminen sind Bestandskunden — der Aussendienst kommt nicht zum Wachsen.</p>
+                <p>8-9 von 15 wöchentlichen Terminen sind Bestandskunden. Michael kann nicht gleichzeitig 15 Termine machen und alle Projekte begleiten — das ist nicht machbar.</p>
+            </div>
+            <div class="problem-card">
+                <div class="icon">&#128196;</div>
+                <h3>Datensätze veralten schnell</h3>
+                <p>Einkäufer wechseln, Kontakte sind nicht mehr aktuell. Die Gefahr: Zu viele Datensätze gekauft, die dann veraltet sind und nicht abgearbeitet werden können.</p>
             </div>
         </div>
         <div class="solution-box">
-            <h3>Die Loesung</h3>
-            <p>Ein automatisiertes System, das die richtigen Einkaufsleiter und Entscheider findet, personalisiert kontaktiert und nur die qualifizierten Rueckmeldungen an euren Aussendienst weitergibt.</p>
+            <h3>Die Lösung</h3>
+            <p>Ein automatisiertes System, das die richtigen Einkaufsleiter und Entscheider findet, personalisiert kontaktiert und nur die qualifizierten Rückmeldungen an euren Außendienst weitergibt.</p>
             <p>Euer Team investiert nur <strong>2-2,5 Stunden pro Woche</strong> — und bekommt fertige, warme Termine.</p>
             <div class="solution-highlight">
                 <div>
@@ -981,7 +761,7 @@
     </div>
 </section>
 
-<!-- ══════════════════ WAS IST COLD EMAIL? ══════════════════ -->
+<!-- ═══ WAS IST AUTOMATISIERTER OUTBOUND? ═══ -->
 <section class="fade-in">
     <div class="section-label">Hintergrund</div>
     <div class="section-title">Was ist automatisierter Outbound?</div>
@@ -996,21 +776,21 @@
         <div class="explainer-card">
             <div class="icon">&#9993;&#65039;</div>
             <h4>E-Mail + LinkedIn</h4>
-            <p>Personalisierte E-Mails und LinkedIn-Nachrichten erreichen Einkaufsleiter und Geschaeftsfuehrer direkt. Kein Kaltanruf, kein Spam.</p>
+            <p>Personalisierte E-Mails und LinkedIn-Nachrichten erreichen Einkaufsleiter und Geschäftsführer direkt. Kein Kaltanruf, kein Spam.</p>
         </div>
         <div class="explainer-card">
             <div class="icon">&#128202;</div>
             <h4>Nur warme Leads</h4>
-            <p>Aus tausenden Kontakten filtern wir die, die wirklich Interesse haben. Euer Aussendienst bekommt fertige Termine — keinen Datenmuell.</p>
+            <p>Aus tausenden Kontakten filtern wir die, die wirklich Interesse haben. Euer Außendienst bekommt fertige Termine — keinen Datenmüll.</p>
         </div>
     </div>
 
     <div class="context-box">
-        <strong>Wichtig:</strong> Ihr muesst keine tausenden Datensaetze selbst bearbeiten. Das System kontaktiert automatisiert und filtert. Euer Team sieht nur die qualifizierten Rueckmeldungen und entscheidet, wer einen Besuch wert ist.
+        <strong>Wichtig:</strong> Ihr müsst keine tausenden Datensätze selbst bearbeiten. Das System kontaktiert automatisiert und filtert. Euer Team sieht nur die qualifizierten Rückmeldungen und entscheidet, wer einen Besuch wert ist.
     </div>
 </section>
 
-<!-- ══════════════════ PROZESS ══════════════════ -->
+<!-- ═══ PROZESS ═══ -->
 <section id="prozess" class="fade-in">
     <div class="section-label">So funktioniert es</div>
     <div class="section-title">In 5 Schritten zu planbaren Neukunden</div>
@@ -1024,7 +804,7 @@
         <div class="process-step">
             <div class="step-num">2</div>
             <h4>Entscheider finden</h4>
-            <p>Automatisierte Recherche der Einkaufsleiter und Geschaeftsfuehrer mit verifizierten E-Mail-Adressen.</p>
+            <p>Automatisierte Recherche der Einkaufsleiter und Geschäftsführer mit verifizierten E-Mail-Adressen.</p>
         </div>
         <div class="process-step">
             <div class="step-num">3</div>
@@ -1034,30 +814,138 @@
         <div class="process-step">
             <div class="step-num">4</div>
             <h4>Antworten qualifizieren</h4>
-            <p>Positive Rueckmeldungen werden gefiltert und bewertet. Nur relevante Kontakte kommen durch.</p>
+            <p>Positive Rückmeldungen werden gefiltert und bewertet. Nur relevante Kontakte kommen durch.</p>
         </div>
         <div class="process-step">
             <div class="step-num">5</div>
-            <h4>Termine fuer den Aussendienst</h4>
-            <p>Warme Leads mit echtem Interesse — euer Team uebernimmt den persoenlichen Kontakt.</p>
+            <h4>Termine für den Außendienst</h4>
+            <p>Warme Leads mit echtem Interesse — euer Team übernimmt den persönlichen Kontakt.</p>
         </div>
     </div>
 
     <div class="context-box" style="margin-top: 40px;">
-        <strong>Zeitaufwand fuer elitec:</strong> Ca. 2-2,5 Stunden pro Woche. Davon 30 Minuten im woechentlichen Call mit uns, der Rest ist Antworten auf qualifizierte Rueckmeldungen.
+        <strong>Zeitaufwand für elitec:</strong> Ca. 2-2,5 Stunden pro Woche. Davon 30 Minuten im wöchentlichen Call mit uns, der Rest ist Antworten auf qualifizierte Rückmeldungen.
     </div>
 </section>
 
-<!-- ══════════════════ KAMPAGNENSTRATEGIE ══════════════════ -->
+<!-- ═══ TOOL TICKER ═══ -->
+<div class="tool-ticker">
+    <div class="ticker-header">
+        <h3>75+ Tools &amp; Datenanbieter &rarr; <span>0&euro; Fixkosten</span></h3>
+        <div class="ticker-label">Enterprise-GTM-Setup — wir tragen die Kosten</div>
+    </div>
+    <div class="tool-row forward">
+        <div class="tool-pill"><span class="tool-dot blue"></span>Apollo.io</div>
+        <div class="tool-pill"><span class="tool-dot purple"></span>Clay</div>
+        <div class="tool-pill"><span class="tool-dot cyan"></span>Instantly</div>
+        <div class="tool-pill"><span class="tool-dot green"></span>OpenAI</div>
+        <div class="tool-pill"><span class="tool-dot orange"></span>Findymail</div>
+        <div class="tool-pill"><span class="tool-dot blue"></span>MasterInbox</div>
+        <div class="tool-pill"><span class="tool-dot purple"></span>Heyreach</div>
+        <div class="tool-pill"><span class="tool-dot cyan"></span>RevyOps</div>
+        <div class="tool-pill"><span class="tool-dot green"></span>Supabase</div>
+        <div class="tool-pill"><span class="tool-dot orange"></span>LinkedIn Sales Nav</div>
+        <div class="tool-pill"><span class="tool-dot red"></span>Prospeo</div>
+        <div class="tool-pill"><span class="tool-dot blue"></span>Millionverifier</div>
+        <div class="tool-pill"><span class="tool-dot blue"></span>Apollo.io</div>
+        <div class="tool-pill"><span class="tool-dot purple"></span>Clay</div>
+        <div class="tool-pill"><span class="tool-dot cyan"></span>Instantly</div>
+        <div class="tool-pill"><span class="tool-dot green"></span>OpenAI</div>
+        <div class="tool-pill"><span class="tool-dot orange"></span>Findymail</div>
+        <div class="tool-pill"><span class="tool-dot blue"></span>MasterInbox</div>
+        <div class="tool-pill"><span class="tool-dot purple"></span>Heyreach</div>
+        <div class="tool-pill"><span class="tool-dot cyan"></span>RevyOps</div>
+        <div class="tool-pill"><span class="tool-dot green"></span>Supabase</div>
+        <div class="tool-pill"><span class="tool-dot orange"></span>LinkedIn Sales Nav</div>
+        <div class="tool-pill"><span class="tool-dot red"></span>Prospeo</div>
+        <div class="tool-pill"><span class="tool-dot blue"></span>Millionverifier</div>
+        <div class="tool-pill"><span class="tool-dot blue"></span>Apollo.io</div>
+        <div class="tool-pill"><span class="tool-dot purple"></span>Clay</div>
+        <div class="tool-pill"><span class="tool-dot cyan"></span>Instantly</div>
+        <div class="tool-pill"><span class="tool-dot green"></span>OpenAI</div>
+        <div class="tool-pill"><span class="tool-dot orange"></span>Findymail</div>
+        <div class="tool-pill"><span class="tool-dot blue"></span>MasterInbox</div>
+        <div class="tool-pill"><span class="tool-dot purple"></span>Heyreach</div>
+        <div class="tool-pill"><span class="tool-dot cyan"></span>RevyOps</div>
+        <div class="tool-pill"><span class="tool-dot green"></span>Supabase</div>
+        <div class="tool-pill"><span class="tool-dot orange"></span>LinkedIn Sales Nav</div>
+        <div class="tool-pill"><span class="tool-dot red"></span>Prospeo</div>
+        <div class="tool-pill"><span class="tool-dot blue"></span>Millionverifier</div>
+        <div class="tool-pill"><span class="tool-dot blue"></span>Apollo.io</div>
+        <div class="tool-pill"><span class="tool-dot purple"></span>Clay</div>
+        <div class="tool-pill"><span class="tool-dot cyan"></span>Instantly</div>
+        <div class="tool-pill"><span class="tool-dot green"></span>OpenAI</div>
+        <div class="tool-pill"><span class="tool-dot orange"></span>Findymail</div>
+        <div class="tool-pill"><span class="tool-dot blue"></span>MasterInbox</div>
+        <div class="tool-pill"><span class="tool-dot purple"></span>Heyreach</div>
+        <div class="tool-pill"><span class="tool-dot cyan"></span>RevyOps</div>
+        <div class="tool-pill"><span class="tool-dot green"></span>Supabase</div>
+        <div class="tool-pill"><span class="tool-dot orange"></span>LinkedIn Sales Nav</div>
+        <div class="tool-pill"><span class="tool-dot red"></span>Prospeo</div>
+        <div class="tool-pill"><span class="tool-dot blue"></span>Millionverifier</div>
+    </div>
+    <div class="tool-row reverse">
+        <div class="tool-pill"><span class="tool-dot purple"></span>Claude</div>
+        <div class="tool-pill"><span class="tool-dot blue"></span>Northdata</div>
+        <div class="tool-pill"><span class="tool-dot orange"></span>n8n</div>
+        <div class="tool-pill"><span class="tool-dot green"></span>Mailreach</div>
+        <div class="tool-pill"><span class="tool-dot cyan"></span>Lusha</div>
+        <div class="tool-pill"><span class="tool-dot red"></span>BounceBan</div>
+        <div class="tool-pill"><span class="tool-dot purple"></span>Perplexity</div>
+        <div class="tool-pill"><span class="tool-dot orange"></span>Brightdata</div>
+        <div class="tool-pill"><span class="tool-dot blue"></span>Make</div>
+        <div class="tool-pill"><span class="tool-dot cyan"></span>Ocean.io</div>
+        <div class="tool-pill"><span class="tool-dot green"></span>Bettercontact</div>
+        <div class="tool-pill"><span class="tool-dot red"></span>Icypeas</div>
+        <div class="tool-pill"><span class="tool-dot purple"></span>Claude</div>
+        <div class="tool-pill"><span class="tool-dot blue"></span>Northdata</div>
+        <div class="tool-pill"><span class="tool-dot orange"></span>n8n</div>
+        <div class="tool-pill"><span class="tool-dot green"></span>Mailreach</div>
+        <div class="tool-pill"><span class="tool-dot cyan"></span>Lusha</div>
+        <div class="tool-pill"><span class="tool-dot red"></span>BounceBan</div>
+        <div class="tool-pill"><span class="tool-dot purple"></span>Perplexity</div>
+        <div class="tool-pill"><span class="tool-dot orange"></span>Brightdata</div>
+        <div class="tool-pill"><span class="tool-dot blue"></span>Make</div>
+        <div class="tool-pill"><span class="tool-dot cyan"></span>Ocean.io</div>
+        <div class="tool-pill"><span class="tool-dot green"></span>Bettercontact</div>
+        <div class="tool-pill"><span class="tool-dot red"></span>Icypeas</div>
+        <div class="tool-pill"><span class="tool-dot purple"></span>Claude</div>
+        <div class="tool-pill"><span class="tool-dot blue"></span>Northdata</div>
+        <div class="tool-pill"><span class="tool-dot orange"></span>n8n</div>
+        <div class="tool-pill"><span class="tool-dot green"></span>Mailreach</div>
+        <div class="tool-pill"><span class="tool-dot cyan"></span>Lusha</div>
+        <div class="tool-pill"><span class="tool-dot red"></span>BounceBan</div>
+        <div class="tool-pill"><span class="tool-dot purple"></span>Perplexity</div>
+        <div class="tool-pill"><span class="tool-dot orange"></span>Brightdata</div>
+        <div class="tool-pill"><span class="tool-dot blue"></span>Make</div>
+        <div class="tool-pill"><span class="tool-dot cyan"></span>Ocean.io</div>
+        <div class="tool-pill"><span class="tool-dot green"></span>Bettercontact</div>
+        <div class="tool-pill"><span class="tool-dot red"></span>Icypeas</div>
+        <div class="tool-pill"><span class="tool-dot purple"></span>Claude</div>
+        <div class="tool-pill"><span class="tool-dot blue"></span>Northdata</div>
+        <div class="tool-pill"><span class="tool-dot orange"></span>n8n</div>
+        <div class="tool-pill"><span class="tool-dot green"></span>Mailreach</div>
+        <div class="tool-pill"><span class="tool-dot cyan"></span>Lusha</div>
+        <div class="tool-pill"><span class="tool-dot red"></span>BounceBan</div>
+        <div class="tool-pill"><span class="tool-dot purple"></span>Perplexity</div>
+        <div class="tool-pill"><span class="tool-dot orange"></span>Brightdata</div>
+        <div class="tool-pill"><span class="tool-dot blue"></span>Make</div>
+        <div class="tool-pill"><span class="tool-dot cyan"></span>Ocean.io</div>
+        <div class="tool-pill"><span class="tool-dot green"></span>Bettercontact</div>
+        <div class="tool-pill"><span class="tool-dot red"></span>Icypeas</div>
+    </div>
+</div>
+
+<!-- ═══ KAMPAGNENSTRATEGIE ═══ -->
 <section class="fade-in">
     <div class="section-label">Strategie</div>
-    <div class="section-title">Drei Kampagnen-Cluster fuer maximale Abdeckung</div>
+    <div class="section-title">Drei Kampagnen-Cluster für maximale Abdeckung</div>
 
     <div class="campaign-grid">
         <div class="campaign-card">
             <div class="icon">&#127981;</div>
             <h4>Hersteller &amp; Produzenten</h4>
-            <p>Werkzeughersteller, Industrieunternehmen und produzierende Betriebe in der DACH-Region, die Verpackungsloesungen benoetigen.</p>
+            <p>Werkzeughersteller, Industrieunternehmen und produzierende Betriebe in der DACH-Region, die Verpackungslösungen benötigen.</p>
             <span class="campaign-tag">Einkaufsleiter</span>
             <span class="campaign-tag">Werksleiter</span>
             <span class="campaign-tag">GF</span>
@@ -1065,25 +953,25 @@
         <div class="campaign-card">
             <div class="icon">&#127838;</div>
             <h4>Lebensmittel &amp; Gastro</h4>
-            <p>Baeckereien, Konditoreien, Lebensmittelhersteller — Unternehmen mit Bedarf an Verpackungsfolien, Kartonagen und Spezialverpackungen.</p>
+            <p>Bäckereien, Konditoreien, Lebensmittelhersteller — Unternehmen mit Bedarf an Verpackungsfolien, Kartonagen und Spezialverpackungen.</p>
             <span class="campaign-tag">Produktionsleiter</span>
             <span class="campaign-tag">Einkauf</span>
         </div>
         <div class="campaign-card">
             <div class="icon">&#128257;</div>
             <h4>Bestandskunden-Reaktivierung</h4>
-            <p>Bestehende Kontakte mit neuen Ansprechpartnern anreichern. Regelmaessige, personalisierte Kontaktaufnahme 4x im Jahr — automatisiert.</p>
+            <p>Bestehende Kontakte mit neuen Ansprechpartnern anreichern. Regelmäßige, personalisierte Kontaktaufnahme 4x im Jahr — automatisiert.</p>
             <span class="campaign-tag">Cross-Selling</span>
             <span class="campaign-tag">Upsell</span>
         </div>
     </div>
 </section>
 
-<!-- ══════════════════ LEAD-PROGNOSE ══════════════════ -->
+<!-- ═══ LEAD-PROGNOSE ═══ -->
 <section class="fade-in">
     <div class="section-label">Prognose</div>
-    <div class="section-title">Was ihr in 4 Monaten erwarten koennt</div>
-    <div class="section-subtitle">Basierend auf eurer Marktgroesse von ~16.000 relevanten Unternehmen in der DACH-Region.</div>
+    <div class="section-title">Was ihr in 4 Monaten erwarten könnt</div>
+    <div class="section-subtitle">Basierend auf eurer Marktgröße von ~16.000 relevanten Unternehmen in der DACH-Region.</div>
 
     <table class="prognose-table">
         <thead>
@@ -1091,7 +979,6 @@
                 <th>Zeitraum</th>
                 <th>Kontaktierte Prospects</th>
                 <th>Erwartete Leads</th>
-                <th>Erwartete Termine</th>
             </tr>
         </thead>
         <tbody>
@@ -1099,40 +986,39 @@
                 <td>Monat 1 (Setup)</td>
                 <td>Vorbereitung</td>
                 <td>—</td>
-                <td>—</td>
             </tr>
             <tr>
                 <td>Monat 2</td>
                 <td>3.000 - 5.000</td>
                 <td>15 - 25</td>
-                <td>5 - 10</td>
             </tr>
             <tr>
                 <td>Monat 3</td>
                 <td>3.000 - 5.000</td>
                 <td>20 - 30</td>
-                <td>8 - 12</td>
             </tr>
             <tr>
                 <td>Monat 4</td>
                 <td>3.000 - 5.000</td>
                 <td>25 - 35</td>
-                <td>10 - 15</td>
             </tr>
             <tr>
                 <td>Gesamt (3 Monate Kampagne)</td>
                 <td>9.000 - 15.000</td>
                 <td>60 - 90</td>
-                <td>23 - 37</td>
             </tr>
         </tbody>
     </table>
+
+    <div class="context-box" style="margin-top: 32px;">
+        <strong>Zum Vergleich mit Meta Ads:</strong> 60 Leads × 50% Terminquote × 80% qualifiziert = 24 qualifizierte Termine. Das entspricht bei Meta Ads einem Budget von ca. 42.000 Euro (1.750 Euro pro qual. Termin). Mit Grundwerk kostet der gleiche Output einen Bruchteil davon.
+    </div>
 </section>
 
-<!-- ══════════════════ SOCIAL PROOF ══════════════════ -->
+<!-- ═══ SOCIAL PROOF ═══ -->
 <section id="referenzen" class="fade-in">
     <div class="section-label">Ergebnisse unserer Kunden</div>
-    <div class="section-title">Was wir fuer andere B2B-Unternehmen erreicht haben</div>
+    <div class="section-title">Was wir für andere B2B-Unternehmen erreicht haben</div>
 
     <div class="proof-grid">
         <div class="proof-card">
@@ -1142,7 +1028,7 @@
             <div class="proof-city">Berlin</div>
         </div>
         <div class="proof-card">
-            <div class="proof-result">172 Leads &amp; 14 Auftraege</div>
+            <div class="proof-result">172 Leads &amp; 14 Aufträge</div>
             <div class="proof-time">in 3 Monaten</div>
             <div class="proof-company">Greenlovers</div>
             <div class="proof-city">Hamburg</div>
@@ -1172,16 +1058,16 @@
     </div>
 </section>
 
-<!-- ══════════════════ TEAM ══════════════════ -->
+<!-- ═══ TEAM ═══ -->
 <section class="fade-in">
     <div class="section-label">Euer Team</div>
-    <div class="section-title">3 Experten arbeiten an eurem Erfolg</div>
+    <div class="section-title">Das Execution-Team hinter dem Erfolg</div>
 
     <div class="team-grid">
         <div class="team-card">
             <div class="team-icon">&#128188;</div>
             <h4>Account Manager</h4>
-            <p>Strategie, woechentliche Pipeline-Calls, Kampagnen-Optimierung und persoenliche Betreuung.</p>
+            <p>Strategie, wöchentliche Pipeline-Calls, Kampagnen-Optimierung und persönliche Betreuung.</p>
         </div>
         <div class="team-card">
             <div class="team-icon">&#128202;</div>
@@ -1195,15 +1081,15 @@
         </div>
     </div>
     <div class="team-banner">
-        Alle drei sind provisionsbasiert an eurem Erfolg beteiligt. Ueberwacht von Tom Soto Schiller (Geschaeftsfuehrer, Grundwerk Digital).
+        Alle drei sind provisionsbasiert an eurem Erfolg beteiligt. Überwacht von Tom Soto Schiller (Geschäftsführer, Grundwerk Digital).
     </div>
 </section>
 
-<!-- ══════════════════ DATENSCHUTZ ══════════════════ -->
+<!-- ═══ DATENSCHUTZ ═══ -->
 <section id="datenschutz" class="fade-in">
     <div class="section-label">Datenschutz &amp; Compliance</div>
-    <div class="section-title">So schuetzen wir eure Daten und Kundenbeziehungen</div>
-    <div class="section-subtitle">Datenschutz ist fuer uns kein Nachgedanke, sondern fester Bestandteil unseres Systems.</div>
+    <div class="section-title">So schützen wir eure Daten und Kundenbeziehungen</div>
+    <div class="section-subtitle">Datenschutz ist für uns kein Nachgedanke, sondern fester Bestandteil unseres Systems.</div>
 
     <div class="dsgvo-grid">
         <div class="dsgvo-card">
@@ -1211,67 +1097,67 @@
             <ul class="dsgvo-list">
                 <li><span class="dsgvo-check">&#10003;</span> Blocklisten-System: Eure bestehenden Kunden werden NIE kontaktiert</li>
                 <li><span class="dsgvo-check">&#10003;</span> Ihr schickt uns eure Kundenliste (Domains) — wir blocken sie automatisch</li>
-                <li><span class="dsgvo-check">&#10003;</span> Neue Kunden koennen jederzeit zur Blockliste hinzugefuegt werden</li>
+                <li><span class="dsgvo-check">&#10003;</span> Neue Kunden können jederzeit zur Blockliste hinzugefügt werden</li>
                 <li><span class="dsgvo-check">&#10003;</span> Zwei getrennte Systeme: Blockliste und Kampagnen-Datenbank</li>
             </ul>
         </div>
         <div class="dsgvo-card">
-            <h4>&#128220; Rechtskonformitaet</h4>
+            <h4>&#128220; Rechtskonformität</h4>
             <ul class="dsgvo-list">
                 <li><span class="dsgvo-check">&#10003;</span> Nur Business-E-Mail-Adressen (keine privaten Kontakte)</li>
                 <li><span class="dsgvo-check">&#10003;</span> Opt-Out-Link in jeder E-Mail</li>
                 <li><span class="dsgvo-check">&#10003;</span> AVV (Auftragsverarbeitungsvertrag) inklusive</li>
                 <li><span class="dsgvo-check">&#10003;</span> DSGVO- und DSG-konform (CH/LI + EU)</li>
-                <li><span class="dsgvo-check">&#10003;</span> Partner-Anwalt fuer Datenschutz-Fragen verfuegbar</li>
+                <li><span class="dsgvo-check">&#10003;</span> Partner-Anwalt für Datenschutz-Fragen verfügbar</li>
             </ul>
         </div>
     </div>
 
     <div class="dsgvo-banner">
-        <p><strong>Transparente Kommunikation:</strong> Kaltakquise im B2B-Bereich ist Standard und rechtlich abgesichert, solange sie professionell umgesetzt wird. Wir arbeiten mit verifizierten Business-Kontakten und respektieren jede Abmeldung sofort. Bei Fragen steht unser Partner-Anwalt zur Verfuegung.</p>
+        <p><strong>Transparente Kommunikation:</strong> Kaltakquise im B2B-Bereich ist Standard und rechtlich abgesichert, solange sie professionell umgesetzt wird. Wir arbeiten mit verifizierten Business-Kontakten und respektieren jede Abmeldung sofort. Bei Fragen steht unser Partner-Anwalt zur Verfügung.</p>
     </div>
 
     <div class="context-box" style="margin-top: 24px;">
-        <strong>Hinweis:</strong> Wir stellen euch einen vollstaendigen AVV (Auftragsverarbeitungsvertrag) und einen DSGVO-1-Pager zur Verfuegung — beides liegt diesem Angebot bei.
+        <strong>Hinweis:</strong> Wir stellen euch einen vollständigen AVV (Auftragsverarbeitungsvertrag) und einen DSGVO-1-Pager zur Verfügung — beides liegt diesem Angebot bei.
     </div>
 </section>
 
-<!-- ══════════════════ ANGEBOT ══════════════════ -->
+<!-- ═══ ANGEBOT ═══ -->
 <section id="angebot" class="fade-in">
     <div class="section-label">Angebot</div>
-    <div class="section-title" style="text-align: center;">Euer Paket fuer planbare Neukundengewinnung</div>
+    <div class="section-title" style="text-align: center;">Euer Paket für planbare Neukundengewinnung</div>
 
     <div class="offer-card">
         <div class="offer-badge">Empfohlen</div>
         <h3>E-Mail + LinkedIn Outreach</h3>
-        <p class="offer-desc">Vollstaendiges Outbound-System fuer 4 Monate — inklusive Setup, Kampagnen und persoenlicher Betreuung.</p>
+        <p class="offer-desc">Vollständiges Outbound-System für 4 Monate — inklusive Setup, Kampagnen und persönlicher Betreuung.</p>
 
         <div class="offer-price">
-            <div class="price">3.000 Euro<span style="font-size: 1rem; font-weight: 400; color: var(--text-muted);"> / Monat</span></div>
-            <div class="price-note">+ 990 Euro einmalige Setup-Gebuehr</div>
+            <div class="price">3.000 Euro<span> / Monat</span></div>
+            <div class="price-note">+ 990 Euro einmalige Setup-Gebühr</div>
         </div>
 
         <ul class="offer-features">
             <li><span class="feature-check">&#10003;</span> E-Mail-Outreach-Kampagnen (bis zu 10.000 E-Mails/Monat)</li>
             <li><span class="feature-check">&#10003;</span> LinkedIn-Outreach an Entscheider</li>
             <li><span class="feature-check">&#10003;</span> KickOff-Workshop (1h) — Zielgruppen, Texte, Strategie</li>
-            <li><span class="feature-check">&#10003;</span> Woechentliche Betreuung (30min Call)</li>
+            <li><span class="feature-check">&#10003;</span> Wöchentliche Betreuung (30min Call)</li>
             <li><span class="feature-check">&#10003;</span> Master-Inbox mit KI-Labels und Reporting</li>
             <li><span class="feature-check">&#10003;</span> Kampagnen-Monitoring &amp; laufende Optimierung</li>
             <li><span class="feature-check">&#10003;</span> Lead Scoring (A-D, 0-100 Punkte)</li>
-            <li><span class="feature-check">&#10003;</span> Blocklisten-Management fuer Bestandskunden</li>
+            <li><span class="feature-check">&#10003;</span> Blocklisten-Management für Bestandskunden</li>
             <li><span class="feature-check">&#10003;</span> CSV-Export aller generierten Kontakte</li>
             <li><span class="feature-check">&#10003;</span> AVV &amp; Datenschutz-Dokumentation inklusive</li>
-            <li><span class="feature-check">&#10003;</span> Alle Daten und Leadlisten gehoeren elitec</li>
+            <li><span class="feature-check">&#10003;</span> Alle Daten und Leadlisten gehören elitec</li>
         </ul>
 
-        <div style="display: flex; gap: 16px; margin-top: 8px;">
-            <div class="offer-total" style="flex: 1;">
+        <div class="offer-totals">
+            <div class="offer-total">
                 <div class="total-label">Laufzeit</div>
                 <div class="total-price" style="font-size: 1.4rem;">4 Monate</div>
                 <div class="total-label">1 Monat Setup + 3 Monate Kampagne</div>
             </div>
-            <div class="offer-total" style="flex: 1;">
+            <div class="offer-total">
                 <div class="total-label">Gesamtinvestition</div>
                 <div class="total-price">12.990 Euro</div>
                 <div class="total-label">Setup + 4x Betreuung</div>
@@ -1279,19 +1165,19 @@
         </div>
 
         <div class="context-box" style="margin-top: 24px;">
-            <strong>Zum Vergleich:</strong> Ein zusaetzlicher Vertriebsmitarbeiter kostet ca. 150.000 Euro pro Jahr (12.500 Euro/Monat). Grundwerk liefert vergleichbare Ergebnisse fuer weniger als ein Viertel davon.
+            <strong>Zum Vergleich:</strong> Ein zusätzlicher Vertriebsmitarbeiter kostet ca. 150.000 Euro pro Jahr (12.500 Euro/Monat). Grundwerk liefert vergleichbare Ergebnisse für weniger als ein Viertel davon.
         </div>
     </div>
 </section>
 
-<!-- ══════════════════ GARANTIE ══════════════════ -->
+<!-- ═══ GARANTIE ═══ -->
 <section class="guarantee fade-in">
     <div class="guarantee-badge">Lead-Garantie</div>
     <h2>Mindestens 60 qualifizierte Leads in 3 Monaten — oder halber Preis.</h2>
-    <p>Definition "qualifiziert": Unternehmen mit echtem Interesse an Verpackungsloesungen, Entscheider-Level (Einkaufsleiter, GF), verifizierte Kontaktdaten. Keine leeren Versprechen — messbare Ergebnisse.</p>
+    <p>Definition "qualifiziert": Unternehmen mit echtem Interesse an Verpackungslösungen, Entscheider-Level (Einkaufsleiter, GF), verifizierte Kontaktdaten. Keine leeren Versprechen — messbare Ergebnisse.</p>
 </section>
 
-<!-- ══════════════════ ROI ══════════════════ -->
+<!-- ═══ ROI ═══ -->
 <section class="fade-in">
     <div class="section-label">Return on Investment</div>
     <div class="section-title">Was bringt euch die Investition?</div>
@@ -1300,7 +1186,7 @@
         <div class="roi-card">
             <div class="roi-label">Konservativ</div>
             <div class="roi-number">12.000 Euro</div>
-            <div class="roi-detail">Recherche-Ersparnis allein: 1.000 Datensaetze x 12 Euro manuell = 12.000 Euro Wert — fast die gesamte Investition zurueck.</div>
+            <div class="roi-detail">Recherche-Ersparnis allein: 1.000 Datensätze × 12 Euro manuell = 12.000 Euro Wert — fast die gesamte Investition zurück.</div>
         </div>
         <div class="roi-card highlight">
             <div class="roi-label">Realistisch</div>
@@ -1310,12 +1196,12 @@
         <div class="roi-card">
             <div class="roi-label">Optimistisch</div>
             <div class="roi-number">10+ Neukunden</div>
-            <div class="roi-detail">Mit optimierten Kampagnen und LinkedIn zusaetzlich 90+ Leads und 30+ Termine — der Aussendienst ist voll ausgelastet.</div>
+            <div class="roi-detail">Mit optimierten Kampagnen und LinkedIn zusätzlich 90+ Leads und 30+ Termine — der Außendienst ist voll ausgelastet.</div>
         </div>
     </div>
 </section>
 
-<!-- ══════════════════ VERGLEICHSTABELLE ══════════════════ -->
+<!-- ═══ VERGLEICHSTABELLE ═══ -->
 <section class="fade-in">
     <div class="section-label">Vergleich</div>
     <div class="section-title">Manuelle Recherche vs. Grundwerk</div>
@@ -1335,7 +1221,17 @@
                 <td class="recommended good">&lt; 1 Euro</td>
             </tr>
             <tr>
-                <td>Datensaetze pro Monat</td>
+                <td>Kosten pro Lead</td>
+                <td class="bad">~350 Euro</td>
+                <td class="recommended good">~100 Euro</td>
+            </tr>
+            <tr>
+                <td>Kosten pro qual. Termin</td>
+                <td class="bad">~1.750 Euro</td>
+                <td class="recommended good">~250 Euro</td>
+            </tr>
+            <tr>
+                <td>Datensätze pro Monat</td>
                 <td class="bad">50 - 100</td>
                 <td class="recommended good">3.000 - 5.000</td>
             </tr>
@@ -1345,7 +1241,7 @@
                 <td class="recommended good">2-2,5 Stunden/Woche</td>
             </tr>
             <tr>
-                <td>Kanaele</td>
+                <td>Kanäle</td>
                 <td>Telefon, vor Ort</td>
                 <td class="recommended">E-Mail + LinkedIn + Telefon</td>
             </tr>
@@ -1365,7 +1261,7 @@
                 <td class="recommended good">AVV + Blocklisten + Opt-Out</td>
             </tr>
             <tr>
-                <td>Marktueberblick</td>
+                <td>Marktüberblick</td>
                 <td class="bad">Fragmentiert</td>
                 <td class="recommended good">Kompletter Markt erfasst</td>
             </tr>
@@ -1373,25 +1269,25 @@
     </table>
 </section>
 
-<!-- ══════════════════ BONUSSE ══════════════════ -->
+<!-- ═══ BONUSSE ═══ -->
 <section class="fade-in">
     <div class="section-label">Inklusive</div>
     <div class="section-title">Was nach der Zusammenarbeit bei euch bleibt</div>
-    <div class="section-subtitle">Alle Daten, Listen und Systeme gehoeren dauerhaft elitec — auch nach Vertragsende.</div>
+    <div class="section-subtitle">Alle Daten, Listen und Systeme gehören dauerhaft elitec — auch nach Vertragsende.</div>
 
     <div class="bonus-grid">
         <div class="bonus-item">
             <div class="bonus-icon">&#128203;</div>
             <div>
                 <h4>Komplette ICP-Leadlisten</h4>
-                <p>Tausende verifizierte Entscheider-Kontakte in eurer Zielbranche. Alle Daten gehoeren euch.</p>
+                <p>Tausende verifizierte Entscheider-Kontakte in eurer Zielbranche. Alle Daten gehören euch.</p>
             </div>
         </div>
         <div class="bonus-item">
             <div class="bonus-icon">&#128222;</div>
             <div>
                 <h4>Direkte Telefonnummern</h4>
-                <p>Mobilnummern der Einkaufsleiter und GFs fuer den Aussendienst — direkt erreichbar.</p>
+                <p>Mobilnummern der Einkaufsleiter und GFs für den Außendienst — direkt erreichbar.</p>
             </div>
         </div>
         <div class="bonus-item">
@@ -1405,21 +1301,21 @@
             <div class="bonus-icon">&#128231;</div>
             <div>
                 <h4>Getestete E-Mail-Sequenzen</h4>
-                <p>Fertige, optimierte Ansprache-Texte fuer eure Branche — sofort wiederverwendbar.</p>
+                <p>Fertige, optimierte Ansprache-Texte für eure Branche — sofort wiederverwendbar.</p>
             </div>
         </div>
         <div class="bonus-item">
             <div class="bonus-icon">&#128200;</div>
             <div>
                 <h4>Sales Tracking &amp; Projections</h4>
-                <p>Woechentliche Auswertung eurer Pipeline mit klaren Zahlen und Prognosen.</p>
+                <p>Wöchentliche Auswertung eurer Pipeline mit klaren Zahlen und Prognosen.</p>
             </div>
         </div>
         <div class="bonus-item">
             <div class="bonus-icon">&#128218;</div>
             <div>
                 <h4>15+ Sales Guides</h4>
-                <p>Nachschlagewerke fuer Einwandbehandlung, Follow-Ups, Gespraechsfuehrung und mehr.</p>
+                <p>Nachschlagewerke für Einwandbehandlung, Follow-Ups, Gesprächsführung und mehr.</p>
             </div>
         </div>
         <div class="bonus-item">
@@ -1433,21 +1329,21 @@
             <div class="bonus-icon">&#127760;</div>
             <div>
                 <h4>Marktdaten &amp; Insights</h4>
-                <p>Kompletter Ueberblick ueber euren adressierbaren Markt — welche Regionen und Branchen am besten reagieren.</p>
+                <p>Kompletter Überblick über euren adressierbaren Markt — welche Regionen und Branchen am besten reagieren.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ══════════════════ TIMELINE ══════════════════ -->
+<!-- ═══ TIMELINE ═══ -->
 <section id="timeline" class="fade-in">
-    <div class="section-label">Naechste Schritte</div>
+    <div class="section-label">Nächste Schritte</div>
     <div class="section-title">So geht es weiter</div>
 
     <div class="timeline">
         <div class="timeline-item done">
-            <h4>Beratungsgespraech</h4>
-            <p>Erstgespraech gefuehrt, Anforderungen besprochen.</p>
+            <h4>Beratungsgespräch</h4>
+            <p>Erstgespräch geführt, Anforderungen besprochen.</p>
         </div>
         <div class="timeline-item done">
             <h4>Individuelles Angebot</h4>
@@ -1467,18 +1363,18 @@
         </div>
         <div class="timeline-item">
             <h4>4. Daten generieren &amp; Copys schreiben</h4>
-            <p>Wir recherchieren die Datensaetze, schreiben die E-Mail-Texte und schicken euch alles zur Freigabe.</p>
+            <p>Wir recherchieren die Datensätze, schreiben die E-Mail-Texte und schicken euch alles zur Freigabe.</p>
         </div>
         <div class="timeline-item">
             <h4>5. Kampagnenstart</h4>
             <p>Ca. 4 Wochen nach dem Onboarding-Call. Erste E-Mails gehen raus.</p>
         </div>
         <div class="timeline-item">
-            <h4>6. Erste Termine in Woche 1</h4>
-            <p>Erfahrungsgemaess kommen die ersten qualifizierten Rueckmeldungen innerhalb der ersten Kampagnenwoche.</p>
+            <h4>6. Erste Leads in Woche 1</h4>
+            <p>Erfahrungsgemäß kommen die ersten qualifizierten Rückmeldungen innerhalb der ersten Kampagnenwoche.</p>
         </div>
         <div class="timeline-item">
-            <h4>7. Woechentliche Betreuung</h4>
+            <h4>7. Wöchentliche Betreuung</h4>
             <p>30-Minuten-Call: Reporting, Kampagnen-Ergebnisse, Optimierung, Feedback.</p>
         </div>
     </div>
@@ -1487,9 +1383,9 @@
     </div>
 </section>
 
-<!-- ══════════════════ FAQ ══════════════════ -->
+<!-- ═══ FAQ ═══ -->
 <section class="fade-in">
-    <div class="section-label">Haeufige Fragen</div>
+    <div class="section-label">Häufige Fragen</div>
     <div class="section-title">Antworten auf die wichtigsten Fragen</div>
 
     <div class="faq-list">
@@ -1499,7 +1395,7 @@
                 <span class="faq-arrow">&#9660;</span>
             </button>
             <div class="faq-answer">
-                <div class="faq-answer-inner">Wir arbeiten ausschliesslich mit Business-E-Mail-Adressen, die oeffentlich zugaenglich sind. Jede E-Mail enthaelt einen Opt-Out-Link. Wir stellen einen vollstaendigen AVV (Auftragsverarbeitungsvertrag) bereit und arbeiten DSGVO- sowie DSG-konform (CH/LI). Zusaetzlich steht ein Partner-Anwalt fuer Datenschutz-Rueckfragen zur Verfuegung.</div>
+                <div class="faq-answer-inner">Wir arbeiten ausschließlich mit Business-E-Mail-Adressen, die öffentlich zugänglich sind. Jede E-Mail enthält einen Opt-Out-Link. Wir stellen einen vollständigen AVV (Auftragsverarbeitungsvertrag) bereit und arbeiten DSGVO- sowie DSG-konform (CH/LI). Zusätzlich steht ein Partner-Anwalt für Datenschutz-Rückfragen zur Verfügung.</div>
             </div>
         </div>
         <div class="faq-item">
@@ -1508,7 +1404,7 @@
                 <span class="faq-arrow">&#9660;</span>
             </button>
             <div class="faq-answer">
-                <div class="faq-answer-inner">Nein. Ihr schickt uns eine Liste eurer Kunden-Domains und wir blocken diese automatisch. Neue Kunden koennen jederzeit hinzugefuegt werden. Das Blocklisten-System stellt sicher, dass kein bestehender Kunde eine Kalt-E-Mail erhaelt.</div>
+                <div class="faq-answer-inner">Nein. Ihr schickt uns eine Liste eurer Kunden-Domains und wir blocken diese automatisch. Neue Kunden können jederzeit hinzugefügt werden. Das Blocklisten-System stellt sicher, dass kein bestehender Kunde eine Kalt-E-Mail erhält.</div>
             </div>
         </div>
         <div class="faq-item">
@@ -1517,7 +1413,7 @@
                 <span class="faq-arrow">&#9660;</span>
             </button>
             <div class="faq-answer">
-                <div class="faq-answer-inner">Ca. 2-2,5 Stunden pro Woche. Davon sind 30 Minuten der woechentliche Call mit uns. Der Rest ist das Bearbeiten qualifizierter Rueckmeldungen — also Termine vereinbaren mit Interessenten, die bereits Interesse gezeigt haben. Keine Recherche, kein Kaltanruf.</div>
+                <div class="faq-answer-inner">Ca. 2-2,5 Stunden pro Woche. Davon sind 30 Minuten der wöchentliche Call mit uns. Der Rest ist das Bearbeiten qualifizierter Rückmeldungen — also Termine vereinbaren mit Interessenten, die bereits Interesse gezeigt haben. Keine Recherche, kein Kaltanruf.</div>
             </div>
         </div>
         <div class="faq-item">
@@ -1531,20 +1427,20 @@
         </div>
         <div class="faq-item">
             <button class="faq-question">
-                Muessen wir alle Datensaetze selbst bearbeiten?
+                Müssen wir alle Datensätze selbst bearbeiten?
                 <span class="faq-arrow">&#9660;</span>
             </button>
             <div class="faq-answer">
-                <div class="faq-answer-inner">Nein — das war ein Missverstaendnis aus unserem ersten Gespraech. Das System kontaktiert automatisiert und filtert die Rueckmeldungen. Ihr seht nur die qualifizierten Antworten: Unternehmen, die echtes Interesse gezeigt haben. Von dort entscheidet ihr, ob ein Besuch oder ein Telefonat sinnvoll ist.</div>
+                <div class="faq-answer-inner">Nein — das war ein Missverständnis aus unserem ersten Gespräch. Das System kontaktiert automatisiert und filtert die Rückmeldungen. Ihr seht nur die qualifizierten Antworten: Unternehmen, die echtes Interesse gezeigt haben. Von dort entscheidet ihr, ob ein Besuch oder ein Telefonat sinnvoll ist.</div>
             </div>
         </div>
         <div class="faq-item">
             <button class="faq-question">
-                Koennen wir auch LinkedIn nutzen?
+                Können wir auch LinkedIn nutzen?
                 <span class="faq-arrow">&#9660;</span>
             </button>
             <div class="faq-answer">
-                <div class="faq-answer-inner">Ja, LinkedIn ist im Paket enthalten. Wir kombinieren E-Mail und LinkedIn fuer maximale Reichweite. Besonders fuer Entscheider, die auf E-Mails weniger reagieren, ist LinkedIn ein starker zweiter Kanal.</div>
+                <div class="faq-answer-inner">Ja, LinkedIn ist im Paket enthalten. Wir kombinieren E-Mail und LinkedIn für maximale Reichweite. Besonders für Entscheider, die auf E-Mails weniger reagieren, ist LinkedIn ein starker zweiter Kanal.</div>
             </div>
         </div>
         <div class="faq-item">
@@ -1553,30 +1449,39 @@
                 <span class="faq-arrow">&#9660;</span>
             </button>
             <div class="faq-answer">
-                <div class="faq-answer-inner">Alle Daten, Leadlisten und Kontakte gehoeren dauerhaft elitec. Ihr koennt die Zusammenarbeit verlaengern oder die gewonnenen Daten und Systeme selbststaendig weiternutzen. Viele unserer Kunden verlaengern, weil der ROI klar positiv ist.</div>
+                <div class="faq-answer-inner">Alle Daten, Leadlisten und Kontakte gehören dauerhaft elitec. Ihr könnt die Zusammenarbeit verlängern oder die gewonnenen Daten und Systeme selbstständig weiternutzen. Viele unserer Kunden verlängern, weil der ROI klar positiv ist.</div>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">
+                Was passiert bei einer Datenschutz-Beschwerde?
+                <span class="faq-arrow">&#9660;</span>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">In den seltenen Fällen einer Beschwerde übernimmt unser Partner-Anwalt die Bearbeitung. Typische Kosten liegen im niedrigen dreistelligen Bereich (50-200 Euro). In zweieinhalb Jahren Geschäftstätigkeit hatten wir keine einzige relevante Beanstandung. Jede Abmeldung wird sofort respektiert und der Kontakt permanent geblockt.</div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ══════════════════ CTA ══════════════════ -->
+<!-- ═══ CTA ═══ -->
 <section class="cta-section fade-in">
-    <h2>Bereit fuer planbare Neukunden?</h2>
-    <p class="cta-sub">Lasst uns in einem kurzen Gespraech die naechsten Schritte besprechen.</p>
+    <h2>Bereit für planbare Neukunden?</h2>
+    <p class="cta-sub">Lasst uns in einem kurzen Gespräch die nächsten Schritte besprechen.</p>
     <a href="https://calendly.com/tom-soto-schiller/grundwerk-next-steps" class="btn-primary" style="font-size: 1.1rem; padding: 16px 40px;">Termin vereinbaren</a>
     <div class="cta-contact">
-        <p><strong>Tom Soto Schiller</strong> — Geschaeftsfuehrer, Grundwerk Digital</p>
-        <p>E-Mail: <a href="mailto:tom@grundwerk.digital">tom@grundwerk.digital</a></p>
-        <p>Telefon: <a href="https://wa.me/+4917645837941">+49 176 458 379 41</a></p>
+        <p><strong>Tom Soto Schiller</strong> — Geschäftsführer, Grundwerk Digital</p>
+        <p>E-Mail: <a href="mailto:tom.schiller@grundwerk.digital">tom.schiller@grundwerk.digital</a></p>
+        <p>Telefon: <a href="tel:+4915566331147">+49 155 6633 1147</a></p>
     </div>
 </section>
 
-<!-- ══════════════════ FOOTER ══════════════════ -->
+<!-- ═══ FOOTER ═══ -->
 <footer>
     &copy; 2026 Grundwerk Digital &middot; Alle Rechte vorbehalten
 </footer>
 
-<!-- ══════════════════ JAVASCRIPT ══════════════════ -->
+<!-- ═══ JAVASCRIPT ═══ -->
 <script>
     // Fade-in on scroll
     const observer = new IntersectionObserver((entries) => {
@@ -1593,13 +1498,11 @@
             const answer = item.querySelector('.faq-answer');
             const isOpen = item.classList.contains('open');
 
-            // Close all
             document.querySelectorAll('.faq-item').forEach(i => {
                 i.classList.remove('open');
                 i.querySelector('.faq-answer').style.maxHeight = null;
             });
 
-            // Open clicked
             if (!isOpen) {
                 item.classList.add('open');
                 answer.style.maxHeight = answer.scrollHeight + 'px';
