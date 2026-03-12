@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>18a.studio x Grundwerk Digital — Angebot</title>
+    <script>
+        (function(){
+            var code = '6984172496';
+            var params = new URLSearchParams(window.location.search);
+            if(params.get('secure') !== code){
+                document.documentElement.style.display='none';
+                document.title='Zugriff verweigert';
+                window.stop();
+            }
+        })();
+    </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
@@ -1197,11 +1208,11 @@
         }
         .tool-ticker::before {
             left: 0;
-            background: linear-gradient(to right, var(--bg), transparent);
+            background: linear-gradient(to right, var(--bg) 60%, transparent);
         }
         .tool-ticker::after {
             right: 0;
-            background: linear-gradient(to left, var(--bg), transparent);
+            background: linear-gradient(to left, var(--bg) 60%, transparent);
         }
         .ticker-header {
             text-align: center;
@@ -1269,12 +1280,12 @@
         .pill-dot.cyan { background: #06b6d4; }
 
         @keyframes tickerForward {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+            0% { transform: translateX(-25%); }
+            100% { transform: translateX(-75%); }
         }
         @keyframes tickerReverse {
-            0% { transform: translateX(-50%); }
-            100% { transform: translateX(0); }
+            0% { transform: translateX(-75%); }
+            100% { transform: translateX(-25%); }
         }
 
         /* --- CLIENT LOGO TICKER --- */
@@ -1290,12 +1301,12 @@
             position: absolute;
             top: 0;
             bottom: 0;
-            width: 15%;
+            width: 20%;
             z-index: 2;
             pointer-events: none;
         }
-        .client-ticker::before { left: 0; background: linear-gradient(to right, var(--bg), transparent); }
-        .client-ticker::after { right: 0; background: linear-gradient(to left, var(--bg), transparent); }
+        .client-ticker::before { left: 0; background: linear-gradient(to right, var(--bg) 60%, transparent); }
+        .client-ticker::after { right: 0; background: linear-gradient(to left, var(--bg) 60%, transparent); }
         .client-track {
             display: flex;
             width: max-content;
@@ -1456,6 +1467,22 @@
         <img src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview" class="client-logo">
         <img src="https://cdn.prod.website-files.com/673602757a06be245e484913/678d467526d221b55f5dc3e0_mc-logo-1-black.svg" alt="Michelscom" class="client-logo">
         <img src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang" class="client-logo">
+        <!-- Duplicate 3 -->
+        <img src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel" class="client-logo">
+        <img src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes" class="client-logo">
+        <img src="https://www.hrs.de/_next/static/media/hrs_logo_red.7cccdfd9.svg" alt="HRS" class="client-logo">
+        <img src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO" class="client-logo">
+        <img src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview" class="client-logo">
+        <img src="https://cdn.prod.website-files.com/673602757a06be245e484913/678d467526d221b55f5dc3e0_mc-logo-1-black.svg" alt="Michelscom" class="client-logo">
+        <img src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang" class="client-logo">
+        <!-- Duplicate 4 -->
+        <img src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel" class="client-logo">
+        <img src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes" class="client-logo">
+        <img src="https://www.hrs.de/_next/static/media/hrs_logo_red.7cccdfd9.svg" alt="HRS" class="client-logo">
+        <img src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO" class="client-logo">
+        <img src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview" class="client-logo">
+        <img src="https://cdn.prod.website-files.com/673602757a06be245e484913/678d467526d221b55f5dc3e0_mc-logo-1-black.svg" alt="Michelscom" class="client-logo">
+        <img src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang" class="client-logo">
     </div>
     <div class="client-track reverse">
         <img src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges" class="client-logo">
@@ -1466,6 +1493,22 @@
         <img src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic" class="client-logo">
         <img src="https://digitalnow.online/logo.png" alt="Digital Now" class="client-logo">
         <!-- Duplicate -->
+        <img src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges" class="client-logo">
+        <img src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios" class="client-logo">
+        <img src="https://d2bw95mh2ee04s.cloudfront.net/prod/content/wp-content/uploads/2025/01/02134814/Property-Logo-Main.svg" alt="SellerLogic" class="client-logo">
+        <img src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly" class="client-logo">
+        <img src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy" class="client-logo">
+        <img src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic" class="client-logo">
+        <img src="https://digitalnow.online/logo.png" alt="Digital Now" class="client-logo">
+        <!-- Duplicate 3 -->
+        <img src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges" class="client-logo">
+        <img src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios" class="client-logo">
+        <img src="https://d2bw95mh2ee04s.cloudfront.net/prod/content/wp-content/uploads/2025/01/02134814/Property-Logo-Main.svg" alt="SellerLogic" class="client-logo">
+        <img src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly" class="client-logo">
+        <img src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy" class="client-logo">
+        <img src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic" class="client-logo">
+        <img src="https://digitalnow.online/logo.png" alt="Digital Now" class="client-logo">
+        <!-- Duplicate 4 -->
         <img src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges" class="client-logo">
         <img src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios" class="client-logo">
         <img src="https://d2bw95mh2ee04s.cloudfront.net/prod/content/wp-content/uploads/2025/01/02134814/Property-Logo-Main.svg" alt="SellerLogic" class="client-logo">
@@ -1485,16 +1528,16 @@
                 <div class="stat-label">E-Mails versendet</div>
             </div>
             <div class="stat-item">
-                <div class="stat-number">20+</div>
-                <div class="stat-label">Aktive B2B-Kunden</div>
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Erfolgreiche B2B-Projekte</div>
             </div>
             <div class="stat-item">
                 <div class="stat-number">3</div>
                 <div class="stat-label">Experten pro Account</div>
             </div>
             <div class="stat-item">
-                <div class="stat-number">BAFA</div>
-                <div class="stat-label">Registrierter Berater</div>
+                <div class="stat-number">75+</div>
+                <div class="stat-label">Tools &amp; Datenanbieter</div>
             </div>
         </div>
     </div>
@@ -1643,6 +1686,32 @@
         <span class="ticker-pill"><span class="pill-dot orange"></span>LinkedIn Sales Nav</span>
         <span class="ticker-pill"><span class="pill-dot cyan"></span>Prospeo</span>
         <span class="ticker-pill"><span class="pill-dot red"></span>Millionverifier</span>
+        <!-- Duplicate 3 -->
+        <span class="ticker-pill"><span class="pill-dot blue"></span>Apollo.io</span>
+        <span class="ticker-pill"><span class="pill-dot green"></span>Clay</span>
+        <span class="ticker-pill"><span class="pill-dot purple"></span>Instantly</span>
+        <span class="ticker-pill"><span class="pill-dot orange"></span>OpenAI</span>
+        <span class="ticker-pill"><span class="pill-dot cyan"></span>Findymail</span>
+        <span class="ticker-pill"><span class="pill-dot red"></span>MasterInbox</span>
+        <span class="ticker-pill"><span class="pill-dot blue"></span>Heyreach</span>
+        <span class="ticker-pill"><span class="pill-dot green"></span>RevyOps</span>
+        <span class="ticker-pill"><span class="pill-dot purple"></span>Supabase</span>
+        <span class="ticker-pill"><span class="pill-dot orange"></span>LinkedIn Sales Nav</span>
+        <span class="ticker-pill"><span class="pill-dot cyan"></span>Prospeo</span>
+        <span class="ticker-pill"><span class="pill-dot red"></span>Millionverifier</span>
+        <!-- Duplicate 4 -->
+        <span class="ticker-pill"><span class="pill-dot blue"></span>Apollo.io</span>
+        <span class="ticker-pill"><span class="pill-dot green"></span>Clay</span>
+        <span class="ticker-pill"><span class="pill-dot purple"></span>Instantly</span>
+        <span class="ticker-pill"><span class="pill-dot orange"></span>OpenAI</span>
+        <span class="ticker-pill"><span class="pill-dot cyan"></span>Findymail</span>
+        <span class="ticker-pill"><span class="pill-dot red"></span>MasterInbox</span>
+        <span class="ticker-pill"><span class="pill-dot blue"></span>Heyreach</span>
+        <span class="ticker-pill"><span class="pill-dot green"></span>RevyOps</span>
+        <span class="ticker-pill"><span class="pill-dot purple"></span>Supabase</span>
+        <span class="ticker-pill"><span class="pill-dot orange"></span>LinkedIn Sales Nav</span>
+        <span class="ticker-pill"><span class="pill-dot cyan"></span>Prospeo</span>
+        <span class="ticker-pill"><span class="pill-dot red"></span>Millionverifier</span>
     </div>
 
     <div class="ticker-track reverse">
@@ -1659,6 +1728,32 @@
         <span class="ticker-pill"><span class="pill-dot cyan"></span>Bettercontact</span>
         <span class="ticker-pill"><span class="pill-dot red"></span>Icypeas</span>
         <!-- Duplicate for seamless loop -->
+        <span class="ticker-pill"><span class="pill-dot orange"></span>Claude</span>
+        <span class="ticker-pill"><span class="pill-dot blue"></span>Northdata</span>
+        <span class="ticker-pill"><span class="pill-dot green"></span>n8n</span>
+        <span class="ticker-pill"><span class="pill-dot purple"></span>Mailreach</span>
+        <span class="ticker-pill"><span class="pill-dot cyan"></span>Lusha</span>
+        <span class="ticker-pill"><span class="pill-dot red"></span>BounceBan</span>
+        <span class="ticker-pill"><span class="pill-dot orange"></span>Perplexity</span>
+        <span class="ticker-pill"><span class="pill-dot blue"></span>Brightdata</span>
+        <span class="ticker-pill"><span class="pill-dot green"></span>Make</span>
+        <span class="ticker-pill"><span class="pill-dot purple"></span>Ocean.io</span>
+        <span class="ticker-pill"><span class="pill-dot cyan"></span>Bettercontact</span>
+        <span class="ticker-pill"><span class="pill-dot red"></span>Icypeas</span>
+        <!-- Duplicate 3 -->
+        <span class="ticker-pill"><span class="pill-dot orange"></span>Claude</span>
+        <span class="ticker-pill"><span class="pill-dot blue"></span>Northdata</span>
+        <span class="ticker-pill"><span class="pill-dot green"></span>n8n</span>
+        <span class="ticker-pill"><span class="pill-dot purple"></span>Mailreach</span>
+        <span class="ticker-pill"><span class="pill-dot cyan"></span>Lusha</span>
+        <span class="ticker-pill"><span class="pill-dot red"></span>BounceBan</span>
+        <span class="ticker-pill"><span class="pill-dot orange"></span>Perplexity</span>
+        <span class="ticker-pill"><span class="pill-dot blue"></span>Brightdata</span>
+        <span class="ticker-pill"><span class="pill-dot green"></span>Make</span>
+        <span class="ticker-pill"><span class="pill-dot purple"></span>Ocean.io</span>
+        <span class="ticker-pill"><span class="pill-dot cyan"></span>Bettercontact</span>
+        <span class="ticker-pill"><span class="pill-dot red"></span>Icypeas</span>
+        <!-- Duplicate 4 -->
         <span class="ticker-pill"><span class="pill-dot orange"></span>Claude</span>
         <span class="ticker-pill"><span class="pill-dot blue"></span>Northdata</span>
         <span class="ticker-pill"><span class="pill-dot green"></span>n8n</span>

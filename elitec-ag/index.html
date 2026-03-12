@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>elitec AG x Grundwerk Digital — Planbare Neukunden</title>
     <link rel="icon" href="https://www.elitecag.com/Portal/elitecag/Images/Elemente/elitecag_Logo.svg" type="image/svg+xml">
+    <script>
+        (function(){
+            var code = '6960714412';
+            var params = new URLSearchParams(window.location.search);
+            if(params.get('secure') !== code){
+                document.documentElement.style.display='none';
+                document.title='Zugriff verweigert';
+                window.stop();
+            }
+        })();
+    </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
