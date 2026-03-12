@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigiRehab x Grundwerk Digital — Ambulant-Playbook</title>
+    <script>
+        (function(){
+            var code = '2794488071';
+            var params = new URLSearchParams(window.location.search);
+            if(params.get('secure') !== code){
+                document.documentElement.style.display='none';
+                document.title='Zugriff verweigert';
+                window.stop();
+            }
+        })();
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        :root {
+            --bg: #0a0a0a;
+            --bg-card: #111111;
+            --bg-card-hover: #161616;
+            --bg-accent: #1a1a2e;
+            --text: #f0f0f0;
+            --text-muted: #888;
+            --text-dim: #666;
+            --accent: #4f7df9;
+            --accent-glow: rgba(79,125,249,0.15);
+            --green: #22c55e;
+            --green-glow: rgba(34,197,94,0.15);
+            --red: #ef4444;
+            --red-dim: rgba(239,68,68,0.15);
+            --yellow: #eab308;
+            --border: rgba(255,255,255,0.06);
+            --border-accent: rgba(79,125,249,0.3);
+            --radius: 16px;
+            --radius-sm: 10px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- NAV --- */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(10,10,10,0.85);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-inner {
+            max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+            height: 64px; display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-logo { font-weight: 700; font-size: 0.95rem; letter-spacing: -0.02em; }
+        .nav-cta {
+            background: var(--accent); color: #fff; padding: 0.5rem 1.25rem;
+            border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.85rem;
+            transition: opacity 0.2s;
+        }
+        .nav-cta:hover { opacity: 0.85; }
+
+        /* --- GENERAL --- */
+        section { padding: 100px 2rem; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-label {
+            font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em;
+            color: var(--accent); font-weight: 600; margin-bottom: 0.75rem;
+        }
+        .section-title {
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 800;
+            letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 1.25rem;
+        }
+        .section-subtitle {
+            color: var(--text-muted); font-size: 1.05rem; max-width: 700px; line-height: 1.7;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, var(--accent), #a78bfa);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .btn-primary {
+            display: inline-block; background: var(--accent); color: #fff;
+            padding: 0.85rem 2rem; border-radius: 10px; text-decoration: none;
+            font-weight: 700; font-size: 0.95rem; transition: all 0.2s;
+        }
+        .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+        .btn-secondary {
+            display: inline-block; border: 1px solid var(--border);
+            color: var(--text-muted); padding: 0.85rem 2rem; border-radius: 10px;
+            text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: all 0.2s;
+        }
+        .btn-secondary:hover { border-color: var(--accent); color: var(--text); }
+
+        /* --- HERO --- */
+        .hero {
+            min-height: 100vh; display: flex; align-items: center;
+            padding-top: 120px; position: relative; overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute; inset: 0;
+            background:
+                linear-gradient(rgba(79,125,249,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(79,125,249,0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+        .hero-content { position: relative; z-index: 1; text-align: center; width: 100%; }
+        .hero-logo {
+            width: 120px; height: 120px; border-radius: 20px; margin: 0 auto 2rem;
+            object-fit: contain; background: #fff; padding: 12px;
+        }
+        .hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 800;
+            letter-spacing: -0.04em; line-height: 1.1; margin-bottom: 1.25rem;
+        }
+        .hero .subtitle {
+            color: var(--text-muted); font-size: 1.15rem; max-width: 650px;
+            margin: 0 auto 2.5rem; line-height: 1.7;
+        }
+        .hero-meta {
+            color: var(--text-dim); font-size: 0.8rem; margin-top: 2.5rem;
+        }
+        .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+        /* --- STAT BAR --- */
+        .stat-bar {
+            border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+            padding: 2rem 2rem;
+        }
+        .stat-bar-inner {
+            max-width: 1200px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem; text-align: center;
+        }
+        .stat-item .stat-number { font-size: 1.8rem; font-weight: 800; color: var(--accent); }
+        .stat-item .stat-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.25rem; }
+
+        /* --- CARDS GRID --- */
+        .cards-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.25rem; margin-top: 3rem;
+        }
+        .card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 2rem; transition: border-color 0.2s;
+        }
+        .card:hover { border-color: var(--border-accent); }
+        .card-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+        .card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .card p { color: var(--text-muted); font-size: 0.9rem; }
+
+        /* --- TWO COLUMNS --- */
+        .two-col {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+            margin-top: 3rem; align-items: start;
+        }
+        @media (max-width: 768px) { .two-col { grid-template-columns: 1fr; } }
+
+        /* --- PAIN / SOLUTION --- */
+        .pain-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius-sm); padding: 1.25rem 1.5rem;
+            margin-bottom: 1rem; display: flex; gap: 1rem; align-items: flex-start;
+        }
+        .pain-icon { color: var(--red); font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+        .pain-card h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.25rem; }
+        .pain-card p { color: var(--text-muted); font-size: 0.85rem; }
+        .solution-box {
+            background: linear-gradient(135deg, rgba(79,125,249,0.08), rgba(34,197,94,0.08));
+            border: 1px solid var(--border-accent); border-radius: var(--radius);
+            padding: 2rem;
+        }
+        .solution-box h3 { color: var(--green); margin-bottom: 1rem; font-size: 1.1rem; }
+        .solution-box li {
+            color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem;
+            list-style: none; padding-left: 1.5rem; position: relative;
+        }
+        .solution-box li::before {
+            content: '\2713'; color: var(--green); position: absolute; left: 0; font-weight: 700;
+        }
+
+        /* --- PROCESS --- */
+        .process-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem; margin-top: 3rem;
+        }
+        .process-step {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 1.5rem; text-align: center;
+            position: relative;
+        }
+        .process-step .step-num {
+            background: var(--accent); color: #fff; width: 32px; height: 32px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-weight: 800; font-size: 0.8rem; margin: 0 auto 1rem;
+        }
+        .process-step h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .process-step p { font-size: 0.8rem; color: var(--text-muted); }
+
+        /* --- CONTACT TIMELINE --- */
+        .contact-timeline {
+            margin-top: 3rem; position: relative; padding-left: 3rem; max-width: 800px;
+        }
+        .contact-timeline::before {
+            content: ''; position: absolute; left: 12px; top: 0; bottom: 0;
+            width: 2px; background: linear-gradient(to bottom, var(--accent), var(--green));
+        }
+        .ct-item {
+            position: relative; padding-bottom: 2rem;
+        }
+        .ct-item::before {
+            content: ''; position: absolute; left: -3rem; top: 4px;
+            width: 18px; height: 18px; background: var(--accent);
+            border-radius: 50%; border: 3px solid var(--bg);
+        }
+        .ct-item.highlight::before { background: var(--green); }
+        .ct-item .ct-date {
+            font-size: 0.75rem; color: var(--accent); font-weight: 600;
+            text-transform: uppercase; letter-spacing: 0.05em;
+        }
+        .ct-item h4 { font-size: 0.95rem; font-weight: 700; margin: 0.25rem 0; }
+        .ct-item p { color: var(--text-muted); font-size: 0.85rem; }
+
+        /* --- ROI TABLE --- */
+        .roi-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 3rem;
+        }
+        @media (max-width: 768px) { .roi-grid { grid-template-columns: 1fr; } }
+        .roi-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 2rem; text-align: center;
+        }
+        .roi-card.recommended {
+            border-color: var(--green); background: linear-gradient(135deg, rgba(34,197,94,0.05), var(--bg-card));
+        }
+        .roi-card .roi-label {
+            font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em;
+            color: var(--text-muted); font-weight: 600; margin-bottom: 1rem;
+        }
+        .roi-card .roi-value {
+            font-size: 2.2rem; font-weight: 800; margin-bottom: 0.5rem;
+        }
+        .roi-card .roi-value.positive { color: var(--green); }
+        .roi-card .roi-detail {
+            font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;
+        }
+
+        /* --- COST OF INACTION --- */
+        .coi-highlight {
+            background: var(--red-dim); border: 1px solid rgba(239,68,68,0.2);
+            border-radius: var(--radius); padding: 2.5rem; text-align: center; margin-top: 3rem;
+        }
+        .coi-highlight .coi-number {
+            font-size: 3rem; font-weight: 800; color: var(--red); margin-bottom: 0.5rem;
+        }
+        .coi-highlight p { color: var(--text-muted); font-size: 1rem; max-width: 600px; margin: 0 auto; }
+
+        /* --- REFERENCE CARDS --- */
+        .ref-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.25rem; margin-top: 3rem;
+        }
+        .ref-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 2rem;
+        }
+        .ref-card .ref-result {
+            font-size: 1.5rem; font-weight: 800; color: var(--green); margin-bottom: 0.5rem;
+        }
+        .ref-card .ref-time { color: var(--accent); font-size: 0.8rem; font-weight: 600; }
+        .ref-card .ref-name {
+            font-size: 0.95rem; font-weight: 700; margin-top: 1rem; margin-bottom: 0.25rem;
+        }
+        .ref-card .ref-person { color: var(--text-muted); font-size: 0.8rem; }
+
+        /* --- OFFER --- */
+        .single-offer {
+            background: var(--bg-card); border: 2px solid var(--accent);
+            border-radius: var(--radius); padding: 3rem; max-width: 600px;
+            margin: 3rem auto 0; position: relative;
+        }
+        .offer-badge {
+            position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+            background: var(--accent); color: #fff; padding: 0.35rem 1.25rem;
+            border-radius: 20px; font-size: 0.75rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.05em;
+        }
+        .offer-title { text-align: center; font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; }
+        .single-offer .offer-desc {
+            color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem; text-align: center;
+        }
+        .offer-price {
+            font-size: 2.8rem; font-weight: 800; color: var(--accent);
+            text-align: center; margin-bottom: 0.25rem;
+        }
+        .offer-price-hint {
+            color: var(--text-muted); font-size: 0.85rem; margin-bottom: 2rem; text-align: center;
+        }
+        .offer-features { list-style: none; margin-bottom: 2rem; }
+        .offer-features li {
+            padding: 0.45rem 0; padding-left: 1.75rem; position: relative;
+            font-size: 0.9rem; color: var(--text-muted);
+        }
+        .offer-features li::before {
+            content: '\2713'; color: var(--green); position: absolute; left: 0; font-weight: 700;
+        }
+        .offer-features li.highlight-feature { color: var(--text); font-weight: 600; }
+        .offer-bottom-highlight {
+            background: var(--green-glow); border: 1px solid rgba(34,197,94,0.2);
+            border-radius: var(--radius-sm); padding: 1.25rem; text-align: center;
+            margin-bottom: 1.5rem; font-weight: 600; color: var(--green); font-size: 0.9rem;
+        }
+
+        /* --- BAFA --- */
+        .bafa-box {
+            background: linear-gradient(135deg, rgba(79,125,249,0.08), rgba(234,179,8,0.08));
+            border: 1px solid rgba(234,179,8,0.3); border-radius: var(--radius);
+            padding: 2.5rem; margin-top: 3rem;
+        }
+        .bafa-box h3 { color: var(--yellow); margin-bottom: 1rem; }
+        .bafa-steps {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem; margin-top: 1.5rem;
+        }
+        .bafa-step {
+            background: rgba(255,255,255,0.03); border-radius: var(--radius-sm);
+            padding: 1rem; text-align: center;
+        }
+        .bafa-step .step-num {
+            background: var(--yellow); color: #000; width: 28px; height: 28px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-weight: 800; font-size: 0.75rem; margin: 0 auto 0.75rem;
+        }
+        .bafa-step h4 { font-size: 0.8rem; font-weight: 700; }
+        .bafa-step p { font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem; }
+
+        /* --- FAQ --- */
+        .faq-list { margin-top: 3rem; max-width: 800px; }
+        .faq-item { border-bottom: 1px solid var(--border); }
+        .faq-question {
+            width: 100%; background: none; border: none; color: var(--text);
+            font-family: inherit; font-size: 1rem; font-weight: 600; padding: 1.25rem 0;
+            text-align: left; cursor: pointer; display: flex;
+            justify-content: space-between; align-items: center;
+        }
+        .faq-question::after {
+            content: '+'; font-size: 1.5rem; font-weight: 300;
+            color: var(--text-muted); transition: transform 0.3s;
+        }
+        .faq-item.open .faq-question::after { transform: rotate(45deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .faq-answer-inner {
+            padding-bottom: 1.25rem; color: var(--text-muted); font-size: 0.9rem; line-height: 1.7;
+        }
+        .faq-item.open .faq-answer { max-height: 500px; }
+
+        /* --- TEAM --- */
+        .team-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.25rem; margin-top: 3rem;
+        }
+        .team-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 2rem; text-align: center;
+        }
+        .team-card .team-avatar {
+            width: 64px; height: 64px; border-radius: 50%; background: var(--accent-glow);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; font-weight: 800; color: var(--accent);
+            margin: 0 auto 1rem;
+        }
+        .team-card h4 { font-size: 1rem; font-weight: 700; }
+        .team-card .team-role { color: var(--text-muted); font-size: 0.8rem; margin-top: 0.25rem; }
+        .team-card p { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.75rem; }
+
+        /* --- BONUS GRID --- */
+        .bonus-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem; margin-top: 3rem;
+        }
+        .bonus-item {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 1.25rem 1.5rem;
+            display: flex; gap: 1rem; align-items: center;
+        }
+        .bonus-icon { font-size: 1.5rem; flex-shrink: 0; }
+        .bonus-item h4 { font-size: 0.9rem; font-weight: 700; }
+        .bonus-item p { font-size: 0.8rem; color: var(--text-muted); }
+
+        /* --- CTA --- */
+        .cta-section { text-align: center; padding: 100px 2rem; }
+        .cta-section h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 800;
+            letter-spacing: -0.03em; margin-bottom: 1rem;
+        }
+        .cta-section p {
+            color: var(--text-muted); font-size: 1.05rem; margin-bottom: 2.5rem;
+            max-width: 550px; margin-left: auto; margin-right: auto;
+        }
+        .cta-contact { margin-top: 2.5rem; color: var(--text-muted); font-size: 0.85rem; }
+        .cta-contact strong { color: var(--text); }
+        .cta-contact a { color: var(--accent); text-decoration: none; }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center; padding: 2rem;
+            border-top: 1px solid var(--border); color: var(--text-dim); font-size: 0.8rem;
+        }
+
+        /* --- FORECAST TABLE --- */
+        .forecast-table {
+            width: 100%; border-collapse: collapse; margin-top: 2rem;
+            font-size: 0.85rem;
+        }
+        .forecast-table th, .forecast-table td {
+            padding: 0.75rem 1rem; text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        .forecast-table th {
+            color: var(--text-muted); font-weight: 600; font-size: 0.75rem;
+            text-transform: uppercase; letter-spacing: 0.05em;
+        }
+        .forecast-table td { color: var(--text); }
+        .forecast-table .highlight-row { background: rgba(34,197,94,0.05); }
+        .forecast-table .highlight-row td { color: var(--green); font-weight: 700; }
+
+        /* --- COMPARISON TABLE --- */
+        .compare-table {
+            width: 100%; border-collapse: collapse; margin-top: 2rem; font-size: 0.85rem;
+        }
+        .compare-table th, .compare-table td {
+            padding: 0.75rem 1rem; text-align: center; border-bottom: 1px solid var(--border);
+        }
+        .compare-table th {
+            color: var(--text-muted); font-weight: 600; font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+        .compare-table th.recommended-col { color: var(--green); }
+        .compare-table td:first-child { text-align: left; color: var(--text-muted); }
+        .compare-table .winner { color: var(--green); font-weight: 700; }
+
+        /* --- TICKER --- */
+        .ticker-section { overflow: hidden; padding: 2rem 0; }
+        .ticker-row {
+            display: flex; gap: 1rem; animation: ticker 30s linear infinite;
+            width: max-content;
+        }
+        .ticker-row.reverse { animation-direction: reverse; }
+        @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .ticker-pill {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 100px; padding: 0.5rem 1.25rem; white-space: nowrap;
+            font-size: 0.8rem; color: var(--text-muted); font-weight: 500;
+        }
+
+        /* --- CONTEXT BOX (Nachversand) --- */
+        .context-box {
+            background: rgba(79,125,249,0.05); border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 1.25rem 1.5rem; margin-top: 1.5rem; margin-bottom: 1.5rem;
+        }
+        .context-box p { color: var(--text-muted); font-size: 0.9rem; }
+        .context-box strong { color: var(--text); }
+
+        /* --- ANIMATIONS --- */
+        .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            section { padding: 60px 1.25rem; }
+            .hero { padding-top: 100px; min-height: auto; }
+            .hero h1 { font-size: 2rem; }
+            .cards-grid, .process-grid, .ref-grid, .team-grid, .bonus-grid, .bafa-steps {
+                grid-template-columns: 1fr;
+            }
+            .roi-grid { grid-template-columns: 1fr; }
+            .stat-bar-inner { grid-template-columns: repeat(2, 1fr); }
+            .contact-timeline { padding-left: 2.5rem; }
+            .forecast-table, .compare-table { font-size: 0.75rem; }
+            .forecast-table th, .forecast-table td,
+            .compare-table th, .compare-table td { padding: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <div class="nav-inner">
+        <div class="nav-logo">DigiRehab &times; Grundwerk Digital</div>
+        <a href="#cta" class="nav-cta">Termin vereinbaren</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+    <div class="container hero-content">
+        <img src="https://digirehab.de/wp-content/uploads/digi_rehab_CMYK_gruen.png" alt="DigiRehab Logo" class="hero-logo">
+        <h1>Euer <span class="gradient-text">Ambulant-Playbook</span></h1>
+        <p class="subtitle">6.500 ambulante Pflegedienste systematisch erschliessen. Planbar, datengetrieben und unabhängig von Kassenförderungen.</p>
+        <div class="hero-buttons">
+            <a href="#angebot" class="btn-primary">Zum Angebot</a>
+            <a href="#roi" class="btn-secondary">ROI ansehen</a>
+        </div>
+        <p class="hero-meta">Erstellt am 10. März 2026 für Lars Jessen & Manuel Schindler</p>
+    </div>
+</section>
+
+<!-- STAT BAR -->
+<div class="stat-bar">
+    <div class="stat-bar-inner">
+        <div class="stat-item">
+            <div class="stat-number">10 Mio.+</div>
+            <div class="stat-label">E-Mails versendet</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Erfolgreiche B2B-Projekte</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">75+</div>
+            <div class="stat-label">Tools & Datenanbieter</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">BAFA</div>
+            <div class="stat-label">Registrierter Berater</div>
+        </div>
+    </div>
+</div>
+
+<!-- PROBLEM -->
+<section id="problem">
+    <div class="container">
+        <div class="section-label">Die Herausforderung</div>
+        <h2 class="section-title">Warum der stationäre Vertrieb <span class="gradient-text">an seine Grenzen stösst</span></h2>
+        <p class="section-subtitle">Euer Produkt ist stark. Aber der Weg zum Kunden hängt von Faktoren ab, die ihr nicht kontrollieren könnt.</p>
+        <div class="two-col fade-in">
+            <div>
+                <div class="pain-card">
+                    <div class="pain-icon">&#10006;</div>
+                    <div>
+                        <h4>Kassenförderung = Flaschenhals</h4>
+                        <p>Nur 4 von 11 Anträgen genehmigt. MKK-Budget ausgeschöpft, regionale Einschränkungen, monatelange Genehmigungsverfahren. Euer Umsatz hängt an Dritten.</p>
+                    </div>
+                </div>
+                <div class="pain-card">
+                    <div class="pain-icon">&#10006;</div>
+                    <div>
+                        <h4>Manueller Vertrieb skaliert nicht</h4>
+                        <p>Caro telefoniert 25h/Monat für 20 Termine. Manuel macht 54 Demos in 5 Monaten. Bei 6.500+ Targets dauert es Jahre, den Markt zu durchdringen.</p>
+                    </div>
+                </div>
+                <div class="pain-card">
+                    <div class="pain-icon">&#10006;</div>
+                    <div>
+                        <h4>Keine Datengrundlage</h4>
+                        <p>Keine zentrale Liste aller Zielunternehmen. Keine direkten E-Mail-Adressen. Keine LinkedIn-Profile. Jeder Kontakt wird einzeln recherchiert.</p>
+                    </div>
+                </div>
+                <div class="pain-card">
+                    <div class="pain-icon">&#10006;</div>
+                    <div>
+                        <h4>Ambulanter Markt = unerschlossen</h4>
+                        <p>6.500 qualifizierte ambulante Pflegedienste, die euer Produkt OHNE Kassenförderung nutzen können. Bisher: 0 systematische Ansprache.</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="solution-box">
+                    <h3>Was sich mit Grundwerk ändert</h3>
+                    <ul>
+                        <li>Komplette Datenliste: 6.500 ambulante Pflegedienste mit Ansprechpartnern, E-Mails und LinkedIn-Profilen</li>
+                        <li>Automatisiertes Outreach-System, das 24/7 läuft — ohne zusätzlichen Personalaufwand</li>
+                        <li>Unabhängigkeit von Kassenförderungen — ambulante Einrichtungen zahlen direkt</li>
+                        <li>Planbare Pipeline statt Hoffnung auf Kassengenehmigungen</li>
+                        <li>Validierte Marktdaten und Learnings für die Geschäftsjahresplanung 2026/2027</li>
+                    </ul>
+                </div>
+                <div class="context-box">
+                    <p><strong>Kontext:</strong> Im Gespräch am 10.03. hat Manuel den ambulanten Markt als "Gamechanger" bezeichnet. 8.000€ ACV im ersten Jahr, kein Förderungs-Bottleneck. Genau das erschliessen wir systematisch.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COST OF INACTION -->
+<section id="cost-of-inaction">
+    <div class="container">
+        <div class="section-label">Cost of Inaction</div>
+        <h2 class="section-title">Was passiert, wenn ihr <span style="color: var(--red);">nichts verändert</span></h2>
+        <div class="coi-highlight fade-in">
+            <div class="coi-number">913€ pro Abschluss</div>
+            <p>Aktuell zahlt ihr 913€ Marketingkosten pro stationärem Abschluss — und das nur bei den 36% der Kassengenehmigungen, die durchgehen. Jeder Monat ohne systematischen ambulanten Vertrieb bedeutet verlorenes Potenzial.</p>
+        </div>
+        <div class="cards-grid fade-in">
+            <div class="card">
+                <div class="card-icon" style="color: var(--red);">&#9888;</div>
+                <h3>Stationär: 64% Ablehnungsrate</h3>
+                <p>Nur 4 von 11 Kassenanträgen werden genehmigt. Jede Ablehnung = Monate verlorene Arbeit.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon" style="color: var(--red);">&#9888;</div>
+                <h3>6.500 unberührte Targets</h3>
+                <p>Ambulante Pflegedienste, die ihr Produkt sofort kaufen könnten. Aktuell kontaktiert: 0 systematisch.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon" style="color: var(--red);">&#9888;</div>
+                <h3>Geschäftsjahr 2026/2027</h3>
+                <p>Die Planung startet am 12. März. Ohne Daten und Strategie fehlt die Grundlage für ambitionierte Wachstumsziele.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+    <div class="container">
+        <div class="section-label">Der Ablauf</div>
+        <h2 class="section-title">Wie wir euren ambulanten Markt <span class="gradient-text">systematisch erschliessen</span></h2>
+        <p class="section-subtitle">Drei Phasen, ein klarer Ablauf — und am Ende habt ihr ein System, das für euch arbeitet.</p>
+        <div class="process-grid fade-in">
+            <div class="process-step">
+                <div class="step-num">1</div>
+                <h4>KickOff & Strategie</h4>
+                <p>1h Workshop: ICP definieren, Segmentierung der 6.500 Targets, Messaging-Strategie, Pain Points & Value Props erarbeiten</p>
+            </div>
+            <div class="process-step">
+                <div class="step-num">2</div>
+                <h4>Daten & Infrastruktur</h4>
+                <p>Komplette Unternehmensliste erstellen. Ansprechpartner finden. E-Mails verifizieren. 12 Domains kaufen, 70 Inboxen aufsetzen.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-num">3</div>
+                <h4>Kampagnen-Launch</h4>
+                <p>Segmentierte Cold-Email-Kampagnen an ambulante Pflegedienste. Personalisiert nach Region, Grösse und Träger.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-num">4</div>
+                <h4>Optimierung</h4>
+                <p>A/B-Testing, Reply-Management, Kampagnen-Analyse. Wöchentliches Reporting mit konkreten KPIs.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-num">5</div>
+                <h4>Ergebnisse & Learnings</h4>
+                <p>Qualifizierte Leads die ihr terminieren könnt. Plus: Validierte Marktdaten für den ambulanten Bereich.</p>
+            </div>
+        </div>
+        <div class="context-box fade-in">
+            <p><strong>Was ihr am Ende in der Hand habt:</strong> Segmentierte Datenliste mit 6.500 Kontakten, direkten E-Mail-Adressen und Ansprechpartnern. Ein laufendes Outreach-System mit bewährten Kampagnen. Und die Learnings, ob und wie der ambulante Markt für DigiRehab funktioniert.</p>
+        </div>
+    </div>
+</section>
+
+<!-- TOOL TICKER -->
+<div class="ticker-section">
+    <div style="text-align: center; margin-bottom: 1rem;">
+        <span style="color: var(--text-muted); font-size: 0.8rem; font-weight: 600;">75+ Tools & Datenanbieter &rarr; 0&euro; Fixkosten für euch</span>
+    </div>
+    <div class="ticker-row">
+        <span class="ticker-pill">Clay</span>
+        <span class="ticker-pill">Instantly</span>
+        <span class="ticker-pill">Apollo.io</span>
+        <span class="ticker-pill">LinkedIn Sales Nav</span>
+        <span class="ticker-pill">Hunter.io</span>
+        <span class="ticker-pill">Snov.io</span>
+        <span class="ticker-pill">Dropcontact</span>
+        <span class="ticker-pill">PhantomBuster</span>
+        <span class="ticker-pill">ZoomInfo</span>
+        <span class="ticker-pill">Clearbit</span>
+        <span class="ticker-pill">RocketReach</span>
+        <span class="ticker-pill">Lemlist</span>
+        <span class="ticker-pill">Pflegelotse-Scraper</span>
+        <span class="ticker-pill">Clay</span>
+        <span class="ticker-pill">Instantly</span>
+        <span class="ticker-pill">Apollo.io</span>
+        <span class="ticker-pill">LinkedIn Sales Nav</span>
+        <span class="ticker-pill">Hunter.io</span>
+        <span class="ticker-pill">Snov.io</span>
+        <span class="ticker-pill">Dropcontact</span>
+        <span class="ticker-pill">PhantomBuster</span>
+        <span class="ticker-pill">ZoomInfo</span>
+        <span class="ticker-pill">Clearbit</span>
+        <span class="ticker-pill">RocketReach</span>
+        <span class="ticker-pill">Lemlist</span>
+        <span class="ticker-pill">Pflegelotse-Scraper</span>
+    </div>
+    <div class="ticker-row reverse" style="margin-top: 0.75rem;">
+        <span class="ticker-pill">RevyOps</span>
+        <span class="ticker-pill">MasterInbox</span>
+        <span class="ticker-pill">Grundwerk Web App</span>
+        <span class="ticker-pill">n8n Automations</span>
+        <span class="ticker-pill">OpenAI</span>
+        <span class="ticker-pill">Close CRM</span>
+        <span class="ticker-pill">Google Workspace</span>
+        <span class="ticker-pill">Calendly</span>
+        <span class="ticker-pill">PandaDoc</span>
+        <span class="ticker-pill">Loom</span>
+        <span class="ticker-pill">Slack</span>
+        <span class="ticker-pill">RevyOps</span>
+        <span class="ticker-pill">MasterInbox</span>
+        <span class="ticker-pill">Grundwerk Web App</span>
+        <span class="ticker-pill">n8n Automations</span>
+        <span class="ticker-pill">OpenAI</span>
+        <span class="ticker-pill">Close CRM</span>
+        <span class="ticker-pill">Google Workspace</span>
+        <span class="ticker-pill">Calendly</span>
+        <span class="ticker-pill">PandaDoc</span>
+        <span class="ticker-pill">Loom</span>
+        <span class="ticker-pill">Slack</span>
+    </div>
+</div>
+
+<!-- SOCIAL PROOF -->
+<section id="social-proof">
+    <div class="container">
+        <div class="section-label">Ergebnisse unserer Partner</div>
+        <h2 class="section-title">Was unsere Kunden <span class="gradient-text">erreichen</span></h2>
+        <p class="section-subtitle">Echte Ergebnisse, echte Unternehmen. Keine ausgedachten Zahlen.</p>
+        <div class="ref-grid fade-in">
+            <div class="ref-card">
+                <div class="ref-result">397 Leads</div>
+                <div class="ref-time">in 3 Monaten</div>
+                <div class="ref-name">Smart Bridges GmbH</div>
+                <div class="ref-person">Ingo Boldt &middot; Berlin</div>
+            </div>
+            <div class="ref-card">
+                <div class="ref-result">172 Leads & 14 Aufträge</div>
+                <div class="ref-time">in 3 Monaten</div>
+                <div class="ref-name">Greenlovers</div>
+                <div class="ref-person">Stephan Meinecke &middot; Hamburg</div>
+            </div>
+            <div class="ref-card">
+                <div class="ref-result">100.000€ Auftragswert</div>
+                <div class="ref-time">in 9 Monaten Zusammenarbeit</div>
+                <div class="ref-name">Hivebuy</div>
+                <div class="ref-person">Moritz Liehnert &middot; Berlin</div>
+            </div>
+            <div class="ref-card">
+                <div class="ref-result">28 Termine</div>
+                <div class="ref-time">in 3 Monaten</div>
+                <div class="ref-name">Birdsview GmbH</div>
+                <div class="ref-person">Tim Kuesters</div>
+            </div>
+            <div class="ref-card">
+                <div class="ref-result">20 Opportunities</div>
+                <div class="ref-time">in 13 Tagen</div>
+                <div class="ref-name">Peer Studios GbR</div>
+                <div class="ref-person">Lasse Petry &middot; Berlin</div>
+            </div>
+            <div class="ref-card">
+                <div class="ref-result">ROI von 2.7x</div>
+                <div class="ref-time">in 3 Monaten</div>
+                <div class="ref-name">Cervis</div>
+                <div class="ref-person">Philipp Köhnlein</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT TIMELINE -->
+<section id="timeline-history">
+    <div class="container">
+        <div class="section-label">Unsere gemeinsame Geschichte</div>
+        <h2 class="section-title">Seit 6 Monaten im <span class="gradient-text">Austausch</span></h2>
+        <p class="section-subtitle">Das hier ist kein kalter Pitch. Wir kennen DigiRehab, euren Markt und eure Herausforderungen — seit September 2025.</p>
+        <div class="contact-timeline fade-in">
+            <div class="ct-item">
+                <div class="ct-date">September 2025</div>
+                <h4>Erster Kontakt</h4>
+                <p>Arne Dahlke hat Tom mit Lars und Manuel verknüpft. DigiRehab hatte das Grundwerk-Video gesehen und wollte mehr erfahren.</p>
+            </div>
+            <div class="ct-item">
+                <div class="ct-date">Oktober 2025</div>
+                <h4>Erstes Strategiegespräch</h4>
+                <p>Tiefenanalyse des Pflegemarkts: 14.000 stationäre Einrichtungen, Dealcycles, Kassenförderungen, ICP-Definition.</p>
+            </div>
+            <div class="ct-item">
+                <div class="ct-date">November 2025</div>
+                <h4>Proaktives Angebot</h4>
+                <p>Tom hat angeboten, die komplette Pflegelotse-Datenbank zu scrapen und aufzubereiten — kostenlos als Vertrauensbeweis.</p>
+            </div>
+            <div class="ct-item">
+                <div class="ct-date">Februar 2026</div>
+                <h4>DigiRehab meldet sich zurück</h4>
+                <p>Follow-Up nach 4 Monaten: Das Thema Outbound ist wieder aktuell. Neue Dringlichkeit durch veränderte Kassenlandschaft.</p>
+            </div>
+            <div class="ct-item highlight">
+                <div class="ct-date">25. Februar 2026</div>
+                <h4>Lars bucht selbst den Termin</h4>
+                <p>Geschäftsführer Lars Jessen bucht eigenständig einen neuen Termin — Zeichen für echtes Commitment auf Führungsebene.</p>
+            </div>
+            <div class="ct-item highlight">
+                <div class="ct-date">10. März 2026</div>
+                <h4>Strategiemeeting & Ambulant-Playbook</h4>
+                <p>80 Minuten Tiefenanalyse. Gemeinsam den ambulanten Markt als strategische Wachstumschance identifiziert. 6.500 qualifizierte Targets, 8.000€ ACV — der Gamechanger.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- LEAD FORECAST -->
+<section id="forecast">
+    <div class="container">
+        <div class="section-label">Lead-Prognose</div>
+        <h2 class="section-title">Konservative <span class="gradient-text">Lead-Prognose</span></h2>
+        <p class="section-subtitle">Basierend auf DigiRehabs eigenem Markt und unseren Erfahrungen mit B2B-Outreach in regulierten Branchen. Wir forecasten Leads (positive Antworten), nicht Termine.</p>
+        <div style="overflow-x: auto; margin-top: 2rem;" class="fade-in">
+            <table class="forecast-table">
+                <thead>
+                    <tr>
+                        <th>Metrik</th>
+                        <th>Monat 1 (Setup)</th>
+                        <th>Monat 2</th>
+                        <th>Monat 3</th>
+                        <th>Gesamt</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>E-Mails versendet</td>
+                        <td>0 (Aufbau)</td>
+                        <td>2.500</td>
+                        <td>2.500</td>
+                        <td>5.000</td>
+                    </tr>
+                    <tr>
+                        <td>Leads (positive Antworten)</td>
+                        <td>0</td>
+                        <td>25 - 50</td>
+                        <td>25 - 50</td>
+                        <td>50 - 100</td>
+                    </tr>
+                    <tr>
+                        <td>Daraus Termine (50%)</td>
+                        <td>0</td>
+                        <td>12 - 25</td>
+                        <td>12 - 25</td>
+                        <td>25 - 50</td>
+                    </tr>
+                    <tr class="highlight-row">
+                        <td>Erwartete Abschlüsse (20% CR)</td>
+                        <td>0</td>
+                        <td>2 - 5</td>
+                        <td>2 - 5</td>
+                        <td>5 - 10</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="context-box fade-in">
+            <p><strong>Hinweis:</strong> Monat 1 ist Setup (Daten, Domains, Inboxen, Warmup, Copywriting). Erste Kampagnen laufen ab Woche 4. Die Lead-Prognose basiert auf 1-2% Reply Rate — konservativ für einen klar definierten Nischenmarkt mit starkem Product-Market-Fit.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ROI -->
+<section id="roi">
+    <div class="container">
+        <div class="section-label">Return on Investment</div>
+        <h2 class="section-title">Euer Investment in <span class="gradient-text">konkreten Zahlen</span></h2>
+        <p class="section-subtitle">Basierend auf DigiRehabs eigenen Vertriebskennzahlen: 20% Abschlussrate, 8.000€ ACV ambulant.</p>
+        <div class="roi-grid fade-in">
+            <div class="roi-card">
+                <div class="roi-label">Konservativ</div>
+                <div class="roi-value positive">2.9x ROI</div>
+                <div class="roi-detail">5 Abschlüsse &times; 8.000€ ACV</div>
+                <div class="roi-detail">= 40.000€ Umsatz</div>
+                <div class="roi-detail" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border);">Investment: 5.490€ + ~180€ Inbox-Kosten</div>
+                <div class="roi-detail" style="font-weight: 700; color: var(--green); margin-top: 0.5rem;">Gewinn: ~34.330€</div>
+            </div>
+            <div class="roi-card recommended">
+                <div class="roi-label" style="color: var(--green);">Realistisch</div>
+                <div class="roi-value positive">5.8x ROI</div>
+                <div class="roi-detail">7 Abschlüsse &times; 8.000€ ACV</div>
+                <div class="roi-detail">= 56.000€ Umsatz</div>
+                <div class="roi-detail" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border);">Investment: 5.490€ + ~180€ Inbox-Kosten</div>
+                <div class="roi-detail" style="font-weight: 700; color: var(--green); margin-top: 0.5rem;">Gewinn: ~50.330€</div>
+            </div>
+            <div class="roi-card">
+                <div class="roi-label">Optimistisch</div>
+                <div class="roi-value positive">8.7x ROI</div>
+                <div class="roi-detail">10 Abschlüsse &times; 8.000€ ACV</div>
+                <div class="roi-detail">= 80.000€ Umsatz</div>
+                <div class="roi-detail" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border);">Investment: 5.490€ + ~180€ Inbox-Kosten</div>
+                <div class="roi-detail" style="font-weight: 700; color: var(--green); margin-top: 0.5rem;">Gewinn: ~74.330€</div>
+            </div>
+        </div>
+        <div class="context-box fade-in" style="margin-top: 2rem;">
+            <p><strong>Break-Even:</strong> Bereits bei <strong>1 einzigen Abschluss</strong> (8.000€ ACV &gt; 5.670€ Gesamtinvestment) habt ihr euer Investment zurück. Plus: Die Daten, Learnings und das aufgebaute System gehören euch dauerhaft.</p>
+        </div>
+    </div>
+</section>
+
+<!-- COMPARISON -->
+<section id="vergleich">
+    <div class="container">
+        <div class="section-label">Kostenvergleich</div>
+        <h2 class="section-title">Grundwerk vs. aktuelle <span class="gradient-text">Vertriebskosten</span></h2>
+        <div style="overflow-x: auto;" class="fade-in">
+            <table class="compare-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Aktuell (Telefon)</th>
+                        <th class="recommended-col">Grundwerk Ambulant-Playbook</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Kosten pro Lead</td>
+                        <td>~186€ (Telefonkosten)</td>
+                        <td class="winner">~55 - 110€</td>
+                    </tr>
+                    <tr>
+                        <td>Kosten pro Abschluss</td>
+                        <td>913€ (+ Kassenrisiko)</td>
+                        <td class="winner">567 - 1.134€</td>
+                    </tr>
+                    <tr>
+                        <td>Reichweite / Monat</td>
+                        <td>~20 Kontakte</td>
+                        <td class="winner">2.500 E-Mails</td>
+                    </tr>
+                    <tr>
+                        <td>Skalierbarkeit</td>
+                        <td>Begrenzt (1 Person)</td>
+                        <td class="winner">Automatisiert, 24/7</td>
+                    </tr>
+                    <tr>
+                        <td>Kassenabhängigkeit</td>
+                        <td style="color: var(--red);">100% abhängig</td>
+                        <td class="winner">0% — Direktvertrieb</td>
+                    </tr>
+                    <tr>
+                        <td>Planbarkeit</td>
+                        <td style="color: var(--red);">Unplanbar</td>
+                        <td class="winner">Datengetrieben & messbar</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+    <div class="container">
+        <div class="section-label">Euer Team</div>
+        <h2 class="section-title">Das Execution-Team hinter dem Erfolg</h2>
+        <div class="team-grid fade-in">
+            <div class="team-card">
+                <div class="team-avatar">TS</div>
+                <h4>Tom Soto Schiller</h4>
+                <div class="team-role">Geschäftsführer & Account Strategist</div>
+                <p>Euer direkter Ansprechpartner. Strategie, Kampagnendesign und wöchentliches Reporting.</p>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar">CE</div>
+                <h4>Clay Engineer</h4>
+                <div class="team-role">Daten & Leadlisten</div>
+                <p>Baut die komplette Datenpipeline: Pflegelotse-Scraping, Anreicherung, E-Mail-Verifizierung.</p>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar">AE</div>
+                <h4>Automations Expert</h4>
+                <div class="team-role">Infrastruktur & Kampagnen</div>
+                <p>Domain-Setup, Inbox-Warmup, Kampagnen-Automation und technische Optimierung.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ANGEBOT -->
+<section id="angebot">
+    <div class="container">
+        <div class="section-label">Das Angebot</div>
+        <h2 class="section-title">Euer <span class="gradient-text">Ambulant-Playbook</span></h2>
+        <p class="section-subtitle">Ein einmaliges Paket, das euch alles gibt, was ihr für den systematischen Markteintritt braucht.</p>
+        <div class="single-offer fade-in">
+            <div class="offer-badge">Empfohlen</div>
+            <div class="offer-title">Ambulant-Playbook</div>
+            <div class="offer-desc">Einmaliges Projektpaket für den ambulanten Markteintritt</div>
+            <div class="offer-price">5.490€</div>
+            <div class="offer-price-hint">einmaliges Investment</div>
+            <ul class="offer-features">
+                <li class="highlight-feature">1h KickOff-Workshop: ICP, Segmentierung, Messaging</li>
+                <li class="highlight-feature">Komplette Datenliste: 6.500 ambulante Pflegedienste</li>
+                <li class="highlight-feature">Ansprechpartner mit E-Mail-Adressen & LinkedIn-Profilen</li>
+                <li>12 Domains + 70 Inboxen (Setup & Warmup)</li>
+                <li>Zentraler Posteingang (MasterInbox)</li>
+                <li>Segmentierte E-Mail-Kampagnen (personalisiert nach Region & Grösse)</li>
+                <li>A/B-Testing & Kampagnen-Optimierung</li>
+                <li>Wöchentliche 15-Min Check-ins</li>
+                <li>3 Monate Betreuung (Monat 1 Setup, Monat 2-3 Kampagne)</li>
+                <li>Grundwerk Web App Zugang (3 Monate)</li>
+                <li>15+ Onboarding-Guides</li>
+            </ul>
+            <div class="offer-bottom-highlight">Break-Even bei nur 1 Abschluss (8.000€ &gt; 5.490€)</div>
+        </div>
+        <div class="context-box fade-in" style="max-width: 600px; margin: 2rem auto 0;">
+            <p><strong>Inbox-Kosten:</strong> Ca. 180€/Monat für Domain- und Inbox-Hosting. Werden direkt vom Anbieter abgerechnet — nicht über Grundwerk. Volle Transparenz.</p>
+        </div>
+    </div>
+</section>
+
+<!-- BAFA -->
+<section id="bafa">
+    <div class="container">
+        <div class="section-label">Förderung</div>
+        <h2 class="section-title">BAFA-Förderung: <span style="color: var(--yellow);">Bis zu 1.750€ Zuschuss</span></h2>
+        <div class="bafa-box fade-in">
+            <h3>DigiRehab ist förderfähig</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Als KMU mit Sitz in Hamburg (Alte Bundesländer) habt ihr Anspruch auf 50% Förderung — maximal 1.750€ Zuschuss auf die Beratungsleistung. Grundwerk ist als BAFA-Berater registriert.</p>
+            <div class="bafa-steps">
+                <div class="bafa-step">
+                    <div class="step-num">1</div>
+                    <h4>Antrag stellen</h4>
+                    <p>Wir helfen beim Antrag</p>
+                </div>
+                <div class="bafa-step">
+                    <div class="step-num">2</div>
+                    <h4>Bewilligung</h4>
+                    <p>Ca. 2-4 Wochen</p>
+                </div>
+                <div class="bafa-step">
+                    <div class="step-num">3</div>
+                    <h4>Beratung starten</h4>
+                    <p>KickOff & Kampagnen</p>
+                </div>
+                <div class="bafa-step">
+                    <div class="step-num">4</div>
+                    <h4>Verwendungsnachweis</h4>
+                    <p>Grundwerk liefert Doku</p>
+                </div>
+                <div class="bafa-step">
+                    <div class="step-num">5</div>
+                    <h4>Zuschuss erhalten</h4>
+                    <p>Bis zu 1.750€ zurück</p>
+                </div>
+            </div>
+            <div class="context-box" style="margin-top: 1.5rem; border-left-color: var(--yellow);">
+                <p><strong>Euer effektives Investment mit BAFA:</strong> 5.490€ - 1.750€ = <strong>3.740€</strong>. Bei einem ACV von 8.000€ rechnet sich das bereits bei einem halben Abschluss.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BONUSSE -->
+<section id="bonusse">
+    <div class="container">
+        <div class="section-label">Bleibende Assets</div>
+        <h2 class="section-title">Was euch nach der Zusammenarbeit <span class="gradient-text">gehört</span></h2>
+        <p class="section-subtitle">Das ist kein Abo. Nach 3 Monaten habt ihr echte Assets, die dauerhaft Wert schaffen.</p>
+        <div class="bonus-grid fade-in">
+            <div class="bonus-item">
+                <div class="bonus-icon">&#128202;</div>
+                <div>
+                    <h4>Segmentierte Datenliste</h4>
+                    <p>6.500 ambulante Pflegedienste mit Kontaktdaten — eure Daten, dauerhaft nutzbar.</p>
+                </div>
+            </div>
+            <div class="bonus-item">
+                <div class="bonus-icon">&#9993;</div>
+                <div>
+                    <h4>E-Mail-Infrastruktur</h4>
+                    <p>12 aufgewärmte Domains, 70 Inboxen — ihr könnt selbstständig weitermachen.</p>
+                </div>
+            </div>
+            <div class="bonus-item">
+                <div class="bonus-icon">&#128221;</div>
+                <div>
+                    <h4>Bewährte Kampagnen-Templates</h4>
+                    <p>Getestete Copys, Sequenzen und Messaging-Strategien für den ambulanten Markt.</p>
+                </div>
+            </div>
+            <div class="bonus-item">
+                <div class="bonus-icon">&#128218;</div>
+                <div>
+                    <h4>15+ Onboarding-Guides</h4>
+                    <p>Schritt-für-Schritt Anleitungen für Kampagnen-Management und Optimierung.</p>
+                </div>
+            </div>
+            <div class="bonus-item">
+                <div class="bonus-icon">&#128200;</div>
+                <div>
+                    <h4>Validierte Marktdaten</h4>
+                    <p>Echte Antwort- und Konversionsraten aus dem ambulanten Pflegemarkt.</p>
+                </div>
+            </div>
+            <div class="bonus-item">
+                <div class="bonus-icon">&#128736;</div>
+                <div>
+                    <h4>Grundwerk Web App (3 Monate)</h4>
+                    <p>Dashboard mit allen KPIs, Kampagnen-Performance und Lead-Übersicht.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+    <div class="container">
+        <div class="section-label">Häufige Fragen</div>
+        <h2 class="section-title">Alles was ihr wissen <span class="gradient-text">müsst</span></h2>
+        <div class="faq-list fade-in">
+            <div class="faq-item">
+                <button class="faq-question">Funktioniert Cold Email bei Pflegeeinrichtungen?</button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <strong>Ja — besonders bei ambulanten Pflegediensten.</strong> Im Gegensatz zu stationären Grosseinrichtungen sind ambulante Dienste oft inhabergeführt. Die Entscheider lesen ihre E-Mails selbst. Unser Ansatz: Personalisierte, relevante Nachrichten an die richtige Person — kein Massen-Spam. Bei einem klaren Produkt wie DigiRehab, das echten Mehrwert für die Pflege bietet, sind die Antwortquoten erfahrungsgemäss überdurchschnittlich.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Ist Cold Email rechtlich in Ordnung?</button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Cold Email im B2B bewegt sich in einem rechtlichen Graubereich. Datenschutzrechtlich (DSGVO) ist die Ansprache geschäftlicher E-Mail-Adressen über berechtigtes Interesse gedeckt. Wettbewerbsrechtlich (UWG §7) ist es ein Graubereich. Grundwerk minimiert das Risiko durch gezielte, personalisierte Ansprache an relevante B2B-Entscheider — kein Massen-Spam.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Wie schnell sehen wir Ergebnisse?</button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Monat 1 ist Setup: Daten aufbereiten, Domains kaufen, Inboxen warmstellen, Kampagnen-Copys entwickeln. Ab Woche 4 starten die ersten Kampagnen. Erste Leads erwarten wir ab Monat 2. Das ist kein Nachteil — in dieser Zeit arbeitet eure Terminiererin Caro weiter wie bisher, und ab Monat 2 kommen die automatisierten Leads dazu.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Was passiert nach den 3 Monaten?</button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Nach 3 Monaten habt ihr die komplette Infrastruktur und Datenbasis. Ihr könnt selbstständig weitermachen oder auf eine monatliche Betreuung umsteigen. Die Domains, Inboxen und Daten gehören euch. Ausserdem habt ihr dann validierte Marktdaten, die eure Geschäftsjahresplanung für den ambulanten Bereich fundiert untermauern.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Was wenn die Leads nicht qualifiziert sind?</button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Die Leads kommen aus einem klar definierten Pool: ambulante Pflegedienste mit 125+ Klienten in Deutschland. Die Ansprache ist personalisiert nach Region, Grösse und Träger. Jede positive Antwort wird gefiltert bevor sie an euer Team geht. Im Weekly Check-in passen wir die Targeting-Kriterien laufend an.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Warum einmalig statt Retainer?</button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Dieses Paket ist als Pilotprojekt konzipiert. Ihr testet den ambulanten Markt systematisch und bekommt gleichzeitig eine komplette Outreach-Infrastruktur aufgebaut. Die einmalige Investition minimiert euer finanzielles Risiko. Wenn die Ergebnisse stimmen, können wir auf ein monatliches Modell mit höherem Volumen skalieren.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- NEXT STEPS / TIMELINE -->
+<section id="next-steps">
+    <div class="container">
+        <div class="section-label">Nächste Schritte</div>
+        <h2 class="section-title">Wie es <span class="gradient-text">weitergeht</span></h2>
+        <div class="contact-timeline fade-in" style="max-width: 600px;">
+            <div class="ct-item highlight">
+                <div class="ct-date">12. März 2026</div>
+                <h4>Geschäftsjahresplanung mit Shareholdern</h4>
+                <p>Lars stellt das Ambulant-Playbook in der Planungssession vor.</p>
+            </div>
+            <div class="ct-item">
+                <div class="ct-date">12. März 2026, 15:00 Uhr</div>
+                <h4>Follow-Up Call mit Tom</h4>
+                <p>15 Minuten für offene Fragen zum Angebot.</p>
+            </div>
+            <div class="ct-item">
+                <div class="ct-date">Woche 2</div>
+                <h4>Vertragsabschluss & BAFA-Antrag</h4>
+                <p>Vertrag via PandaDoc. Parallel BAFA-Förderantrag stellen.</p>
+            </div>
+            <div class="ct-item">
+                <div class="ct-date">Woche 3</div>
+                <h4>KickOff-Workshop (1h)</h4>
+                <p>ICP-Verfeinerung, Segmentierung, Messaging-Strategie.</p>
+            </div>
+            <div class="ct-item">
+                <div class="ct-date">Woche 4-5</div>
+                <h4>Daten & Infrastruktur live</h4>
+                <p>Liste fertig, Domains & Inboxen warmgestellt, erste Kampagnen starten.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="cta">
+    <h2>Bereit für den <span class="gradient-text">ambulanten Durchbruch</span>?</h2>
+    <p>Sprecht mit Tom über die nächsten Schritte. 15 Minuten — keine Verpflichtung.</p>
+    <a href="https://calendly.com/tom-soto-schiller/grundwerk-next-steps?email=lars%40digirehab.dk&name=Lars%20Jessen" class="btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem;">Termin buchen</a>
+    <div class="cta-contact">
+        <p><strong>Tom Soto Schiller</strong> &middot; Geschäftsführer Grundwerk Digital</p>
+        <p><a href="mailto:tom.schiller@grundwerk.digital">tom.schiller@grundwerk.digital</a></p>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Grundwerk Digital. Dieses Angebot wurde individuell für DigiRehab GmbH erstellt.</p>
+</footer>
+
+<script>
+    // Fade-in animation
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const item = btn.parentElement;
+            const wasOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+            if (!wasOpen) item.classList.add('open');
+        });
+    });
+</script>
+
+</body>
+</html>
