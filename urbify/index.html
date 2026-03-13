@@ -15,6 +15,10 @@
                 window.stop();
             }
         })();
+        (function(){
+            var t = localStorage.getItem('theme');
+            if(t === 'light') document.documentElement.setAttribute('data-theme','light');
+        })();
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,26 +26,66 @@
     <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg:           #0a0a0a;
-            --bg-card:      #111111;
-            --bg-card-2:    #161616;
-            --bg-accent:    #0d1224;
-            --text:         #f0f0f0;
-            --text-muted:   #888888;
-            --text-dim:     #555555;
-            --accent:       #4f7df9;
-            --accent-glow:  rgba(79,125,249,0.18);
-            --accent-dark:  #3b63d4;
-            --green:        #22c55e;
-            --green-glow:   rgba(34,197,94,0.15);
-            --red:          #ef4444;
-            --red-dim:      rgba(239,68,68,0.12);
-            --orange:       #f97316;
-            --orange-dim:   rgba(249,115,22,0.12);
-            --border:       rgba(255,255,255,0.07);
-            --border-accent:rgba(79,125,249,0.35);
-            --radius:       14px;
-            --radius-sm:    8px;
+            --bg:              #0a0a0a;
+            --bg-card:         #111111;
+            --bg-card-2:       #161616;
+            --bg-accent:       #0d1224;
+            --text:            #f0f0f0;
+            --text-muted:      #888888;
+            --text-dim:        #555555;
+            --accent:          #4f7df9;
+            --accent-glow:     rgba(79,125,249,0.18);
+            --accent-dark:     #3b63d4;
+            --green:           #22c55e;
+            --green-glow:      rgba(34,197,94,0.15);
+            --red:             #ef4444;
+            --red-dim:         rgba(239,68,68,0.12);
+            --orange:          #f97316;
+            --orange-dim:      rgba(249,115,22,0.12);
+            --border:          rgba(255,255,255,0.07);
+            --border-accent:   rgba(79,125,249,0.35);
+            --radius:          14px;
+            --radius-sm:       8px;
+            --nav-bg:          rgba(10,10,10,0.9);
+            --tab-bar-bg:      rgba(10,10,10,0.92);
+            --layer-subtle:    rgba(255,255,255,0.03);
+            --layer-subtle-2:  rgba(255,255,255,0.04);
+            --footer-bg:       rgba(255,255,255,0.02);
+            --blue-text:       #93a8f5;
+            --video-bg:        #000;
+            --grid-line:       rgba(255,255,255,0.03);
+            --consequence-h:   #fb923c;
+            --consequence-li:  #fdba74;
+        }
+        [data-theme="light"] {
+            --bg:              #ffffff;
+            --bg-card:         #f8f9fa;
+            --bg-card-2:       #f1f3f5;
+            --bg-accent:       #eef2ff;
+            --text:            #111111;
+            --text-muted:      #6b7280;
+            --text-dim:        #9ca3af;
+            --accent:          #4f7df9;
+            --accent-dark:     #3b63d4;
+            --accent-glow:     rgba(79,125,249,0.08);
+            --green:           #16a34a;
+            --green-glow:      rgba(22,163,74,0.08);
+            --red:             #dc2626;
+            --red-dim:         rgba(220,38,38,0.08);
+            --orange:          #ea580c;
+            --orange-dim:      rgba(234,88,12,0.08);
+            --border:          #e5e7eb;
+            --border-accent:   rgba(79,125,249,0.40);
+            --nav-bg:          rgba(255,255,255,0.95);
+            --tab-bar-bg:      rgba(255,255,255,0.97);
+            --layer-subtle:    rgba(0,0,0,0.03);
+            --layer-subtle-2:  rgba(0,0,0,0.04);
+            --footer-bg:       rgba(0,0,0,0.02);
+            --blue-text:       #3b5bdb;
+            --video-bg:        #f3f4f6;
+            --grid-line:       rgba(0,0,0,0.05);
+            --consequence-h:   #9a3412;
+            --consequence-li:  #431407;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -67,7 +111,7 @@
         /* ─── NAV ─── */
         nav {
             position: sticky; top: 0; z-index: 300;
-            background: rgba(10,10,10,0.9);
+            background: var(--nav-bg);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
             height: 64px;
@@ -101,7 +145,7 @@
         /* ─── TAB BAR ─── */
         .tab-bar {
             position: sticky; top: 64px; z-index: 290;
-            background: rgba(10,10,10,0.92);
+            background: var(--tab-bar-bg);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
             padding: 0 2rem;
@@ -173,8 +217,8 @@
             content: '';
             position: absolute; inset: 0; pointer-events: none;
             background-image:
-                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+                linear-gradient(var(--grid-line) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
             background-size: 60px 60px;
             mask-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 50%, transparent 80%);
             -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 50%, transparent 80%);
@@ -228,7 +272,7 @@
         .video-embed-wrap {
             border-radius: var(--radius); overflow: hidden;
             border: 1px solid var(--border);
-            background: #000;
+            background: var(--video-bg);
         }
         .video-embed-wrap wistia-player { display: block; width: 100%; }
 
@@ -245,7 +289,7 @@
         }
         .champion-name { font-size: 0.9rem; font-weight: 700; color: var(--text); }
         .champion-role { font-size: 0.76rem; color: var(--text-muted); }
-        .champion-box p { font-size: 0.87rem; color: #93a8f5; line-height: 1.7; font-style: italic; }
+        .champion-box p { font-size: 0.87rem; color: var(--blue-text); line-height: 1.7; font-style: italic; }
 
         .hero-meta { font-size: 0.74rem; color: var(--text-dim); margin-top: 20px; }
 
@@ -265,12 +309,12 @@
         .problem-card p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; font-weight: 300; }
         .call-quote {
             margin-top: 14px; padding: 11px 14px;
-            background: rgba(255,255,255,0.03);
+            background: var(--layer-subtle);
             border-left: 2px solid var(--accent);
             border-radius: 0 6px 6px 0;
         }
         .call-quote-text {
-            font-size: 0.8rem; color: #93a8f5; font-style: italic;
+            font-size: 0.8rem; color: var(--blue-text); font-style: italic;
             line-height: 1.6; font-weight: 300;
         }
         .call-quote-author {
@@ -302,9 +346,9 @@
             border-left: 3px solid var(--orange);
             border-radius: var(--radius); padding: 24px 28px;
         }
-        .consequence h3 { font-size: 0.9rem; font-weight: 700; color: #fb923c; margin-bottom: 12px; }
+        .consequence h3 { font-size: 0.9rem; font-weight: 700; color: var(--consequence-h); margin-bottom: 12px; }
         .consequence ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
-        .consequence li { font-size: 0.85rem; color: #fdba74; padding-left: 18px; position: relative; line-height: 1.55; }
+        .consequence li { font-size: 0.85rem; color: var(--consequence-li); padding-left: 18px; position: relative; line-height: 1.55; }
         .consequence li::before { content: '→'; position: absolute; left: 0; color: var(--orange); }
 
         /* ─── TAB 3: DAS SYSTEM ─── */
@@ -375,7 +419,7 @@
         .price-monthly { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.04em; line-height: 1; color: var(--text); }
         .price-per { font-size: 0.76rem; color: var(--text-muted); margin-bottom: 14px; }
         .price-total {
-            font-size: 0.8rem; color: var(--text-muted); background: rgba(255,255,255,0.04);
+            font-size: 0.8rem; color: var(--text-muted); background: var(--layer-subtle-2);
             border: 1px solid var(--border); padding: 7px 12px; border-radius: var(--radius-sm); margin-bottom: 16px;
         }
         .price-total strong { color: var(--text); }
@@ -400,7 +444,7 @@
             background: rgba(79,125,249,0.07); border: 1px solid var(--border-accent);
             border-radius: var(--radius); padding: 20px 24px; margin-bottom: 28px;
         }
-        .map-intro p { font-size: 0.87rem; color: #93a8f5; line-height: 1.7; }
+        .map-intro p { font-size: 0.87rem; color: var(--blue-text); line-height: 1.7; }
 
         .map-phases { display: flex; flex-direction: column; gap: 14px; }
 
@@ -413,7 +457,7 @@
 
         .map-phase-header {
             display: flex; align-items: center; gap: 14px;
-            padding: 14px 20px; background: rgba(255,255,255,0.03);
+            padding: 14px 20px; background: var(--layer-subtle);
             border-bottom: 1px solid var(--border);
         }
         .map-phase-num {
@@ -476,9 +520,21 @@
 
         /* ─── FOOTER ─── */
         footer {
-            background: rgba(255,255,255,0.02); border-top: 1px solid var(--border);
+            background: var(--footer-bg); border-top: 1px solid var(--border);
             padding: 32px 0; text-align: center;
         }
+
+        /* ─── THEME TOGGLE ─── */
+        .nav-right { display: flex; align-items: center; gap: 10px; }
+        .theme-toggle {
+            background: var(--bg-card); border: 1px solid var(--border);
+            color: var(--text-muted); border-radius: var(--radius-sm);
+            padding: 7px 13px; cursor: pointer; font-size: 0.8rem;
+            font-family: inherit; font-weight: 500;
+            transition: border-color 0.2s, color 0.2s, background 0.2s;
+            display: flex; align-items: center; gap: 6px; white-space: nowrap;
+        }
+        .theme-toggle:hover { border-color: var(--accent); color: var(--text); }
 
         /* ─── RESPONSIVE ─── */
         @media (max-width: 640px) {
@@ -510,7 +566,10 @@
         <span class="nav-logo-sep">×</span>
         <span class="nav-logo-client">Urbify</span>
     </div>
-    <button class="nav-cta" onclick="switchTab('booking')">Termin buchen</button>
+    <div class="nav-right">
+        <button class="theme-toggle" id="theme-btn" onclick="toggleTheme()">☀️ Bright</button>
+        <button class="nav-cta" onclick="switchTab('booking')">Termin buchen</button>
+    </div>
 </nav>
 
 <!-- ─── TAB BAR ─── -->
@@ -1099,6 +1158,33 @@
     function toggleCheck(el) { el.classList.toggle('checked'); }
 
     document.getElementById('pb').style.width = (1 / TABS.length * 100) + '%';
+
+    function toggleTheme() {
+        var html = document.documentElement;
+        var isLight = html.getAttribute('data-theme') === 'light';
+        var next = isLight ? 'dark' : 'light';
+        html.setAttribute('data-theme', next);
+        document.getElementById('theme-btn').innerHTML = next === 'light' ? '🌙 Dark' : '☀️ Bright';
+        localStorage.setItem('theme', next);
+        updateCalendlyTheme(next);
+    }
+
+    function updateCalendlyTheme(theme) {
+        var w = document.querySelector('.calendly-inline-widget');
+        if (!w) return;
+        var base = 'https://calendly.com/tom-soto-schiller/grundwerk-next-steps?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=4f7df9';
+        w.setAttribute('data-url', theme === 'light'
+            ? base + '&background_color=ffffff&text_color=111111'
+            : base + '&background_color=111111&text_color=f0f0f0');
+    }
+
+    // Apply saved theme label on load
+    (function() {
+        if (document.documentElement.getAttribute('data-theme') === 'light') {
+            var btn = document.getElementById('theme-btn');
+            if (btn) btn.innerHTML = '🌙 Dark';
+        }
+    })();
 </script>
 
 </body>
