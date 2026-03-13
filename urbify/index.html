@@ -17,7 +17,9 @@
         })();
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg:           #0a0a0a;
@@ -45,11 +47,12 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body {
-            font-family: 'Inter', -apple-system, sans-serif;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             background: var(--bg);
             color: var(--text);
             line-height: 1.65;
             font-size: 16px;
+            font-weight: 300;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -74,7 +77,8 @@
         }
         .nav-logo {
             display: flex; align-items: center; gap: 10px;
-            font-weight: 800; font-size: 0.95rem; letter-spacing: -0.02em;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800; font-size: 0.95rem; letter-spacing: -0.01em;
         }
         .nav-logo-icon {
             width: 28px; height: 28px;
@@ -133,18 +137,20 @@
         .section-label {
             font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em;
             color: var(--accent); font-weight: 700; margin-bottom: 10px;
-            display: block;
+            display: block; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         }
         h1 {
-            font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800;
-            letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 16px;
+            font-family: 'ClashDisplay-Variable', 'Clash Display', 'Helvetica Neue', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700;
+            letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 16px;
         }
         h2 {
-            font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800;
-            letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 10px;
+            font-family: 'ClashDisplay-Variable', 'Clash Display', 'Helvetica Neue', sans-serif;
+            font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700;
+            letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 10px;
         }
         .lead {
-            font-size: 1rem; color: var(--text-muted);
+            font-size: 1rem; color: var(--text-muted); font-weight: 300;
             max-width: 600px; line-height: 1.75; margin-bottom: 36px;
         }
 
@@ -194,7 +200,10 @@
             border-radius: 8px; filter: brightness(1.1);
         }
         .hero-logo-sep { font-size: 1rem; color: var(--text-dim); font-weight: 300; }
-        .gw-wordmark { font-size: 1rem; font-weight: 800; letter-spacing: -0.02em; color: var(--text); }
+        .gw-wordmark {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem; font-weight: 800; letter-spacing: -0.01em; color: var(--text);
+        }
         .gw-wordmark span { color: var(--accent); }
 
         .hero-badge {
@@ -253,7 +262,21 @@
         .problem-card:hover { border-left-color: var(--red); border-color: rgba(239,68,68,0.3); }
         .problem-card .icon { font-size: 1.4rem; margin-bottom: 10px; }
         .problem-card h3 { font-size: 0.88rem; font-weight: 700; margin-bottom: 7px; color: var(--text); }
-        .problem-card p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
+        .problem-card p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; font-weight: 300; }
+        .call-quote {
+            margin-top: 14px; padding: 11px 14px;
+            background: rgba(255,255,255,0.03);
+            border-left: 2px solid var(--accent);
+            border-radius: 0 6px 6px 0;
+        }
+        .call-quote-text {
+            font-size: 0.8rem; color: #93a8f5; font-style: italic;
+            line-height: 1.6; font-weight: 300;
+        }
+        .call-quote-author {
+            font-size: 0.7rem; color: var(--text-dim);
+            margin-top: 6px; font-style: normal; font-weight: 400;
+        }
 
         .cost-box {
             background: var(--bg-card); border: 1px solid var(--border);
@@ -584,17 +607,29 @@
                 <div class="problem-card">
                     <div class="icon">📊</div>
                     <h3>E-Mail-Infrastruktur ohne Struktur</h3>
-                    <p>12.500 versendete Emails, 3% Response Rate. Die Infrastruktur ist vorhanden — aber ohne Targeting, Segmentierung und Personalisierung bleibt das Potenzial ungenutzt.</p>
+                    <p>12.500 versendete Emails, 3% Response Rate. Infrastruktur vorhanden — aber ohne Targeting und Segmentierung verpufft das Potenzial.</p>
+                    <div class="call-quote">
+                        <div class="call-quote-text">„Wir schicken schon E-Mails raus — aber wir haben wirklich keine Ahnung warum die Response Rate so niedrig ist. 3% fühlt sich nicht gut an."</div>
+                        <div class="call-quote-author">— Martin Hoffmann, Head of Sales · aus dem Gespräch mit Grundwerk</div>
+                    </div>
                 </div>
                 <div class="problem-card">
                     <div class="icon">🎪</div>
                     <h3>Messen: teuer, nicht skalierbar</h3>
-                    <p>~60.000 EUR Messekosten pro Jahr für 30–40 Termine. Das sind ~1.700 EUR pro Meeting — und funktioniert nur 2–3 Mal im Jahr, nicht ganzjährig steuerbar.</p>
+                    <p>~60.000 EUR Messekosten pro Jahr für 30–40 Termine. ~1.700 EUR pro Meeting — und nur 2–3 Mal im Jahr einsetzbar.</p>
+                    <div class="call-quote">
+                        <div class="call-quote-text">„Messen sind unser Hauptkanal. Aber 60.000 Euro im Jahr — und ich kann das nicht skalieren. Zweimal im Jahr ist einfach zu wenig um konstant zu wachsen."</div>
+                        <div class="call-quote-author">— Martin Hoffmann, Head of Sales · aus dem Gespräch mit Grundwerk</div>
+                    </div>
                 </div>
                 <div class="problem-card">
                     <div class="icon">📈</div>
                     <h3>Keine Planbarkeit</h3>
-                    <p>Empfehlungen und Messen lassen sich nicht steuern. Es gibt keine verlässliche Antwort auf: „Wie viele qualifizierte Leads kommen nächsten Monat?"</p>
+                    <p>Empfehlungen und Messen lassen sich nicht steuern. Die Frage „Wie viele Leads kommen nächsten Monat?" bleibt offen.</p>
+                    <div class="call-quote">
+                        <div class="call-quote-text">„Das Problem ist: Ich kann Ben nicht sagen wie viele Termine nächsten Monat reinkommen. Wir haben keine Pipeline die wir wirklich steuern können."</div>
+                        <div class="call-quote-author">— Martin Hoffmann, Head of Sales · aus dem Gespräch mit Grundwerk</div>
+                    </div>
                 </div>
             </div>
 
