@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STARQstrom × Grundwerk Digital — Planbare B2B-Leads</title>
+    <script>
+        (function(){
+            var code = '7364912058';
+            var params = new URLSearchParams(window.location.search);
+            if(params.get('secure') !== code){
+                document.documentElement.style.display='none';
+                document.title='Zugriff verweigert';
+                window.stop();
+            }
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --bg-card: #111111;
+            --bg-card-hover: #161616;
+            --bg-accent: #1a1a2e;
+            --text: #f0f0f0;
+            --text-muted: #888;
+            --text-dim: #666;
+            --accent: #4f7df9;
+            --accent-glow: rgba(79, 125, 249, 0.15);
+            --green: #22c55e;
+            --green-glow: rgba(34, 197, 94, 0.15);
+            --red: #ef4444;
+            --red-dim: rgba(239, 68, 68, 0.15);
+            --yellow: #eab308;
+            --border: rgba(255, 255, 255, 0.06);
+            --border-accent: rgba(79, 125, 249, 0.3);
+            --radius: 16px;
+            --radius-sm: 10px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* ═══ FADE-IN ═══ */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* ═══ NAV ═══ */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(10,10,10,0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-inner {
+            max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+            display: flex; align-items: center; justify-content: space-between;
+            height: 64px;
+        }
+        .nav-logo { font-weight: 700; font-size: 0.95rem; color: var(--text); letter-spacing: -0.01em; }
+        .nav-logo span { color: var(--accent); }
+        .nav-cta {
+            background: var(--accent); color: #fff;
+            padding: 8px 20px; border-radius: 8px;
+            text-decoration: none; font-size: 0.85rem; font-weight: 600;
+            transition: opacity 0.2s;
+        }
+        .nav-cta:hover { opacity: 0.85; }
+
+        /* ═══ HERO ═══ */
+        .hero {
+            min-height: 100vh; display: flex; align-items: center; justify-content: center;
+            text-align: center; padding: 120px 2rem 80px;
+            position: relative; overflow: hidden;
+            background: radial-gradient(ellipse at 50% 30%, rgba(79,125,249,0.1) 0%, transparent 65%);
+        }
+        .hero::after {
+            content: '';
+            position: absolute; inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 40%, transparent 75%);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 40%, transparent 75%);
+            pointer-events: none;
+        }
+        .hero-inner { position: relative; z-index: 1; max-width: 800px; }
+        .hero-logo {
+            display: inline-block; margin-bottom: 32px;
+        }
+        .hero-logo img {
+            max-width: 160px; max-height: 60px; border-radius: 12px;
+            object-fit: contain; filter: brightness(1.2);
+        }
+        .hero-logo-text {
+            font-size: 1.5rem; font-weight: 800; color: var(--text);
+            letter-spacing: -0.03em;
+        }
+        .hero-badge {
+            display: inline-block; padding: 6px 16px; border-radius: 100px;
+            background: var(--accent-glow); border: 1px solid var(--border-accent);
+            color: var(--accent); font-size: 0.8rem; font-weight: 600;
+            margin-bottom: 24px; letter-spacing: 0.05em; text-transform: uppercase;
+        }
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.6rem); font-weight: 800;
+            line-height: 1.1; letter-spacing: -0.04em; margin-bottom: 20px;
+        }
+        .hero h1 .gradient {
+            background: linear-gradient(135deg, #4f7df9, #a78bfa);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-sub {
+            font-size: 1.05rem; color: var(--text-muted);
+            max-width: 580px; margin: 0 auto 40px; line-height: 1.7;
+        }
+        .hero-ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .btn-primary {
+            background: var(--accent); color: #fff;
+            padding: 14px 28px; border-radius: 10px;
+            text-decoration: none; font-weight: 700; font-size: 0.95rem;
+            transition: all 0.2s; display: inline-block;
+        }
+        .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+        .btn-secondary {
+            background: transparent; color: var(--text);
+            border: 1px solid var(--border); padding: 14px 28px; border-radius: 10px;
+            text-decoration: none; font-weight: 600; font-size: 0.95rem;
+            transition: all 0.2s; display: inline-block;
+        }
+        .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+        /* ═══ SECTION BASE ═══ */
+        section { padding: 100px 2rem; }
+        .section-inner { max-width: 1200px; margin: 0 auto; }
+        .section-label {
+            font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em;
+            color: var(--accent); font-weight: 600; margin-bottom: 12px;
+        }
+        .section-title {
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 800;
+            letter-spacing: -0.03em; margin-bottom: 16px; line-height: 1.15;
+        }
+        .section-sub {
+            font-size: 0.95rem; color: var(--text-muted);
+            max-width: 560px; margin-bottom: 48px; line-height: 1.7;
+        }
+
+        /* ═══ LOGO TICKER ═══ */
+        .logo-ticker-section { padding: 20px 0 80px; overflow: hidden; }
+        .ticker-track-wrap { overflow: hidden; position: relative; margin-bottom: 16px; }
+        .ticker-track-wrap::before, .ticker-track-wrap::after {
+            content: ''; position: absolute; top: 0; bottom: 0; width: 20%; z-index: 2; pointer-events: none;
+        }
+        .ticker-track-wrap::before { left: 0; background: linear-gradient(to right, var(--bg) 60%, transparent); }
+        .ticker-track-wrap::after { right: 0; background: linear-gradient(to left, var(--bg) 60%, transparent); }
+        .ticker-track {
+            display: flex; align-items: center; gap: 56px; width: max-content;
+        }
+        .ticker-track.forward { animation: tickerFwd 40s linear infinite; }
+        .ticker-track.reverse { animation: tickerRev 45s linear infinite; }
+        @keyframes tickerFwd {
+            from { transform: translateX(-25%); }
+            to { transform: translateX(-75%); }
+        }
+        @keyframes tickerRev {
+            from { transform: translateX(-75%); }
+            to { transform: translateX(-25%); }
+        }
+        .client-logo {
+            height: 28px; opacity: 0.4; filter: grayscale(100%) brightness(2);
+            transition: opacity 0.3s, filter 0.3s; flex-shrink: 0;
+        }
+        .client-logo:hover { opacity: 0.8; filter: grayscale(0%) brightness(1); }
+
+        /* ═══ STAT BAR ═══ */
+        .stat-bar {
+            padding: 0 2rem 80px;
+        }
+        .stat-bar-inner {
+            max-width: 1200px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+        }
+        .stat-item {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 28px 24px; text-align: center;
+        }
+        .stat-number { font-size: 2.5rem; font-weight: 800; color: var(--accent); line-height: 1; margin-bottom: 6px; }
+        .stat-label { font-size: 0.85rem; color: var(--text-muted); }
+
+        /* ═══ PROBLEM ═══ */
+        .problem-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start;
+        }
+        .problem-cards { display: flex; flex-direction: column; gap: 16px; }
+        .problem-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 24px;
+            border-left: 3px solid var(--red);
+        }
+        .problem-card .icon { font-size: 1.5rem; margin-bottom: 10px; }
+        .problem-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+        .problem-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
+        .solution-box {
+            background: linear-gradient(135deg, var(--accent-glow), transparent);
+            border: 1px solid var(--border-accent);
+            border-radius: var(--radius); padding: 36px 32px;
+            position: sticky; top: 84px;
+        }
+        .solution-box h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 16px; }
+        .solution-box p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 24px; line-height: 1.7; }
+        .solution-comparison { display: flex; flex-direction: column; gap: 12px; }
+        .comparison-row {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 12px 16px; border-radius: var(--radius-sm);
+        }
+        .comparison-row.bad { background: var(--red-dim); }
+        .comparison-row.good { background: var(--green-glow); }
+        .comparison-row .label { font-size: 0.82rem; color: var(--text-muted); }
+        .comparison-row .value { font-size: 0.9rem; font-weight: 700; }
+        .comparison-row.bad .value { color: var(--red); }
+        .comparison-row.good .value { color: var(--green); }
+
+        /* ═══ PROZESS ═══ */
+        .process-steps {
+            display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px;
+        }
+        .process-step {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 24px 20px; text-align: center;
+        }
+        .step-num {
+            width: 40px; height: 40px; border-radius: 50%;
+            background: var(--accent); color: #fff;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 800; font-size: 1rem; margin: 0 auto 16px;
+        }
+        .process-step h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 8px; }
+        .process-step p { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; }
+
+        /* ═══ TOOL TICKER ═══ */
+        .tool-ticker-section { padding: 80px 0; overflow: hidden; }
+        .ticker-header { text-align: center; margin-bottom: 36px; padding: 0 2rem; }
+        .ticker-header h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 8px; }
+        .ticker-header h3 span { color: var(--green); }
+        .ticker-label { font-size: 0.85rem; color: var(--text-muted); }
+        .pill-track { display: flex; align-items: center; gap: 12px; width: max-content; margin-bottom: 12px; }
+        .pill-track.forward { animation: tickerFwd 35s linear infinite; }
+        .pill-track.reverse { animation: tickerRev 40s linear infinite; }
+        .pill {
+            display: flex; align-items: center; gap: 8px;
+            padding: 8px 16px; border-radius: 100px;
+            border: 1px solid var(--border); background: var(--bg-card);
+            font-size: 0.82rem; font-weight: 500; white-space: nowrap; flex-shrink: 0;
+        }
+        .pill .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+        .dot-blue { background: #4f7df9; }
+        .dot-green { background: #22c55e; }
+        .dot-purple { background: #a78bfa; }
+        .dot-orange { background: #f97316; }
+        .dot-cyan { background: #06b6d4; }
+        .dot-red { background: #ef4444; }
+
+        /* ═══ KAMPAGNENSTRATEGIE ═══ */
+        .campaign-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+        }
+        .campaign-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 28px 24px;
+            transition: border-color 0.2s;
+        }
+        .campaign-card:hover { border-color: var(--border-accent); }
+        .campaign-icon { font-size: 2rem; margin-bottom: 16px; }
+        .campaign-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 10px; }
+        .campaign-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px; }
+        .campaign-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+        .campaign-tag {
+            padding: 4px 10px; border-radius: 6px;
+            background: rgba(79,125,249,0.1); color: var(--accent);
+            font-size: 0.75rem; font-weight: 600;
+        }
+
+        /* ═══ ANGEBOT ═══ */
+        .offer-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+        }
+        .offer-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 32px 28px; position: relative;
+        }
+        .offer-card.recommended {
+            background: linear-gradient(145deg, rgba(79,125,249,0.12), var(--bg-card));
+            border-color: var(--border-accent);
+        }
+        .offer-badge {
+            display: inline-block; padding: 5px 14px; border-radius: 100px;
+            background: var(--accent); color: #fff;
+            font-size: 0.75rem; font-weight: 700; margin-bottom: 20px;
+            letter-spacing: 0.05em; text-transform: uppercase;
+        }
+        .offer-badge.upfront { background: var(--green); }
+        .offer-card h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 8px; }
+        .offer-card .offer-desc { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 24px; line-height: 1.6; }
+        .offer-price { font-size: 2.5rem; font-weight: 800; color: var(--text); line-height: 1; margin-bottom: 6px; }
+        .offer-price span { font-size: 1rem; font-weight: 500; color: var(--text-muted); }
+        .offer-note { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 20px; }
+        .effective-price {
+            background: var(--green-glow); border: 1px solid rgba(34,197,94,0.2);
+            border-radius: var(--radius-sm); padding: 12px 16px; margin-bottom: 24px;
+        }
+        .effective-price .ep-label { font-size: 0.75rem; color: var(--green); font-weight: 600; margin-bottom: 2px; }
+        .effective-price .ep-value { font-size: 1rem; font-weight: 700; color: var(--green); }
+        .effective-price .ep-sub { font-size: 0.78rem; color: var(--text-muted); }
+        .offer-divider { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+        .offer-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+        .offer-features li {
+            display: flex; align-items: flex-start; gap: 10px;
+            font-size: 0.85rem; color: var(--text-muted);
+        }
+        .offer-features li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+        .offer-ideal {
+            font-size: 0.8rem; color: var(--text-dim);
+            padding-top: 12px; border-top: 1px solid var(--border);
+        }
+        .offer-ideal strong { color: var(--text-muted); }
+
+        /* ═══ LEAD PROGNOSE ═══ */
+        .forecast-table {
+            width: 100%; border-collapse: separate; border-spacing: 0;
+            border: 1px solid var(--border); border-radius: var(--radius);
+            overflow: hidden; margin-bottom: 32px;
+        }
+        .forecast-table th {
+            background: var(--bg-card); padding: 14px 20px;
+            text-align: left; font-size: 0.82rem; font-weight: 600;
+            color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em;
+            border-bottom: 1px solid var(--border);
+        }
+        .forecast-table td {
+            padding: 16px 20px; font-size: 0.9rem; border-bottom: 1px solid var(--border);
+        }
+        .forecast-table tr:last-child td { border-bottom: none; background: rgba(79,125,249,0.05); }
+        .forecast-table .highlight-cell { color: var(--accent); font-weight: 700; }
+        .forecast-table .green-cell { color: var(--green); font-weight: 700; }
+        .forecast-compare {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+        }
+        .compare-box {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 24px;
+        }
+        .compare-box.highlight { border-color: var(--border-accent); background: var(--accent-glow); }
+        .compare-box .cb-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 8px; }
+        .compare-box .cb-value { font-size: 1.8rem; font-weight: 800; margin-bottom: 4px; }
+        .compare-box.highlight .cb-value { color: var(--accent); }
+        .compare-box .cb-sub { font-size: 0.82rem; color: var(--text-muted); }
+
+        /* ═══ ROI ═══ */
+        .roi-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+        }
+        .roi-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 32px 24px; text-align: center;
+        }
+        .roi-card.highlight { border-color: var(--border-accent); background: var(--accent-glow); }
+        .roi-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 16px; }
+        .roi-value { font-size: 2.4rem; font-weight: 800; color: var(--green); margin-bottom: 8px; }
+        .roi-sub { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
+
+        /* ═══ VERGLEICH ═══ */
+        .comparison-table {
+            width: 100%; border-collapse: separate; border-spacing: 0;
+            border: 1px solid var(--border); border-radius: var(--radius);
+            overflow: hidden;
+        }
+        .comparison-table th {
+            background: var(--bg-card); padding: 16px 20px;
+            text-align: left; font-size: 0.85rem; font-weight: 700;
+            border-bottom: 1px solid var(--border);
+        }
+        .comparison-table td {
+            padding: 14px 20px; font-size: 0.85rem; border-bottom: 1px solid var(--border);
+        }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table .criterion { font-weight: 600; color: var(--text-muted); }
+        .comparison-table .good { background: var(--green-glow); color: var(--green); font-weight: 600; }
+        .comparison-table .bad { background: var(--red-dim); color: var(--red); font-weight: 600; }
+        .comparison-table .meh { background: rgba(234,179,8,0.1); color: var(--yellow); font-weight: 600; }
+
+        /* ═══ LIQUIDITÄT ═══ */
+        .liquidity-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 32px;
+        }
+        .liquidity-item {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 24px 20px; text-align: center;
+        }
+        .liquidity-item .liq-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 10px; }
+        .liquidity-item .liq-value { font-size: 1.8rem; font-weight: 800; line-height: 1; margin-bottom: 6px; }
+        .liq-red { color: var(--red); }
+        .liq-green { color: var(--green); }
+        .liq-accent { color: var(--accent); }
+
+        /* ═══ BONUSSE ═══ */
+        .bonus-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+        }
+        .bonus-item {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 20px;
+            display: flex; gap: 16px; align-items: flex-start;
+        }
+        .bonus-icon { font-size: 1.5rem; flex-shrink: 0; }
+        .bonus-item h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 4px; }
+        .bonus-item p { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; }
+
+        /* ═══ TEAM ═══ */
+        .team-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+        }
+        .team-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 28px 24px; text-align: center;
+        }
+        .team-avatar {
+            width: 56px; height: 56px; border-radius: 50%;
+            background: var(--accent-glow); border: 2px solid var(--border-accent);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem; margin: 0 auto 16px;
+        }
+        .team-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+        .team-card .team-role { font-size: 0.8rem; color: var(--accent); font-weight: 600; margin-bottom: 12px; }
+        .team-card p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
+
+        /* ═══ TIMELINE ═══ */
+        .timeline { position: relative; padding-left: 32px; margin-bottom: 32px; }
+        .timeline::before {
+            content: ''; position: absolute; left: 10px; top: 0; bottom: 0;
+            width: 2px; background: var(--border);
+        }
+        .timeline-item {
+            position: relative; margin-bottom: 32px;
+        }
+        .timeline-item::before {
+            content: ''; position: absolute; left: -26px; top: 6px;
+            width: 10px; height: 10px; border-radius: 50%;
+            background: var(--accent); box-shadow: 0 0 0 3px var(--bg), 0 0 0 4px var(--border-accent);
+        }
+        .timeline-item h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 4px; }
+        .timeline-item p { font-size: 0.85rem; color: var(--text-muted); }
+        .timeline-highlight {
+            background: var(--accent-glow); border: 1px solid var(--border-accent);
+            border-radius: var(--radius); padding: 20px 24px; text-align: center;
+        }
+        .timeline-highlight p { font-size: 0.95rem; font-weight: 600; color: var(--accent); }
+
+        /* ═══ CTA ═══ */
+        .cta-section {
+            text-align: center; padding: 100px 2rem;
+            background: radial-gradient(ellipse at 50% 50%, rgba(79,125,249,0.08) 0%, transparent 70%);
+        }
+        .cta-section h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 800; margin-bottom: 16px; }
+        .cta-section p { font-size: 1rem; color: var(--text-muted); max-width: 500px; margin: 0 auto 36px; }
+        .cta-btn {
+            display: inline-block; background: var(--accent); color: #fff;
+            padding: 18px 40px; border-radius: 12px; font-weight: 800; font-size: 1.05rem;
+            text-decoration: none; margin-bottom: 32px;
+            transition: all 0.2s; letter-spacing: -0.01em;
+        }
+        .cta-btn:hover { opacity: 0.9; transform: translateY(-2px); box-shadow: 0 8px 32px rgba(79,125,249,0.3); }
+        .cta-contact {
+            display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;
+        }
+        .cta-contact a { color: var(--text-muted); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
+        .cta-contact a:hover { color: var(--accent); }
+
+        /* ═══ FOOTER ═══ */
+        footer {
+            text-align: center; padding: 28px 2rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.8rem; color: var(--text-dim);
+        }
+
+        /* ═══ RESPONSIVE ═══ */
+        @media (max-width: 900px) {
+            .problem-grid, .offer-grid, .forecast-compare,
+            .team-grid, .roi-grid, .campaign-grid { grid-template-columns: 1fr; }
+            .process-steps { grid-template-columns: repeat(2, 1fr); }
+            .stat-bar-inner { grid-template-columns: repeat(3, 1fr); }
+            .liquidity-grid { grid-template-columns: repeat(2, 1fr); }
+            .bonus-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            section { padding: 60px 1.25rem; }
+            .process-steps { grid-template-columns: 1fr; }
+            .stat-bar-inner { grid-template-columns: repeat(2, 1fr); }
+            .liquidity-grid { grid-template-columns: 1fr 1fr; }
+            .bonus-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav>
+    <div class="nav-inner">
+        <div class="nav-logo">STARQstrom <span>×</span> Grundwerk</div>
+        <a href="#angebot" class="nav-cta">Zum Angebot →</a>
+    </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+    <div class="hero-inner">
+        <div class="hero-logo">
+            <img src="https://logo.clearbit.com/starqstrom.de" alt="STARQstrom"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <span class="hero-logo-text" style="display:none;">STARQstrom</span>
+        </div>
+        <div class="hero-badge">Exklusives Angebot · März 2026</div>
+        <h1>Planbare B2B-Leads<br>für <span class="gradient">energiehungrige Unternehmen</span></h1>
+        <p class="hero-sub">
+            Finn, Meike — statt 0,5% Reply-Rate bekommen eure 15 Handelsvertreter endlich einen
+            planbaren Kanal. Wir kontaktieren 30.000 Entscheider pro Monat — direkt, aktuell, skalierbar.
+        </p>
+        <div class="hero-ctas">
+            <a href="#angebot" class="btn-primary">Angebot ansehen</a>
+            <a href="#prozess" class="btn-secondary">Wie funktioniert das?</a>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ KUNDEN-LOGO TICKER ═══ -->
+<div class="logo-ticker-section">
+    <div class="ticker-track-wrap">
+        <div class="ticker-track forward">
+            <!-- Row 1 × 4 -->
+            <img class="client-logo" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel">
+            <img class="client-logo" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes">
+            <img class="client-logo" src="https://www.hrs.de/_next/static/media/hrs_logo_red.7cccdfd9.svg" alt="HRS">
+            <img class="client-logo" src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO">
+            <img class="client-logo" src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang">
+            <img class="client-logo" src="https://cdn.prod.website-files.com/673602757a06be245e484913/678d467526d221b55f5dc3e0_mc-logo-1-black.svg" alt="Michelscom">
+            <img class="client-logo" src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview">
+
+            <img class="client-logo" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel">
+            <img class="client-logo" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes">
+            <img class="client-logo" src="https://www.hrs.de/_next/static/media/hrs_logo_red.7cccdfd9.svg" alt="HRS">
+            <img class="client-logo" src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO">
+            <img class="client-logo" src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang">
+            <img class="client-logo" src="https://cdn.prod.website-files.com/673602757a06be245e484913/678d467526d221b55f5dc3e0_mc-logo-1-black.svg" alt="Michelscom">
+            <img class="client-logo" src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview">
+
+            <img class="client-logo" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel">
+            <img class="client-logo" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes">
+            <img class="client-logo" src="https://www.hrs.de/_next/static/media/hrs_logo_red.7cccdfd9.svg" alt="HRS">
+            <img class="client-logo" src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO">
+            <img class="client-logo" src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang">
+            <img class="client-logo" src="https://cdn.prod.website-files.com/673602757a06be245e484913/678d467526d221b55f5dc3e0_mc-logo-1-black.svg" alt="Michelscom">
+            <img class="client-logo" src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview">
+
+            <img class="client-logo" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel">
+            <img class="client-logo" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes">
+            <img class="client-logo" src="https://www.hrs.de/_next/static/media/hrs_logo_red.7cccdfd9.svg" alt="HRS">
+            <img class="client-logo" src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO">
+            <img class="client-logo" src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang">
+            <img class="client-logo" src="https://cdn.prod.website-files.com/673602757a06be245e484913/678d467526d221b55f5dc3e0_mc-logo-1-black.svg" alt="Michelscom">
+            <img class="client-logo" src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview">
+        </div>
+    </div>
+    <div class="ticker-track-wrap">
+        <div class="ticker-track reverse">
+            <!-- Row 2 × 4 -->
+            <img class="client-logo" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges">
+            <img class="client-logo" src="https://d2bw95mh2ee04s.cloudfront.net/prod/content/wp-content/uploads/2025/01/02134814/Property-Logo-Main.svg" alt="SellerLogic">
+            <img class="client-logo" src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly">
+            <img class="client-logo" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy">
+            <img class="client-logo" src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic">
+            <img class="client-logo" src="https://digitalnow.online/logo.png" alt="Digital Now">
+            <img class="client-logo" src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios">
+
+            <img class="client-logo" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges">
+            <img class="client-logo" src="https://d2bw95mh2ee04s.cloudfront.net/prod/content/wp-content/uploads/2025/01/02134814/Property-Logo-Main.svg" alt="SellerLogic">
+            <img class="client-logo" src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly">
+            <img class="client-logo" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy">
+            <img class="client-logo" src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic">
+            <img class="client-logo" src="https://digitalnow.online/logo.png" alt="Digital Now">
+            <img class="client-logo" src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios">
+
+            <img class="client-logo" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges">
+            <img class="client-logo" src="https://d2bw95mh2ee04s.cloudfront.net/prod/content/wp-content/uploads/2025/01/02134814/Property-Logo-Main.svg" alt="SellerLogic">
+            <img class="client-logo" src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly">
+            <img class="client-logo" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy">
+            <img class="client-logo" src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic">
+            <img class="client-logo" src="https://digitalnow.online/logo.png" alt="Digital Now">
+            <img class="client-logo" src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios">
+
+            <img class="client-logo" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges">
+            <img class="client-logo" src="https://d2bw95mh2ee04s.cloudfront.net/prod/content/wp-content/uploads/2025/01/02134814/Property-Logo-Main.svg" alt="SellerLogic">
+            <img class="client-logo" src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly">
+            <img class="client-logo" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy">
+            <img class="client-logo" src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic">
+            <img class="client-logo" src="https://digitalnow.online/logo.png" alt="Digital Now">
+            <img class="client-logo" src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios">
+        </div>
+    </div>
+</div>
+
+<!-- ═══ STAT BAR ═══ -->
+<div class="stat-bar">
+    <div class="stat-bar-inner">
+        <div class="stat-item fade-in">
+            <div class="stat-number">10 Mio.+</div>
+            <div class="stat-label">E-Mails versendet</div>
+        </div>
+        <div class="stat-item fade-in">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Erfolgreiche B2B-Projekte</div>
+        </div>
+        <div class="stat-item fade-in">
+            <div class="stat-number">75+</div>
+            <div class="stat-label">Tools &amp; Datenanbieter</div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══ PROBLEM ═══ -->
+<section>
+    <div class="section-inner">
+        <div class="section-label">Die aktuelle Situation</div>
+        <h2 class="section-title">Was euch gerade bremst</h2>
+        <p class="section-sub">
+            Ihr habt 15+ Handelsvertreter bereit — aber der Treibstoff fehlt. Der aktuelle Kanal
+            liefert nicht genug, um skalieren zu können.
+        </p>
+        <div class="problem-grid fade-in">
+            <div class="problem-cards">
+                <div class="problem-card">
+                    <div class="icon">📉</div>
+                    <h3>Reply-Rate eingebrochen</h3>
+                    <p>Von 3% auf 0,5% — Versendete E-Mails landen bei falschen Kontakten oder werden ignoriert. Das Problem: veraltete Datenbasis, keine Entscheider-Validierung.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="icon">🎯</div>
+                    <h3>Kein direkter Entscheider-Zugang</h3>
+                    <p>Ohne geprüfte, aktuelle Direktadressen und validierte Entscheider-Positionen verpufft jedes Volumen. Info@-Adressen und veraltete Kontakte blockieren den Weg zum GF.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="icon">⏸️</div>
+                    <h3>15 Handelsvertreter in Warteposition</h3>
+                    <p>Das Netz ist gespannt, aber der Fisch fehlt. Handelsvertreter auf Provision brauchen sofort Leads — jede Woche ohne Pipeline kostet Loyalität und Momentum.</p>
+                </div>
+            </div>
+            <div class="solution-box">
+                <h3>Die Lösung: Smarter Outbound auf Enterprise-Level</h3>
+                <p>
+                    Grundwerk setzt dort an, wo eure aktuelle Agentur Lücken lässt: wir scrapen, validieren
+                    und enrichen jeden Entscheider dreifach — mit 75+ Tools gleichzeitig.
+                    Das Ergebnis: 0,2% Bounce-Rate und deutlich höhere Reply-Rates.
+                </p>
+                <div class="solution-comparison">
+                    <div class="comparison-row bad">
+                        <span class="label">Aktuelle Reply-Rate</span>
+                        <span class="value">~0,5 %</span>
+                    </div>
+                    <div class="comparison-row good">
+                        <span class="label">Grundwerk-Benchmark (B2B)</span>
+                        <span class="value">1,5 – 3 %</span>
+                    </div>
+                    <div class="comparison-row bad">
+                        <span class="label">Kosten pro qual. Termin (Meta Ads)</span>
+                        <span class="value">~1.750 €</span>
+                    </div>
+                    <div class="comparison-row good">
+                        <span class="label">Kosten pro qual. Termin (Cold Outreach)</span>
+                        <span class="value">~250 €</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ PROZESS ═══ -->
+<section id="prozess" style="background: rgba(255,255,255,0.01); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="section-inner">
+        <div class="section-label">Unser Prozess</div>
+        <h2 class="section-title">In 5 Schritten zu warmen Leads</h2>
+        <p class="section-sub">
+            Von der ICP-Definition bis zum warmen Lead in eurer MasterInbox — komplett managed,
+            keine internen Ressourcen nötig.
+        </p>
+        <div class="process-steps fade-in">
+            <div class="process-step">
+                <div class="step-num">1</div>
+                <h4>Zielgruppen-Definition</h4>
+                <p>ICP-Workshop: Branchen, Unternehmensgrößen, Verbrauchsprofile — wir definieren den idealen Energiekunden gemeinsam.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-num">2</div>
+                <h4>Entscheider-Identifikation</h4>
+                <p>Direkter GF- und Energieverantwortliche-Zugang via 75+ Datenanbieter — keine Info@-Adressen, nur aktuelle Direktkontakte.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-num">3</div>
+                <h4>Personalisierte Ansprache</h4>
+                <p>KI-gestützte Copy auf Basis echter Unternehmensdaten: Branche, Verbrauchsprofil, aktuelle Energiekosten — hyper-relevant.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-num">4</div>
+                <h4>MasterInbox</h4>
+                <p>Alle positiven Antworten laufen zentral in einer Inbox. Finn und Meike sehen sofort wer Interesse hat — kein Tab-Wechsel, kein Chaos.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-num">5</div>
+                <h4>Warme Leads → Vertrieb</h4>
+                <p>Positive Replies direkt an eure Handelsvertreter weiterleiten. Keine Kaltakquise mehr — nur noch warme Gespräche führen.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ TOOL TICKER ═══ -->
+<div class="tool-ticker-section">
+    <div class="ticker-header">
+        <h3>75+ Tools &amp; Datenanbieter &rarr; <span>0&euro; Fixkosten</span></h3>
+        <div class="ticker-label">Enterprise-GTM-Setup — wir tragen die Kosten</div>
+    </div>
+    <div class="ticker-track-wrap">
+        <div class="pill-track forward">
+            <span class="pill"><span class="dot dot-blue"></span>Apollo.io</span>
+            <span class="pill"><span class="dot dot-green"></span>Clay</span>
+            <span class="pill"><span class="dot dot-orange"></span>Instantly</span>
+            <span class="pill"><span class="dot dot-purple"></span>OpenAI</span>
+            <span class="pill"><span class="dot dot-blue"></span>Findymail</span>
+            <span class="pill"><span class="dot dot-cyan"></span>MasterInbox</span>
+            <span class="pill"><span class="dot dot-green"></span>Heyreach</span>
+            <span class="pill"><span class="dot dot-red"></span>RevyOps</span>
+            <span class="pill"><span class="dot dot-purple"></span>Supabase</span>
+            <span class="pill"><span class="dot dot-blue"></span>LinkedIn Sales Nav</span>
+            <span class="pill"><span class="dot dot-orange"></span>Prospeo</span>
+            <span class="pill"><span class="dot dot-green"></span>Millionverifier</span>
+
+            <span class="pill"><span class="dot dot-blue"></span>Apollo.io</span>
+            <span class="pill"><span class="dot dot-green"></span>Clay</span>
+            <span class="pill"><span class="dot dot-orange"></span>Instantly</span>
+            <span class="pill"><span class="dot dot-purple"></span>OpenAI</span>
+            <span class="pill"><span class="dot dot-blue"></span>Findymail</span>
+            <span class="pill"><span class="dot dot-cyan"></span>MasterInbox</span>
+            <span class="pill"><span class="dot dot-green"></span>Heyreach</span>
+            <span class="pill"><span class="dot dot-red"></span>RevyOps</span>
+            <span class="pill"><span class="dot dot-purple"></span>Supabase</span>
+            <span class="pill"><span class="dot dot-blue"></span>LinkedIn Sales Nav</span>
+            <span class="pill"><span class="dot dot-orange"></span>Prospeo</span>
+            <span class="pill"><span class="dot dot-green"></span>Millionverifier</span>
+
+            <span class="pill"><span class="dot dot-blue"></span>Apollo.io</span>
+            <span class="pill"><span class="dot dot-green"></span>Clay</span>
+            <span class="pill"><span class="dot dot-orange"></span>Instantly</span>
+            <span class="pill"><span class="dot dot-purple"></span>OpenAI</span>
+            <span class="pill"><span class="dot dot-blue"></span>Findymail</span>
+            <span class="pill"><span class="dot dot-cyan"></span>MasterInbox</span>
+            <span class="pill"><span class="dot dot-green"></span>Heyreach</span>
+            <span class="pill"><span class="dot dot-red"></span>RevyOps</span>
+            <span class="pill"><span class="dot dot-purple"></span>Supabase</span>
+            <span class="pill"><span class="dot dot-blue"></span>LinkedIn Sales Nav</span>
+            <span class="pill"><span class="dot dot-orange"></span>Prospeo</span>
+            <span class="pill"><span class="dot dot-green"></span>Millionverifier</span>
+
+            <span class="pill"><span class="dot dot-blue"></span>Apollo.io</span>
+            <span class="pill"><span class="dot dot-green"></span>Clay</span>
+            <span class="pill"><span class="dot dot-orange"></span>Instantly</span>
+            <span class="pill"><span class="dot dot-purple"></span>OpenAI</span>
+            <span class="pill"><span class="dot dot-blue"></span>Findymail</span>
+            <span class="pill"><span class="dot dot-cyan"></span>MasterInbox</span>
+            <span class="pill"><span class="dot dot-green"></span>Heyreach</span>
+            <span class="pill"><span class="dot dot-red"></span>RevyOps</span>
+            <span class="pill"><span class="dot dot-purple"></span>Supabase</span>
+            <span class="pill"><span class="dot dot-blue"></span>LinkedIn Sales Nav</span>
+            <span class="pill"><span class="dot dot-orange"></span>Prospeo</span>
+            <span class="pill"><span class="dot dot-green"></span>Millionverifier</span>
+        </div>
+    </div>
+    <div class="ticker-track-wrap">
+        <div class="pill-track reverse">
+            <span class="pill"><span class="dot dot-purple"></span>Claude</span>
+            <span class="pill"><span class="dot dot-blue"></span>Northdata</span>
+            <span class="pill"><span class="dot dot-orange"></span>n8n</span>
+            <span class="pill"><span class="dot dot-green"></span>Mailreach</span>
+            <span class="pill"><span class="dot dot-cyan"></span>Lusha</span>
+            <span class="pill"><span class="dot dot-red"></span>BounceBan</span>
+            <span class="pill"><span class="dot dot-purple"></span>Perplexity</span>
+            <span class="pill"><span class="dot dot-blue"></span>Brightdata</span>
+            <span class="pill"><span class="dot dot-orange"></span>Make</span>
+            <span class="pill"><span class="dot dot-green"></span>Ocean.io</span>
+            <span class="pill"><span class="dot dot-cyan"></span>Bettercontact</span>
+            <span class="pill"><span class="dot dot-red"></span>Icypeas</span>
+
+            <span class="pill"><span class="dot dot-purple"></span>Claude</span>
+            <span class="pill"><span class="dot dot-blue"></span>Northdata</span>
+            <span class="pill"><span class="dot dot-orange"></span>n8n</span>
+            <span class="pill"><span class="dot dot-green"></span>Mailreach</span>
+            <span class="pill"><span class="dot dot-cyan"></span>Lusha</span>
+            <span class="pill"><span class="dot dot-red"></span>BounceBan</span>
+            <span class="pill"><span class="dot dot-purple"></span>Perplexity</span>
+            <span class="pill"><span class="dot dot-blue"></span>Brightdata</span>
+            <span class="pill"><span class="dot dot-orange"></span>Make</span>
+            <span class="pill"><span class="dot dot-green"></span>Ocean.io</span>
+            <span class="pill"><span class="dot dot-cyan"></span>Bettercontact</span>
+            <span class="pill"><span class="dot dot-red"></span>Icypeas</span>
+
+            <span class="pill"><span class="dot dot-purple"></span>Claude</span>
+            <span class="pill"><span class="dot dot-blue"></span>Northdata</span>
+            <span class="pill"><span class="dot dot-orange"></span>n8n</span>
+            <span class="pill"><span class="dot dot-green"></span>Mailreach</span>
+            <span class="pill"><span class="dot dot-cyan"></span>Lusha</span>
+            <span class="pill"><span class="dot dot-red"></span>BounceBan</span>
+            <span class="pill"><span class="dot dot-purple"></span>Perplexity</span>
+            <span class="pill"><span class="dot dot-blue"></span>Brightdata</span>
+            <span class="pill"><span class="dot dot-orange"></span>Make</span>
+            <span class="pill"><span class="dot dot-green"></span>Ocean.io</span>
+            <span class="pill"><span class="dot dot-cyan"></span>Bettercontact</span>
+            <span class="pill"><span class="dot dot-red"></span>Icypeas</span>
+
+            <span class="pill"><span class="dot dot-purple"></span>Claude</span>
+            <span class="pill"><span class="dot dot-blue"></span>Northdata</span>
+            <span class="pill"><span class="dot dot-orange"></span>n8n</span>
+            <span class="pill"><span class="dot dot-green"></span>Mailreach</span>
+            <span class="pill"><span class="dot dot-cyan"></span>Lusha</span>
+            <span class="pill"><span class="dot dot-red"></span>BounceBan</span>
+            <span class="pill"><span class="dot dot-purple"></span>Perplexity</span>
+            <span class="pill"><span class="dot dot-blue"></span>Brightdata</span>
+            <span class="pill"><span class="dot dot-orange"></span>Make</span>
+            <span class="pill"><span class="dot dot-green"></span>Ocean.io</span>
+            <span class="pill"><span class="dot dot-cyan"></span>Bettercontact</span>
+            <span class="pill"><span class="dot dot-red"></span>Icypeas</span>
+        </div>
+    </div>
+</div>
+
+<!-- ═══ KAMPAGNENSTRATEGIE ═══ -->
+<section>
+    <div class="section-inner">
+        <div class="section-label">Kampagnenstrategie</div>
+        <h2 class="section-title">3 Cluster für maximalen Ertrag</h2>
+        <p class="section-sub">
+            Energieversorger brauchen spezifische Ansprache — nicht alle Branchen reagieren gleich.
+            Wir fahren drei parallele Cluster mit unterschiedlichen Angles.
+        </p>
+        <div class="campaign-grid fade-in">
+            <div class="campaign-card">
+                <div class="campaign-icon">🏭</div>
+                <h3>Energie-intensive Industrie</h3>
+                <p>Produktionsunternehmen, Logistikzentren und Rechenzentren mit 1M+ kWh Jahresverbrauch. Höchstes Volumen, höchster Deal-Value pro Abschluss.</p>
+                <p style="font-size:0.82rem; color:var(--text-muted);">Angle: "Wir liefern 100% deutschen Ökostrom direkt aus Wind- und Solarparks — ohne Aufschlag für CO₂-Zertifikate."</p>
+                <div class="campaign-tags">
+                    <span class="campaign-tag">Produktion</span>
+                    <span class="campaign-tag">Logistik</span>
+                    <span class="campaign-tag">Rechenzentren</span>
+                </div>
+            </div>
+            <div class="campaign-card">
+                <div class="campaign-icon">🏢</div>
+                <h3>Gewerbe &amp; Immobilien</h3>
+                <p>Hotelbetreiber, Einkaufszentren, Bürogebäude mit mehreren Standorten — konsolidierter Energieeinkauf mit einem verlässlichen Partner.</p>
+                <p style="font-size:0.82rem; color:var(--text-muted);">Angle: "Multi-Standort-Lösung mit transparenter Abrechnung und direktem GF-Ansprechpartner."</p>
+                <div class="campaign-tags">
+                    <span class="campaign-tag">Hotels</span>
+                    <span class="campaign-tag">Immobilien</span>
+                    <span class="campaign-tag">Handel</span>
+                </div>
+            </div>
+            <div class="campaign-card">
+                <div class="campaign-icon">⚡</div>
+                <h3>Mittelstand mit Energiekosten-Druck</h3>
+                <p>KMU ab 500k kWh, bei denen steigende Energiekosten die Marge drücken. Timing-Angle: Vertragsverlängerung in Q2 2026 — idealer Wechselzeitpunkt.</p>
+                <p style="font-size:0.82rem; color:var(--text-muted);">Angle: "Ihr Energievertrag endet bald — wir zeigen Ihnen was Sie mit STARQstrom sparen."</p>
+                <div class="campaign-tags">
+                    <span class="campaign-tag">KMU</span>
+                    <span class="campaign-tag">Verarbeitendes Gewerbe</span>
+                    <span class="campaign-tag">Q2 Timing</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ ANGEBOT ═══ -->
+<section id="angebot" style="background: rgba(255,255,255,0.01); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="section-inner">
+        <div class="section-label">Euer Angebot</div>
+        <h2 class="section-title">Drei Wege, einer direkt</h2>
+        <p class="section-sub">
+            Alle Pakete beinhalten 30.000 E-Mails/Monat, vollständiges Setup, wöchentliche
+            Optimierung und direkte Entscheider-Leadlisten. Blacklist wird selbstverständlich übernommen.
+        </p>
+        <div class="offer-grid fade-in">
+
+            <!-- Option A: 4 Monate -->
+            <div class="offer-card">
+                <h3>Flex Start</h3>
+                <p class="offer-desc">Einsteigen, testen, skalieren — mit klar definiertem Zeitrahmen und Exit-Option nach 4 Monaten.</p>
+                <div class="offer-price">3.500 € <span>/ Monat</span></div>
+                <p class="offer-note">+ 1.990 € einmalige Setup-Gebühr · 4 Monate Laufzeit</p>
+                <hr class="offer-divider">
+                <ul class="offer-features">
+                    <li>30.000 E-Mails/Monat</li>
+                    <li>KickOff-Workshop (1h) + ICP-Definition</li>
+                    <li>Entscheider-Leadlisten (validiert, dreifach geprüft)</li>
+                    <li>MasterInbox Setup + Onboarding</li>
+                    <li>Wöchentliche Kampagnen-Optimierung</li>
+                    <li>Blacklist-Übernahme inklusive</li>
+                    <li>Grundwerk Web App inklusive</li>
+                </ul>
+                <p class="offer-ideal"><strong>Ideal für:</strong> Schnellen Test neben dem bestehenden Kanal — direkt vergleichbar.</p>
+            </div>
+
+            <!-- Option B: 6 Monate Standard -->
+            <div class="offer-card">
+                <h3>Standard 6M</h3>
+                <p class="offer-desc">Ohne Setup-Gebühr in die Zusammenarbeit — mehr Budget direkt in die Kampagnen-Performance.</p>
+                <div class="offer-price">3.500 € <span>/ Monat</span></div>
+                <p class="offer-note">Keine Setup-Gebühr · 6 Monate Laufzeit</p>
+                <hr class="offer-divider">
+                <ul class="offer-features">
+                    <li>30.000 E-Mails/Monat</li>
+                    <li>KickOff-Workshop (1h) + ICP-Definition</li>
+                    <li>Entscheider-Leadlisten (validiert, dreifach geprüft)</li>
+                    <li>MasterInbox Setup + Onboarding</li>
+                    <li>Wöchentliche Kampagnen-Optimierung</li>
+                    <li>Blacklist-Übernahme inklusive</li>
+                    <li>Grundwerk Web App inklusive</li>
+                    <li>CRM-Integration (Close / eigenes System)</li>
+                </ul>
+                <p class="offer-ideal"><strong>Ideal für:</strong> Kontinuierlichen Aufbau ohne Vorabkosten — Planbarkeit über 6 Monate.</p>
+            </div>
+
+            <!-- Option C: 6 Monate Upfront — EMPFOHLEN -->
+            <div class="offer-card recommended">
+                <div class="offer-badge upfront">Bestes Preis-Leistungs-Verhältnis</div>
+                <h3>Upfront 6M</h3>
+                <p class="offer-desc">6 Monate zahlen, 7 Monate Ergebnisse — ein Monat gratis bei Upfront-Zahlung. Kein Setup.</p>
+                <div class="offer-price">2.917 € <span>/ Monat eff.</span></div>
+                <p class="offer-note">17.500 € einmalig (statt 21.000 €) · 6 Monate Laufzeit · 1 Monat gratis</p>
+                <div class="effective-price">
+                    <div class="ep-label">Ihr Vorteil</div>
+                    <div class="ep-value">3.500 € gespart</div>
+                    <div class="ep-sub">Ein voller Monat Betreuung ohne Aufpreis</div>
+                </div>
+                <ul class="offer-features">
+                    <li>30.000 E-Mails/Monat</li>
+                    <li>KickOff-Workshop (1h) + ICP-Definition</li>
+                    <li>Entscheider-Leadlisten (validiert, dreifach geprüft)</li>
+                    <li>MasterInbox Setup + Onboarding</li>
+                    <li>Wöchentliche Kampagnen-Optimierung</li>
+                    <li>Blacklist-Übernahme inklusive</li>
+                    <li>Grundwerk Web App inklusive</li>
+                    <li>CRM-Integration (Close / eigenes System)</li>
+                    <li>Sales Projections + wöchentliches Tracking</li>
+                </ul>
+                <p class="offer-ideal"><strong>Ideal für:</strong> Maximale Savings + vollständiges Feature-Set — der klare Marathon-Plan.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ═══ LEAD PROGNOSE ═══ -->
+<section>
+    <div class="section-inner">
+        <div class="section-label">3-Monats-Forecast</div>
+        <h2 class="section-title">Was ihr realistisch erwarten könnt</h2>
+        <p class="section-sub">
+            Basierend auf 30.000 E-Mails/Monat und vergleichbaren B2B-Energie-Zielgruppen.
+            Monat 1 ist Setup — die Maschine läuft ab Monat 2.
+        </p>
+        <table class="forecast-table fade-in">
+            <thead>
+                <tr>
+                    <th>Monat</th>
+                    <th>Prospects kontaktiert</th>
+                    <th>Erwartete Leads</th>
+                    <th>Kumuliert</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Monat 1</strong> — Setup &amp; Warmup</td>
+                    <td class="highlight-cell">~5.000</td>
+                    <td>0 – 5 Leads</td>
+                    <td>0 – 5</td>
+                </tr>
+                <tr>
+                    <td><strong>Monat 2</strong> — Kampagne live</td>
+                    <td class="highlight-cell">30.000+</td>
+                    <td>30 – 50 Leads</td>
+                    <td>30 – 55</td>
+                </tr>
+                <tr>
+                    <td><strong>Monat 3</strong> — Optimierte Kampagne</td>
+                    <td class="highlight-cell">30.000+</td>
+                    <td>50 – 80 Leads</td>
+                    <td><span class="green-cell">80 – 135 Leads</span></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="forecast-compare fade-in">
+            <div class="compare-box">
+                <div class="cb-label">Meta Ads — gleiche Lead-Anzahl (80 Leads)</div>
+                <div class="cb-value" style="color: var(--red);">140.000 €</div>
+                <div class="cb-sub">80 Leads → 40 Termine (50%) → 32 qual. Termine (80%) × 1.750 € = 56.000 € für qual. Termine aus Meta Ads</div>
+            </div>
+            <div class="compare-box highlight">
+                <div class="cb-label">Cold Outreach mit Grundwerk</div>
+                <div class="cb-value">~3.500 €</div>
+                <div class="cb-sub">Gleiche Lead-Anzahl — 40x günstigere Kosten pro qualifiziertem Termin (~250 €) statt 1.750 € via Meta Ads</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ ROI ═══ -->
+<section style="background: rgba(255,255,255,0.01); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="section-inner">
+        <div class="section-label">Return on Investment</div>
+        <h2 class="section-title">Was ein Abschluss bedeutet</h2>
+        <p class="section-sub">
+            Bei durchschnittlich 5–10k€ Jahreswert pro Energievertrag und einer erwarteten Abschlussquote
+            von 3–5% aus qualifizierten Leads.
+        </p>
+        <div class="roi-grid fade-in">
+            <div class="roi-card">
+                <div class="roi-label">Konservativ</div>
+                <div class="roi-value">+2 Abschlüsse</div>
+                <div class="roi-sub">
+                    3% Abschlussquote aus 80 Leads/Monat ab Monat 3.<br><br>
+                    Bei ø 7.500 € Kundenwert/Jahr = <strong>15.000 €/Monat</strong> neue Recurring-Einnahmen.
+                    Retainer: 3.500 € → <strong>4,3x ROI</strong>.
+                </div>
+            </div>
+            <div class="roi-card highlight">
+                <div class="roi-label">Realistisch</div>
+                <div class="roi-value">+4 Abschlüsse</div>
+                <div class="roi-sub">
+                    5% Abschlussquote aus 80 Leads/Monat.<br><br>
+                    Bei ø 8.000 € Kundenwert/Jahr = <strong>32.000 €/Monat</strong> neue Einnahmen.
+                    Retainer: 3.500 € → <strong>9x ROI</strong>.
+                </div>
+            </div>
+            <div class="roi-card">
+                <div class="roi-label">Optimistisch</div>
+                <div class="roi-value">+6 Abschlüsse</div>
+                <div class="roi-sub">
+                    8% Abschlussquote (mit optimiertem Sales-Prozess).<br><br>
+                    Bei ø 10.000 € Kundenwert/Jahr = <strong>60.000 €/Monat</strong> neue Einnahmen.
+                    Retainer: 3.500 € → <strong>17x ROI</strong>.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ VERGLEICHSTABELLE ═══ -->
+<section>
+    <div class="section-inner">
+        <div class="section-label">Kanalvergleich</div>
+        <h2 class="section-title">Warum Cold Outreach gewinnt</h2>
+        <p class="section-sub">
+            Ehrlicher Vergleich der drei relevanten Kanäle — gleiche Pipeline-Stufe (Leads = positive Antworten).
+        </p>
+        <table class="comparison-table fade-in">
+            <thead>
+                <tr>
+                    <th>Kriterium</th>
+                    <th>Meta Ads B2B</th>
+                    <th>Grundwerk Flex 4M</th>
+                    <th>Grundwerk Upfront 6M</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="criterion">Kosten pro Lead (Stufe 2)</td>
+                    <td class="bad">~350 €</td>
+                    <td class="good">~50 €</td>
+                    <td class="good">~44 €</td>
+                </tr>
+                <tr>
+                    <td class="criterion">Kosten pro qual. Termin (Stufe 4)</td>
+                    <td class="bad">~1.750 €</td>
+                    <td class="good">~250 €</td>
+                    <td class="good">~220 €</td>
+                </tr>
+                <tr>
+                    <td class="criterion">Direkter Entscheider-Zugang</td>
+                    <td class="bad">Selten</td>
+                    <td class="good">Immer</td>
+                    <td class="good">Immer</td>
+                </tr>
+                <tr>
+                    <td class="criterion">Skalierbarkeit</td>
+                    <td class="meh">Begrenzt (CPL steigt)</td>
+                    <td class="good">Hoch</td>
+                    <td class="good">Sehr hoch</td>
+                </tr>
+                <tr>
+                    <td class="criterion">Monatliche Kosten</td>
+                    <td class="bad">Variabel, unkontrolliert</td>
+                    <td class="meh">3.500 € + 1.990 € Setup</td>
+                    <td class="good">2.917 € eff. (Upfront)</td>
+                </tr>
+                <tr>
+                    <td class="criterion">Laufzeit / Flexibilität</td>
+                    <td class="meh">Flexibel, aber teuer</td>
+                    <td class="good">4 Monate Exit-Option</td>
+                    <td class="good">6 Monate, 1 Monat gratis</td>
+                </tr>
+                <tr>
+                    <td class="criterion">Blacklist-Kompatibilität</td>
+                    <td class="bad">Nicht relevant</td>
+                    <td class="good">Volle Übernahme</td>
+                    <td class="good">Volle Übernahme</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- ═══ LIQUIDITÄT ═══ -->
+<section style="background: rgba(255,255,255,0.01); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="section-inner">
+        <div class="section-label">Cashflow-Planung</div>
+        <h2 class="section-title">Was wann fließt</h2>
+        <p class="section-sub">Für den Upfront-6M-Plan — volle Transparenz über eure Investition.</p>
+        <div class="liquidity-grid fade-in">
+            <div class="liquidity-item">
+                <div class="liq-label">Tag 0 — Investition</div>
+                <div class="liq-value liq-red">17.500 €</div>
+                <div class="liq-label">Einmalige Upfront-Zahlung für 6 Monate + 1 Monat gratis</div>
+            </div>
+            <div class="liquidity-item">
+                <div class="liq-label">Monat 2-3 — Erste Leads</div>
+                <div class="liq-value liq-green">30–80 Leads</div>
+                <div class="liq-label">Pipeline füllt sich — Handelsvertreter werden aktiviert</div>
+            </div>
+            <div class="liquidity-item">
+                <div class="liq-label">1 Abschluss = Break-Even</div>
+                <div class="liq-value liq-accent">~2 Monate</div>
+                <div class="liq-label">Bei ø 8.000 € Kundenwert/Jahr: 2 Abschlüsse = Investment zurück</div>
+            </div>
+            <div class="liquidity-item">
+                <div class="liq-label">Monat 6 — Gesamtwert</div>
+                <div class="liq-value liq-green">+192.000 €</div>
+                <div class="liq-label">4 Abschlüsse/Monat × 4 Monate × 12k avg. = theoretisches Upside</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ BONUSSE ═══ -->
+<section>
+    <div class="section-inner">
+        <div class="section-label">Inklusive Assets</div>
+        <h2 class="section-title">Was bei euch bleibt</h2>
+        <p class="section-sub">Alle Leadlisten, Sequenzen und CRM-Strukturen gehören euch — auch nach der Zusammenarbeit.</p>
+        <div class="bonus-grid fade-in">
+            <div class="bonus-item">
+                <div class="bonus-icon">🎯</div>
+                <div>
+                    <h4>ICP-Leadlisten</h4>
+                    <p>Validierte Entscheider-Listen eurer Zielgruppen — direkt nutzbar für Handelsvertreter.</p>
+                </div>
+            </div>
+            <div class="bonus-item">
+                <div class="bonus-icon">📱</div>
+                <div>
+                    <h4>Direkte Telefonnummern</h4>
+                    <p>Zu jedem Lead erhaltet ihr auch die direkte Mobilnummer für telefonische Nachverfolgung.</p>
+                </div>
+            </div>
+            <div class="bonus-item">
+                <div class="bonus-icon">📬</div>
+                <div>
+                    <h4>E-Mail-Sequenzen</h4>
+                    <p>Alle getesteten und optimierten Sequenzen bleiben in eurem Account — dauerhaft nutzbar.</p>
+                </div>
+            </div>
+            <div class="bonus-item">
+                <div class="bonus-icon">📊</div>
+                <div>
+                    <h4>Sales Projections &amp; Tracking</h4>
+                    <p>Wöchentliches Dashboard mit Lead-Volumen, Reply-Rate und Pipeline-Status in Echtzeit.</p>
+                </div>
+            </div>
+            <div class="bonus-item">
+                <div class="bonus-icon">📄</div>
+                <div>
+                    <h4>PandaDoc-Vertragsstruktur</h4>
+                    <p>Professionelle digitale Angebotsstruktur für eure Handelsvertreter — mehr Abschlüsse, weniger Reibung.</p>
+                </div>
+            </div>
+            <div class="bonus-item">
+                <div class="bonus-icon">🤖</div>
+                <div>
+                    <h4>Grundwerk Web App</h4>
+                    <p>Zugang zur internen Grundwerk-Plattform für Kampagnen-Monitoring und Teamkommunikation.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ TEAM ═══ -->
+<section style="background: rgba(255,255,255,0.01); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="section-inner">
+        <div class="section-label">Euer Team</div>
+        <h2 class="section-title">Das Execution-Team hinter dem Erfolg</h2>
+        <p class="section-sub">Drei Spezialisten arbeiten parallel an eurem Account — aligned auf eure Ergebnisse.</p>
+        <div class="team-grid fade-in">
+            <div class="team-card">
+                <div class="team-avatar">👤</div>
+                <h4>Account Manager</h4>
+                <div class="team-role">Strategie &amp; Kampagnen</div>
+                <p>Euer direkter Ansprechpartner. Definiert die Kampagnenstrategie, führt wöchentliche Check-ins und optimiert laufend basierend auf euren Ergebnissen.</p>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar">⚙️</div>
+                <h4>Clay Engineer</h4>
+                <div class="team-role">Daten &amp; Enrichment</div>
+                <p>Baut und pflegt eure Entscheider-Listen. Validiert Daten über 75+ Tools gleichzeitig — 0,2% Bounce-Rate durch dreifache Verifikation.</p>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar">⚡</div>
+                <h4>Automations Expert</h4>
+                <div class="team-role">Infrastruktur &amp; Deliverability</div>
+                <p>Setzt die gesamte E-Mail-Infrastruktur auf: Domain-Warmup, Inbox-Rotation, Deliverability-Monitoring. Alles landet im Posteingang — nicht im Spam.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ TIMELINE ═══ -->
+<section>
+    <div class="section-inner">
+        <div class="section-label">Nächste Schritte</div>
+        <h2 class="section-title">Von heute bis zu den ersten Leads</h2>
+        <p class="section-sub">Nach Zusage: Setup läuft innerhalb von 2–3 Wochen — erste Leads bereits in Monat 2.</p>
+        <div class="timeline fade-in">
+            <div class="timeline-item">
+                <h4>24. März — Check-In Call (12:00 Uhr)</h4>
+                <p>Finn, Meike und Anthony gehen das Angebot live durch. Fragen klären, Paket auswählen, Budget freigeben.</p>
+            </div>
+            <div class="timeline-item">
+                <h4>Woche 1 — Onboarding &amp; KickOff-Workshop (1h)</h4>
+                <p>ICP-Definition, Zielgruppen-Briefing, Blacklist-Übernahme, Domain- und Inbox-Setup starten.</p>
+            </div>
+            <div class="timeline-item">
+                <h4>Woche 2–3 — Setup &amp; Warmup</h4>
+                <p>Entscheider-Leadlisten werden gebaut, Sequenzen getestet, Infrastruktur warmgelaufen. 5.000+ erste Prospects kontaktiert.</p>
+            </div>
+            <div class="timeline-item">
+                <h4>Monat 2 — Erste 30–50 warme Leads</h4>
+                <p>Vollständige Kampagne live mit 30.000 E-Mails. Erste positive Replies landen direkt in der MasterInbox eurer Handelsvertreter.</p>
+            </div>
+            <div class="timeline-item">
+                <h4>Monat 3+ — Vollständige Skalierung</h4>
+                <p>Optimierte Kampagnen auf Basis der Learnings — angestrebte 50–80 Leads/Monat kontinuierlich, um eure 15 Handelsvertreter voll auszulasten.</p>
+            </div>
+        </div>
+        <div class="timeline-highlight">
+            <p>🚀 Erste warme Leads für eure Handelsvertreter in unter 6 Wochen nach Kickoff.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta-section">
+    <h2>Bereit für planbare B2B-Leads?</h2>
+    <p>Am 24. März um 12 Uhr gehen wir das Angebot live durch — bis dahin alle Fragen direkt an Anthony.</p>
+    <a href="https://calendly.com/anthony-katzur" class="cta-btn">Termin bestätigen — 24. März, 12:00 Uhr</a>
+    <div class="cta-contact">
+        <a href="mailto:anthony.katzur@grundwerk.digital">✉️ anthony.katzur@grundwerk.digital</a>
+        <a href="tel:+4917647189941">📱 +49 176 47189941</a>
+    </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+    <p>© 2026 Grundwerk Digital · Alle Rechte vorbehalten</p>
+</footer>
+
+<script>
+    // Fade-in Observer
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
