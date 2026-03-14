@@ -404,7 +404,7 @@
         .stat-lbl { font-size: 0.75rem; color: var(--text-muted); margin-top: 3px; }
 
         /* ─── LOGO TICKER ─── */
-        .logo-ticker-section { padding: 20px 0 40px; overflow: hidden; }
+        .logo-ticker-section { padding: 10px 0 20px; overflow: hidden; }
         .ticker-track-wrap { overflow: hidden; position: relative; margin-bottom: 16px; }
         .ticker-track-wrap::before, .ticker-track-wrap::after {
             content: ''; position: absolute; top: 0; bottom: 0; width: 20%; z-index: 2; pointer-events: none;
@@ -414,8 +414,8 @@
         .ticker-track {
             display: flex; align-items: center; gap: 56px; width: max-content;
         }
-        .ticker-track.forward { animation: tickerFwd 40s linear infinite; }
-        .ticker-track.reverse { animation: tickerRev 45s linear infinite; }
+        .ticker-track.forward { animation: tickerFwd 52s linear infinite; }
+        .ticker-track.reverse { animation: tickerRev 58s linear infinite; }
         @keyframes tickerFwd {
             from { transform: translateX(-25%); }
             to { transform: translateX(-75%); }
@@ -909,9 +909,9 @@
             <p class="lead" style="max-width:560px;margin-bottom:32px;line-height:1.7;color:var(--text-muted);font-size:0.95rem;">Echte Zahlen aus aktiven Projekten &mdash; von Startups bis Mittelstand.</p>
 
             <!-- ── Kunden-Logo Ticker ── -->
-            <div class="logo-ticker-section" style="padding:20px 0 40px;overflow:hidden;">
+            <div class="logo-ticker-section" style="padding:10px 0 20px;overflow:hidden;">
                 <div class="ticker-track-wrap" style="overflow:hidden;position:relative;margin-bottom:16px;">
-                    <div class="ticker-track forward" style="display:flex;align-items:center;gap:56px;width:max-content;animation:tickerFwd 40s linear infinite;">
+                    <div class="ticker-track forward" style="display:flex;align-items:center;gap:56px;width:max-content;animation:tickerFwd 52s linear infinite;">
                         <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel">
                         <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes">
                         <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://www.hrs.de/_next/static/media/hrs_logo_red.7cccdfd9.svg" alt="HRS">
@@ -943,7 +943,7 @@
                     </div>
                 </div>
                 <div class="ticker-track-wrap" style="overflow:hidden;position:relative;margin-bottom:16px;">
-                    <div class="ticker-track reverse" style="display:flex;align-items:center;gap:56px;width:max-content;animation:tickerRev 45s linear infinite;">
+                    <div class="ticker-track reverse" style="display:flex;align-items:center;gap:56px;width:max-content;animation:tickerRev 58s linear infinite;">
                         <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges">
                         <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://d2bw95mh2ee04s.cloudfront.net/prod/content/wp-content/uploads/2025/01/02134814/Property-Logo-Main.svg" alt="SellerLogic">
                         <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly">
@@ -977,7 +977,7 @@
             </div>
 
             <!-- ── Stat-Banner ── -->
-            <div class="stat-row" style="display:flex;gap:16px;margin-bottom:0;padding-bottom:40px;border-bottom:1px solid var(--border);">
+            <div class="stat-row" style="display:flex;gap:16px;margin-bottom:0;padding-top:40px;border-top:1px solid var(--border);">
                 <div class="stat-item" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px 24px;flex:1;text-align:center;">
                     <div class="stat-num" style="font-size:1.6rem;font-weight:800;color:var(--accent);">10 Mio.+</div>
                     <div class="stat-lbl" style="font-size:0.8rem;color:var(--text-muted);margin-top:2px;">E-Mails versendet</div>
