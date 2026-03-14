@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "urbify",
+    "name": "Urbify",
+    "subtitle": "Sales Room",
+    "type": "sales-room",
+    "secure": "7294830165",
+    "icon": "U",
+    "created": "2026-03-10"
+  },
+  {
+    "slug": "elitec-ag",
+    "name": "elitec AG",
+    "subtitle": "Planbare Neukunden",
+    "type": "offer",
+    "secure": "4827193056",
+    "icon": "E",
+    "created": "2026-03-05"
+  },
+  {
+    "slug": "Starqstrom",
+    "name": "STARQstrom",
+    "subtitle": "Planbare B2B-Leads",
+    "type": "offer",
+    "secure": "7364912058",
+    "icon": "S",
+    "created": "2026-03-01"
+  },
+  {
+    "slug": "digirehab",
+    "name": "DigiRehab",
+    "subtitle": "Ambulant-Playbook",
+    "type": "offer",
+    "secure": "2794488071",
+    "icon": "D",
+    "created": "2026-02-25"
+  },
+  {
+    "slug": "18a-studio",
+    "name": "18a.studio",
+    "subtitle": "Angebot",
+    "type": "offer",
+    "secure": "6984172496",
+    "icon": "18",
+    "created": "2026-02-20"
+  }
+]

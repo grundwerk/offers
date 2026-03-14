@@ -1,10 +1,10 @@
-<!-- GRUNDWERK-OFFER v1 | 2026-03-14 16:00 | Initial deploy — Offer Dashboard -->
+<!-- GRUNDWERK-OFFER v2 | 2026-03-14 17:00 | Dynamic dashboard — loads from offers.json -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="offer-version" content="v1 | 2026-03-14">
+    <meta name="offer-version" content="v2 | 2026-03-14">
     <title>Grundwerk Digital — Offer Dashboard</title>
     <script>
         (function(){
@@ -60,34 +60,11 @@
             z-index: 100;
         }
 
-        .header-left {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .logo-text {
-            font-size: 1.1rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-
+        .header-left { display: flex; align-items: center; gap: 16px; }
+        .logo-text { font-size: 1.1rem; font-weight: 700; letter-spacing: -0.02em; }
         .logo-text span { color: var(--accent); }
-
-        .badge {
-            padding: 4px 12px;
-            border-radius: 100px;
-            background: var(--accent-glow);
-            color: var(--accent);
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+        .badge { padding: 4px 12px; border-radius: 100px; background: var(--accent-glow); color: var(--accent); font-size: 0.75rem; font-weight: 600; }
+        .header-right { display: flex; align-items: center; gap: 12px; }
 
         .view-toggle {
             display: flex;
@@ -98,274 +75,77 @@
         }
 
         .view-btn {
-            background: none;
-            border: none;
-            color: var(--text-muted);
-            padding: 8px 14px;
-            cursor: pointer;
-            font-size: 0.85rem;
-            font-family: inherit;
-            transition: all 0.2s;
+            background: none; border: none; color: var(--text-muted);
+            padding: 8px 14px; cursor: pointer; font-size: 0.85rem; font-family: inherit; transition: all 0.2s;
         }
-
-        .view-btn.active {
-            background: var(--accent-glow);
-            color: var(--accent);
-        }
-
-        .view-btn:hover:not(.active) {
-            color: var(--text);
-        }
+        .view-btn.active { background: var(--accent-glow); color: var(--accent); }
+        .view-btn:hover:not(.active) { color: var(--text); }
 
         .search-box {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-            padding: 8px 14px;
-            color: var(--text);
-            font-family: inherit;
-            font-size: 0.85rem;
-            width: 220px;
-            outline: none;
-            transition: border-color 0.2s;
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm);
+            padding: 8px 14px; color: var(--text); font-family: inherit; font-size: 0.85rem;
+            width: 220px; outline: none; transition: border-color 0.2s;
         }
+        .search-box:focus { border-color: var(--accent); }
+        .search-box::placeholder { color: var(--text-muted); }
 
-        .search-box:focus {
-            border-color: var(--accent);
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 32px; }
 
-        .search-box::placeholder {
-            color: var(--text-muted);
-        }
+        .stats-bar { display: flex; gap: 16px; margin-bottom: 32px; }
+        .stat-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px 20px; flex: 1; }
+        .stat-number { font-size: 1.6rem; font-weight: 800; color: var(--accent); }
+        .stat-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 2px; }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 32px;
-        }
-
-        .stats-bar {
-            display: flex;
-            gap: 16px;
-            margin-bottom: 32px;
-        }
-
-        .stat-item {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-            padding: 16px 20px;
-            flex: 1;
-        }
-
-        .stat-number {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: var(--accent);
-        }
-
-        .stat-label {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-top: 2px;
-        }
-
-        /* Grid View */
         .offers-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 20px;
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px;
         }
 
         .offer-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 28px 24px;
-            cursor: pointer;
-            transition: all 0.25s ease;
-            text-decoration: none;
-            color: inherit;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            position: relative;
-            overflow: hidden;
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+            padding: 28px 24px; cursor: pointer; transition: all 0.25s ease; text-decoration: none;
+            color: inherit; display: flex; flex-direction: column; gap: 16px; position: relative; overflow: hidden;
         }
-
         .offer-card:hover {
-            background: var(--bg-card-hover);
-            border-color: var(--border-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            background: var(--bg-card-hover); border-color: var(--border-hover);
+            transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.3);
         }
 
-        .offer-card-top {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-        }
-
+        .offer-card-top { display: flex; align-items: flex-start; justify-content: space-between; }
         .offer-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            background: var(--accent-glow);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            font-weight: 800;
-            color: var(--accent);
-            flex-shrink: 0;
+            width: 48px; height: 48px; border-radius: 12px; background: var(--accent-glow);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.3rem; font-weight: 800; color: var(--accent); flex-shrink: 0;
         }
+        .offer-type-badge { padding: 3px 10px; border-radius: 100px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; }
+        .type-sales-room { background: rgba(79,125,249,0.12); color: var(--accent); }
+        .type-offer { background: rgba(34,197,94,0.12); color: var(--green); }
 
-        .offer-type-badge {
-            padding: 3px 10px;
-            border-radius: 100px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
-        }
+        .offer-name { font-size: 1.15rem; font-weight: 700; letter-spacing: -0.01em; line-height: 1.3; }
+        .offer-subtitle { font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; margin-top: 4px; }
+        .offer-meta { display: flex; align-items: center; gap: 12px; padding-top: 12px; border-top: 1px solid var(--border); font-size: 0.78rem; color: var(--text-muted); }
+        .open-icon { position: absolute; top: 28px; right: 24px; opacity: 0; transition: opacity 0.2s; color: var(--accent); font-size: 0.9rem; }
+        .offer-card:hover .open-icon { opacity: 1; }
 
-        .type-sales-room {
-            background: rgba(79, 125, 249, 0.12);
-            color: var(--accent);
-        }
-
-        .type-offer {
-            background: rgba(34, 197, 94, 0.12);
-            color: var(--green);
-        }
-
-        .offer-name {
-            font-size: 1.15rem;
-            font-weight: 700;
-            letter-spacing: -0.01em;
-            line-height: 1.3;
-        }
-
-        .offer-subtitle {
-            font-size: 0.82rem;
-            color: var(--text-muted);
-            line-height: 1.5;
-        }
-
-        .offer-meta {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding-top: 12px;
-            border-top: 1px solid var(--border);
-            font-size: 0.78rem;
-            color: var(--text-muted);
-        }
-
-        .offer-meta-item {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .open-icon {
-            position: absolute;
-            top: 28px;
-            right: 24px;
-            opacity: 0;
-            transition: opacity 0.2s;
-            color: var(--accent);
-            font-size: 0.9rem;
-        }
-
-        .offer-card:hover .open-icon {
-            opacity: 1;
-        }
-
-        /* List View */
-        .offers-list {
-            display: none;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .offers-list.active {
-            display: flex;
-        }
-
-        .offers-grid.hidden {
-            display: none;
-        }
+        .offers-list { display: none; flex-direction: column; gap: 8px; }
+        .offers-list.active { display: flex; }
+        .offers-grid.hidden { display: none; }
 
         .offer-row {
-            display: grid;
-            grid-template-columns: 40px 1fr 140px 120px 60px;
-            align-items: center;
-            gap: 16px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-            padding: 14px 20px;
-            cursor: pointer;
-            transition: all 0.2s;
-            text-decoration: none;
-            color: inherit;
+            display: grid; grid-template-columns: 40px 1fr 140px 120px 60px;
+            align-items: center; gap: 16px; background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius-sm); padding: 14px 20px; cursor: pointer; transition: all 0.2s;
+            text-decoration: none; color: inherit;
         }
+        .offer-row:hover { background: var(--bg-card-hover); border-color: var(--border-hover); }
+        .offer-row .offer-icon { width: 36px; height: 36px; font-size: 0.9rem; border-radius: 8px; }
+        .offer-row-info { display: flex; flex-direction: column; gap: 2px; }
+        .offer-row-name { font-size: 0.92rem; font-weight: 600; }
+        .offer-row-subtitle { font-size: 0.78rem; color: var(--text-muted); }
+        .offer-row-slug { font-size: 0.78rem; color: var(--text-muted); font-family: monospace; }
+        .offer-row-arrow { text-align: right; color: var(--text-muted); font-size: 0.9rem; }
+        .offer-row:hover .offer-row-arrow { color: var(--accent); }
 
-        .offer-row:hover {
-            background: var(--bg-card-hover);
-            border-color: var(--border-hover);
-        }
-
-        .offer-row .offer-icon {
-            width: 36px;
-            height: 36px;
-            font-size: 0.9rem;
-            border-radius: 8px;
-        }
-
-        .offer-row-info {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-        }
-
-        .offer-row-name {
-            font-size: 0.92rem;
-            font-weight: 600;
-        }
-
-        .offer-row-subtitle {
-            font-size: 0.78rem;
-            color: var(--text-muted);
-        }
-
-        .offer-row-type {
-            font-size: 0.75rem;
-        }
-
-        .offer-row-slug {
-            font-size: 0.78rem;
-            color: var(--text-muted);
-            font-family: monospace;
-        }
-
-        .offer-row-arrow {
-            text-align: right;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        .offer-row:hover .offer-row-arrow {
-            color: var(--accent);
-        }
-
-        .empty-state {
-            text-align: center;
-            padding: 60px 20px;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
+        .empty-state { text-align: center; padding: 60px 20px; color: var(--text-muted); font-size: 0.9rem; }
 
         @media (max-width: 768px) {
             .header { padding: 16px; flex-wrap: wrap; gap: 12px; }
@@ -397,145 +177,24 @@
 
 <div class="container" style="max-width:1200px;margin:0 auto;padding:40px 32px;">
 
-    <div class="stats-bar" style="display:flex;gap:16px;margin-bottom:32px;">
+    <div class="stats-bar" id="stats-bar" style="display:flex;gap:16px;margin-bottom:32px;">
         <div class="stat-item" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px 20px;flex:1;">
-            <div class="stat-number" id="total-count" style="font-size:1.6rem;font-weight:800;color:var(--accent);">5</div>
+            <div class="stat-number" id="stat-total" style="font-size:1.6rem;font-weight:800;color:var(--accent);">—</div>
             <div class="stat-label" style="font-size:0.8rem;color:var(--text-muted);margin-top:2px;">Offers gesamt</div>
         </div>
         <div class="stat-item" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px 20px;flex:1;">
-            <div class="stat-number" style="font-size:1.6rem;font-weight:800;color:var(--accent);">1</div>
+            <div class="stat-number" id="stat-rooms" style="font-size:1.6rem;font-weight:800;color:var(--accent);">—</div>
             <div class="stat-label" style="font-size:0.8rem;color:var(--text-muted);margin-top:2px;">Sales Rooms</div>
         </div>
         <div class="stat-item" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px 20px;flex:1;">
-            <div class="stat-number" style="font-size:1.6rem;font-weight:800;color:var(--accent);">4</div>
+            <div class="stat-number" id="stat-offers" style="font-size:1.6rem;font-weight:800;color:var(--accent);">—</div>
             <div class="stat-label" style="font-size:0.8rem;color:var(--text-muted);margin-top:2px;">Standard Offers</div>
         </div>
     </div>
 
-    <!-- GRID VIEW -->
-    <div class="offers-grid" id="grid-view" style="display:grid;grid-template-columns:repeat(auto-fill, minmax(320px, 1fr));gap:20px;">
+    <div class="offers-grid" id="grid-view" style="display:grid;grid-template-columns:repeat(auto-fill, minmax(320px, 1fr));gap:20px;"></div>
 
-        <a class="offer-card" href="/urbify/?secure=7294830165" target="_blank" data-name="urbify" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px 24px;cursor:pointer;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:16px;position:relative;overflow:hidden;">
-            <div class="offer-card-top" style="display:flex;align-items:flex-start;justify-content:space-between;">
-                <div class="offer-icon" style="width:48px;height:48px;border-radius:12px;background:var(--accent-glow);display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:800;color:var(--accent);flex-shrink:0;">U</div>
-                <span class="offer-type-badge type-sales-room" style="padding:3px 10px;border-radius:100px;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.03em;background:rgba(79,125,249,0.12);color:var(--accent);">Sales Room</span>
-            </div>
-            <div>
-                <div class="offer-name" style="font-size:1.15rem;font-weight:700;letter-spacing:-0.01em;line-height:1.3;">Urbify</div>
-                <div class="offer-subtitle" style="font-size:0.82rem;color:var(--text-muted);line-height:1.5;margin-top:4px;">Urbify &times; Grundwerk Digital &mdash; Sales Room</div>
-            </div>
-            <div class="offer-meta" style="display:flex;align-items:center;gap:12px;padding-top:12px;border-top:1px solid var(--border);font-size:0.78rem;color:var(--text-muted);">
-                <span class="offer-meta-item">/urbify/</span>
-            </div>
-            <span class="open-icon">&rarr;</span>
-        </a>
-
-        <a class="offer-card" href="/elitec-ag/?secure=4827193056" target="_blank" data-name="elitec-ag" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px 24px;cursor:pointer;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:16px;position:relative;overflow:hidden;">
-            <div class="offer-card-top" style="display:flex;align-items:flex-start;justify-content:space-between;">
-                <div class="offer-icon" style="width:48px;height:48px;border-radius:12px;background:var(--accent-glow);display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:800;color:var(--accent);flex-shrink:0;">E</div>
-                <span class="offer-type-badge type-offer" style="padding:3px 10px;border-radius:100px;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.03em;background:rgba(34,197,94,0.12);color:var(--green);">Offer</span>
-            </div>
-            <div>
-                <div class="offer-name" style="font-size:1.15rem;font-weight:700;letter-spacing:-0.01em;line-height:1.3;">elitec AG</div>
-                <div class="offer-subtitle" style="font-size:0.82rem;color:var(--text-muted);line-height:1.5;margin-top:4px;">elitec AG &times; Grundwerk Digital &mdash; Planbare Neukunden</div>
-            </div>
-            <div class="offer-meta" style="display:flex;align-items:center;gap:12px;padding-top:12px;border-top:1px solid var(--border);font-size:0.78rem;color:var(--text-muted);">
-                <span class="offer-meta-item">/elitec-ag/</span>
-            </div>
-            <span class="open-icon">&rarr;</span>
-        </a>
-
-        <a class="offer-card" href="/Starqstrom/?secure=7364912058" target="_blank" data-name="starqstrom" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px 24px;cursor:pointer;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:16px;position:relative;overflow:hidden;">
-            <div class="offer-card-top" style="display:flex;align-items:flex-start;justify-content:space-between;">
-                <div class="offer-icon" style="width:48px;height:48px;border-radius:12px;background:var(--accent-glow);display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:800;color:var(--accent);flex-shrink:0;">S</div>
-                <span class="offer-type-badge type-offer" style="padding:3px 10px;border-radius:100px;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.03em;background:rgba(34,197,94,0.12);color:var(--green);">Offer</span>
-            </div>
-            <div>
-                <div class="offer-name" style="font-size:1.15rem;font-weight:700;letter-spacing:-0.01em;line-height:1.3;">STARQstrom</div>
-                <div class="offer-subtitle" style="font-size:0.82rem;color:var(--text-muted);line-height:1.5;margin-top:4px;">STARQstrom &times; Grundwerk Digital &mdash; Planbare B2B-Leads</div>
-            </div>
-            <div class="offer-meta" style="display:flex;align-items:center;gap:12px;padding-top:12px;border-top:1px solid var(--border);font-size:0.78rem;color:var(--text-muted);">
-                <span class="offer-meta-item">/Starqstrom/</span>
-            </div>
-            <span class="open-icon">&rarr;</span>
-        </a>
-
-        <a class="offer-card" href="/digirehab/?secure=2794488071" target="_blank" data-name="digirehab" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px 24px;cursor:pointer;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:16px;position:relative;overflow:hidden;">
-            <div class="offer-card-top" style="display:flex;align-items:flex-start;justify-content:space-between;">
-                <div class="offer-icon" style="width:48px;height:48px;border-radius:12px;background:var(--accent-glow);display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:800;color:var(--accent);flex-shrink:0;">D</div>
-                <span class="offer-type-badge type-offer" style="padding:3px 10px;border-radius:100px;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.03em;background:rgba(34,197,94,0.12);color:var(--green);">Offer</span>
-            </div>
-            <div>
-                <div class="offer-name" style="font-size:1.15rem;font-weight:700;letter-spacing:-0.01em;line-height:1.3;">DigiRehab</div>
-                <div class="offer-subtitle" style="font-size:0.82rem;color:var(--text-muted);line-height:1.5;margin-top:4px;">DigiRehab &times; Grundwerk Digital &mdash; Ambulant-Playbook</div>
-            </div>
-            <div class="offer-meta" style="display:flex;align-items:center;gap:12px;padding-top:12px;border-top:1px solid var(--border);font-size:0.78rem;color:var(--text-muted);">
-                <span class="offer-meta-item">/digirehab/</span>
-            </div>
-            <span class="open-icon">&rarr;</span>
-        </a>
-
-        <a class="offer-card" href="/18a-studio/?secure=6984172496" target="_blank" data-name="18a-studio" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px 24px;cursor:pointer;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:16px;position:relative;overflow:hidden;">
-            <div class="offer-card-top" style="display:flex;align-items:flex-start;justify-content:space-between;">
-                <div class="offer-icon" style="width:48px;height:48px;border-radius:12px;background:var(--accent-glow);display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:800;color:var(--accent);flex-shrink:0;">18</div>
-                <span class="offer-type-badge type-offer" style="padding:3px 10px;border-radius:100px;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.03em;background:rgba(34,197,94,0.12);color:var(--green);">Offer</span>
-            </div>
-            <div>
-                <div class="offer-name" style="font-size:1.15rem;font-weight:700;letter-spacing:-0.01em;line-height:1.3;">18a.studio</div>
-                <div class="offer-subtitle" style="font-size:0.82rem;color:var(--text-muted);line-height:1.5;margin-top:4px;">18a.studio &times; Grundwerk Digital &mdash; Angebot</div>
-            </div>
-            <div class="offer-meta" style="display:flex;align-items:center;gap:12px;padding-top:12px;border-top:1px solid var(--border);font-size:0.78rem;color:var(--text-muted);">
-                <span class="offer-meta-item">/18a-studio/</span>
-            </div>
-            <span class="open-icon">&rarr;</span>
-        </a>
-
-    </div>
-
-    <!-- LIST VIEW -->
-    <div class="offers-list" id="list-view">
-
-        <a class="offer-row" href="/urbify/?secure=7294830165" target="_blank" data-name="urbify" style="display:grid;grid-template-columns:40px 1fr 140px 120px 60px;align-items:center;gap:16px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 20px;cursor:pointer;text-decoration:none;color:inherit;">
-            <div class="offer-icon" style="width:36px;height:36px;border-radius:8px;background:var(--accent-glow);display:flex;align-items:center;justify-content:center;font-size:0.9rem;font-weight:800;color:var(--accent);">U</div>
-            <div class="offer-row-info"><div class="offer-row-name" style="font-size:0.92rem;font-weight:600;">Urbify</div><div class="offer-row-subtitle" style="font-size:0.78rem;color:var(--text-muted);">Sales Room</div></div>
-            <div class="offer-row-type"><span class="offer-type-badge type-sales-room" style="padding:3px 10px;border-radius:100px;font-size:0.7rem;font-weight:600;text-transform:uppercase;background:rgba(79,125,249,0.12);color:var(--accent);">Sales Room</span></div>
-            <div class="offer-row-slug" style="font-size:0.78rem;color:var(--text-muted);font-family:monospace;">/urbify/</div>
-            <div class="offer-row-arrow" style="text-align:right;color:var(--text-muted);font-size:0.9rem;">&rarr;</div>
-        </a>
-
-        <a class="offer-row" href="/elitec-ag/?secure=4827193056" target="_blank" data-name="elitec-ag" style="display:grid;grid-template-columns:40px 1fr 140px 120px 60px;align-items:center;gap:16px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 20px;cursor:pointer;text-decoration:none;color:inherit;">
-            <div class="offer-icon" style="width:36px;height:36px;border-radius:8px;background:var(--accent-glow);display:flex;align-items:center;justify-content:center;font-size:0.9rem;font-weight:800;color:var(--accent);">E</div>
-            <div class="offer-row-info"><div class="offer-row-name" style="font-size:0.92rem;font-weight:600;">elitec AG</div><div class="offer-row-subtitle" style="font-size:0.78rem;color:var(--text-muted);">Planbare Neukunden</div></div>
-            <div class="offer-row-type"><span class="offer-type-badge type-offer" style="padding:3px 10px;border-radius:100px;font-size:0.7rem;font-weight:600;text-transform:uppercase;background:rgba(34,197,94,0.12);color:var(--green);">Offer</span></div>
-            <div class="offer-row-slug" style="font-size:0.78rem;color:var(--text-muted);font-family:monospace;">/elitec-ag/</div>
-            <div class="offer-row-arrow" style="text-align:right;color:var(--text-muted);font-size:0.9rem;">&rarr;</div>
-        </a>
-
-        <a class="offer-row" href="/Starqstrom/?secure=7364912058" target="_blank" data-name="starqstrom" style="display:grid;grid-template-columns:40px 1fr 140px 120px 60px;align-items:center;gap:16px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 20px;cursor:pointer;text-decoration:none;color:inherit;">
-            <div class="offer-icon" style="width:36px;height:36px;border-radius:8px;background:var(--accent-glow);display:flex;align-items:center;justify-content:center;font-size:0.9rem;font-weight:800;color:var(--accent);">S</div>
-            <div class="offer-row-info"><div class="offer-row-name" style="font-size:0.92rem;font-weight:600;">STARQstrom</div><div class="offer-row-subtitle" style="font-size:0.78rem;color:var(--text-muted);">Planbare B2B-Leads</div></div>
-            <div class="offer-row-type"><span class="offer-type-badge type-offer" style="padding:3px 10px;border-radius:100px;font-size:0.7rem;font-weight:600;text-transform:uppercase;background:rgba(34,197,94,0.12);color:var(--green);">Offer</span></div>
-            <div class="offer-row-slug" style="font-size:0.78rem;color:var(--text-muted);font-family:monospace;">/Starqstrom/</div>
-            <div class="offer-row-arrow" style="text-align:right;color:var(--text-muted);font-size:0.9rem;">&rarr;</div>
-        </a>
-
-        <a class="offer-row" href="/digirehab/?secure=2794488071" target="_blank" data-name="digirehab" style="display:grid;grid-template-columns:40px 1fr 140px 120px 60px;align-items:center;gap:16px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 20px;cursor:pointer;text-decoration:none;color:inherit;">
-            <div class="offer-icon" style="width:36px;height:36px;border-radius:8px;background:var(--accent-glow);display:flex;align-items:center;justify-content:center;font-size:0.9rem;font-weight:800;color:var(--accent);">D</div>
-            <div class="offer-row-info"><div class="offer-row-name" style="font-size:0.92rem;font-weight:600;">DigiRehab</div><div class="offer-row-subtitle" style="font-size:0.78rem;color:var(--text-muted);">Ambulant-Playbook</div></div>
-            <div class="offer-row-type"><span class="offer-type-badge type-offer" style="padding:3px 10px;border-radius:100px;font-size:0.7rem;font-weight:600;text-transform:uppercase;background:rgba(34,197,94,0.12);color:var(--green);">Offer</span></div>
-            <div class="offer-row-slug" style="font-size:0.78rem;color:var(--text-muted);font-family:monospace;">/digirehab/</div>
-            <div class="offer-row-arrow" style="text-align:right;color:var(--text-muted);font-size:0.9rem;">&rarr;</div>
-        </a>
-
-        <a class="offer-row" href="/18a-studio/?secure=6984172496" target="_blank" data-name="18a-studio" style="display:grid;grid-template-columns:40px 1fr 140px 120px 60px;align-items:center;gap:16px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 20px;cursor:pointer;text-decoration:none;color:inherit;">
-            <div class="offer-icon" style="width:36px;height:36px;border-radius:8px;background:var(--accent-glow);display:flex;align-items:center;justify-content:center;font-size:0.9rem;font-weight:800;color:var(--accent);">18</div>
-            <div class="offer-row-info"><div class="offer-row-name" style="font-size:0.92rem;font-weight:600;">18a.studio</div><div class="offer-row-subtitle" style="font-size:0.78rem;color:var(--text-muted);">Angebot</div></div>
-            <div class="offer-row-type"><span class="offer-type-badge type-offer" style="padding:3px 10px;border-radius:100px;font-size:0.7rem;font-weight:600;text-transform:uppercase;background:rgba(34,197,94,0.12);color:var(--green);">Offer</span></div>
-            <div class="offer-row-slug" style="font-size:0.78rem;color:var(--text-muted);font-family:monospace;">/18a-studio/</div>
-            <div class="offer-row-arrow" style="text-align:right;color:var(--text-muted);font-size:0.9rem;">&rarr;</div>
-        </a>
-
-    </div>
+    <div class="offers-list" id="list-view"></div>
 
     <div class="empty-state" id="empty-state" style="display:none;text-align:center;padding:60px 20px;color:var(--text-muted);font-size:0.9rem;">
         Keine Offers gefunden.
@@ -544,7 +203,75 @@
 </div>
 
 <script>
+    var allOffers = [];
+    var currentView = 'grid';
+
+    function escapeHtml(str) {
+        return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    function renderCard(o) {
+        var typeClass = o.type === 'sales-room' ? 'type-sales-room' : 'type-offer';
+        var typeLabel = o.type === 'sales-room' ? 'Sales Room' : 'Offer';
+        var typeBg = o.type === 'sales-room' ? 'rgba(79,125,249,0.12)' : 'rgba(34,197,94,0.12)';
+        var typeColor = o.type === 'sales-room' ? 'var(--accent)' : 'var(--green)';
+        var href = '/' + o.slug + '/?secure=' + o.secure;
+
+        return '<a class="offer-card" href="' + href + '" target="_blank" data-name="' + escapeHtml(o.name.toLowerCase()) + '" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px 24px;cursor:pointer;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:16px;position:relative;overflow:hidden;">'
+            + '<div class="offer-card-top" style="display:flex;align-items:flex-start;justify-content:space-between;">'
+            + '<div class="offer-icon" style="width:48px;height:48px;border-radius:12px;background:var(--accent-glow);display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:800;color:var(--accent);flex-shrink:0;">' + escapeHtml(o.icon) + '</div>'
+            + '<span class="offer-type-badge ' + typeClass + '" style="padding:3px 10px;border-radius:100px;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.03em;background:' + typeBg + ';color:' + typeColor + ';">' + typeLabel + '</span>'
+            + '</div>'
+            + '<div>'
+            + '<div class="offer-name" style="font-size:1.15rem;font-weight:700;letter-spacing:-0.01em;line-height:1.3;">' + escapeHtml(o.name) + '</div>'
+            + '<div class="offer-subtitle" style="font-size:0.82rem;color:var(--text-muted);line-height:1.5;margin-top:4px;">' + escapeHtml(o.name) + ' &times; Grundwerk Digital &mdash; ' + escapeHtml(o.subtitle) + '</div>'
+            + '</div>'
+            + '<div class="offer-meta" style="display:flex;align-items:center;gap:12px;padding-top:12px;border-top:1px solid var(--border);font-size:0.78rem;color:var(--text-muted);">'
+            + '<span>/' + escapeHtml(o.slug) + '/</span>'
+            + (o.created ? '<span>' + escapeHtml(o.created) + '</span>' : '')
+            + '</div>'
+            + '<span class="open-icon">&rarr;</span>'
+            + '</a>';
+    }
+
+    function renderRow(o) {
+        var typeClass = o.type === 'sales-room' ? 'type-sales-room' : 'type-offer';
+        var typeLabel = o.type === 'sales-room' ? 'Sales Room' : 'Offer';
+        var typeBg = o.type === 'sales-room' ? 'rgba(79,125,249,0.12)' : 'rgba(34,197,94,0.12)';
+        var typeColor = o.type === 'sales-room' ? 'var(--accent)' : 'var(--green)';
+        var href = '/' + o.slug + '/?secure=' + o.secure;
+
+        return '<a class="offer-row" href="' + href + '" target="_blank" data-name="' + escapeHtml(o.name.toLowerCase()) + '" style="display:grid;grid-template-columns:40px 1fr 140px 120px 60px;align-items:center;gap:16px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 20px;cursor:pointer;text-decoration:none;color:inherit;">'
+            + '<div class="offer-icon" style="width:36px;height:36px;border-radius:8px;background:var(--accent-glow);display:flex;align-items:center;justify-content:center;font-size:0.9rem;font-weight:800;color:var(--accent);">' + escapeHtml(o.icon) + '</div>'
+            + '<div class="offer-row-info"><div class="offer-row-name" style="font-size:0.92rem;font-weight:600;">' + escapeHtml(o.name) + '</div><div class="offer-row-subtitle" style="font-size:0.78rem;color:var(--text-muted);">' + escapeHtml(o.subtitle) + '</div></div>'
+            + '<div class="offer-row-type"><span class="offer-type-badge ' + typeClass + '" style="padding:3px 10px;border-radius:100px;font-size:0.7rem;font-weight:600;text-transform:uppercase;background:' + typeBg + ';color:' + typeColor + ';">' + typeLabel + '</span></div>'
+            + '<div class="offer-row-slug" style="font-size:0.78rem;color:var(--text-muted);font-family:monospace;">/' + escapeHtml(o.slug) + '/</div>'
+            + '<div class="offer-row-arrow" style="text-align:right;color:var(--text-muted);font-size:0.9rem;">&rarr;</div>'
+            + '</a>';
+    }
+
+    function renderAll(offers) {
+        var gridHtml = '';
+        var listHtml = '';
+        var rooms = 0;
+        var standard = 0;
+
+        offers.forEach(function(o) {
+            gridHtml += renderCard(o);
+            listHtml += renderRow(o);
+            if (o.type === 'sales-room') rooms++;
+            else standard++;
+        });
+
+        document.getElementById('grid-view').innerHTML = gridHtml;
+        document.getElementById('list-view').innerHTML = listHtml;
+        document.getElementById('stat-total').textContent = offers.length;
+        document.getElementById('stat-rooms').textContent = rooms;
+        document.getElementById('stat-offers').textContent = standard;
+    }
+
     function setView(mode) {
+        currentView = mode;
         var grid = document.getElementById('grid-view');
         var list = document.getElementById('list-view');
         var btnGrid = document.getElementById('btn-grid');
@@ -552,26 +279,24 @@
 
         if (mode === 'grid') {
             grid.style.display = 'grid';
-            grid.classList.remove('hidden');
-            list.classList.remove('active');
             list.style.display = 'none';
-            btnGrid.classList.add('active');
             btnGrid.style.background = 'var(--accent-glow)';
             btnGrid.style.color = 'var(--accent)';
-            btnList.classList.remove('active');
+            btnGrid.classList.add('active');
             btnList.style.background = 'none';
             btnList.style.color = 'var(--text-muted)';
+            btnList.classList.remove('active');
         } else {
             grid.style.display = 'none';
-            grid.classList.add('hidden');
-            list.classList.add('active');
             list.style.display = 'flex';
-            btnList.classList.add('active');
+            list.style.flexDirection = 'column';
+            list.style.gap = '8px';
             btnList.style.background = 'var(--accent-glow)';
             btnList.style.color = 'var(--accent)';
-            btnGrid.classList.remove('active');
+            btnList.classList.add('active');
             btnGrid.style.background = 'none';
             btnGrid.style.color = 'var(--text-muted)';
+            btnGrid.classList.remove('active');
         }
     }
 
@@ -582,22 +307,28 @@
         var visible = 0;
 
         cards.forEach(function(card) {
-            var name = card.getAttribute('data-name') || '';
-            var text = card.textContent.toLowerCase();
-            var match = text.indexOf(query) !== -1 || name.indexOf(query) !== -1;
+            var match = card.textContent.toLowerCase().indexOf(query) !== -1;
             card.style.display = match ? '' : 'none';
             if (match) visible++;
         });
-
         rows.forEach(function(row) {
-            var name = row.getAttribute('data-name') || '';
-            var text = row.textContent.toLowerCase();
-            var match = text.indexOf(query) !== -1 || name.indexOf(query) !== -1;
+            var match = row.textContent.toLowerCase().indexOf(query) !== -1;
             row.style.display = match ? '' : 'none';
         });
 
         document.getElementById('empty-state').style.display = visible === 0 ? 'block' : 'none';
     }
+
+    // Load offers from JSON
+    fetch('offers.json?t=' + Date.now())
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+            allOffers = data;
+            renderAll(data);
+        })
+        .catch(function(err) {
+            document.getElementById('grid-view').innerHTML = '<div class="empty-state" style="grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--text-muted);">Fehler beim Laden der Offers.</div>';
+        });
 </script>
 
 </body>
