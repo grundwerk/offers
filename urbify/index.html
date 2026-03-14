@@ -406,10 +406,10 @@
         .logo-ticker-section { padding: 10px 0 20px; overflow: hidden; }
         .ticker-track-wrap { overflow: hidden; position: relative; margin-bottom: 16px; }
         .ticker-track-wrap::before, .ticker-track-wrap::after {
-            content: ''; position: absolute; top: 0; bottom: 0; width: 20%; z-index: 2; pointer-events: none;
+            content: ''; position: absolute; top: 0; bottom: 0; width: 5%; z-index: 2; pointer-events: none;
         }
-        .ticker-track-wrap::before { left: 0; background: linear-gradient(to right, var(--bg) 60%, transparent); }
-        .ticker-track-wrap::after { right: 0; background: linear-gradient(to left, var(--bg) 60%, transparent); }
+        .ticker-track-wrap::before { left: 0; background: linear-gradient(to right, var(--bg), transparent); }
+        .ticker-track-wrap::after { right: 0; background: linear-gradient(to left, var(--bg), transparent); }
         .ticker-track {
             display: flex; align-items: center; gap: 56px; width: max-content;
         }
