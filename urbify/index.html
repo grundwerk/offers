@@ -876,23 +876,76 @@
     <div class="panel-inner">
         <div class="container">
 
-            <span class="section-label">Nachgewiesene Ergebnisse</span>
-            <h2>Was andere B2B-Unternehmen damit erreicht haben</h2>
-            <p class="lead">Echte Zahlen aus aktiven Projekten — keine Hochglanz-Testimonials, keine erfundenen Statistiken.</p>
+            <div style="text-align:center;margin-bottom:48px;">
+                <span class="section-label" style="display:inline-block;">Was Urbify realistisch erwarten kann</span>
+                <h2 style="text-align:center;">Planbare Leads statt Messeabh&auml;ngigkeit</h2>
+                <p class="lead" style="text-align:center;max-width:700px;margin:0 auto;">Basierend auf dem aktuellen Setup (3 Vertriebler, 12.500 E-Mails bei 3% Response) und vergleichbaren B2B-Flottenmanagement-Zielgruppen. Monat 1 ist Setup &mdash; die Maschine l&auml;uft ab Monat 2.</p>
+            </div>
+
+            <!-- ── Forecast-Tabelle ── -->
+            <table style="border-collapse:separate;border-spacing:0;width:100%;margin-bottom:40px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;">
+                <thead>
+                    <tr style="background:rgba(79,125,249,0.07);">
+                        <th style="padding:14px 20px;text-align:left;font-size:0.82rem;text-transform:uppercase;color:var(--text-muted);font-weight:600;">Monat</th>
+                        <th style="padding:14px 20px;text-align:left;font-size:0.82rem;text-transform:uppercase;color:var(--text-muted);font-weight:600;">E-Mails gesendet</th>
+                        <th style="padding:14px 20px;text-align:left;font-size:0.82rem;text-transform:uppercase;color:var(--text-muted);font-weight:600;">Erwartete Leads</th>
+                        <th style="padding:14px 20px;text-align:left;font-size:0.82rem;text-transform:uppercase;color:var(--text-muted);font-weight:600;">Meetings</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding:16px 20px;border-bottom:1px solid var(--border);"><strong>Monat 1</strong> &mdash; Setup &amp; Warmup</td>
+                        <td style="padding:16px 20px;border-bottom:1px solid var(--border);color:var(--accent);font-weight:700;">~5.000</td>
+                        <td style="padding:16px 20px;border-bottom:1px solid var(--border);">0 &ndash; 5</td>
+                        <td style="padding:16px 20px;border-bottom:1px solid var(--border);">0 &ndash; 2</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:16px 20px;border-bottom:1px solid var(--border);"><strong>Monat 2</strong> &mdash; Kampagne live</td>
+                        <td style="padding:16px 20px;border-bottom:1px solid var(--border);color:var(--accent);font-weight:700;">30.000+</td>
+                        <td style="padding:16px 20px;border-bottom:1px solid var(--border);color:var(--green);font-weight:700;">40 &ndash; 80</td>
+                        <td style="padding:16px 20px;border-bottom:1px solid var(--border);color:var(--green);font-weight:700;">8 &ndash; 16</td>
+                    </tr>
+                    <tr style="background:rgba(79,125,249,0.05);">
+                        <td style="padding:16px 20px;"><strong>ab Monat 3</strong> &mdash; Optimiert</td>
+                        <td style="padding:16px 20px;color:var(--accent);font-weight:700;">30.000+</td>
+                        <td style="padding:16px 20px;color:var(--green);font-weight:700;">80 &ndash; 150</td>
+                        <td style="padding:16px 20px;color:var(--green);font-weight:700;">16 &ndash; 30</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- ── 3 Ergebnis-Kacheln (ROI) ── -->
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:48px;">
+                <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px 24px;text-align:center;">
+                    <div style="font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-bottom:16px;">Kosten pro Termin heute</div>
+                    <div style="font-size:2.4rem;font-weight:800;color:var(--red);margin-bottom:8px;">~1.700 &euro;</div>
+                    <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.6;">via Messen (~60k/Jahr f&uuml;r 35 Termine)</div>
+                </div>
+                <div style="background:var(--accent-glow);border:1px solid var(--border-accent);border-radius:var(--radius);padding:32px 24px;text-align:center;">
+                    <div style="font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-bottom:16px;">Kosten pro Termin mit Grundwerk</div>
+                    <div style="font-size:2.4rem;font-weight:800;color:var(--green);margin-bottom:8px;">~440 &euro;</div>
+                    <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.6;">Standard-Paket, ab Monat 2</div>
+                </div>
+                <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px 24px;text-align:center;">
+                    <div style="font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-bottom:16px;">Einsparung pro Termin</div>
+                    <div style="font-size:2.4rem;font-weight:800;color:var(--green);margin-bottom:8px;">&minus;74%</div>
+                    <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.6;">bei gleicher Terminanzahl wie Messen</div>
+                </div>
+            </div>
 
             <!-- ── Stat-Banner ── -->
-            <div class="stat-row">
-                <div class="stat-item">
-                    <div class="stat-num">10 Mio.+</div>
-                    <div class="stat-lbl">E-Mails versendet</div>
+            <div class="stat-row" style="display:flex;gap:16px;margin-bottom:0;">
+                <div class="stat-item" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px 24px;flex:1;text-align:center;">
+                    <div class="stat-num" style="font-size:1.6rem;font-weight:800;color:var(--accent);">10 Mio.+</div>
+                    <div class="stat-lbl" style="font-size:0.8rem;color:var(--text-muted);margin-top:2px;">E-Mails versendet</div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-num">50+</div>
-                    <div class="stat-lbl">Erfolgreiche B2B-Projekte</div>
+                <div class="stat-item" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px 24px;flex:1;text-align:center;">
+                    <div class="stat-num" style="font-size:1.6rem;font-weight:800;color:var(--accent);">50+</div>
+                    <div class="stat-lbl" style="font-size:0.8rem;color:var(--text-muted);margin-top:2px;">Erfolgreiche B2B-Projekte</div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-num">75+</div>
-                    <div class="stat-lbl">Tools & Datenanbieter</div>
+                <div class="stat-item" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px 24px;flex:1;text-align:center;">
+                    <div class="stat-num" style="font-size:1.6rem;font-weight:800;color:var(--accent);">75+</div>
+                    <div class="stat-lbl" style="font-size:0.8rem;color:var(--text-muted);margin-top:2px;">Tools &amp; Datenanbieter</div>
                 </div>
             </div>
 
