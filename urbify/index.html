@@ -32,7 +32,7 @@
             --bg-accent:       #0d1224;
             --text:            #f0f0f0;
             --text-muted:      #888888;
-            --text-dim:        #555555;
+            --text-dim:        #717171;
             --accent:          #4f7df9;
             --accent-glow:     rgba(79,125,249,0.18);
             --accent-dark:     #3b63d4;
@@ -63,8 +63,8 @@
             --bg-card-2:       #f1f3f5;
             --bg-accent:       #eef2ff;
             --text:            #111111;
-            --text-muted:      #6b7280;
-            --text-dim:        #9ca3af;
+            --text-muted:      #4b5563;
+            --text-dim:        #6b7280;
             --accent:          #4f7df9;
             --accent-dark:     #3b63d4;
             --accent-glow:     rgba(79,125,249,0.08);
@@ -130,7 +130,7 @@
             display: flex; align-items: center; justify-content: center;
             font-weight: 900; font-size: 0.75rem; color: white; flex-shrink: 0;
         }
-        .nav-client-logo { height: 24px; max-width: 100px; object-fit: contain; flex-shrink: 0; }
+        .nav-client-logo { width: 28px; height: 28px; object-fit: contain; flex-shrink: 0; border-radius: 6px; }
         .nav-logo-text { color: var(--text); }
         .nav-logo-sep { color: var(--text-dim); font-weight: 300; font-size: 1rem; margin: 0 4px; }
         .nav-logo-client { color: var(--text-muted); font-weight: 500; }
@@ -241,7 +241,10 @@
         }
         .hero-logo {
             height: 38px; max-width: 140px; object-fit: contain;
-            border-radius: 8px; filter: brightness(1.1);
+            border-radius: 8px; background: rgba(255,255,255,0.95); padding: 6px 12px;
+        }
+        [data-theme="light"] .hero-logo {
+            background: rgba(0,0,0,0.05); padding: 6px 12px;
         }
         .hero-logo-sep { font-size: 1rem; color: var(--text-dim); font-weight: 300; }
         .gw-wordmark {
@@ -561,9 +564,7 @@
 <!-- ─── NAV ─── -->
 <nav>
     <div class="nav-logo">
-        <img src="https://cdn.prod.website-files.com/646f271d24f29c0367691efe/65533b76dfc790385c4c59fc_Urbify-Logo-normal.svg"
-             alt="Urbify" class="nav-client-logo"
-             onerror="this.outerHTML='<div class=\'nav-logo-icon\'>G</div>'">
+        <div class="nav-logo-icon">G</div>
         <span class="nav-logo-text">Grundwerk</span>
         <span class="nav-logo-sep">×</span>
         <span class="nav-logo-client">Urbify</span>
