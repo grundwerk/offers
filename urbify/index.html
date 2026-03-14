@@ -1251,7 +1251,7 @@
                     </div>
 
                     <!-- ── SCALE (rechts, Full Outreach) ── -->
-                    <div class="price-card" style="background:var(--bg-card);border:1px solid var(--green);border-radius:var(--radius);padding:26px 24px;position:relative;">
+                    <div class="price-card" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:26px 24px;position:relative;">
                         <div style="position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--green);color:white;font-size:0.7rem;font-weight:700;padding:3px 14px;border-radius:100px;white-space:nowrap;">Full Service</div>
                         <div class="price-name" style="font-size:0.75rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">Scale</div>
                         <div style="font-size:0.78rem;color:var(--green);font-weight:600;margin-bottom:14px;">Cold-, Warm- &amp; Hot-Outreach</div>
@@ -1685,6 +1685,20 @@
             if (btn) btn.innerHTML = '🌙 Dark';
         }
     })();
+
+    // Exclusive accordions: opening one closes the others in the same card
+    document.querySelectorAll('.price-card').forEach(function(card) {
+        var details = card.querySelectorAll('details');
+        details.forEach(function(d) {
+            d.addEventListener('toggle', function() {
+                if (d.open) {
+                    details.forEach(function(other) {
+                        if (other !== d) other.removeAttribute('open');
+                    });
+                }
+            });
+        });
+    });
 </script>
 
 </body>
