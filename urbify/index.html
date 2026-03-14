@@ -412,10 +412,10 @@
             font-size: 0.88rem; line-height: 1.6; color: var(--text); flex: 1;
             font-style: italic; margin-bottom: 16px;
         }
-        .quote-card .q-text::before { content: "„"; color: var(--accent); font-size: 1.2rem; font-weight: 700; }
-        .quote-card .q-text::after { content: """; color: var(--accent); font-size: 1.2rem; font-weight: 700; }
-        .quote-card .q-author { font-size: 0.8rem; font-weight: 700; color: var(--text); }
-        .quote-card .q-role { font-size: 0.75rem; color: var(--text-muted); }
+        .quote-card .q-text::before { content: "„"; }
+        .quote-card .q-text::after { content: """; }
+        .quote-card .q-author { font-size: 0.85rem; font-weight: 700; color: var(--accent); }
+        .quote-card .q-role { font-size: 0.75rem; color: var(--text-muted); font-style: italic; }
         .quote-card .q-metric {
             display: inline-block; margin-top: 10px; font-size: 0.72rem; font-weight: 700;
             color: var(--green); background: var(--green-glow); padding: 3px 10px;
@@ -1149,42 +1149,128 @@
 
             <span class="section-label">Investition</span>
             <h2>Was es kostet — und was es bringt</h2>
-            <p class="lead">Transparenz von Anfang an. Keine versteckten Kosten, keine Überraschungen.</p>
+            <p class="lead">Transparenz von Anfang an. Ein klarer Stufenplan — vom Einstieg bis zur vollautomatisierten Vertriebsmaschine.</p>
 
-            <div class="pricing-grid">
-                <div class="price-card">
-                    <div class="price-name">Einsteiger</div>
-                    <div class="price-setup">Setup-Fee: <strong>990 €</strong> einmalig</div>
-                    <div class="price-monthly">3.000 €</div>
-                    <div class="price-per">pro Monat · 4 Monate Mindestlaufzeit</div>
-                    <div class="price-total">Gesamt: <strong>12.990 €</strong></div>
-                    <ul class="price-features">
-                        <li>ICP-Analyse & Zielmarkt-Mapping</li>
-                        <li>Technische Infrastruktur (Domains, Inboxen)</li>
-                        <li>Kampagnen-Setup & Copywriting</li>
-                        <li>10k E-Mails/Monat Volumen</li>
-                        <li>Bi-Weekly Reporting & Optimierung</li>
-                        <li>KickOff-Workshop (1h)</li>
-                    </ul>
+            <!-- ── STUFE 1: INITIALPAKET (4 Monate) ── -->
+            <div style="margin-bottom:32px;">
+                <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+                    <div style="background:var(--accent);color:white;font-weight:800;font-size:0.75rem;padding:4px 12px;border-radius:20px;">STUFE 1</div>
+                    <h3 style="font-size:1.05rem;font-weight:700;">Initialpaket — Die ersten 4 Monate</h3>
                 </div>
-                <div class="price-card rec">
-                    <div class="rec-badge">Empfohlen für Urbify</div>
-                    <div class="price-name">Standard</div>
-                    <div class="price-setup">Setup-Fee: <strong>1.990 €</strong> einmalig</div>
-                    <div class="price-monthly">3.500 €</div>
-                    <div class="price-per">pro Monat · 4 Monate Mindestlaufzeit</div>
-                    <div class="price-total">Gesamt: <strong>15.990 €</strong></div>
-                    <ul class="price-features">
-                        <li>Alles aus Einsteiger +</li>
-                        <li>20k E-Mails/Monat (doppeltes Volumen)</li>
-                        <li>LinkedIn Outreach inklusive</li>
-                        <li>Wöchentliche Reporting-Calls</li>
-                        <li>Grundwerk Web App kostenlos</li>
-                        <li>Exit-Klausel nach 3 Monaten</li>
+                <div class="pricing-grid">
+                    <div class="price-card">
+                        <div class="price-name">Einsteiger</div>
+                        <div class="price-setup">Setup-Fee: <strong>990 €</strong> einmalig</div>
+                        <div class="price-monthly">3.000 €</div>
+                        <div class="price-per">pro Monat · 4 Monate Mindestlaufzeit</div>
+                        <div class="price-total">Gesamt: <strong>12.990 €</strong></div>
+                        <ul class="price-features">
+                            <li>ICP-Analyse & Zielmarkt-Mapping</li>
+                            <li>Technische Infrastruktur (Domains, Inboxen)</li>
+                            <li>Kampagnen-Setup & Copywriting</li>
+                            <li>10k E-Mails/Monat Volumen</li>
+                            <li>Bi-Weekly Reporting & Optimierung</li>
+                            <li>KickOff-Workshop (1h)</li>
+                        </ul>
+                    </div>
+                    <div class="price-card rec">
+                        <div class="rec-badge">Empfohlen für Urbify</div>
+                        <div class="price-name">Standard</div>
+                        <div class="price-setup">Setup-Fee: <strong>1.990 €</strong> einmalig</div>
+                        <div class="price-monthly">3.500 €</div>
+                        <div class="price-per">pro Monat · 4 Monate Mindestlaufzeit</div>
+                        <div class="price-total">Gesamt: <strong>15.990 €</strong></div>
+                        <ul class="price-features">
+                            <li>Alles aus Einsteiger +</li>
+                            <li>20k E-Mails/Monat (doppeltes Volumen)</li>
+                            <li>LinkedIn Outreach inklusive</li>
+                            <li>Wöchentliche Reporting-Calls</li>
+                            <li>Grundwerk Web App kostenlos</li>
+                            <li>Exit-Klausel nach 3 Monaten</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;margin-top:16px;">
+                    <h4 style="font-size:0.9rem;font-weight:700;margin-bottom:10px;">Ziele nach 4 Monaten:</h4>
+                    <ul style="font-size:0.85rem;color:var(--text);line-height:1.8;list-style:none;padding:0;">
+                        <li>✅ Technische Infrastruktur aufgebaut & aufgewärmt</li>
+                        <li>✅ ICP definiert, Zielmarkt gemappt, erste Kampagnen live</li>
+                        <li>✅ Erste qualifizierte Leads & Meetings in der Pipeline</li>
+                        <li>✅ Datenbasierte Entscheidungsgrundlage: Was funktioniert, was nicht</li>
+                        <li>✅ Proof of Concept — Outbound funktioniert für Urbify</li>
                     </ul>
                 </div>
             </div>
 
+            <!-- ── STUFE 2: JAHRESVERTRAG ── -->
+            <div style="margin-bottom:32px;">
+                <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+                    <div style="background:var(--green);color:white;font-weight:800;font-size:0.75rem;padding:4px 12px;border-radius:20px;">STUFE 2</div>
+                    <h3 style="font-size:1.05rem;font-weight:700;">Jahresvertrag — Skalierung & Optimierung</h3>
+                </div>
+                <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;">
+                    <p style="font-size:0.88rem;color:var(--text);line-height:1.7;margin-bottom:16px;">Nach dem erfolgreichen Initialprojekt verlängern wir in einen Jahresvertrag. Der genaue Scope wird basierend auf den Ergebnissen der ersten 4 Monate gemeinsam definiert.</p>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+                        <div style="background:var(--layer-subtle);border-radius:var(--radius-sm);padding:16px;">
+                            <div style="font-weight:700;font-size:0.85rem;margin-bottom:8px;color:var(--text);">Im Jahresvertrag:</div>
+                            <ul style="font-size:0.82rem;color:var(--text-muted);line-height:1.8;list-style:none;padding:0;">
+                                <li>→ Volumen-Skalierung (40k+ E-Mails/Monat)</li>
+                                <li>→ CRM-Integration & Pipeline-Automatisierung</li>
+                                <li>→ Multi-Channel: Email + LinkedIn + Warm Outreach</li>
+                                <li>→ Lead Scoring & Priorisierung</li>
+                                <li>→ Recruiting-Outreach (optional)</li>
+                                <li>→ Dedicated Account Manager</li>
+                            </ul>
+                        </div>
+                        <div style="background:var(--layer-subtle);border-radius:var(--radius-sm);padding:16px;">
+                            <div style="font-weight:700;font-size:0.85rem;margin-bottom:8px;color:var(--text);">Jahresziele:</div>
+                            <ul style="font-size:0.82rem;color:var(--text-muted);line-height:1.8;list-style:none;padding:0;">
+                                <li>→ Planbare, steuerbare Pipeline (X Leads/Monat)</li>
+                                <li>→ Outbound als zweitstärkster Akquise-Kanal</li>
+                                <li>→ Messbar positiver ROI auf das Gesamtjahr</li>
+                                <li>→ Sales-Team arbeitet auf voller Kapazität</li>
+                                <li>→ Forecasting-Fähigkeit gegenüber GF & Investoren</li>
+                                <li>→ Datenbank von 5.000+ qualifizierten Kontakten</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div style="margin-top:16px;padding:14px 16px;background:var(--accent-glow);border:1px solid var(--border-accent);border-radius:var(--radius-sm);">
+                        <div style="font-size:0.82rem;color:var(--text);">
+                            <strong>Vergütungsmodell ab Jahresvertrag:</strong> Retainer + Provision auf generierte Abschlüsse. Das genaue Modell wird nach Abschluss des Initialprojekts gemeinsam verhandelt — basierend auf den realen Ergebnissen.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ── STUFE 3: LANGFRIST-VISION ── -->
+            <div style="margin-bottom:32px;">
+                <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+                    <div style="background:var(--orange);color:white;font-weight:800;font-size:0.75rem;padding:4px 12px;border-radius:20px;">VISION</div>
+                    <h3 style="font-size:1.05rem;font-weight:700;">Langfrist-Vision — Vollautomatisierter Vertrieb</h3>
+                </div>
+                <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;">
+                    <p style="font-size:0.88rem;color:var(--text);line-height:1.7;margin-bottom:16px;">Das Ziel nach dem Ziel: Eine Vertriebsmaschine, die unabhängig von einzelnen Personen funktioniert.</p>
+                    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+                        <div style="text-align:center;padding:20px 14px;background:var(--layer-subtle);border-radius:var(--radius-sm);">
+                            <div style="font-size:1.4rem;margin-bottom:6px;">🤖</div>
+                            <div style="font-weight:700;font-size:0.85rem;color:var(--text);margin-bottom:4px;">Vollautomatisiert</div>
+                            <div style="font-size:0.75rem;color:var(--text-muted);">AI-gestütztes Outbound-System läuft ohne manuellen Aufwand — Leads kommen automatisch in die Pipeline</div>
+                        </div>
+                        <div style="text-align:center;padding:20px 14px;background:var(--layer-subtle);border-radius:var(--radius-sm);">
+                            <div style="font-size:1.4rem;margin-bottom:6px;">📈</div>
+                            <div style="font-weight:700;font-size:0.85rem;color:var(--text);margin-bottom:4px;">Performance-Maximierung</div>
+                            <div style="font-size:0.75rem;color:var(--text-muted);">Jeder Vertriebler arbeitet auf voller Kapazität mit genug Pipeline — Maximierung der Gehälter durch Performance</div>
+                        </div>
+                        <div style="text-align:center;padding:20px 14px;background:var(--layer-subtle);border-radius:var(--radius-sm);">
+                            <div style="font-size:1.4rem;margin-bottom:6px;">🏗️</div>
+                            <div style="font-weight:700;font-size:0.85rem;color:var(--text);margin-bottom:4px;">Eigene Vertriebsabteilung</div>
+                            <div style="font-size:0.75rem;color:var(--text-muted);">Grundwerk baut das System, Urbify besitzt es — mit eigenem Team, eigenen Prozessen und voller Kontrolle</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ── ROI-Vergleich ── -->
             <div class="roi-box">
                 <h3>Break-Even-Rechnung für Urbify</h3>
                 <div class="roi-grid">
