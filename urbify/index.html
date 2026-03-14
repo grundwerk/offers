@@ -130,8 +130,8 @@
             display: flex; align-items: center; justify-content: center;
             font-weight: 900; font-size: 0.75rem; color: white; flex-shrink: 0;
         }
+        .nav-client-logo { height: 24px; max-width: 100px; object-fit: contain; flex-shrink: 0; }
         .nav-logo-text { color: var(--text); }
-        .nav-logo-text span { color: var(--accent); }
         .nav-logo-sep { color: var(--text-dim); font-weight: 300; font-size: 1rem; margin: 0 4px; }
         .nav-logo-client { color: var(--text-muted); font-weight: 500; }
         .nav-cta {
@@ -561,8 +561,10 @@
 <!-- ─── NAV ─── -->
 <nav>
     <div class="nav-logo">
-        <div class="nav-logo-icon">G</div>
-        <span class="nav-logo-text">Grundwerk<span>.</span></span>
+        <img src="https://cdn.prod.website-files.com/646f271d24f29c0367691efe/65533b76dfc790385c4c59fc_Urbify-Logo-normal.svg"
+             alt="Urbify" class="nav-client-logo"
+             onerror="this.outerHTML='<div class=\'nav-logo-icon\'>G</div>'">
+        <span class="nav-logo-text">Grundwerk</span>
         <span class="nav-logo-sep">×</span>
         <span class="nav-logo-client">Urbify</span>
     </div>
