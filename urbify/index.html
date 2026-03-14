@@ -430,6 +430,11 @@
         }
         .client-logo:hover { opacity: 0.8; filter: grayscale(0%) brightness(1); }
 
+        /* ─── PRICING ACCORDIONS ─── */
+        details summary::-webkit-details-marker { display: none; }
+        details summary::marker { display: none; content: ''; }
+        details[open] summary span { transform: rotate(180deg); }
+
         /* ─── TESTIMONIAL QUOTES ─── */
         .quote-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 28px; }
         .quote-card {
@@ -1183,22 +1188,60 @@
                     <div style="background:var(--accent);color:white;font-weight:800;font-size:0.75rem;padding:4px 12px;border-radius:20px;">STUFE 1</div>
                     <h3 style="font-size:1.05rem;font-weight:700;">Initialpaket — Die ersten 4 Monate</h3>
                 </div>
-                <div class="pricing-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;">
+                <div class="pricing-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:24px;align-items:start;">
+                    <!-- ── EINSTEIGER (links) ── -->
                     <div class="price-card" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:26px 24px;position:relative;">
                         <div class="price-name" style="font-size:0.75rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:14px;">Einsteiger</div>
                         <div class="price-setup" style="font-size:0.85rem;color:var(--text-muted);margin-bottom:4px;">Setup-Fee: <strong style="color:var(--text);font-size:0.95rem;">990 &euro;</strong> einmalig</div>
                         <div class="price-monthly" style="font-size:2.2rem;font-weight:800;letter-spacing:-0.04em;line-height:1;color:var(--text);">3.000 &euro;</div>
                         <div class="price-per" style="font-size:0.76rem;color:var(--text-muted);margin-bottom:14px;">pro Monat &middot; 4 Monate Mindestlaufzeit</div>
                         <div class="price-total" style="font-size:0.8rem;color:var(--text-muted);background:var(--layer-subtle-2);border:1px solid var(--border);padding:7px 12px;border-radius:var(--radius-sm);margin-bottom:16px;">Gesamt: <strong style="color:var(--text);">12.990 &euro;</strong></div>
-                        <ul class="price-features" style="list-style:none;display:flex;flex-direction:column;gap:7px;padding:0;">
-                            <li>✓ ICP-Analyse &amp; Zielmarkt-Mapping</li>
-                            <li>✓ Technische Infrastruktur (Domains, Inboxen)</li>
-                            <li>✓ Kampagnen-Setup &amp; Copywriting</li>
-                            <li>✓ 10k E-Mails/Monat Volumen</li>
-                            <li>✓ Bi-Weekly Reporting &amp; Optimierung</li>
-                            <li>✓ KickOff-Workshop (1h)</li>
-                        </ul>
+
+                        <!-- Akkordeon: Setup / Coaching -->
+                        <details style="margin-bottom:8px;">
+                            <summary style="cursor:pointer;font-weight:700;font-size:0.82rem;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);list-style:none;display:flex;justify-content:space-between;align-items:center;">Setup / Coaching <span style="font-size:0.7rem;color:var(--text-muted);transition:transform 0.2s;">▼</span></summary>
+                            <ul style="list-style:none;display:flex;flex-direction:column;gap:6px;padding:10px 0 4px;font-size:0.82rem;">
+                                <li>✓ 1h Workshop: Strategy KickOff</li>
+                                <li>✓ Email-Infrastruktur Setup</li>
+                                <li>✓ 10+ Guides inkl. Calendly Setup, Reply Management etc.</li>
+                            </ul>
+                        </details>
+
+                        <!-- Akkordeon: Services -->
+                        <details style="margin-bottom:8px;">
+                            <summary style="cursor:pointer;font-weight:700;font-size:0.82rem;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);list-style:none;display:flex;justify-content:space-between;align-items:center;">Services <span style="font-size:0.7rem;color:var(--text-muted);transition:transform 0.2s;">▼</span></summary>
+                            <ul style="list-style:none;display:flex;flex-direction:column;gap:6px;padding:10px 0 4px;font-size:0.82rem;">
+                                <li>✓ Leadlistengenerierung + csv-Export</li>
+                                <li>✓ Kampagnenstrategie</li>
+                                <li>✓ Email Copywriting</li>
+                                <li>✓ Kampagnenmanagement</li>
+                                <li>✓ A/B-Tests &amp; Optimierung</li>
+                            </ul>
+                        </details>
+
+                        <!-- Akkordeon: Tech / Data -->
+                        <details style="margin-bottom:8px;">
+                            <summary style="cursor:pointer;font-weight:700;font-size:0.82rem;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);list-style:none;display:flex;justify-content:space-between;align-items:center;">Tech / Data <span style="font-size:0.7rem;color:var(--text-muted);transition:transform 0.2s;">▼</span></summary>
+                            <ul style="list-style:none;display:flex;flex-direction:column;gap:6px;padding:10px 0 4px;font-size:0.82rem;">
+                                <li>✓ Datenkosten inkl. (&Oslash; 2.5k/Monat)</li>
+                                <li>✓ Whatsapp Reply Integration</li>
+                                <li>✓ Automated GoogleSheets CRM</li>
+                                <li>✓ Optimierte MasterInbox</li>
+                                <li>✓ Grundwerk Webapp</li>
+                            </ul>
+                        </details>
+
+                        <!-- Akkordeon: Volumen -->
+                        <details style="margin-bottom:0;">
+                            <summary style="cursor:pointer;font-weight:700;font-size:0.82rem;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);list-style:none;display:flex;justify-content:space-between;align-items:center;">Volumen <span style="font-size:0.7rem;color:var(--text-muted);transition:transform 0.2s;">▼</span></summary>
+                            <ul style="list-style:none;display:flex;flex-direction:column;gap:6px;padding:10px 0 4px;font-size:0.82rem;">
+                                <li>✓ Bis zu 15.000 E-Mails pro Monat</li>
+                                <li>✓ GEO: DACH</li>
+                            </ul>
+                        </details>
                     </div>
+
+                    <!-- ── STANDARD (Mitte, empfohlen) ── -->
                     <div class="price-card rec" style="background:var(--bg-accent);border:1px solid var(--accent);border-radius:var(--radius);padding:26px 24px;position:relative;">
                         <div class="rec-badge" style="position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--accent);color:white;font-size:0.7rem;font-weight:700;padding:3px 14px;border-radius:100px;white-space:nowrap;">Empfohlen f&uuml;r Urbify</div>
                         <div class="price-name" style="font-size:0.75rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:14px;">Standard</div>
@@ -1206,38 +1249,35 @@
                         <div class="price-monthly" style="font-size:2.2rem;font-weight:800;letter-spacing:-0.04em;line-height:1;color:var(--text);">3.500 &euro;</div>
                         <div class="price-per" style="font-size:0.76rem;color:var(--text-muted);margin-bottom:14px;">pro Monat &middot; 4 Monate Mindestlaufzeit</div>
                         <div class="price-total" style="font-size:0.8rem;color:var(--text-muted);background:var(--layer-subtle-2);border:1px solid var(--border);padding:7px 12px;border-radius:var(--radius-sm);margin-bottom:16px;">Gesamt: <strong style="color:var(--text);">15.990 &euro;</strong></div>
-                        <ul class="price-features" style="list-style:none;display:flex;flex-direction:column;gap:7px;padding:0;">
-                            <li>✓ 1h Workshop: Strategy KickOff</li>
-                            <li>✓ Email-Infrastruktur Setup</li>
-                            <li>✓ Leadlistengenerierung + csv-Export</li>
+                        <ul class="price-features" style="list-style:none;display:flex;flex-direction:column;gap:7px;padding:0;font-size:0.85rem;">
+                            <li>✓ Alles aus Einsteiger +</li>
                             <li>✓ Clay Tables &amp; Lead-Push</li>
-                            <li>✓ Kampagnenstrategie</li>
-                            <li>✓ Email Copywriting</li>
-                            <li>✓ Kampagnenmanagement</li>
-                            <li>✓ A/B-Tests &amp; Optimierung</li>
-                        </ul>
-                        <div style="font-weight:700;font-size:0.78rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-top:14px;margin-bottom:6px;">Tech / Data</div>
-                        <ul class="price-features" style="list-style:none;display:flex;flex-direction:column;gap:7px;padding:0;">
-                            <li>✓ Datenkosten inkl. (&Oslash; 2.5k/Monat)</li>
-                            <li>✓ Whatsapp Reply Integration</li>
-                            <li>✓ Automated GoogleSheets CRM</li>
-                            <li>✓ Optimierte MasterInbox</li>
-                            <li>✓ Grundwerk Webapp</li>
-                        </ul>
-                        <div style="font-weight:700;font-size:0.78rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-top:14px;margin-bottom:6px;">Volumen</div>
-                        <ul class="price-features" style="list-style:none;display:flex;flex-direction:column;gap:7px;padding:0;">
-                            <li>✓ Bis zu 15.000 E-Mails pro Monat</li>
-                            <li>✓ GEO: DACH</li>
-                        </ul>
-                        <div style="font-weight:700;font-size:0.78rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-top:14px;margin-bottom:6px;">Setup &amp; Guides</div>
-                        <ul class="price-features" style="list-style:none;display:flex;flex-direction:column;gap:7px;padding:0;">
-                            <li>✓ 10+ Guides inkl. Calendly Setup, Reply Management Guide etc.</li>
-                        </ul>
-                        <div style="font-weight:700;font-size:0.78rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-top:14px;margin-bottom:6px;">Service Level</div>
-                        <ul class="price-features" style="list-style:none;display:flex;flex-direction:column;gap:7px;padding:0;">
                             <li>✓ Dedizierter Accountmanager</li>
                             <li>✓ 30min Weekly Call</li>
-                            <li>✓ 1:1 Kommunikations-Channel (Email / Slack / Teams / Whatsapp)</li>
+                            <li>✓ 1:1 Kommunikations-Channel</li>
+                            <li style="font-size:0.78rem;color:var(--text-muted);padding-left:16px;">(Email / Slack / Teams / Whatsapp)</li>
+                            <li>✓ Exit-Klausel nach 3 Monaten</li>
+                        </ul>
+                    </div>
+
+                    <!-- ── ULTRA (rechts, Premium) ── -->
+                    <div class="price-card" style="background:var(--bg-card);border:1px solid var(--green);border-radius:var(--radius);padding:26px 24px;position:relative;">
+                        <div style="position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--green);color:white;font-size:0.7rem;font-weight:700;padding:3px 14px;border-radius:100px;white-space:nowrap;">Full Service</div>
+                        <div class="price-name" style="font-size:0.75rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:14px;">Ultra</div>
+                        <div class="price-setup" style="font-size:0.85rem;color:var(--text-muted);margin-bottom:4px;">Setup-Fee: <strong style="color:var(--text);font-size:0.95rem;">3.990 &euro;</strong> einmalig</div>
+                        <div class="price-monthly" style="font-size:2.2rem;font-weight:800;letter-spacing:-0.04em;line-height:1;color:var(--text);">8.500 &euro;</div>
+                        <div class="price-per" style="font-size:0.76rem;color:var(--text-muted);margin-bottom:14px;">pro Monat &middot; 6 Monate Mindestlaufzeit</div>
+                        <div class="price-total" style="font-size:0.8rem;color:var(--text-muted);background:var(--layer-subtle-2);border:1px solid var(--border);padding:7px 12px;border-radius:var(--radius-sm);margin-bottom:16px;">Gesamt: <strong style="color:var(--text);">54.990 &euro;</strong></div>
+                        <ul class="price-features" style="list-style:none;display:flex;flex-direction:column;gap:7px;padding:0;font-size:0.85rem;">
+                            <li>✓ Alles aus Standard +</li>
+                            <li>✓ Custom CRM-Integration</li>
+                            <li>✓ In-House Sales Automatisierungen</li>
+                            <li>✓ LinkedIn Content Automatisierungen</li>
+                            <li>✓ Retargeting-Kampagnen</li>
+                            <li>✓ Multi-Channel Sequenzen (Email + LinkedIn + Calls)</li>
+                            <li>✓ Bis zu 40.000 E-Mails/Monat</li>
+                            <li>✓ Dediziertes Kampagnen-Team (2 Mitarbeiter)</li>
+                            <li>✓ Revenue Attribution &amp; Pipeline-Reporting</li>
                         </ul>
                     </div>
                 </div>
