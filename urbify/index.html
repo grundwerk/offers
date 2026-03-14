@@ -402,6 +402,26 @@
         .stat-num { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.04em; color: var(--accent); }
         .stat-lbl { font-size: 0.75rem; color: var(--text-muted); margin-top: 3px; }
 
+        /* ─── TESTIMONIAL QUOTES ─── */
+        .quote-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 28px; }
+        .quote-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 24px 22px; display: flex; flex-direction: column;
+        }
+        .quote-card .q-text {
+            font-size: 0.88rem; line-height: 1.6; color: var(--text); flex: 1;
+            font-style: italic; margin-bottom: 16px;
+        }
+        .quote-card .q-text::before { content: "„"; color: var(--accent); font-size: 1.2rem; font-weight: 700; }
+        .quote-card .q-text::after { content: """; color: var(--accent); font-size: 1.2rem; font-weight: 700; }
+        .quote-card .q-author { font-size: 0.8rem; font-weight: 700; color: var(--text); }
+        .quote-card .q-role { font-size: 0.75rem; color: var(--text-muted); }
+        .quote-card .q-metric {
+            display: inline-block; margin-top: 10px; font-size: 0.72rem; font-weight: 700;
+            color: var(--green); background: var(--green-glow); padding: 3px 10px;
+            border-radius: 20px;
+        }
+
         /* ─── TAB 5: INVESTITION ─── */
         .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
         .price-card {
@@ -556,6 +576,7 @@
             .hero-content { padding: 48px 1.2rem; }
             .vid-landscape { grid-template-columns: 1fr !important; }
             .vid-portrait { grid-template-columns: repeat(2, 1fr) !important; }
+            .quote-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -914,6 +935,92 @@
                             <wistia-player media-id="pvxw94fv46" aspect="0.5625"></wistia-player>
                         </div>
                         <div style="margin-top:8px;font-size:0.8rem;color:var(--text-muted);text-align:center;">Wachstumswerkstatt</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ── Schriftliche Kundenstimmen ── -->
+            <div style="margin-top:48px;">
+                <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:6px;">Stimmen unserer Kunden</h3>
+                <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:28px;">Was Entscheider über die Zusammenarbeit mit Grundwerk sagen.</p>
+
+                <div class="quote-grid">
+                    <div class="quote-card">
+                        <div class="q-text">Mit Grundwerk Digital können wir mit 1/3 der Kosten und mit minimalem Zeitaufwand GTM-Strategien umsetzen, von denen wir vorher nicht mal etwas gewusst haben. Nach 13 Tagen hatten wir bereits 20 neue Opportunities in unserer Pipeline.</div>
+                        <div>
+                            <div class="q-author">Lasse Petry</div>
+                            <div class="q-role">Co-Founder, Peer Studios</div>
+                            <span class="q-metric">20 Opportunities in 13 Tagen</span>
+                        </div>
+                    </div>
+                    <div class="quote-card">
+                        <div class="q-text">28 Termine, über 20k Dealsize closed in 74 Tagen. Das Team von Grundwerk lebt AI und pusht unsere Sales-Prozesse mit minimalem internem Aufwand.</div>
+                        <div>
+                            <div class="q-author">Tim Küsters</div>
+                            <div class="q-role">Geschäftsführer, Birdsview</div>
+                            <span class="q-metric">28 Termine · >20k Dealsize closed</span>
+                        </div>
+                    </div>
+                    <div class="quote-card">
+                        <div class="q-text">Dank der Zusammenarbeit mit dem Team von Grundwerk konnten wir innerhalb kürzester Zeit eine Pipeline von >400.000 Euro über Outbound aufbauen und haben Deals im Wert von ca. 100.000 Euro erfolgreich geclosed.</div>
+                        <div>
+                            <div class="q-author">Moritz Lienert</div>
+                            <div class="q-role">Marketing, Hivebuy</div>
+                            <span class="q-metric">>400k Pipeline · 100k Deals closed</span>
+                        </div>
+                    </div>
+                    <div class="quote-card">
+                        <div class="q-text">Mit Grundwerk Digital konnten wir neue Business Opportunities in kürzester Zeit abschließen und werden individuell und professionell betreut.</div>
+                        <div>
+                            <div class="q-author">Ingo Boldt</div>
+                            <div class="q-role">Geschäftsführer, Smart Bridges</div>
+                            <span class="q-metric">397 Leads in 3 Monaten</span>
+                        </div>
+                    </div>
+                    <div class="quote-card">
+                        <div class="q-text">Die Beratung ist auf den Punkt, das Know-how wirklich hilfreich und immer wieder kommen Impulse, auf die wir alleine wahrscheinlich nicht gekommen wären. Dieses ‚Overdelivern' ist keine leere Floskel, sondern passiert wirklich.</div>
+                        <div>
+                            <div class="q-author">Philipp Köhnlein</div>
+                            <div class="q-role">Geschäftsführer, Cervis</div>
+                            <span class="q-metric">ROI 2,7x in 3 Monaten</span>
+                        </div>
+                    </div>
+                    <div class="quote-card">
+                        <div class="q-text">Mit Grundwerk konnten wir 172 Leads in 3 Monaten generieren und davon 14 Aufträge bzw. Neukunden gewinnen. Die Qualität der Kampagnentexte ist außergewöhnlich — 21-25% Reply-Rate via E-Mail.</div>
+                        <div>
+                            <div class="q-author">Tassilo</div>
+                            <div class="q-role">Geschäftsführer, XDi</div>
+                            <span class="q-metric">172 Leads · 14 Neukunden · 25% Reply-Rate</span>
+                        </div>
+                    </div>
+                    <div class="quote-card">
+                        <div class="q-text">Mit Grundwerk Digital konnten wir innerhalb von 3 Monaten den ersten Abschluss mit einem ROI von 2,7 gewinnen und gleichzeitig unseren Lead-Funnel mit Email und LinkedIn aufbauen — in einem unglaublich kompetitiven Marktumfeld!</div>
+                        <div>
+                            <div class="q-author">Stephan Meinecke</div>
+                            <div class="q-role">Geschäftsführer, Greenlovers</div>
+                            <span class="q-metric">ROI 2,7x · Erster Abschluss in 3 Monaten</span>
+                        </div>
+                    </div>
+                    <div class="quote-card">
+                        <div class="q-text">Das Grundwerk Digital Scraping Team hat für CCV überaus akkurate Leads aus mehreren deutschen Bundesländern gezogen, obwohl wir bisher alle Datenbanken schon völlig erschöpft hatten. Wir waren sehr überrascht, dass die Ergebnisse so zufriedenstellend waren.</div>
+                        <div>
+                            <div class="q-author">Michael Fischer</div>
+                            <div class="q-role">Sales Lead, CCV</div>
+                        </div>
+                    </div>
+                    <div class="quote-card">
+                        <div class="q-text">Wir haben wesentlich mehr Leads generiert und vor allem sind unsere Leads sehr viel hochwertiger als das die Jahre davor war. Wir können die Arbeit von Grundwerk wirklich weiterempfehlen!</div>
+                        <div>
+                            <div class="q-author">Andreas Glemser</div>
+                            <div class="q-role">Geschäftsführer, COCOMIN AG</div>
+                        </div>
+                    </div>
+                    <div class="quote-card">
+                        <div class="q-text">Grundwerk Digital hat mit uns erfolgreiche LinkedIn und Email-Kampagnen durchgeführt und bei der Implementierung von top-aktuellen Outreach-Prozessen höchst professionell beraten.</div>
+                        <div>
+                            <div class="q-author">Alexander Köhler</div>
+                            <div class="q-role">pplwise</div>
+                        </div>
                     </div>
                 </div>
             </div>
