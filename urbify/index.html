@@ -594,8 +594,8 @@
         <span class="nav-logo-sep">×</span>
         <span class="nav-logo-client">Urbify</span>
     </div>
-    <div class="nav-right">
-        <button class="theme-toggle" id="theme-btn" onclick="toggleTheme()">☀️ Bright</button>
+    <div class="nav-right" style="display:flex;align-items:center;gap:10px;">
+        <button class="theme-toggle" id="theme-btn" onclick="toggleTheme()" style="background:var(--bg-card);border:1px solid var(--border);color:var(--text-muted);border-radius:var(--radius-sm);padding:7px 13px;cursor:pointer;font-size:0.8rem;font-family:inherit;font-weight:500;display:flex;align-items:center;gap:6px;white-space:nowrap;">☀️ Bright</button>
         <button class="nav-cta" onclick="switchTab('booking')">Termin buchen</button>
     </div>
 </nav>
@@ -1231,140 +1231,140 @@
             <h2>Von der Entscheidung zu den ersten Leads</h2>
             <p class="lead">Ein gemeinsamer Plan — damit auf beiden Seiten klar ist, was als nächstes passiert und wer was übernimmt.</p>
 
-            <div class="map-intro">
-                <p>Dieser Aktionsplan zeigt den Weg von heute bis zu den ersten qualifizierten Leads in Ihrem Postfach.
+            <div class="map-intro" style="background:rgba(79,125,249,0.07);border:1px solid var(--border-accent);border-radius:var(--radius);padding:20px 24px;margin-bottom:28px;">
+                <p style="font-size:0.87rem;color:var(--blue-text);line-height:1.7;">Dieser Aktionsplan zeigt den Weg von heute bis zu den ersten qualifizierten Leads in Ihrem Postfach.
                 Jeder Schritt hat einen klaren Verantwortlichen — bei Grundwerk und bei Urbify.
                 Martin kann diesen Plan direkt mit Ihnen gemeinsam durchgehen.</p>
             </div>
 
-            <div class="map-phases">
+            <div class="map-phases" style="display:flex;flex-direction:column;gap:14px;">
 
-                <div class="map-phase">
-                    <div class="map-phase-header">
-                        <div class="map-phase-num">1</div>
-                        <div class="map-phase-title">Entscheidung & Vertragsabschluss</div>
-                        <div class="map-phase-date">Woche 1</div>
+                <div class="map-phase" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;">
+                    <div class="map-phase-header" style="display:flex;align-items:center;gap:14px;padding:14px 20px;background:var(--layer-subtle);border-bottom:1px solid var(--border);">
+                        <div class="map-phase-num" style="width:28px;height:28px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:0.74rem;font-weight:800;flex-shrink:0;">1</div>
+                        <div class="map-phase-title" style="font-size:0.9rem;font-weight:700;flex:1;color:var(--text);">Entscheidung &amp; Vertragsabschluss</div>
+                        <div class="map-phase-date" style="font-size:0.74rem;color:var(--text-dim);white-space:nowrap;">Woche 1</div>
                     </div>
-                    <ul class="map-tasks">
-                        <li class="map-task">
-                            <div class="map-checkbox" onclick="toggleCheck(this)"></div>
-                            <div class="map-task-text">
-                                <div class="map-task-title">Folgetermin mit Ben & Martin (30 Min.)</div>
-                                <div class="map-task-owner"><strong>Ben + Martin</strong> · Offene Fragen klären, Entscheidung treffen</div>
+                    <ul class="map-tasks" style="list-style:none;padding:14px 20px;display:flex;flex-direction:column;gap:11px;">
+                        <li class="map-task" style="display:flex;align-items:flex-start;gap:12px;">
+                            <div class="map-checkbox" onclick="toggleCheck(this)" style="width:18px;height:18px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;"></div>
+                            <div class="map-task-text" style="flex:1;">
+                                <div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">Folgetermin mit Ben &amp; Martin (30 Min.)</div>
+                                <div class="map-task-owner" style="font-size:0.74rem;color:var(--text-muted);margin-top:2px;"><strong style="color:var(--accent);font-weight:600;">Ben + Martin</strong> &middot; Offene Fragen kl&auml;ren, Entscheidung treffen</div>
                             </div>
                         </li>
-                        <li class="map-task">
-                            <div class="map-checkbox" onclick="toggleCheck(this)"></div>
-                            <div class="map-task-text">
-                                <div class="map-task-title">Vertrag & Paket bestätigen</div>
-                                <div class="map-task-owner"><strong>Grundwerk</strong> · Vertrag zusenden, Paket final abstimmen</div>
+                        <li class="map-task" style="display:flex;align-items:flex-start;gap:12px;">
+                            <div class="map-checkbox" onclick="toggleCheck(this)" style="width:18px;height:18px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;"></div>
+                            <div class="map-task-text" style="flex:1;">
+                                <div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">Vertrag &amp; Paket best&auml;tigen</div>
+                                <div class="map-task-owner" style="font-size:0.74rem;color:var(--text-muted);margin-top:2px;"><strong style="color:var(--accent);font-weight:600;">Grundwerk</strong> &middot; Vertrag zusenden, Paket final abstimmen</div>
                             </div>
                         </li>
-                        <li class="map-task">
-                            <div class="map-checkbox" onclick="toggleCheck(this)"></div>
-                            <div class="map-task-text">
-                                <div class="map-task-title">Vertrag unterzeichnen & Onboarding buchen</div>
-                                <div class="map-task-owner"><strong>Urbify</strong> · Gegenzeichnen + Kickoff-Termin wählen</div>
+                        <li class="map-task" style="display:flex;align-items:flex-start;gap:12px;">
+                            <div class="map-checkbox" onclick="toggleCheck(this)" style="width:18px;height:18px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;"></div>
+                            <div class="map-task-text" style="flex:1;">
+                                <div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">Vertrag unterzeichnen &amp; Onboarding buchen</div>
+                                <div class="map-task-owner" style="font-size:0.74rem;color:var(--text-muted);margin-top:2px;"><strong style="color:var(--accent);font-weight:600;">Urbify</strong> &middot; Gegenzeichnen + Kickoff-Termin w&auml;hlen</div>
                             </div>
                         </li>
                     </ul>
                 </div>
 
-                <div class="map-phase">
-                    <div class="map-phase-header">
-                        <div class="map-phase-num">2</div>
-                        <div class="map-phase-title">Onboarding & Setup</div>
-                        <div class="map-phase-date">Woche 1–4</div>
+                <div class="map-phase" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;">
+                    <div class="map-phase-header" style="display:flex;align-items:center;gap:14px;padding:14px 20px;background:var(--layer-subtle);border-bottom:1px solid var(--border);">
+                        <div class="map-phase-num" style="width:28px;height:28px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:0.74rem;font-weight:800;flex-shrink:0;">2</div>
+                        <div class="map-phase-title" style="font-size:0.9rem;font-weight:700;flex:1;color:var(--text);">Onboarding &amp; Setup</div>
+                        <div class="map-phase-date" style="font-size:0.74rem;color:var(--text-dim);white-space:nowrap;">Woche 1–4</div>
                     </div>
-                    <ul class="map-tasks">
-                        <li class="map-task">
-                            <div class="map-checkbox" onclick="toggleCheck(this)"></div>
-                            <div class="map-task-text">
-                                <div class="map-task-title">KickOff-Workshop (1h)</div>
-                                <div class="map-task-owner"><strong>Ben + Martin + Tom</strong> · ICP, Zielmarkt, Messaging-Richtung</div>
+                    <ul class="map-tasks" style="list-style:none;padding:14px 20px;display:flex;flex-direction:column;gap:11px;">
+                        <li class="map-task" style="display:flex;align-items:flex-start;gap:12px;">
+                            <div class="map-checkbox" onclick="toggleCheck(this)" style="width:18px;height:18px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;"></div>
+                            <div class="map-task-text" style="flex:1;">
+                                <div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">KickOff-Workshop (1h)</div>
+                                <div class="map-task-owner" style="font-size:0.74rem;color:var(--text-muted);margin-top:2px;"><strong style="color:var(--accent);font-weight:600;">Ben + Martin + Tom</strong> &middot; ICP, Zielmarkt, Messaging-Richtung</div>
                             </div>
                         </li>
-                        <li class="map-task">
-                            <div class="map-checkbox" onclick="toggleCheck(this)"></div>
-                            <div class="map-task-text">
-                                <div class="map-task-title">Technische Infrastruktur aufsetzen</div>
-                                <div class="map-task-owner"><strong>Grundwerk</strong> · Domains, Inboxen, Warmup, Deliverability</div>
+                        <li class="map-task" style="display:flex;align-items:flex-start;gap:12px;">
+                            <div class="map-checkbox" onclick="toggleCheck(this)" style="width:18px;height:18px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;"></div>
+                            <div class="map-task-text" style="flex:1;">
+                                <div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">Technische Infrastruktur aufsetzen</div>
+                                <div class="map-task-owner" style="font-size:0.74rem;color:var(--text-muted);margin-top:2px;"><strong style="color:var(--accent);font-weight:600;">Grundwerk</strong> &middot; Domains, Inboxen, Warmup, Deliverability</div>
                             </div>
                         </li>
-                        <li class="map-task">
-                            <div class="map-checkbox" onclick="toggleCheck(this)"></div>
-                            <div class="map-task-text">
-                                <div class="map-task-title">Lead-Listen & ICP-Daten aufbauen</div>
-                                <div class="map-task-owner"><strong>Grundwerk</strong> · Research aus 75+ Datenquellen</div>
+                        <li class="map-task" style="display:flex;align-items:flex-start;gap:12px;">
+                            <div class="map-checkbox" onclick="toggleCheck(this)" style="width:18px;height:18px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;"></div>
+                            <div class="map-task-text" style="flex:1;">
+                                <div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">Lead-Listen &amp; ICP-Daten aufbauen</div>
+                                <div class="map-task-owner" style="font-size:0.74rem;color:var(--text-muted);margin-top:2px;"><strong style="color:var(--accent);font-weight:600;">Grundwerk</strong> &middot; Research aus 75+ Datenquellen</div>
                             </div>
                         </li>
-                        <li class="map-task">
-                            <div class="map-checkbox" onclick="toggleCheck(this)"></div>
-                            <div class="map-task-text">
-                                <div class="map-task-title">Copy-Review & Freigabe der ersten Kampagnen</div>
-                                <div class="map-task-owner"><strong>Martin</strong> · Feedback auf Entwürfe (ca. 30 Min.)</div>
+                        <li class="map-task" style="display:flex;align-items:flex-start;gap:12px;">
+                            <div class="map-checkbox" onclick="toggleCheck(this)" style="width:18px;height:18px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;"></div>
+                            <div class="map-task-text" style="flex:1;">
+                                <div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">Copy-Review &amp; Freigabe der ersten Kampagnen</div>
+                                <div class="map-task-owner" style="font-size:0.74rem;color:var(--text-muted);margin-top:2px;"><strong style="color:var(--accent);font-weight:600;">Martin</strong> &middot; Feedback auf Entw&uuml;rfe (ca. 30 Min.)</div>
                             </div>
                         </li>
                     </ul>
                 </div>
 
-                <div class="map-phase">
-                    <div class="map-phase-header">
-                        <div class="map-phase-num">3</div>
-                        <div class="map-phase-title">Launch & erste Ergebnisse</div>
-                        <div class="map-phase-date">Woche 5–8</div>
+                <div class="map-phase" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;">
+                    <div class="map-phase-header" style="display:flex;align-items:center;gap:14px;padding:14px 20px;background:var(--layer-subtle);border-bottom:1px solid var(--border);">
+                        <div class="map-phase-num" style="width:28px;height:28px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:0.74rem;font-weight:800;flex-shrink:0;">3</div>
+                        <div class="map-phase-title" style="font-size:0.9rem;font-weight:700;flex:1;color:var(--text);">Launch &amp; erste Ergebnisse</div>
+                        <div class="map-phase-date" style="font-size:0.74rem;color:var(--text-dim);white-space:nowrap;">Woche 5–8</div>
                     </div>
-                    <ul class="map-tasks">
-                        <li class="map-task">
-                            <div class="map-checkbox" onclick="toggleCheck(this)"></div>
-                            <div class="map-task-text">
-                                <div class="map-task-title">Kampagnen gehen live</div>
-                                <div class="map-task-owner"><strong>Grundwerk</strong> · 3+ Kampagnen, segmentiert nach ICP-Clustern</div>
+                    <ul class="map-tasks" style="list-style:none;padding:14px 20px;display:flex;flex-direction:column;gap:11px;">
+                        <li class="map-task" style="display:flex;align-items:flex-start;gap:12px;">
+                            <div class="map-checkbox" onclick="toggleCheck(this)" style="width:18px;height:18px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;"></div>
+                            <div class="map-task-text" style="flex:1;">
+                                <div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">Kampagnen gehen live</div>
+                                <div class="map-task-owner" style="font-size:0.74rem;color:var(--text-muted);margin-top:2px;"><strong style="color:var(--accent);font-weight:600;">Grundwerk</strong> &middot; 3+ Kampagnen, segmentiert nach ICP-Clustern</div>
                             </div>
                         </li>
-                        <li class="map-task">
-                            <div class="map-checkbox" onclick="toggleCheck(this)"></div>
-                            <div class="map-task-text">
-                                <div class="map-task-title">Erste qualifizierte Replies</div>
-                                <div class="map-task-owner"><strong>Grundwerk → Urbify</strong> · Handover heiße Leads an Martin</div>
+                        <li class="map-task" style="display:flex;align-items:flex-start;gap:12px;">
+                            <div class="map-checkbox" onclick="toggleCheck(this)" style="width:18px;height:18px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;"></div>
+                            <div class="map-task-text" style="flex:1;">
+                                <div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">Erste qualifizierte Replies</div>
+                                <div class="map-task-owner" style="font-size:0.74rem;color:var(--text-muted);margin-top:2px;"><strong style="color:var(--accent);font-weight:600;">Grundwerk &rarr; Urbify</strong> &middot; Handover hei&szlig;e Leads an Martin</div>
                             </div>
                         </li>
-                        <li class="map-task">
-                            <div class="map-checkbox" onclick="toggleCheck(this)"></div>
-                            <div class="map-task-text">
-                                <div class="map-task-title">Wöchentlicher Reporting-Call (15 Min.)</div>
-                                <div class="map-task-owner"><strong>Martin + Grundwerk</strong> · Daten, Optimierungen, nächste Schritte</div>
+                        <li class="map-task" style="display:flex;align-items:flex-start;gap:12px;">
+                            <div class="map-checkbox" onclick="toggleCheck(this)" style="width:18px;height:18px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;"></div>
+                            <div class="map-task-text" style="flex:1;">
+                                <div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">W&ouml;chentlicher Reporting-Call (15 Min.)</div>
+                                <div class="map-task-owner" style="font-size:0.74rem;color:var(--text-muted);margin-top:2px;"><strong style="color:var(--accent);font-weight:600;">Martin + Grundwerk</strong> &middot; Daten, Optimierungen, n&auml;chste Schritte</div>
                             </div>
                         </li>
                     </ul>
                 </div>
 
-                <div class="map-phase">
-                    <div class="map-phase-header">
-                        <div class="map-phase-num">4</div>
-                        <div class="map-phase-title">Scale & planbare Pipeline</div>
-                        <div class="map-phase-date">Monat 3+</div>
+                <div class="map-phase" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;">
+                    <div class="map-phase-header" style="display:flex;align-items:center;gap:14px;padding:14px 20px;background:var(--layer-subtle);border-bottom:1px solid var(--border);">
+                        <div class="map-phase-num" style="width:28px;height:28px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:0.74rem;font-weight:800;flex-shrink:0;">4</div>
+                        <div class="map-phase-title" style="font-size:0.9rem;font-weight:700;flex:1;color:var(--text);">Scale &amp; planbare Pipeline</div>
+                        <div class="map-phase-date" style="font-size:0.74rem;color:var(--text-dim);white-space:nowrap;">Monat 3+</div>
                     </div>
-                    <ul class="map-tasks">
-                        <li class="map-task">
-                            <div class="map-checkbox" onclick="toggleCheck(this)"></div>
-                            <div class="map-task-text">
-                                <div class="map-task-title">Volumen & Segmente skalieren</div>
-                                <div class="map-task-owner"><strong>Grundwerk</strong> · Neue Märkte, erhöhtes Outbound-Volumen</div>
+                    <ul class="map-tasks" style="list-style:none;padding:14px 20px;display:flex;flex-direction:column;gap:11px;">
+                        <li class="map-task" style="display:flex;align-items:flex-start;gap:12px;">
+                            <div class="map-checkbox" onclick="toggleCheck(this)" style="width:18px;height:18px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;"></div>
+                            <div class="map-task-text" style="flex:1;">
+                                <div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">Volumen &amp; Segmente skalieren</div>
+                                <div class="map-task-owner" style="font-size:0.74rem;color:var(--text-muted);margin-top:2px;"><strong style="color:var(--accent);font-weight:600;">Grundwerk</strong> &middot; Neue M&auml;rkte, erh&ouml;htes Outbound-Volumen</div>
                             </div>
                         </li>
-                        <li class="map-task">
-                            <div class="map-checkbox" onclick="toggleCheck(this)"></div>
-                            <div class="map-task-text">
-                                <div class="map-task-title">Planbare Pipeline etabliert</div>
-                                <div class="map-task-owner"><strong>Gemeinsam</strong> · X qualifizierte Leads/Monat, messbar & steuerbar</div>
+                        <li class="map-task" style="display:flex;align-items:flex-start;gap:12px;">
+                            <div class="map-checkbox" onclick="toggleCheck(this)" style="width:18px;height:18px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;"></div>
+                            <div class="map-task-text" style="flex:1;">
+                                <div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">Planbare Pipeline etabliert</div>
+                                <div class="map-task-owner" style="font-size:0.74rem;color:var(--text-muted);margin-top:2px;"><strong style="color:var(--accent);font-weight:600;">Gemeinsam</strong> &middot; X qualifizierte Leads/Monat, messbar &amp; steuerbar</div>
                             </div>
                         </li>
-                        <li class="map-task">
-                            <div class="map-checkbox" onclick="toggleCheck(this)"></div>
-                            <div class="map-task-text">
-                                <div class="map-task-title">Quartalsgespräch & Strategie-Review</div>
-                                <div class="map-task-owner"><strong>Ben + Tom</strong> · Ergebnisse, ggf. Scope-Erweiterung</div>
+                        <li class="map-task" style="display:flex;align-items:flex-start;gap:12px;">
+                            <div class="map-checkbox" onclick="toggleCheck(this)" style="width:18px;height:18px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;"></div>
+                            <div class="map-task-text" style="flex:1;">
+                                <div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">Quartalgespr&auml;ch &amp; Strategie-Review</div>
+                                <div class="map-task-owner" style="font-size:0.74rem;color:var(--text-muted);margin-top:2px;"><strong style="color:var(--accent);font-weight:600;">Ben + Tom</strong> &middot; Ergebnisse, ggf. Scope-Erweiterung</div>
                             </div>
                         </li>
                     </ul>
@@ -1391,55 +1391,55 @@
                 </p>
             </div>
 
-            <div class="calendly-wrap">
+            <div class="calendly-wrap" style="max-width:700px;margin:0 auto 24px;background:var(--bg-card);border-radius:var(--radius);border:1px solid var(--border);overflow:hidden;">
                 <div class="calendly-inline-widget"
                      data-url="https://calendly.com/tom-soto-schiller/grundwerk-next-steps?hide_event_type_details=1&hide_gdpr_banner=1&background_color=111111&text_color=f0f0f0&primary_color=4f7df9"
                      style="min-width:320px;height:450px;"></div>
                 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
             </div>
 
-            <p class="cta-direct">
-                Direkt erreichbar: <strong>tom@grundwerk.digital</strong><br>
+            <p class="cta-direct" style="text-align:center;font-size:0.82rem;color:var(--text-dim);line-height:1.9;margin-bottom:48px;">
+                Direkt erreichbar: <strong style="color:var(--text-muted);">tom@grundwerk.digital</strong><br>
                 Martin Hoffmann ist bei einem gemeinsamen Termin gerne dabei.
             </p>
 
             <div style="max-width:700px; margin:0 auto;">
-                <span class="section-label" style="margin-bottom:16px; display:block;">Häufige Fragen</span>
-                <div class="faq-list">
-                    <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">
-                            <span class="faq-q-text">„Wir haben Cold Email schon probiert — das hat nicht funktioniert."</span>
-                            <span class="faq-icon">+</span>
+                <span class="section-label" style="margin-bottom:16px; display:block;">H&auml;ufige Fragen</span>
+                <div class="faq-list" style="display:flex;flex-direction:column;gap:8px;">
+                    <div class="faq-item" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;">
+                        <button class="faq-q" onclick="toggleFaq(this)" style="width:100%;background:none;border:none;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;text-align:left;font-family:inherit;">
+                            <span class="faq-q-text" style="font-size:0.87rem;font-weight:600;color:var(--text);">&bdquo;Wir haben Cold Email schon probiert &mdash; das hat nicht funktioniert.&ldquo;</span>
+                            <span class="faq-icon" style="font-size:1.1rem;color:var(--text-dim);flex-shrink:0;margin-left:14px;">+</span>
                         </button>
-                        <div class="faq-a">In 90% der Fälle liegt das nicht am Kanal, sondern an der Infrastruktur: falsche Zielgruppe, unspezifische Nachrichten oder technische Deliverability-Probleme. Die 12.500 Mails die Urbify bereits versendet zeigen: der Wille ist da — was fehlt ist Targeting, Segmentierung und systematisches Follow-up. Genau dafür bauen wir das System.</div>
+                        <div class="faq-a" style="display:none;padding:0 22px 18px;font-size:0.84rem;color:var(--text-muted);line-height:1.7;">In 90% der F&auml;lle liegt das nicht am Kanal, sondern an der Infrastruktur: falsche Zielgruppe, unspezifische Nachrichten oder technische Deliverability-Probleme. Die 12.500 Mails die Urbify bereits versendet zeigen: der Wille ist da &mdash; was fehlt ist Targeting, Segmentierung und systematisches Follow-up. Genau daf&uuml;r bauen wir das System.</div>
                     </div>
-                    <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">
-                            <span class="faq-q-text">„Sollten wir nicht erst den Website-Relaunch abwarten?"</span>
-                            <span class="faq-icon">+</span>
+                    <div class="faq-item" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;">
+                        <button class="faq-q" onclick="toggleFaq(this)" style="width:100%;background:none;border:none;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;text-align:left;font-family:inherit;">
+                            <span class="faq-q-text" style="font-size:0.87rem;font-weight:600;color:var(--text);">&bdquo;Sollten wir nicht erst den Website-Relaunch abwarten?&ldquo;</span>
+                            <span class="faq-icon" style="font-size:1.1rem;color:var(--text-dim);flex-shrink:0;margin-left:14px;">+</span>
                         </button>
-                        <div class="faq-a">Das Outbound-System ist vollständig unabhängig von urbify.de. Wir verlinken auf eine dedizierte Landing Page — kein Besucher landet auf Ihrer aktuellen Website. Der Relaunch beeinflusst die Kampagnen nicht. Jede Woche warten ist eine Woche, in der Wettbewerber dieselben Entscheider kontaktieren können.</div>
+                        <div class="faq-a" style="display:none;padding:0 22px 18px;font-size:0.84rem;color:var(--text-muted);line-height:1.7;">Das Outbound-System ist vollst&auml;ndig unabh&auml;ngig von urbify.de. Wir verlinken auf eine dedizierte Landing Page &mdash; kein Besucher landet auf Ihrer aktuellen Website. Der Relaunch beeinflusst die Kampagnen nicht. Jede Woche warten ist eine Woche, in der Wettbewerber dieselben Entscheider kontaktieren k&ouml;nnen.</div>
                     </div>
-                    <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">
-                            <span class="faq-q-text">„Wie lange bis wir erste Ergebnisse sehen?"</span>
-                            <span class="faq-icon">+</span>
+                    <div class="faq-item" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;">
+                        <button class="faq-q" onclick="toggleFaq(this)" style="width:100%;background:none;border:none;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;text-align:left;font-family:inherit;">
+                            <span class="faq-q-text" style="font-size:0.87rem;font-weight:600;color:var(--text);">&bdquo;Wie lange bis wir erste Ergebnisse sehen?&ldquo;</span>
+                            <span class="faq-icon" style="font-size:1.1rem;color:var(--text-dim);flex-shrink:0;margin-left:14px;">+</span>
                         </button>
-                        <div class="faq-a">Monat 1 ist Setup — Infrastruktur, Daten, Kampagnenarchitektur. Erste Kampagnen gehen in Woche 5 live. Erste qualifizierte Replies erwarten wir in Woche 6–8. Ab Monat 3 ist das System optimiert und läuft auf Volumen. Wer Ihnen Leads in Woche 1 verspricht, lügt.</div>
+                        <div class="faq-a" style="display:none;padding:0 22px 18px;font-size:0.84rem;color:var(--text-muted);line-height:1.7;">Monat 1 ist Setup &mdash; Infrastruktur, Daten, Kampagnenarchitektur. Erste Kampagnen gehen in Woche 5 live. Erste qualifizierte Replies erwarten wir in Woche 6&ndash;8. Ab Monat 3 ist das System optimiert und l&auml;uft auf Volumen. Wer Ihnen Leads in Woche 1 verspricht, l&uuml;gt.</div>
                     </div>
-                    <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">
-                            <span class="faq-q-text">„Wie viel Aufwand entsteht intern bei Urbify?"</span>
-                            <span class="faq-icon">+</span>
+                    <div class="faq-item" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;">
+                        <button class="faq-q" onclick="toggleFaq(this)" style="width:100%;background:none;border:none;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;text-align:left;font-family:inherit;">
+                            <span class="faq-q-text" style="font-size:0.87rem;font-weight:600;color:var(--text);">&bdquo;Wie viel Aufwand entsteht intern bei Urbify?&ldquo;</span>
+                            <span class="faq-icon" style="font-size:1.1rem;color:var(--text-dim);flex-shrink:0;margin-left:14px;">+</span>
                         </button>
-                        <div class="faq-a">Minimal. Nach dem KickOff-Workshop (1 Stunde) übernehmen wir die gesamte operative Ausführung — Daten, Kampagnen, Optimierung, Reporting. Martin nimmt einmal pro Woche an einem 15-Minuten-Update teil. Mehr braucht es intern nicht.</div>
+                        <div class="faq-a" style="display:none;padding:0 22px 18px;font-size:0.84rem;color:var(--text-muted);line-height:1.7;">Minimal. Nach dem KickOff-Workshop (1 Stunde) &uuml;bernehmen wir die gesamte operative Ausf&uuml;hrung &mdash; Daten, Kampagnen, Optimierung, Reporting. Martin nimmt einmal pro Woche an einem 15-Minuten-Update teil. Mehr braucht es intern nicht.</div>
                     </div>
-                    <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">
-                            <span class="faq-q-text">„Was macht Grundwerk anders als andere Agenturen?"</span>
-                            <span class="faq-icon">+</span>
+                    <div class="faq-item" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;">
+                        <button class="faq-q" onclick="toggleFaq(this)" style="width:100%;background:none;border:none;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;text-align:left;font-family:inherit;">
+                            <span class="faq-q-text" style="font-size:0.87rem;font-weight:600;color:var(--text);">&bdquo;Was macht Grundwerk anders als andere Agenturen?&ldquo;</span>
+                            <span class="faq-icon" style="font-size:1.1rem;color:var(--text-dim);flex-shrink:0;margin-left:14px;">+</span>
                         </button>
-                        <div class="faq-a">Wir setzen auf hyper-personalisierte Cold-Email-Kampagnen mit KI-gestützter Leadrecherche und datenbasierter Segmentierung — kein Copy-Paste, jede Nachricht ist auf den Empfänger zugeschnitten. Wir haben Zugang zu 75+ Datenquellen und Tools, die Sie einzeln 500–2.000 EUR/Monat kosten würden. Im Retainer sind diese Kosten für Sie null.</div>
+                        <div class="faq-a" style="display:none;padding:0 22px 18px;font-size:0.84rem;color:var(--text-muted);line-height:1.7;">Wir setzen auf hyper-personalisierte Cold-Email-Kampagnen mit KI-gest&uuml;tzter Leadrecherche und datenbasierter Segmentierung &mdash; kein Copy-Paste, jede Nachricht ist auf den Empf&auml;nger zugeschnitten. Wir haben Zugang zu 75+ Datenquellen und Tools, die Sie einzeln 500&ndash;2.000 EUR/Monat kosten w&uuml;rden. Im Retainer sind diese Kosten f&uuml;r Sie null.</div>
                     </div>
                 </div>
             </div>
@@ -1482,7 +1482,19 @@
         }
     }
 
-    function toggleFaq(btn) { btn.closest('.faq-item').classList.toggle('open'); }
+    function toggleFaq(btn) {
+        var item = btn.closest('.faq-item');
+        item.classList.toggle('open');
+        var answer = item.querySelector('.faq-a');
+        var icon = item.querySelector('.faq-icon');
+        if (item.classList.contains('open')) {
+            answer.style.display = 'block';
+            if (icon) icon.style.transform = 'rotate(45deg)';
+        } else {
+            answer.style.display = 'none';
+            if (icon) icon.style.transform = 'rotate(0deg)';
+        }
+    }
     function toggleCheck(el) { el.classList.toggle('checked'); }
 
     document.getElementById('pb').style.width = (1 / TABS.length * 100) + '%';
