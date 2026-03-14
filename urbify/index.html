@@ -554,6 +554,8 @@
             .cost-lbl { min-width: 130px; font-size: 0.76rem; }
             .tab-btn { padding: 0 12px; font-size: 0.78rem; }
             .hero-content { padding: 48px 1.2rem; }
+            .vid-landscape { grid-template-columns: 1fr !important; }
+            .vid-portrait { grid-template-columns: repeat(2, 1fr) !important; }
         }
     </style>
 </head>
@@ -798,27 +800,7 @@
             <h2>Was andere B2B-Unternehmen damit erreicht haben</h2>
             <p class="lead">Echte Zahlen aus aktiven Projekten — keine Hochglanz-Testimonials, keine erfundenen Statistiken.</p>
 
-            <div class="proof-grid">
-                <div class="proof-card">
-                    <div class="proof-co">Greenlovers · Hamburg</div>
-                    <div class="proof-num">172 Leads</div>
-                    <div class="proof-period">+ 14 Aufträge in 3 Monaten</div>
-                    <div class="proof-desc">B2B-Dienstleistung, ähnliche Ausgangssituation: wenig strukturiertes Outbound. Kampagne aufgesetzt, ICP definiert, erste Replies ab Woche 5.</div>
-                </div>
-                <div class="proof-card">
-                    <div class="proof-co">Smart Bridges GmbH · Berlin</div>
-                    <div class="proof-num">397 Leads</div>
-                    <div class="proof-period">in 3 Monaten</div>
-                    <div class="proof-desc">Berliner B2B-Unternehmen. Skalierbares Outreach-System aufgebaut — 397 qualifizierte Leads über Cold Email in einem Quartal.</div>
-                </div>
-                <div class="proof-card">
-                    <div class="proof-co">Hivebuy · Berlin</div>
-                    <div class="proof-num">100.000 €</div>
-                    <div class="proof-period">Auftragswert in 9 Monaten</div>
-                    <div class="proof-desc">B2B-Software, Berlin. Grundwerk-Pipeline als primärer Akquise-Kanal etabliert — 100.000 EUR nachweisbarer Auftragswert generiert.</div>
-                </div>
-            </div>
-
+            <!-- ── Stat-Banner ── -->
             <div class="stat-row">
                 <div class="stat-item">
                     <div class="stat-num">10 Mio.+</div>
@@ -831,6 +813,108 @@
                 <div class="stat-item">
                     <div class="stat-num">75+</div>
                     <div class="stat-lbl">Tools & Datenanbieter</div>
+                </div>
+            </div>
+
+            <!-- ── Proof Cards (6) ── -->
+            <div class="proof-grid">
+                <div class="proof-card">
+                    <div class="proof-co">Smart Bridges GmbH · Berlin</div>
+                    <div class="proof-num">397 Leads</div>
+                    <div class="proof-period">in 3 Monaten</div>
+                    <div class="proof-desc">B2B-Events. Skalierbares Outreach-System aufgebaut — 397 qualifizierte Leads über Cold Email in einem Quartal.</div>
+                </div>
+                <div class="proof-card">
+                    <div class="proof-co">Greenlovers · Hamburg</div>
+                    <div class="proof-num">172 Leads</div>
+                    <div class="proof-period">+ 14 Aufträge in 3 Monaten</div>
+                    <div class="proof-desc">B2B-Dienstleistung. Wenig strukturiertes Outbound → Kampagne aufgesetzt, ICP definiert, erste Replies ab Woche 5.</div>
+                </div>
+                <div class="proof-card">
+                    <div class="proof-co">Hivebuy · Berlin</div>
+                    <div class="proof-num">100.000 €</div>
+                    <div class="proof-period">Auftragswert in 9 Monaten</div>
+                    <div class="proof-desc">B2B-Software. Grundwerk-Pipeline als primärer Akquise-Kanal — 100k EUR nachweisbarer Auftragswert.</div>
+                </div>
+                <div class="proof-card">
+                    <div class="proof-co">Birdsview GmbH</div>
+                    <div class="proof-num">28 Termine</div>
+                    <div class="proof-period">in 3 Monaten</div>
+                    <div class="proof-desc">E-Commerce SaaS. Shopify/Shopware-Integrations-Tool — strukturierte Pipeline über Cold Email aufgebaut.</div>
+                </div>
+                <div class="proof-card">
+                    <div class="proof-co">Peer Studios GbR · Berlin</div>
+                    <div class="proof-num">20 Opportunities</div>
+                    <div class="proof-period">in 13 Tagen</div>
+                    <div class="proof-desc">Content Production. Innerhalb von 2 Wochen 20 qualifizierte Opportunities aus Cold Email generiert.</div>
+                </div>
+                <div class="proof-card">
+                    <div class="proof-co">Cervis</div>
+                    <div class="proof-num">ROI 2,7x</div>
+                    <div class="proof-period">in 3 Monaten</div>
+                    <div class="proof-desc">Investition in Grundwerk hat sich nach 3 Monaten fast verdreifacht — messbarer Return on Investment.</div>
+                </div>
+            </div>
+
+            <!-- ── Video-Testimonials ── -->
+            <div style="margin-top:48px;">
+                <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:6px;">Was unsere Kunden sagen</h3>
+                <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:28px;">Video-Referenzen direkt von Entscheidern, die mit Grundwerk arbeiten.</p>
+
+                <!-- Landscape Videos (16:9) -->
+                <div class="vid-landscape" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px;">
+                    <div>
+                        <div class="video-embed-wrap">
+                            <script src="https://fast.wistia.com/embed/8um6o166gg.js" async type="module"></script>
+                            <style>wistia-player[media-id='8um6o166gg']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/8um6o166gg/swatch');display:block;filter:blur(5px);padding-top:56.25%}</style>
+                            <wistia-player media-id="8um6o166gg" aspect="1.7777777777777777"></wistia-player>
+                        </div>
+                        <div style="margin-top:8px;font-size:0.8rem;color:var(--text-muted);">Peer Studios · Content Production</div>
+                    </div>
+                    <div>
+                        <div class="video-embed-wrap">
+                            <script src="https://fast.wistia.com/embed/ohjo6np2cx.js" async type="module"></script>
+                            <style>wistia-player[media-id='ohjo6np2cx']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/ohjo6np2cx/swatch');display:block;filter:blur(5px);padding-top:56.25%}</style>
+                            <wistia-player media-id="ohjo6np2cx" aspect="1.7777777777777777"></wistia-player>
+                        </div>
+                        <div style="margin-top:8px;font-size:0.8rem;color:var(--text-muted);">Smart Bridges · B2B Events</div>
+                    </div>
+                </div>
+
+                <!-- Portrait Videos (9:16) -->
+                <div class="vid-portrait" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
+                    <div>
+                        <div class="video-embed-wrap" style="max-width:240px;margin:0 auto;">
+                            <script src="https://fast.wistia.com/embed/xrshk3je41.js" async type="module"></script>
+                            <style>wistia-player[media-id='xrshk3je41']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/xrshk3je41/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style>
+                            <wistia-player media-id="xrshk3je41" aspect="0.5625"></wistia-player>
+                        </div>
+                        <div style="margin-top:8px;font-size:0.8rem;color:var(--text-muted);text-align:center;">Valentin Eiber</div>
+                    </div>
+                    <div>
+                        <div class="video-embed-wrap" style="max-width:240px;margin:0 auto;">
+                            <script src="https://fast.wistia.com/embed/ecg4jyx9cg.js" async type="module"></script>
+                            <style>wistia-player[media-id='ecg4jyx9cg']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/ecg4jyx9cg/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style>
+                            <wistia-player media-id="ecg4jyx9cg" aspect="0.5625"></wistia-player>
+                        </div>
+                        <div style="margin-top:8px;font-size:0.8rem;color:var(--text-muted);text-align:center;">Birdsview</div>
+                    </div>
+                    <div>
+                        <div class="video-embed-wrap" style="max-width:240px;margin:0 auto;">
+                            <script src="https://fast.wistia.com/embed/c97klwzjh4.js" async type="module"></script>
+                            <style>wistia-player[media-id='c97klwzjh4']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/c97klwzjh4/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style>
+                            <wistia-player media-id="c97klwzjh4" aspect="0.5625"></wistia-player>
+                        </div>
+                        <div style="margin-top:8px;font-size:0.8rem;color:var(--text-muted);text-align:center;">COCOMIN</div>
+                    </div>
+                    <div>
+                        <div class="video-embed-wrap" style="max-width:240px;margin:0 auto;">
+                            <script src="https://fast.wistia.com/embed/pvxw94fv46.js" async type="module"></script>
+                            <style>wistia-player[media-id='pvxw94fv46']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/pvxw94fv46/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style>
+                            <wistia-player media-id="pvxw94fv46" aspect="0.5625"></wistia-player>
+                        </div>
+                        <div style="margin-top:8px;font-size:0.8rem;color:var(--text-muted);text-align:center;">Wachstumswerkstatt</div>
+                    </div>
                 </div>
             </div>
 
