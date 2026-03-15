@@ -689,6 +689,7 @@
     <button class="tab-btn"        data-tab="system"    onclick="switchTab('system')">   <span class="tab-emoji">🚀</span> Das System</button>
     <button class="tab-btn"        data-tab="results"   onclick="switchTab('results')">  <span class="tab-emoji">📊</span> Ergebnisse</button>
     <button class="tab-btn"        data-tab="invest"    onclick="switchTab('invest')">   <span class="tab-emoji">💰</span> Investition</button>
+    <button class="tab-btn"        data-tab="strategy"  onclick="switchTab('strategy')"> <span class="tab-emoji">🧠</span> Strategie</button>
     <button class="tab-btn"        data-tab="plan"      onclick="switchTab('plan')">     <span class="tab-emoji">🗺️</span> Aktionsplan</button>
     <button class="tab-btn"        data-tab="booking"   onclick="switchTab('booking')">  <span class="tab-emoji">📅</span> Termin</button>
 </div>
@@ -1534,7 +1535,209 @@
 </div>
 
 <!-- ═══════════════════════════════════════════════════ -->
-<!-- TAB 6 — AKTIONSPLAN (MAP)                          -->
+<!-- TAB 6 — STRATEGIE                                  -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="panel" id="panel-strategy">
+    <div class="panel-inner">
+        <div class="container" style="max-width:740px;">
+
+            <!-- ── Document Header ── -->
+            <div style="font-size:0.7rem;font-weight:600;color:var(--accent);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:20px;">Vertraulich &mdash; Grundwerk &times; Urbify</div>
+            <h2 style="font-size:2rem;font-weight:700;line-height:1.2;margin-bottom:12px;">Outbound-Strategie</h2>
+            <p style="font-size:0.95rem;color:var(--text-muted);line-height:1.6;max-width:620px;">Gemeinsam erarbeitet im Gespr&auml;ch am 13.03.2026 &mdash; zusammengefasst in eine umsetzbare Strategie f&uuml;r die ersten 3 Monate.</p>
+            <div style="width:100%;height:1px;background:var(--border);margin-top:40px;"></div>
+
+            <!-- ── Section 1: Primäre Zielgruppe ── -->
+            <div style="padding:56px 0 0;">
+                <div style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:28px;">Prim&auml;re Zielgruppe</div>
+
+                <div style="margin-bottom:24px;">
+                    <div style="font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:12px;">Top 5.000 Online-Shops in Deutschland</div>
+                    <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;margin-bottom:16px;">Shops die Pakete versenden und f&uuml;r Same-Day / Next-Day Delivery in Frage kommen. Segmentiert nach Shop-System, damit Urbify die Integrations-Argumentation gezielt einsetzen kann.</div>
+                </div>
+
+                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px;">
+                    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px;">
+                        <div style="font-size:0.68rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Segment A</div>
+                        <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:4px;">Shopify-Shops</div>
+                        <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.6;">Native Integration m&ouml;glich &mdash; k&uuml;rzester Weg zum Go-Live. Martin: &bdquo;Lass uns drei Monate lang nur Shopify-Termine machen.&ldquo;</div>
+                    </div>
+                    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px;">
+                        <div style="font-size:0.68rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Segment B</div>
+                        <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:4px;">Shopware-Shops</div>
+                        <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.6;">Zweitgr&ouml;&szlig;tes Shopsystem in DACH. Integrations-Argument stark, weil Shopware-H&auml;ndler oft eigene Logistik-L&ouml;sungen suchen.</div>
+                    </div>
+                    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px;">
+                        <div style="font-size:0.68rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Segment C</div>
+                        <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:4px;">Eigene Systeme</div>
+                        <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.6;">Gr&ouml;&szlig;ere Retailer mit Custom-Shops. L&auml;ngerer Integrations-Cycle, aber h&ouml;here Dealwerte (500k&ndash;2 Mio. &euro;/Jahr).</div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom:24px;padding-left:20px;border-left:2px solid var(--accent);">
+                    <div style="font-size:1.05rem;font-style:italic;color:var(--text);line-height:1.65;margin-bottom:8px;">&bdquo;Ich will verstehen wie viel Potenzial schlummert bei Shopify, Shopware oder wer hat seine eigenen Systeme?&ldquo;</div>
+                    <div style="font-size:0.8rem;color:var(--text-dim);font-weight:500;">Martin Hoffmann, Head of Sales</div>
+                </div>
+
+                <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;">
+                    <strong style="color:var(--text);">Sweet Spot:</strong> Junge, dynamische Brands zwischen Einzel-Unternehmer und Konzern &mdash; Shops die &bdquo;noch nicht so lange am Markt sind, Bock haben, und verstehen dass Customer Experience auf der Zustellung einen Unterschied macht.&ldquo;
+                </div>
+            </div>
+
+            <div style="width:100%;height:1px;background:var(--border);margin-top:56px;"></div>
+
+            <!-- ── Section 2: Sekundäre Zielgruppe ── -->
+            <div style="padding:56px 0 0;">
+                <div style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:28px;">Sekund&auml;re Zielgruppe</div>
+
+                <div style="margin-bottom:24px;">
+                    <div style="font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:12px;">Cannabis-Apotheken &amp; Apotheken mit Botendienst</div>
+                    <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;margin-bottom:16px;">~500 Apotheken in Deutschland verschicken Cannabis RX. Davon ~300 erreichbar &uuml;ber den Integrator. Urbify hat bereits ~15&ndash;20 als Kunden &mdash; Proof of Concept steht, Segment ist validiert.</div>
+                </div>
+
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px;">
+                    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px;">
+                        <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.6;"><strong style="color:var(--green);">Vorteil:</strong> Schnelle Deals, k&uuml;rzerer Sales Cycle, direkter Umsatz. Martin: &bdquo;K&ouml;nnen direkt Umsatz schaffen.&ldquo;</div>
+                    </div>
+                    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px;">
+                        <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.6;"><strong style="color:var(--text);">Qualifizierung:</strong> Idealerweise nur Apotheken die Botendienst anbieten &mdash; h&ouml;here Relevanz, bessere Response-Rate.</div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom:24px;padding-left:20px;border-left:2px solid var(--accent);">
+                    <div style="font-size:1.05rem;font-style:italic;color:var(--text);line-height:1.65;margin-bottom:8px;">&bdquo;500 Cannabis-Apotheken &mdash; okay, dann lass uns die skaliert ansetzen. K&ouml;nnen direkt Umsatz schaffen.&ldquo;</div>
+                    <div style="font-size:0.8rem;color:var(--text-dim);font-weight:500;">Im Gespr&auml;ch gemeinsam vereinbart</div>
+                </div>
+            </div>
+
+            <div style="width:100%;height:1px;background:var(--border);margin-top:56px;"></div>
+
+            <!-- ── Section 3: Kanäle & Ansatz ── -->
+            <div style="padding:56px 0 0;">
+                <div style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:28px;">Kan&auml;le &amp; Ansatz</div>
+
+                <div style="margin-bottom:32px;">
+                    <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:6px;">1. Cold Email (Hauptkanal)</div>
+                    <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;">Hyper-personalisierte Sequenzen pro Segment &mdash; nicht wie bisher &bdquo;jede Mail einzeln geschrieben&ldquo; (3&ndash;4 Monate Aufwand), sondern KI-gest&uuml;tzt skaliert mit individuellem Kontext pro Empf&auml;nger. Eigene Infrastruktur (keine martin@/robert@-Adressen), Warm-up, SPF/DKIM/DMARC, laufendes Deliverability-Monitoring.</div>
+                </div>
+
+                <div style="margin-bottom:32px;">
+                    <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:6px;">2. LinkedIn (Sekund&auml;rkanal)</div>
+                    <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;">Shop-Inhaber und Logistik-Entscheider sind auf LinkedIn aktiv. Multi-Touch-Ansatz: E-Mail + LinkedIn-Touchpoint erh&ouml;ht Reply-Rate signifikant. Martin: &bdquo;Eigentlich ist mir egal &uuml;ber welchen Kanal &mdash; ich will den Kontakt haben.&ldquo;</div>
+                </div>
+
+                <div style="margin-bottom:32px;">
+                    <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:6px;">3. Messe-Kampagnen (taktisch)</div>
+                    <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;">Vor Messen gezielte Outbound-Kampagnen an Teilnehmer/Aussteller &mdash; damit das Team mit vorbereiteten Terminen auf die Messe geht, statt kalt zu laufen. Nur bei relevanten Events (deliver, E-Commerce Expo etc.).</div>
+                </div>
+            </div>
+
+            <div style="width:100%;height:1px;background:var(--border);margin-top:56px;"></div>
+
+            <!-- ── Section 4: Daten & Tools ── -->
+            <div style="padding:56px 0 0;">
+                <div style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:28px;">Daten &amp; Enrichment</div>
+
+                <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;margin-bottom:24px;">Grundwerk hat f&uuml;r den deutschen E-Commerce-Markt bereits ein Daten-Setup gebaut:</div>
+
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px;">
+                    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px;">
+                        <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.6;"><strong style="color:var(--text);">Revenue &amp; AOV:</strong> KI-gesch&auml;tzte Umsatz- und Average-Order-Value-Daten f&uuml;r Shops in Deutschland &mdash; bereits vorhanden.</div>
+                    </div>
+                    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px;">
+                        <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.6;"><strong style="color:var(--text);">Kontaktdaten:</strong> Gesch&auml;ftsf&uuml;hrer, Logistik-Entscheider, direkte E-Mail-Adressen &mdash; 25.000&ndash;30.000 Kontakte bereits recherchiert.</div>
+                    </div>
+                    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px;">
+                        <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.6;"><strong style="color:var(--text);">Shop-System:</strong> Identifizierung ob Shopify, Shopware oder eigenes System &mdash; f&uuml;r segmentierte Ansprache.</div>
+                    </div>
+                    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px;">
+                        <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.6;"><strong style="color:var(--text);">75+ Quellen:</strong> Zugang zu Datenquellen und Tools die einzeln 500&ndash;2.000 &euro;/Monat kosten &mdash; im Retainer inklusive.</div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom:24px;padding-left:20px;border-left:2px solid var(--accent);">
+                    <div style="font-size:1.05rem;font-style:italic;color:var(--text);line-height:1.65;margin-bottom:8px;">&bdquo;Wir haben schon f&uuml;r alle Shops in Deutschland Revenue und Average Order Values aufgrund von KI gebaut.&ldquo;</div>
+                    <div style="font-size:0.8rem;color:var(--text-dim);font-weight:500;">Tom Soto Schiller, Grundwerk</div>
+                </div>
+            </div>
+
+            <div style="width:100%;height:1px;background:var(--border);margin-top:56px;"></div>
+
+            <!-- ── Section 5: Priorisierung ── -->
+            <div style="padding:56px 0 0;">
+                <div style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:28px;">Priorisierung &mdash; Die ersten 3 Monate</div>
+
+                <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:28px;">
+                    <div style="display:flex;gap:16px;align-items:flex-start;">
+                        <div style="flex-shrink:0;width:32px;height:32px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;color:white;">1</div>
+                        <div>
+                            <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:4px;">Cannabis-Apotheken (Quick Win)</div>
+                            <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;">~500 Apotheken, Proof of Concept steht, k&uuml;rzester Weg zu direktem Umsatz. Perfekt um Ben schnell erste Ergebnisse zu zeigen und das Investment zu validieren.</div>
+                        </div>
+                    </div>
+                    <div style="display:flex;gap:16px;align-items:flex-start;">
+                        <div style="flex-shrink:0;width:32px;height:32px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;color:white;">2</div>
+                        <div>
+                            <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:4px;">Shopify-Shops (Hauptkampagne)</div>
+                            <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;">Gr&ouml;&szlig;tes Segment, native Integration m&ouml;glich. Daten bereits vorhanden. Ziel: systematisch die Top-Shops identifizieren, segmentieren und mit personalisierten Kampagnen ansprechen.</div>
+                        </div>
+                    </div>
+                    <div style="display:flex;gap:16px;align-items:flex-start;">
+                        <div style="flex-shrink:0;width:32px;height:32px;background:rgba(79,125,249,0.3);border:1px solid var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;color:var(--accent);">3</div>
+                        <div>
+                            <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:4px;">Shopware + Eigene Systeme (Scale-Phase)</div>
+                            <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;">Ab Monat 3+ auf Basis der Learnings aus Shopify. H&ouml;here Dealwerte, l&auml;ngerer Cycle &mdash; aber mit validierten Templates und Daten aus Phase 1+2 deutlich effizienter.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="width:100%;height:1px;background:var(--border);margin-top:56px;"></div>
+
+            <!-- ── Section 6: Flywheel-Effekt ── -->
+            <div style="padding:56px 0 0;">
+                <div style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:28px;">Der Flywheel-Effekt</div>
+
+                <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;margin-bottom:24px;">Jeder neue Retailer den Urbify gewinnt, l&ouml;st einen Kompound-Effekt aus:</div>
+
+                <div style="display:flex;flex-direction:column;gap:0;margin-bottom:28px;">
+                    <div style="display:flex;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid var(--border);">
+                        <div style="flex-shrink:0;font-size:1.2rem;width:36px;text-align:center;">📦</div>
+                        <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.6;"><strong style="color:var(--text);">Mehr Shops</strong> &rarr; mehr Pakete mit &bdquo;urbify.de&ldquo; im Checkout sichtbar</div>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid var(--border);">
+                        <div style="flex-shrink:0;font-size:1.2rem;width:36px;text-align:center;">👁️</div>
+                        <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.6;"><strong style="color:var(--text);">Mehr Sichtbarkeit</strong> &rarr; Endkunden lernen die Marke kennen (wie DHL, aber f&uuml;r Same-Day)</div>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid var(--border);">
+                        <div style="flex-shrink:0;font-size:1.2rem;width:36px;text-align:center;">🔄</div>
+                        <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.6;"><strong style="color:var(--text);">H&ouml;here Auswahl-Rate</strong> &rarr; bestehende Shops sehen mehr Volumen ohne neue Akquise</div>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:16px;padding:16px 0;">
+                        <div style="flex-shrink:0;font-size:1.2rem;width:36px;text-align:center;">📈</div>
+                        <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.6;"><strong style="color:var(--text);">Mehr Revenue pro Shop</strong> &rarr; h&ouml;herer Customer Lifetime Value, st&auml;rkere Verhandlungsposition</div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom:24px;padding-left:20px;border-left:2px solid var(--accent);">
+                    <div style="font-size:1.05rem;font-style:italic;color:var(--text);line-height:1.65;margin-bottom:8px;">&bdquo;Es w&auml;re ein sehr geiler Nebeneffekt wenn die Endkunden uns kennenlernten, damit die Wahl im Checkout f&uuml;r sie einfacher w&auml;re, uns zu w&auml;hlen.&ldquo;</div>
+                    <div style="font-size:0.8rem;color:var(--text-dim);font-weight:500;">Martin Hoffmann, Head of Sales</div>
+                </div>
+
+                <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;">Dieser Effekt ist aktuell inaktiv, weil zu wenige neue Retailer gewonnen werden. Strukturiertes Outbound ist der Hebel, der das Flywheel in Gang setzt.</div>
+            </div>
+
+            <!-- ── Footer ── -->
+            <div style="padding:48px 0 0;text-align:center;border-top:1px solid var(--border);margin-top:56px;">
+                <p style="font-size:0.75rem;color:var(--text-dim);letter-spacing:0.06em;">Grundwerk Digital &middot; Vertraulich &middot; M&auml;rz 2026</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- TAB 7 — AKTIONSPLAN (MAP)                          -->
 <!-- ═══════════════════════════════════════════════════ -->
 <div class="panel" id="panel-plan">
     <div class="panel-inner">
@@ -1781,7 +1984,7 @@
 </footer>
 
 <script>
-    const TABS = ['hello', 'situation', 'system', 'results', 'invest', 'plan', 'booking'];
+    const TABS = ['hello', 'situation', 'system', 'results', 'invest', 'strategy', 'plan', 'booking'];
 
     function switchTab(id) {
         TABS.forEach(t => {
