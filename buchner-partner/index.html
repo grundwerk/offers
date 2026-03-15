@@ -39,7 +39,10 @@ img { max-width: 100%; }
 /* NAV */
 nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; backdrop-filter: blur(20px); background: rgba(10,10,10,0.85); border-bottom: 1px solid var(--border); }
 .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; height: 64px; display: flex; align-items: center; justify-content: space-between; }
-.nav-logo { font-weight: 700; font-size: 0.95rem; color: var(--text); }
+.nav-logo { font-weight: 700; font-size: 0.95rem; color: var(--text); display: flex; align-items: center; gap: 8px; }
+.nav-logo-icon { width: 28px; height: 28px; object-fit: contain; border-radius: 6px; flex-shrink: 0; }
+.nav-logo-sep { color: var(--text-dim); font-weight: 300; margin: 0 2px; }
+.nav-logo-client { color: var(--text-muted); font-weight: 500; }
 .nav-cta { background: var(--accent); color: #fff; padding: 8px 20px; border-radius: 8px; font-weight: 600; font-size: 0.85rem; transition: opacity 0.2s; }
 .nav-cta:hover { opacity: 0.85; color: #fff; }
 
@@ -264,7 +267,12 @@ footer { text-align: center; padding: 28px 2rem; border-top: 1px solid var(--bor
 <!-- NAV -->
 <nav>
     <div class="nav-inner">
-        <div class="nav-logo">buchner &amp; partner &times; Grundwerk</div>
+        <div class="nav-logo" style="display:flex;align-items:center;gap:8px;">
+            <img src="https://framerusercontent.com/images/4xEctZIb7Nfq9zuWT0Qa9v8GVHM.png" alt="Grundwerk" class="nav-logo-icon" style="width:28px;height:28px;object-fit:contain;border-radius:6px;flex-shrink:0;" />
+            <span>Grundwerk</span>
+            <span class="nav-logo-sep" style="color:var(--text-dim);font-weight:300;">&times;</span>
+            <span class="nav-logo-client" style="color:var(--text-muted);font-weight:500;">buchner &amp; partner</span>
+        </div>
         <a href="#angebot" class="nav-cta">Zum Angebot &rarr;</a>
     </div>
 </nav>
