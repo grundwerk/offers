@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Situationsanalyse &mdash; Grundwerk &times; Urbify</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;-webkit-text-size-adjust:100%}
+body{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;background:#fafafa;color:#111;line-height:1.7;display:none}
+body.unlocked{display:block}
+
+/* Auth overlay */
+.auth-overlay{display:flex;position:fixed;inset:0;background:#fafafa;z-index:9999;align-items:center;justify-content:center;flex-direction:column;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif}
+.auth-overlay.hidden{display:none}
+.auth-box{text-align:center;max-width:360px;padding:0 24px}
+.auth-box h1{font-size:1.1rem;font-weight:600;color:#111;margin-bottom:8px;letter-spacing:0.02em}
+.auth-box p{font-size:0.85rem;color:#888;margin-bottom:28px}
+.auth-box input{width:100%;padding:14px 18px;border:1px solid #ddd;border-radius:6px;font-size:1rem;font-family:inherit;text-align:center;letter-spacing:0.08em;outline:none;transition:border-color 0.2s}
+.auth-box input:focus{border-color:#4f7df9}
+.auth-box .error{color:#dc2626;font-size:0.8rem;margin-top:10px;opacity:0;transition:opacity 0.2s}
+.auth-box .error.visible{opacity:1}
+
+/* Nav */
+nav{max-width:720px;margin:0 auto;padding:20px 32px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #e5e5e5}
+nav .left{font-size:0.8rem;font-weight:600;color:#111;letter-spacing:0.04em}
+nav .right{font-size:0.72rem;color:#999;letter-spacing:0.03em}
+
+/* Main container */
+.container{max-width:720px;margin:0 auto;padding:0 32px}
+
+/* Document header */
+.doc-header{padding:64px 0 48px}
+.doc-header .label{font-size:0.7rem;font-weight:600;color:#4f7df9;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:20px}
+.doc-header h1{font-size:2.2rem;font-weight:700;color:#111;line-height:1.2;margin-bottom:12px}
+.doc-header .subtitle{font-size:0.95rem;color:#666;line-height:1.6;max-width:600px}
+.doc-header .divider{width:100%;height:1px;background:#ddd;margin-top:40px}
+
+/* Section */
+.section{padding:56px 0}
+.section-label{font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#4f7df9;margin-bottom:28px}
+.section-label.red{color:#dc2626}
+
+/* Pull quotes */
+.quote-block{margin-bottom:36px;padding-left:20px;border-left:2px solid #4f7df9}
+.quote-text{font-size:1.1rem;font-style:italic;color:#222;line-height:1.65;margin-bottom:8px}
+.quote-text::before{content:"\201E"}
+.quote-text::after{content:"\201C"}
+.quote-attr{font-size:0.8rem;color:#999;font-weight:500;letter-spacing:0.02em}
+
+/* Findings */
+.finding{margin-bottom:32px}
+.finding-title{font-size:0.95rem;font-weight:700;color:#111;margin-bottom:6px}
+.finding-body{font-size:0.92rem;color:#444;line-height:1.7}
+
+/* Cost table */
+.cost-table{width:100%;border-collapse:collapse;margin-bottom:16px}
+.cost-table th{text-align:left;font-size:0.72rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#999;padding:0 0 12px;border-bottom:1px solid #ddd}
+.cost-table th:last-child{text-align:right}
+.cost-table td{padding:14px 0;border-bottom:1px solid #eee;font-size:0.92rem;color:#333;vertical-align:top}
+.cost-table td:last-child{text-align:right;white-space:nowrap}
+.cost-table tr.total td{border-bottom:none;border-top:2px solid #111;font-weight:700;font-size:1.05rem;color:#111;padding-top:16px}
+.cost-table tr.total td:last-child{color:#dc2626;font-size:1.1rem}
+.footnote{font-size:0.78rem;color:#999;margin-top:8px}
+
+/* Consequences list */
+.consequence-list{list-style:none;padding:0}
+.consequence-list li{padding:12px 0;border-bottom:1px solid #eee;font-size:0.92rem;color:#333;padding-left:20px;position:relative}
+.consequence-list li:last-child{border-bottom:none}
+.consequence-list li::before{content:"\2014";position:absolute;left:0;color:#ccc}
+
+/* Footer */
+.doc-footer{padding:48px 0 64px;text-align:center;border-top:1px solid #e5e5e5;margin-top:24px}
+.doc-footer p{font-size:0.75rem;color:#bbb;letter-spacing:0.06em}
+
+/* Mobile */
+@media(max-width:600px){
+  .container{padding:0 20px}
+  nav{padding:16px 20px}
+  .doc-header{padding:40px 0 32px}
+  .doc-header h1{font-size:1.7rem}
+  .section{padding:40px 0}
+  .quote-text{font-size:1rem}
+  .cost-table td,.cost-table th{font-size:0.82rem;padding:10px 0}
+}
+</style>
+</head>
+<body>
+
+<!-- Auth Overlay -->
+<div class="auth-overlay" id="authOverlay">
+  <div class="auth-box">
+    <h1>Vertrauliches Dokument</h1>
+    <p>Bitte Zugangscode eingeben</p>
+    <input type="password" id="codeInput" placeholder="Zugangscode" autocomplete="off">
+    <div class="error" id="authError">Ung&uuml;ltiger Zugangscode</div>
+  </div>
+</div>
+
+<!-- Page Content -->
+<nav>
+  <div class="left">Grundwerk &times; Urbify</div>
+  <div class="right">Version 5: Personal Dossier</div>
+</nav>
+
+<div class="container">
+
+  <!-- Document Header -->
+  <div class="doc-header">
+    <div class="label">Vertraulich &mdash; Grundwerk &times; Urbify</div>
+    <h1>Situationsanalyse</h1>
+    <p class="subtitle">Basierend auf dem 94-Minuten-Gespr&auml;ch am 13.03.2026 mit Martin Hoffmann, Robert L&uuml;decke und Jannis Gruhl</p>
+    <div class="divider"></div>
+  </div>
+
+  <!-- Section 1: Quotes -->
+  <div class="section">
+    <div class="section-label">Was wir geh&ouml;rt haben</div>
+
+    <div class="quote-block">
+      <div class="quote-text">Wir schicken schon E-Mails raus &mdash; aber wir haben wirklich keine Ahnung warum die Response Rate so niedrig ist. 3% f&uuml;hlt sich nicht gut an.</div>
+      <div class="quote-attr">Martin Hoffmann</div>
+    </div>
+
+    <div class="quote-block">
+      <div class="quote-text">Messen sind unser Hauptkanal. Aber 60.000 Euro im Jahr &mdash; und ich kann das nicht skalieren. Zweimal im Jahr ist einfach zu wenig um konstant zu wachsen.</div>
+      <div class="quote-attr">Martin Hoffmann</div>
+    </div>
+
+    <div class="quote-block">
+      <div class="quote-text">Wir haben LinkedIn Tools &mdash; aber ehrlich gesagt nutzt die gerade keiner wirklich. Das liegt einfach so rum.</div>
+      <div class="quote-attr">Martin Hoffmann</div>
+    </div>
+
+    <div class="quote-block">
+      <div class="quote-text">Das Problem ist: Ich kann Ben nicht sagen wie viele Termine n&auml;chsten Monat reinkommen. Wir haben keine Pipeline die wir wirklich steuern k&ouml;nnen.</div>
+      <div class="quote-attr">Martin Hoffmann</div>
+    </div>
+  </div>
+
+  <!-- Section 2: Findings -->
+  <div class="section">
+    <div class="section-label">Was wir daraus ableiten</div>
+
+    <div class="finding">
+      <div class="finding-title">1. E-Mail-Outbound ohne System</div>
+      <div class="finding-body">12.500 versendete Mails bei 3% Response = Infrastruktur vorhanden, aber ohne Targeting, Segmentierung und Deliverability-Optimierung. Branchenstandard: 15&ndash;25% Reply-Rate. Delta: 1.500&ndash;2.750 verlorene Antworten/Jahr.</div>
+    </div>
+
+    <div class="finding">
+      <div class="finding-title">2. Messeabh&auml;ngigkeit</div>
+      <div class="finding-body">60.000 &euro;/Jahr f&uuml;r 35 Kontaktpunkte = 1.714 &euro;/Termin. Nur 2&ndash;3&times; pro Jahr einsetzbar. 10 Monate ohne aktive Pipeline-Generierung.</div>
+    </div>
+
+    <div class="finding">
+      <div class="finding-title">3. Ungenutztes Tool-Budget</div>
+      <div class="finding-body">LinkedIn Sales Navigator bezahlt (~3.600&ndash;6.000 &euro;/Jahr), nicht operativ eingesetzt. Null Lead-Output.</div>
+    </div>
+
+    <div class="finding">
+      <div class="finding-title">4. Unterkapazit&auml;t im Vertrieb</div>
+      <div class="finding-body">9 Meetings/Monat bei 3 Vertrieblern (Robert: 5, Jannis: 0, Martin: 3&ndash;4). Benchmark: 25&ndash;40. Gap: 192&ndash;372 fehlende Meetings/Jahr.</div>
+    </div>
+
+    <div class="finding">
+      <div class="finding-title">5. Fehlende Forecasting-F&auml;higkeit</div>
+      <div class="finding-body">Keine planbare Pipeline = kein belastbares Reporting an GF (Ben). Bewertungsrisiko bei n&auml;chster Finanzierungsrunde.</div>
+    </div>
+
+    <div class="finding">
+      <div class="finding-title">6. Marktabdeckung &lt;5%</div>
+      <div class="finding-body">400 aktive Leads in einer Datenbank von 1.000&ndash;2.500 Kontakten. Adressierbarer Markt: tausende Retailer. Jeder unber&uuml;hrte Retailer = potenzieller 50k+ Deal.</div>
+    </div>
+
+    <div class="finding">
+      <div class="finding-title">7. Langer Sales Cycle ohne Beschleunigung</div>
+      <div class="finding-body">6 Monate durchschnittlich. Ohne Multi-Touch-Nurturing bleibt er ungesteuert. Verz&ouml;gerungskosten: ~42.000 &euro;/Monat.</div>
+    </div>
+
+    <div class="finding">
+      <div class="finding-title">8. Wettbewerbsdruck</div>
+      <div class="finding-body">Liefery, DPD und andere bauen Outbound-Systeme auf. Entscheider die bereits kontaktiert wurden = 3&times; schwieriger zu konvertieren.</div>
+    </div>
+  </div>
+
+  <!-- Section 3: Cost Table -->
+  <div class="section">
+    <div class="section-label">Was es kostet, nichts zu tun</div>
+
+    <table class="cost-table">
+      <thead>
+        <tr>
+          <th>Position</th>
+          <th>Betrag</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Messekosten (nicht-skalierbar)</td>
+          <td>60.000 &euro;</td>
+        </tr>
+        <tr>
+          <td>LinkedIn-Tools (bezahlt, ungenutzt)</td>
+          <td>~4.800 &euro;</td>
+        </tr>
+        <tr>
+          <td>E-Mail-Kosten ohne ROI</td>
+          <td>~8.000 &euro;</td>
+        </tr>
+        <tr>
+          <td>Opportunit&auml;tskosten: fehlende Meetings</td>
+          <td>960.000&ndash;1.860.000 &euro;</td>
+        </tr>
+        <tr>
+          <td>Verz&ouml;gerte Pipeline (6-Mo Cycle &times; 10 Deals)</td>
+          <td>~500.000 &euro;</td>
+        </tr>
+        <tr>
+          <td>Verlorene Marktanteile</td>
+          <td>nicht quantifizierbar</td>
+        </tr>
+        <tr class="total">
+          <td>Gesch&auml;tztes verlorenes Potenzial</td>
+          <td>1,0&ndash;2,4 Mio. &euro;</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="footnote">Konservative Sch&auml;tzung basierend auf den Zahlen aus dem Gespr&auml;ch.</div>
+  </div>
+
+  <!-- Section 4: Consequences -->
+  <div class="section">
+    <div class="section-label red">Prognose ohne Ver&auml;nderung</div>
+
+    <ul class="consequence-list">
+      <li>Abh&auml;ngigkeit von Messen und Empfehlungen &mdash; kein planbares Wachstum</li>
+      <li>3 Vertriebler unter Kapazit&auml;t &mdash; ohne Pipeline</li>
+      <li>Wettbewerber kontaktieren dieselben Entscheider</li>
+      <li>Tools bleiben Kostenblock ohne ROI</li>
+      <li>Kein Forecasting gegen&uuml;ber GF und Investoren</li>
+      <li>Jeder Monat ohne System = verlorene Leads</li>
+    </ul>
+  </div>
+
+  <!-- Footer -->
+  <div class="doc-footer">
+    <p>Grundwerk Digital &middot; Vertraulich &middot; M&auml;rz 2026</p>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var KEY='7294830165';
+  var params=new URLSearchParams(window.location.search);
+  var overlay=document.getElementById('authOverlay');
+  var input=document.getElementById('codeInput');
+  var error=document.getElementById('authError');
+
+  if(params.get('secure')===KEY){
+    overlay.classList.add('hidden');
+    document.body.classList.add('unlocked');
+    return;
+  }
+
+  input.addEventListener('keydown',function(e){
+    if(e.key==='Enter'){
+      if(input.value.trim()===KEY){
+        overlay.classList.add('hidden');
+        document.body.classList.add('unlocked');
+        history.replaceState(null,'',window.location.pathname+'?secure='+KEY);
+      }else{
+        error.classList.add('visible');
+        input.value='';
+        setTimeout(function(){error.classList.remove('visible')},2000);
+      }
+    }
+  });
+
+  input.focus();
+})();
+</script>
+
+</body>
+</html>

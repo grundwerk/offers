@@ -1,0 +1,672 @@
+<!-- GRUNDWERK-OFFER v4-situation | 2026-03-15 | Timeline Escalation — Situation Tab -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII=" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urbify &times; Grundwerk &mdash; Situation (Timeline Escalation)</title>
+    <script>
+        (function(){
+            var code = '7294830165';
+            var params = new URLSearchParams(window.location.search);
+            if(params.get('secure') !== code){
+                document.documentElement.style.display='none';
+                document.title='Zugriff verweigert';
+                window.stop();
+            }
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+        :root {
+            --bg: #0a0a0a;
+            --bg-card: #111111;
+            --text: #f0f0f0;
+            --text-muted: #c8c8c8;
+            --text-dim: #888888;
+            --accent: #4f7df9;
+            --blue-text: #93a8f5;
+            --red: #ef4444;
+            --red-glow: rgba(239,68,68,0.35);
+            --orange: #f97316;
+            --orange-dim: rgba(249,115,22,0.12);
+            --border: rgba(255,255,255,0.07);
+            --radius: 14px;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* ── NAV ── */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(10,10,10,0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-dim);
+        }
+        .nav span { color: var(--accent); }
+
+        /* ── HEADER ── */
+        .header {
+            padding: 130px 24px 60px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .header .label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 16px;
+        }
+        .header h1 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+        .header .lead {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            max-width: 620px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* ── STICKY COUNTER ── */
+        .counter-wrap {
+            position: sticky;
+            top: 56px;
+            z-index: 90;
+            background: rgba(10,10,10,0.88);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 14px 24px;
+            text-align: center;
+            transition: box-shadow 0.4s;
+        }
+        .counter-wrap.active {
+            box-shadow: 0 4px 40px rgba(239,68,68,0.12);
+        }
+        .counter-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            margin-bottom: 4px;
+        }
+        .counter-value {
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            font-weight: 800;
+            color: var(--red);
+            font-variant-numeric: tabular-nums;
+            transition: color 0.3s;
+        }
+        .counter-value.text-mode {
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            color: var(--orange);
+        }
+
+        /* ── TIMELINE ── */
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 24px 80px;
+        }
+
+        /* center line */
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            transform: translateX(-50%);
+            background: linear-gradient(
+                to bottom,
+                rgba(255,255,255,0.06) 0%,
+                rgba(239,68,68,0.15) 25%,
+                rgba(239,68,68,0.3) 50%,
+                rgba(239,68,68,0.5) 75%,
+                rgba(239,68,68,0.8) 100%
+            );
+        }
+
+        /* node row */
+        .tl-node {
+            display: flex;
+            align-items: flex-start;
+            position: relative;
+            margin-bottom: 60px;
+            opacity: 0;
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .tl-node:last-child { margin-bottom: 0; }
+
+        .tl-node.left  { flex-direction: row; transform: translateX(-40px); }
+        .tl-node.right { flex-direction: row-reverse; transform: translateX(40px); }
+        .tl-node.visible { opacity: 1; transform: translateX(0); }
+
+        /* dot on timeline */
+        .tl-dot {
+            position: absolute;
+            left: 50%;
+            top: 28px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #1a1a1a;
+            border: 2px solid rgba(239,68,68,0.3);
+            transform: translate(-50%, 0);
+            z-index: 2;
+            transition: box-shadow 0.5s, border-color 0.5s, background 0.5s;
+        }
+        .tl-node.visible .tl-dot {
+            background: var(--red);
+            border-color: var(--red);
+            box-shadow: 0 0 16px var(--red-glow), 0 0 40px rgba(239,68,68,0.15);
+        }
+
+        /* card */
+        .tl-card {
+            width: calc(50% - 40px);
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px 26px;
+            position: relative;
+        }
+        .tl-node.left .tl-card  { margin-right: auto; border-right: 3px solid rgba(239,68,68,0.4); }
+        .tl-node.right .tl-card { margin-left: auto; border-left: 3px solid rgba(239,68,68,0.4); }
+
+        .tl-card .node-number {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            margin-bottom: 8px;
+        }
+        .tl-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+        .tl-card .stat {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--red);
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+        .tl-card .stat.orange { color: var(--orange); }
+        .tl-card .stat.blue { color: var(--blue-text); }
+        .tl-card .detail {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 14px;
+            line-height: 1.6;
+        }
+        .tl-card .quote {
+            font-style: italic;
+            color: var(--blue-text);
+            border-left: 3px solid var(--blue-text);
+            padding-left: 14px;
+            font-size: 0.88rem;
+            line-height: 1.65;
+            margin-top: 14px;
+        }
+        .tl-card .cost-tag {
+            display: inline-block;
+            background: rgba(239,68,68,0.1);
+            border: 1px solid rgba(239,68,68,0.25);
+            border-radius: 6px;
+            padding: 6px 14px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--red);
+            margin-top: 14px;
+        }
+        .tl-card .cost-tag.orange {
+            background: rgba(249,115,22,0.1);
+            border-color: rgba(249,115,22,0.25);
+            color: var(--orange);
+        }
+
+        /* ── FINAL REVEAL ── */
+        .final-reveal {
+            text-align: center;
+            padding: 80px 24px 60px;
+            position: relative;
+        }
+        .final-reveal .total-box {
+            display: inline-block;
+            background: rgba(239,68,68,0.06);
+            border: 2px solid rgba(239,68,68,0.3);
+            border-radius: 20px;
+            padding: 40px 60px;
+            position: relative;
+            animation: pulseGlow 2.5s ease-in-out infinite;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 30px rgba(239,68,68,0.15), 0 0 80px rgba(239,68,68,0.05); }
+            50%      { box-shadow: 0 0 50px rgba(239,68,68,0.3), 0 0 120px rgba(239,68,68,0.1); }
+        }
+        .final-reveal .total-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            margin-bottom: 12px;
+        }
+        .final-reveal .total-number {
+            font-size: clamp(2rem, 6vw, 3.6rem);
+            font-weight: 800;
+            color: var(--red);
+            line-height: 1.2;
+        }
+        .final-reveal .total-sub {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            margin-top: 12px;
+        }
+
+        /* ── CONSEQUENCES ── */
+        .consequences {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 24px 100px;
+        }
+        .consequences .warn-box {
+            background: var(--orange-dim);
+            border: 1px solid rgba(249,115,22,0.25);
+            border-radius: var(--radius);
+            padding: 36px 32px;
+        }
+        .consequences h2 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #fb923c;
+            margin-bottom: 24px;
+        }
+        .consequences ul {
+            list-style: none;
+            display: grid;
+            gap: 14px;
+        }
+        .consequences li {
+            position: relative;
+            padding-left: 24px;
+            font-size: 0.95rem;
+            color: #fdba74;
+            line-height: 1.55;
+        }
+        .consequences li::before {
+            content: '\26A0';
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 0.85rem;
+        }
+
+        /* ── MOBILE ── */
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+            .tl-node {
+                flex-direction: row !important;
+            }
+            .tl-node.left, .tl-node.right {
+                transform: translateX(30px);
+            }
+            .tl-node.visible { transform: translateX(0); }
+            .tl-dot {
+                left: 20px !important;
+            }
+            .tl-card {
+                width: calc(100% - 50px) !important;
+                margin-left: 50px !important;
+                margin-right: 0 !important;
+                border-right: none !important;
+                border-left: 3px solid rgba(239,68,68,0.4) !important;
+            }
+            .header h1 { font-size: 1.8rem; }
+            .final-reveal .total-box { padding: 30px 24px; }
+            .consequences .warn-box { padding: 28px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">Grundwerk &times; Urbify &mdash; <span>&nbsp;Version 4: Timeline Escalation</span></nav>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="label">Ausgangssituation</div>
+    <h1>Was Martin im Gespr&auml;ch beschrieben hat</h1>
+    <p class="lead">
+        Jeder der folgenden Punkte kostet Urbify Geld, Geschwindigkeit oder Marktanteile.
+        Zusammen ergeben sie ein Bild, das sich nicht durch einzelne Fixes l&ouml;sen l&auml;sst.
+    </p>
+</header>
+
+<!-- STICKY COUNTER -->
+<div class="counter-wrap" id="counterWrap">
+    <div class="counter-label">Laufende Kosten des Nichthandelns</div>
+    <div class="counter-value" id="counterValue">0 &euro;</div>
+</div>
+
+<!-- TIMELINE -->
+<section class="timeline">
+
+    <!-- NODE 1 — LEFT -->
+    <div class="tl-node left" data-cost="8000" data-cost-label="+8.000 &euro;">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+            <div class="node-number">Punkt 01</div>
+            <h3>E-Mail-Infrastruktur ohne Ergebnis</h3>
+            <div class="stat">12.500 Mails &mdash; 3% Response</div>
+            <p class="detail">
+                12.500 E-Mails versendet, aber nur 3&nbsp;% Response Rate.
+                Kein Setup f&uuml;r Deliverability, kein Tracking, keine Optimierung &mdash;
+                die Infrastruktur verbrennt Budget ohne messbaren R&uuml;cklauf.
+            </p>
+            <div class="quote">
+                &bdquo;Wir schicken schon E-Mails raus &mdash; aber wir haben wirklich keine Ahnung
+                warum die Response Rate so niedrig ist.&ldquo;
+            </div>
+            <div class="cost-tag">&plus;8.000 &euro; E-Mail-Kosten ohne ROI</div>
+        </div>
+    </div>
+
+    <!-- NODE 2 — RIGHT -->
+    <div class="tl-node right" data-cost="60000" data-cost-label="+60.000 &euro;">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+            <div class="node-number">Punkt 02</div>
+            <h3>Messeabh&auml;ngigkeit</h3>
+            <div class="stat">60.000 &euro;/Jahr &mdash; 35 Termine</div>
+            <p class="detail">
+                1.714&nbsp;&euro; pro Termin &uuml;ber Messen. Der Kanal funktioniert &mdash;
+                aber er skaliert nicht. Feste Kosten, feste Kapazit&auml;t, null Hebelwirkung.
+            </p>
+            <div class="quote">
+                &bdquo;Messen sind unser Hauptkanal. Aber 60.000 Euro im Jahr &mdash;
+                und ich kann das nicht skalieren.&ldquo;
+            </div>
+            <div class="cost-tag">&plus;60.000 &euro; Messebudget</div>
+        </div>
+    </div>
+
+    <!-- NODE 3 — LEFT -->
+    <div class="tl-node left" data-cost="4800" data-cost-label="+4.800 &euro;">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+            <div class="node-number">Punkt 03</div>
+            <h3>LinkedIn-Tools &mdash; bezahlt, ungenutzt</h3>
+            <div class="stat">4.800 &euro;/Jahr</div>
+            <p class="detail">
+                Lizenzen laufen, aber niemand nutzt sie systematisch.
+                Kein Playbook, keine Sequenzen, kein Tracking.
+            </p>
+            <div class="quote">
+                &bdquo;Wir haben LinkedIn Tools &mdash; aber ehrlich gesagt nutzt die gerade keiner wirklich.&ldquo;
+            </div>
+            <div class="cost-tag">&plus;4.800 &euro; tote Lizenzen</div>
+        </div>
+    </div>
+
+    <!-- NODE 4 — RIGHT -->
+    <div class="tl-node right" data-cost="960000" data-cost-label="+960.000 &euro;">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+            <div class="node-number">Punkt 04</div>
+            <h3>9 Meetings/Monat &mdash; massive Unterkapazit&auml;t</h3>
+            <div class="stat">960.000 &euro;+</div>
+            <p class="detail">
+                Robert: 5, Jannis: 0, Martin: 3&ndash;4 Meetings/Monat.<br>
+                192&ndash;372 verlorene Meetings pro Jahr bei 10&nbsp;% Close-Rate
+                und &empty; 50k Dealwert = Opportunit&auml;tskosten im sechsstelligen Bereich.
+            </p>
+            <div class="cost-tag">&plus;960.000 &euro; Opportunit&auml;tskosten (minimum)</div>
+        </div>
+    </div>
+
+    <!-- NODE 5 — LEFT -->
+    <div class="tl-node left" data-cost="0" data-cost-text="Bewertungsrisiko: nicht quantifizierbar">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+            <div class="node-number">Punkt 05</div>
+            <h3>Keine Planbarkeit</h3>
+            <div class="stat orange">Nicht quantifizierbar</div>
+            <p class="detail">
+                Kein Forecast, keine Pipeline-Transparenz. Investoren und Board
+                k&ouml;nnen keine zuverl&auml;ssige Bewertung ableiten.
+            </p>
+            <div class="quote">
+                &bdquo;Ich kann Ben nicht sagen wie viele Termine n&auml;chsten Monat reinkommen.&ldquo;
+            </div>
+            <div class="cost-tag orange">Bewertungsrisiko</div>
+        </div>
+    </div>
+
+    <!-- NODE 6 — RIGHT -->
+    <div class="tl-node right" data-cost="0" data-cost-text="&lt;5% Marktabdeckung">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+            <div class="node-number">Punkt 06</div>
+            <h3>400 von 10.000+ Retailern kontaktiert</h3>
+            <div class="stat blue">&lt;5&nbsp;% Marktabdeckung</div>
+            <p class="detail">
+                Jeder unber&uuml;hrte Retailer ist ein potenzieller 50k+ Deal.
+                Bei 10.000+ Ziel-Retailern bleiben &uuml;ber 9.600 unkontaktiert.
+            </p>
+            <div class="cost-tag orange">&lt;5&nbsp;% des Marktes aktiviert</div>
+        </div>
+    </div>
+
+    <!-- NODE 7 — LEFT -->
+    <div class="tl-node left" data-cost="500000" data-cost-label="+500.000 &euro;">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+            <div class="node-number">Punkt 07</div>
+            <h3>6 Monate Sales Cycle</h3>
+            <div class="stat">500.000 &euro;</div>
+            <p class="detail">
+                42.000&nbsp;&euro;/Monat verz&ouml;gerter Umsatz bei 10 Deals/Jahr.
+                Jeder Monat ohne Pipeline-Beschleunigung kostet ein halbes Quartal Wachstum.
+            </p>
+            <div class="cost-tag">&plus;500.000 &euro; verz&ouml;gerte Pipeline</div>
+        </div>
+    </div>
+
+    <!-- NODE 8 — RIGHT -->
+    <div class="tl-node right" data-cost="0" data-cost-text="3&times; schwieriger zu konvertieren">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+            <div class="node-number">Punkt 08</div>
+            <h3>Wettbewerber sind schneller</h3>
+            <div class="stat orange">3&times; schwieriger</div>
+            <p class="detail">
+                Liefery, DPD und andere kontaktieren bereits dieselben Entscheider.
+                Wer zuerst im Postfach ist, setzt den Anker &mdash; danach wird jede
+                Konvertierung 3&times; aufw&auml;ndiger.
+            </p>
+            <div class="cost-tag orange">Wettbewerbsvorsprung schwindet</div>
+        </div>
+    </div>
+
+</section>
+
+<!-- FINAL REVEAL -->
+<section class="final-reveal">
+    <div class="total-box">
+        <div class="total-label">Gesch&auml;tztes verlorenes Potenzial</div>
+        <div class="total-number">1,0 &ndash; 2,4 Mio. &euro;</div>
+        <div class="total-sub">pro Jahr &mdash; konservativ gerechnet</div>
+    </div>
+</section>
+
+<!-- CONSEQUENCES -->
+<section class="consequences">
+    <div class="warn-box">
+        <h2>Konsequenzen bei Nichthandeln</h2>
+        <ul>
+            <li>Abh&auml;ngigkeit von Messen und Empfehlungen bleibt bestehen</li>
+            <li>3 Vertriebler arbeiten unter Kapazit&auml;t &mdash; ohne planbare Pipeline</li>
+            <li>Wettbewerber bauen systematisch Outbound auf</li>
+            <li>Bestehende Tools bleiben Kostenblock ohne ROI</li>
+            <li>Kein Forecasting m&ouml;glich &mdash; Investoren sehen Risiko</li>
+            <li>Leads wechseln zur schnelleren Alternative</li>
+        </ul>
+    </div>
+</section>
+
+<script>
+(function() {
+    'use strict';
+
+    /* ── Counter State ── */
+    const counterEl  = document.getElementById('counterValue');
+    const counterWrap = document.getElementById('counterWrap');
+    const nodes = document.querySelectorAll('.tl-node');
+    let currentTotal = 0;
+    let displayTotal = 0;
+    let activeNodes  = new Set();
+    let currentTextOverride = null;
+    let animFrame = null;
+
+    /* Format number with dots (German) */
+    function fmt(n) {
+        return n.toLocaleString('de-DE');
+    }
+
+    /* Animate counter to target */
+    function animateCounter(target) {
+        if (animFrame) cancelAnimationFrame(animFrame);
+        const start = displayTotal;
+        const diff = target - start;
+        const duration = 600;
+        const startTime = performance.now();
+
+        function tick(now) {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const ease = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+            displayTotal = Math.round(start + diff * ease);
+            counterEl.innerHTML = fmt(displayTotal) + ' \u20AC';
+            counterEl.classList.remove('text-mode');
+            if (progress < 1) {
+                animFrame = requestAnimationFrame(tick);
+            }
+        }
+        animFrame = requestAnimationFrame(tick);
+    }
+
+    /* Show text override in counter */
+    function showTextCounter(text) {
+        if (animFrame) cancelAnimationFrame(animFrame);
+        counterEl.innerHTML = text;
+        counterEl.classList.add('text-mode');
+    }
+
+    /* Recalculate total from active nodes */
+    function recalculate() {
+        let total = 0;
+        let lastText = null;
+
+        // Walk nodes in DOM order, accumulate costs for active ones
+        nodes.forEach(function(node, i) {
+            if (activeNodes.has(i)) {
+                const cost = parseInt(node.dataset.cost) || 0;
+                total += cost;
+                if (node.dataset.costText) {
+                    lastText = node.dataset.costText;
+                }
+            }
+        });
+
+        currentTotal = total;
+        currentTextOverride = lastText;
+
+        if (lastText && currentTotal === 0) {
+            // Only text nodes active (no numeric cost added recently)
+            showTextCounter(lastText);
+        } else if (currentTotal > 0) {
+            animateCounter(currentTotal);
+        }
+
+        // Glow effect when counter is active
+        if (activeNodes.size > 0) {
+            counterWrap.classList.add('active');
+        }
+    }
+
+    /* ── IntersectionObserver ── */
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            const node = entry.target;
+            const idx = Array.prototype.indexOf.call(nodes, node);
+
+            if (entry.isIntersecting) {
+                node.classList.add('visible');
+                if (!activeNodes.has(idx)) {
+                    activeNodes.add(idx);
+                    recalculate();
+                }
+            }
+        });
+    }, {
+        threshold: 0.25,
+        rootMargin: '-80px 0px -60px 0px'
+    });
+
+    nodes.forEach(function(node) {
+        observer.observe(node);
+    });
+
+    /* Keep counter showing latest meaningful state on scroll up/down */
+    /* We intentionally do NOT remove nodes from activeNodes — costs only go UP (escalation) */
+
+})();
+</script>
+
+</body>
+</html>

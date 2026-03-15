@@ -1,0 +1,808 @@
+<!-- GRUNDWERK-OFFER Urbify | Situation V1 "Dark Mirror" | 2026-03-15 -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII=" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urbify &times; Grundwerk &mdash; Situation (Dark Mirror)</title>
+    <script>
+        (function(){
+            var code = '7294830165';
+            var params = new URLSearchParams(window.location.search);
+            if(params.get('secure') !== code){
+                document.documentElement.style.display='none';
+                document.title='Zugriff verweigert';
+                window.stop();
+            }
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #060608;
+            --bg-scene: #0a0a0e;
+            --red: #ef4444;
+            --red-dim: rgba(239, 68, 68, 0.12);
+            --red-glow: rgba(239, 68, 68, 0.25);
+            --quote-blue: #93a8f5;
+            --text: #f0f0f0;
+            --text-muted: #999;
+            --text-dim: #555;
+            --orange: #f97316;
+            --orange-dim: rgba(249, 115, 22, 0.15);
+            --border: rgba(255,255,255,0.06);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ── NAV ── */
+        .nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            background: rgba(6, 6, 8, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 40px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand {
+            font-weight: 800;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            color: var(--text);
+        }
+        .nav-brand span { color: var(--text-dim); }
+        .nav-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-dim);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 40px 80px;
+            position: relative;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 10%; right: 10%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(239,68,68,0.3), transparent);
+        }
+        .hero-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 24px;
+        }
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 800;
+            line-height: 1.15;
+            color: var(--text);
+            margin-bottom: 28px;
+            max-width: 800px;
+        }
+        .hero-lead {
+            font-size: clamp(15px, 1.8vw, 18px);
+            color: var(--text-muted);
+            max-width: 680px;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+        .scroll-hint {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-dim);
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            animation: pulseDown 2s ease-in-out infinite;
+        }
+        .scroll-hint .arrow {
+            width: 20px;
+            height: 20px;
+            border-right: 2px solid var(--red);
+            border-bottom: 2px solid var(--red);
+            transform: rotate(45deg);
+            opacity: 0.6;
+        }
+        @keyframes pulseDown {
+            0%, 100% { opacity: 0.4; transform: translateX(-50%) translateY(0); }
+            50% { opacity: 1; transform: translateX(-50%) translateY(8px); }
+        }
+
+        /* ── SCENE (each pain point) ── */
+        .scene {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 80px 40px;
+            position: relative;
+            border-bottom: 1px solid var(--border);
+        }
+        .scene-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+        .scene-number {
+            font-size: 72px;
+            font-weight: 800;
+            color: var(--red);
+            line-height: 1;
+            position: sticky;
+            top: 120px;
+        }
+        .scene-number .hash {
+            font-size: 36px;
+            color: var(--text-dim);
+            vertical-align: top;
+            margin-right: 4px;
+        }
+        .scene-content {
+            padding-top: 8px;
+        }
+        .scene-title {
+            font-size: clamp(22px, 2.5vw, 30px);
+            font-weight: 800;
+            color: var(--text);
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+        .scene-metric {
+            font-size: clamp(42px, 5vw, 64px);
+            font-weight: 800;
+            color: var(--red);
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        .scene-desc {
+            font-size: 16px;
+            color: var(--text-muted);
+            line-height: 1.75;
+            max-width: 640px;
+            margin-bottom: 32px;
+        }
+        .scene-quote {
+            position: relative;
+            padding: 24px 0 24px 32px;
+            border-left: 3px solid rgba(147, 168, 245, 0.3);
+            margin-bottom: 32px;
+            max-width: 640px;
+        }
+        .scene-quote::before {
+            content: '\201E';
+            position: absolute;
+            top: -20px;
+            left: -8px;
+            font-size: 80px;
+            color: rgba(147, 168, 245, 0.15);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        .scene-quote p {
+            font-size: 17px;
+            font-style: italic;
+            color: var(--quote-blue);
+            line-height: 1.7;
+            opacity: 0.85;
+        }
+        .scene-quote cite {
+            display: block;
+            margin-top: 12px;
+            font-size: 13px;
+            font-style: normal;
+            color: var(--text-dim);
+            font-weight: 600;
+        }
+        .scene-cost {
+            background: var(--red-dim);
+            border: 1px solid rgba(239, 68, 68, 0.15);
+            border-radius: 10px;
+            padding: 20px 24px;
+            max-width: 640px;
+        }
+        .scene-cost-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 8px;
+        }
+        .scene-cost p {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.65;
+        }
+
+        /* ── REVEAL ANIMATION ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.35s; }
+        .reveal-delay-4 { transition-delay: 0.5s; }
+
+        /* ── COST COMPARISON ── */
+        .comparison {
+            padding: 120px 40px;
+            position: relative;
+        }
+        .comparison::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 10%; right: 10%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(239,68,68,0.3), transparent);
+        }
+        .comparison-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .comparison-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 16px;
+        }
+        .comparison h2 {
+            font-size: clamp(28px, 3.5vw, 40px);
+            font-weight: 800;
+            margin-bottom: 60px;
+        }
+        .bar-group {
+            margin-bottom: 40px;
+        }
+        .bar-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 12px;
+        }
+        .bar-label-text {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+        .bar-label-value {
+            font-size: 28px;
+            font-weight: 800;
+        }
+        .bar-label-value.red { color: var(--red); }
+        .bar-label-value.green { color: #22c55e; }
+        .bar-track {
+            height: 12px;
+            background: rgba(255,255,255,0.04);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .bar-fill {
+            height: 100%;
+            border-radius: 6px;
+            width: 0;
+            transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .bar-fill.red { background: linear-gradient(90deg, var(--red), #dc2626); }
+        .bar-fill.green { background: linear-gradient(90deg, #22c55e, #16a34a); }
+        .bar-meta {
+            margin-top: 8px;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        /* ── COST OF INACTION ── */
+        .inaction {
+            padding: 120px 40px;
+            background: linear-gradient(180deg, rgba(239,68,68,0.06) 0%, rgba(239,68,68,0.12) 50%, rgba(239,68,68,0.04) 100%);
+            border-top: 1px solid rgba(239,68,68,0.15);
+            border-bottom: 1px solid rgba(239,68,68,0.15);
+        }
+        .inaction-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .inaction-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 16px;
+        }
+        .inaction h2 {
+            font-size: clamp(28px, 3.5vw, 40px);
+            font-weight: 800;
+            margin-bottom: 60px;
+            color: var(--text);
+        }
+        .inaction-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(239,68,68,0.1);
+        }
+        .inaction-row:last-of-type {
+            border-bottom: none;
+        }
+        .inaction-item {
+            font-size: 15px;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+        .inaction-value {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--red);
+            text-align: right;
+            white-space: nowrap;
+        }
+        .inaction-total {
+            margin-top: 40px;
+            padding: 28px 32px;
+            background: rgba(239, 68, 68, 0.12);
+            border: 1px solid rgba(239, 68, 68, 0.25);
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .inaction-total-label {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--red);
+        }
+        .inaction-total-value {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 800;
+            color: var(--red);
+        }
+
+        /* ── CONSEQUENCES ── */
+        .consequences {
+            padding: 120px 40px;
+            position: relative;
+        }
+        .consequences::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 10%; right: 10%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(249,115,22,0.3), transparent);
+        }
+        .consequences-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .consequences-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--orange);
+            margin-bottom: 16px;
+        }
+        .consequences h2 {
+            font-size: clamp(28px, 3.5vw, 40px);
+            font-weight: 800;
+            margin-bottom: 60px;
+        }
+        .consequence-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .consequence-item:last-child {
+            border-bottom: none;
+        }
+        .consequence-icon {
+            flex-shrink: 0;
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: var(--orange-dim);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            margin-top: 2px;
+        }
+        .consequence-text {
+            font-size: 16px;
+            color: var(--text-muted);
+            line-height: 1.65;
+        }
+
+        /* ── FOOTER ── */
+        .footer {
+            padding: 60px 40px;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+        .footer p {
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        /* ── MOBILE ── */
+        @media (max-width: 768px) {
+            .nav { padding: 0 20px; }
+            .hero { padding: 100px 24px 80px; }
+            .scene { padding: 60px 24px; min-height: auto; }
+            .scene-inner {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .scene-number {
+                font-size: 48px;
+                position: static;
+            }
+            .comparison, .inaction, .consequences { padding: 80px 24px; }
+            .inaction-row { flex-direction: column; gap: 6px; }
+            .inaction-total { flex-direction: column; gap: 12px; text-align: center; }
+            .bar-label { flex-direction: column; gap: 4px; }
+            .nav-label { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ════ NAV ════ -->
+<nav class="nav">
+    <div class="nav-brand">Grundwerk <span>&times;</span> Urbify</div>
+    <div class="nav-label">Situation &mdash; Version 1: Dark Mirror</div>
+</nav>
+
+<!-- ════ HERO ════ -->
+<section class="hero">
+    <div class="hero-label reveal">Die Ausgangssituation</div>
+    <h1 class="reveal reveal-delay-1">Was Martin im Gespr&auml;ch beschrieben hat</h1>
+    <p class="hero-lead reveal reveal-delay-2">Keine Agenda &mdash; nur eine ehrliche Einsch&auml;tzung der aktuellen Situation bei Urbify, basierend auf dem 94-Minuten-Gespr&auml;ch am 13.03.2026.</p>
+    <div class="scroll-hint">
+        <span>Scroll</span>
+        <div class="arrow"></div>
+    </div>
+</section>
+
+<!-- ════ PAIN POINT 1 ════ -->
+<section class="scene">
+    <div class="scene-inner">
+        <div class="scene-number reveal"><span class="hash">#</span>1</div>
+        <div class="scene-content">
+            <h3 class="scene-title reveal">E-Mail-Infrastruktur ohne Struktur</h3>
+            <div class="scene-metric reveal reveal-delay-1">3% Response</div>
+            <p class="scene-desc reveal reveal-delay-2">12.500 versendete Emails, nur 3% Response Rate. Infrastruktur vorhanden &mdash; aber ohne Targeting, Segmentierung und Deliverability-Optimierung verpufft das gesamte Potenzial.</p>
+            <blockquote class="scene-quote reveal reveal-delay-3">
+                <p>&bdquo;Wir schicken schon E-Mails raus &mdash; aber wir haben wirklich keine Ahnung warum die Response Rate so niedrig ist. 3% f&uuml;hlt sich nicht gut an.&ldquo;</p>
+                <cite>Martin Hoffmann, Head of Sales</cite>
+            </blockquote>
+            <div class="scene-cost reveal reveal-delay-4">
+                <div class="scene-cost-label">Was das kostet</div>
+                <p>Bei Branchenstandard 15&ndash;25% Reply-Rate entgehen Urbify ca. 1.500&ndash;2.750 Antworten pro Jahr. Bei 10% Terminquote = 150&ndash;275 verlorene Meetings.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ════ PAIN POINT 2 ════ -->
+<section class="scene">
+    <div class="scene-inner">
+        <div class="scene-number reveal"><span class="hash">#</span>2</div>
+        <div class="scene-content">
+            <h3 class="scene-title reveal">Messen: teuer, nicht skalierbar</h3>
+            <div class="scene-metric reveal reveal-delay-1">1.700&thinsp;&euro;/Meeting</div>
+            <p class="scene-desc reveal reveal-delay-2">~60.000 EUR Messekosten pro Jahr f&uuml;r 30&ndash;40 Termine. ~1.700 EUR pro Meeting &mdash; und nur 2&ndash;3 Mal im Jahr einsetzbar.</p>
+            <blockquote class="scene-quote reveal reveal-delay-3">
+                <p>&bdquo;Messen sind unser Hauptkanal. Aber 60.000 Euro im Jahr &mdash; und ich kann das nicht skalieren. Zweimal im Jahr ist einfach zu wenig um konstant zu wachsen.&ldquo;</p>
+                <cite>Martin Hoffmann</cite>
+            </blockquote>
+            <div class="scene-cost reveal reveal-delay-4">
+                <div class="scene-cost-label">Was das kostet</div>
+                <p>60.000&thinsp;&euro;/Jahr f&uuml;r nur 35 Kontaktpunkte. Pro Termin = 1.714&thinsp;&euro;. 10 Monate im Jahr ohne Messe-Pipeline.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ════ PAIN POINT 3 ════ -->
+<section class="scene">
+    <div class="scene-inner">
+        <div class="scene-number reveal"><span class="hash">#</span>3</div>
+        <div class="scene-content">
+            <h3 class="scene-title reveal">LinkedIn-Tools bezahlt, nicht genutzt</h3>
+            <div class="scene-metric reveal reveal-delay-1">0 Leads</div>
+            <p class="scene-desc reveal reveal-delay-2">Urbify bezahlt f&uuml;r LinkedIn Sales Tools, aber nutzt sie nicht aktiv. Das Budget flie&szlig;t, ohne dass ein einziger Lead dar&uuml;ber generiert wird.</p>
+            <blockquote class="scene-quote reveal reveal-delay-3">
+                <p>&bdquo;Wir haben LinkedIn Tools &mdash; aber ehrlich gesagt nutzt die gerade keiner wirklich. Das liegt einfach so rum.&ldquo;</p>
+                <cite>Martin Hoffmann</cite>
+            </blockquote>
+            <div class="scene-cost reveal reveal-delay-4">
+                <div class="scene-cost-label">Was das kostet</div>
+                <p>~3.600&ndash;6.000&thinsp;&euro;/Jahr f&uuml;r ungenutzte LinkedIn-Lizenzen</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ════ PAIN POINT 4 ════ -->
+<section class="scene">
+    <div class="scene-inner">
+        <div class="scene-number reveal"><span class="hash">#</span>4</div>
+        <div class="scene-content">
+            <h3 class="scene-title reveal">Nur ~9 Meetings/Monat bei 3 Vertrieblern</h3>
+            <div class="scene-metric reveal reveal-delay-1">9 von 40</div>
+            <p class="scene-desc reveal reveal-delay-2">Robert: 5/Mo. Jannis: 0. Martin: 3&ndash;4. Bei 3 Vertrieblern sind ~9 Meetings/Monat weit unter dem Benchmark von 25&ndash;40.</p>
+            <div class="scene-cost reveal reveal-delay-3">
+                <div class="scene-cost-label">Was das kostet</div>
+                <p>~16&ndash;31 fehlende Meetings/Monat &times; 12 = 192&ndash;372 verlorene Meetings/Jahr. Close-Rate 10%, &Oslash;-Dealwert 50.000&thinsp;&euro; = 960.000&ndash;1.860.000&thinsp;&euro; verlorene Pipeline.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ════ PAIN POINT 5 ════ -->
+<section class="scene">
+    <div class="scene-inner">
+        <div class="scene-number reveal"><span class="hash">#</span>5</div>
+        <div class="scene-content">
+            <h3 class="scene-title reveal">Keine Planbarkeit &mdash; keine steuerbare Pipeline</h3>
+            <div class="scene-metric reveal reveal-delay-1">0% Forecast</div>
+            <p class="scene-desc reveal reveal-delay-2">Empfehlungen und Messen lassen sich nicht steuern. Niemand kann beantworten wie viele Leads n&auml;chsten Monat kommen.</p>
+            <blockquote class="scene-quote reveal reveal-delay-3">
+                <p>&bdquo;Das Problem ist: Ich kann Ben nicht sagen wie viele Termine n&auml;chsten Monat reinkommen. Wir haben keine Pipeline die wir wirklich steuern k&ouml;nnen.&ldquo;</p>
+                <cite>Martin Hoffmann</cite>
+            </blockquote>
+            <div class="scene-cost reveal reveal-delay-4">
+                <div class="scene-cost-label">Was das kostet</div>
+                <p>Keine Forecasting-F&auml;higkeit = keine Planbarkeit. Bewertungsrisiko bei n&auml;chster Finanzierungsrunde.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ════ PAIN POINT 6 ════ -->
+<section class="scene">
+    <div class="scene-inner">
+        <div class="scene-number reveal"><span class="hash">#</span>6</div>
+        <div class="scene-content">
+            <h3 class="scene-title reveal">Kleine Datenbank, keine Lead-Maschine</h3>
+            <div class="scene-metric reveal reveal-delay-1">&lt;5% Markt</div>
+            <p class="scene-desc reveal reveal-delay-2">1.000&ndash;2.500 Unternehmen, davon nur 400 aktive Leads. Marktpotenzial nicht ann&auml;hernd ausgesch&ouml;pft.</p>
+            <div class="scene-cost reveal reveal-delay-3">
+                <div class="scene-cost-label">Was das kostet</div>
+                <p>400 Leads bei adressierbarem Markt von tausenden Retailern = weniger als 5% Marktabdeckung.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ════ PAIN POINT 7 ════ -->
+<section class="scene">
+    <div class="scene-inner">
+        <div class="scene-number reveal"><span class="hash">#</span>7</div>
+        <div class="scene-content">
+            <h3 class="scene-title reveal">6 Monate Sales Cycle &mdash; ohne Beschleuniger</h3>
+            <div class="scene-metric reveal reveal-delay-1">6 Monate</div>
+            <p class="scene-desc reveal reveal-delay-2">Vom Erstkontakt bis Abschluss vergehen 6 Monate. Ohne strukturiertes Nurturing bleibt der Cycle lang.</p>
+            <div class="scene-cost reveal reveal-delay-3">
+                <div class="scene-cost-label">Was das kostet</div>
+                <p>Jeder Monat Verz&ouml;gerung = 1 Monat sp&auml;terer Revenue. Bei 10 Deals/Jahr &times; 50k = ~42.000&thinsp;&euro;/Monat verz&ouml;gerter Umsatz.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ════ PAIN POINT 8 ════ -->
+<section class="scene">
+    <div class="scene-inner">
+        <div class="scene-number reveal"><span class="hash">#</span>8</div>
+        <div class="scene-content">
+            <h3 class="scene-title reveal">Wettbewerber bauen Outbound auf</h3>
+            <div class="scene-metric reveal reveal-delay-1">3&times; schwieriger</div>
+            <p class="scene-desc reveal reveal-delay-2">Liefery, DPD und andere kontaktieren dieselben E-Commerce-Entscheider bereits per Cold Email und LinkedIn.</p>
+            <div class="scene-cost reveal reveal-delay-3">
+                <div class="scene-cost-label">Was das kostet</div>
+                <p>Entscheider die bereits von einem Wettbewerber kontaktiert wurden, sind 3x schwieriger zu konvertieren.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ════ COST COMPARISON ════ -->
+<section class="comparison">
+    <div class="comparison-inner">
+        <div class="comparison-label reveal">Kostenvergleich</div>
+        <h2 class="reveal reveal-delay-1">Kosten pro Termin</h2>
+
+        <div class="bar-group reveal reveal-delay-2">
+            <div class="bar-label">
+                <span class="bar-label-text">Messen (~60k / 35 Termine)</span>
+                <span class="bar-label-value red">~1.700&thinsp;&euro;</span>
+            </div>
+            <div class="bar-track">
+                <div class="bar-fill red" data-width="100"></div>
+            </div>
+            <div class="bar-meta">~1.714&thinsp;&euro; pro Meeting &mdash; nur 2&ndash;3x/Jahr verf&uuml;gbar</div>
+        </div>
+
+        <div class="bar-group reveal reveal-delay-3">
+            <div class="bar-label">
+                <span class="bar-label-text">Grundwerk Outbound-System</span>
+                <span class="bar-label-value green">~440&thinsp;&euro;</span>
+            </div>
+            <div class="bar-track">
+                <div class="bar-fill green" data-width="26"></div>
+            </div>
+            <div class="bar-meta">74% g&uuml;nstiger &mdash; 12 Monate im Jahr skalierbar</div>
+        </div>
+    </div>
+</section>
+
+<!-- ════ COST OF INACTION ════ -->
+<section class="inaction">
+    <div class="inaction-inner">
+        <div class="inaction-label reveal">Kosten des Nichthandelns</div>
+        <h2 class="reveal reveal-delay-1">N&auml;chste 12 Monate ohne System</h2>
+
+        <div class="reveal reveal-delay-2">
+            <div class="inaction-row">
+                <span class="inaction-item">Messekosten (nicht-skalierbar)</span>
+                <span class="inaction-value">60.000&thinsp;&euro;</span>
+            </div>
+            <div class="inaction-row">
+                <span class="inaction-item">LinkedIn-Tools (bezahlt, ungenutzt)</span>
+                <span class="inaction-value">~4.800&thinsp;&euro;</span>
+            </div>
+            <div class="inaction-row">
+                <span class="inaction-item">E-Mail-Kosten ohne ROI</span>
+                <span class="inaction-value">~8.000&thinsp;&euro;</span>
+            </div>
+            <div class="inaction-row">
+                <span class="inaction-item">Opportunit&auml;tskosten fehlende Meetings</span>
+                <span class="inaction-value">960k&ndash;1,86 Mio.&thinsp;&euro;</span>
+            </div>
+            <div class="inaction-row">
+                <span class="inaction-item">Verz&ouml;gerte Pipeline</span>
+                <span class="inaction-value">~500.000&thinsp;&euro;</span>
+            </div>
+            <div class="inaction-row">
+                <span class="inaction-item">Verlorene Marktanteile</span>
+                <span class="inaction-value" style="color: var(--text-dim); font-style: italic; font-weight: 400;">nicht quantifizierbar</span>
+            </div>
+        </div>
+
+        <div class="inaction-total reveal reveal-delay-3">
+            <span class="inaction-total-label">Gesamtrisiko</span>
+            <span class="inaction-total-value">1,0&ndash;2,4 Mio.&thinsp;&euro;</span>
+        </div>
+    </div>
+</section>
+
+<!-- ════ CONSEQUENCES ════ -->
+<section class="consequences">
+    <div class="consequences-inner">
+        <div class="consequences-label reveal">Warnung</div>
+        <h2 class="reveal reveal-delay-1">N&auml;chste 12 Monate ohne strukturiertes Outbound</h2>
+
+        <div class="consequence-item reveal reveal-delay-2">
+            <div class="consequence-icon">&#x26A0;</div>
+            <p class="consequence-text">Weiterhin Abh&auml;ngigkeit von Messen und Empfehlungen</p>
+        </div>
+        <div class="consequence-item reveal reveal-delay-2">
+            <div class="consequence-icon">&#x26A0;</div>
+            <p class="consequence-text">3 Vertriebler arbeiten unter Kapazit&auml;t</p>
+        </div>
+        <div class="consequence-item reveal reveal-delay-2">
+            <div class="consequence-icon">&#x26A0;</div>
+            <p class="consequence-text">Wettbewerber bauen Outbound-Systeme auf</p>
+        </div>
+        <div class="consequence-item reveal reveal-delay-3">
+            <div class="consequence-icon">&#x26A0;</div>
+            <p class="consequence-text">E-Mail-Infrastruktur und LinkedIn-Tools bleiben Kostenblock ohne ROI</p>
+        </div>
+        <div class="consequence-item reveal reveal-delay-3">
+            <div class="consequence-icon">&#x26A0;</div>
+            <p class="consequence-text">Kein Forecasting gegen&uuml;ber GF und Investoren</p>
+        </div>
+        <div class="consequence-item reveal reveal-delay-4">
+            <div class="consequence-icon">&#x26A0;</div>
+            <p class="consequence-text">Jeder Monat ohne System = Leads die zur schnelleren Alternative wechseln</p>
+        </div>
+    </div>
+</section>
+
+<!-- ════ FOOTER ════ -->
+<footer class="footer">
+    <p>Grundwerk Digital &times; Urbify &mdash; Situation V1 &ldquo;Dark Mirror&rdquo;</p>
+</footer>
+
+<!-- ════ SCROLL REVEAL + BAR ANIMATION ════ -->
+<script>
+(function() {
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+
+                // Animate bar fills
+                var bars = entry.target.querySelectorAll('.bar-fill[data-width]');
+                bars.forEach(function(bar) {
+                    setTimeout(function() {
+                        bar.style.width = bar.getAttribute('data-width') + '%';
+                    }, 200);
+                });
+            }
+        });
+    }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -40px 0px'
+    });
+
+    document.querySelectorAll('.reveal').forEach(function(el) {
+        observer.observe(el);
+    });
+})();
+</script>
+
+</body>
+</html>

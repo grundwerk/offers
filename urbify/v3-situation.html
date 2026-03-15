@@ -1,0 +1,749 @@
+<!-- GRUNDWERK-OFFER v3-situation | 2026-03-15 | Split Screen: Heute vs. Morgen -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII=" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grundwerk &times; Urbify &mdash; Version 3: Split Screen</title>
+    <script>
+        (function(){
+            var code = '7294830165';
+            var params = new URLSearchParams(window.location.search);
+            if(params.get('secure') !== code){
+                document.documentElement.style.display='none';
+                document.title='Zugriff verweigert';
+                window.stop();
+            }
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg-left: #0a0a0a;
+            --bg-right: #0d1224;
+            --text: #f0f0f0;
+            --text-muted: #999;
+            --text-dim: #666;
+            --red: #ef4444;
+            --red-dim: rgba(239,68,68,0.12);
+            --red-border: rgba(239,68,68,0.35);
+            --blue: #4f7df9;
+            --blue-dim: rgba(79,125,249,0.10);
+            --blue-border: rgba(79,125,249,0.35);
+            --green: #22c55e;
+            --green-dim: rgba(34,197,94,0.12);
+            --orange: #f97316;
+            --orange-dim: rgba(249,115,22,0.10);
+            --border: rgba(255,255,255,0.07);
+            --divider: rgba(255,255,255,0.10);
+            --radius: 14px;
+            --radius-sm: 8px;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+            background: var(--bg-left);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(10,10,10,0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 32px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        nav .brand {
+            font-weight: 800; font-size: 14px; letter-spacing: 0.5px;
+            color: var(--text-muted);
+        }
+        nav .brand span { color: var(--blue); }
+        nav .version {
+            font-size: 12px; color: var(--text-dim);
+            background: rgba(255,255,255,0.05);
+            padding: 4px 12px; border-radius: 20px;
+        }
+
+        /* ── HEADER ── */
+        .header {
+            padding: 120px 32px 60px;
+            text-align: center;
+            max-width: 900px; margin: 0 auto;
+        }
+        .header h1 {
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+        .header h1 .red { color: var(--red); }
+        .header h1 .blue { color: var(--blue); }
+        .header p {
+            font-size: 18px;
+            color: var(--text-muted);
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        /* ── COLUMN LABELS ── */
+        .column-labels {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+            position: sticky;
+            top: 56px;
+            z-index: 90;
+        }
+        .column-labels .label {
+            padding: 12px 24px;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        .column-labels .label-left {
+            background: rgba(10,10,10,0.95);
+            color: var(--red);
+            border-bottom: 2px solid var(--red);
+            backdrop-filter: blur(12px);
+        }
+        .column-labels .label-right {
+            background: rgba(13,18,36,0.95);
+            color: var(--green);
+            border-bottom: 2px solid var(--green);
+            backdrop-filter: blur(12px);
+        }
+
+        /* ── SPLIT ROW ── */
+        .split-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            max-width: 1280px;
+            margin: 0 auto;
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .split-row.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Vertical divider */
+        .split-row::after {
+            content: '';
+            position: absolute;
+            top: 0; bottom: 0;
+            left: 50%;
+            width: 1px;
+            background: var(--divider);
+            z-index: 2;
+        }
+
+        .side {
+            padding: 32px;
+        }
+        .side-left {
+            background: var(--bg-left);
+        }
+        .side-right {
+            background: var(--bg-right);
+        }
+
+        /* ── CARDS ── */
+        .card {
+            border-radius: var(--radius);
+            padding: 28px;
+            position: relative;
+        }
+        .card-left {
+            background: rgba(255,255,255,0.025);
+            border: 1px solid var(--red-border);
+            border-left: 3px solid var(--red);
+        }
+        .card-right {
+            background: var(--blue-dim);
+            border: 1px solid var(--blue-border);
+            border-left: 3px solid var(--blue);
+        }
+
+        .card .row-num {
+            position: absolute;
+            top: -12px; left: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            padding: 2px 10px;
+            border-radius: 4px;
+        }
+        .card-left .row-num {
+            background: var(--red-dim);
+            color: var(--red);
+        }
+        .card-right .row-num {
+            background: var(--blue-dim);
+            color: var(--blue);
+        }
+
+        .card h3 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+        .card-left h3 { color: #e0e0e0; }
+        .card-right h3 { color: var(--text); }
+
+        .metric {
+            font-size: clamp(28px, 3.5vw, 40px);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 12px;
+        }
+        .metric-red { color: var(--red); }
+        .metric-blue { color: var(--blue); }
+        .metric-green { color: var(--green); }
+
+        .card p {
+            font-size: 15px;
+            line-height: 1.65;
+        }
+        .card-left p { color: var(--text-dim); }
+        .card-right p { color: var(--text-muted); }
+
+        .quote {
+            margin-top: 16px;
+            padding: 14px 18px;
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            font-style: italic;
+            line-height: 1.6;
+        }
+        .card-left .quote {
+            background: var(--red-dim);
+            border-left: 3px solid var(--red);
+            color: #bbb;
+        }
+
+        .quote-author {
+            display: block;
+            margin-top: 8px;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .check-list {
+            list-style: none;
+            margin-top: 12px;
+        }
+        .check-list li {
+            padding: 6px 0;
+            font-size: 15px;
+            color: var(--text-muted);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .check-list li::before {
+            content: '\2713';
+            color: var(--green);
+            font-weight: 800;
+            font-size: 16px;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .cost-tag {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+        .cost-tag-red {
+            background: var(--red-dim);
+            color: var(--red);
+        }
+        .cost-tag-green {
+            background: var(--green-dim);
+            color: var(--green);
+        }
+
+        /* ── FULL WIDTH SECTIONS ── */
+        .full-section {
+            max-width: 1280px;
+            margin: 60px auto;
+            padding: 0 32px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .full-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Kosten Box */
+        .cost-box {
+            background: linear-gradient(135deg, rgba(239,68,68,0.08) 0%, rgba(249,115,22,0.06) 100%);
+            border: 1px solid var(--red-border);
+            border-radius: var(--radius);
+            padding: 48px;
+        }
+        .cost-box h2 {
+            font-size: clamp(24px, 3vw, 36px);
+            font-weight: 800;
+            color: var(--red);
+            margin-bottom: 32px;
+        }
+        .cost-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+        .cost-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 20px;
+            background: rgba(0,0,0,0.3);
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(239,68,68,0.15);
+        }
+        .cost-item .label {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+        .cost-item .value {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--red);
+            white-space: nowrap;
+        }
+        .cost-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 24px;
+            background: rgba(239,68,68,0.12);
+            border: 2px solid var(--red);
+            border-radius: var(--radius);
+        }
+        .cost-total .label {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text);
+        }
+        .cost-total .value {
+            font-size: clamp(24px, 3vw, 32px);
+            font-weight: 800;
+            color: var(--red);
+        }
+
+        /* Consequences Box */
+        .consequences-box {
+            background: var(--orange-dim);
+            border: 1px solid rgba(249,115,22,0.3);
+            border-radius: var(--radius);
+            padding: 40px 48px;
+            margin-top: 32px;
+        }
+        .consequences-box h3 {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--orange);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .consequences-box h3::before {
+            content: '\26A0';
+            font-size: 24px;
+        }
+        .consequences-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 10px;
+        }
+        .consequences-list li {
+            padding: 10px 0;
+            font-size: 15px;
+            color: #fdba74;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .consequences-list li::before {
+            content: '\2192';
+            color: var(--orange);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            text-align: center;
+            padding: 48px 32px;
+            color: var(--text-dim);
+            font-size: 13px;
+            border-top: 1px solid var(--border);
+            margin-top: 60px;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 768px) {
+            nav { padding: 14px 20px; }
+            .header { padding: 100px 20px 40px; }
+            .header p { font-size: 16px; }
+
+            .column-labels {
+                grid-template-columns: 1fr;
+                position: relative;
+                top: auto;
+            }
+
+            .split-row {
+                grid-template-columns: 1fr;
+            }
+            .split-row::after { display: none; }
+
+            .side { padding: 20px; }
+
+            .side-right {
+                border-top: 2px solid var(--blue-border);
+            }
+
+            .card { padding: 22px; }
+            .cost-box { padding: 28px; }
+            .consequences-box { padding: 28px; }
+            .cost-grid { grid-template-columns: 1fr; }
+            .consequences-list { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <div class="brand">Grundwerk <span>&times;</span> Urbify</div>
+    <div class="version">Version 3: Split Screen</div>
+</nav>
+
+<!-- HEADER -->
+<div class="header">
+    <h1>Die <span class="red">Ausgangssituation</span></h1>
+    <p>Wo Urbify heute steht &mdash; und was mit dem richtigen System m&ouml;glich w&auml;re. Ein direkter Vergleich.</p>
+</div>
+
+<!-- COLUMN LABELS -->
+<div class="column-labels">
+    <div class="label label-left">Heute</div>
+    <div class="label label-right">Morgen</div>
+</div>
+
+<!-- ROW 1: Email Response -->
+<div class="split-row">
+    <div class="side side-left">
+        <div class="card card-left">
+            <span class="row-num">01</span>
+            <div class="metric metric-red">12.500 E-Mails, 3&thinsp;% Response</div>
+            <h3>E-Mail-Outreach ohne System</h3>
+            <p>12.500 E-Mails versendet &mdash; bei einer Response Rate von nur 3&thinsp;%. Kein A/B-Testing, keine Bounce-Kontrolle, keine Deliverability-Strategie. Jede E-Mail, die im Spam landet, verbrennt Domain-Reputation.</p>
+            <div class="quote">
+                &bdquo;Wir schicken schon E-Mails raus &mdash; aber wir haben wirklich keine Ahnung warum die Response Rate so niedrig ist. 3&thinsp;% f&uuml;hlt sich nicht gut an.&ldquo;
+                <span class="quote-author">&mdash; Martin Hoffmann</span>
+            </div>
+        </div>
+    </div>
+    <div class="side side-right">
+        <div class="card card-right">
+            <span class="row-num">01</span>
+            <div class="metric metric-green">15&ndash;25&thinsp;% Response Rate</div>
+            <h3>Branchenstandard mit System</h3>
+            <ul class="check-list">
+                <li>Professionelles Deliverability-Setup sch&uuml;tzt Domain-Reputation</li>
+                <li>Datengetriebenes Targeting erh&ouml;ht Relevanz pro Kontakt</li>
+                <li>Kontinuierliches A/B-Testing optimiert jede Sequenz</li>
+                <li>Response Rates von 15&ndash;25&thinsp;% sind realistisch mit richtigem Setup</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- ROW 2: Messe-Kosten -->
+<div class="split-row">
+    <div class="side side-left">
+        <div class="card card-left">
+            <span class="row-num">02</span>
+            <div class="metric metric-red">60.000&thinsp;&euro;/Jahr</div>
+            <h3>35 Messe-Termine f&uuml;r 1.714&thinsp;&euro; pro Termin</h3>
+            <p>Standkosten, Anreise, Hotels, Personal &mdash; 60.000&thinsp;&euro; j&auml;hrlich f&uuml;r 35 Termine. Keine Skalierung m&ouml;glich, keine Kontrolle &uuml;ber Qualit&auml;t der Kontakte, und danach Wochen ohne neuen Pipeline-Input.</p>
+            <span class="cost-tag cost-tag-red">1.714&thinsp;&euro; pro Termin</span>
+        </div>
+    </div>
+    <div class="side side-right">
+        <div class="card card-right">
+            <span class="row-num">02</span>
+            <div class="metric metric-green">~440&thinsp;&euro;/Termin</div>
+            <h3>Skalierbarer Outbound, 365 Tage aktiv</h3>
+            <ul class="check-list">
+                <li>Outbound l&auml;uft unabh&auml;ngig von Messekalendern</li>
+                <li>Kosten pro Termin sinken drastisch mit Volumen</li>
+                <li>Pipeline-Aufbau ganzj&auml;hrig, nicht nur 4&times; pro Jahr</li>
+                <li>Messe bleibt zus&auml;tzlicher Kanal &mdash; nicht der einzige</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- ROW 3: LinkedIn -->
+<div class="split-row">
+    <div class="side side-left">
+        <div class="card card-left">
+            <span class="row-num">03</span>
+            <div class="metric metric-red">4.800&thinsp;&euro;/Jahr, 0 Leads</div>
+            <h3>LinkedIn-Tools ohne Ergebnis</h3>
+            <p>Sales Navigator, Automation-Tools, Premium-Accounts &mdash; rund 4.800&thinsp;&euro; j&auml;hrlich. Ergebnis: Null qualifizierte Leads. Die Tools werden genutzt, aber nicht in eine Kampagnenarchitektur eingebettet.</p>
+            <div class="quote">
+                &bdquo;Wir zahlen f&uuml;r LinkedIn-Tools, aber es kommt nichts dabei raus. Null Leads. Das ist frustrierend.&ldquo;
+                <span class="quote-author">&mdash; Martin Hoffmann</span>
+            </div>
+        </div>
+    </div>
+    <div class="side side-right">
+        <div class="card card-right">
+            <span class="row-num">03</span>
+            <div class="metric metric-blue">Multi-Touch-Kanal</div>
+            <h3>LinkedIn als Teil der Kampagnenarchitektur</h3>
+            <ul class="check-list">
+                <li>LinkedIn-Touchpoints synchronisiert mit E-Mail-Sequenzen</li>
+                <li>Jeder Kanal verst&auml;rkt den anderen</li>
+                <li>Aus passivem Tool wird aktiver Pipeline-Treiber</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- ROW 4: Meetings -->
+<div class="split-row">
+    <div class="side side-left">
+        <div class="card card-left">
+            <span class="row-num">04</span>
+            <div class="metric metric-red">~9 Meetings/Monat</div>
+            <h3>3 Vertriebler unter Kapazit&auml;t</h3>
+            <p>Bei drei Vertrieblern kommen durchschnittlich 9 qualifizierte Meetings pro Monat zusammen &mdash; rund 3 pro Person. Das Team hat Kapazit&auml;t, aber der Funnel liefert nicht genug Volumen.</p>
+        </div>
+    </div>
+    <div class="side side-right">
+        <div class="card card-right">
+            <span class="row-num">04</span>
+            <div class="metric metric-green">25&ndash;40 Meetings/Monat</div>
+            <h3>Benchmark f&uuml;r ein 3-Personen-Sales-Team</h3>
+            <ul class="check-list">
+                <li>8&ndash;13 Meetings pro Vertriebler/Monat als Zielkorridor</li>
+                <li>Outbound-Pipeline f&uuml;llt den Kalender systematisch</li>
+                <li>Vertriebskapazit&auml;t wird ausgelastet statt verschwendet</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- ROW 5: Planbarkeit -->
+<div class="split-row">
+    <div class="side side-left">
+        <div class="card card-left">
+            <span class="row-num">05</span>
+            <div class="metric metric-red">Keine Planbarkeit</div>
+            <h3>Keine steuerbare Pipeline</h3>
+            <p>Kein Forecasting, keine Lead-Prognosen, keine Kontrolle &uuml;ber die Pipeline. Der Vertrieb operiert reaktiv &mdash; statt proaktiv zu steuern, wartet das Team auf den n&auml;chsten Messebesuch oder eine Empfehlung.</p>
+            <div class="quote">
+                &bdquo;Wir k&ouml;nnen nicht vorhersagen, wie viele Leads n&auml;chsten Monat kommen. Das macht Planung unm&ouml;glich.&ldquo;
+                <span class="quote-author">&mdash; Martin Hoffmann</span>
+            </div>
+        </div>
+    </div>
+    <div class="side side-right">
+        <div class="card card-right">
+            <span class="row-num">05</span>
+            <div class="metric metric-blue">X qualifizierte Leads/Monat</div>
+            <h3>Planbar, steuerbar, reportbar</h3>
+            <ul class="check-list">
+                <li>Feste Lead-Prognose pro Woche und Monat</li>
+                <li>Pipeline-Dashboard mit Echtzeit-Daten</li>
+                <li>Vertriebsleitung kann Forecasts an die Gesch&auml;ftsf&uuml;hrung liefern</li>
+                <li>Budget-Planung wird endlich belastbar</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- ROW 6: Marktabdeckung -->
+<div class="split-row">
+    <div class="side side-left">
+        <div class="card card-left">
+            <span class="row-num">06</span>
+            <div class="metric metric-red">&lt;5&thinsp;% Marktabdeckung</div>
+            <h3>400 Leads von 10.000+</h3>
+            <p>Urbify arbeitet mit einer Leadliste von rund 400 Kontakten &mdash; bei einem adressierbaren Markt von &uuml;ber 10.000 Entscheidern. Weniger als 5&thinsp;% des Marktes werden &uuml;berhaupt erreicht.</p>
+        </div>
+    </div>
+    <div class="side side-right">
+        <div class="card card-right">
+            <span class="row-num">06</span>
+            <div class="metric metric-blue">Systematische Markterschlie&szlig;ung</div>
+            <h3>Datenbasiert, 75+ Quellen</h3>
+            <ul class="check-list">
+                <li>Zugang zum gesamten adressierbaren Markt</li>
+                <li>Multi-Source-Enrichment &uuml;ber 75+ Datenquellen</li>
+                <li>Kontinuierlicher Nachschub qualifizierter Kontakte</li>
+                <li>Segmentierung nach ICP-Kriterien, nicht nach Zufall</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- ROW 7: Sales Cycle -->
+<div class="split-row">
+    <div class="side side-left">
+        <div class="card card-left">
+            <span class="row-num">07</span>
+            <div class="metric metric-red">6 Monate Sales Cycle</div>
+            <h3>Langer Zyklus ohne Beschleunigung</h3>
+            <p>Vom Erstkontakt bis zum Abschluss vergehen im Schnitt 6 Monate. Ohne strukturiertes Nurturing und Multi-Touch-Sequenzen bleibt jeder Deal sich selbst &uuml;berlassen.</p>
+        </div>
+    </div>
+    <div class="side side-right">
+        <div class="card card-right">
+            <span class="row-num">07</span>
+            <div class="metric metric-blue">Multi-Touch Nurturing</div>
+            <h3>Strukturierte Beschleunigung</h3>
+            <ul class="check-list">
+                <li>Automatisierte Follow-ups halten Deals warm</li>
+                <li>Mehrere Touchpoints verk&uuml;rzen Entscheidungszyklen</li>
+                <li>Kein Lead geht mehr verloren zwischen den Phasen</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- ROW 8: Wettbewerber -->
+<div class="split-row">
+    <div class="side side-left">
+        <div class="card card-left">
+            <span class="row-num">08</span>
+            <div class="metric metric-red">Wettbewerber sind aktiv</div>
+            <h3>Die Konkurrenz kontaktiert bereits</h3>
+            <p>Andere Anbieter in Urbifys Markt bauen systematische Outbound-Prozesse auf. Jeder Monat ohne eigenes System bedeutet verlorene Marktanteile und Entscheider, die bereits von der Konkurrenz angesprochen wurden.</p>
+            <div class="quote">
+                &bdquo;Wir wissen, dass unsere Wettbewerber anfangen, aktiv rauszugehen. Wir m&uuml;ssen da schneller sein.&ldquo;
+                <span class="quote-author">&mdash; Martin Hoffmann</span>
+            </div>
+        </div>
+    </div>
+    <div class="side side-right">
+        <div class="card card-right">
+            <span class="row-num">08</span>
+            <div class="metric metric-green">First-Mover-Advantage</div>
+            <h3>Vor der Konkurrenz in der Inbox</h3>
+            <ul class="check-list">
+                <li>Wer zuerst systematisch anspricht, setzt den Standard</li>
+                <li>Fr&uuml;her Marktaufbau schafft Vertrauensvorsprung</li>
+                <li>Jeder Monat Vorsprung z&auml;hlt doppelt im B2B-Vertrieb</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- KOSTEN DES NICHTHANDELNS -->
+<div class="full-section">
+    <div class="cost-box">
+        <h2>Kosten des Nichthandelns</h2>
+        <div class="cost-grid">
+            <div class="cost-item">
+                <span class="label">Messekosten (j&auml;hrlich)</span>
+                <span class="value">60.000&thinsp;&euro;</span>
+            </div>
+            <div class="cost-item">
+                <span class="label">LinkedIn-Tools ohne ROI</span>
+                <span class="value">~4.800&thinsp;&euro;</span>
+            </div>
+            <div class="cost-item">
+                <span class="label">E-Mail ohne ROI</span>
+                <span class="value">~8.000&thinsp;&euro;</span>
+            </div>
+            <div class="cost-item">
+                <span class="label">Opportunit&auml;tskosten</span>
+                <span class="value">960.000&ndash;1.860.000&thinsp;&euro;</span>
+            </div>
+            <div class="cost-item">
+                <span class="label">Verz&ouml;gerte Pipeline</span>
+                <span class="value">~500.000&thinsp;&euro;</span>
+            </div>
+            <div class="cost-item">
+                <span class="label">Verlorene Marktanteile</span>
+                <span class="value">nicht quantifizierbar</span>
+            </div>
+        </div>
+        <div class="cost-total">
+            <span class="label">Gesamtkosten pro Jahr</span>
+            <span class="value">1,0&ndash;2,4 Mio.&thinsp;&euro;</span>
+        </div>
+    </div>
+
+    <!-- CONSEQUENCES -->
+    <div class="consequences-box">
+        <h3>Was passiert, wenn sich nichts &auml;ndert</h3>
+        <ul class="consequences-list">
+            <li>Abh&auml;ngigkeit von Messen und Empfehlungen bleibt bestehen</li>
+            <li>3 Vertriebler arbeiten weiter unter Kapazit&auml;t</li>
+            <li>Wettbewerber bauen systematisch Outbound-Prozesse auf</li>
+            <li>LinkedIn &amp; E-Mail-Tools bleiben reiner Kostenblock ohne ROI</li>
+            <li>Kein belastbares Forecasting f&uuml;r die Gesch&auml;ftsf&uuml;hrung</li>
+            <li>Leads wechseln zur schnelleren Alternative</li>
+        </ul>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    Grundwerk Digital &times; Urbify &mdash; Vertraulich &mdash; Version 3: Split Screen
+</footer>
+
+<script>
+// Scroll-triggered fade-in
+(function() {
+    var els = document.querySelectorAll('.split-row, .full-section');
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function(el) { observer.observe(el); });
+})();
+</script>
+
+</body>
+</html>

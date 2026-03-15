@@ -1,0 +1,704 @@
+<!-- GRUNDWERK-OFFER Urbify | v2-situation "Data Wall" | 2026-03-15 -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII=" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urbify &times; Grundwerk &mdash; Situation (Data Wall)</title>
+    <script>
+        (function(){
+            var code = '7294830165';
+            var params = new URLSearchParams(window.location.search);
+            if(params.get('secure') !== code){
+                document.documentElement.style.display='none';
+                document.title='Zugriff verweigert';
+                window.stop();
+            }
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+        :root {
+            --bg:         #0a0a0a;
+            --card:       #111111;
+            --border:     rgba(255,255,255,0.07);
+            --text:       #f0f0f0;
+            --text-muted: #999999;
+            --text-dim:   #666666;
+            --accent:     #4f7df9;
+            --red:        #ef4444;
+            --red-dim:    rgba(239,68,68,0.12);
+            --green:      #22c55e;
+            --green-dim:  rgba(34,197,94,0.12);
+            --orange:     #f97316;
+            --orange-dim: rgba(249,115,22,0.10);
+            --radius:     14px;
+        }
+
+        html { scroll-behavior:smooth; }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.55;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── NAV ── */
+        .nav {
+            position: sticky; top:0; z-index:100;
+            background: rgba(10,10,10,0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+            padding: 14px 24px;
+            display: flex; align-items: center; gap: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            color: var(--text-muted);
+        }
+        .nav .sep { color: var(--accent); font-size: 1rem; }
+        .nav .version {
+            margin-left: auto;
+            font-size: 0.68rem;
+            font-weight: 600;
+            color: var(--text-dim);
+            background: rgba(255,255,255,0.05);
+            padding: 3px 10px;
+            border-radius: 20px;
+        }
+
+        /* ── CONTAINER ── */
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 48px 24px 80px;
+        }
+
+        /* ── HEADER ── */
+        .header { margin-bottom: 48px; }
+        .header .overline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+        .header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            font-weight: 800;
+            line-height: 1.15;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+        .header .subtitle {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        /* ── BENTO GRID ── */
+        .bento {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 56px;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px 24px;
+            position: relative;
+            overflow: hidden;
+            transition: background 0.3s ease, border-color 0.3s ease;
+        }
+        .card:hover {
+            background: #151515;
+            border-color: rgba(255,255,255,0.12);
+        }
+
+        .card.span-2 { grid-column: span 2; }
+        .card.span-1 { grid-column: span 1; }
+
+        .card .red-dot {
+            width: 6px; height: 6px;
+            background: var(--red);
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+            box-shadow: 0 0 8px rgba(239,68,68,0.5);
+            vertical-align: middle;
+        }
+
+        .card .label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            margin-bottom: 10px;
+        }
+
+        .card .big-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.6rem;
+            font-weight: 800;
+            color: var(--text);
+            line-height: 1.1;
+            margin-bottom: 4px;
+        }
+        .card .big-number.red { color: var(--red); }
+        .card .big-number .unit {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-muted);
+        }
+
+        .card .metric-sub {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-bottom: 14px;
+        }
+
+        .card .quote {
+            font-size: 0.78rem;
+            color: var(--text-dim);
+            font-style: italic;
+            border-left: 2px solid var(--accent);
+            padding-left: 12px;
+            margin-top: 14px;
+            line-height: 1.55;
+        }
+        .card .quote-author {
+            font-size: 0.7rem;
+            color: var(--text-dim);
+            margin-top: 6px;
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        .card .cost-line {
+            font-size: 0.75rem;
+            color: var(--red);
+            margin-top: 10px;
+            opacity: 0.85;
+        }
+
+        /* ── MEETINGS BAR CHART ── */
+        .meetings-bars { margin-top: 18px; }
+        .meetings-bars .bar-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 0.75rem;
+        }
+        .bar-row .bar-label {
+            width: 60px;
+            color: var(--text-muted);
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        .bar-row .bar-track {
+            flex: 1;
+            height: 18px;
+            background: rgba(255,255,255,0.04);
+            border-radius: 4px;
+            margin: 0 10px;
+            overflow: hidden;
+        }
+        .bar-row .bar-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 1.2s ease;
+        }
+        .bar-row .bar-fill.robert { background: var(--accent); width: 0%; }
+        .bar-row .bar-fill.jannis { background: var(--red); width: 0%; }
+        .bar-row .bar-fill.martin { background: #9b59b6; width: 0%; }
+        .bar-row .bar-value {
+            width: 24px;
+            text-align: right;
+            color: var(--text-muted);
+            font-weight: 700;
+        }
+        .bar-row .benchmark-line {
+            position: absolute;
+        }
+
+        /* ── PERCENTAGE RING ── */
+        .ring-wrap {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-top: 14px;
+        }
+        .ring-svg { width: 64px; height: 64px; transform: rotate(-90deg); }
+        .ring-bg { fill: none; stroke: rgba(255,255,255,0.06); stroke-width: 5; }
+        .ring-fg {
+            fill: none;
+            stroke: var(--red);
+            stroke-width: 5;
+            stroke-linecap: round;
+            stroke-dasharray: 163.36;
+            stroke-dashoffset: 163.36;
+            transition: stroke-dashoffset 1.5s ease;
+        }
+        .ring-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--text);
+        }
+        .ring-text small {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-dim);
+            display: block;
+        }
+
+        /* ── COST COMPARISON ── */
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 24px;
+            color: var(--text);
+        }
+
+        .cost-compare {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px;
+            margin-bottom: 40px;
+        }
+        .compare-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 18px;
+        }
+        .compare-row:last-child { margin-bottom: 0; }
+        .compare-label {
+            width: 120px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            flex-shrink: 0;
+        }
+        .compare-bar-track {
+            flex: 1;
+            height: 32px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 6px;
+            position: relative;
+            overflow: hidden;
+        }
+        .compare-bar-fill {
+            height: 100%;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            padding-left: 14px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 800;
+            color: #fff;
+            transition: width 1.4s ease;
+            width: 0%;
+        }
+        .compare-bar-fill.messe { background: linear-gradient(90deg, #dc2626, #ef4444); }
+        .compare-bar-fill.grundwerk { background: linear-gradient(90deg, #16a34a, #22c55e); }
+
+        /* ── TOTAL COST BOX ── */
+        .total-cost {
+            background: linear-gradient(135deg, #1a0a0a 0%, #2d0a0a 50%, #1a0505 100%);
+            border: 1px solid rgba(239,68,68,0.25);
+            border-radius: var(--radius);
+            padding: 36px 32px;
+            margin-bottom: 40px;
+        }
+        .total-cost .tc-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--red);
+            margin-bottom: 20px;
+            letter-spacing: 0.02em;
+        }
+        .tc-items {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 40px;
+            margin-bottom: 24px;
+        }
+        .tc-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(239,68,68,0.1);
+            font-size: 0.82rem;
+        }
+        .tc-item .tc-label { color: var(--text-muted); }
+        .tc-item .tc-value { color: var(--text); font-weight: 700; text-align: right; }
+        .tc-total-line {
+            border-top: 2px solid rgba(239,68,68,0.3);
+            padding-top: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        .tc-total-line .tc-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+        .tc-total-line .tc-value {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--red);
+        }
+
+        /* ── CONSEQUENCES ── */
+        .consequences {
+            background: var(--orange-dim);
+            border: 1px solid rgba(249,115,22,0.2);
+            border-radius: var(--radius);
+            padding: 32px;
+            margin-bottom: 40px;
+        }
+        .consequences .cq-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--orange);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .consequences ul {
+            list-style: none;
+            padding: 0;
+        }
+        .consequences li {
+            padding: 8px 0;
+            font-size: 0.85rem;
+            color: #fdba74;
+            border-bottom: 1px solid rgba(249,115,22,0.08);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            line-height: 1.5;
+        }
+        .consequences li:last-child { border-bottom: none; }
+        .consequences li::before {
+            content: "\26A0";
+            font-size: 0.8rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 900px) {
+            .bento { grid-template-columns: repeat(2, 1fr); }
+            .card.span-2 { grid-column: span 2; }
+            .tc-items { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 560px) {
+            .bento { grid-template-columns: 1fr; }
+            .card.span-2 { grid-column: span 1; }
+            .container { padding: 32px 16px 60px; }
+            .card .big-number { font-size: 2rem; }
+            .total-cost, .cost-compare, .consequences { padding: 24px 20px; }
+        }
+
+        /* ── COUNTER ANIMATION ── */
+        .count-up { display: inline-block; }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+    <span>Grundwerk</span>
+    <span class="sep">&times;</span>
+    <span>Urbify</span>
+    <span class="version">Version 2: Data Wall</span>
+</nav>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="overline">Analyse &middot; Situation</div>
+        <h1>Die Ausgangssituation</h1>
+        <p class="subtitle">Was Martin im Gespr&auml;ch beschrieben hat &mdash; zusammengefasst in Zahlen. Jede Karte zeigt eine konkrete Schwachstelle im aktuellen Vertriebssystem von Urbify.</p>
+    </header>
+
+    <!-- BENTO GRID -->
+    <div class="bento">
+
+        <!-- CARD 1 — E-Mail (2 cols) -->
+        <div class="card span-2" data-animate>
+            <div class="label"><span class="red-dot"></span>E-Mail-Outreach</div>
+            <div class="big-number"><span class="count-up" data-target="12500" data-separator=".">0</span> <span class="unit">E-Mails</span></div>
+            <div class="metric-sub"><span class="big-number red" style="font-size:1.6rem">3%</span> Response Rate</div>
+            <div class="quote">
+                &bdquo;Wir schicken schon E-Mails raus &mdash; aber wir haben wirklich keine Ahnung warum die Response Rate so niedrig ist. 3% f&uuml;hlt sich nicht gut an.&ldquo;
+                <div class="quote-author">&mdash; Martin Hoffmann</div>
+            </div>
+            <div class="cost-line">&#8594; 1.500&ndash;2.750 verlorene Antworten/Jahr &middot; 150&ndash;275 verlorene Meetings</div>
+        </div>
+
+        <!-- CARD 2 — Messen (1 col) -->
+        <div class="card span-1" data-animate>
+            <div class="label"><span class="red-dot"></span>Messen</div>
+            <div class="big-number"><span class="count-up" data-target="60000" data-separator="." data-prefix="">0</span> <span class="unit">&euro;/Jahr</span></div>
+            <div class="metric-sub">35 Termine &rarr; <strong style="color:var(--red)">1.714&nbsp;&euro;/Termin</strong></div>
+            <div class="quote">
+                &bdquo;Messen sind unser Hauptkanal. Aber 60.000 Euro im Jahr &mdash; und ich kann das nicht skalieren.&ldquo;
+                <div class="quote-author">&mdash; Martin Hoffmann</div>
+            </div>
+            <div class="cost-line">&#8594; 10 Monate ohne Messe-Pipeline</div>
+        </div>
+
+        <!-- CARD 3 — LinkedIn (1 col) -->
+        <div class="card span-1" data-animate>
+            <div class="label"><span class="red-dot"></span>LinkedIn-Tools</div>
+            <div class="big-number">~<span class="count-up" data-target="4800" data-separator=".">0</span> <span class="unit">&euro;/Jahr</span></div>
+            <div class="metric-sub">Ungenutzt &mdash; liegt brach</div>
+            <div class="quote">
+                &bdquo;Wir haben LinkedIn Tools &mdash; aber ehrlich gesagt nutzt die gerade keiner wirklich. Das liegt einfach so rum.&ldquo;
+                <div class="quote-author">&mdash; Martin Hoffmann</div>
+            </div>
+        </div>
+
+        <!-- CARD 4 — Meetings (2 cols) -->
+        <div class="card span-2" data-animate>
+            <div class="label"><span class="red-dot"></span>Meetings / Monat</div>
+            <div style="display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;">
+                <div class="big-number">~<span class="count-up" data-target="9">0</span></div>
+                <div class="metric-sub" style="margin-bottom:0">bei 3 Vertrieblern &middot; Benchmark: 25&ndash;40</div>
+            </div>
+            <div class="meetings-bars">
+                <div class="bar-row">
+                    <span class="bar-label">Robert</span>
+                    <div class="bar-track"><div class="bar-fill robert" data-width="50%"></div></div>
+                    <span class="bar-value">5</span>
+                </div>
+                <div class="bar-row">
+                    <span class="bar-label">Jannis</span>
+                    <div class="bar-track"><div class="bar-fill jannis" data-width="2%"></div></div>
+                    <span class="bar-value">0</span>
+                </div>
+                <div class="bar-row">
+                    <span class="bar-label">Martin</span>
+                    <div class="bar-track"><div class="bar-fill martin" data-width="35%"></div></div>
+                    <span class="bar-value">3&ndash;4</span>
+                </div>
+            </div>
+            <div class="cost-line">&#8594; 192&ndash;372 verlorene Meetings/Jahr = 960.000&ndash;1.860.000&nbsp;&euro; Pipeline</div>
+        </div>
+
+        <!-- CARD 5 — Pipeline (1 col) -->
+        <div class="card span-1" data-animate>
+            <div class="label"><span class="red-dot"></span>Pipeline</div>
+            <div class="big-number red"><span class="count-up" data-target="0" data-static="true">0</span></div>
+            <div class="metric-sub">Planbarkeit</div>
+            <div class="quote">
+                &bdquo;Ich kann Ben nicht sagen wie viele Termine n&auml;chsten Monat reinkommen. Wir haben keine Pipeline die wir wirklich steuern k&ouml;nnen.&ldquo;
+                <div class="quote-author">&mdash; Martin Hoffmann</div>
+            </div>
+            <div class="cost-line">&#8594; Bewertungsrisiko bei Finanzierungsrunde</div>
+        </div>
+
+        <!-- CARD 6 — Datenbank (1 col) -->
+        <div class="card span-1" data-animate>
+            <div class="label"><span class="red-dot"></span>Datenbank</div>
+            <div class="big-number"><span class="count-up" data-target="400">0</span> <span class="unit">Leads</span></div>
+            <div class="metric-sub">von 10.000+ Markt</div>
+            <div class="ring-wrap">
+                <svg class="ring-svg" viewBox="0 0 60 60">
+                    <circle class="ring-bg" cx="30" cy="30" r="26"/>
+                    <circle class="ring-fg" cx="30" cy="30" r="26" data-pct="4"/>
+                </svg>
+                <div class="ring-text">&lt;5%<small>Marktabdeckung</small></div>
+            </div>
+            <div class="cost-line" style="margin-top:14px">&#8594; Jeder unber&uuml;hrter Retailer = potenzieller 50k+&nbsp;Deal</div>
+        </div>
+
+        <!-- CARD 7 — Sales Cycle (1 col) -->
+        <div class="card span-1" data-animate>
+            <div class="label"><span class="red-dot"></span>Sales Cycle</div>
+            <div class="big-number"><span class="count-up" data-target="6">0</span> <span class="unit">Monate</span></div>
+            <div class="metric-sub">Durchschnittlicher Abschluss</div>
+            <div class="cost-line">&#8594; 42.000&nbsp;&euro;/Monat verz&ouml;gerter Umsatz</div>
+        </div>
+
+        <!-- CARD 8 — Wettbewerber (1 col) -->
+        <div class="card span-1" data-animate>
+            <div class="label"><span class="red-dot"></span>Wettbewerber</div>
+            <div class="big-number red">3&times;</div>
+            <div class="metric-sub">schwieriger zu konvertieren</div>
+            <p style="font-size:0.78rem; color:var(--text-dim); margin-top:12px; line-height:1.55;">
+                Liefery, DPD &amp; Co. kontaktieren bereits per Cold Email dieselben Leads. Wer nicht pr&auml;sent ist, verliert.
+            </p>
+        </div>
+
+    </div><!-- /bento -->
+
+    <!-- COST COMPARISON -->
+    <h2 class="section-title">Kosten pro Termin: Messen vs. Grundwerk</h2>
+    <div class="cost-compare">
+        <div class="compare-row">
+            <div class="compare-label">Messen</div>
+            <div class="compare-bar-track">
+                <div class="compare-bar-fill messe" data-width="100%">1.714&nbsp;&euro;</div>
+            </div>
+        </div>
+        <div class="compare-row">
+            <div class="compare-label">Grundwerk</div>
+            <div class="compare-bar-track">
+                <div class="compare-bar-fill grundwerk" data-width="26%">~440&nbsp;&euro;</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOTAL COST BOX -->
+    <div class="total-cost">
+        <div class="tc-title">&#9888; Kosten des Nichthandelns &mdash; 12 Monate</div>
+        <div class="tc-items">
+            <div class="tc-item">
+                <span class="tc-label">Messekosten</span>
+                <span class="tc-value">60.000&nbsp;&euro;</span>
+            </div>
+            <div class="tc-item">
+                <span class="tc-label">LinkedIn-Tools (ungenutzt)</span>
+                <span class="tc-value">~4.800&nbsp;&euro;</span>
+            </div>
+            <div class="tc-item">
+                <span class="tc-label">E-Mail-Kosten ohne ROI</span>
+                <span class="tc-value">~8.000&nbsp;&euro;</span>
+            </div>
+            <div class="tc-item">
+                <span class="tc-label">Opportunit&auml;tskosten</span>
+                <span class="tc-value">960.000&ndash;1.860.000&nbsp;&euro;</span>
+            </div>
+            <div class="tc-item">
+                <span class="tc-label">Verz&ouml;gerte Pipeline</span>
+                <span class="tc-value">~500.000&nbsp;&euro;</span>
+            </div>
+            <div class="tc-item">
+                <span class="tc-label">Verlorene Marktanteile</span>
+                <span class="tc-value" style="color:var(--text-dim); font-style:italic;">nicht quantifizierbar</span>
+            </div>
+        </div>
+        <div class="tc-total-line">
+            <span class="tc-label">Gesamt</span>
+            <span class="tc-value">1,0&ndash;2,4 Mio.&nbsp;&euro;</span>
+        </div>
+    </div>
+
+    <!-- CONSEQUENCES -->
+    <div class="consequences">
+        <div class="cq-title">&#9888; Konsequenzen bei Inaktivit&auml;t</div>
+        <ul>
+            <li>Pipeline bleibt unplanbar &mdash; Ben hat keine belastbaren Zahlen f&uuml;r die Finanzierungsrunde</li>
+            <li>Messekosten bleiben bei 60.000&nbsp;&euro;/Jahr ohne skalierbaren Gegenkanal</li>
+            <li>Wettbewerber wie Liefery und DPD bauen ihren Vorsprung per Cold Outreach weiter aus</li>
+            <li>3 Vertriebler produzieren ~9 statt 25&ndash;40 Meetings/Monat &mdash; Kapazit&auml;t wird verschwendet</li>
+            <li>LinkedIn-Tools und E-Mail-Infrastruktur bleiben totes Kapital ohne System dahinter</li>
+            <li>Jeder Monat Verz&ouml;gerung kostet ~42.000&nbsp;&euro; an nicht realisiertem Umsatz</li>
+        </ul>
+    </div>
+
+</div><!-- /container -->
+
+<script>
+(function() {
+    /* ── Intersection Observer for scroll-triggered animations ── */
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('visible');
+
+            /* Count-up numbers */
+            var counters = entry.target.querySelectorAll('.count-up');
+            counters.forEach(function(el) {
+                if (el.dataset.counted) return;
+                el.dataset.counted = 'true';
+                var target = parseInt(el.dataset.target, 10);
+                var sep = el.dataset.separator || '';
+                var isStatic = el.dataset.static === 'true';
+                if (isStatic) { el.textContent = target.toString(); return; }
+                var duration = 1400;
+                var start = performance.now();
+                function step(now) {
+                    var elapsed = now - start;
+                    var progress = Math.min(elapsed / duration, 1);
+                    /* ease out cubic */
+                    var ease = 1 - Math.pow(1 - progress, 3);
+                    var current = Math.round(ease * target);
+                    if (sep) {
+                        el.textContent = current.toString().replace(/\B(?=(\d{3})+(?!\d))/g, sep);
+                    } else {
+                        el.textContent = current;
+                    }
+                    if (progress < 1) requestAnimationFrame(step);
+                }
+                requestAnimationFrame(step);
+            });
+
+            /* Bar fills */
+            var bars = entry.target.querySelectorAll('[data-width]');
+            bars.forEach(function(bar) {
+                if (bar.dataset.filled) return;
+                bar.dataset.filled = 'true';
+                setTimeout(function() {
+                    bar.style.width = bar.dataset.width;
+                }, 100);
+            });
+
+            /* Ring animation */
+            var rings = entry.target.querySelectorAll('.ring-fg[data-pct]');
+            rings.forEach(function(ring) {
+                if (ring.dataset.filled) return;
+                ring.dataset.filled = 'true';
+                var pct = parseFloat(ring.dataset.pct);
+                var circumference = 2 * Math.PI * 26; /* r=26 */
+                var offset = circumference - (pct / 100) * circumference;
+                setTimeout(function() {
+                    ring.style.strokeDashoffset = offset;
+                }, 200);
+            });
+
+            observer.unobserve(entry.target);
+        });
+    }, { threshold: 0.15 });
+
+    /* Observe cards, cost-compare, total-cost */
+    document.querySelectorAll('.card, .cost-compare, .total-cost').forEach(function(el) {
+        observer.observe(el);
+    });
+})();
+</script>
+
+</body>
+</html>
