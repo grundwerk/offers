@@ -1,5 +1,14 @@
 [
   {
+    "slug": "elitec-ag-room",
+    "name": "elitec AG",
+    "subtitle": "Sales Room — DSGVO-Fokus",
+    "type": "sales-room",
+    "secure": "7391582064",
+    "icon": "E",
+    "created": "2026-03-15"
+  },
+  {
     "slug": "buchner-partner",
     "name": "Buchner & Partner GmbH",
     "subtitle": "Neue Teilnehmer für dein Praxisforum",
