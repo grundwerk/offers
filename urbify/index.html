@@ -660,8 +660,8 @@
     </div>
     <div class="nav-right" style="display:flex;align-items:center;gap:10px;">
         <button class="theme-toggle" id="theme-btn" onclick="toggleTheme()" style="background:var(--bg-card);border:1px solid var(--border);color:var(--text-muted);border-radius:var(--radius-sm);padding:7px 13px;cursor:pointer;font-size:0.8rem;font-family:inherit;font-weight:500;display:flex;align-items:center;gap:6px;white-space:nowrap;">☀️ Bright</button>
-        <div class="nav-contact" onclick="document.querySelector('.nav-contact-dropdown').classList.toggle('open')" style="display:flex;align-items:center;gap:8px;cursor:pointer;padding:5px 10px;border-radius:var(--radius-sm);border:1px solid var(--border);background:transparent;">
-            <img class="nav-contact-photo" src="../assets/team/tom-soto-schiller.jpeg" alt="Tom Soto Schiller" style="width:32px;height:32px;border-radius:50%;object-fit:cover;filter:grayscale(100%);">
+        <div class="nav-contact" onclick="var dd=this.querySelector('.nav-contact-dropdown');dd.style.display=dd.style.display==='block'?'none':'block';" style="display:flex;align-items:center;gap:8px;cursor:pointer;padding:5px 10px;border-radius:var(--radius-sm);border:1px solid var(--border);background:transparent;">
+            <img class="nav-contact-photo" src="../assets/team/tom-soto-schiller.jpeg" alt="Tom Soto Schiller" style="width:32px;height:32px;border-radius:50%;object-fit:cover;filter:none;">
             <div class="nav-contact-info" style="display:flex;flex-direction:column;line-height:1.2;">
                 <span class="nav-contact-name" style="font-size:0.8rem;font-weight:600;color:var(--text);white-space:nowrap;">Tom Soto Schiller</span>
                 <span class="nav-contact-label" style="font-size:0.65rem;color:var(--text-muted);">Kontakt</span>
@@ -1850,7 +1850,7 @@
     /* Close contact dropdown on outside click */
     document.addEventListener('click', function(e) {
         var dd = document.querySelector('.nav-contact-dropdown');
-        if (dd && !e.target.closest('.nav-contact')) dd.classList.remove('open');
+        if (dd && !e.target.closest('.nav-contact')) dd.style.display = 'none';
     });
 </script>
 
