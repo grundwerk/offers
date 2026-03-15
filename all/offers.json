@@ -1,5 +1,14 @@
 [
   {
+    "slug": "template-v1",
+    "name": "Sales Room Template",
+    "subtitle": "V1.0 — Basis-Template",
+    "type": "template",
+    "secure": "0000000000",
+    "icon": "T",
+    "created": "2026-03-15"
+  },
+  {
     "slug": "urbify",
     "name": "Urbify",
     "subtitle": "Sales Room",

@@ -119,6 +119,7 @@
         .offer-type-badge { padding: 3px 10px; border-radius: 100px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; }
         .type-sales-room { background: rgba(79,125,249,0.12); color: var(--accent); }
         .type-offer { background: rgba(34,197,94,0.12); color: var(--green); }
+        .type-template { background: rgba(249,115,22,0.12); color: #f97316; }
 
         .offer-name { font-size: 1.15rem; font-weight: 700; letter-spacing: -0.01em; line-height: 1.3; }
         .offer-subtitle { font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; margin-top: 4px; }
@@ -199,6 +200,10 @@
             <div class="stat-number" id="stat-offers" style="font-size:1.6rem;font-weight:800;color:var(--accent);">—</div>
             <div class="stat-label" style="font-size:0.8rem;color:var(--text-muted);margin-top:2px;">Standard Offers</div>
         </div>
+        <div class="stat-item" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px 20px;flex:1;">
+            <div class="stat-number" id="stat-templates" style="font-size:1.6rem;font-weight:800;color:#f97316;">—</div>
+            <div class="stat-label" style="font-size:0.8rem;color:var(--text-muted);margin-top:2px;">Templates</div>
+        </div>
     </div>
 
     <div class="offers-grid" id="grid-view" style="display:grid;grid-template-columns:repeat(auto-fill, minmax(320px, 1fr));gap:20px;"></div>
@@ -227,11 +232,18 @@
         return parts[2] + '.' + parts[1] + '.' + parts[0];
     }
 
+    function getTypeInfo(type) {
+        if (type === 'sales-room') return { cls: 'type-sales-room', label: 'Sales Room', bg: 'rgba(79,125,249,0.12)', color: 'var(--accent)' };
+        if (type === 'template') return { cls: 'type-template', label: 'Template', bg: 'rgba(249,115,22,0.12)', color: '#f97316' };
+        return { cls: 'type-offer', label: 'Offer', bg: 'rgba(34,197,94,0.12)', color: 'var(--green)' };
+    }
+
     function renderCard(o) {
-        var typeClass = o.type === 'sales-room' ? 'type-sales-room' : 'type-offer';
-        var typeLabel = o.type === 'sales-room' ? 'Sales Room' : 'Offer';
-        var typeBg = o.type === 'sales-room' ? 'rgba(79,125,249,0.12)' : 'rgba(34,197,94,0.12)';
-        var typeColor = o.type === 'sales-room' ? 'var(--accent)' : 'var(--green)';
+        var t = getTypeInfo(o.type);
+        var typeClass = t.cls;
+        var typeLabel = t.label;
+        var typeBg = t.bg;
+        var typeColor = t.color;
         var href = '/' + o.slug + '/?secure=' + o.secure;
         var dateFormatted = formatDate(o.created);
 
@@ -253,10 +265,11 @@
     }
 
     function renderRow(o) {
-        var typeClass = o.type === 'sales-room' ? 'type-sales-room' : 'type-offer';
-        var typeLabel = o.type === 'sales-room' ? 'Sales Room' : 'Offer';
-        var typeBg = o.type === 'sales-room' ? 'rgba(79,125,249,0.12)' : 'rgba(34,197,94,0.12)';
-        var typeColor = o.type === 'sales-room' ? 'var(--accent)' : 'var(--green)';
+        var t = getTypeInfo(o.type);
+        var typeClass = t.cls;
+        var typeLabel = t.label;
+        var typeBg = t.bg;
+        var typeColor = t.color;
         var href = '/' + o.slug + '/?secure=' + o.secure;
         var dateFormatted = formatDate(o.created);
 
@@ -284,11 +297,13 @@
         var listHtml = '';
         var rooms = 0;
         var standard = 0;
+        var templates = 0;
 
         sorted.forEach(function(o) {
             gridHtml += renderCard(o);
             listHtml += renderRow(o);
             if (o.type === 'sales-room') rooms++;
+            else if (o.type === 'template') templates++;
             else standard++;
         });
 
@@ -297,6 +312,7 @@
         document.getElementById('stat-total').textContent = offers.length;
         document.getElementById('stat-rooms').textContent = rooms;
         document.getElementById('stat-offers').textContent = standard;
+        document.getElementById('stat-templates').textContent = templates;
     }
 
     function toggleSort() {
