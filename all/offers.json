@@ -1,5 +1,14 @@
 [
   {
+    "slug": "buchner-partner",
+    "name": "Buchner & Partner GmbH",
+    "subtitle": "Neue Teilnehmer für dein Praxisforum",
+    "type": "offer",
+    "secure": "5937264810",
+    "icon": "B",
+    "created": "2026-03-15"
+  },
+  {
     "slug": "template-v1",
     "name": "Sales Room Template",
     "subtitle": "V1.0 — Basis-Template",
