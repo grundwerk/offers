@@ -18,6 +18,15 @@
     "created": "2026-03-10"
   },
   {
+    "slug": "urbify-sr",
+    "name": "Urbify",
+    "subtitle": "Sales Room (ohne Angebot)",
+    "type": "sales-room",
+    "secure": "7294830165",
+    "icon": "U",
+    "created": "2026-03-15"
+  },
+  {
     "slug": "elitec-ag",
     "name": "elitec AG",
     "subtitle": "Planbare Neukunden",
