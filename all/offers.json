@@ -100,12 +100,12 @@
   },
   {
     "slug": "digirehab",
-    "name": "DigiRehab",
-    "subtitle": "Ambulant-Playbook",
-    "type": "offer",
-    "secure": "2794488071",
-    "icon": "D",
-    "created": "2026-02-25"
+    "name": "DigiRehab GmbH",
+    "subtitle": "Sales Room — Digitale Reha für ambulante Praxen",
+    "type": "sales-room",
+    "secure": "7284916350",
+    "icon": "🏥",
+    "created": "2026-03-16"
   },
   {
     "slug": "18a-studio",
