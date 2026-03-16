@@ -1,5 +1,14 @@
 [
   {
+    "slug": "meow-berlin",
+    "name": "Meow Berlin",
+    "subtitle": "Planbare Buchungen — Sales Room",
+    "type": "sales-room",
+    "secure": "5525281406",
+    "icon": "🐱",
+    "created": "2026-03-16"
+  },
+  {
     "slug": "kunststoff-vision",
     "name": "kunststoff.Vision",
     "subtitle": "LinkedIn-Netzwerkaufbau Kunststoffbranche",
