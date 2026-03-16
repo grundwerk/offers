@@ -1,10 +1,10 @@
-<!-- GRUNDWERK-OFFER v1 | 2026-03-16 15:00 | Initial deploy - Das Schaffenswerk -->
+<!-- GRUNDWERK-OFFER v2 | 2026-03-16 16:30 | Nav logos, hero fix, remove video/compare blocks, Growth empfohlen, prognose table update, 30d timeline -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="offer-version" content="v1 | 2026-03-16">
+<meta name="offer-version" content="v2 | 2026-03-16">
 <title>Dein Angebot &mdash; Das Schaffenswerk x Grundwerk</title>
 <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8ySEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII=" />
 <script>
@@ -232,7 +232,11 @@ footer{text-align:center;padding:32px 2rem;border-top:1px solid var(--border);fo
 <!-- ═══ NAV ═══ -->
 <nav>
   <div class="nav-inner">
-    <div class="nav-logo">Das Schaffenswerk &times; Grundwerk</div>
+    <div class="nav-logo" style="display:flex;align-items:center;gap:10px">
+      <img src="https://das-schaffenswerk.de/wp-content/uploads/2018/11/DAS_SCHAFFENSWERK.jpg" alt="Das Schaffenswerk" style="height:24px;border-radius:4px;object-fit:contain;filter:brightness(1.2)" />
+      <span style="color:var(--text-dim);font-weight:300;margin:0 2px">&times;</span>
+      <img src="https://framerusercontent.com/images/4xEctZIb7Nfq9zuWT0Qa9v8GVHM.png" alt="Grundwerk" style="height:22px;object-fit:contain;filter:brightness(2) grayscale(100%)" />
+    </div>
     <a href="#angebot" class="nav-cta" style="background:var(--accent);color:#fff;padding:8px 20px;border-radius:100px;font-size:0.85rem;font-weight:600;">Zum Angebot</a>
   </div>
 </nav>
@@ -242,7 +246,7 @@ footer{text-align:center;padding:32px 2rem;border-top:1px solid var(--border);fo
   <div class="hero-inner fade-in">
     <img src="https://das-schaffenswerk.de/wp-content/uploads/2018/11/DAS_SCHAFFENSWERK.jpg" alt="Das Schaffenswerk" class="hero-logo" style="max-width:160px;border-radius:12px;margin-bottom:32px;filter:brightness(1.2)" />
     <div class="hero-label" style="display:inline-block;padding:6px 18px;border-radius:100px;background:var(--accent-glow);color:var(--accent);font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:24px;border:1px solid var(--border-accent)">Pers&ouml;nliches Angebot &middot; M&auml;rz 2026</div>
-    <h1 style="font-size:clamp(2rem,5vw,3.4rem);font-weight:800;line-height:1.15;letter-spacing:-0.03em;margin-bottom:24px">Hey Gerald &amp; Marc &mdash;<br><span class="accent" style="background:linear-gradient(135deg,var(--accent),#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">mehr zahlungsf&auml;hige Kunden</span><br>f&uuml;r Das Schaffenswerk.</h1>
+    <h1 style="font-size:clamp(2rem,5vw,3.4rem);font-weight:800;line-height:1.15;letter-spacing:-0.03em;margin-bottom:24px"><span class="accent" style="background:linear-gradient(135deg,var(--accent),#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Mehr zahlungsf&auml;hige Kunden</span><br>f&uuml;r Das Schaffenswerk.</h1>
     <p class="hero-sub" style="font-size:1.1rem;color:var(--text-muted);max-width:620px;margin:0 auto 40px;line-height:1.7">Hier findest du alles, was du &uuml;ber unsere Zusammenarbeit wissen musst &mdash; inklusive konkretem Angebot, Kampagnen-Strategie und ROI-Kalkulation f&uuml;r eure Filmproduktion in Bayern.</p>
     <div class="hero-ctas" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
       <a href="#angebot" class="btn-primary" style="background:var(--accent);color:#fff;padding:14px 32px;border-radius:100px;font-size:1rem;font-weight:700;box-shadow:0 0 30px rgba(79,125,249,0.3)">Angebot ansehen</a>
@@ -339,17 +343,6 @@ footer{text-align:center;padding:32px 2rem;border-top:1px solid var(--border);fo
   </div>
 </section>
 
-<!-- ═══ VIDEO ═══ -->
-<section class="video-section fade-in" style="padding:40px 2rem 80px">
-  <div class="section-inner" style="max-width:1200px;margin:0 auto;text-align:center">
-    <div class="section-label" style="font-size:0.8rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:16px">Kurze Erkl&auml;rung</div>
-    <h2 class="section-title" style="font-size:clamp(1.8rem,3.5vw,2.4rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:12px">So funktioniert Cold Outreach<br>mit Grundwerk</h2>
-    <p style="font-size:0.95rem;color:var(--text-muted);max-width:520px;margin:0 auto 40px;line-height:1.7">In unter 5 Minuten erkl&auml;rt &mdash; was wir machen, wie wir es machen und warum es f&uuml;r euch funktioniert.</p>
-    <div class="video-wrap" style="max-width:800px;margin:0 auto;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);box-shadow:0 0 60px rgba(79,125,249,0.1)">
-      <wistia-player media-id="tm8si6qq6m" aspect="16/9"></wistia-player>
-    </div>
-  </div>
-</section>
 <!-- ═══ PROBLEM ═══ -->
 <section id="problem" style="padding:100px 2rem">
   <div class="section-inner" style="max-width:1200px;margin:0 auto">
@@ -386,16 +379,6 @@ footer{text-align:center;padding:32px 2rem;border-top:1px solid var(--border);fo
         <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:16px;color:var(--accent)">&#10024; Die L&ouml;sung</h3>
         <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.7;margin-bottom:20px">Statt blind Massen-Mails zu verschicken, analysieren wir die Websites eurer Zielgruppe, identifizieren Unternehmen mit konkretem Videofilm-Bedarf &mdash; und sprechen sie mit einem personalisierten Argument an, das sitzt.</p>
         <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.7;margin-bottom:24px">Wir kontaktieren direkt den Gesch&auml;ftsf&uuml;hrer &mdash; nicht die info@-Adresse. Mit einem konkreten Aufh&auml;nger zu eurem Imagefilm, eurem Angebot, eurer St&auml;rke.</p>
-        <div class="solution-compare" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px">
-          <div class="compare-item bad" style="background:rgba(255,255,255,0.04);border-radius:var(--radius-sm);padding:16px;text-align:center">
-            <div class="compare-label" style="font-size:0.75rem;color:var(--text-dim);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.08em">Google Ads/Lead</div>
-            <div class="compare-price" style="font-size:1.3rem;font-weight:800;color:var(--red)">~350 &euro;</div>
-          </div>
-          <div class="compare-item good" style="background:rgba(255,255,255,0.04);border-radius:var(--radius-sm);padding:16px;text-align:center">
-            <div class="compare-label" style="font-size:0.75rem;color:var(--text-dim);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.08em">Cold Outreach/Lead</div>
-            <div class="compare-price" style="font-size:1.3rem;font-weight:800;color:var(--green)">~100 &euro;</div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -537,9 +520,9 @@ footer{text-align:center;padding:32px 2rem;border-top:1px solid var(--border);fo
     <p class="section-sub fade-in" style="color:var(--text-muted);font-size:1rem;max-width:600px;margin-bottom:48px;line-height:1.7">Drei Spezialisten &mdash; ein dedizierter Account Manager der euren Account kennt, ein Data-Engineer f&uuml;r pr&auml;zise Leadlisten, ein Infrastruktur-Experte f&uuml;r maximale Zustellbarkeit.</p>
     <div class="team-grid fade-in" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
       <div class="team-card" style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:center">
-        <div class="team-avatar" style="width:72px;height:72px;border-radius:50%;background:var(--accent-glow);border:2px solid var(--border-accent);margin:0 auto 20px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:800;color:var(--accent)">AK</div>
-        <h3 style="font-size:1rem;font-weight:700;margin-bottom:4px">Anthony Katzur</h3>
-        <div class="team-role" style="font-size:0.8rem;color:var(--accent);font-weight:600;margin-bottom:12px">Account Manager &amp; Strategie</div>
+        <div class="team-avatar" style="width:72px;height:72px;border-radius:50%;background:var(--accent-glow);border:2px solid var(--border-accent);margin:0 auto 20px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:800;color:var(--accent)">AM</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:4px">Account Manager</h3>
+        <div class="team-role" style="font-size:0.8rem;color:var(--accent);font-weight:600;margin-bottom:12px">Strategie &amp; Kampagnensteuerung</div>
         <p style="font-size:0.825rem;color:var(--text-muted);line-height:1.6">Euer direkter Ansprechpartner. Er kennt euren Account, f&uuml;hrt den w&ouml;chentlichen Optimierungs-Call und steuert die gesamte Kampagne.</p>
       </div>
       <div class="team-card" style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:center">
@@ -590,29 +573,9 @@ footer{text-align:center;padding:32px 2rem;border-top:1px solid var(--border);fo
         <p class="pricing-ideal" style="font-size:0.78rem;color:var(--text-dim);margin-top:12px;text-align:center">Ideal f&uuml;r: Gesundes Wachstum mit klarem Budget-Rahmen</p>
       </div>
 
-      <!-- Paket 3: Lead-Paket (EMPFOHLEN) -->
+      <!-- Paket 2: Growth (EMPFOHLEN) -->
       <div class="pricing-card recommended" style="background:linear-gradient(135deg,var(--bg-card),#0d1433);border:1px solid var(--accent);border-radius:var(--radius);padding:36px;display:flex;flex-direction:column;position:relative">
-        <div class="offer-badge" style="display:inline-block;padding:5px 14px;border-radius:100px;background:var(--accent);color:#fff;font-size:0.75rem;font-weight:700;margin-bottom:20px;width:fit-content">&#11088; Empfohlen zum Start</div>
-        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px">Lead-Paket</h3>
-        <p class="tagline" style="font-size:0.85rem;color:var(--text-muted);margin-bottom:24px">Einmalig bezahlen &mdash; 80 Leads erhalten</p>
-        <div class="price-main" style="font-size:2.5rem;font-weight:800;letter-spacing:-0.03em;color:var(--text);line-height:1">6.700 &euro;</div>
-        <div class="price-sub" style="font-size:0.85rem;color:var(--text-muted);margin-top:6px;margin-bottom:8px">Einmalige Investition &mdash; keine Laufzeit</div>
-        <div style="font-size:0.9rem;font-weight:700;color:var(--green);margin-bottom:24px;padding:10px 16px;background:var(--green-glow);border-radius:8px;display:inline-block;border:1px solid rgba(34,197,94,0.2)">&#10004; 80 Leads inklusive</div>
-        <ul class="features" style="list-style:none;flex:1;margin-bottom:28px">
-          <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>80 qualifizierte Leads &mdash; garantiert</li>
-          <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>Einmalig &mdash; keine Monatsbindung</li>
-          <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>Voller Grundwerk-Prozess (Setup bis Lead)</li>
-          <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>MasterInbox &amp; Lead-Qualifizierung</li>
-          <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>KickOff-Workshop (1 Stunde)</li>
-          <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>Kein Risiko: Ihr zahlt f&uuml;r Ergebnisse</li>
-          <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>Danach optional: Monatliches Retainer-Modell</li>
-        </ul>
-        <a href="https://calendly.com/anthonykatzur" target="_blank" class="pricing-cta primary" style="display:block;text-align:center;padding:14px;border-radius:100px;font-weight:700;font-size:0.9rem;background:var(--accent);color:#fff;margin-top:auto">Jetzt starten</a>
-        <p class="pricing-ideal" style="font-size:0.78rem;color:var(--text-dim);margin-top:12px;text-align:center">Ideal f&uuml;r: Einstieg ohne Monatsbindung &mdash; Ergebnisse first</p>
-      </div>
-
-      <!-- Paket 2: Growth -->
-      <div class="pricing-card" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px;display:flex;flex-direction:column;position:relative">
+        <div class="offer-badge" style="display:inline-block;padding:5px 14px;border-radius:100px;background:var(--accent);color:#fff;font-size:0.75rem;font-weight:700;margin-bottom:20px;width:fit-content">&#11088; Empfohlen</div>
         <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px">Growth</h3>
         <p class="tagline" style="font-size:0.85rem;color:var(--text-muted);margin-bottom:24px">H&ouml;heres Volumen f&uuml;r schnelleres Wachstum</p>
         <div style="margin-bottom:8px">
@@ -631,8 +594,28 @@ footer{text-align:center;padding:32px 2rem;border-top:1px solid var(--border);fo
           <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>Priorit&auml;t-Support &amp; schnelleres Reporting</li>
           <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>Lead-Garantie: 80 qualifizierte Leads</li>
         </ul>
-        <a href="https://calendly.com/anthonykatzur" target="_blank" class="pricing-cta secondary" style="display:block;text-align:center;padding:14px;border-radius:100px;font-weight:700;font-size:0.9rem;border:1px solid var(--border);color:var(--text);margin-top:auto">Paket w&auml;hlen</a>
+        <a href="https://calendly.com/anthonykatzur" target="_blank" class="pricing-cta primary" style="display:block;text-align:center;padding:14px;border-radius:100px;font-weight:700;font-size:0.9rem;background:var(--accent);color:#fff;margin-top:auto">Jetzt starten</a>
         <p class="pricing-ideal" style="font-size:0.78rem;color:var(--text-dim);margin-top:12px;text-align:center">Ideal f&uuml;r: Maximale Reichweite &amp; schnelles Skalieren</p>
+      </div>
+
+      <!-- Paket 3: Lead-Paket -->
+      <div class="pricing-card" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px;display:flex;flex-direction:column;position:relative">
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px">Lead-Paket</h3>
+        <p class="tagline" style="font-size:0.85rem;color:var(--text-muted);margin-bottom:24px">Einmalig bezahlen &mdash; 80 Leads erhalten</p>
+        <div class="price-main" style="font-size:2.5rem;font-weight:800;letter-spacing:-0.03em;color:var(--text);line-height:1">6.700 &euro;</div>
+        <div class="price-sub" style="font-size:0.85rem;color:var(--text-muted);margin-top:6px;margin-bottom:8px">Einmalige Investition &mdash; keine Laufzeit</div>
+        <div style="font-size:0.9rem;font-weight:700;color:var(--green);margin-bottom:24px;padding:10px 16px;background:var(--green-glow);border-radius:8px;display:inline-block;border:1px solid rgba(34,197,94,0.2)">&#10004; 80 Leads inklusive</div>
+        <ul class="features" style="list-style:none;flex:1;margin-bottom:28px">
+          <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>80 qualifizierte Leads &mdash; garantiert</li>
+          <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>Einmalig &mdash; keine Monatsbindung</li>
+          <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>Voller Grundwerk-Prozess (Setup bis Lead)</li>
+          <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>MasterInbox &amp; Lead-Qualifizierung</li>
+          <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>KickOff-Workshop (1 Stunde)</li>
+          <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>Kein Risiko: Ihr zahlt f&uuml;r Ergebnisse</li>
+          <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>Danach optional: Monatliches Retainer-Modell</li>
+        </ul>
+        <a href="https://calendly.com/anthonykatzur" target="_blank" class="pricing-cta secondary" style="display:block;text-align:center;padding:14px;border-radius:100px;font-weight:700;font-size:0.9rem;border:1px solid var(--border);color:var(--text);margin-top:auto">Paket w&auml;hlen</a>
+        <p class="pricing-ideal" style="font-size:0.78rem;color:var(--text-dim);margin-top:12px;text-align:center">Ideal f&uuml;r: Einstieg ohne Monatsbindung &mdash; Ergebnisse first</p>
       </div>
 
     </div>
@@ -652,61 +635,43 @@ footer{text-align:center;padding:32px 2rem;border-top:1px solid var(--border);fo
   <div class="section-inner" style="max-width:1200px;margin:0 auto">
     <div class="section-label fade-in" style="font-size:0.8rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:16px">Realistische Erwartungen</div>
     <h2 class="section-title fade-in" style="font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-0.03em;line-height:1.2;margin-bottom:12px">Euer 4-Monats-Forecast</h2>
-    <p class="section-sub fade-in" style="color:var(--text-muted);font-size:1rem;max-width:600px;margin-bottom:48px;line-height:1.7">Basierend auf vergleichbaren Kampagnen im Premium-Dienstleistungsbereich &mdash; Paket 1 (10.000 E-Mails/Mo).</p>
+    <p class="section-sub fade-in" style="color:var(--text-muted);font-size:1rem;max-width:600px;margin-bottom:48px;line-height:1.7">Vergleich beider Pakete &mdash; ab Monat 2 wird direkt das volle monatliche Volumen versendet.</p>
     <table class="prognose-table fade-in" style="width:100%;border-collapse:separate;border-spacing:0;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);margin-bottom:32px">
       <thead>
         <tr>
-          <th style="background:var(--bg-card);padding:14px 20px;font-size:0.82rem;font-weight:700;text-align:left;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;border-bottom:1px solid var(--border)">Monat</th>
-          <th style="background:var(--bg-card);padding:14px 20px;font-size:0.82rem;font-weight:700;text-align:left;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;border-bottom:1px solid var(--border)">Prospects kontaktiert</th>
-          <th style="background:var(--bg-card);padding:14px 20px;font-size:0.82rem;font-weight:700;text-align:left;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;border-bottom:1px solid var(--border)">Erwartete Leads</th>
-          <th style="background:var(--bg-card);padding:14px 20px;font-size:0.82rem;font-weight:700;text-align:left;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;border-bottom:1px solid var(--border)">Kumuliert</th>
+          <th style="background:var(--bg-card);padding:14px 16px;font-size:0.78rem;font-weight:700;text-align:left;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;border-bottom:1px solid var(--border)">Monat</th>
+          <th style="background:var(--bg-card);padding:14px 16px;font-size:0.78rem;font-weight:700;text-align:left;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;border-bottom:1px solid var(--border);border-left:1px solid var(--border-accent)">Standard (10k/Mo)<br><span style="font-weight:400;font-size:0.75rem;color:var(--text-muted)">Prospects | Leads</span></th>
+          <th style="background:var(--bg-card);padding:14px 16px;font-size:0.78rem;font-weight:700;text-align:left;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;border-bottom:1px solid var(--border);border-left:1px solid var(--border-accent)">Growth (20k/Mo)<br><span style="font-weight:400;font-size:0.75rem;color:var(--text-muted)">Prospects | Leads</span></th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td style="padding:16px 20px;font-size:0.9rem;border-bottom:1px solid var(--border);background:var(--bg)">Monat 1 (Setup &amp; Warmup)</td>
-          <td style="padding:16px 20px;font-size:0.9rem;border-bottom:1px solid var(--border);background:var(--bg);color:var(--text-muted)">Infrastruktur-Aufbau</td>
-          <td style="padding:16px 20px;font-size:0.9rem;border-bottom:1px solid var(--border);background:var(--bg);color:var(--text-muted)">0 Leads (Setup)</td>
-          <td style="padding:16px 20px;font-size:0.9rem;border-bottom:1px solid var(--border);background:var(--bg);color:var(--green);font-weight:600">0</td>
+          <td style="padding:14px 16px;font-size:0.875rem;border-bottom:1px solid var(--border);background:var(--bg)">Monat 1 &mdash; Setup &amp; Launch</td>
+          <td style="padding:14px 16px;font-size:0.875rem;border-bottom:1px solid var(--border);background:var(--bg);color:var(--text-muted);border-left:1px solid var(--border)">Infrastruktur &middot; 0 Leads</td>
+          <td style="padding:14px 16px;font-size:0.875rem;border-bottom:1px solid var(--border);background:var(--bg);color:var(--text-muted);border-left:1px solid var(--border)">Infrastruktur &middot; 0 Leads</td>
         </tr>
         <tr>
-          <td style="padding:16px 20px;font-size:0.9rem;border-bottom:1px solid var(--border);background:var(--bg)">Monat 2</td>
-          <td style="padding:16px 20px;font-size:0.9rem;border-bottom:1px solid var(--border);background:var(--bg);color:var(--text-muted)">3.000+ Prospects</td>
-          <td style="padding:16px 20px;font-size:0.9rem;border-bottom:1px solid var(--border);background:var(--bg);color:var(--text-muted)">15&ndash;25 Leads</td>
-          <td style="padding:16px 20px;font-size:0.9rem;border-bottom:1px solid var(--border);background:var(--bg);color:var(--green);font-weight:600">15&ndash;25</td>
+          <td style="padding:14px 16px;font-size:0.875rem;border-bottom:1px solid var(--border);background:var(--bg)">Monat 2</td>
+          <td style="padding:14px 16px;font-size:0.875rem;border-bottom:1px solid var(--border);background:var(--bg);border-left:1px solid var(--border)">10.000 &middot; <span style="color:var(--green);font-weight:600">15&ndash;20 Leads</span></td>
+          <td style="padding:14px 16px;font-size:0.875rem;border-bottom:1px solid var(--border);background:var(--bg);border-left:1px solid var(--border)">20.000 &middot; <span style="color:var(--green);font-weight:600">25&ndash;35 Leads</span></td>
         </tr>
         <tr>
-          <td style="padding:16px 20px;font-size:0.9rem;border-bottom:1px solid var(--border);background:var(--bg)">Monat 3</td>
-          <td style="padding:16px 20px;font-size:0.9rem;border-bottom:1px solid var(--border);background:var(--bg);color:var(--text-muted)">5.000+ Prospects</td>
-          <td style="padding:16px 20px;font-size:0.9rem;border-bottom:1px solid var(--border);background:var(--bg);color:var(--text-muted)">25&ndash;35 Leads</td>
-          <td style="padding:16px 20px;font-size:0.9rem;border-bottom:1px solid var(--border);background:var(--bg);color:var(--green);font-weight:600">40&ndash;60</td>
+          <td style="padding:14px 16px;font-size:0.875rem;border-bottom:1px solid var(--border);background:var(--bg)">Monat 3</td>
+          <td style="padding:14px 16px;font-size:0.875rem;border-bottom:1px solid var(--border);background:var(--bg);border-left:1px solid var(--border)">10.000 &middot; <span style="color:var(--green);font-weight:600">20&ndash;30 Leads</span></td>
+          <td style="padding:14px 16px;font-size:0.875rem;border-bottom:1px solid var(--border);background:var(--bg);border-left:1px solid var(--border)">20.000 &middot; <span style="color:var(--green);font-weight:600">35&ndash;50 Leads</span></td>
         </tr>
         <tr>
-          <td style="padding:16px 20px;font-size:0.9rem;border-bottom:1px solid var(--border);background:var(--bg)">Monat 4</td>
-          <td style="padding:16px 20px;font-size:0.9rem;border-bottom:1px solid var(--border);background:var(--bg);color:var(--text-muted)">5.000+ Prospects</td>
-          <td style="padding:16px 20px;font-size:0.9rem;border-bottom:1px solid var(--border);background:var(--bg);color:var(--text-muted)">40&ndash;55 Leads</td>
-          <td style="padding:16px 20px;font-size:0.9rem;border-bottom:1px solid var(--border);background:var(--bg);color:var(--green);font-weight:600">80&ndash;115</td>
+          <td style="padding:14px 16px;font-size:0.875rem;border-bottom:1px solid var(--border);background:var(--bg)">Monat 4</td>
+          <td style="padding:14px 16px;font-size:0.875rem;border-bottom:1px solid var(--border);background:var(--bg);border-left:1px solid var(--border)">10.000 &middot; <span style="color:var(--green);font-weight:600">35&ndash;50 Leads</span></td>
+          <td style="padding:14px 16px;font-size:0.875rem;border-bottom:1px solid var(--border);background:var(--bg);border-left:1px solid var(--border)">20.000 &middot; <span style="color:var(--green);font-weight:600">55&ndash;80 Leads</span></td>
         </tr>
         <tr>
-          <td style="padding:16px 20px;font-size:0.9rem;background:var(--bg-card);font-weight:700;color:var(--accent)">Gesamt</td>
-          <td style="padding:16px 20px;font-size:0.9rem;background:var(--bg-card);font-weight:700;color:var(--accent)">13.000+ Prospects</td>
-          <td style="padding:16px 20px;font-size:0.9rem;background:var(--bg-card);font-weight:700;color:var(--accent)">&mdash;</td>
-          <td style="padding:16px 20px;font-size:0.9rem;background:var(--bg-card);font-weight:700;color:var(--green)">80+ Leads</td>
+          <td style="padding:14px 16px;font-size:0.9rem;background:var(--bg-card);font-weight:700;color:var(--accent)">Gesamt</td>
+          <td style="padding:14px 16px;font-size:0.9rem;background:var(--bg-card);font-weight:700;color:var(--green);border-left:1px solid var(--border)">30.000 Prospects &middot; 80+ Leads</td>
+          <td style="padding:14px 16px;font-size:0.9rem;background:var(--bg-card);font-weight:700;color:var(--green);border-left:1px solid var(--border)">60.000 Prospects &middot; 120+ Leads</td>
         </tr>
       </tbody>
     </table>
-    <div class="prognose-compare fade-in" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px">
-      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px">
-        <h4 style="font-size:0.85rem;font-weight:700;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted)">Google Ads &mdash; gleiche Anzahl qual. Termine</h4>
-        <div style="font-size:2rem;font-weight:800;line-height:1;margin-bottom:8px;color:var(--red)">~61.250 &euro;</div>
-        <p style="font-size:0.82rem;color:var(--text-muted);line-height:1.5">80 Leads &times; 50% Terminquote &times; 80% qualifiziert = 32 qual. Termine &times; 1.750 &euro; Google Ads CPT = 56.000 &euro; &mdash; plus laufende Betreuungskosten</p>
-      </div>
-      <div style="background:var(--bg-card);border:1px solid var(--green-glow);border-radius:var(--radius);padding:28px;border-color:rgba(34,197,94,0.3)">
-        <h4 style="font-size:0.85rem;font-weight:700;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted)">Cold Outreach Grundwerk &mdash; gleiche Anzahl</h4>
-        <div style="font-size:2rem;font-weight:800;line-height:1;margin-bottom:8px;color:var(--green)">9.990 &euro;</div>
-        <p style="font-size:0.82rem;color:var(--text-muted);line-height:1.5">Gleiche oder h&ouml;here Anzahl qualifizierter Leads &mdash; f&uuml;r einen Bruchteil der Kosten. Und ihr beh&auml;lt die vollst&auml;ndige Kontrolle &uuml;ber die Ansprache.</p>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -761,20 +726,6 @@ footer{text-align:center;padding:32px 2rem;border-top:1px solid var(--border);fo
         </div>
       </div>
       <div class="bonus-item" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;display:flex;gap:16px;align-items:flex-start">
-        <div class="bonus-icon" style="font-size:1.5rem;flex-shrink:0">&#128196;</div>
-        <div>
-          <h4 style="font-size:0.9rem;font-weight:700;margin-bottom:6px">Angebots-Vorlagen (PandaDoc)</h4>
-          <p style="font-size:0.82rem;color:var(--text-muted);line-height:1.5">Professionelle Angebots- und Vertragsvorlagen &mdash; damit die Konversion vom Lead zum Auftrag reibungslos l&auml;uft.</p>
-        </div>
-      </div>
-      <div class="bonus-item" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;display:flex;gap:16px;align-items:flex-start">
-        <div class="bonus-icon" style="font-size:1.5rem;flex-shrink:0">&#128204;</div>
-        <div>
-          <h4 style="font-size:0.9rem;font-weight:700;margin-bottom:6px">Calendly-Integration</h4>
-          <p style="font-size:0.82rem;color:var(--text-muted);line-height:1.5">Automatisierte Terminbuchung direkt aus dem Outreach &mdash; warme Leads k&ouml;nnen sofort einen Termin buchen.</p>
-        </div>
-      </div>
-      <div class="bonus-item" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;display:flex;gap:16px;align-items:flex-start">
         <div class="bonus-icon" style="font-size:1.5rem;flex-shrink:0">&#128222;</div>
         <div>
           <h4 style="font-size:0.9rem;font-weight:700;margin-bottom:6px">Direktkontakte der Entscheider</h4>
@@ -812,12 +763,12 @@ footer{text-align:center;padding:32px 2rem;border-top:1px solid var(--border);fo
         </div>
         <div class="timeline-item" style="position:relative;margin-bottom:32px">
           <div style="position:absolute;left:-33px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid var(--bg-card)"></div>
-          <h4 style="font-size:1rem;font-weight:700;margin-bottom:6px">Woche 2&ndash;3 &mdash; Setup &amp; Launch</h4>
-          <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.6">Infrastruktur aufbauen, Leadlisten anreichern, E-Mail-Sequenzen fertigstellen, Domain-Warmup starten, erste Kampagne live schalten.</p>
+          <h4 style="font-size:1rem;font-weight:700;margin-bottom:6px">Woche 2&ndash;4 &mdash; Setup &amp; Launch</h4>
+          <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.6">Infrastruktur aufbauen, Leadlisten anreichern, E-Mail-Sequenzen fertigstellen, Domain-Warmup starten, erste Kampagne live schalten nach 4 Wochen.</p>
         </div>
         <div class="timeline-item" style="position:relative;margin-bottom:32px">
           <div style="position:absolute;left:-33px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid var(--bg-card)"></div>
-          <h4 style="font-size:1rem;font-weight:700;margin-bottom:6px">Woche 4 &mdash; Erste Antworten</h4>
+          <h4 style="font-size:1rem;font-weight:700;margin-bottom:6px">Monat 2 &mdash; Erste Antworten</h4>
           <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.6">Erste positive R&uuml;ckmeldungen landen in der MasterInbox. Ihr erhaltet qualifizierte Leads direkt &mdash; einfach anrufen oder Termin buchen.</p>
         </div>
         <div class="timeline-item" style="position:relative">
@@ -828,9 +779,9 @@ footer{text-align:center;padding:32px 2rem;border-top:1px solid var(--border);fo
       </div>
       <div class="fade-in">
         <div class="timeline-highlight" style="background:var(--accent-glow);border:1px solid var(--border-accent);border-radius:var(--radius);padding:32px;text-align:center;margin-bottom:24px">
-          <div style="font-size:2.5rem;font-weight:800;color:var(--accent);margin-bottom:12px">14 Tage</div>
+          <div style="font-size:2.5rem;font-weight:800;color:var(--accent);margin-bottom:12px">30 Tage</div>
           <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px">bis zu euren ersten Leads</h3>
-          <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.6">Vom KickOff bis zur ersten qualifizierten Anfrage in eurer Inbox &mdash; schnell, strukturiert, messbar.</p>
+          <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.6">Vom KickOff bis zur ersten qualifizierten Anfrage in eurer Inbox &mdash; strukturiert und messbar.</p>
         </div>
         <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:28px">
           <h4 style="font-size:0.9rem;font-weight:700;margin-bottom:16px">Was ihr tun m&uuml;sst</h4>
