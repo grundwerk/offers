@@ -1,0 +1,735 @@
+<!-- GRUNDWERK-OFFER v1 | 2026-03-16 18:00 | Initial deploy MisterNeo -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="offer-version" content="v1 | 2026-03-16">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MisterNeo &times; Grundwerk &mdash; B2B-Wachstum f&uuml;r Team-Events</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII=" />
+<script>
+(function(){
+var code='7364918250';
+var params=new URLSearchParams(window.location.search);
+if(params.get('secure')!==code){
+document.documentElement.style.display='none';
+document.title='Zugriff verweigert';
+window.stop();
+}
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--bg-card:#111111;--bg-card-hover:#161616;--text:#f0f0f0;--text-muted:#888;--text-dim:#666;--accent:#4f7df9;--accent-glow:rgba(79,125,249,0.15);--green:#22c55e;--green-glow:rgba(34,197,94,0.15);--red:#ef4444;--red-dim:rgba(239,68,68,0.15);--yellow:#eab308;--border:rgba(255,255,255,0.06);--border-accent:rgba(79,125,249,0.3);--radius:16px;--radius-sm:10px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none;}
+.container{max-width:1200px;margin:0 auto;padding:0 2rem;}
+section{padding:100px 2rem;}
+.section-label{font-size:0.8rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent);font-weight:600;margin-bottom:1rem;}
+.section-title{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-0.03em;line-height:1.2;margin-bottom:1.5rem;}
+.section-sub{font-size:1rem;color:var(--text-muted);max-width:640px;}
+.accent{color:var(--accent);}
+.green{color:var(--green);}
+.fade-in{opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);background:rgba(10,10,10,0.85);border-bottom:1px solid var(--border);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-weight:700;font-size:1rem;color:var(--text);}
+.nav-cta{background:var(--accent);color:#fff;padding:8px 20px;border-radius:100px;font-size:0.85rem;font-weight:600;transition:opacity 0.2s;}
+.nav-cta:hover{opacity:0.85;}
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 2rem 80px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(79,125,249,0.08) 0%,transparent 70%);pointer-events:none;}
+.hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px);background-size:60px 60px;mask-image:linear-gradient(to bottom,rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.3) 40%,transparent 75%);-webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.3) 40%,transparent 75%);pointer-events:none;}
+.hero-inner{position:relative;z-index:1;max-width:800px;}
+.hero-logo{max-width:140px;height:48px;object-fit:contain;border-radius:12px;margin-bottom:2rem;filter:brightness(1.2);}
+.hero h1{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:800;letter-spacing:-0.04em;line-height:1.1;margin-bottom:1.5rem;}
+.hero h1 span{background:linear-gradient(135deg,var(--accent),#7c9ffc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-sub{font-size:1.1rem;color:var(--text-muted);max-width:580px;margin:0 auto 2.5rem;line-height:1.7;}
+.hero-ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.btn-primary{background:var(--accent);color:#fff;padding:14px 28px;border-radius:100px;font-weight:700;font-size:0.95rem;transition:opacity 0.2s,transform 0.2s;}
+.btn-primary:hover{opacity:0.88;transform:translateY(-1px);}
+.btn-secondary{background:transparent;color:var(--text-muted);padding:14px 28px;border-radius:100px;font-weight:600;font-size:0.95rem;border:1px solid var(--border);transition:border-color 0.2s,color 0.2s;}
+.btn-secondary:hover{border-color:var(--accent);color:var(--text);}
+/* LOGO TICKER */
+.logo-ticker-wrap{padding:20px 0 80px;overflow:hidden;position:relative;}
+.logo-ticker-wrap::before,.logo-ticker-wrap::after{content:'';position:absolute;top:0;bottom:0;width:20%;z-index:2;pointer-events:none;}
+.logo-ticker-wrap::before{left:0;background:linear-gradient(to right,var(--bg) 60%,transparent);}
+.logo-ticker-wrap::after{right:0;background:linear-gradient(to left,var(--bg) 60%,transparent);}
+.ticker-row{display:flex;gap:48px;width:max-content;margin-bottom:16px;}
+.ticker-row-forward{animation:tickerFwd 40s linear infinite;}
+.ticker-row-reverse{animation:tickerRev 45s linear infinite;}
+@keyframes tickerFwd{from{transform:translateX(-25%)}to{transform:translateX(-75%)}}
+@keyframes tickerRev{from{transform:translateX(-75%)}to{transform:translateX(-25%)}}
+.client-logo{height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);transition:opacity 0.3s,filter 0.3s;flex-shrink:0;}
+.client-logo:hover{opacity:0.8;filter:grayscale(0%) brightness(1);}
+/* STAT BAR */
+.stat-bar{background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:40px 2rem;}
+.stat-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
+.stat-item{text-align:center;}
+.stat-number{font-size:2.5rem;font-weight:800;color:var(--accent);line-height:1;}
+.stat-label{font-size:0.85rem;color:var(--text-muted);margin-top:0.4rem;}
+/* PROBLEM */
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;margin-top:3rem;}
+.problem-cards{display:flex;flex-direction:column;gap:1.5rem;}
+.problem-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;}
+.problem-card .icon{font-size:1.8rem;margin-bottom:0.75rem;}
+.problem-card h3{font-size:1rem;font-weight:700;margin-bottom:0.5rem;}
+.problem-card p{font-size:0.88rem;color:var(--text-muted);line-height:1.6;}
+.call-quote{border-left:3px solid var(--accent);padding:0.75rem 1rem;margin-top:0.75rem;background:var(--accent-glow);border-radius:0 8px 8px 0;}
+.call-quote-text{font-size:0.85rem;color:var(--text);font-style:italic;line-height:1.5;}
+.call-quote-author{font-size:0.75rem;color:var(--text-muted);margin-top:0.4rem;}
+.solution-box{background:linear-gradient(135deg,rgba(79,125,249,0.1),rgba(79,125,249,0.03));border:1px solid var(--border-accent);border-radius:var(--radius);padding:2rem;position:sticky;top:80px;}
+.solution-box h3{font-size:1.2rem;font-weight:700;margin-bottom:1rem;}
+.solution-box p{font-size:0.88rem;color:var(--text-muted);line-height:1.7;margin-bottom:1.5rem;}
+.cost-compare{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.cost-item{background:var(--bg-card);border-radius:var(--radius-sm);padding:1rem;text-align:center;}
+.cost-item .cost-val{font-size:1.4rem;font-weight:800;}
+.cost-item .cost-val.red{color:var(--red);}
+.cost-item .cost-val.green{color:var(--green);}
+.cost-item .cost-label{font-size:0.75rem;color:var(--text-muted);margin-top:0.25rem;}
+/* PROZESS */
+.process-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-top:3rem;}
+.process-step{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem 1rem;text-align:center;}
+.step-num{width:40px;height:40px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem;margin:0 auto 1rem;}
+.process-step h4{font-size:0.9rem;font-weight:700;margin-bottom:0.5rem;}
+.process-step p{font-size:0.8rem;color:var(--text-muted);line-height:1.5;}
+/* TOOL TICKER */
+.tool-ticker-section{padding:60px 0;}
+.ticker-header{text-align:center;padding:0 2rem 2.5rem;}
+.ticker-header h3{font-size:1.4rem;font-weight:700;}
+.ticker-header h3 span{color:var(--green);}
+.ticker-label{font-size:0.85rem;color:var(--text-muted);margin-top:0.5rem;}
+.tool-ticker-wrap{overflow:hidden;position:relative;}
+.tool-ticker-wrap::before,.tool-ticker-wrap::after{content:'';position:absolute;top:0;bottom:0;width:20%;z-index:2;pointer-events:none;}
+.tool-ticker-wrap::before{left:0;background:linear-gradient(to right,var(--bg) 60%,transparent);}
+.tool-ticker-wrap::after{right:0;background:linear-gradient(to left,var(--bg) 60%,transparent);}
+.tool-row{display:flex;gap:12px;width:max-content;margin-bottom:12px;}
+.tool-row-fwd{animation:tickerFwd 35s linear infinite;}
+.tool-row-rev{animation:tickerRev 40s linear infinite;}
+.pill{display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;}
+.pill .dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.dot-blue{background:#4f7df9;}.dot-green{background:#22c55e;}.dot-purple{background:#a855f7;}.dot-orange{background:#f97316;}.dot-cyan{background:#06b6d4;}.dot-red{background:#ef4444;}
+/* STRATEGIE */
+.strategy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;}
+.strategy-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.75rem;}
+.strategy-icon{font-size:2rem;margin-bottom:1rem;}
+.strategy-card h3{font-size:1rem;font-weight:700;margin-bottom:0.75rem;}
+.strategy-card p{font-size:0.85rem;color:var(--text-muted);line-height:1.6;}
+.strategy-tag{display:inline-block;background:var(--accent-glow);border:1px solid var(--border-accent);color:var(--accent);font-size:0.72rem;padding:3px 10px;border-radius:100px;margin-top:0.75rem;}
+</style>
+</head>
+<body>
+<!-- NAV -->
+<nav>
+<div class="nav-inner">
+<div class="nav-logo">MisterNeo &times; Grundwerk</div>
+<a href="#angebot" class="nav-cta">Zum Angebot</a>
+</div>
+</nav>
+<!-- HERO -->
+<section class="hero">
+<div class="hero-inner fade-in">
+<img src="https://www.misterneo.com/wp-content/uploads/2020/01/logo-white.svg" alt="MisterNeo Logo" class="hero-logo" onerror="this.style.display='none'">
+<h1>Dein B2B-Vertrieb auf <span>Autopilot</span></h1>
+<p class="hero-sub">Wir identifizieren Unternehmen in deiner Region, die regelm&auml;&szlig;ig Team-Events planen &mdash; und sprechen sie automatisiert, hochpersonalisiert an. Du bearbeitest nur noch die echten Interessenten.</p>
+<div class="hero-ctas">
+<a href="#angebot" class="btn-primary">Angebot ansehen</a>
+<a href="#prozess" class="btn-secondary">Wie funktioniert das?</a>
+</div>
+</div>
+</section>
+<!-- LOGO TICKER -->
+<div class="logo-ticker-wrap">
+<div class="ticker-row ticker-row-forward">
+<img src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" class="client-logo" alt="StackFuel">
+<img src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" class="client-logo" alt="Raidboxes">
+<img src="https://www.hrs.de/_next/static/media/hrs_logo_red.7cccdfd9.svg" class="client-logo" alt="HRS">
+<img src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" class="client-logo" alt="PIABO">
+<img src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" class="client-logo" alt="Birdsview">
+<img src="https://cdn.prod.website-files.com/673602757a06be245e484913/678d467526d221b55f5dc3e0_mc-logo-1-black.svg" class="client-logo" alt="Michelscom">
+<img src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" class="client-logo" alt="HappyGang">
+<img src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" class="client-logo" alt="StackFuel">
+<img src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" class="client-logo" alt="Raidboxes">
+<img src="https://www.hrs.de/_next/static/media/hrs_logo_red.7cccdfd9.svg" class="client-logo" alt="HRS">
+<img src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" class="client-logo" alt="PIABO">
+<img src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" class="client-logo" alt="Birdsview">
+<img src="https://cdn.prod.website-files.com/673602757a06be245e484913/678d467526d221b55f5dc3e0_mc-logo-1-black.svg" class="client-logo" alt="Michelscom">
+<img src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" class="client-logo" alt="HappyGang">
+<img src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" class="client-logo" alt="StackFuel">
+<img src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" class="client-logo" alt="Raidboxes">
+<img src="https://www.hrs.de/_next/static/media/hrs_logo_red.7cccdfd9.svg" class="client-logo" alt="HRS">
+<img src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" class="client-logo" alt="PIABO">
+<img src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" class="client-logo" alt="Birdsview">
+<img src="https://cdn.prod.website-files.com/673602757a06be245e484913/678d467526d221b55f5dc3e0_mc-logo-1-black.svg" class="client-logo" alt="Michelscom">
+<img src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" class="client-logo" alt="HappyGang">
+<img src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" class="client-logo" alt="StackFuel">
+<img src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" class="client-logo" alt="Raidboxes">
+<img src="https://www.hrs.de/_next/static/media/hrs_logo_red.7cccdfd9.svg" class="client-logo" alt="HRS">
+<img src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" class="client-logo" alt="PIABO">
+<img src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" class="client-logo" alt="Birdsview">
+<img src="https://cdn.prod.website-files.com/673602757a06be245e484913/678d467526d221b55f5dc3e0_mc-logo-1-black.svg" class="client-logo" alt="Michelscom">
+<img src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" class="client-logo" alt="HappyGang">
+</div>
+<div class="ticker-row ticker-row-reverse">
+<img src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" class="client-logo" alt="Smart Bridges">
+<img src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" class="client-logo" alt="Peer Studios">
+<img src="https://d2bw95mh2ee04s.cloudfront.net/prod/content/wp-content/uploads/2025/01/02134814/Property-Logo-Main.svg" class="client-logo" alt="SellerLogic">
+<img src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" class="client-logo" alt="Famedly">
+<img src="https://www.hivebuy.com/hubfs/Logo-1.svg" class="client-logo" alt="Hivebuy">
+<img src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" class="client-logo" alt="Reonic">
+<img src="https://digitalnow.online/logo.png" class="client-logo" alt="Digital Now">
+<img src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" class="client-logo" alt="Smart Bridges">
+<img src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" class="client-logo" alt="Peer Studios">
+<img src="https://d2bw95mh2ee04s.cloudfront.net/prod/content/wp-content/uploads/2025/01/02134814/Property-Logo-Main.svg" class="client-logo" alt="SellerLogic">
+<img src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" class="client-logo" alt="Famedly">
+<img src="https://www.hivebuy.com/hubfs/Logo-1.svg" class="client-logo" alt="Hivebuy">
+<img src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" class="client-logo" alt="Reonic">
+<img src="https://digitalnow.online/logo.png" class="client-logo" alt="Digital Now">
+<img src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" class="client-logo" alt="Smart Bridges">
+<img src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" class="client-logo" alt="Peer Studios">
+<img src="https://d2bw95mh2ee04s.cloudfront.net/prod/content/wp-content/uploads/2025/01/02134814/Property-Logo-Main.svg" class="client-logo" alt="SellerLogic">
+<img src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" class="client-logo" alt="Famedly">
+<img src="https://www.hivebuy.com/hubfs/Logo-1.svg" class="client-logo" alt="Hivebuy">
+<img src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" class="client-logo" alt="Reonic">
+<img src="https://digitalnow.online/logo.png" class="client-logo" alt="Digital Now">
+<img src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" class="client-logo" alt="Smart Bridges">
+<img src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" class="client-logo" alt="Peer Studios">
+<img src="https://d2bw95mh2ee04s.cloudfront.net/prod/content/wp-content/uploads/2025/01/02134814/Property-Logo-Main.svg" class="client-logo" alt="SellerLogic">
+<img src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" class="client-logo" alt="Famedly">
+<img src="https://www.hivebuy.com/hubfs/Logo-1.svg" class="client-logo" alt="Hivebuy">
+<img src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" class="client-logo" alt="Reonic">
+<img src="https://digitalnow.online/logo.png" class="client-logo" alt="Digital Now">
+</div>
+</div>
+<!-- STAT BAR -->
+<div class="stat-bar">
+<div class="stat-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;">
+<div class="stat-item fade-in"><div class="stat-number">10 Mio.+</div><div class="stat-label">E-Mails versendet</div></div>
+<div class="stat-item fade-in"><div class="stat-number">50+</div><div class="stat-label">Erfolgreiche B2B-Projekte</div></div>
+<div class="stat-item fade-in"><div class="stat-number">75+</div><div class="stat-label">Tools &amp; Datenanbieter</div></div>
+</div>
+</div>
+<!-- PROBLEM -->
+<section id="problem" style="padding:100px 2rem;">
+<div class="container">
+<div class="section-label fade-in">Das Problem</div>
+<h2 class="section-title fade-in">Du hast es schon probiert &mdash;<br>und trotzdem h&auml;ngt es irgendwo</h2>
+<div class="problem-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;margin-top:3rem;">
+<div class="problem-cards" style="display:flex;flex-direction:column;gap:1.5rem;">
+<div class="problem-card fade-in" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;">
+<div class="icon">&#128233;</div>
+<h3>2.500 E-Mails &mdash; fast nichts nachverfolgt</h3>
+<p>Du hast selbst Kaltakquise betrieben, Google Maps und LinkedIn gescrapet, Instantly genutzt. Das Potenzial war da &mdash; aber ohne CRM und Follow-up-Prozess ist das meiste davon einfach liegengeblieben.</p>
+<div class="call-quote">
+<div class="call-quote-text">&#8222;Wir haben schon mal verschiedene Sachen ausprobiert &mdash; Google Maps, LinkedIn. War cool, aber ist irgendwie so ein bisschen geendet.&#8220;</div>
+<div class="call-quote-author">&mdash; Nicolas Papke, Gesch&auml;ftsf&uuml;hrer &middot; aus dem Gespr&auml;ch mit Grundwerk</div>
+</div>
+</div>
+<div class="problem-card fade-in" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;">
+<div class="icon">&#128200;</div>
+<h3>B2B l&auml;uft noch nicht planbar</h3>
+<p>JGAs kommen &uuml;ber Google &mdash; aber Firmenkunden f&uuml;r Team-Events entstehen nicht von selbst. Ohne systematischen Outreach und CRM-Pflege bleibt das B2B-Gesch&auml;ft Zufall statt Vertriebskanal.</p>
+</div>
+<div class="problem-card fade-in" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;">
+<div class="icon">&#128269;</div>
+<h3>Kein Tracking, kein System</h3>
+<p>Wer hat geantwortet? Wer hat vielleicht sp&auml;ter direkt gebucht? Du wei&szlig;t es nicht &mdash; weil die Infrastruktur fehlt. Ohne Metrics, CRM und Follow-up-Sequenzen bleibt der echte ROI unsichtbar.</p>
+</div>
+</div>
+<div class="solution-box fade-in" style="background:linear-gradient(135deg,rgba(79,125,249,0.1),rgba(79,125,249,0.03));border:1px solid var(--border-accent);border-radius:var(--radius);padding:2rem;position:sticky;top:80px;">
+<h3>&#128161; Die L&ouml;sung</h3>
+<p>Wir bauen dir eine vollst&auml;ndige B2B-Vertriebsmaschine: Von der Zielgruppen-Definition &uuml;ber personalisierte E-Mail-Kampagnen bis zum CRM-integrierten Follow-up-System. Du bekommst nur noch die echten Interessenten &mdash; vorkategorisiert, gebündelt, ready to close.</p>
+<p style="margin-bottom:1rem;font-size:0.85rem;color:var(--text-muted);">Kosten pro qualifiziertem Termin im Vergleich:</p>
+<div class="cost-compare" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+<div class="cost-item" style="background:var(--bg-card);border-radius:var(--radius-sm);padding:1rem;text-align:center;">
+<div class="cost-val red" style="font-size:1.4rem;font-weight:800;color:var(--red);">1.750 &euro;</div>
+<div class="cost-label" style="font-size:0.75rem;color:var(--text-muted);margin-top:0.25rem;">Meta Ads B2B</div>
+</div>
+<div class="cost-item" style="background:var(--bg-card);border-radius:var(--radius-sm);padding:1rem;text-align:center;">
+<div class="cost-val green" style="font-size:1.4rem;font-weight:800;color:var(--green);">~250 &euro;</div>
+<div class="cost-label" style="font-size:0.75rem;color:var(--text-muted);margin-top:0.25rem;">Cold Email Outreach</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- PROZESS -->
+<section id="prozess" style="padding:100px 2rem;background:rgba(255,255,255,0.01);">
+<div class="container">
+<div class="section-label fade-in">Der Prozess</div>
+<h2 class="section-title fade-in">In 5 Schritten zur planbaren B2B-Pipeline</h2>
+<p class="section-sub fade-in">Kein Raten, kein Ausprobieren &mdash; ein erprobter Prozess der funktioniert.</p>
+<div class="process-steps" style="display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-top:3rem;">
+<div class="process-step fade-in" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem 1rem;text-align:center;">
+<div class="step-num" style="width:40px;height:40px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem;margin:0 auto 1rem;">1</div>
+<h4>Zielgruppe</h4>
+<p style="font-size:0.8rem;color:var(--text-muted);">ICP-Definition: Welche Unternehmen buchen Team-Events? Gr&ouml;&szlig;e, Branche, Region.</p>
+</div>
+<div class="process-step fade-in" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem 1rem;text-align:center;">
+<div class="step-num" style="width:40px;height:40px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem;margin:0 auto 1rem;">2</div>
+<h4>Entscheider</h4>
+<p style="font-size:0.8rem;color:var(--text-muted);">Verifizierte Direktkontakte von HR, Office Managern und Teamleitern &mdash; aktuell &amp; korrekt.</p>
+</div>
+<div class="process-step fade-in" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem 1rem;text-align:center;">
+<div class="step-num" style="width:40px;height:40px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem;margin:0 auto 1rem;">3</div>
+<h4>Ansprache</h4>
+<p style="font-size:0.8rem;color:var(--text-muted);">Hochpersonalisierte E-Mail-Sequenzen mit variablen Faktoren &mdash; kein Massenversand, echter Kontext.</p>
+</div>
+<div class="process-step fade-in" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem 1rem;text-align:center;">
+<div class="step-num" style="width:40px;height:40px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem;margin:0 auto 1rem;">4</div>
+<h4>MasterInbox</h4>
+<p style="font-size:0.8rem;color:var(--text-muted);">Alle Antworten aus allen Accounts geb&uuml;ndelt &mdash; vorkategorisiert, Interessenten hervorgehoben.</p>
+</div>
+<div class="process-step fade-in" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem 1rem;text-align:center;">
+<div class="step-num" style="width:40px;height:40px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem;margin:0 auto 1rem;">5</div>
+<h4>Warme Leads</h4>
+<p style="font-size:0.8rem;color:var(--text-muted);">Du bekommst nur echte Interessenten &mdash; mit Kontext, Gesch&auml;ftsf&uuml;hrer-Details und Buchungslink.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- TOOL TICKER -->
+<div class="tool-ticker-section" style="padding:60px 0;">
+<div class="ticker-header" style="text-align:center;padding:0 2rem 2.5rem;">
+<h3 style="font-size:1.4rem;font-weight:700;">75+ Tools &amp; Datenanbieter &rarr; <span style="color:var(--green);">0&euro; Fixkosten</span></h3>
+<div class="ticker-label" style="font-size:0.85rem;color:var(--text-muted);margin-top:0.5rem;">Enterprise-GTM-Setup &mdash; wir tragen die Kosten</div>
+</div>
+<div class="tool-ticker-wrap" style="overflow:hidden;position:relative;">
+<div style="position:absolute;top:0;bottom:0;left:0;width:20%;z-index:2;background:linear-gradient(to right,var(--bg) 60%,transparent);pointer-events:none;"></div>
+<div style="position:absolute;top:0;bottom:0;right:0;width:20%;z-index:2;background:linear-gradient(to left,var(--bg) 60%,transparent);pointer-events:none;"></div>
+<div class="tool-row tool-row-fwd" style="display:flex;gap:12px;width:max-content;margin-bottom:12px;">
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span class="dot dot-blue" style="width:7px;height:7px;border-radius:50%;background:#4f7df9;flex-shrink:0;"></span>Apollo.io</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span class="dot dot-green" style="width:7px;height:7px;border-radius:50%;background:#22c55e;flex-shrink:0;"></span>Clay</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span class="dot dot-orange" style="width:7px;height:7px;border-radius:50%;background:#f97316;flex-shrink:0;"></span>Instantly</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span class="dot dot-purple" style="width:7px;height:7px;border-radius:50%;background:#a855f7;flex-shrink:0;"></span>OpenAI</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span class="dot dot-blue" style="width:7px;height:7px;border-radius:50%;background:#4f7df9;flex-shrink:0;"></span>Findymail</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span class="dot dot-cyan" style="width:7px;height:7px;border-radius:50%;background:#06b6d4;flex-shrink:0;"></span>MasterInbox</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span class="dot dot-green" style="width:7px;height:7px;border-radius:50%;background:#22c55e;flex-shrink:0;"></span>Heyreach</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span class="dot dot-orange" style="width:7px;height:7px;border-radius:50%;background:#f97316;flex-shrink:0;"></span>RevyOps</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span class="dot dot-blue" style="width:7px;height:7px;border-radius:50%;background:#4f7df9;flex-shrink:0;"></span>LinkedIn Sales Nav</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span class="dot dot-purple" style="width:7px;height:7px;border-radius:50%;background:#a855f7;flex-shrink:0;"></span>Prospeo</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span class="dot dot-green" style="width:7px;height:7px;border-radius:50%;background:#22c55e;flex-shrink:0;"></span>Millionverifier</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span class="dot dot-blue" style="width:7px;height:7px;border-radius:50%;background:#4f7df9;flex-shrink:0;"></span>Apollo.io</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span class="dot dot-green" style="width:7px;height:7px;border-radius:50%;background:#22c55e;flex-shrink:0;"></span>Clay</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span class="dot dot-orange" style="width:7px;height:7px;border-radius:50%;background:#f97316;flex-shrink:0;"></span>Instantly</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span class="dot dot-purple" style="width:7px;height:7px;border-radius:50%;background:#a855f7;flex-shrink:0;"></span>OpenAI</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span class="dot dot-blue" style="width:7px;height:7px;border-radius:50%;background:#4f7df9;flex-shrink:0;"></span>Findymail</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span class="dot dot-cyan" style="width:7px;height:7px;border-radius:50%;background:#06b6d4;flex-shrink:0;"></span>MasterInbox</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span class="dot dot-green" style="width:7px;height:7px;border-radius:50%;background:#22c55e;flex-shrink:0;"></span>Heyreach</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span class="dot dot-orange" style="width:7px;height:7px;border-radius:50%;background:#f97316;flex-shrink:0;"></span>RevyOps</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span class="dot dot-blue" style="width:7px;height:7px;border-radius:50%;background:#4f7df9;flex-shrink:0;"></span>LinkedIn Sales Nav</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span class="dot dot-purple" style="width:7px;height:7px;border-radius:50%;background:#a855f7;flex-shrink:0;"></span>Prospeo</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span class="dot dot-green" style="width:7px;height:7px;border-radius:50%;background:#22c55e;flex-shrink:0;"></span>Millionverifier</span>
+</div>
+<div class="tool-row tool-row-rev" style="display:flex;gap:12px;width:max-content;">
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span style="width:7px;height:7px;border-radius:50%;background:#a855f7;flex-shrink:0;"></span>Claude</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span style="width:7px;height:7px;border-radius:50%;background:#06b6d4;flex-shrink:0;"></span>Northdata</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span style="width:7px;height:7px;border-radius:50%;background:#f97316;flex-shrink:0;"></span>n8n</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span style="width:7px;height:7px;border-radius:50%;background:#22c55e;flex-shrink:0;"></span>Mailreach</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span style="width:7px;height:7px;border-radius:50%;background:#4f7df9;flex-shrink:0;"></span>Lusha</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span style="width:7px;height:7px;border-radius:50%;background:#ef4444;flex-shrink:0;"></span>BounceBan</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span style="width:7px;height:7px;border-radius:50%;background:#a855f7;flex-shrink:0;"></span>Perplexity</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span style="width:7px;height:7px;border-radius:50%;background:#06b6d4;flex-shrink:0;"></span>Brightdata</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span style="width:7px;height:7px;border-radius:50%;background:#f97316;flex-shrink:0;"></span>Make</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span style="width:7px;height:7px;border-radius:50%;background:#22c55e;flex-shrink:0;"></span>Ocean.io</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span style="width:7px;height:7px;border-radius:50%;background:#4f7df9;flex-shrink:0;"></span>Bettercontact</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span style="width:7px;height:7px;border-radius:50%;background:#ef4444;flex-shrink:0;"></span>Icypeas</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span style="width:7px;height:7px;border-radius:50%;background:#a855f7;flex-shrink:0;"></span>Claude</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span style="width:7px;height:7px;border-radius:50%;background:#06b6d4;flex-shrink:0;"></span>Northdata</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span style="width:7px;height:7px;border-radius:50%;background:#f97316;flex-shrink:0;"></span>n8n</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span style="width:7px;height:7px;border-radius:50%;background:#22c55e;flex-shrink:0;"></span>Mailreach</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span style="width:7px;height:7px;border-radius:50%;background:#4f7df9;flex-shrink:0;"></span>Lusha</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span style="width:7px;height:7px;border-radius:50%;background:#ef4444;flex-shrink:0;"></span>BounceBan</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span style="width:7px;height:7px;border-radius:50%;background:#a855f7;flex-shrink:0;"></span>Perplexity</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span style="width:7px;height:7px;border-radius:50%;background:#06b6d4;flex-shrink:0;"></span>Brightdata</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span style="width:7px;height:7px;border-radius:50%;background:#f97316;flex-shrink:0;"></span>Make</span>
+<span class="pill" style="display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.8rem;font-weight:500;white-space:nowrap;flex-shrink:0;"><span style="width:7px;height:7px;border-radius:50%;background:#22c55e;flex-shrink:0;"></span>Ocean.io</span>
+</div>
+</div>
+</div>
+<!-- KAMPAGNENSTRATEGIE -->
+<section id="strategie" style="padding:100px 2rem;">
+<div class="container">
+<div class="section-label fade-in">Kampagnenstrategie</div>
+<h2 class="section-title fade-in">3 Ans&auml;tze f&uuml;r MisterNeo</h2>
+<p class="section-sub fade-in">Individuell zugeschnitten auf deine Region, dein Angebot und deine Zielunternehmen.</p>
+<div class="strategy-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;">
+<div class="strategy-card fade-in" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.75rem;">
+<div class="strategy-icon">&#127968;</div>
+<h3>Regionale Unternehmen &mdash; B2B Team-Events</h3>
+<p style="font-size:0.85rem;color:var(--text-muted);line-height:1.6;">Unternehmen in Berlin und Umgebung mit 10&ndash;100 Mitarbeitern. Zielkontakte: HR-Manager, Office Manager, Teamleiter, Gesch&auml;ftsf&uuml;hrer. Angle: Wir sprechen die Sprache der Firmen &mdash; nicht die des JGA.</p>
+<span class="strategy-tag" style="display:inline-block;background:var(--accent-glow);border:1px solid var(--border-accent);color:var(--accent);font-size:0.72rem;padding:3px 10px;border-radius:100px;margin-top:0.75rem;">Hauptkampagne</span>
+</div>
+<div class="strategy-card fade-in" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.75rem;">
+<div class="strategy-icon">&#127876;</div>
+<h3>Saisonale Event-Kampagnen</h3>
+<p style="font-size:0.85rem;color:var(--text-muted);line-height:1.6;">Weihnachtsfeiern im Oktober/November proaktiv ansprechen &mdash; bevor die Konkurrenz bucht. Sommerfeste ab April. Reaktivierungskampagnen f&uuml;r bestehende Kontakte mit saisonalem Hook.</p>
+<span class="strategy-tag" style="display:inline-block;background:var(--accent-glow);border:1px solid var(--border-accent);color:var(--accent);font-size:0.72rem;padding:3px 10px;border-radius:100px;margin-top:0.75rem;">Timing-Vorteil</span>
+</div>
+<div class="strategy-card fade-in" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.75rem;">
+<div class="strategy-icon">&#128260;</div>
+<h3>Re-Aktivierung der 2.500 alten Kontakte</h3>
+<p style="font-size:0.85rem;color:var(--text-muted);line-height:1.6;">Die 2.500 E-Mails die du damals verschickt hast sind bares Gold. Mit einem neuen Angle, einem sauberen CRM und strukturiertem Follow-up reaktivieren wir die warmen Kontakte systematisch.</p>
+<span class="strategy-tag" style="display:inline-block;background:var(--accent-glow);border:1px solid var(--border-accent);color:var(--accent);font-size:0.72rem;padding:3px 10px;border-radius:100px;margin-top:0.75rem;">Quick Win</span>
+</div>
+</div>
+</div>
+</section>
+<!-- VIDEO -->
+<section style="padding:60px 2rem;background:rgba(255,255,255,0.01);">
+<div class="container" style="max-width:760px;">
+<div class="section-label fade-in" style="text-align:center;">Grundwerk erkl&auml;rt</div>
+<h2 class="section-title fade-in" style="text-align:center;font-size:clamp(1.5rem,3vw,2.2rem);">Wie wir f&uuml;r MisterNeo Firmenkunden gewinnen</h2>
+<div class="fade-in" style="margin-top:2rem;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);">
+<script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+<wistia-player media-id="tm8si6qq6m" aspect="16/9"></wistia-player>
+</div>
+</div>
+</section>
+<!-- TEAM -->
+<section id="team" style="padding:100px 2rem;">
+<div class="container">
+<div class="section-label fade-in">Das Team</div>
+<h2 class="section-title fade-in">Das Execution-Team hinter dem Erfolg</h2>
+<p class="section-sub fade-in">Drei Spezialisten &mdash; jeden Monat ausschlie&szlig;lich f&uuml;r dein Projekt verantwortlich.</p>
+<div class="team-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;">
+<div class="team-card fade-in" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.75rem;">
+<div style="font-size:2rem;margin-bottom:1rem;">&#129309;</div>
+<h3 style="font-size:1rem;font-weight:700;margin-bottom:0.5rem;">Account Manager</h3>
+<p style="font-size:0.85rem;color:var(--text-muted);line-height:1.6;">Dein direkter Ansprechpartner. Koordiniert Strategie, wöchentliche Calls, Optimierung der Kampagnen und sorgt daf&uuml;r dass nichts in der Pipeline verloren geht.</p>
+</div>
+<div class="team-card fade-in" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.75rem;">
+<div style="font-size:2rem;margin-bottom:1rem;">&#128202;</div>
+<h3 style="font-size:1rem;font-weight:700;margin-bottom:0.5rem;">Clay Engineer</h3>
+<p style="font-size:0.85rem;color:var(--text-muted);line-height:1.6;">Baut die Leadlisten, reichert Daten an und sorgt daf&uuml;r dass nur verifizierte, aktuelle Entscheider-Kontakte in die Kampagnen flie&szlig;en.</p>
+</div>
+<div class="team-card fade-in" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.75rem;">
+<div style="font-size:2rem;margin-bottom:1rem;">&#9881;&#65039;</div>
+<h3 style="font-size:1rem;font-weight:700;margin-bottom:0.5rem;">Automations Expert</h3>
+<p style="font-size:0.85rem;color:var(--text-muted);line-height:1.6;">Setzt die gesamte Infrastruktur auf: Domains, Postf&auml;cher, Deliverability-Warming, MasterInbox und CRM-Integration &mdash; alles l&auml;uft automatisch.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ANGEBOT -->
+<section id="angebot" style="padding:100px 2rem;background:rgba(255,255,255,0.01);">
+<div class="container">
+<div class="section-label fade-in" style="text-align:center;">Das Angebot</div>
+<h2 class="section-title fade-in" style="text-align:center;">Dein individuelles Paket</h2>
+<p class="section-sub fade-in" style="text-align:center;margin:0 auto 3rem;">Zugeschnitten auf MisterNeo &mdash; 4 Monate, klar strukturiert, mit allem was du brauchst.</p>
+<div class="fade-in" style="max-width:560px;margin:0 auto;">
+<div style="background:linear-gradient(135deg,rgba(79,125,249,0.12),rgba(79,125,249,0.04));border:2px solid var(--border-accent);border-radius:var(--radius);padding:2.5rem;position:relative;">
+<div style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:0.75rem;font-weight:700;padding:4px 16px;border-radius:100px;">Dein Paket</div>
+<h3 style="font-size:1.2rem;font-weight:700;margin-bottom:0.5rem;">B2B Outreach &mdash; E-Mail</h3>
+<p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:2rem;">~10.000 E-Mails / Monat &middot; MasterInbox &middot; CRM-Integration &middot; Weekly Calls</p>
+<div style="display:flex;align-items:baseline;gap:0.5rem;margin-bottom:0.5rem;">
+<span style="font-size:3rem;font-weight:800;color:var(--text);">2.900 &euro;</span>
+<span style="font-size:1rem;color:var(--text-muted);">/ Monat</span>
+</div>
+<p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:2rem;">zzgl. einmalig 1.990 &euro; Setup-Fee &middot; 4 Monate Mindestlaufzeit</p>
+<div style="display:flex;flex-direction:column;gap:0.75rem;margin-bottom:2rem;">
+<div style="display:flex;align-items:flex-start;gap:0.75rem;font-size:0.88rem;">
+<span style="color:var(--green);font-size:1rem;flex-shrink:0;">&#10003;</span>
+<span>ICP-Definition &amp; Zielgruppen-Workshop (1h KickOff)</span>
+</div>
+<div style="display:flex;align-items:flex-start;gap:0.75rem;font-size:0.88rem;">
+<span style="color:var(--green);font-size:1rem;flex-shrink:0;">&#10003;</span>
+<span>Kompletter Domain- &amp; Postfach-Setup (mehrere Domains)</span>
+</div>
+<div style="display:flex;align-items:flex-start;gap:0.75rem;font-size:0.88rem;">
+<span style="color:var(--green);font-size:1rem;flex-shrink:0;">&#10003;</span>
+<span>Hochpersonalisierte E-Mail-Sequenzen</span>
+</div>
+<div style="display:flex;align-items:flex-start;gap:0.75rem;font-size:0.88rem;">
+<span style="color:var(--green);font-size:1rem;flex-shrink:0;">&#10003;</span>
+<span>MasterInbox &mdash; alle Antworten geb&uuml;ndelt &amp; vorkategorisiert</span>
+</div>
+<div style="display:flex;align-items:flex-start;gap:0.75rem;font-size:0.88rem;">
+<span style="color:var(--green);font-size:1rem;flex-shrink:0;">&#10003;</span>
+<span>CRM-Integration &amp; Follow-up-Prozess aufsetzen</span>
+</div>
+<div style="display:flex;align-items:flex-start;gap:0.75rem;font-size:0.88rem;">
+<span style="color:var(--green);font-size:1rem;flex-shrink:0;">&#10003;</span>
+<span>Landing Page f&uuml;r B2B-Teamevents (zus&auml;tzlicher Bonus)</span>
+</div>
+<div style="display:flex;align-items:flex-start;gap:0.75rem;font-size:0.88rem;">
+<span style="color:var(--green);font-size:1rem;flex-shrink:0;">&#10003;</span>
+<span>Weekly Call mit Account Manager inklusive</span>
+</div>
+<div style="display:flex;align-items:flex-start;gap:0.75rem;font-size:0.88rem;">
+<span style="color:var(--green);font-size:1rem;flex-shrink:0;">&#10003;</span>
+<span>Alle Datenkosten &amp; Tool-Kosten von Grundwerk getragen</span>
+</div>
+</div>
+<div style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.25);border-radius:var(--radius-sm);padding:1rem;margin-bottom:2rem;font-size:0.85rem;">
+<span style="color:var(--green);font-weight:700;">Gesamtinvestition &uuml;ber 4 Monate:</span>
+<span style="color:var(--text-muted);"> 1.990 &euro; + 4 &times; 2.900 &euro; = <strong style="color:var(--text);">13.590 &euro;</strong></span>
+</div>
+<a href="https://calendly.com/anthony-katzur-grundwerk" class="btn-primary" style="display:block;text-align:center;background:var(--accent);color:#fff;padding:16px 28px;border-radius:100px;font-weight:700;font-size:1rem;">Jetzt starten &rarr;</a>
+</div>
+</div>
+</div>
+</section>
+<!-- FORECAST -->
+<section id="forecast" style="padding:100px 2rem;">
+<div class="container">
+<div class="section-label fade-in">Lead-Prognose</div>
+<h2 class="section-title fade-in">Was du in 4 Monaten erwarten kannst</h2>
+<p class="section-sub fade-in">Basierend auf ~10.000 E-Mails / Monat und vergleichbaren Projekten in der Event-Branche.</p>
+<div class="fade-in" style="margin-top:3rem;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;">
+<table style="width:100%;border-collapse:collapse;">
+<thead>
+<tr style="background:rgba(79,125,249,0.08);border-bottom:1px solid var(--border);">
+<th style="padding:1rem 1.5rem;text-align:left;font-size:0.85rem;color:var(--text-muted);font-weight:600;">Zeitraum</th>
+<th style="padding:1rem 1.5rem;text-align:center;font-size:0.85rem;color:var(--text-muted);font-weight:600;">Prospects kontaktiert</th>
+<th style="padding:1rem 1.5rem;text-align:center;font-size:0.85rem;color:var(--text-muted);font-weight:600;">Erwartete Leads</th>
+<th style="padding:1rem 1.5rem;text-align:center;font-size:0.85rem;color:var(--text-muted);font-weight:600;">Kumuliert</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom:1px solid var(--border);">
+<td style="padding:1rem 1.5rem;font-size:0.88rem;font-weight:600;">Monat 1 &mdash; Setup</td>
+<td style="padding:1rem 1.5rem;text-align:center;font-size:0.88rem;color:var(--text-muted);">0 (Aufbauphase)</td>
+<td style="padding:1rem 1.5rem;text-align:center;font-size:0.88rem;color:var(--text-muted);">0</td>
+<td style="padding:1rem 1.5rem;text-align:center;font-size:0.88rem;color:var(--text-muted);">0</td>
+</tr>
+<tr style="border-bottom:1px solid var(--border);">
+<td style="padding:1rem 1.5rem;font-size:0.88rem;font-weight:600;">Monat 2</td>
+<td style="padding:1rem 1.5rem;text-align:center;font-size:0.88rem;">5.000+</td>
+<td style="padding:1rem 1.5rem;text-align:center;font-size:0.88rem;color:var(--green);font-weight:700;">20&ndash;30 Leads</td>
+<td style="padding:1rem 1.5rem;text-align:center;font-size:0.88rem;">20&ndash;30</td>
+</tr>
+<tr style="border-bottom:1px solid var(--border);">
+<td style="padding:1rem 1.5rem;font-size:0.88rem;font-weight:600;">Monat 3</td>
+<td style="padding:1rem 1.5rem;text-align:center;font-size:0.88rem;">5.000+</td>
+<td style="padding:1rem 1.5rem;text-align:center;font-size:0.88rem;color:var(--green);font-weight:700;">25&ndash;40 Leads</td>
+<td style="padding:1rem 1.5rem;text-align:center;font-size:0.88rem;">45&ndash;70</td>
+</tr>
+<tr>
+<td style="padding:1rem 1.5rem;font-size:0.88rem;font-weight:600;">Monat 4</td>
+<td style="padding:1rem 1.5rem;text-align:center;font-size:0.88rem;">5.000+</td>
+<td style="padding:1rem 1.5rem;text-align:center;font-size:0.88rem;color:var(--green);font-weight:700;">30&ndash;45 Leads</td>
+<td style="padding:1rem 1.5rem;text-align:center;font-size:0.88rem;font-weight:700;color:var(--accent);">75&ndash;115 Leads</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fade-in" style="margin-top:1.5rem;background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.2);border-radius:var(--radius);padding:1.5rem;display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;">
+<div>
+<p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0.5rem;">Was &auml;quivalente Leads &uuml;ber Meta Ads kosten w&uuml;rden:</p>
+<p style="font-size:0.8rem;color:var(--text-dim);">75 Leads &times; ~350 &euro; / Lead = <span style="color:var(--red);font-weight:700;">26.250 &euro; Werbebudget</span></p>
+</div>
+<div style="text-align:right;">
+<p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0.5rem;">Mit Grundwerk Cold Outreach:</p>
+<p style="font-size:1rem;color:var(--green);font-weight:700;">~7.500 &euro; f&uuml;r dieselbe Anzahl Leads</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ROI -->
+<section id="roi" style="padding:100px 2rem;background:rgba(255,255,255,0.01);">
+<div class="container">
+<div class="section-label fade-in">Return on Investment</div>
+<h2 class="section-title fade-in">Was ein Firmenkunde f&uuml;r MisterNeo bedeutet</h2>
+<p class="section-sub fade-in">Ein Firmenkunde bucht nicht einmal &mdash; er bucht j&auml;hrlich wiederkehrend. Das &auml;ndert die Rechnung fundamental.</p>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;">
+<div class="fade-in" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:2rem;text-align:center;">
+<div style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-bottom:1rem;">Konservativ</div>
+<div style="font-size:2.5rem;font-weight:800;color:var(--green);margin-bottom:0.5rem;">10 Events</div>
+<div style="font-size:0.85rem;color:var(--text-muted);">&times; &oslash; 500 &euro; = 5.000 &euro;<br>Direkt. Plus Folgebuchungen.</div>
+</div>
+<div class="fade-in" style="background:linear-gradient(135deg,rgba(79,125,249,0.1),rgba(79,125,249,0.03));border:2px solid var(--border-accent);border-radius:var(--radius);padding:2rem;text-align:center;">
+<div style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent);margin-bottom:1rem;">Realistisch</div>
+<div style="font-size:2.5rem;font-weight:800;color:var(--green);margin-bottom:0.5rem;">25 Events</div>
+<div style="font-size:0.85rem;color:var(--text-muted);">&times; &oslash; 500 &euro; = 12.500 &euro;<br>Zus&auml;tzlich: CRM-Kontakte f&uuml;r Jahre.</div>
+</div>
+<div class="fade-in" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:2rem;text-align:center;">
+<div style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-bottom:1rem;">Optimistisch</div>
+<div style="font-size:2.5rem;font-weight:800;color:var(--green);margin-bottom:0.5rem;">50 Events</div>
+<div style="font-size:0.85rem;color:var(--text-muted);">&times; &oslash; 500 &euro; = 25.000 &euro;<br>B2B als vollwertige zweite S&auml;ule.</div>
+</div>
+</div>
+</div>
+</section>
+<!-- VERGLEICH -->
+<section id="vergleich" style="padding:100px 2rem;">
+<div class="container">
+<div class="section-label fade-in">Vergleich</div>
+<h2 class="section-title fade-in">Eigenakquise vs. Grundwerk &mdash; auf einen Blick</h2>
+<div class="fade-in" style="margin-top:3rem;overflow-x:auto;">
+<table style="width:100%;border-collapse:separate;border-spacing:0;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);">
+<thead>
+<tr style="background:rgba(79,125,249,0.08);">
+<th style="padding:1rem 1.5rem;text-align:left;font-size:0.85rem;color:var(--text-muted);font-weight:600;border-bottom:1px solid var(--border);">Kriterium</th>
+<th style="padding:1rem 1.5rem;text-align:center;font-size:0.85rem;color:var(--text-muted);font-weight:600;border-bottom:1px solid var(--border);">Eigenakquise (bisher)</th>
+<th style="padding:1rem 1.5rem;text-align:center;font-size:0.85rem;color:var(--accent);font-weight:600;border-bottom:1px solid var(--border);">Grundwerk E-Mail-Outreach</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom:1px solid var(--border);">
+<td style="padding:0.9rem 1.5rem;font-size:0.85rem;font-weight:600;">Monatliches Volumen</td>
+<td style="padding:0.9rem 1.5rem;text-align:center;font-size:0.85rem;color:var(--yellow);">~200&ndash;500 E-Mails</td>
+<td style="padding:0.9rem 1.5rem;text-align:center;font-size:0.85rem;color:var(--green);font-weight:700;">10.000+ E-Mails</td>
+</tr>
+<tr style="border-bottom:1px solid var(--border);">
+<td style="padding:0.9rem 1.5rem;font-size:0.85rem;font-weight:600;">CRM &amp; Follow-up</td>
+<td style="padding:0.9rem 1.5rem;text-align:center;font-size:0.85rem;color:var(--red);">&#10007; Kein System</td>
+<td style="padding:0.9rem 1.5rem;text-align:center;font-size:0.85rem;color:var(--green);">&#10003; Vollst&auml;ndig aufgesetzt</td>
+</tr>
+<tr style="border-bottom:1px solid var(--border);">
+<td style="padding:0.9rem 1.5rem;font-size:0.85rem;font-weight:600;">Datenpflege &amp; Verifikation</td>
+<td style="padding:0.9rem 1.5rem;text-align:center;font-size:0.85rem;color:var(--red);">&#10007; Wahrscheinlichkeitsbasiert</td>
+<td style="padding:0.9rem 1.5rem;text-align:center;font-size:0.85rem;color:var(--green);">&#10003; Verifizierte Direktdaten</td>
+</tr>
+<tr style="border-bottom:1px solid var(--border);">
+<td style="padding:0.9rem 1.5rem;font-size:0.85rem;font-weight:600;">Kosten pro Lead (Stufe 2)</td>
+<td style="padding:0.9rem 1.5rem;text-align:center;font-size:0.85rem;color:var(--yellow);">Zeitaufwand nicht gez&auml;hlt</td>
+<td style="padding:0.9rem 1.5rem;text-align:center;font-size:0.85rem;color:var(--green);font-weight:700;">~100 &euro; / Lead</td>
+</tr>
+<tr style="border-bottom:1px solid var(--border);">
+<td style="padding:0.9rem 1.5rem;font-size:0.85rem;font-weight:600;">Kosten pro qual. Termin (Stufe 4)</td>
+<td style="padding:0.9rem 1.5rem;text-align:center;font-size:0.85rem;color:var(--red);">Meta Ads: ~1.750 &euro;</td>
+<td style="padding:0.9rem 1.5rem;text-align:center;font-size:0.85rem;color:var(--green);font-weight:700;">~250 &euro;</td>
+</tr>
+<tr>
+<td style="padding:0.9rem 1.5rem;font-size:0.85rem;font-weight:600;">Skalierbarkeit</td>
+<td style="padding:0.9rem 1.5rem;text-align:center;font-size:0.85rem;color:var(--red);">&#10007; Manuell, zeitintensiv</td>
+<td style="padding:0.9rem 1.5rem;text-align:center;font-size:0.85rem;color:var(--green);">&#10003; Vollautomatisch skalierbar</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- BONUSSE -->
+<section id="bonusse" style="padding:100px 2rem;background:rgba(255,255,255,0.01);">
+<div class="container">
+<div class="section-label fade-in">Bonusse</div>
+<h2 class="section-title fade-in">Was du zus&auml;tzlich bekommst</h2>
+<p class="section-sub fade-in">Bleibende Assets die auch nach der Zusammenarbeit f&uuml;r dich arbeiten.</p>
+<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:3rem;">
+<div class="fade-in" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;display:flex;align-items:flex-start;gap:1rem;">
+<div style="font-size:1.6rem;flex-shrink:0;">&#127919;</div>
+<div><h4 style="font-size:0.95rem;font-weight:700;margin-bottom:0.4rem;">ICP-Definition &amp; Leadlisten</h4><p style="font-size:0.83rem;color:var(--text-muted);line-height:1.5;">Deine idealen Zielunternehmen exakt definiert &mdash; Leadlisten die dir geh&ouml;ren und die du dauerhaft nutzen kannst.</p></div>
+</div>
+<div class="fade-in" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;display:flex;align-items:flex-start;gap:1rem;">
+<div style="font-size:1.6rem;flex-shrink:0;">&#128203;</div>
+<div><h4 style="font-size:0.95rem;font-weight:700;margin-bottom:0.4rem;">CRM-Setup &amp; Follow-up-System</h4><p style="font-size:0.83rem;color:var(--text-muted);line-height:1.5;">Vollst&auml;ndig eingerichtetes CRM mit Pipelines, Tags und automatisierten Follow-up-Sequenzen.</p></div>
+</div>
+<div class="fade-in" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;display:flex;align-items:flex-start;gap:1rem;">
+<div style="font-size:1.6rem;flex-shrink:0;">&#127760;</div>
+<div><h4 style="font-size:0.95rem;font-weight:700;margin-bottom:0.4rem;">B2B-Landing Page</h4><p style="font-size:0.83rem;color:var(--text-muted);line-height:1.5;">Separate Landing Page f&uuml;r Firmenkunden &mdash; nicht JGA, sondern Team-Events. Gezielte Ansprache ohne Streuverlust.</p></div>
+</div>
+<div class="fade-in" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;display:flex;align-items:flex-start;gap:1rem;">
+<div style="font-size:1.6rem;flex-shrink:0;">&#128200;</div>
+<div><h4 style="font-size:0.95rem;font-weight:700;margin-bottom:0.4rem;">Sales Projections &amp; Tracking</h4><p style="font-size:0.83rem;color:var(--text-muted);line-height:1.5;">Alle Kampagnen-Metriken, Leads und Ums&auml;tze auf einem Dashboard &mdash; du siehst exakt was funktioniert.</p></div>
+</div>
+<div class="fade-in" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;display:flex;align-items:flex-start;gap:1rem;">
+<div style="font-size:1.6rem;flex-shrink:0;">&#128241;</div>
+<div><h4 style="font-size:0.95rem;font-weight:700;margin-bottom:0.4rem;">Grundwerk Web App (kostenlos)</h4><p style="font-size:0.83rem;color:var(--text-muted);line-height:1.5;">Zugang zur Grundwerk Web App f&uuml;r Sales-Tracking, Auswertungen und direkte Kommunikation mit deinem Team.</p></div>
+</div>
+<div class="fade-in" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;display:flex;align-items:flex-start;gap:1rem;">
+<div style="font-size:1.6rem;flex-shrink:0;">&#128222;</div>
+<div><h4 style="font-size:0.95rem;font-weight:700;margin-bottom:0.4rem;">Direkte Telefonnummern</h4><p style="font-size:0.83rem;color:var(--text-muted);line-height:1.5;">Verifizierte Direktnummern der Entscheider &mdash; f&uuml;r Follow-up-Calls wenn E-Mail nicht reicht.</p></div>
+</div>
+</div>
+</div>
+</section>
+<!-- TIMELINE -->
+<section id="timeline" style="padding:100px 2rem;">
+<div class="container">
+<div class="section-label fade-in">N&auml;chste Schritte</div>
+<h2 class="section-title fade-in">Von heute zu deinen ersten B2B-Leads</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:3rem;align-items:start;">
+<div>
+<div style="position:relative;padding-left:2rem;">
+<div style="position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--accent),transparent);"></div>
+<div class="fade-in" style="margin-bottom:2.5rem;position:relative;">
+<div style="position:absolute;left:-2.5rem;width:12px;height:12px;background:var(--accent);border-radius:50%;top:4px;"></div>
+<h4 style="font-size:0.95rem;font-weight:700;margin-bottom:0.4rem;">Woche 1&ndash;2 &mdash; KickOff &amp; Setup</h4>
+<p style="font-size:0.85rem;color:var(--text-muted);line-height:1.6;">1h KickOff-Workshop, ICP-Definition, Domain-Setup, Postf&auml;cher aufsetzen, Warming starten.</p>
+</div>
+<div class="fade-in" style="margin-bottom:2.5rem;position:relative;">
+<div style="position:absolute;left:-2.5rem;width:12px;height:12px;background:var(--accent);border-radius:50%;top:4px;"></div>
+<h4 style="font-size:0.95rem;font-weight:700;margin-bottom:0.4rem;">Woche 3&ndash;4 &mdash; Kampagnen-Setup</h4>
+<p style="font-size:0.85rem;color:var(--text-muted);line-height:1.6;">Leadlisten bauen, E-Mail-Sequenzen schreiben, MasterInbox konfigurieren, CRM-Integration.</p>
+</div>
+<div class="fade-in" style="margin-bottom:2.5rem;position:relative;">
+<div style="position:absolute;left:-2.5rem;width:12px;height:12px;background:var(--green);border-radius:50%;top:4px;"></div>
+<h4 style="font-size:0.95rem;font-weight:700;margin-bottom:0.4rem;">Monat 2 &mdash; Erste Kampagnen live</h4>
+<p style="font-size:0.85rem;color:var(--text-muted);line-height:1.6;">Kampagnen gehen live, erste Interessenten treffen in der MasterInbox ein, du bearbeitest nur Warme Leads.</p>
+</div>
+<div class="fade-in" style="position:relative;">
+<div style="position:absolute;left:-2.5rem;width:12px;height:12px;background:var(--green);border-radius:50%;top:4px;"></div>
+<h4 style="font-size:0.95rem;font-weight:700;margin-bottom:0.4rem;">Monat 3&ndash;4 &mdash; Skalierung</h4>
+<p style="font-size:0.85rem;color:var(--text-muted);line-height:1.6;">Optimierung basierend auf Daten, Volumen hochskalieren, Re-Aktivierungskampagne f&uuml;r deine 2.500 alten Kontakte.</p>
+</div>
+</div>
+</div>
+<div class="fade-in" style="background:linear-gradient(135deg,rgba(34,197,94,0.08),rgba(34,197,94,0.02));border:1px solid rgba(34,197,94,0.25);border-radius:var(--radius);padding:2rem;">
+<div style="font-size:2rem;margin-bottom:1rem;">&#128640;</div>
+<h3 style="font-size:1.2rem;font-weight:700;margin-bottom:0.75rem;">Erste Leads in unter 6 Wochen</h3>
+<p style="font-size:0.88rem;color:var(--text-muted);line-height:1.7;margin-bottom:1.5rem;">Ab dem Moment wo die Kampagnen live gehen, laufen t&auml;glich E-Mails raus. Interessenten landen automatisch in deiner MasterInbox &mdash; kategorisiert, ready to respond.</p>
+<div style="font-size:0.85rem;color:var(--text-muted);">
+<div style="display:flex;gap:0.5rem;margin-bottom:0.5rem;"><span style="color:var(--green);">&#10003;</span> Kein Zeitaufwand f&uuml;r Recherche oder Scraping</div>
+<div style="display:flex;gap:0.5rem;margin-bottom:0.5rem;"><span style="color:var(--green);">&#10003;</span> Du bekommst nur vorqualifizierte Interessenten</div>
+<div style="display:flex;gap:0.5rem;"><span style="color:var(--green);">&#10003;</span> 1&ndash;2 Stunden Bearbeitung pro Tag reichen vollst&auml;ndig</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA -->
+<section id="cta" style="padding:100px 2rem;background:rgba(79,125,249,0.04);border-top:1px solid var(--border);">
+<div class="container" style="text-align:center;max-width:640px;">
+<div class="section-label fade-in">Bereit loszulegen?</div>
+<h2 class="section-title fade-in">Lass uns MisterNeo als B2B-Marke aufbauen</h2>
+<p class="fade-in" style="color:var(--text-muted);margin-bottom:3rem;font-size:1rem;line-height:1.7;">Der n&auml;chste Schritt ist einfach: ein 30-min&uuml;tiger Call um das Paket final abzustimmen und direkt loszulegen. Nicolas, du hast bereits den Termin f&uuml;r den 31. M&auml;rz. Bis dahin steht diese Seite f&uuml;r alle Fragen zur Verf&uuml;gung.</p>
+<div class="fade-in" style="margin-bottom:3rem;">
+<a href="https://calendly.com/anthony-katzur-grundwerk" class="btn-primary" style="display:inline-block;background:var(--accent);color:#fff;padding:16px 36px;border-radius:100px;font-weight:700;font-size:1rem;">Jetzt Termin best&auml;tigen &rarr;</a>
+</div>
+<div class="fade-in" style="display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;">
+<div>
+<div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-bottom:0.25rem;">E-Mail</div>
+<div style="font-size:0.9rem;font-weight:600;">anthony.katzur@grundwerk.digital</div>
+</div>
+<div>
+<div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-bottom:0.25rem;">Telefon</div>
+<div style="font-size:0.9rem;font-weight:600;">+49 176 47189941</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FOOTER -->
+<footer style="padding:2rem;text-align:center;border-top:1px solid var(--border);">
+<p style="font-size:0.8rem;color:var(--text-dim);">&copy; 2026 Grundwerk Digital &middot; Alle Rechte vorbehalten &middot; <a href="https://grundwerk.digital" style="color:var(--text-dim);">grundwerk.digital</a></p>
+</footer>
+<script>
+const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible');});},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+</script>
+<style>
+@media(max-width:900px){
+.problem-grid,.strategy-grid,.team-grid,.timeline>div{grid-template-columns:1fr!important;}
+.process-steps{grid-template-columns:repeat(2,1fr)!important;}
+.cost-compare{grid-template-columns:1fr 1fr!important;}
+div[style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important;}
+div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important;}
+div[style*="grid-template-columns:repeat(2,1fr)"]{grid-template-columns:1fr!important;}
+}
+@media(max-width:600px){
+section{padding:60px 1.25rem!important;}
+.stat-grid{grid-template-columns:repeat(2,1fr)!important;}
+.process-steps{grid-template-columns:1fr!important;}
+.hero h1{font-size:2rem!important;}
+}
+</style>
+</body>
+</html>
