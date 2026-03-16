@@ -1,5 +1,14 @@
 [
   {
+    "slug": "iceage-media",
+    "name": "Iceage Media",
+    "subtitle": "100 Leads — Sales Room",
+    "type": "sales-room",
+    "secure": "7493826150",
+    "icon": "I",
+    "created": "2026-03-16"
+  },
+  {
     "slug": "elitec-ag-room",
     "name": "elitec AG",
     "subtitle": "Sales Room v2 — Rebuild",
