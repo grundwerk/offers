@@ -1,0 +1,900 @@
+<!-- GRUNDWERK-OFFER v1 | 2026-03-16 15:00 | Initial deploy - Das Schaffenswerk -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="offer-version" content="v1 | 2026-03-16">
+<title>Dein Angebot &mdash; Das Schaffenswerk x Grundwerk</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8ySEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII=" />
+<script>
+    (function(){
+        var code = '7364920851';
+        var params = new URLSearchParams(window.location.search);
+        if(params.get('secure') !== code){
+            document.documentElement.style.display='none';
+            document.title='Zugriff verweigert';
+            window.stop();
+        }
+    })();
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0a0a;--bg-card:#111111;--bg-card-hover:#161616;--bg-accent:#1a1a2e;
+  --text:#f0f0f0;--text-muted:#888;--text-dim:#666;
+  --accent:#4f7df9;--accent-glow:rgba(79,125,249,0.15);
+  --green:#22c55e;--green-glow:rgba(34,197,94,0.15);
+  --red:#ef4444;--red-dim:rgba(239,68,68,0.15);--yellow:#eab308;
+  --border:rgba(255,255,255,0.06);--border-accent:rgba(79,125,249,0.3);
+  --radius:16px;--radius-sm:10px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);background:rgba(10,10,10,0.85);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-size:0.9rem;font-weight:600;opacity:0.8;letter-spacing:-0.01em}
+.nav-cta{background:var(--accent);color:#fff;padding:8px 20px;border-radius:100px;font-size:0.85rem;font-weight:600;transition:opacity 0.2s}
+.nav-cta:hover{opacity:0.85}
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 2rem 80px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 30%, rgba(79,125,249,0.12) 0%, transparent 65%)}
+.hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px);background-size:60px 60px;mask-image:linear-gradient(to bottom,rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.3) 40%,transparent 75%);-webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.3) 40%,transparent 75%);pointer-events:none}
+.hero-inner{position:relative;z-index:1;max-width:860px;margin:0 auto}
+.hero-logo{max-width:160px;border-radius:12px;margin-bottom:32px;filter:brightness(1.2)}
+.hero-label{display:inline-block;padding:6px 18px;border-radius:100px;background:var(--accent-glow);color:var(--accent);font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:24px;border:1px solid var(--border-accent)}
+.hero h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:800;line-height:1.15;letter-spacing:-0.03em;margin-bottom:24px}
+.hero h1 .accent{background:linear-gradient(135deg,var(--accent),#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:1.1rem;color:var(--text-muted);max-width:620px;margin:0 auto 40px;line-height:1.7}
+.hero-ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:var(--accent);color:#fff;padding:14px 32px;border-radius:100px;font-size:1rem;font-weight:700;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 0 30px rgba(79,125,249,0.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(79,125,249,0.45)}
+.btn-secondary{background:transparent;color:var(--text);padding:14px 32px;border-radius:100px;font-size:1rem;font-weight:600;border:1px solid var(--border);transition:border-color 0.2s}
+.btn-secondary:hover{border-color:var(--accent)}
+/* FADE IN */
+.fade-in{opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+/* SECTION DEFAULTS */
+section{padding:100px 2rem}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-label{font-size:0.8rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.section-title{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-0.03em;line-height:1.2;margin-bottom:16px}
+.section-sub{color:var(--text-muted);font-size:1rem;max-width:600px;margin-bottom:48px;line-height:1.7}
+/* CLIENT LOGO TICKER */
+.logo-ticker-section{padding:20px 0 80px;overflow:hidden}
+.ticker-fade{position:relative;overflow:hidden}
+.ticker-fade::before,.ticker-fade::after{content:'';position:absolute;top:0;bottom:0;width:20%;z-index:2;pointer-events:none}
+.ticker-fade::before{left:0;background:linear-gradient(to right,var(--bg) 60%,transparent)}
+.ticker-fade::after{right:0;background:linear-gradient(to left,var(--bg) 60%,transparent)}
+.ticker-track{display:flex;gap:48px;align-items:center;white-space:nowrap}
+.ticker-row{margin-bottom:20px}
+.ticker-row-forward .ticker-track{animation:tickerForward 40s linear infinite}
+.ticker-row-reverse .ticker-track{animation:tickerReverse 45s linear infinite}
+@keyframes tickerForward{from{transform:translateX(-25%)}to{transform:translateX(-75%)}}
+@keyframes tickerReverse{from{transform:translateX(-75%)}to{transform:translateX(-25%)}}
+.client-logo{height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);transition:opacity 0.3s,filter 0.3s;flex-shrink:0;object-fit:contain}
+.client-logo:hover{opacity:0.8;filter:grayscale(0%) brightness(1)}
+/* STAT BAR */
+.stat-bar{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:0}
+.stat-item{background:var(--bg-card);padding:32px 24px;text-align:center}
+.stat-number{font-size:2.5rem;font-weight:800;color:var(--accent);letter-spacing:-0.03em;line-height:1}
+.stat-label{font-size:0.85rem;color:var(--text-muted);margin-top:8px}
+/* VIDEO */
+.video-section{padding:80px 2rem}
+.video-wrap{max-width:800px;margin:0 auto;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);box-shadow:0 0 60px rgba(79,125,249,0.1)}
+/* PROBLEM */
+.problem-grid{display:grid;grid-template-columns:3fr 2fr;gap:32px;align-items:start}
+.problem-cards{display:flex;flex-direction:column;gap:20px}
+.problem-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;border-left:3px solid var(--red)}
+.problem-card h3{font-size:1rem;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.problem-card p{font-size:0.875rem;color:var(--text-muted);line-height:1.6}
+.call-quote{margin-top:14px;padding:12px 16px;background:rgba(255,255,255,0.03);border-radius:8px;border-left:2px solid var(--border)}
+.call-quote-text{font-size:0.82rem;color:var(--text-muted);font-style:italic;line-height:1.5}
+.call-quote-author{font-size:0.75rem;color:var(--text-dim);margin-top:6px}
+.solution-box{background:var(--accent-glow);border:1px solid var(--border-accent);border-radius:var(--radius);padding:32px;position:sticky;top:90px}
+.solution-box h3{font-size:1.1rem;font-weight:700;margin-bottom:16px;color:var(--accent)}
+.solution-box p{font-size:0.875rem;color:var(--text-muted);line-height:1.7;margin-bottom:20px}
+.solution-compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.compare-item{background:rgba(255,255,255,0.04);border-radius:var(--radius-sm);padding:16px;text-align:center}
+.compare-item .compare-label{font-size:0.75rem;color:var(--text-dim);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.08em}
+.compare-item .compare-price{font-size:1.3rem;font-weight:800}
+.compare-item.bad .compare-price{color:var(--red)}
+.compare-item.good .compare-price{color:var(--green)}
+/* PROZESS */
+.process-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
+.process-step{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px 20px;text-align:center;transition:border-color 0.2s}
+.process-step:hover{border-color:var(--border-accent)}
+.step-num{width:44px;height:44px;border-radius:50%;background:var(--accent);color:#fff;font-size:1.1rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.process-step h4{font-size:0.9rem;font-weight:700;margin-bottom:8px}
+.process-step p{font-size:0.8rem;color:var(--text-muted);line-height:1.5}
+/* TOOL TICKER */
+.tool-ticker-section{padding:60px 0;overflow:hidden}
+.ticker-header{text-align:center;margin-bottom:40px;padding:0 2rem}
+.ticker-header h3{font-size:1.3rem;font-weight:700;margin-bottom:8px}
+.ticker-header h3 span{color:var(--green)}
+.ticker-label{font-size:0.85rem;color:var(--text-muted)}
+.tool-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0}
+.dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.dot-blue{background:#4f7df9}.dot-green{background:#22c55e}.dot-purple{background:#a78bfa}.dot-orange{background:#f97316}.dot-cyan{background:#22d3ee}.dot-red{background:#ef4444}
+.tool-ticker-row .ticker-track{gap:12px;padding:4px 0}
+.tool-ticker-forward .ticker-track{animation:tickerForward 35s linear infinite}
+.tool-ticker-reverse .ticker-track{animation:tickerReverse 40s linear infinite}
+/* KAMPAGNENSTRATEGIE */
+.strategy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.strategy-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;transition:border-color 0.2s}
+.strategy-card:hover{border-color:var(--border-accent)}
+.strategy-icon{font-size:2rem;margin-bottom:20px}
+.strategy-card h3{font-size:1rem;font-weight:700;margin-bottom:12px}
+.strategy-card p{font-size:0.875rem;color:var(--text-muted);line-height:1.6}
+.strategy-tag{display:inline-block;margin-top:14px;padding:4px 12px;border-radius:100px;background:var(--accent-glow);color:var(--accent);font-size:0.75rem;font-weight:600}
+/* TEAM */
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.team-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:center;transition:border-color 0.2s}
+.team-card:hover{border-color:var(--border-accent)}
+.team-avatar{width:72px;height:72px;border-radius:50%;background:var(--accent-glow);border:2px solid var(--border-accent);margin:0 auto 20px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:800;color:var(--accent)}
+.team-card h3{font-size:1rem;font-weight:700;margin-bottom:4px}
+.team-role{font-size:0.8rem;color:var(--accent);font-weight:600;margin-bottom:12px}
+.team-card p{font-size:0.825rem;color:var(--text-muted);line-height:1.6}
+/* PRICING */
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;grid-auto-rows:minmax(620px,auto)}
+.pricing-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px;display:flex;flex-direction:column;position:relative;transition:border-color 0.2s}
+.pricing-card.recommended{border-color:var(--accent);background:linear-gradient(135deg,var(--bg-card),#0d1433)}
+.offer-badge{display:inline-block;padding:5px 14px;border-radius:100px;background:var(--accent);color:#fff;font-size:0.75rem;font-weight:700;margin-bottom:20px}
+.pricing-card h3{font-size:1.1rem;font-weight:700;margin-bottom:8px}
+.pricing-card .tagline{font-size:0.85rem;color:var(--text-muted);margin-bottom:24px}
+.price-main{font-size:2.5rem;font-weight:800;letter-spacing:-0.03em;color:var(--text);line-height:1}
+.price-sub{font-size:0.85rem;color:var(--text-muted);margin-top:6px;margin-bottom:24px}
+.price-total{font-size:0.9rem;font-weight:600;color:var(--accent);margin-bottom:24px}
+.features{list-style:none;flex:1;margin-bottom:28px}
+.features li{font-size:0.875rem;color:var(--text-muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.5}
+.features li:last-child{border-bottom:none}
+.features li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;margin-top:1px}
+.pricing-cta{display:block;text-align:center;padding:14px;border-radius:100px;font-weight:700;font-size:0.9rem;transition:all 0.2s;margin-top:auto}
+.pricing-cta.primary{background:var(--accent);color:#fff}
+.pricing-cta.primary:hover{opacity:0.9}
+.pricing-cta.secondary{border:1px solid var(--border);color:var(--text)}
+.pricing-cta.secondary:hover{border-color:var(--accent)}
+.pricing-ideal{font-size:0.78rem;color:var(--text-dim);margin-top:12px;text-align:center}
+/* GUARANTEE */
+.guarantee{text-align:center;padding:80px 2rem;background:radial-gradient(ellipse at 50% 50%,var(--green-glow) 0%,transparent 70%)}
+.guarantee-badge{display:inline-block;padding:8px 24px;border-radius:100px;background:var(--green-glow);color:var(--green);font-weight:700;font-size:0.85rem;margin-bottom:20px;border:1px solid rgba(34,197,94,0.3)}
+.guarantee h2{font-size:clamp(1.4rem,3vw,2rem);font-weight:800;max-width:700px;margin:0 auto 16px;line-height:1.3}
+.guarantee p{font-size:0.9rem;color:var(--text-muted);max-width:600px;margin:0 auto}
+/* LEAD PROGNOSE */
+.prognose-table{width:100%;border-collapse:separate;border-spacing:0;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);margin-bottom:32px}
+.prognose-table th{background:var(--bg-card);padding:14px 20px;font-size:0.82rem;font-weight:700;text-align:left;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;border-bottom:1px solid var(--border)}
+.prognose-table td{padding:16px 20px;font-size:0.9rem;border-bottom:1px solid var(--border);background:var(--bg)}
+.prognose-table tr:last-child td{border-bottom:none;background:var(--bg-card);font-weight:700;color:var(--accent)}
+.prognose-table td:last-child{color:var(--green);font-weight:600}
+.prognose-compare{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px}
+.prognose-compare-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px}
+.prognose-compare-card h4{font-size:0.85rem;font-weight:700;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted)}
+.prognose-num{font-size:2rem;font-weight:800;line-height:1;margin-bottom:8px}
+.prognose-num.red{color:var(--red)}.prognose-num.green{color:var(--green)}
+.prognose-desc{font-size:0.82rem;color:var(--text-muted);line-height:1.5}
+/* ROI */
+.roi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.roi-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:center;transition:border-color 0.2s}
+.roi-card.highlight{border-color:var(--accent);background:linear-gradient(135deg,var(--bg-card),#0d1433)}
+.roi-label{font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-bottom:16px}
+.roi-number{font-size:2.8rem;font-weight:800;color:var(--green);letter-spacing:-0.03em;line-height:1;margin-bottom:12px}
+.roi-detail{font-size:0.85rem;color:var(--text-muted);line-height:1.6}
+/* TIMELINE */
+.timeline{position:relative;padding-left:40px}
+.timeline::before{content:'';position:absolute;left:12px;top:8px;bottom:8px;width:2px;background:var(--border)}
+.timeline-item{position:relative;margin-bottom:32px}
+.timeline-item::before{content:'';position:absolute;left:-33px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid var(--bg)}
+.timeline-item h4{font-size:1rem;font-weight:700;margin-bottom:6px}
+.timeline-item p{font-size:0.875rem;color:var(--text-muted);line-height:1.6}
+.timeline-highlight{margin-top:40px;background:var(--accent-glow);border:1px solid var(--border-accent);border-radius:var(--radius);padding:28px;text-align:center}
+.timeline-highlight h3{font-size:1.2rem;font-weight:800;margin-bottom:8px}
+.timeline-highlight p{font-size:0.9rem;color:var(--text-muted)}
+/* CTA */
+.cta-section{text-align:center;padding:100px 2rem;background:radial-gradient(ellipse at 50% 50%,var(--accent-glow) 0%,transparent 65%)}
+.cta-section h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:20px}
+.cta-section p{font-size:1rem;color:var(--text-muted);max-width:520px;margin:0 auto 40px;line-height:1.7}
+.cta-contact{margin-top:40px;display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
+.contact-item{text-align:center}
+.contact-item .contact-label{font-size:0.75rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px}
+.contact-item a{font-size:0.9rem;color:var(--text-muted)}
+.contact-item a:hover{color:var(--accent)}
+/* FOOTER */
+footer{text-align:center;padding:32px 2rem;border-top:1px solid var(--border);font-size:0.8rem;color:var(--text-dim)}
+/* BONUSES */
+.bonus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.bonus-item{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;display:flex;gap:16px;align-items:flex-start;transition:border-color 0.2s}
+.bonus-item:hover{border-color:var(--border-accent)}
+.bonus-icon{font-size:1.5rem;flex-shrink:0}
+.bonus-item h4{font-size:0.9rem;font-weight:700;margin-bottom:6px}
+.bonus-item p{font-size:0.82rem;color:var(--text-muted);line-height:1.5}
+/* RESPONSIVE */
+@media(max-width:900px){
+  .problem-grid,.prognose-compare{grid-template-columns:1fr}
+  .process-steps{grid-template-columns:repeat(2,1fr)}
+  .strategy-grid,.team-grid,.roi-grid,.pricing-grid,.bonus-grid{grid-template-columns:1fr}
+  .solution-compare{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  section{padding:60px 1.25rem}
+  .stat-bar{grid-template-columns:repeat(2,1fr)}
+  .process-steps{grid-template-columns:1fr}
+  .hero-ctas{flex-direction:column;align-items:stretch}
+  .btn-primary,.btn-secondary{text-align:center}
+}
+</style>
+</head>
+<body>
+<!-- ═══ NAV ═══ -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">Das Schaffenswerk &times; Grundwerk</div>
+    <a href="#angebot" class="nav-cta" style="background:var(--accent);color:#fff;padding:8px 20px;border-radius:100px;font-size:0.85rem;font-weight:600;">Zum Angebot</a>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-inner fade-in">
+    <img src="https://das-schaffenswerk.de/wp-content/uploads/2018/11/DAS_SCHAFFENSWERK.jpg" alt="Das Schaffenswerk" class="hero-logo" style="max-width:160px;border-radius:12px;margin-bottom:32px;filter:brightness(1.2)" />
+    <div class="hero-label" style="display:inline-block;padding:6px 18px;border-radius:100px;background:var(--accent-glow);color:var(--accent);font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:24px;border:1px solid var(--border-accent)">Pers&ouml;nliches Angebot &middot; M&auml;rz 2026</div>
+    <h1 style="font-size:clamp(2rem,5vw,3.4rem);font-weight:800;line-height:1.15;letter-spacing:-0.03em;margin-bottom:24px">Hey Gerald &amp; Marc &mdash;<br><span class="accent" style="background:linear-gradient(135deg,var(--accent),#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">mehr zahlungsf&auml;hige Kunden</span><br>f&uuml;r Das Schaffenswerk.</h1>
+    <p class="hero-sub" style="font-size:1.1rem;color:var(--text-muted);max-width:620px;margin:0 auto 40px;line-height:1.7">Hier findest du alles, was du &uuml;ber unsere Zusammenarbeit wissen musst &mdash; inklusive konkretem Angebot, Kampagnen-Strategie und ROI-Kalkulation f&uuml;r eure Filmproduktion in Bayern.</p>
+    <div class="hero-ctas" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+      <a href="#angebot" class="btn-primary" style="background:var(--accent);color:#fff;padding:14px 32px;border-radius:100px;font-size:1rem;font-weight:700;box-shadow:0 0 30px rgba(79,125,249,0.3)">Angebot ansehen</a>
+      <a href="#prozess" class="btn-secondary" style="background:transparent;color:var(--text);padding:14px 32px;border-radius:100px;font-size:1rem;font-weight:600;border:1px solid var(--border)">Wie funktioniert das?</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CLIENT LOGO TICKER ═══ -->
+<div class="logo-ticker-section" style="padding:20px 0 80px;overflow:hidden">
+  <div class="ticker-row ticker-row-forward ticker-fade" style="position:relative;overflow:hidden;margin-bottom:20px">
+    <div class="ticker-track" style="display:flex;gap:48px;align-items:center;animation:tickerForward 40s linear infinite">
+      <img src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://www.hrs.de/_next/static/media/hrs_logo_red.7cccdfd9.svg" alt="HRS" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://cdn.prod.website-files.com/673602757a06be245e484913/678d467526d221b55f5dc3e0_mc-logo-1-black.svg" alt="Michelscom" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://www.hrs.de/_next/static/media/hrs_logo_red.7cccdfd9.svg" alt="HRS" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://cdn.prod.website-files.com/673602757a06be245e484913/678d467526d221b55f5dc3e0_mc-logo-1-black.svg" alt="Michelscom" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://www.hrs.de/_next/static/media/hrs_logo_red.7cccdfd9.svg" alt="HRS" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://cdn.prod.website-files.com/673602757a06be245e484913/678d467526d221b55f5dc3e0_mc-logo-1-black.svg" alt="Michelscom" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://www.hrs.de/_next/static/media/hrs_logo_red.7cccdfd9.svg" alt="HRS" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://cdn.prod.website-files.com/673602757a06be245e484913/678d467526d221b55f5dc3e0_mc-logo-1-black.svg" alt="Michelscom" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+    </div>
+  </div>
+  <div class="ticker-row ticker-row-reverse ticker-fade" style="position:relative;overflow:hidden">
+    <div class="ticker-track" style="display:flex;gap:48px;align-items:center;animation:tickerReverse 45s linear infinite">
+      <img src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://d2bw95mh2ee04s.cloudfront.net/prod/content/wp-content/uploads/2025/01/02134814/Property-Logo-Main.svg" alt="SellerLogic" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://digitalnow.online/logo.png" alt="Digital Now" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://d2bw95mh2ee04s.cloudfront.net/prod/content/wp-content/uploads/2025/01/02134814/Property-Logo-Main.svg" alt="SellerLogic" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://digitalnow.online/logo.png" alt="Digital Now" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://d2bw95mh2ee04s.cloudfront.net/prod/content/wp-content/uploads/2025/01/02134814/Property-Logo-Main.svg" alt="SellerLogic" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://digitalnow.online/logo.png" alt="Digital Now" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://d2bw95mh2ee04s.cloudfront.net/prod/content/wp-content/uploads/2025/01/02134814/Property-Logo-Main.svg" alt="SellerLogic" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+      <img src="https://digitalnow.online/logo.png" alt="Digital Now" class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;object-fit:contain" />
+    </div>
+  </div>
+</div>
+
+<!-- ═══ STAT BAR ═══ -->
+<section style="padding:0 2rem 80px">
+  <div class="section-inner" style="max-width:1200px;margin:0 auto">
+    <div class="stat-bar fade-in" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border-radius:var(--radius);overflow:hidden">
+      <div class="stat-item" style="background:var(--bg-card);padding:32px 24px;text-align:center">
+        <div class="stat-number" style="font-size:2.5rem;font-weight:800;color:var(--accent);letter-spacing:-0.03em;line-height:1">10 Mio.+</div>
+        <div class="stat-label" style="font-size:0.85rem;color:var(--text-muted);margin-top:8px">E-Mails versendet</div>
+      </div>
+      <div class="stat-item" style="background:var(--bg-card);padding:32px 24px;text-align:center">
+        <div class="stat-number" style="font-size:2.5rem;font-weight:800;color:var(--accent);letter-spacing:-0.03em;line-height:1">50+</div>
+        <div class="stat-label" style="font-size:0.85rem;color:var(--text-muted);margin-top:8px">Erfolgreiche B2B-Projekte</div>
+      </div>
+      <div class="stat-item" style="background:var(--bg-card);padding:32px 24px;text-align:center">
+        <div class="stat-number" style="font-size:2.5rem;font-weight:800;color:var(--accent);letter-spacing:-0.03em;line-height:1">75+</div>
+        <div class="stat-label" style="font-size:0.85rem;color:var(--text-muted);margin-top:8px">Tools &amp; Datenanbieter</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ VIDEO ═══ -->
+<section class="video-section fade-in" style="padding:40px 2rem 80px">
+  <div class="section-inner" style="max-width:1200px;margin:0 auto;text-align:center">
+    <div class="section-label" style="font-size:0.8rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:16px">Kurze Erkl&auml;rung</div>
+    <h2 class="section-title" style="font-size:clamp(1.8rem,3.5vw,2.4rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:12px">So funktioniert Cold Outreach<br>mit Grundwerk</h2>
+    <p style="font-size:0.95rem;color:var(--text-muted);max-width:520px;margin:0 auto 40px;line-height:1.7">In unter 5 Minuten erkl&auml;rt &mdash; was wir machen, wie wir es machen und warum es f&uuml;r euch funktioniert.</p>
+    <div class="video-wrap" style="max-width:800px;margin:0 auto;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);box-shadow:0 0 60px rgba(79,125,249,0.1)">
+      <wistia-player media-id="tm8si6qq6m" aspect="16/9"></wistia-player>
+    </div>
+  </div>
+</section>
+<!-- ═══ PROBLEM ═══ -->
+<section id="problem" style="padding:100px 2rem">
+  <div class="section-inner" style="max-width:1200px;margin:0 auto">
+    <div class="section-label fade-in" style="font-size:0.8rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:16px">Die Ausgangslage</div>
+    <h2 class="section-title fade-in" style="font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-0.03em;line-height:1.2;margin-bottom:40px">Warum bisherige Kaltakquise<br>nicht funktioniert hat</h2>
+    <div class="problem-grid fade-in" style="display:grid;grid-template-columns:3fr 2fr;gap:32px;align-items:start">
+      <div class="problem-cards" style="display:flex;flex-direction:column;gap:20px">
+        <div class="problem-card" style="background:var(--bg-card);border:1px solid var(--border);border-left:3px solid var(--red);border-radius:var(--radius);padding:28px">
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:10px"><span>&#128245;</span> LinkedIn &amp; Telefon: Null R&uuml;cklauf</h3>
+          <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.6">Telefonische Kaltakquise, LinkedIn-Nachrichten, manuell versendete E-Mails &mdash; alles wurde probiert. Ohne messbares Ergebnis. Das liegt nicht an eurem Angebot, sondern am Ansatz: generische Massen-Ansprache funktioniert im Premium-Dienstleistungsbereich nicht.</p>
+          <div class="call-quote" style="margin-top:14px;padding:12px 16px;background:rgba(255,255,255,0.03);border-radius:8px;border-left:2px solid var(--border)">
+            <div class="call-quote-text" style="font-size:0.82rem;color:var(--text-muted);font-style:italic;line-height:1.5">&bdquo;Wir haben uns vorgestellt, unser Portfolio vorgestellt &mdash; aber es hat nicht funktioniert.&ldquo;</div>
+            <div class="call-quote-author" style="font-size:0.75rem;color:var(--text-dim);margin-top:6px">&mdash; Gerald Fritzen, Gr&uuml;nder &middot; aus dem Gespr&auml;ch mit Grundwerk</div>
+          </div>
+        </div>
+        <div class="problem-card" style="background:var(--bg-card);border:1px solid var(--border);border-left:3px solid var(--red);border-radius:var(--radius);padding:28px">
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:10px"><span>&#128265;</span> Google Ads: Falsche Kunden, kleines Budget</h3>
+          <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.6">1&ndash;2 Anfragen pro Woche &uuml;ber Google Ads &mdash; aber der Gro&szlig;teil hat nicht das Budget, das eure Qualit&auml;tsarbeit verlangt. Wer selbst sucht, optimiert meistens auf den g&uuml;nstigsten Anbieter.</p>
+          <div class="call-quote" style="margin-top:14px;padding:12px 16px;background:rgba(255,255,255,0.03);border-radius:8px;border-left:2px solid var(--border)">
+            <div class="call-quote-text" style="font-size:0.82rem;color:var(--text-muted);font-style:italic;line-height:1.5">&bdquo;Was f&uuml;r Budgets sind da zur Verf&uuml;gung? &lsquo;Ach das kostet richtig Geld&rsquo; &mdash; also das.&ldquo;</div>
+            <div class="call-quote-author" style="font-size:0.75rem;color:var(--text-dim);margin-top:6px">&mdash; Marc Tscharntke, Gesch&auml;ftsf&uuml;hrer &middot; aus dem Gespr&auml;ch mit Grundwerk</div>
+          </div>
+        </div>
+        <div class="problem-card" style="background:var(--bg-card);border:1px solid var(--border);border-left:3px solid var(--red);border-radius:var(--radius);padding:28px">
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:10px"><span>&#128257;</span> Neukundengewinnung nicht planbar</h3>
+          <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.6">Empfehlungen und Zufallskontakte auf Veranstaltungen bringen Kunden &mdash; aber das l&auml;sst sich nicht skalieren. Ihr braucht einen Kanal, der zuverl&auml;ssig und vorhersehbar neue Projekte bringt.</p>
+          <div class="call-quote" style="margin-top:14px;padding:12px 16px;background:rgba(255,255,255,0.03);border-radius:8px;border-left:2px solid var(--border)">
+            <div class="call-quote-text" style="font-size:0.82rem;color:var(--text-muted);font-style:italic;line-height:1.5">&bdquo;Der Weg andersrum funktioniert nicht.&ldquo;</div>
+            <div class="call-quote-author" style="font-size:0.75rem;color:var(--text-dim);margin-top:6px">&mdash; Marc Tscharntke, Gesch&auml;ftsf&uuml;hrer &middot; aus dem Gespr&auml;ch mit Grundwerk</div>
+          </div>
+        </div>
+      </div>
+      <div class="solution-box" style="background:var(--accent-glow);border:1px solid var(--border-accent);border-radius:var(--radius);padding:32px;position:sticky;top:90px">
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:16px;color:var(--accent)">&#10024; Die L&ouml;sung</h3>
+        <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.7;margin-bottom:20px">Statt blind Massen-Mails zu verschicken, analysieren wir die Websites eurer Zielgruppe, identifizieren Unternehmen mit konkretem Videofilm-Bedarf &mdash; und sprechen sie mit einem personalisierten Argument an, das sitzt.</p>
+        <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.7;margin-bottom:24px">Wir kontaktieren direkt den Gesch&auml;ftsf&uuml;hrer &mdash; nicht die info@-Adresse. Mit einem konkreten Aufh&auml;nger zu eurem Imagefilm, eurem Angebot, eurer St&auml;rke.</p>
+        <div class="solution-compare" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px">
+          <div class="compare-item bad" style="background:rgba(255,255,255,0.04);border-radius:var(--radius-sm);padding:16px;text-align:center">
+            <div class="compare-label" style="font-size:0.75rem;color:var(--text-dim);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.08em">Google Ads/Lead</div>
+            <div class="compare-price" style="font-size:1.3rem;font-weight:800;color:var(--red)">~350 &euro;</div>
+          </div>
+          <div class="compare-item good" style="background:rgba(255,255,255,0.04);border-radius:var(--radius-sm);padding:16px;text-align:center">
+            <div class="compare-label" style="font-size:0.75rem;color:var(--text-dim);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.08em">Cold Outreach/Lead</div>
+            <div class="compare-price" style="font-size:1.3rem;font-weight:800;color:var(--green)">~100 &euro;</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROZESS ═══ -->
+<section id="prozess" style="padding:100px 2rem;background:var(--bg-card)">
+  <div class="section-inner" style="max-width:1200px;margin:0 auto">
+    <div class="section-label fade-in" style="font-size:0.8rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:16px">Wie wir arbeiten</div>
+    <h2 class="section-title fade-in" style="font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-0.03em;line-height:1.2;margin-bottom:12px">Der Grundwerk-Prozess in 5 Schritten</h2>
+    <p class="section-sub fade-in" style="color:var(--text-muted);font-size:1rem;max-width:600px;margin-bottom:48px;line-height:1.7">Von der Zieldefinition bis zur warmen Anfrage in eurer Inbox &mdash; vollst&auml;ndig von uns gesteuert.</p>
+    <div class="process-steps fade-in" style="display:grid;grid-template-columns:repeat(5,1fr);gap:20px">
+      <div class="process-step" style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px 20px;text-align:center">
+        <div class="step-num" style="width:44px;height:44px;border-radius:50%;background:var(--accent);color:#fff;font-size:1.1rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 16px">1</div>
+        <h4 style="font-size:0.9rem;font-weight:700;margin-bottom:8px">ICP &amp; Zielgruppe</h4>
+        <p style="font-size:0.8rem;color:var(--text-muted);line-height:1.5">Bayern-Mittelstand mit Imagefilm-Bedarf definieren &mdash; Gr&ouml;&szlig;e, Branche, Budget-Indikatoren</p>
+      </div>
+      <div class="process-step" style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px 20px;text-align:center">
+        <div class="step-num" style="width:44px;height:44px;border-radius:50%;background:var(--accent);color:#fff;font-size:1.1rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 16px">2</div>
+        <h4 style="font-size:0.9rem;font-weight:700;margin-bottom:8px">Entscheider-Anreicherung</h4>
+        <p style="font-size:0.8rem;color:var(--text-muted);line-height:1.5">Direkte E-Mail-Adressen und Telefonnummern der Gesch&auml;ftsf&uuml;hrer &mdash; nicht die info@</p>
+      </div>
+      <div class="process-step" style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px 20px;text-align:center">
+        <div class="step-num" style="width:44px;height:44px;border-radius:50%;background:var(--accent);color:#fff;font-size:1.1rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 16px">3</div>
+        <h4 style="font-size:0.9rem;font-weight:700;margin-bottom:8px">Personalisierte Ansprache</h4>
+        <p style="font-size:0.8rem;color:var(--text-muted);line-height:1.5">Analyse des vorhandenen Video-Materials als konkreter Aufh&auml;nger &mdash; kein generisches Template</p>
+      </div>
+      <div class="process-step" style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px 20px;text-align:center">
+        <div class="step-num" style="width:44px;height:44px;border-radius:50%;background:var(--accent);color:#fff;font-size:1.1rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 16px">4</div>
+        <h4 style="font-size:0.9rem;font-weight:700;margin-bottom:8px">MasterInbox</h4>
+        <p style="font-size:0.8rem;color:var(--text-muted);line-height:1.5">Alle Antworten zentral gebundelt &mdash; qualifiziert und direkt an euch &uuml;bergeben</p>
+      </div>
+      <div class="process-step" style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px 20px;text-align:center">
+        <div class="step-num" style="width:44px;height:44px;border-radius:50%;background:var(--accent);color:#fff;font-size:1.1rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 16px">5</div>
+        <h4 style="font-size:0.9rem;font-weight:700;margin-bottom:8px">Warme Leads</h4>
+        <p style="font-size:0.8rem;color:var(--text-muted);line-height:1.5">Zahlungsf&auml;hige Gespr&auml;chspartner aus Bayern mit konkretem Projektwunsch</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TOOL TICKER ═══ -->
+<div class="tool-ticker-section" style="padding:80px 0;overflow:hidden">
+  <div class="ticker-header fade-in" style="text-align:center;margin-bottom:40px;padding:0 2rem">
+    <h3 style="font-size:1.3rem;font-weight:700;margin-bottom:8px">75+ Tools &amp; Datenanbieter &rarr; <span style="color:var(--green)">0&euro; Fixkosten</span></h3>
+    <div style="font-size:0.85rem;color:var(--text-muted)">Enterprise-GTM-Setup &mdash; wir tragen die Kosten</div>
+  </div>
+  <div class="ticker-row tool-ticker-row tool-ticker-forward ticker-fade" style="position:relative;overflow:hidden;margin-bottom:12px">
+    <div class="ticker-track" style="display:flex;gap:12px;padding:4px 0;animation:tickerForward 35s linear infinite">
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-blue" style="width:7px;height:7px;border-radius:50%;background:#4f7df9;flex-shrink:0"></span>Apollo.io</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-blue" style="width:7px;height:7px;border-radius:50%;background:#4f7df9;flex-shrink:0"></span>Clay</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-green" style="width:7px;height:7px;border-radius:50%;background:#22c55e;flex-shrink:0"></span>Instantly</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-purple" style="width:7px;height:7px;border-radius:50%;background:#a78bfa;flex-shrink:0"></span>OpenAI</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-green" style="width:7px;height:7px;border-radius:50%;background:#22c55e;flex-shrink:0"></span>Findymail</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-blue" style="width:7px;height:7px;border-radius:50%;background:#4f7df9;flex-shrink:0"></span>MasterInbox</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-orange" style="width:7px;height:7px;border-radius:50%;background:#f97316;flex-shrink:0"></span>Heyreach</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-blue" style="width:7px;height:7px;border-radius:50%;background:#4f7df9;flex-shrink:0"></span>RevyOps</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-cyan" style="width:7px;height:7px;border-radius:50%;background:#22d3ee;flex-shrink:0"></span>Supabase</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-blue" style="width:7px;height:7px;border-radius:50%;background:#4f7df9;flex-shrink:0"></span>LinkedIn Sales Nav</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-orange" style="width:7px;height:7px;border-radius:50%;background:#f97316;flex-shrink:0"></span>Prospeo</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-green" style="width:7px;height:7px;border-radius:50%;background:#22c55e;flex-shrink:0"></span>Millionverifier</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-blue" style="width:7px;height:7px;border-radius:50%;background:#4f7df9;flex-shrink:0"></span>Apollo.io</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-blue" style="width:7px;height:7px;border-radius:50%;background:#4f7df9;flex-shrink:0"></span>Clay</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-green" style="width:7px;height:7px;border-radius:50%;background:#22c55e;flex-shrink:0"></span>Instantly</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-purple" style="width:7px;height:7px;border-radius:50%;background:#a78bfa;flex-shrink:0"></span>OpenAI</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-green" style="width:7px;height:7px;border-radius:50%;background:#22c55e;flex-shrink:0"></span>Findymail</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-blue" style="width:7px;height:7px;border-radius:50%;background:#4f7df9;flex-shrink:0"></span>MasterInbox</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-orange" style="width:7px;height:7px;border-radius:50%;background:#f97316;flex-shrink:0"></span>Heyreach</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-blue" style="width:7px;height:7px;border-radius:50%;background:#4f7df9;flex-shrink:0"></span>RevyOps</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-cyan" style="width:7px;height:7px;border-radius:50%;background:#22d3ee;flex-shrink:0"></span>Supabase</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-blue" style="width:7px;height:7px;border-radius:50%;background:#4f7df9;flex-shrink:0"></span>LinkedIn Sales Nav</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-orange" style="width:7px;height:7px;border-radius:50%;background:#f97316;flex-shrink:0"></span>Prospeo</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-green" style="width:7px;height:7px;border-radius:50%;background:#22c55e;flex-shrink:0"></span>Millionverifier</span>
+    </div>
+  </div>
+  <div class="ticker-row tool-ticker-row tool-ticker-reverse ticker-fade" style="position:relative;overflow:hidden">
+    <div class="ticker-track" style="display:flex;gap:12px;padding:4px 0;animation:tickerReverse 40s linear infinite">
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-purple" style="width:7px;height:7px;border-radius:50%;background:#a78bfa;flex-shrink:0"></span>Claude</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-cyan" style="width:7px;height:7px;border-radius:50%;background:#22d3ee;flex-shrink:0"></span>Northdata</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-purple" style="width:7px;height:7px;border-radius:50%;background:#a78bfa;flex-shrink:0"></span>n8n</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-green" style="width:7px;height:7px;border-radius:50%;background:#22c55e;flex-shrink:0"></span>Mailreach</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-orange" style="width:7px;height:7px;border-radius:50%;background:#f97316;flex-shrink:0"></span>Lusha</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-green" style="width:7px;height:7px;border-radius:50%;background:#22c55e;flex-shrink:0"></span>BounceBan</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-purple" style="width:7px;height:7px;border-radius:50%;background:#a78bfa;flex-shrink:0"></span>Perplexity</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-cyan" style="width:7px;height:7px;border-radius:50%;background:#22d3ee;flex-shrink:0"></span>Brightdata</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-purple" style="width:7px;height:7px;border-radius:50%;background:#a78bfa;flex-shrink:0"></span>Make</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-cyan" style="width:7px;height:7px;border-radius:50%;background:#22d3ee;flex-shrink:0"></span>Ocean.io</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-red" style="width:7px;height:7px;border-radius:50%;background:#ef4444;flex-shrink:0"></span>Bettercontact</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-cyan" style="width:7px;height:7px;border-radius:50%;background:#22d3ee;flex-shrink:0"></span>Icypeas</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-purple" style="width:7px;height:7px;border-radius:50%;background:#a78bfa;flex-shrink:0"></span>Claude</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-cyan" style="width:7px;height:7px;border-radius:50%;background:#22d3ee;flex-shrink:0"></span>Northdata</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-purple" style="width:7px;height:7px;border-radius:50%;background:#a78bfa;flex-shrink:0"></span>n8n</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-green" style="width:7px;height:7px;border-radius:50%;background:#22c55e;flex-shrink:0"></span>Mailreach</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-orange" style="width:7px;height:7px;border-radius:50%;background:#f97316;flex-shrink:0"></span>Lusha</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-green" style="width:7px;height:7px;border-radius:50%;background:#22c55e;flex-shrink:0"></span>BounceBan</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-purple" style="width:7px;height:7px;border-radius:50%;background:#a78bfa;flex-shrink:0"></span>Perplexity</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-cyan" style="width:7px;height:7px;border-radius:50%;background:#22d3ee;flex-shrink:0"></span>Brightdata</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-purple" style="width:7px;height:7px;border-radius:50%;background:#a78bfa;flex-shrink:0"></span>Make</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-cyan" style="width:7px;height:7px;border-radius:50%;background:#22d3ee;flex-shrink:0"></span>Ocean.io</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-red" style="width:7px;height:7px;border-radius:50%;background:#ef4444;flex-shrink:0"></span>Bettercontact</span>
+      <span class="tool-pill" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--bg-card);font-size:0.82rem;font-weight:500;white-space:nowrap;flex-shrink:0"><span class="dot dot-cyan" style="width:7px;height:7px;border-radius:50%;background:#22d3ee;flex-shrink:0"></span>Icypeas</span>
+    </div>
+  </div>
+</div>
+<!-- ═══ KAMPAGNENSTRATEGIE ═══ -->
+<section style="padding:100px 2rem">
+  <div class="section-inner" style="max-width:1200px;margin:0 auto">
+    <div class="section-label fade-in" style="font-size:0.8rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:16px">Eure Kampagne</div>
+    <h2 class="section-title fade-in" style="font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-0.03em;line-height:1.2;margin-bottom:12px">3 Kampagnen-Cluster f&uuml;r<br>Bayern-Mittelstand</h2>
+    <p class="section-sub fade-in" style="color:var(--text-muted);font-size:1rem;max-width:600px;margin-bottom:48px;line-height:1.7">Nicht jedes Unternehmen ist gleich interessant. Deshalb schalten wir gezielte Kampagnen in Segmenten mit dem h&ouml;chsten Konversionspotenzial.</p>
+    <div class="strategy-grid fade-in" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+      <div class="strategy-card" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px">
+        <div class="strategy-icon" style="font-size:2rem;margin-bottom:20px">&#127916;</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:12px">Imagefilm-Upgrade Mittelstand</h3>
+        <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.6">Bayern-KMU mit 20&ndash;200 Mitarbeitern, die einen &auml;lteren oder qualitativ schwachen Corporate Film auf ihrer Website haben. Wir analysieren das vorhandene Material und schreiben direkt an den GF: konkrete Verbesserungsidee, kein generisches Angebot.</p>
+        <div class="strategy-tag" style="display:inline-block;margin-top:14px;padding:4px 12px;border-radius:100px;background:var(--accent-glow);color:var(--accent);font-size:0.75rem;font-weight:600">Hochstes Volumen</div>
+      </div>
+      <div class="strategy-card" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px">
+        <div class="strategy-icon" style="font-size:2rem;margin-bottom:20px">&#128101;</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:12px">Recruiting-Kampagne Bayern</h3>
+        <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.6">Unternehmen mit aktiven Stellenausschreibungen &mdash; diese haben nachweisbar Recruiting-Budget und ben&ouml;tigen authentischen Content. Ansprache an HR-Leiter und Gesch&auml;ftsf&uuml;hrer mit Fokus auf Employer Branding und Talentakquise.</p>
+        <div class="strategy-tag" style="display:inline-block;margin-top:14px;padding:4px 12px;border-radius:100px;background:var(--accent-glow);color:var(--accent);font-size:0.75rem;font-weight:600">Klarer Bedarf messbar</div>
+      </div>
+      <div class="strategy-card" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px">
+        <div class="strategy-icon" style="font-size:2rem;margin-bottom:20px">&#127942;</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:12px">Events &amp; Preisverleihungen</h3>
+        <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.6">Veranstalter von Awards, Unternehmenskonferenzen und Branchenevents in Bayern &mdash; ein Bereich, in dem ihr nachweislich stark seid (WWF-Kampagne, Kanzlei-Event, Preisverleihungen). Proaktive Ansprache vor geplanten Terminen.</p>
+        <div class="strategy-tag" style="display:inline-block;margin-top:14px;padding:4px 12px;border-radius:100px;background:var(--accent-glow);color:var(--accent);font-size:0.75rem;font-weight:600">Eure St&auml;rke</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TEAM ═══ -->
+<section style="padding:100px 2rem;background:var(--bg-card)">
+  <div class="section-inner" style="max-width:1200px;margin:0 auto">
+    <div class="section-label fade-in" style="font-size:0.8rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:16px">Eure Ansprechpartner</div>
+    <h2 class="section-title fade-in" style="font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-0.03em;line-height:1.2;margin-bottom:12px">Das Execution-Team hinter dem Erfolg</h2>
+    <p class="section-sub fade-in" style="color:var(--text-muted);font-size:1rem;max-width:600px;margin-bottom:48px;line-height:1.7">Drei Spezialisten &mdash; ein dedizierter Account Manager der euren Account kennt, ein Data-Engineer f&uuml;r pr&auml;zise Leadlisten, ein Infrastruktur-Experte f&uuml;r maximale Zustellbarkeit.</p>
+    <div class="team-grid fade-in" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+      <div class="team-card" style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:center">
+        <div class="team-avatar" style="width:72px;height:72px;border-radius:50%;background:var(--accent-glow);border:2px solid var(--border-accent);margin:0 auto 20px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:800;color:var(--accent)">AK</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:4px">Anthony Katzur</h3>
+        <div class="team-role" style="font-size:0.8rem;color:var(--accent);font-weight:600;margin-bottom:12px">Account Manager &amp; Strategie</div>
+        <p style="font-size:0.825rem;color:var(--text-muted);line-height:1.6">Euer direkter Ansprechpartner. Er kennt euren Account, f&uuml;hrt den w&ouml;chentlichen Optimierungs-Call und steuert die gesamte Kampagne.</p>
+      </div>
+      <div class="team-card" style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:center">
+        <div class="team-avatar" style="width:72px;height:72px;border-radius:50%;background:var(--accent-glow);border:2px solid var(--border-accent);margin:0 auto 20px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:800;color:var(--accent)">CE</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:4px">Clay Engineer</h3>
+        <div class="team-role" style="font-size:0.8rem;color:var(--accent);font-weight:600;margin-bottom:12px">Data &amp; Lead-Enrichment</div>
+        <p style="font-size:0.825rem;color:var(--text-muted);line-height:1.6">Baut die Leadlisten, reichert Entscheider-Kontakte an und sorgt daf&uuml;r, dass jede E-Mail mit validen Daten befeuert wird &mdash; 75+ Datenquellen.</p>
+      </div>
+      <div class="team-card" style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:center">
+        <div class="team-avatar" style="width:72px;height:72px;border-radius:50%;background:var(--accent-glow);border:2px solid var(--border-accent);margin:0 auto 20px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:800;color:var(--accent)">AE</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:4px">Automations Expert</h3>
+        <div class="team-role" style="font-size:0.8rem;color:var(--accent);font-weight:600;margin-bottom:12px">Infrastruktur &amp; Deliverability</div>
+        <p style="font-size:0.825rem;color:var(--text-muted);line-height:1.6">Setzt die technische Infrastruktur auf, &uuml;berwacht Zustellbarkeit und Domain-Reputation &mdash; damit eure Mails im Posteingang landen, nicht im Spam.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ANGEBOT ═══ -->
+<section id="angebot" style="padding:100px 2rem">
+  <div class="section-inner" style="max-width:1200px;margin:0 auto">
+    <div class="section-label fade-in" style="font-size:0.8rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:16px">Euer Angebot</div>
+    <h2 class="section-title fade-in" style="font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-0.03em;line-height:1.2;margin-bottom:12px">W&auml;hlt das Modell,<br>das zu euch passt</h2>
+    <p class="section-sub fade-in" style="color:var(--text-muted);font-size:1rem;max-width:600px;margin-bottom:48px;line-height:1.7">Drei Optionen &mdash; vom risikoarmen Einstieg bis zur skalierten Monatskampagne. Alle Optionen beinhalten denselben Grundwerk-Prozess.</p>
+    <div class="pricing-grid fade-in" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;grid-auto-rows:minmax(620px,auto)">
+
+      <!-- Paket 1: Standard -->
+      <div class="pricing-card" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px;display:flex;flex-direction:column;position:relative">
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px">Standard</h3>
+        <p class="tagline" style="font-size:0.85rem;color:var(--text-muted);margin-bottom:24px">Solider Einstieg mit monatlicher Betreuung</p>
+        <div style="margin-bottom:8px">
+          <span style="font-size:0.82rem;color:var(--text-muted)">Setup-Fee einmalig:</span>
+          <span style="font-size:1rem;font-weight:700;color:var(--text)"> 1.990 &euro;</span>
+        </div>
+        <div class="price-main" style="font-size:2.5rem;font-weight:800;letter-spacing:-0.03em;color:var(--text);line-height:1">2.000 &euro;<span style="font-size:1rem;font-weight:400;color:var(--text-muted)">/Mo</span></div>
+        <div class="price-sub" style="font-size:0.85rem;color:var(--text-muted);margin-top:6px;margin-bottom:8px">4 Monate Mindestlaufzeit</div>
+        <div class="price-total" style="font-size:0.9rem;font-weight:700;color:var(--accent);margin-bottom:24px;padding:10px 16px;background:var(--accent-glow);border-radius:8px;display:inline-block">Gesamt: 9.990 &euro;</div>
+        <ul class="features" style="list-style:none;flex:1;margin-bottom:28px">
+          <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>10.000 E-Mails pro Monat</li>
+          <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>Dedizierter Account Manager</li>
+          <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>W&ouml;chentlicher Optimierungs-Call</li>
+          <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>MasterInbox &amp; Lead-Qualifizierung</li>
+          <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>3 Kampagnen-Cluster (Bayern)</li>
+          <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>KickOff-Workshop (1 Stunde)</li>
+          <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>Lead-Garantie: 80 qualifizierte Leads</li>
+        </ul>
+        <a href="https://calendly.com/anthonykatzur" target="_blank" class="pricing-cta secondary" style="display:block;text-align:center;padding:14px;border-radius:100px;font-weight:700;font-size:0.9rem;border:1px solid var(--border);color:var(--text);margin-top:auto">Paket w&auml;hlen</a>
+        <p class="pricing-ideal" style="font-size:0.78rem;color:var(--text-dim);margin-top:12px;text-align:center">Ideal f&uuml;r: Gesundes Wachstum mit klarem Budget-Rahmen</p>
+      </div>
+
+      <!-- Paket 3: Lead-Paket (EMPFOHLEN) -->
+      <div class="pricing-card recommended" style="background:linear-gradient(135deg,var(--bg-card),#0d1433);border:1px solid var(--accent);border-radius:var(--radius);padding:36px;display:flex;flex-direction:column;position:relative">
+        <div class="offer-badge" style="display:inline-block;padding:5px 14px;border-radius:100px;background:var(--accent);color:#fff;font-size:0.75rem;font-weight:700;margin-bottom:20px;width:fit-content">&#11088; Empfohlen zum Start</div>
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px">Lead-Paket</h3>
+        <p class="tagline" style="font-size:0.85rem;color:var(--text-muted);margin-bottom:24px">Einmalig bezahlen &mdash; 80 Leads erhalten</p>
+        <div class="price-main" style="font-size:2.5rem;font-weight:800;letter-spacing:-0.03em;color:var(--text);line-height:1">6.700 &euro;</div>
+        <div class="price-sub" style="font-size:0.85rem;color:var(--text-muted);margin-top:6px;margin-bottom:8px">Einmalige Investition &mdash; keine Laufzeit</div>
+        <div style="font-size:0.9rem;font-weight:700;color:var(--green);margin-bottom:24px;padding:10px 16px;background:var(--green-glow);border-radius:8px;display:inline-block;border:1px solid rgba(34,197,94,0.2)">&#10004; 80 Leads inklusive</div>
+        <ul class="features" style="list-style:none;flex:1;margin-bottom:28px">
+          <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>80 qualifizierte Leads &mdash; garantiert</li>
+          <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>Einmalig &mdash; keine Monatsbindung</li>
+          <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>Voller Grundwerk-Prozess (Setup bis Lead)</li>
+          <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>MasterInbox &amp; Lead-Qualifizierung</li>
+          <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>KickOff-Workshop (1 Stunde)</li>
+          <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>Kein Risiko: Ihr zahlt f&uuml;r Ergebnisse</li>
+          <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>Danach optional: Monatliches Retainer-Modell</li>
+        </ul>
+        <a href="https://calendly.com/anthonykatzur" target="_blank" class="pricing-cta primary" style="display:block;text-align:center;padding:14px;border-radius:100px;font-weight:700;font-size:0.9rem;background:var(--accent);color:#fff;margin-top:auto">Jetzt starten</a>
+        <p class="pricing-ideal" style="font-size:0.78rem;color:var(--text-dim);margin-top:12px;text-align:center">Ideal f&uuml;r: Einstieg ohne Monatsbindung &mdash; Ergebnisse first</p>
+      </div>
+
+      <!-- Paket 2: Growth -->
+      <div class="pricing-card" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px;display:flex;flex-direction:column;position:relative">
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px">Growth</h3>
+        <p class="tagline" style="font-size:0.85rem;color:var(--text-muted);margin-bottom:24px">H&ouml;heres Volumen f&uuml;r schnelleres Wachstum</p>
+        <div style="margin-bottom:8px">
+          <span style="font-size:0.82rem;color:var(--text-muted)">Setup-Fee einmalig:</span>
+          <span style="font-size:1rem;font-weight:700;color:var(--text)"> 1.990 &euro;</span>
+        </div>
+        <div class="price-main" style="font-size:2.5rem;font-weight:800;letter-spacing:-0.03em;color:var(--text);line-height:1">2.700 &euro;<span style="font-size:1rem;font-weight:400;color:var(--text-muted)">/Mo</span></div>
+        <div class="price-sub" style="font-size:0.85rem;color:var(--text-muted);margin-top:6px;margin-bottom:8px">4 Monate Mindestlaufzeit</div>
+        <div class="price-total" style="font-size:0.9rem;font-weight:700;color:var(--accent);margin-bottom:24px;padding:10px 16px;background:var(--accent-glow);border-radius:8px;display:inline-block">Gesamt: 12.790 &euro;</div>
+        <ul class="features" style="list-style:none;flex:1;margin-bottom:28px">
+          <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>20.000 E-Mails pro Monat (2x Standard)</li>
+          <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>Dedizierter Account Manager</li>
+          <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>W&ouml;chentlicher Optimierungs-Call</li>
+          <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>MasterInbox &amp; Lead-Qualifizierung</li>
+          <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>5 Kampagnen-Cluster (Bayern)</li>
+          <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>Priorit&auml;t-Support &amp; schnelleres Reporting</li>
+          <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>Lead-Garantie: 80 qualifizierte Leads</li>
+        </ul>
+        <a href="https://calendly.com/anthonykatzur" target="_blank" class="pricing-cta secondary" style="display:block;text-align:center;padding:14px;border-radius:100px;font-weight:700;font-size:0.9rem;border:1px solid var(--border);color:var(--text);margin-top:auto">Paket w&auml;hlen</a>
+        <p class="pricing-ideal" style="font-size:0.78rem;color:var(--text-dim);margin-top:12px;text-align:center">Ideal f&uuml;r: Maximale Reichweite &amp; schnelles Skalieren</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ═══ GARANTIE ═══ -->
+<section class="guarantee fade-in" style="text-align:center;padding:80px 2rem;background:radial-gradient(ellipse at 50% 50%,var(--green-glow) 0%,transparent 70%)">
+  <div style="max-width:800px;margin:0 auto">
+    <div class="guarantee-badge" style="display:inline-block;padding:8px 24px;border-radius:100px;background:var(--green-glow);color:var(--green);font-weight:700;font-size:0.85rem;margin-bottom:20px;border:1px solid rgba(34,197,94,0.3)">Lead-Garantie (Paket 1 &amp; 2)</div>
+    <h2 style="font-size:clamp(1.4rem,3vw,2rem);font-weight:800;max-width:700px;margin:0 auto 16px;line-height:1.3">Mindestens 80 qualifizierte Leads in 4 Monaten &mdash; oder ihr zahlt den halben Preis.</h2>
+    <p style="font-size:0.9rem;color:var(--text-muted);max-width:600px;margin:0 auto">Ein Lead gilt als qualifiziert, wenn er aus einem bayerischen Unternehmen mit 20+ Mitarbeitern stammt, positiv auf die Ansprache geantwortet hat und konkreten Bedarf an Video- oder Filmproduktion signalisiert. Diese Bedingungen werden im KickOff gemeinsam festgelegt.</p>
+  </div>
+</section>
+
+<!-- ═══ LEAD PROGNOSE ═══ -->
+<section style="padding:100px 2rem">
+  <div class="section-inner" style="max-width:1200px;margin:0 auto">
+    <div class="section-label fade-in" style="font-size:0.8rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:16px">Realistische Erwartungen</div>
+    <h2 class="section-title fade-in" style="font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-0.03em;line-height:1.2;margin-bottom:12px">Euer 4-Monats-Forecast</h2>
+    <p class="section-sub fade-in" style="color:var(--text-muted);font-size:1rem;max-width:600px;margin-bottom:48px;line-height:1.7">Basierend auf vergleichbaren Kampagnen im Premium-Dienstleistungsbereich &mdash; Paket 1 (10.000 E-Mails/Mo).</p>
+    <table class="prognose-table fade-in" style="width:100%;border-collapse:separate;border-spacing:0;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);margin-bottom:32px">
+      <thead>
+        <tr>
+          <th style="background:var(--bg-card);padding:14px 20px;font-size:0.82rem;font-weight:700;text-align:left;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;border-bottom:1px solid var(--border)">Monat</th>
+          <th style="background:var(--bg-card);padding:14px 20px;font-size:0.82rem;font-weight:700;text-align:left;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;border-bottom:1px solid var(--border)">Prospects kontaktiert</th>
+          <th style="background:var(--bg-card);padding:14px 20px;font-size:0.82rem;font-weight:700;text-align:left;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;border-bottom:1px solid var(--border)">Erwartete Leads</th>
+          <th style="background:var(--bg-card);padding:14px 20px;font-size:0.82rem;font-weight:700;text-align:left;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;border-bottom:1px solid var(--border)">Kumuliert</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:16px 20px;font-size:0.9rem;border-bottom:1px solid var(--border);background:var(--bg)">Monat 1 (Setup &amp; Warmup)</td>
+          <td style="padding:16px 20px;font-size:0.9rem;border-bottom:1px solid var(--border);background:var(--bg);color:var(--text-muted)">Infrastruktur-Aufbau</td>
+          <td style="padding:16px 20px;font-size:0.9rem;border-bottom:1px solid var(--border);background:var(--bg);color:var(--text-muted)">0 Leads (Setup)</td>
+          <td style="padding:16px 20px;font-size:0.9rem;border-bottom:1px solid var(--border);background:var(--bg);color:var(--green);font-weight:600">0</td>
+        </tr>
+        <tr>
+          <td style="padding:16px 20px;font-size:0.9rem;border-bottom:1px solid var(--border);background:var(--bg)">Monat 2</td>
+          <td style="padding:16px 20px;font-size:0.9rem;border-bottom:1px solid var(--border);background:var(--bg);color:var(--text-muted)">3.000+ Prospects</td>
+          <td style="padding:16px 20px;font-size:0.9rem;border-bottom:1px solid var(--border);background:var(--bg);color:var(--text-muted)">15&ndash;25 Leads</td>
+          <td style="padding:16px 20px;font-size:0.9rem;border-bottom:1px solid var(--border);background:var(--bg);color:var(--green);font-weight:600">15&ndash;25</td>
+        </tr>
+        <tr>
+          <td style="padding:16px 20px;font-size:0.9rem;border-bottom:1px solid var(--border);background:var(--bg)">Monat 3</td>
+          <td style="padding:16px 20px;font-size:0.9rem;border-bottom:1px solid var(--border);background:var(--bg);color:var(--text-muted)">5.000+ Prospects</td>
+          <td style="padding:16px 20px;font-size:0.9rem;border-bottom:1px solid var(--border);background:var(--bg);color:var(--text-muted)">25&ndash;35 Leads</td>
+          <td style="padding:16px 20px;font-size:0.9rem;border-bottom:1px solid var(--border);background:var(--bg);color:var(--green);font-weight:600">40&ndash;60</td>
+        </tr>
+        <tr>
+          <td style="padding:16px 20px;font-size:0.9rem;border-bottom:1px solid var(--border);background:var(--bg)">Monat 4</td>
+          <td style="padding:16px 20px;font-size:0.9rem;border-bottom:1px solid var(--border);background:var(--bg);color:var(--text-muted)">5.000+ Prospects</td>
+          <td style="padding:16px 20px;font-size:0.9rem;border-bottom:1px solid var(--border);background:var(--bg);color:var(--text-muted)">40&ndash;55 Leads</td>
+          <td style="padding:16px 20px;font-size:0.9rem;border-bottom:1px solid var(--border);background:var(--bg);color:var(--green);font-weight:600">80&ndash;115</td>
+        </tr>
+        <tr>
+          <td style="padding:16px 20px;font-size:0.9rem;background:var(--bg-card);font-weight:700;color:var(--accent)">Gesamt</td>
+          <td style="padding:16px 20px;font-size:0.9rem;background:var(--bg-card);font-weight:700;color:var(--accent)">13.000+ Prospects</td>
+          <td style="padding:16px 20px;font-size:0.9rem;background:var(--bg-card);font-weight:700;color:var(--accent)">&mdash;</td>
+          <td style="padding:16px 20px;font-size:0.9rem;background:var(--bg-card);font-weight:700;color:var(--green)">80+ Leads</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="prognose-compare fade-in" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px">
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px">
+        <h4 style="font-size:0.85rem;font-weight:700;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted)">Google Ads &mdash; gleiche Anzahl qual. Termine</h4>
+        <div style="font-size:2rem;font-weight:800;line-height:1;margin-bottom:8px;color:var(--red)">~61.250 &euro;</div>
+        <p style="font-size:0.82rem;color:var(--text-muted);line-height:1.5">80 Leads &times; 50% Terminquote &times; 80% qualifiziert = 32 qual. Termine &times; 1.750 &euro; Google Ads CPT = 56.000 &euro; &mdash; plus laufende Betreuungskosten</p>
+      </div>
+      <div style="background:var(--bg-card);border:1px solid var(--green-glow);border-radius:var(--radius);padding:28px;border-color:rgba(34,197,94,0.3)">
+        <h4 style="font-size:0.85rem;font-weight:700;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted)">Cold Outreach Grundwerk &mdash; gleiche Anzahl</h4>
+        <div style="font-size:2rem;font-weight:800;line-height:1;margin-bottom:8px;color:var(--green)">9.990 &euro;</div>
+        <p style="font-size:0.82rem;color:var(--text-muted);line-height:1.5">Gleiche oder h&ouml;here Anzahl qualifizierter Leads &mdash; f&uuml;r einen Bruchteil der Kosten. Und ihr beh&auml;lt die vollst&auml;ndige Kontrolle &uuml;ber die Ansprache.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ROI ═══ -->
+<section style="padding:100px 2rem;background:var(--bg-card)">
+  <div class="section-inner" style="max-width:1200px;margin:0 auto">
+    <div class="section-label fade-in" style="font-size:0.8rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:16px">Return on Investment</div>
+    <h2 class="section-title fade-in" style="font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-0.03em;line-height:1.2;margin-bottom:12px">Was drin sein kann</h2>
+    <p class="section-sub fade-in" style="color:var(--text-muted);font-size:1rem;max-width:600px;margin-bottom:48px;line-height:1.7">Basierend auf einem durchschnittlichen Projektvolumen von 8.000 &euro; (konservativ &mdash; euer Portfolio l&auml;uft bis 20.000 &euro;).</p>
+    <div class="roi-grid fade-in" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+      <div class="roi-card" style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:center">
+        <div class="roi-label" style="font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-bottom:16px">Konservativ</div>
+        <div class="roi-number" style="font-size:2.8rem;font-weight:800;color:var(--green);letter-spacing:-0.03em;line-height:1;margin-bottom:12px">40.000 &euro;</div>
+        <div class="roi-detail" style="font-size:0.85rem;color:var(--text-muted);line-height:1.6">5 Abschl&uuml;sse aus 80 Leads<br><strong style="color:var(--text)">4x ROI</strong> auf Paket 1<br>Invest: 9.990 &euro;</div>
+      </div>
+      <div class="roi-card highlight" style="background:linear-gradient(135deg,var(--bg),#0d1433);border:1px solid var(--accent);border-radius:var(--radius);padding:32px;text-align:center">
+        <div class="roi-label" style="font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent);margin-bottom:16px">Realistisch</div>
+        <div class="roi-number" style="font-size:2.8rem;font-weight:800;color:var(--green);letter-spacing:-0.03em;line-height:1;margin-bottom:12px">80.000 &euro;</div>
+        <div class="roi-detail" style="font-size:0.85rem;color:var(--text-muted);line-height:1.6">10 Abschl&uuml;sse aus 80 Leads<br><strong style="color:var(--text)">8x ROI</strong> auf Paket 1<br>Invest: 9.990 &euro;</div>
+      </div>
+      <div class="roi-card" style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:center">
+        <div class="roi-label" style="font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-bottom:16px">Optimistisch</div>
+        <div class="roi-number" style="font-size:2.8rem;font-weight:800;color:var(--green);letter-spacing:-0.03em;line-height:1;margin-bottom:12px">120.000 &euro;</div>
+        <div class="roi-detail" style="font-size:0.85rem;color:var(--text-muted);line-height:1.6">15 Abschl&uuml;sse aus 80 Leads<br><strong style="color:var(--text)">12x ROI</strong> auf Paket 1<br>Invest: 9.990 &euro;</div>
+      </div>
+    </div>
+    <div class="fade-in" style="margin-top:32px;background:var(--accent-glow);border:1px solid var(--border-accent);border-radius:var(--radius);padding:24px 32px;text-align:center">
+      <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.7">&#128161; <strong style="color:var(--text)">Wichtig:</strong> Die ROI-Kalkulation basiert auf einem konservativen &Oslash;-Deal von 8.000 &euro;. Projekte ab 15.000 &euro; (Imagefilm Premium, Event-Begleitung) verdoppeln den ROI nochmals. Und: Ihr habt erw&auml;hnt, dass gute Kunden 2&ndash;3 Folgeprojekte pro Jahr beauftragen &mdash; der Lifetime Value ist deutlich h&ouml;her.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BONUSSE ═══ -->
+<section style="padding:100px 2rem">
+  <div class="section-inner" style="max-width:1200px;margin:0 auto">
+    <div class="section-label fade-in" style="font-size:0.8rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:16px">Inklusive in jedem Paket</div>
+    <h2 class="section-title fade-in" style="font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-0.03em;line-height:1.2;margin-bottom:12px">Bleibende Assets &mdash;<br>die ihr f&uuml;r immer beh&auml;lt</h2>
+    <p class="section-sub fade-in" style="color:var(--text-muted);font-size:1rem;max-width:600px;margin-bottom:48px;line-height:1.7">Egal welches Paket ihr w&auml;hlt &mdash; diese Komponenten geh&ouml;ren euch dauerhaft.</p>
+    <div class="bonus-grid fade-in" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+      <div class="bonus-item" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;display:flex;gap:16px;align-items:flex-start">
+        <div class="bonus-icon" style="font-size:1.5rem;flex-shrink:0">&#127919;</div>
+        <div>
+          <h4 style="font-size:0.9rem;font-weight:700;margin-bottom:6px">ICP-Definition &amp; Zielgruppen-Research</h4>
+          <p style="font-size:0.82rem;color:var(--text-muted);line-height:1.5">Euer Ideal Customer Profile f&uuml;r Bayern-Mittelstand &mdash; pr&auml;zise definiert, auswertbar, wiederverwendbar.</p>
+        </div>
+      </div>
+      <div class="bonus-item" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;display:flex;gap:16px;align-items:flex-start">
+        <div class="bonus-icon" style="font-size:1.5rem;flex-shrink:0">&#9993;</div>
+        <div>
+          <h4 style="font-size:0.9rem;font-weight:700;margin-bottom:6px">E-Mail-Sequenzen (Copywriting)</h4>
+          <p style="font-size:0.82rem;color:var(--text-muted);line-height:1.5">Vollst&auml;ndig entwickelte und getestete Outreach-Sequenzen &mdash; auf eure Branche und euer Angebot zugeschnitten.</p>
+        </div>
+      </div>
+      <div class="bonus-item" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;display:flex;gap:16px;align-items:flex-start">
+        <div class="bonus-icon" style="font-size:1.5rem;flex-shrink:0">&#128196;</div>
+        <div>
+          <h4 style="font-size:0.9rem;font-weight:700;margin-bottom:6px">Angebots-Vorlagen (PandaDoc)</h4>
+          <p style="font-size:0.82rem;color:var(--text-muted);line-height:1.5">Professionelle Angebots- und Vertragsvorlagen &mdash; damit die Konversion vom Lead zum Auftrag reibungslos l&auml;uft.</p>
+        </div>
+      </div>
+      <div class="bonus-item" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;display:flex;gap:16px;align-items:flex-start">
+        <div class="bonus-icon" style="font-size:1.5rem;flex-shrink:0">&#128204;</div>
+        <div>
+          <h4 style="font-size:0.9rem;font-weight:700;margin-bottom:6px">Calendly-Integration</h4>
+          <p style="font-size:0.82rem;color:var(--text-muted);line-height:1.5">Automatisierte Terminbuchung direkt aus dem Outreach &mdash; warme Leads k&ouml;nnen sofort einen Termin buchen.</p>
+        </div>
+      </div>
+      <div class="bonus-item" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;display:flex;gap:16px;align-items:flex-start">
+        <div class="bonus-icon" style="font-size:1.5rem;flex-shrink:0">&#128222;</div>
+        <div>
+          <h4 style="font-size:0.9rem;font-weight:700;margin-bottom:6px">Direktkontakte der Entscheider</h4>
+          <p style="font-size:0.82rem;color:var(--text-muted);line-height:1.5">Validierte E-Mail-Adressen und Telefonnummern von Gesch&auml;ftsf&uuml;hrern &mdash; keine info@, direkt zum DM.</p>
+        </div>
+      </div>
+      <div class="bonus-item" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;display:flex;gap:16px;align-items:flex-start">
+        <div class="bonus-icon" style="font-size:1.5rem;flex-shrink:0">&#128202;</div>
+        <div>
+          <h4 style="font-size:0.9rem;font-weight:700;margin-bottom:6px">Grundwerk Web App (RevyOps)</h4>
+          <p style="font-size:0.82rem;color:var(--text-muted);line-height:1.5">Zentrales Dashboard f&uuml;r Kampagnen-Performance, Lead-&Uuml;bersicht und Reporting &mdash; alles an einem Ort.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ═══ TIMELINE ═══ -->
+<section style="padding:100px 2rem;background:var(--bg-card)">
+  <div class="section-inner" style="max-width:1200px;margin:0 auto">
+    <div class="section-label fade-in" style="font-size:0.8rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:16px">Wie es weitergeht</div>
+    <h2 class="section-title fade-in" style="font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-0.03em;line-height:1.2;margin-bottom:12px">Von Heute bis zu<br>euren ersten Leads</h2>
+    <p class="section-sub fade-in" style="color:var(--text-muted);font-size:1rem;max-width:600px;margin-bottom:48px;line-height:1.7">Nach dem Go-Signal l&auml;uft alles strukturiert ab &mdash; keine langen Wartezeiten, klare Meilensteine.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start">
+      <div class="timeline fade-in" style="position:relative;padding-left:40px">
+        <div style="position:absolute;left:12px;top:8px;bottom:8px;width:2px;background:var(--border)"></div>
+        <div class="timeline-item" style="position:relative;margin-bottom:32px">
+          <div style="position:absolute;left:-33px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid var(--bg-card)"></div>
+          <h4 style="font-size:1rem;font-weight:700;margin-bottom:6px">Heute &mdash; Angebot best&auml;tigen</h4>
+          <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.6">Ihr entscheidet euch f&uuml;r ein Paket und bucht den KickOff-Call mit Anthony. Wir starten die Vorbereitungen.</p>
+        </div>
+        <div class="timeline-item" style="position:relative;margin-bottom:32px">
+          <div style="position:absolute;left:-33px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid var(--bg-card)"></div>
+          <h4 style="font-size:1rem;font-weight:700;margin-bottom:6px">Woche 1 &mdash; KickOff-Workshop</h4>
+          <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.6">1 Stunde gemeinsam: ICP finalisieren, Zielgruppen priorisieren, Kampagnen-Angles definieren, Onboarding abschlie&szlig;en.</p>
+        </div>
+        <div class="timeline-item" style="position:relative;margin-bottom:32px">
+          <div style="position:absolute;left:-33px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid var(--bg-card)"></div>
+          <h4 style="font-size:1rem;font-weight:700;margin-bottom:6px">Woche 2&ndash;3 &mdash; Setup &amp; Launch</h4>
+          <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.6">Infrastruktur aufbauen, Leadlisten anreichern, E-Mail-Sequenzen fertigstellen, Domain-Warmup starten, erste Kampagne live schalten.</p>
+        </div>
+        <div class="timeline-item" style="position:relative;margin-bottom:32px">
+          <div style="position:absolute;left:-33px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid var(--bg-card)"></div>
+          <h4 style="font-size:1rem;font-weight:700;margin-bottom:6px">Woche 4 &mdash; Erste Antworten</h4>
+          <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.6">Erste positive R&uuml;ckmeldungen landen in der MasterInbox. Ihr erhaltet qualifizierte Leads direkt &mdash; einfach anrufen oder Termin buchen.</p>
+        </div>
+        <div class="timeline-item" style="position:relative">
+          <div style="position:absolute;left:-33px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--green);border:2px solid var(--bg-card)"></div>
+          <h4 style="font-size:1rem;font-weight:700;margin-bottom:6px">Monat 2&ndash;4 &mdash; Optimierung &amp; Skalierung</h4>
+          <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.6">W&ouml;chentlicher Call mit Anthony, Kampagnen-Optimierung basierend auf echten Daten, neue Zielgruppen testen, Volumen hochskalieren.</p>
+        </div>
+      </div>
+      <div class="fade-in">
+        <div class="timeline-highlight" style="background:var(--accent-glow);border:1px solid var(--border-accent);border-radius:var(--radius);padding:32px;text-align:center;margin-bottom:24px">
+          <div style="font-size:2.5rem;font-weight:800;color:var(--accent);margin-bottom:12px">14 Tage</div>
+          <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px">bis zu euren ersten Leads</h3>
+          <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.6">Vom KickOff bis zur ersten qualifizierten Anfrage in eurer Inbox &mdash; schnell, strukturiert, messbar.</p>
+        </div>
+        <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:28px">
+          <h4 style="font-size:0.9rem;font-weight:700;margin-bottom:16px">Was ihr tun m&uuml;sst</h4>
+          <ul style="list-style:none">
+            <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>Paket ausw&auml;hlen &amp; KickOff-Termin buchen</li>
+            <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>KickOff-Workshop: 1 Stunde f&uuml;r euren Input</li>
+            <li style="font-size:0.875rem;color:var(--text-muted);padding:8px 0;display:flex;align-items:flex-start;gap:10px;line-height:1.5"><span style="color:var(--green);font-weight:700;flex-shrink:0">&#10003;</span>Leads entgegennehmen &amp; Projekte umsetzen</li>
+          </ul>
+          <p style="font-size:0.8rem;color:var(--text-dim);margin-top:16px">Den Rest &uuml;bernehmen wir vollst&auml;ndig.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta-section fade-in" style="text-align:center;padding:100px 2rem;background:radial-gradient(ellipse at 50% 50%,var(--accent-glow) 0%,transparent 65%)">
+  <div style="max-width:700px;margin:0 auto">
+    <div style="font-size:0.8rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:20px">Bereit zum Start?</div>
+    <h2 style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:20px;line-height:1.2">Jetzt Angebot sichern &mdash;<br>bevor der Slot vergeben ist.</h2>
+    <p style="font-size:1rem;color:var(--text-muted);max-width:520px;margin:0 auto 40px;line-height:1.7">Wir arbeiten immer nur mit drei Filmproduktions-Firmen gleichzeitig in Bayern &mdash; damit die Zielgruppe nicht mehrfach angesprochen wird. Aktuell ist noch ein Slot frei.</p>
+    <a href="https://calendly.com/anthonykatzur" target="_blank" class="btn-primary" style="display:inline-block;background:var(--accent);color:#fff;padding:18px 48px;border-radius:100px;font-size:1.1rem;font-weight:700;box-shadow:0 0 40px rgba(79,125,249,0.4);transition:transform 0.2s,box-shadow 0.2s">Jetzt KickOff-Call buchen &#8599;</a>
+    <div class="cta-contact" style="margin-top:40px;display:flex;justify-content:center;gap:40px;flex-wrap:wrap">
+      <div class="contact-item" style="text-align:center">
+        <div style="font-size:0.75rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px">Direkte E-Mail</div>
+        <a href="mailto:anthony.katzur@grundwerk.digital" style="font-size:0.9rem;color:var(--text-muted)">anthony.katzur@grundwerk.digital</a>
+      </div>
+      <div class="contact-item" style="text-align:center">
+        <div style="font-size:0.75rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px">Telefon</div>
+        <a href="tel:+4917647189941" style="font-size:0.9rem;color:var(--text-muted)">+49 176 47189941</a>
+      </div>
+      <div class="contact-item" style="text-align:center">
+        <div style="font-size:0.75rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px">Ansprechpartner</div>
+        <span style="font-size:0.9rem;color:var(--text-muted)">Anthony Katzur</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer style="text-align:center;padding:32px 2rem;border-top:1px solid var(--border);font-size:0.8rem;color:var(--text-dim)">
+  &copy; 2026 Grundwerk Digital &middot; Alle Rechte vorbehalten &middot; <a href="https://grundwerk.digital" style="color:var(--text-dim)">grundwerk.digital</a>
+</footer>
+
+<script>
+// Intersection Observer for fade-in
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Smooth hover on CTA buttons
+document.querySelectorAll('.btn-primary').forEach(btn => {
+    btn.addEventListener('mouseenter', () => {
+        btn.style.transform = 'translateY(-2px)';
+        btn.style.boxShadow = '0 8px 40px rgba(79,125,249,0.5)';
+    });
+    btn.addEventListener('mouseleave', () => {
+        btn.style.transform = '';
+        btn.style.boxShadow = '0 0 30px rgba(79,125,249,0.3)';
+    });
+});
+</script>
+</body>
+</html>
