@@ -1,9 +1,9 @@
-<!-- GRUNDWERK-OFFER v1 | 2026-03-16 16:00 | DigiRehab Sales Room — Initial deploy -->
+<!-- GRUNDWERK-OFFER v2 | 2026-03-16 17:15 | BAFA entfernt, Zahlungsplan hinzugefügt (M1: 5.490€, M2+M3: 0€) -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="offer-version" content="v1 | 2026-03-16">
+    <meta name="offer-version" content="v2 | 2026-03-16">
     <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII=" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DigiRehab × Grundwerk Digital — Sales Room</title>
@@ -1407,18 +1407,38 @@
                     </ul>
                 </div>
 
-                <!-- BAFA-Hinweis -->
-                <div style="background:rgba(34,197,94,0.07);border:1px solid rgba(34,197,94,0.25);border-radius:var(--radius);padding:20px 22px;margin-top:16px;">
-                    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
-                        <span style="font-size:1.1rem;">🏛️</span>
-                        <strong style="font-size:0.88rem;color:var(--text);">BAFA-Förderung möglich</strong>
+                <!-- Zahlungsplan -->
+                <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-top:16px;">
+                    <h4 style="font-size:0.95rem;font-weight:700;margin-bottom:16px;">Zahlungsplan</h4>
+                    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px;">
+                        <div style="background:var(--layer-subtle);border-radius:var(--radius-sm);padding:18px 16px;text-align:center;">
+                            <div style="font-size:0.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">Monat 1</div>
+                            <div style="font-size:0.82rem;color:var(--text-muted);margin-bottom:4px;">Kickoff-Workshop-Gebühr</div>
+                            <div style="font-size:1.2rem;font-weight:800;color:var(--text);">1.990 €</div>
+                            <div style="font-size:0.82rem;color:var(--text-muted);margin-top:8px;margin-bottom:4px;">Erster Retainer</div>
+                            <div style="font-size:1.2rem;font-weight:800;color:var(--text);">3.500 €</div>
+                        </div>
+                        <div style="background:var(--layer-subtle);border-radius:var(--radius-sm);padding:18px 16px;text-align:center;">
+                            <div style="font-size:0.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">Monat 2</div>
+                            <div style="font-size:1.2rem;font-weight:800;color:var(--text-muted);text-decoration:line-through;">3.500 €</div>
+                            <div style="font-size:1.4rem;font-weight:800;color:var(--green);margin-top:4px;">0 €</div>
+                        </div>
+                        <div style="background:var(--layer-subtle);border-radius:var(--radius-sm);padding:18px 16px;text-align:center;">
+                            <div style="font-size:0.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">Monat 3</div>
+                            <div style="font-size:1.2rem;font-weight:800;color:var(--text-muted);text-decoration:line-through;">3.500 €</div>
+                            <div style="font-size:1.4rem;font-weight:800;color:var(--green);margin-top:4px;">0 €</div>
+                        </div>
                     </div>
-                    <p style="font-size:0.84rem;color:var(--text-muted);line-height:1.7;margin-bottom:8px;">DigiRehab ist BAFA-förderfähig (Hamburg = Alte Bundesländer, 50% Zuschuss). Bei 3.500 € Beratungshonorar:</p>
-                    <ul style="font-size:0.82rem;color:var(--text-muted);line-height:1.8;list-style:none;padding:0;">
-                        <li>→ Max. Zuschuss: <strong style="color:var(--green);">1.750 €</strong></li>
-                        <li>→ Eigenanteil: <strong style="color:var(--text);">1.750 €</strong></li>
-                        <li>→ Gesamtinvest nach Förderung: <strong style="color:var(--green);">3.740 €</strong></li>
-                    </ul>
+                    <div style="background:var(--accent-glow);border:1px solid var(--border-accent);border-radius:var(--radius-sm);padding:16px 18px;">
+                        <div style="font-size:0.85rem;color:var(--text);line-height:1.7;">
+                            <strong>Der Deal:</strong> Wir scrapen den kompletten Markt und schalten Kampagnen, die drei Monate lang laufen. Ab Kampagnenstart Ende Monat 1 reduzieren wir die Betreuung — ihr könnt alle Leads kontaktieren und eine Auswertung machen, zahlt aber für die letzten zwei Monate <strong style="color:var(--green);">nichts</strong>.
+                        </div>
+                    </div>
+                    <div style="text-align:center;margin-top:16px;padding:12px;background:var(--layer-subtle);border-radius:var(--radius-sm);">
+                        <div style="font-size:0.78rem;color:var(--text-muted);">Gesamtinvestition</div>
+                        <div style="font-size:1.5rem;font-weight:800;color:var(--text);">5.490 €</div>
+                        <div style="font-size:0.78rem;color:var(--text-muted);">statt 12.490 € (3 Monate voll)</div>
+                    </div>
                 </div>
             </div>
 
@@ -1887,7 +1907,7 @@
                             <span class="faq-q-text" style="font-size:0.87rem;font-weight:600;color:var(--text);">„5.490 € ist viel für ein kleines Unternehmen"</span>
                             <span class="faq-icon" style="font-size:1.1rem;color:var(--text-dim);flex-shrink:0;margin-left:14px;">+</span>
                         </button>
-                        <div class="faq-a" style="display:none;padding:0 22px 18px;font-size:0.84rem;color:var(--text-muted);line-height:1.7;">Stimmt, das ist kein Taschengeld. Aber rechne mal: 913 € kostet euch aktuell ein EINZELNER stationärer Vertrag. Für 5.490 € bekommst du 30–50 qualifizierte Leads aus einem komplett neuen Markt. Bei 8k € ACV und 20% CR = 48.000–80.000 € Pipeline. Das ist ein 9–15x ROI. Plus: BAFA erstattet bis zu 1.750 € — dein Eigenanteil sinkt auf 3.740 €.</div>
+                        <div class="faq-a" style="display:none;padding:0 22px 18px;font-size:0.84rem;color:var(--text-muted);line-height:1.7;">Stimmt, das ist kein Taschengeld. Aber rechne mal: 913 € kostet euch aktuell ein EINZELNER stationärer Vertrag. Für 5.490 € bekommst du 30–50 qualifizierte Leads aus einem komplett neuen Markt. Bei 8k € ACV und 20% CR = 48.000–80.000 € Pipeline. Das ist ein 9–15x ROI. Plus: Monat 2 und 3 kosten euch nichts — die Kampagnen laufen weiter, ihr zahlt nur den Kickoff und den ersten Monat.</div>
                     </div>
 
                 </div>
