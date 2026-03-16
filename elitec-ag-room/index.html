@@ -1,14 +1,10 @@
-<!--
-  GRUNDWERK SALES ROOM — elitec AG
-  Erstellt: 15.03.2026
-  Closer: Tom Soto Schiller
-  Contact: Michael Matiz, Geschaeftsfuehrer
--->
+<!-- GRUNDWERK-OFFER v2 | 2026-03-16 09:00 | Rebuild: Fix Investition-Layout, Ergebnisse 1:1, Wistia-Fallback -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII=" />
+    <meta name="offer-version" content="v2 | 2026-03-16">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>elitec AG &times; Grundwerk Digital &mdash; Sales Room</title>
     <script>
@@ -279,7 +275,7 @@
             padding: 5px 14px; border-radius: 100px; margin-bottom: 20px;
             letter-spacing: 0.02em;
         }
-        .hero-badge::before { content: '\01F512'; font-size: 0.8rem; }
+        .hero-badge::before { content: '🔒'; font-size: 0.8rem; }
         h1 .highlight { color: var(--accent); }
         .hero-sub {
             font-size: 1.05rem; color: var(--text-muted);
@@ -292,6 +288,7 @@
             border: 1px solid var(--border);
             background: var(--video-bg);
         }
+        .video-embed-wrap wistia-player { display: block; width: 100%; }
         .champion-box {
             background: rgba(79,125,249,0.07); border: 1px solid var(--border-accent);
             border-radius: var(--radius); padding: 24px 28px; margin-top: 4px;
@@ -359,7 +356,7 @@
         .consequence h3 { font-size: 0.9rem; font-weight: 700; color: var(--consequence-h); margin-bottom: 12px; }
         .consequence ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
         .consequence li { font-size: 0.85rem; color: var(--consequence-li); padding-left: 18px; position: relative; line-height: 1.55; }
-        .consequence li::before { content: '\2192'; position: absolute; left: 0; color: var(--orange); }
+        .consequence li::before { content: '→'; position: absolute; left: 0; color: var(--orange); }
         .timeline {
             display: grid; grid-template-columns: repeat(3, 1fr);
             gap: 14px; margin-bottom: 36px;
@@ -371,7 +368,7 @@
         }
         .t-step:hover { border-color: var(--border-accent); }
         .t-step::after {
-            content: '\2192'; position: absolute; right: -12px; top: 50%;
+            content: '→'; position: absolute; right: -12px; top: 50%;
             transform: translateY(-50%); color: var(--text-dim); font-size: 1rem; z-index: 1;
         }
         .t-step:last-child::after { display: none; }
@@ -380,7 +377,7 @@
         .t-step h3 { font-size: 0.88rem; font-weight: 700; margin-bottom: 9px; color: var(--text); }
         .t-step ul { list-style: none; display: flex; flex-direction: column; gap: 5px; }
         .t-step li { font-size: 0.78rem; color: var(--text-muted); padding-left: 12px; position: relative; line-height: 1.5; }
-        .t-step li::before { content: '\00B7'; position: absolute; left: 3px; color: var(--accent); font-size: 1.1rem; line-height: 1.3; }
+        .t-step li::before { content: '·'; position: absolute; left: 3px; color: var(--accent); font-size: 1.1rem; line-height: 1.3; }
         .proof-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 14px; margin-bottom: 28px;
@@ -473,7 +470,7 @@
         .price-total strong { color: var(--text); }
         .price-features { list-style: none; display: flex; flex-direction: column; gap: 7px; }
         .price-features li { font-size: 0.8rem; color: var(--text-muted); padding-left: 18px; position: relative; line-height: 1.5; }
-        .price-features li::before { content: '\2713'; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+        .price-features li::before { content: '✓'; position: absolute; left: 0; color: var(--green); font-weight: 700; }
         .roi-box {
             background: var(--bg-card); border: 1px solid var(--border);
             border-radius: var(--radius); padding: 24px;
@@ -519,7 +516,7 @@
         }
         .map-checkbox:hover { border-color: var(--accent); }
         .map-checkbox.checked { background: var(--green); border-color: var(--green); }
-        .map-checkbox.checked::after { content: '\2713'; color: white; font-size: 0.65rem; font-weight: 800; }
+        .map-checkbox.checked::after { content: '✓'; color: white; font-size: 0.65rem; font-weight: 800; }
         .map-task-text { flex: 1; }
         .map-task-title { font-size: 0.84rem; font-weight: 600; color: var(--text); line-height: 1.4; }
         .map-task-owner { font-size: 0.74rem; color: var(--text-muted); margin-top: 2px; }
@@ -601,7 +598,7 @@
         <span class="nav-logo-client">elitec AG</span>
     </div>
     <div class="nav-right" style="display:flex;align-items:center;gap:10px;">
-        <button class="theme-toggle" id="theme-btn" onclick="toggleTheme()" style="background:var(--bg-card);border:1px solid var(--border);color:var(--text-muted);border-radius:var(--radius-sm);padding:7px 13px;cursor:pointer;font-size:0.8rem;font-family:inherit;font-weight:500;display:flex;align-items:center;gap:6px;white-space:nowrap;">&#9728;&#65039; Bright</button>
+        <button class="theme-toggle" id="theme-btn" onclick="toggleTheme()" style="background:var(--bg-card);border:1px solid var(--border);color:var(--text-muted);border-radius:var(--radius-sm);padding:7px 13px;cursor:pointer;font-size:0.8rem;font-family:inherit;font-weight:500;display:flex;align-items:center;gap:6px;white-space:nowrap;">☀️ Bright</button>
         <div class="nav-contact" onclick="var dd=this.querySelector('.nav-contact-dropdown');dd.style.display=dd.style.display==='block'?'none':'block';" style="display:flex;align-items:center;gap:8px;cursor:pointer;padding:5px 10px;border-radius:var(--radius-sm);border:1px solid var(--border);background:transparent;">
             <img class="nav-contact-photo" src="../assets/team/tom-soto-schiller.jpeg" alt="Tom Soto Schiller" style="width:32px;height:32px;border-radius:50%;object-fit:cover;filter:none;">
             <div class="nav-contact-info" style="display:flex;flex-direction:column;line-height:1.2;">
@@ -610,15 +607,15 @@
             </div>
             <div class="nav-contact-dropdown" style="display:none;position:absolute;top:calc(100% + 8px);right:0;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 16px;min-width:260px;box-shadow:0 8px 32px rgba(0,0,0,0.4);z-index:400;">
                 <a href="mailto:tom.schiller@grundwerk.digital" style="display:flex;align-items:center;gap:10px;padding:8px 0;color:var(--text);text-decoration:none;font-size:0.82rem;border-bottom:1px solid var(--border);">
-                    <span class="contact-icon" style="width:18px;text-align:center;">&#9993;&#65039;</span> tom.schiller@grundwerk.digital
+                    <span class="contact-icon" style="width:18px;text-align:center;">✉️</span> tom.schiller@grundwerk.digital
                 </a>
-                <a href="tel:+4915566331147" style="display:flex;align-items:center;gap:10px;padding:8px 0;color:var(--text);text-decoration:none;font-size:0.82rem;border-bottom:1px solid var(--border);">
-                    <span class="contact-icon" style="width:18px;text-align:center;">&#128222;</span> +49 155 6633 1147
+                <a href="tel:+491556633 1147" style="display:flex;align-items:center;gap:10px;padding:8px 0;color:var(--text);text-decoration:none;font-size:0.82rem;border-bottom:1px solid var(--border);">
+                    <span class="contact-icon" style="width:18px;text-align:center;">📞</span> +49 155 6633 1147
                 </a>
-                <a href="https://wa.me/4915566331147" target="_blank" style="display:flex;align-items:center;gap:10px;padding:8px 0;color:var(--text);text-decoration:none;font-size:0.82rem;">
-                    <span class="contact-icon" style="width:18px;text-align:center;">&#128172;</span> WhatsApp
+                <a href="https://wa.me/4917632413339" target="_blank" style="display:flex;align-items:center;gap:10px;padding:8px 0;color:var(--text);text-decoration:none;font-size:0.82rem;">
+                    <span class="contact-icon" style="width:18px;text-align:center;">💬</span> WhatsApp
                 </a>
-                <div class="contact-hint" style="font-size:0.72rem;color:var(--text-dim);padding-top:8px;margin-top:4px;border-top:1px solid var(--border);line-height:1.4;">R&uuml;ckfragen? Schreiben Sie mir gerne direkt.</div>
+                <div class="contact-hint" style="font-size:0.72rem;color:var(--text-dim);padding-top:8px;margin-top:4px;border-top:1px solid var(--border);line-height:1.4;">R&uuml;ckfragen? Schreib mir gerne direkt.</div>
             </div>
         </div>
     </div>
@@ -626,15 +623,16 @@
 
 <!-- TAB BAR -->
 <div class="tab-bar">
-    <button class="tab-btn active" data-tab="hello"     onclick="switchTab('hello')">    <span class="tab-emoji">&#128075;</span> Hallo Michael</button>
-    <button class="tab-btn"        data-tab="situation" onclick="switchTab('situation')"><span class="tab-emoji">&#127919;</span> Situation</button>
-    <button class="tab-btn"        data-tab="system"    onclick="switchTab('system')">   <span class="tab-emoji">&#128640;</span> Das System</button>
-    <button class="tab-btn"        data-tab="results"   onclick="switchTab('results')">  <span class="tab-emoji">&#128202;</span> Ergebnisse</button>
-    <button class="tab-btn"        data-tab="invest"    onclick="switchTab('invest')">   <span class="tab-emoji">&#128176;</span> Investition</button>
-    <button class="tab-btn"        data-tab="strategy"  onclick="switchTab('strategy')"> <span class="tab-emoji">&#129504;</span> Strategie</button>
-    <button class="tab-btn"        data-tab="plan"      onclick="switchTab('plan')">     <span class="tab-emoji">&#128506;&#65039;</span> Aktionsplan</button>
-    <button class="tab-btn"        data-tab="booking"   onclick="switchTab('booking')">  <span class="tab-emoji">&#128197;</span> Termin</button>
+    <button class="tab-btn active" data-tab="hello"     onclick="switchTab('hello')">    <span class="tab-emoji">👋</span> Hallo Michael</button>
+    <button class="tab-btn"        data-tab="situation" onclick="switchTab('situation')"><span class="tab-emoji">🎯</span> Situation</button>
+    <button class="tab-btn"        data-tab="system"    onclick="switchTab('system')">   <span class="tab-emoji">🚀</span> Das System</button>
+    <button class="tab-btn"        data-tab="results"   onclick="switchTab('results')">  <span class="tab-emoji">📊</span> Ergebnisse</button>
+    <button class="tab-btn"        data-tab="invest"    onclick="switchTab('invest')">   <span class="tab-emoji">💰</span> Investition</button>
+    <button class="tab-btn"        data-tab="strategy"  onclick="switchTab('strategy')"> <span class="tab-emoji">🧠</span> Strategie</button>
+    <button class="tab-btn"        data-tab="plan"      onclick="switchTab('plan')">     <span class="tab-emoji">🗺️</span> Aktionsplan</button>
+    <button class="tab-btn"        data-tab="booking"   onclick="switchTab('booking')">  <span class="tab-emoji">📅</span> Termin</button>
 </div>
+
 
 <!-- TAB 1 — HALLO MICHAEL -->
 <div class="panel active" id="panel-hello">
@@ -642,7 +640,7 @@
         <div class="hero-content">
 
             <div class="hero-logos">
-                <img src="https://www.elitecag.com/Portal/elitecag/Images/Elemente/elitecag_Logo.svg"
+                <img src="https://www.elitecag.com/Portal/elitecag/Images/Elemente/elitecag_Logo_negativ.svg"
                      alt="elitec AG" class="hero-logo"
                      onerror="this.outerHTML='<span style=\'font-weight:800;font-size:1.1rem;color:#f0f0f0\'>elitec AG</span>'">
                 <span class="hero-logo-sep">&times;</span>
@@ -651,67 +649,86 @@
 
             <div class="hero-badge">Vertraulich &mdash; F&uuml;r Michael Matiz</div>
 
-            <h1>Planbare Neukunden f&uuml;r elitec AG &mdash;<br><span class="highlight">ohne zus&auml;tzlichen Aufwand f&uuml;r den Au&szlig;endienst</span></h1>
+            <h1>Planbare Neukunden f&uuml;r elitec AG &mdash;<br><span class="highlight">ohne h&auml;ndische Datensatz-Recherche</span></h1>
             <p class="hero-sub">
-                Hallo Herr Matiz &mdash; hier finden Sie alles, was Sie brauchen, um eine fundierte Entscheidung zu treffen. Kein Verkaufsdruck &mdash; wenn es kein Fit ist, sagen wir es Ihnen.
+                Hey Michael &mdash; hier findest du alles, was du brauchst, um intern eine fundierte Entscheidung zu treffen. Wir haben die Erkenntnisse aus unseren Gespr&auml;chen zusammengefasst und ein konkretes System f&uuml;r elitec aufgebaut.
             </p>
 
-            <!-- VIDEO -->
             <div class="video-section">
                 <div class="video-label">Pers&ouml;nliche Video-Nachricht</div>
                 <div class="video-embed-wrap">
-                    <script src="https://fast.wistia.com/embed/medias/tm8si6qq6m.jsonp" async></script>
-                    <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
-                    <div class="wistia_embed wistia_async_tm8si6qq6m" style="width:100%;aspect-ratio:16/9;"></div>
+                    <script src="https://fast.wistia.com/player.js" async></script>
+                    <script src="https://fast.wistia.com/embed/tm8si6qq6m.js" async type="module"></script>
+                    <style>
+                        wistia-player[media-id='tm8si6qq6m']:not(:defined) {
+                            background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/tm8si6qq6m/swatch');
+                            display: block; filter: blur(5px); padding-top: 56.25%;
+                        }
+                    </style>
+                    <wistia-player media-id="tm8si6qq6m" aspect="1.7777777777777777"></wistia-player>
                 </div>
             </div>
 
             <div style="display:flex;flex-direction:column;gap:20px;margin:32px 0 24px;max-width:100%;">
-                <!-- Quote 1 — links -->
+                <!-- Quote 1 — left, Michael, #4f7df9 -->
                 <div style="align-self:flex-start;width:90%;padding-right:10%;">
                     <div style="background:rgba(79,125,249,0.08);border:1px solid rgba(79,125,249,0.15);border-left:3px solid #4f7df9;border-radius:12px;padding:14px 18px;">
-                        <p style="font-size:0.84rem;color:var(--text);line-height:1.55;margin:0 0 8px;">&bdquo;12 Euro pro Datensatz, nur 5% Trefferquote auf den richtigen Ansprechpartner.&ldquo;</p>
-                        <div style="font-size:0.75rem;color:var(--text-muted);">&mdash; <strong style="color:#4f7df9;">Michael Matiz</strong>, Gesch&auml;ftsf&uuml;hrer</div>
+                        <p style="font-size:0.84rem;color:var(--text);line-height:1.55;margin:0 0 8px;">&bdquo;Wenn ich 15 Termine in der Woche mache, dann habe ich sicherlich 8-9 Termine dabei die von Bestandskunden sind. Das hei&szlig;t im Endeffekt sind es sechs bis sieben Termine pro Woche mit Neukunden.&ldquo;</p>
+                        <div style="font-size:0.75rem;color:var(--text-muted);">&mdash; <strong style="color:#4f7df9;">Michael Matiz</strong>, Vertrieb, elitec AG</div>
                     </div>
                 </div>
-                <!-- Quote 2 — rechts -->
+                <!-- Quote 2 — right, Michael, #6b8ff9 -->
                 <div style="align-self:flex-end;width:90%;padding-left:10%;">
                     <div style="background:rgba(107,143,249,0.08);border:1px solid rgba(107,143,249,0.15);border-right:3px solid #6b8ff9;border-radius:12px;padding:14px 18px;">
-                        <p style="font-size:0.84rem;color:var(--text);line-height:1.55;margin:0 0 8px;">&bdquo;Nur 6&ndash;7 Neukunden-Termine pro Woche statt 15&ndash;30.&ldquo;</p>
-                        <div style="font-size:0.75rem;color:var(--text-muted);">&mdash; <strong style="color:#6b8ff9;">Michael Matiz</strong>, Gesch&auml;ftsf&uuml;hrer</div>
+                        <p style="font-size:0.84rem;color:var(--text);line-height:1.55;margin:0 0 8px;">&bdquo;Wenn ich nat&uuml;rlich so viele Datens&auml;tze falsch bekomme, dann komme ich das in einem Jahr gar nicht abzuarbeiten. Das hei&szlig;t diese Datens&auml;tze sind wahrscheinlich jeden Monat schon wieder nicht mehr aktuell.&ldquo;</p>
+                        <div style="font-size:0.75rem;color:var(--text-muted);">&mdash; <strong style="color:#6b8ff9;">Michael Matiz</strong>, Vertrieb</div>
                     </div>
                 </div>
-                <!-- Quote 3 — links -->
+                <!-- Quote 3 — left, Michael, #3d6be8 -->
                 <div style="align-self:flex-start;width:90%;padding-right:10%;">
                     <div style="background:rgba(61,107,232,0.08);border:1px solid rgba(61,107,232,0.15);border-left:3px solid #3d6be8;border-radius:12px;padding:14px 18px;">
-                        <p style="font-size:0.84rem;color:var(--text);line-height:1.55;margin:0 0 8px;">&bdquo;8&ndash;9 von 15 Terminen pro Woche sind Bestandskunden.&ldquo;</p>
-                        <div style="font-size:0.75rem;color:var(--text-muted);">&mdash; <strong style="color:#3d6be8;">Michael Matiz</strong>, Gesch&auml;ftsf&uuml;hrer</div>
+                        <p style="font-size:0.84rem;color:var(--text);line-height:1.55;margin:0 0 8px;">&bdquo;Ich habe sehr viele neue Projekte bei Kunden und das nimmt mir sehr viel Zeit weg, wo ich nicht neu akquirieren kann.&ldquo;</p>
+                        <div style="font-size:0.75rem;color:var(--text-muted);">&mdash; <strong style="color:#3d6be8;">Michael Matiz</strong>, Vertrieb</div>
                     </div>
                 </div>
-                <!-- Quote 4 — rechts -->
+                <!-- Quote 4 — right, Michael, #4f7df9 -->
                 <div style="align-self:flex-end;width:90%;padding-left:10%;">
                     <div style="background:rgba(79,125,249,0.08);border:1px solid rgba(79,125,249,0.15);border-right:3px solid #4f7df9;border-radius:12px;padding:14px 18px;">
-                        <p style="font-size:0.84rem;color:var(--text);line-height:1.55;margin:0 0 8px;">&bdquo;Datens&auml;tze veralten schnell.&ldquo;</p>
-                        <div style="font-size:0.75rem;color:var(--text-muted);">&mdash; <strong style="color:#4f7df9;">Michael Matiz</strong>, Gesch&auml;ftsf&uuml;hrer</div>
+                        <p style="font-size:0.84rem;color:var(--text);line-height:1.55;margin:0 0 8px;">&bdquo;Werbung gemeldet haben und die Qualit&auml;t, die war... von 100 war nur einer im Ansatz relevant. So was muss man justieren k&ouml;nnen, weil ansonsten ist es sinnlos.&ldquo;</p>
+                        <div style="font-size:0.75rem;color:var(--text-muted);">&mdash; <strong style="color:#4f7df9;">Michael Matiz</strong>, Vertrieb</div>
                     </div>
                 </div>
-                <!-- Quote 5 — links -->
+                <!-- Quote 5 — left, Michael, #6b8ff9 -->
+                <div style="align-self:flex-start;width:90%;padding-right:10%;">
+                    <div style="background:rgba(107,143,249,0.08);border:1px solid rgba(107,143,249,0.15);border-left:3px solid #6b8ff9;border-radius:12px;padding:14px 18px;">
+                        <p style="font-size:0.84rem;color:var(--text);line-height:1.55;margin:0 0 8px;">&bdquo;Die Anzahl der Kundenbesuche ist in der jetzigen Zeit zu wenig, das wissen wir alle.&ldquo;</p>
+                        <div style="font-size:0.75rem;color:var(--text-muted);">&mdash; <strong style="color:#6b8ff9;">Michael Matiz</strong>, Vertrieb</div>
+                    </div>
+                </div>
+                <!-- Quote 6 — right, Michael, #3d6be8 -->
+                <div style="align-self:flex-end;width:90%;padding-left:10%;">
+                    <div style="background:rgba(61,107,232,0.08);border:1px solid rgba(61,107,232,0.15);border-right:3px solid #3d6be8;border-radius:12px;padding:14px 18px;">
+                        <p style="font-size:0.84rem;color:var(--text);line-height:1.55;margin:0 0 8px;">&bdquo;So viele Datens&auml;tze bekomme ich ja, die bezahlen musste &mdash; und ich wei&szlig; im Vorhinein schon, ich kann das eigentlich gar nicht mit dieser Mannschaft abarbeiten.&ldquo;</p>
+                        <div style="font-size:0.75rem;color:var(--text-muted);">&mdash; <strong style="color:#3d6be8;">Michael Matiz</strong>, Vertrieb</div>
+                    </div>
+                </div>
+                <!-- Quote 7 — left, Michael, #4f7df9 -->
                 <div style="align-self:flex-start;width:90%;padding-right:10%;">
                     <div style="background:rgba(79,125,249,0.08);border:1px solid rgba(79,125,249,0.15);border-left:3px solid #4f7df9;border-radius:12px;padding:14px 18px;">
-                        <p style="font-size:0.84rem;color:var(--text);line-height:1.55;margin:0 0 8px;">&bdquo;Projektarbeit frisst die Zeit f&uuml;r aktive Akquise.&ldquo;</p>
-                        <div style="font-size:0.75rem;color:var(--text-muted);">&mdash; <strong style="color:#4f7df9;">Michael Matiz</strong>, Gesch&auml;ftsf&uuml;hrer</div>
+                        <p style="font-size:0.84rem;color:var(--text);line-height:1.55;margin:0 0 8px;">&bdquo;Wie kann das eigentlich gar nicht mit dieser Mannschaft, wie wir aufgestellt sind, mit diesem System arbeiten?&ldquo;</p>
+                        <div style="font-size:0.75rem;color:var(--text-muted);">&mdash; <strong style="color:#4f7df9;">Michael Matiz</strong>, Vertrieb</div>
                     </div>
                 </div>
-                <!-- Quote 6 — rechts -->
+                <!-- Quote 8 — right, Michael, #6b8ff9 -->
                 <div style="align-self:flex-end;width:90%;padding-left:10%;">
                     <div style="background:rgba(107,143,249,0.08);border:1px solid rgba(107,143,249,0.15);border-right:3px solid #6b8ff9;border-radius:12px;padding:14px 18px;">
-                        <p style="font-size:0.84rem;color:var(--text);line-height:1.55;margin:0 0 8px;">&bdquo;DSGVO &mdash; d&uuml;rfen wir das &uuml;berhaupt so machen?&ldquo;</p>
-                        <div style="font-size:0.75rem;color:var(--text-muted);">&mdash; <strong style="color:#6b8ff9;">Michael Matiz</strong>, Gesch&auml;ftsf&uuml;hrer</div>
+                        <p style="font-size:0.84rem;color:var(--text);line-height:1.55;margin:0 0 8px;">&bdquo;Der ist nat&uuml;rlich ganz andere Qualit&auml;t, also wie wenn ich nur Adressen kriege und ich muss mit dem eh noch herumstreiten ob ich kommen darf oder nicht.&ldquo;</p>
+                        <div style="font-size:0.75rem;color:var(--text-muted);">&mdash; <strong style="color:#6b8ff9;">Michael Matiz</strong>, Vertrieb</div>
                     </div>
                 </div>
             </div>
 
-            <p class="hero-meta">Erstellt am 15.03.2026 &middot; Tom Soto Schiller, Grundwerk Digital &middot; Vertraulich</p>
+            <p class="hero-meta">Erstellt am 16.03.2026 &middot; Tom Soto Schiller, Grundwerk Digital &middot; Vertraulich</p>
 
         </div>
     </div>
@@ -724,105 +741,153 @@
 
             <div style="font-size:0.7rem;font-weight:600;color:var(--accent);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:20px;">Vertraulich &mdash; Grundwerk &times; elitec AG</div>
             <h2 style="font-size:2rem;font-weight:700;line-height:1.2;margin-bottom:12px;">Situationsanalyse</h2>
-            <p style="font-size:0.95rem;color:var(--text-muted);line-height:1.6;max-width:600px;">Basierend auf dem Gespr&auml;ch am 09.03.2026 mit Michael Matiz.</p>
+            <p style="font-size:0.95rem;color:var(--text-muted);line-height:1.6;max-width:600px;">Basierend auf dem 43-Minuten-Gespr&auml;ch am 09.03.2026 mit Michael Matiz und Stefan.</p>
             <div style="width:100%;height:1px;background:var(--border);margin-top:40px;"></div>
 
-            <!-- Section 1: Was wir gehoert haben -->
+            <!-- Was wir gehoert haben -->
             <div style="padding:56px 0 0;">
                 <div style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:28px;">Was wir geh&ouml;rt haben</div>
 
                 <div style="margin-bottom:36px;padding-left:20px;border-left:2px solid var(--accent);">
-                    <div style="font-size:1.05rem;font-style:italic;color:var(--text);line-height:1.65;margin-bottom:8px;">&bdquo;Wir zahlen 12 Euro pro Datensatz &mdash; und nur 5% davon sind tats&auml;chlich der richtige Ansprechpartner. Das rechnet sich nicht.&ldquo;</div>
-                    <div style="font-size:0.8rem;color:var(--text-dim);font-weight:500;">Michael Matiz, Gesch&auml;ftsf&uuml;hrer</div>
+                    <div style="font-size:1.05rem;font-style:italic;color:var(--text);line-height:1.65;margin-bottom:8px;">&bdquo;Wenn ich 15 Termine in der Woche mache, dann habe ich sicherlich 8-9 Termine dabei die von Bestandskunden sind.&ldquo;</div>
+                    <div style="font-size:0.8rem;color:var(--text-dim);font-weight:500;">Michael Matiz, Vertrieb</div>
                 </div>
 
                 <div style="margin-bottom:36px;padding-left:20px;border-left:2px solid var(--accent);">
-                    <div style="font-size:1.05rem;font-style:italic;color:var(--text);line-height:1.65;margin-bottom:8px;">&bdquo;Von 15 Terminen pro Woche sind 8&ndash;9 Bestandskunden. Neukunden-Termine liegen bei 6&ndash;7 &mdash; das ist viel zu wenig f&uuml;r unser Wachstumsziel.&ldquo;</div>
-                    <div style="font-size:0.8rem;color:var(--text-dim);font-weight:500;">Michael Matiz, Gesch&auml;ftsf&uuml;hrer</div>
+                    <div style="font-size:1.05rem;font-style:italic;color:var(--text);line-height:1.65;margin-bottom:8px;">&bdquo;Wie kann das eigentlich gar nicht mit dieser Mannschaft, wie wir aufgestellt sind, mit diesem System arbeiten? Denn dann ist es ja sch&ouml;n, dass wir die Datens&auml;tze bekommen haben. Aber die Frage ist ja die Aktualit&auml;t.&ldquo;</div>
+                    <div style="font-size:0.8rem;color:var(--text-dim);font-weight:500;">Michael Matiz, Vertrieb</div>
                 </div>
 
                 <div style="margin-bottom:36px;padding-left:20px;border-left:2px solid var(--accent);">
-                    <div style="font-size:1.05rem;font-style:italic;color:var(--text);line-height:1.65;margin-bottom:8px;">&bdquo;Die Projektarbeit frisst dem Au&szlig;endienst die Zeit f&uuml;r aktive Akquise. Und wenn der Au&szlig;endienstler dann doch mal telefoniert, hat er veraltete Datens&auml;tze.&ldquo;</div>
-                    <div style="font-size:0.8rem;color:var(--text-dim);font-weight:500;">Michael Matiz, Gesch&auml;ftsf&uuml;hrer</div>
+                    <div style="font-size:1.05rem;font-style:italic;color:var(--text);line-height:1.65;margin-bottom:8px;">&bdquo;Werbung gemeldet haben und die Qualit&auml;t, die war... von 100 war nur einer im Ansatz relevant.&ldquo;</div>
+                    <div style="font-size:0.8rem;color:var(--text-dim);font-weight:500;">Michael Matiz, Vertrieb</div>
                 </div>
 
                 <div style="margin-bottom:36px;padding-left:20px;border-left:2px solid var(--accent);">
-                    <div style="font-size:1.05rem;font-style:italic;color:var(--text);line-height:1.65;margin-bottom:8px;">&bdquo;DSGVO war das gr&ouml;&szlig;te Thema im Gespr&auml;ch. Wir wollen auf keinen Fall ein Risiko eingehen &mdash; aber gleichzeitig m&uuml;ssen wir neue Kunden gewinnen.&ldquo;</div>
-                    <div style="font-size:0.8rem;color:var(--text-dim);font-weight:500;">Michael Matiz, Gesch&auml;ftsf&uuml;hrer</div>
+                    <div style="font-size:1.05rem;font-style:italic;color:var(--text);line-height:1.65;margin-bottom:8px;">&bdquo;Die Anzahl der Kundenbesuche ist in der jetzigen Zeit zu wenig, das wissen wir alle.&ldquo;</div>
+                    <div style="font-size:0.8rem;color:var(--text-dim);font-weight:500;">Michael Matiz, Vertrieb</div>
+                </div>
+
+                <div style="margin-bottom:36px;padding-left:20px;border-left:2px solid var(--accent);">
+                    <div style="font-size:1.05rem;font-style:italic;color:var(--text);line-height:1.65;margin-bottom:8px;">&bdquo;Ich habe sehr viele neue Projekte bei Kunden und das nimmt mir sehr viel Zeit weg, wo ich nicht neu akquirieren kann.&ldquo;</div>
+                    <div style="font-size:0.8rem;color:var(--text-dim);font-weight:500;">Michael Matiz, Vertrieb</div>
+                </div>
+
+                <div style="margin-bottom:36px;padding-left:20px;border-left:2px solid var(--accent);">
+                    <div style="font-size:1.05rem;font-style:italic;color:var(--text);line-height:1.65;margin-bottom:8px;">&bdquo;So viele Datens&auml;tze bekomme ich ja, die bezahlen musste &mdash; und ich wei&szlig; im Vorhinein schon, ich kann das eigentlich gar nicht mit dieser Mannschaft abarbeiten.&ldquo;</div>
+                    <div style="font-size:0.8rem;color:var(--text-dim);font-weight:500;">Michael Matiz, Vertrieb</div>
                 </div>
             </div>
 
             <div style="width:100%;height:1px;background:var(--border);"></div>
 
-            <!-- Section 2: Was wir daraus ableiten -->
+            <!-- Was wir daraus ableiten -->
             <div style="padding:56px 0 0;">
                 <div style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:28px;">Was wir daraus ableiten</div>
 
                 <div style="margin-bottom:32px;">
-                    <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:6px;">1. Zeitaufw&auml;ndige manuelle Recherche</div>
-                    <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;">&euro;12 pro Datensatz bei nur 5% Trefferquote bedeutet: <strong style="color:var(--text);">&euro;240 f&uuml;r einen einzigen qualifizierten Kontakt</strong>. Bei Grundwerk liegt der Preis pro verifiziertem, qualifiziertem Kontakt unter &euro;1.</div>
+                    <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:6px;">1. Datensatz-Recherche ohne System</div>
+                    <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;">~12 &euro; pro Datensatz, nur 5% treffen den richtigen Ansprechpartner. Bei 50.000 potenziellen Kontakten = massive Zeitverschwendung. Delta: <strong style="color:var(--text);">95% der bezahlten Daten liefern keinen Wert</strong>.</div>
                 </div>
 
                 <div style="margin-bottom:32px;">
-                    <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:6px;">2. Zu wenig Neukunden-Termine</div>
-                    <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;">6&ndash;7 Neukunden-Termine pro Woche statt 15&ndash;30. Das ist ein Gap von <strong style="color:var(--text);">8&ndash;23 verlorenen Neukunden-Terminen pro Woche</strong> &mdash; bei 48 Arbeitswochen im Jahr sind das 384&ndash;1.104 entgangene Erstgespr&auml;che.</div>
+                    <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:6px;">2. Neukundenakquise wird von Projektarbeit verdr&auml;ngt</div>
+                    <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;">4 Vertriebler, davon 8-9 von 15 Terminen/Woche = Bestandskunden. Nur 6-7 Neukunden-Termine/Woche. Benchmark f&uuml;r ein Team dieser Gr&ouml;&szlig;e: <strong style="color:var(--text);">15&ndash;20 Neukunden-Termine/Woche</strong>.</div>
                 </div>
 
                 <div style="margin-bottom:32px;">
-                    <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:6px;">3. Projektarbeit frisst Akquise-Zeit</div>
-                    <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;">8&ndash;9 von 15 Terminen sind Bestandskunden. Der Au&szlig;endienst wird zum Bestandskunden-Manager statt zum J&auml;ger. Ohne dediziertes Outbound-System &auml;ndert sich das nicht.</div>
+                    <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:6px;">3. Veraltete Datens&auml;tze</div>
+                    <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;">Gekaufte Listen veralten innerhalb von 1&ndash;2 Monaten. Die Mannschaft kann die Menge nicht abarbeiten bevor die Daten wertlos werden. <strong style="color:var(--text);">Jeder nicht-kontaktierte Datensatz = verbranntes Budget</strong>.</div>
                 </div>
 
                 <div style="margin-bottom:32px;">
-                    <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:6px;">4. Datens&auml;tze veralten schnell</div>
-                    <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;">Statische Listen verlieren j&auml;hrlich 30&ndash;40% ihrer G&uuml;ltigkeit durch Jobwechsel, Firmenschlie&szlig;ungen und Umstrukturierungen. Ohne Echtzeit-Enrichment arbeitet der Vertrieb auf toten Daten.</div>
+                    <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:6px;">4. Qualit&auml;tsproblem bei Lead-Quellen</div>
+                    <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;">&bdquo;Von 100 war nur einer relevant&ldquo; &mdash; bisherige Quellen liefern Masse statt Qualit&auml;t. <strong style="color:var(--text);">Kein ICP-basiertes Targeting, keine Anreicherung, kein Scoring</strong>.</div>
                 </div>
 
                 <div style="margin-bottom:32px;">
-                    <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:6px;">5. DSGVO-Unsicherheit blockiert Outbound</div>
-                    <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;">~20 Minuten des Gespr&auml;chs drehten sich um DSGVO-Bedenken. Diese Unsicherheit verhindert aktives Handeln. Die Rechtslage ist klar: B2B Cold Email ist unter &bdquo;berechtigtes Interesse&ldquo; (Art. 6 Abs. 1 lit. f DSGVO) zul&auml;ssig &mdash; wenn richtig umgesetzt.</div>
+                    <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:6px;">5. Fehlende Skalierbarkeit</div>
+                    <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;">H&auml;ndische Recherche + Kaltakquise skaliert nicht. 50.000 potenzielle Kontakte im Markt, aber kein System um sie systematisch zu erreichen. <strong style="color:var(--text);">Jeder Monat = verlorene First-Mover-Chance</strong>.</div>
+                </div>
+
+                <div style="margin-bottom:32px;">
+                    <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:6px;">6. Datenschutz-Unsicherheit blockiert Outbound</div>
+                    <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;">DSGVO-Bedenken verhindern den Start. <strong style="color:var(--text);">Ohne klaren rechtlichen Rahmen (AVV, separate Infrastruktur, Opt-Out-Prozesse) bleibt die Pipeline stehen</strong>.</div>
                 </div>
             </div>
 
             <div style="width:100%;height:1px;background:var(--border);"></div>
 
-            <!-- Section 3: Kosten-Vergleich -->
+            <!-- Kosten-Vergleich -->
             <div style="padding:56px 0 0;">
-                <div style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:28px;">Kosten pro Datensatz</div>
+                <div style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:28px;">Kosten pro qualifiziertem Kontakt</div>
                 <div class="cost-box">
                     <div class="cost-row">
-                        <div class="cost-lbl">Manuell (&euro;12/Datensatz, 5% Treffer)</div>
+                        <div class="cost-lbl">H&auml;ndische Recherche (~150k/Jahr, 5% Treffer)</div>
                         <div class="cost-bar-wrap"><div class="cost-bar r" id="bar1"></div></div>
-                        <div class="cost-val bad">&euro;240/Kontakt</div>
+                        <div class="cost-val bad">~2.400 &euro;</div>
                     </div>
                     <div class="cost-row">
                         <div class="cost-lbl">Grundwerk Outbound-System</div>
                         <div class="cost-bar-wrap"><div class="cost-bar g" id="bar2"></div></div>
-                        <div class="cost-val good">&lt;&euro;1/Kontakt</div>
+                        <div class="cost-val good">~45 &euro;</div>
                     </div>
                 </div>
             </div>
 
             <div style="width:100%;height:1px;background:var(--border);"></div>
 
-            <!-- Section 4: Kosten des Nichthandelns -->
+            <!-- Kosten des Nichthandelns -->
             <div style="padding:56px 0 0;">
-                <div style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--red);margin-bottom:28px;">Was es kostet, nichts zu tun</div>
+                <div style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:28px;">Was es kostet, nichts zu tun</div>
 
-                <div class="consequence" style="background:var(--orange-dim);border:1px solid rgba(249,115,22,0.25);border-left:3px solid var(--orange);border-radius:var(--radius);padding:24px 28px;">
-                    <h3 style="font-size:0.9rem;font-weight:700;color:var(--consequence-h);margin-bottom:12px;">Prognose ohne Ver&auml;nderung</h3>
-                    <ul style="list-style:none;display:flex;flex-direction:column;gap:9px;">
-                        <li style="font-size:0.85rem;color:var(--consequence-li);padding-left:18px;position:relative;line-height:1.55;"><span style="position:absolute;left:0;color:var(--orange);">&rarr;</span>Au&szlig;endienst bleibt bei 6&ndash;7 Neukunden-Terminen/Woche &mdash; kein Wachstum m&ouml;glich</li>
-                        <li style="font-size:0.85rem;color:var(--consequence-li);padding-left:18px;position:relative;line-height:1.55;"><span style="position:absolute;left:0;color:var(--orange);">&rarr;</span>Weiter &euro;12/Datensatz bei sinkender Qualit&auml;t &mdash; Budget verbrennt ohne ROI</li>
-                        <li style="font-size:0.85rem;color:var(--consequence-li);padding-left:18px;position:relative;line-height:1.55;"><span style="position:absolute;left:0;color:var(--orange);">&rarr;</span>Bestandskunden-Pflege dominiert die Vertriebszeit &mdash; keine neue Pipeline</li>
-                        <li style="font-size:0.85rem;color:var(--consequence-li);padding-left:18px;position:relative;line-height:1.55;"><span style="position:absolute;left:0;color:var(--orange);">&rarr;</span>Wettbewerber mit Outbound-Systemen sichern sich zuerst die besten Kunden im DACH-Markt</li>
-                        <li style="font-size:0.85rem;color:var(--consequence-li);padding-left:18px;position:relative;line-height:1.55;"><span style="position:absolute;left:0;color:var(--orange);">&rarr;</span>DSGVO-Unsicherheit verhindert jeden Versuch &mdash; obwohl die Rechtslage klar ist</li>
-                    </ul>
-                </div>
+                <table style="width:100%;border-collapse:collapse;margin-bottom:16px;">
+                    <thead>
+                        <tr>
+                            <th style="text-align:left;font-size:0.72rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-dim);padding:0 0 12px;border-bottom:1px solid var(--border);">Position</th>
+                            <th style="text-align:right;font-size:0.72rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-dim);padding:0 0 12px;border-bottom:1px solid var(--border);">Betrag</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding:14px 0;border-bottom:1px solid var(--border);font-size:0.9rem;color:var(--text-muted);">Recherche-Kosten (ineffizient)</td>
+                            <td style="padding:14px 0;border-bottom:1px solid var(--border);font-size:0.9rem;color:var(--text-muted);text-align:right;white-space:nowrap;">100.000&ndash;150.000 &euro;</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:14px 0;border-bottom:1px solid var(--border);font-size:0.9rem;color:var(--text-muted);">Zeitverlust: 4 Vertriebler &times; ~30% Recherchezeit</td>
+                            <td style="padding:14px 0;border-bottom:1px solid var(--border);font-size:0.9rem;color:var(--text-muted);text-align:right;white-space:nowrap;">~120.000 &euro;</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:14px 0;border-bottom:1px solid var(--border);font-size:0.9rem;color:var(--text-muted);">Verlorene Neukunden-Pipeline (Gap 10+ Termine/Woche)</td>
+                            <td style="padding:14px 0;border-bottom:1px solid var(--border);font-size:0.9rem;color:var(--text-muted);text-align:right;white-space:nowrap;">~480.000 &euro;</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:14px 0;border-bottom:1px solid var(--border);font-size:0.9rem;color:var(--text-muted);">Veraltete Datens&auml;tze (bezahlt, nicht nutzbar)</td>
+                            <td style="padding:14px 0;border-bottom:1px solid var(--border);font-size:0.9rem;color:var(--text-muted);text-align:right;white-space:nowrap;">~40.000 &euro;</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:16px 0 0;border-top:2px solid var(--red);font-weight:700;font-size:1rem;color:var(--text);">Gesch&auml;tztes verlorenes Potenzial (12 Monate)</td>
+                            <td style="padding:16px 0 0;border-top:2px solid var(--red);font-weight:700;font-size:1.1rem;color:var(--red);text-align:right;white-space:nowrap;">740.000&ndash;790.000 &euro;</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="font-size:0.75rem;color:var(--text-dim);margin-top:8px;">Konservative Sch&auml;tzung basierend auf den Zahlen aus dem Gespr&auml;ch.</p>
             </div>
 
-            <div style="padding:48px 0 0;text-align:center;border-top:1px solid var(--border);margin-top:56px;">
-                <p style="font-size:0.75rem;color:var(--text-dim);letter-spacing:0.06em;">Grundwerk Digital &middot; Vertraulich &middot; M&auml;rz 2026</p>
+            <div style="width:100%;height:1px;background:var(--border);margin-top:56px;"></div>
+
+            <!-- Prognose -->
+            <div style="padding:56px 0 0;">
+                <div style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--red);margin-bottom:28px;">Prognose ohne Ver&auml;nderung</div>
+
+                <ul style="list-style:none;padding:0;">
+                    <li style="padding:12px 0;border-bottom:1px solid var(--border);font-size:0.9rem;color:var(--text-muted);padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--text-dim);">&mdash;</span>Vertriebler verbringen weiter 30%+ der Zeit mit Recherche statt Verkauf</li>
+                    <li style="padding:12px 0;border-bottom:1px solid var(--border);font-size:0.9rem;color:var(--text-muted);padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--text-dim);">&mdash;</span>Datens&auml;tze veralten schneller als sie abgearbeitet werden k&ouml;nnen</li>
+                    <li style="padding:12px 0;border-bottom:1px solid var(--border);font-size:0.9rem;color:var(--text-muted);padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--text-dim);">&mdash;</span>Nur 6-7 statt 15-20 Neukunden-Termine pro Woche</li>
+                    <li style="padding:12px 0;border-bottom:1px solid var(--border);font-size:0.9rem;color:var(--text-muted);padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--text-dim);">&mdash;</span>Wettbewerber mit automatisiertem Outbound kontaktieren die gleichen Entscheider zuerst</li>
+                    <li style="padding:12px 0;border-bottom:1px solid var(--border);font-size:0.9rem;color:var(--text-muted);padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--text-dim);">&mdash;</span>Datenschutz-Unsicherheit blockiert jede Initiative</li>
+                    <li style="padding:12px 0;font-size:0.9rem;color:var(--text-muted);padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--text-dim);">&mdash;</span>Jeder Monat ohne System = Leads, die bei der Konkurrenz landen</li>
+                </ul>
             </div>
 
         </div>
@@ -836,7 +901,7 @@
 
             <span class="section-label">Was wir konkret tun</span>
             <h2>Das Grundwerk-System f&uuml;r elitec AG</h2>
-            <p class="lead">In 3 Phasen zu einer funktionierenden Outbound-Pipeline &mdash; mit minimalem internen Aufwand f&uuml;r Sie und Ihr Team.</p>
+            <p class="lead">In 3 Phasen zu einer funktionierenden Outbound-Pipeline &mdash; mit minimalem internen Aufwand.</p>
 
             <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:36px;">
                 <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;position:relative;">
@@ -844,48 +909,48 @@
                     <div style="font-size:0.73rem;color:var(--text-muted);margin-bottom:8px;">Woche 1&ndash;4</div>
                     <h3 style="font-size:0.87rem;font-weight:700;margin-bottom:8px;">Setup &amp; Infrastruktur</h3>
                     <ul style="list-style:none;display:flex;flex-direction:column;gap:4px;padding:0;">
-                        <li style="font-size:0.85rem;color:var(--text-muted);padding-left:12px;position:relative;line-height:1.5;"><span style="position:absolute;left:3px;color:var(--accent);font-size:1.1rem;line-height:1.3;">&middot;</span>ICP-Definition &amp; Zielmarkt-Mapping</li>
-                        <li style="font-size:0.85rem;color:var(--text-muted);padding-left:12px;position:relative;line-height:1.5;"><span style="position:absolute;left:3px;color:var(--accent);font-size:1.1rem;line-height:1.3;">&middot;</span>Domains, Inboxen &amp; Deliverability-Setup</li>
-                        <li style="font-size:0.85rem;color:var(--text-muted);padding-left:12px;position:relative;line-height:1.5;"><span style="position:absolute;left:3px;color:var(--accent);font-size:1.1rem;line-height:1.3;">&middot;</span>Lead-Listen f&uuml;r Hersteller &amp; Produzenten</li>
-                        <li style="font-size:0.85rem;color:var(--text-muted);padding-left:12px;position:relative;line-height:1.5;"><span style="position:absolute;left:3px;color:var(--accent);font-size:1.1rem;line-height:1.3;">&middot;</span>Copywriting &amp; Kampagnen-Architektur</li>
-                        <li style="font-size:0.85rem;color:var(--text-muted);padding-left:12px;position:relative;line-height:1.5;"><span style="position:absolute;left:3px;color:var(--accent);font-size:1.1rem;line-height:1.3;">&middot;</span>AVV &amp; DSGVO-Setup (komplett)</li>
+                        <li style="font-size:0.85rem;color:#f0f0f0;padding-left:12px;position:relative;line-height:1.5;"><span style="position:absolute;left:3px;color:var(--accent);font-size:1.1rem;line-height:1.3;">&middot;</span>ICP-Definition &amp; Zielmarkt-Mapping</li>
+                        <li style="font-size:0.85rem;color:#f0f0f0;padding-left:12px;position:relative;line-height:1.5;"><span style="position:absolute;left:3px;color:var(--accent);font-size:1.1rem;line-height:1.3;">&middot;</span>Domains, Inboxen &amp; Deliverability-Setup</li>
+                        <li style="font-size:0.85rem;color:#f0f0f0;padding-left:12px;position:relative;line-height:1.5;"><span style="position:absolute;left:3px;color:var(--accent);font-size:1.1rem;line-height:1.3;">&middot;</span>Lead-Listen &amp; Daten-Research</li>
+                        <li style="font-size:0.85rem;color:#f0f0f0;padding-left:12px;position:relative;line-height:1.5;"><span style="position:absolute;left:3px;color:var(--accent);font-size:1.1rem;line-height:1.3;">&middot;</span>KickOff-Workshop (1h) mit Michael &amp; dem Vertriebsteam</li>
                     </ul>
-                    <div style="position:absolute;right:-12px;top:50%;transform:translateY(-50%);color:var(--text-dim);font-size:1rem;z-index:1;">&rarr;</div>
                 </div>
                 <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;position:relative;">
                     <div style="font-size:0.68rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">Phase 2</div>
                     <div style="font-size:0.73rem;color:var(--text-muted);margin-bottom:8px;">Woche 5&ndash;8</div>
-                    <h3 style="font-size:0.87rem;font-weight:700;margin-bottom:8px;">Launch &amp; Optimierung</h3>
+                    <h3 style="font-size:0.87rem;font-weight:700;margin-bottom:8px;">Launch &amp; erste Replies</h3>
                     <ul style="list-style:none;display:flex;flex-direction:column;gap:4px;padding:0;">
-                        <li style="font-size:0.85rem;color:var(--text-muted);padding-left:12px;position:relative;line-height:1.5;"><span style="position:absolute;left:3px;color:var(--accent);font-size:1.1rem;line-height:1.3;">&middot;</span>Kampagnen gehen live (E-Mail + LinkedIn)</li>
-                        <li style="font-size:0.85rem;color:var(--text-muted);padding-left:12px;position:relative;line-height:1.5;"><span style="position:absolute;left:3px;color:var(--accent);font-size:1.1rem;line-height:1.3;">&middot;</span>A/B-Tests auf Betreffzeilen &amp; Copy</li>
-                        <li style="font-size:0.85rem;color:var(--text-muted);padding-left:12px;position:relative;line-height:1.5;"><span style="position:absolute;left:3px;color:var(--accent);font-size:1.1rem;line-height:1.3;">&middot;</span>Erste qualifizierte Leads f&uuml;r Ihren Vertrieb</li>
-                        <li style="font-size:0.85rem;color:var(--text-muted);padding-left:12px;position:relative;line-height:1.5;"><span style="position:absolute;left:3px;color:var(--accent);font-size:1.1rem;line-height:1.3;">&middot;</span>W&ouml;chentliche Reporting-Calls (30 Min.)</li>
-                        <li style="font-size:0.85rem;color:var(--text-muted);padding-left:12px;position:relative;line-height:1.5;"><span style="position:absolute;left:3px;color:var(--accent);font-size:1.1rem;line-height:1.3;">&middot;</span>Deliverability-Monitoring &amp; Anpassung</li>
+                        <li style="font-size:0.85rem;color:#f0f0f0;padding-left:12px;position:relative;line-height:1.5;"><span style="position:absolute;left:3px;color:var(--accent);font-size:1.1rem;line-height:1.3;">&middot;</span>3+ Kampagnen live, segmentiert nach ICP-Clustern</li>
+                        <li style="font-size:0.85rem;color:#f0f0f0;padding-left:12px;position:relative;line-height:1.5;"><span style="position:absolute;left:3px;color:var(--accent);font-size:1.1rem;line-height:1.3;">&middot;</span>Copywriting in elitec AG-Sprache</li>
+                        <li style="font-size:0.85rem;color:#f0f0f0;padding-left:12px;position:relative;line-height:1.5;"><span style="position:absolute;left:3px;color:var(--accent);font-size:1.1rem;line-height:1.3;">&middot;</span>Erste qualifizierte Replies &amp; Follow-Up</li>
+                        <li style="font-size:0.85rem;color:#f0f0f0;padding-left:12px;position:relative;line-height:1.5;"><span style="position:absolute;left:3px;color:var(--accent);font-size:1.1rem;line-height:1.3;">&middot;</span>W&ouml;chentliches Reporting</li>
                     </ul>
-                    <div style="position:absolute;right:-12px;top:50%;transform:translateY(-50%);color:var(--text-dim);font-size:1rem;z-index:1;">&rarr;</div>
                 </div>
                 <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;position:relative;">
                     <div style="font-size:0.68rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">Phase 3</div>
-                    <div style="font-size:0.73rem;color:var(--text-muted);margin-bottom:8px;">Monat 3&ndash;4+</div>
-                    <h3 style="font-size:0.87rem;font-weight:700;margin-bottom:8px;">Scale &amp; Pipeline</h3>
+                    <div style="font-size:0.73rem;color:var(--text-muted);margin-bottom:8px;">Monat 3+</div>
+                    <h3 style="font-size:0.87rem;font-weight:700;margin-bottom:8px;">Scale &amp; Optimierung</h3>
                     <ul style="list-style:none;display:flex;flex-direction:column;gap:4px;padding:0;">
-                        <li style="font-size:0.85rem;color:var(--text-muted);padding-left:12px;position:relative;line-height:1.5;"><span style="position:absolute;left:3px;color:var(--accent);font-size:1.1rem;line-height:1.3;">&middot;</span>Volumen skalieren (bis 10.000 E-Mails/Monat)</li>
-                        <li style="font-size:0.85rem;color:var(--text-muted);padding-left:12px;position:relative;line-height:1.5;"><span style="position:absolute;left:3px;color:var(--accent);font-size:1.1rem;line-height:1.3;">&middot;</span>Weitere Segmente erschlie&szlig;en</li>
-                        <li style="font-size:0.85rem;color:var(--text-muted);padding-left:12px;position:relative;line-height:1.5;"><span style="position:absolute;left:3px;color:var(--accent);font-size:1.1rem;line-height:1.3;">&middot;</span>Bestandskunden-Reaktivierung starten</li>
-                        <li style="font-size:0.85rem;color:var(--text-muted);padding-left:12px;position:relative;line-height:1.5;"><span style="position:absolute;left:3px;color:var(--accent);font-size:1.1rem;line-height:1.3;">&middot;</span>Planbare Lead-Pipeline etabliert</li>
-                        <li style="font-size:0.85rem;color:var(--text-muted);padding-left:12px;position:relative;line-height:1.5;"><span style="position:absolute;left:3px;color:var(--accent);font-size:1.1rem;line-height:1.3;">&middot;</span>Grundwerk Web App &amp; Live-Dashboard</li>
+                        <li style="font-size:0.85rem;color:#f0f0f0;padding-left:12px;position:relative;line-height:1.5;"><span style="position:absolute;left:3px;color:var(--accent);font-size:1.1rem;line-height:1.3;">&middot;</span>Volumen hochskalieren auf Basis von Daten</li>
+                        <li style="font-size:0.85rem;color:#f0f0f0;padding-left:12px;position:relative;line-height:1.5;"><span style="position:absolute;left:3px;color:var(--accent);font-size:1.1rem;line-height:1.3;">&middot;</span>Neue Segmente &amp; M&auml;rkte erschlie&szlig;en</li>
+                        <li style="font-size:0.85rem;color:#f0f0f0;padding-left:12px;position:relative;line-height:1.5;"><span style="position:absolute;left:3px;color:var(--accent);font-size:1.1rem;line-height:1.3;">&middot;</span>Automatisierung der Lead-Qualifizierung</li>
+                        <li style="font-size:0.85rem;color:#f0f0f0;padding-left:12px;position:relative;line-height:1.5;"><span style="position:absolute;left:3px;color:var(--accent);font-size:1.1rem;line-height:1.3;">&middot;</span>Planbare Pipeline: X qualifizierte Leads/Monat</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Video -->
-            <div class="video-section">
-                <div class="video-label">So funktioniert das System</div>
+            <div class="video-section" style="margin-top:36px;">
+                <div class="video-label">So funktioniert das Grundwerk-System</div>
                 <div class="video-embed-wrap">
-                    <script src="https://fast.wistia.com/embed/medias/tm8si6qq6m.jsonp" async></script>
-                    <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
-                    <div class="wistia_embed wistia_async_tm8si6qq6m" style="width:100%;aspect-ratio:16/9;"></div>
+                    <script src="https://fast.wistia.com/player.js" async></script>
+                    <script src="https://fast.wistia.com/embed/tm8si6qq6m.js" async type="module"></script>
+                    <style>
+                        wistia-player[media-id='tm8si6qq6m']:not(:defined) {
+                            background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/tm8si6qq6m/swatch');
+                            display: block; filter: blur(5px); padding-top: 56.25%;
+                        }
+                    </style>
+                    <wistia-player media-id="tm8si6qq6m" aspect="1.7777777777777777"></wistia-player>
                 </div>
             </div>
 
@@ -893,84 +958,271 @@
     </div>
 </div>
 
-<!-- TAB 4 — ERGEBNISSE (STATIC) -->
+<!-- TAB 4 — ERGEBNISSE (1:1 from template) -->
 <div class="panel" id="panel-results">
     <div class="panel-inner">
         <div class="container">
 
-            <span class="section-label">Echte Ergebnisse</span>
-            <h2>Was unsere Kunden erreicht haben</h2>
-            <p class="lead">Keine Theorie &mdash; reale Zahlen aus laufenden Projekten.</p>
+            <span class="section-label" style="display:inline-block;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent);font-weight:600;">Nachgewiesene Ergebnisse</span>
+            <h2 style="font-size:2rem;font-weight:800;margin:12px 0 8px;">Was andere B2B-Unternehmen damit erreicht haben</h2>
+            <p class="lead" style="max-width:560px;margin-bottom:32px;line-height:1.7;color:var(--text-muted);font-size:0.95rem;">Echte Zahlen aus aktiven Projekten &mdash; von Startups bis Mittelstand.</p>
 
-            <!-- Stat Banner -->
-            <div class="stat-row" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:28px 0;border:none;">
-                <div class="stat-item" style="text-align:center;">
-                    <div class="stat-num" style="font-size:1.6rem;font-weight:800;letter-spacing:-0.04em;color:var(--accent);">10 Mio.+</div>
-                    <div class="stat-lbl" style="font-size:0.75rem;color:var(--text-muted);margin-top:3px;">E-Mails versendet</div>
+            <!-- Kunden-Logo Ticker -->
+            <div class="logo-ticker-section" style="padding:10px 0 20px;overflow:hidden;">
+                <div class="ticker-track-wrap" style="overflow:hidden;position:relative;margin-bottom:16px;">
+                    <div class="ticker-track forward" style="display:flex;align-items:center;gap:56px;width:max-content;animation:tickerFwd 52s linear infinite;">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://www.hrs.de/_next/static/media/hrs_logo_red.7cccdfd9.svg" alt="HRS">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/673602757a06be245e484913/678d467526d221b55f5dc3e0_mc-logo-1-black.svg" alt="Michelscom">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://www.hrs.de/_next/static/media/hrs_logo_red.7cccdfd9.svg" alt="HRS">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/673602757a06be245e484913/678d467526d221b55f5dc3e0_mc-logo-1-black.svg" alt="Michelscom">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://www.hrs.de/_next/static/media/hrs_logo_red.7cccdfd9.svg" alt="HRS">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/673602757a06be245e484913/678d467526d221b55f5dc3e0_mc-logo-1-black.svg" alt="Michelscom">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://www.hrs.de/_next/static/media/hrs_logo_red.7cccdfd9.svg" alt="HRS">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/673602757a06be245e484913/678d467526d221b55f5dc3e0_mc-logo-1-black.svg" alt="Michelscom">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview">
+                    </div>
                 </div>
-                <div class="stat-item" style="text-align:center;">
-                    <div class="stat-num" style="font-size:1.6rem;font-weight:800;letter-spacing:-0.04em;color:var(--accent);">50+</div>
-                    <div class="stat-lbl" style="font-size:0.75rem;color:var(--text-muted);margin-top:3px;">B2B-Projekte</div>
-                </div>
-                <div class="stat-item" style="text-align:center;">
-                    <div class="stat-num" style="font-size:1.6rem;font-weight:800;letter-spacing:-0.04em;color:var(--accent);">75+</div>
-                    <div class="stat-lbl" style="font-size:0.75rem;color:var(--text-muted);margin-top:3px;">Tools &amp; Datenquellen</div>
+                <div class="ticker-track-wrap" style="overflow:hidden;position:relative;margin-bottom:16px;">
+                    <div class="ticker-track reverse" style="display:flex;align-items:center;gap:56px;width:max-content;animation:tickerRev 58s linear infinite;">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://d2bw95mh2ee04s.cloudfront.net/prod/content/wp-content/uploads/2025/01/02134814/Property-Logo-Main.svg" alt="SellerLogic">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://digitalnow.online/logo.png" alt="Digital Now">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://d2bw95mh2ee04s.cloudfront.net/prod/content/wp-content/uploads/2025/01/02134814/Property-Logo-Main.svg" alt="SellerLogic">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://digitalnow.online/logo.png" alt="Digital Now">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://d2bw95mh2ee04s.cloudfront.net/prod/content/wp-content/uploads/2025/01/02134814/Property-Logo-Main.svg" alt="SellerLogic">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://digitalnow.online/logo.png" alt="Digital Now">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://d2bw95mh2ee04s.cloudfront.net/prod/content/wp-content/uploads/2025/01/02134814/Property-Logo-Main.svg" alt="SellerLogic">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://digitalnow.online/logo.png" alt="Digital Now">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios">
+                    </div>
                 </div>
             </div>
 
-            <!-- Proof Cards -->
-            <div class="proof-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-bottom:28px;">
-                <div class="proof-card" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;">
-                    <div class="proof-co" style="font-size:0.7rem;font-weight:700;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;">Smart Bridges GmbH &middot; Berlin</div>
-                    <div class="proof-num" style="font-size:1.8rem;font-weight:800;color:var(--green);letter-spacing:-0.04em;line-height:1.1;margin-bottom:3px;">397 Leads</div>
-                    <div class="proof-period" style="font-size:0.75rem;color:var(--text-muted);margin-bottom:12px;">in 3 Monaten</div>
-                    <div class="proof-desc" style="font-size:0.8rem;color:var(--text-muted);line-height:1.6;">Ingo Boldt, Gesch&auml;ftsf&uuml;hrer</div>
+            <div class="stat-row" style="display:flex;gap:16px;margin-bottom:0;">
+                <div class="stat-item" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px 24px;flex:1;text-align:center;">
+                    <div class="stat-num" style="font-size:1.6rem;font-weight:800;color:var(--accent);">10 Mio.+</div>
+                    <div class="stat-lbl" style="font-size:0.8rem;color:var(--text-muted);margin-top:2px;">E-Mails versendet</div>
                 </div>
-                <div class="proof-card" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;">
-                    <div class="proof-co" style="font-size:0.7rem;font-weight:700;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;">Greenlovers &middot; Hamburg</div>
-                    <div class="proof-num" style="font-size:1.8rem;font-weight:800;color:var(--green);letter-spacing:-0.04em;line-height:1.1;margin-bottom:3px;">172 Leads + 14 Auftr&auml;ge</div>
-                    <div class="proof-period" style="font-size:0.75rem;color:var(--text-muted);margin-bottom:12px;">in 3 Monaten</div>
-                    <div class="proof-desc" style="font-size:0.8rem;color:var(--text-muted);line-height:1.6;">Stephan Meinecke, Gesch&auml;ftsf&uuml;hrer</div>
+                <div class="stat-item" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px 24px;flex:1;text-align:center;">
+                    <div class="stat-num" style="font-size:1.6rem;font-weight:800;color:var(--accent);">50+</div>
+                    <div class="stat-lbl" style="font-size:0.8rem;color:var(--text-muted);margin-top:2px;">Erfolgreiche B2B-Projekte</div>
                 </div>
-                <div class="proof-card" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;">
-                    <div class="proof-co" style="font-size:0.7rem;font-weight:700;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;">Hivebuy &middot; Berlin</div>
-                    <div class="proof-num" style="font-size:1.8rem;font-weight:800;color:var(--green);letter-spacing:-0.04em;line-height:1.1;margin-bottom:3px;">&euro;100.000 Auftragswert</div>
-                    <div class="proof-period" style="font-size:0.75rem;color:var(--text-muted);margin-bottom:12px;">abgeschlossen in 9 Monaten</div>
-                    <div class="proof-desc" style="font-size:0.8rem;color:var(--text-muted);line-height:1.6;">Moritz Liehnert, Gesch&auml;ftsf&uuml;hrer</div>
-                </div>
-                <div class="proof-card" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;">
-                    <div class="proof-co" style="font-size:0.7rem;font-weight:700;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;">Birdsview GmbH</div>
-                    <div class="proof-num" style="font-size:1.8rem;font-weight:800;color:var(--green);letter-spacing:-0.04em;line-height:1.1;margin-bottom:3px;">28 Termine</div>
-                    <div class="proof-period" style="font-size:0.75rem;color:var(--text-muted);margin-bottom:12px;">in 3 Monaten</div>
-                    <div class="proof-desc" style="font-size:0.8rem;color:var(--text-muted);line-height:1.6;">Tim Kuesters, Gesch&auml;ftsf&uuml;hrer</div>
-                </div>
-                <div class="proof-card" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;">
-                    <div class="proof-co" style="font-size:0.7rem;font-weight:700;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;">Peer Studios GbR &middot; Berlin</div>
-                    <div class="proof-num" style="font-size:1.8rem;font-weight:800;color:var(--green);letter-spacing:-0.04em;line-height:1.1;margin-bottom:3px;">20 Opportunities</div>
-                    <div class="proof-period" style="font-size:0.75rem;color:var(--text-muted);margin-bottom:12px;">in 13 Tagen</div>
-                    <div class="proof-desc" style="font-size:0.8rem;color:var(--text-muted);line-height:1.6;">Lasse Petry, Gesch&auml;ftsf&uuml;hrer</div>
-                </div>
-                <div class="proof-card" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;">
-                    <div class="proof-co" style="font-size:0.7rem;font-weight:700;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;">Cervis</div>
-                    <div class="proof-num" style="font-size:1.8rem;font-weight:800;color:var(--green);letter-spacing:-0.04em;line-height:1.1;margin-bottom:3px;">ROI 2.7&times;</div>
-                    <div class="proof-period" style="font-size:0.75rem;color:var(--text-muted);margin-bottom:12px;">einen Abschluss in 3 Monaten</div>
-                    <div class="proof-desc" style="font-size:0.8rem;color:var(--text-muted);line-height:1.6;">Philipp K&ouml;hnlein, Gesch&auml;ftsf&uuml;hrer</div>
+                <div class="stat-item" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px 24px;flex:1;text-align:center;">
+                    <div class="stat-num" style="font-size:1.6rem;font-weight:800;color:var(--accent);">75+</div>
+                    <div class="stat-lbl" style="font-size:0.8rem;color:var(--text-muted);margin-top:2px;">Tools &amp; Datenanbieter</div>
                 </div>
             </div>
 
-            <!-- Quote Cards -->
-            <div class="quote-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px;">
-                <div class="quote-card" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px 22px;display:flex;flex-direction:column;">
-                    <div class="q-text" style="font-size:0.88rem;line-height:1.6;color:var(--text);flex:1;font-style:italic;margin-bottom:16px;">Grundwerk hat uns in 3 Monaten eine Pipeline aufgebaut, die wir intern in einem Jahr nicht geschafft h&auml;tten.</div>
-                    <div class="q-author" style="font-size:0.85rem;font-weight:700;color:var(--accent);">Ingo Boldt</div>
-                    <div class="q-role" style="font-size:0.75rem;color:var(--text-muted);font-style:italic;">Smart Bridges GmbH, Gesch&auml;ftsf&uuml;hrer</div>
-                    <div class="q-metric" style="display:inline-block;margin-top:10px;font-size:0.72rem;font-weight:700;color:var(--green);background:var(--green-glow);padding:3px 10px;border-radius:20px;width:fit-content;">397 Leads in 3 Monaten</div>
+            <div style="margin-top:48px;">
+                <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:6px;">Ergebnisse</h3>
+                <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:28px;">Echte Zahlen aus aktiven Grundwerk-Projekten &mdash; von Startups bis Mittelstand.</p>
+            </div>
+
+            <div class="proof-grid">
+                <div class="proof-card">
+                    <div class="proof-co">Smart Bridges GmbH &middot; Berlin</div>
+                    <div class="proof-num">1.178 Leads</div>
+                    <div class="proof-period">in 5 Monaten</div>
+                    <div class="proof-desc">Premium-Event-Veranstalter. 36 verschiedene Kampagnen-Formate &mdash; 397 Leads in den ersten 3 Monaten.</div>
                 </div>
-                <div class="quote-card" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px 22px;display:flex;flex-direction:column;">
-                    <div class="q-text" style="font-size:0.88rem;line-height:1.6;color:var(--text);flex:1;font-style:italic;margin-bottom:16px;">20 Opportunities in 13 Tagen &mdash; das hat unsere Erwartungen komplett &uuml;bertroffen.</div>
-                    <div class="q-author" style="font-size:0.85rem;font-weight:700;color:var(--accent);">Lasse Petry</div>
-                    <div class="q-role" style="font-size:0.75rem;color:var(--text-muted);font-style:italic;">Peer Studios GbR, Gesch&auml;ftsf&uuml;hrer</div>
-                    <div class="q-metric" style="display:inline-block;margin-top:10px;font-size:0.72rem;font-weight:700;color:var(--green);background:var(--green-glow);padding:3px 10px;border-radius:20px;width:fit-content;">20 Opportunities in 13 Tagen</div>
+                <div class="proof-card">
+                    <div class="proof-co">Birdsview GmbH</div>
+                    <div class="proof-num">286.000 &euro; ARR</div>
+                    <div class="proof-period">in 6 Monaten</div>
+                    <div class="proof-desc">E-Commerce SaaS. ROI 3x nach 5 Tagen, 23 Meetings in 6 Wochen, 4 Closings mit 27k ACV.</div>
+                </div>
+                <div class="proof-card">
+                    <div class="proof-co">Greenlovers &middot; Hamburg</div>
+                    <div class="proof-num">172 Leads</div>
+                    <div class="proof-period">+ 14 Auftr&auml;ge in 3 Monaten</div>
+                    <div class="proof-desc">Catering-Unternehmen. Multichannel-Kampagne mit 21% Reply-Rate (E-Mail) und &gt;25% Reply-Rate (LinkedIn).</div>
+                </div>
+                <div class="proof-card">
+                    <div class="proof-co">Hivebuy &middot; Berlin</div>
+                    <div class="proof-num">400k+ Pipeline</div>
+                    <div class="proof-period">100k Deals closed</div>
+                    <div class="proof-desc">B2B Procurement SaaS. Grundwerk als prim&auml;rer Akquise-Kanal &mdash; &uuml;ber 100k EUR nachweisbarer Auftragswert.</div>
+                </div>
+                <div class="proof-card">
+                    <div class="proof-co">Peer Studios GbR &middot; Berlin</div>
+                    <div class="proof-num">20 Opportunities</div>
+                    <div class="proof-period">in 13 Tagen</div>
+                    <div class="proof-desc">Kreativ-Agentur. 6 Closings in 5 Monaten, inkl. Brands mit OrderValue von 10k+. Von unter 10k Umsatz zu konstanter Pipeline.</div>
+                </div>
+                <div class="proof-card">
+                    <div class="proof-co">Cervis</div>
+                    <div class="proof-num">ROI 2,7x</div>
+                    <div class="proof-period">in 3 Monaten</div>
+                    <div class="proof-desc">IT-Infrastruktur bundesweit. Pipedrive-CRM aufgesetzt, Enterprise-Kampagnen gestartet &mdash; 5-stelliger Abschluss nach 3 Monaten.</div>
+                </div>
+                <div class="proof-card">
+                    <div class="proof-co">Wachstumswerkstatt</div>
+                    <div class="proof-num">2x Termine</div>
+                    <div class="proof-period">von 5 auf 10 pro Woche</div>
+                    <div class="proof-desc">SEO-Agentur. Termine verdoppelt durch strukturiertes E-Mail-Outbound im Consulting-Modell.</div>
+                </div>
+            </div>
+
+            <!-- Video-Testimonials -->
+            <div style="margin-top:48px;">
+                <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:6px;">Was unsere Kunden sagen</h3>
+                <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:28px;">Video-Referenzen direkt von Entscheidern, die mit Grundwerk arbeiten.</p>
+                <div class="vid-landscape" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px;">
+                    <div>
+                        <div class="video-embed-wrap">
+                            <script src="https://fast.wistia.com/embed/8um6o166gg.js" async type="module"></script>
+                            <style>wistia-player[media-id='8um6o166gg']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/8um6o166gg/swatch');display:block;filter:blur(5px);padding-top:56.25%}</style>
+                            <wistia-player media-id="8um6o166gg" aspect="1.7777777777777777"></wistia-player>
+                        </div>
+                        <div style="margin-top:10px;text-align:center;">
+                            <div style="font-size:0.85rem;font-weight:700;color:var(--text);">Lasse Petry &middot; Co-Founder, Peer Studios</div>
+                            <div style="font-size:0.75rem;color:var(--text-muted);">Creative Content & Brand Marketing Agentur</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="video-embed-wrap">
+                            <script src="https://fast.wistia.com/embed/ohjo6np2cx.js" async type="module"></script>
+                            <style>wistia-player[media-id='ohjo6np2cx']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/ohjo6np2cx/swatch');display:block;filter:blur(5px);padding-top:56.25%}</style>
+                            <wistia-player media-id="ohjo6np2cx" aspect="1.7777777777777777"></wistia-player>
+                        </div>
+                        <div style="margin-top:10px;text-align:center;">
+                            <div style="font-size:0.85rem;font-weight:700;color:var(--text);">Ingo Boldt &middot; Gesch&auml;ftsf&uuml;hrer, Smart Bridges</div>
+                            <div style="font-size:0.75rem;color:var(--text-muted);">Premium B2B Networking Events</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="vid-portrait" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
+                    <div>
+                        <div class="video-embed-wrap" style="max-width:240px;margin:0 auto;">
+                            <script src="https://fast.wistia.com/embed/xrshk3je41.js" async type="module"></script>
+                            <style>wistia-player[media-id='xrshk3je41']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/xrshk3je41/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style>
+                            <wistia-player media-id="xrshk3je41" aspect="0.5625"></wistia-player>
+                        </div>
+                        <div style="margin-top:10px;text-align:center;">
+                            <div style="font-size:0.82rem;font-weight:700;color:var(--text);">Valentin Eiber</div>
+                            <div style="font-size:0.72rem;color:var(--text-muted);">Founder &middot; LinkedIn & B2B Lead Generation</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="video-embed-wrap" style="max-width:240px;margin:0 auto;">
+                            <script src="https://fast.wistia.com/embed/ecg4jyx9cg.js" async type="module"></script>
+                            <style>wistia-player[media-id='ecg4jyx9cg']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/ecg4jyx9cg/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style>
+                            <wistia-player media-id="ecg4jyx9cg" aspect="0.5625"></wistia-player>
+                        </div>
+                        <div style="margin-top:10px;text-align:center;">
+                            <div style="font-size:0.82rem;font-weight:700;color:var(--text);">Tim K&uuml;sters</div>
+                            <div style="font-size:0.72rem;color:var(--text-muted);">GF, Birdsview &middot; AI E-Mail-Marketing f&uuml;r E-Commerce</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="video-embed-wrap" style="max-width:240px;margin:0 auto;">
+                            <script src="https://fast.wistia.com/embed/c97klwzjh4.js" async type="module"></script>
+                            <style>wistia-player[media-id='c97klwzjh4']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/c97klwzjh4/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style>
+                            <wistia-player media-id="c97klwzjh4" aspect="0.5625"></wistia-player>
+                        </div>
+                        <div style="margin-top:10px;text-align:center;">
+                            <div style="font-size:0.82rem;font-weight:700;color:var(--text);">Andreas Glemser</div>
+                            <div style="font-size:0.72rem;color:var(--text-muted);">GF, COCOMIN &middot; Executive Coaching</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="video-embed-wrap" style="max-width:240px;margin:0 auto;">
+                            <script src="https://fast.wistia.com/embed/pvxw94fv46.js" async type="module"></script>
+                            <style>wistia-player[media-id='pvxw94fv46']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/pvxw94fv46/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style>
+                            <wistia-player media-id="pvxw94fv46" aspect="0.5625"></wistia-player>
+                        </div>
+                        <div style="margin-top:10px;text-align:center;">
+                            <div style="font-size:0.82rem;font-weight:700;color:var(--text);">Johannes Herbst</div>
+                            <div style="font-size:0.72rem;color:var(--text-muted);">Co-Founder, WachstumsWerkstatt &middot; SEO-Agentur</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Schriftliche Kundenstimmen -->
+            <div style="margin-top:48px;">
+                <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:6px;">Was Entscheider &uuml;ber die Ergebnisse sagen</h3>
+                <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:28px;">Originalzitate von Gesch&auml;ftsf&uuml;hrern und Verantwortlichen aus B2B-Unternehmen, die mit Grundwerk arbeiten.</p>
+                <div class="quote-grid">
+                    <div class="quote-card">
+                        <div class="q-text">Die Zusammenarbeit mit GWD war gepr&auml;gt von viel Beratung und Unterst&uuml;tzung unseren Email-Outreach zu professionalisieren und zum Erfolg zu bringen. Wir wissen die Erfahrung und Leistung zu sch&auml;tzen und freuen uns auf eine weitere Zusammenarbeit.</div>
+                        <div>
+                            <div class="q-author" style="font-weight:700;font-size:0.85rem;color:var(--text);">Nico St&ouml;ckel</div>
+                            <div class="q-role">Our Greenery</div>
+                        </div>
+                    </div>
+                    <div class="quote-card">
+                        <div class="q-text">Die Zusammenarbeit mit Grundwerk Digital war zuverl&auml;ssig und h&ouml;chstindividuell. Dabei ist Tom Soto Schiller direkt auf unsere Probleme eingegangen und hat mit uns unsere ICPs und den Markt analysiert und unseren apollo.io-Setup mit uns durchgef&uuml;hrt. Gerne wieder!</div>
+                        <div>
+                            <div class="q-author" style="font-weight:700;font-size:0.85rem;color:var(--text);">Michell Pascall Schmidt</div>
+                            <div class="q-role">eGroup</div>
+                        </div>
+                    </div>
+                    <div class="quote-card">
+                        <div class="q-text">Das Grundwerk Digital Scraping Team hat f&uuml;r CCV &uuml;beraus akkurate Leads aus mehreren deutschen Bundesl&auml;ndern gezogen, obwohl wir bisher alle Datenbanken schon v&ouml;llig ersch&ouml;pft hatten. Wir waren sehr &uuml;berrascht, dass die Ergebnisse so zufriedenstellend waren.</div>
+                        <div>
+                            <div class="q-author" style="font-weight:700;font-size:0.85rem;color:var(--text);">Michael Fischer</div>
+                            <div class="q-role">Sales Lead-SME, CCV &middot; Payment Solutions</div>
+                        </div>
+                    </div>
+                    <div class="quote-card">
+                        <div class="q-text">Grundwerk Digital hat mit uns erfolgreiche LinkedIn und Email-Kampagnen durchgef&uuml;hrt und bei der Implementierung von top-aktuellen Outreach-Prozessen h&ouml;chst professionell beraten.</div>
+                        <div>
+                            <div class="q-author" style="font-weight:700;font-size:0.85rem;color:var(--text);">Alexander Kohler</div>
+                            <div class="q-role">pplwise</div>
+                        </div>
+                    </div>
+                    <div class="quote-card">
+                        <div class="q-text">Wir haben wesentlich mehr Leads generiert und vor allem sind unsere Leads sehr viel hochwertiger als das die Jahre davor war. Wir k&ouml;nnen die Arbeit von Grundwerk wirklich weiterempfehlen!</div>
+                        <div>
+                            <div class="q-author" style="font-weight:700;font-size:0.85rem;color:var(--text);">Andreas Glemser</div>
+                            <div class="q-role">Gesch&auml;ftsf&uuml;hrer, COCOMIN AG</div>
+                        </div>
+                    </div>
+                    <div class="quote-card">
+                        <div class="q-text">Die Beratung ist auf den Punkt, das Know-how wirklich hilfreich und immer wieder kommen Impulse, auf die wir alleine wahrscheinlich nicht gekommen w&auml;ren. Nach den Gespr&auml;chen kommt immer eine saubere Zusammenfassung, und oft wird mehr gemacht, als urspr&uuml;nglich vereinbart war &mdash; dieses &bdquo;Overdelivern&ldquo; ist keine leere Floskel, sondern passiert wirklich.</div>
+                        <div>
+                            <div class="q-author" style="font-weight:700;font-size:0.85rem;color:var(--text);">Marc Meyer</div>
+                            <div class="q-role">Gesch&auml;ftsf&uuml;hrer, echte Media</div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -978,109 +1230,78 @@
     </div>
 </div>
 
-<!-- TAB 5 — INVESTITION -->
+<!-- TAB 5 — INVESTITION (template structure, custom content) -->
 <div class="panel" id="panel-invest">
     <div class="panel-inner">
-        <div class="container" style="max-width:740px;">
+        <div class="container">
 
-            <div style="font-size:0.7rem;font-weight:600;color:var(--accent);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:20px;">Vertraulich &mdash; Grundwerk &times; elitec AG</div>
-            <h2 style="font-size:2rem;font-weight:700;line-height:1.2;margin-bottom:12px;">Investition</h2>
-            <p style="font-size:0.95rem;color:var(--text-muted);line-height:1.6;max-width:600px;">Transparent, planbar und mit Lead-Garantie.</p>
-            <div style="width:100%;height:1px;background:var(--border);margin-top:40px;"></div>
+            <span class="section-label">Investition</span>
+            <h2>Was du investierst &mdash; und welche Ergebnisse du generierst</h2>
+            <p class="lead">Transparenz von Anfang an. Zwei klare Optionen &mdash; abgestimmt auf die Situation bei elitec.</p>
 
-            <!-- Pricing Cards -->
-            <div style="padding:56px 0 0;">
-                <div class="pricing-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;">
-                    <!-- Empfohlen: E-Mail + LinkedIn -->
-                    <div class="price-card rec" style="background:var(--bg-accent);border:1px solid var(--accent);border-radius:var(--radius);padding:26px 24px;position:relative;">
-                        <div class="rec-badge" style="position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--accent);color:white;font-size:0.7rem;font-weight:700;padding:3px 14px;border-radius:100px;white-space:nowrap;">Empfohlen</div>
-                        <div class="price-name" style="font-size:0.75rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:14px;">E-Mail + LinkedIn Outreach</div>
-                        <div class="price-setup" style="font-size:0.85rem;color:var(--text-muted);margin-bottom:4px;">Setup (einmalig): <strong style="color:var(--text);font-size:0.95rem;">&euro;990</strong></div>
-                        <div class="price-monthly" style="font-size:2.2rem;font-weight:800;letter-spacing:-0.04em;line-height:1;color:var(--text);">&euro;3.000</div>
-                        <div class="price-per" style="font-size:0.76rem;color:var(--text-muted);margin-bottom:14px;">pro Monat &middot; 4 Monate Mindestlaufzeit</div>
-                        <div class="price-total" style="font-size:0.8rem;color:var(--text-muted);background:var(--layer-subtle-2);border:1px solid var(--border);padding:7px 12px;border-radius:var(--radius-sm);margin-bottom:16px;">Gesamtinvestition: <strong style="color:var(--text);">&euro;12.990</strong> (4 Monate inkl. Setup)</div>
-                        <ul class="price-features" style="list-style:none;display:flex;flex-direction:column;gap:7px;">
-                            <li style="font-size:0.8rem;color:var(--text-muted);padding-left:18px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">&#10003;</span>Bis zu 10.000 E-Mails/Monat</li>
-                            <li style="font-size:0.8rem;color:var(--text-muted);padding-left:18px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">&#10003;</span>LinkedIn Multi-Touch-Outreach</li>
-                            <li style="font-size:0.8rem;color:var(--text-muted);padding-left:18px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">&#10003;</span>Dedizierte Sending-Infrastruktur</li>
-                            <li style="font-size:0.8rem;color:var(--text-muted);padding-left:18px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">&#10003;</span>SPF/DKIM/DMARC &amp; Warm-up</li>
-                            <li style="font-size:0.8rem;color:var(--text-muted);padding-left:18px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">&#10003;</span>ICP-Research aus 75+ Datenquellen</li>
-                            <li style="font-size:0.8rem;color:var(--text-muted);padding-left:18px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">&#10003;</span>KI-personalisierte Kampagnen-Copy</li>
-                            <li style="font-size:0.8rem;color:var(--text-muted);padding-left:18px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">&#10003;</span>W&ouml;chentliche 30-Min. Reporting-Calls</li>
-                            <li style="font-size:0.8rem;color:var(--text-muted);padding-left:18px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">&#10003;</span>Grundwerk Web App &amp; Live-Dashboard</li>
-                            <li style="font-size:0.8rem;color:var(--text-muted);padding-left:18px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">&#10003;</span>MasterInbox f&uuml;r alle Replies</li>
-                            <li style="font-size:0.8rem;color:var(--text-muted);padding-left:18px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">&#10003;</span>AVV &amp; DSGVO-Compliance inklusive</li>
-                        </ul>
-                    </div>
-                    <!-- Jahresvertrag -->
-                    <div class="price-card" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:26px 24px;position:relative;">
-                        <div class="price-name" style="font-size:0.75rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:14px;">Jahresvertrag &mdash; Skalierung</div>
-                        <div style="font-size:0.88rem;color:var(--text);line-height:1.7;margin-bottom:16px;">Nach dem erfolgreichen Initialprojekt verl&auml;ngern wir in einen Jahresvertrag. Der genaue Scope wird basierend auf den Ergebnissen der ersten 4 Monate gemeinsam definiert.</div>
-                        <div class="invest-2col" style="display:grid;grid-template-columns:1fr;gap:14px;">
-                            <div style="background:var(--layer-subtle);border-radius:var(--radius-sm);padding:16px;">
-                                <div style="font-weight:700;font-size:0.85rem;margin-bottom:8px;color:var(--text);">Enth&auml;lt:</div>
-                                <ul style="font-size:0.82rem;color:var(--text-muted);line-height:1.8;list-style:none;padding:0;">
-                                    <li>&rarr; Volumen-Skalierung (40k+ E-Mails/Monat)</li>
-                                    <li>&rarr; Multi-Channel: Email + LinkedIn + Warm Outreach</li>
-                                    <li>&rarr; Lead Scoring &amp; Priorisierung</li>
-                                    <li>&rarr; CRM-Integration &amp; Pipeline-Automatisierung</li>
-                                    <li>&rarr; Dedicated Account Manager</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div style="margin-top:16px;padding:14px 16px;background:var(--accent-glow);border:1px solid var(--border-accent);border-radius:var(--radius-sm);">
-                            <div style="font-size:0.82rem;color:var(--text);"><strong>Verg&uuml;tungsmodell:</strong> Retainer + Provision auf generierte Abschl&uuml;sse. Das Modell wird nach dem Initialprojekt gemeinsam definiert &mdash; basierend auf realen Ergebnissen.</div>
-                        </div>
-                    </div>
+            <div class="pricing-grid">
+                <!-- EINSTEIGER (links) -->
+                <div class="price-card">
+                    <div class="price-name">EINSTEIGER</div>
+                    <div class="price-setup">Setup: <strong>990 &euro;</strong> (einmalig)</div>
+                    <div class="price-monthly">3.000 &euro;</div>
+                    <div class="price-per">pro Monat &middot; mind. 4 Monate</div>
+                    <div class="price-total">Gesamt-Invest (4 Monate): <strong>990 &euro; + 4 &times; 3.000 &euro; = 12.990 &euro;</strong></div>
+                    <ul class="price-features">
+                        <li>1h KickOff-Workshop</li>
+                        <li>ICP-Definition &amp; Zielmarkt-Mapping</li>
+                        <li>Dedizierte Sending-Infrastruktur</li>
+                        <li>SPF/DKIM/DMARC Setup &amp; Warm-Up</li>
+                        <li>Bis zu 10.000 E-Mails/Monat</li>
+                        <li>KI-personalisierte Kampagnen</li>
+                        <li>Lead-Research (75+ Datenquellen)</li>
+                        <li>W&ouml;chentliche 30-Min Reporting Calls</li>
+                        <li>MasterInbox &amp; Grundwerk Web App</li>
+                        <li>AVV &amp; DSGVO-konforme Prozesse</li>
+                    </ul>
+                </div>
+
+                <!-- STANDARD (rechts, empfohlen) -->
+                <div class="price-card rec">
+                    <div class="rec-badge">Empfohlen</div>
+                    <div class="price-name">STANDARD</div>
+                    <div class="price-setup">Setup: <strong>1.990 &euro;</strong> (einmalig)</div>
+                    <div class="price-monthly">3.500 &euro;</div>
+                    <div class="price-per">pro Monat &middot; mind. 6 Monate</div>
+                    <div class="price-total">Gesamt-Invest (6 Monate): <strong>1.990 &euro; + 6 &times; 3.500 &euro; = 22.990 &euro;</strong></div>
+                    <ul class="price-features">
+                        <li>Alles aus Einsteiger +</li>
+                        <li>Bis zu 20.000 E-Mails/Monat</li>
+                        <li>LinkedIn Multi-Touch Outreach</li>
+                        <li>Erweiterte Daten-Anreicherung</li>
+                        <li>CRM-Integration (Close CRM)</li>
+                        <li>Sales Tracking &amp; Projections</li>
+                        <li>Dedizierter Account Manager</li>
+                        <li>Exit-Klausel nach 4 Monaten</li>
+                    </ul>
                 </div>
             </div>
 
-            <div style="width:100%;height:1px;background:var(--border);"></div>
-
-            <!-- Lead-Garantie -->
-            <div style="padding:56px 0 0;">
-                <div style="background:var(--green-glow);border:1px solid rgba(34,197,94,0.3);border-left:3px solid var(--green);border-radius:var(--radius);padding:24px 28px;margin-bottom:32px;">
-                    <h3 style="font-size:1rem;font-weight:700;color:var(--green);margin-bottom:8px;">Lead-Garantie</h3>
-                    <p style="font-size:0.9rem;color:var(--text);line-height:1.7;">Mindestens <strong>60 qualifizierte Leads in 3 Kampagnenmonaten</strong> &mdash; oder Sie zahlen den halben Preis. Wir tragen das Risiko, nicht Sie.</p>
-                </div>
-            </div>
-
-            <div style="width:100%;height:1px;background:var(--border);"></div>
-
-            <!-- ROI Szenarien -->
-            <div style="padding:56px 0 0;">
-                <div style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:28px;">ROI-Szenarien</div>
-                <div class="roi-box" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;">
-                    <h3 style="font-size:0.88rem;font-weight:700;margin-bottom:16px;color:var(--text);">Was passiert, wenn nur ein Bruchteil der Leads konvertiert?</h3>
-                    <div class="roi-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
-                        <div class="roi-item" style="text-align:center;">
-                            <div class="roi-lbl" style="font-size:0.7rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:5px;">Konservativ</div>
-                            <div class="roi-val" style="font-size:1.35rem;font-weight:800;letter-spacing:-0.03em;color:var(--text);">60 Leads</div>
-                            <div class="roi-sub" style="font-size:0.69rem;color:var(--text-dim);margin-top:3px;">3% Close = 2 Neukunden</div>
-                            <div style="font-size:0.78rem;color:var(--text-muted);margin-top:6px;">Bei &Oslash; &euro;10.000 Jahresumsatz/Kunde</div>
-                            <div class="roi-val pos" style="font-size:1.1rem;font-weight:800;color:var(--green);margin-top:4px;">&euro;20.000 Umsatz</div>
-                        </div>
-                        <div class="roi-item" style="text-align:center;">
-                            <div class="roi-lbl" style="font-size:0.7rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:5px;">Realistisch</div>
-                            <div class="roi-val" style="font-size:1.35rem;font-weight:800;letter-spacing:-0.03em;color:var(--text);">75 Leads</div>
-                            <div class="roi-sub" style="font-size:0.69rem;color:var(--text-dim);margin-top:3px;">5% Close = 4 Neukunden</div>
-                            <div style="font-size:0.78rem;color:var(--text-muted);margin-top:6px;">Bei &Oslash; &euro;10.000 Jahresumsatz/Kunde</div>
-                            <div class="roi-val pos" style="font-size:1.1rem;font-weight:800;color:var(--green);margin-top:4px;">&euro;40.000 Umsatz</div>
-                        </div>
-                        <div class="roi-item" style="text-align:center;">
-                            <div class="roi-lbl" style="font-size:0.7rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:5px;">Optimistisch</div>
-                            <div class="roi-val" style="font-size:1.35rem;font-weight:800;letter-spacing:-0.03em;color:var(--text);">90 Leads</div>
-                            <div class="roi-sub" style="font-size:0.69rem;color:var(--text-dim);margin-top:3px;">8% Close = 7 Neukunden</div>
-                            <div style="font-size:0.78rem;color:var(--text-muted);margin-top:6px;">Bei &Oslash; &euro;10.000 Jahresumsatz/Kunde</div>
-                            <div class="roi-val pos" style="font-size:1.1rem;font-weight:800;color:var(--green);margin-top:4px;">&euro;70.000 Umsatz</div>
-                        </div>
+            <!-- ROI Box -->
+            <div class="roi-box">
+                <h3>Erwarteter ROI (konservativ bis optimistisch)</h3>
+                <div class="roi-grid">
+                    <div class="roi-item">
+                        <div class="roi-lbl">Konservativ</div>
+                        <div class="roi-val pos">20.000 &euro;</div>
+                        <div class="roi-sub">60 Leads &rarr; 3% = 2 Neukunden</div>
                     </div>
-                    <p style="font-size:0.75rem;color:var(--text-dim);margin-top:16px;text-align:center;">Investition: &euro;12.990 &middot; Bereits im konservativen Szenario positiver ROI bei Verpackungs-typischen Auftragswerten</p>
+                    <div class="roi-item">
+                        <div class="roi-lbl">Realistisch</div>
+                        <div class="roi-val pos">40.000 &euro;</div>
+                        <div class="roi-sub">80 Leads &rarr; 5% = 4 Neukunden</div>
+                    </div>
+                    <div class="roi-item">
+                        <div class="roi-lbl">Optimistisch</div>
+                        <div class="roi-val pos">80.000 &euro;</div>
+                        <div class="roi-sub">100 Leads &rarr; 8% = 8 Neukunden</div>
+                    </div>
                 </div>
-            </div>
-
-            <div style="padding:48px 0 0;text-align:center;border-top:1px solid var(--border);margin-top:56px;">
-                <p style="font-size:0.75rem;color:var(--text-dim);letter-spacing:0.06em;">Grundwerk Digital &middot; Vertraulich &middot; M&auml;rz 2026</p>
             </div>
 
         </div>
@@ -1094,50 +1315,36 @@
 
             <div style="font-size:0.7rem;font-weight:600;color:var(--accent);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:20px;">Vertraulich &mdash; Grundwerk &times; elitec AG</div>
             <h2 style="font-size:2rem;font-weight:700;line-height:1.2;margin-bottom:12px;">Outbound-Strategie</h2>
-            <p style="font-size:0.95rem;color:var(--text-muted);line-height:1.6;max-width:620px;">Basierend auf dem Gespr&auml;ch am 09.03.2026 &mdash; zusammengefasst in eine umsetzbare Strategie f&uuml;r die ersten 3 Kampagnenmonate.</p>
+            <p style="font-size:0.95rem;color:var(--text-muted);line-height:1.6;max-width:620px;">Gemeinsam erarbeitet in den Gespr&auml;chen am 16.02. und 09.03.2026 &mdash; zusammengefasst in eine umsetzbare Strategie f&uuml;r die ersten 3 Kampagnenmonate.</p>
             <div style="width:100%;height:1px;background:var(--border);margin-top:40px;"></div>
 
             <!-- 1. Primaere Zielgruppe -->
             <div style="padding:56px 0 0;">
                 <div style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:28px;">1. Prim&auml;re Zielgruppe</div>
-                <div style="margin-bottom:24px;">
-                    <div style="font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:12px;">Hersteller &amp; Produzenten (DACH)</div>
-                    <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;margin-bottom:16px;">Manufacturing, Werkzeugbau, Industrieunternehmen &mdash; Unternehmen die Verpackungsl&ouml;sungen brauchen und regelm&auml;&szlig;ig bestellen. H&ouml;chstes Potenzial f&uuml;r wiederkehrenden Umsatz.</div>
-                </div>
-                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px;">
-                    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px;">
-                        <div style="font-size:0.68rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Entscheider</div>
-                        <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:4px;">Einkaufsleiter</div>
-                        <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.6;">Verantwortlich f&uuml;r Verpackungsbeschaffung, Preisverhandlung und Lieferantenauswahl.</div>
-                    </div>
-                    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px;">
-                        <div style="font-size:0.68rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Entscheider</div>
-                        <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:4px;">Werksleiter</div>
-                        <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.6;">Kennt den operativen Bedarf, beeinflusst Lieferantenwahl &uuml;ber Qualit&auml;ts- und Effizienzkriterien.</div>
-                    </div>
-                    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px;">
-                        <div style="font-size:0.68rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Entscheider</div>
-                        <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:4px;">Gesch&auml;ftsf&uuml;hrer</div>
-                        <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.6;">Bei KMUs oft direkt involviert in Beschaffungsentscheidungen. Entscheidet &uuml;ber strategische Lieferantenpartnerschaften.</div>
-                    </div>
-                </div>
+                <div style="font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:12px;">Produzierende Unternehmen in DACH</div>
+                <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;margin-bottom:16px;">Lebensmittel, Pharma, Kosmetik, Industrie &mdash; Unternehmen die Verpackungsl&ouml;sungen brauchen. Entscheider: Einkaufsleiter, Werksleiter, GF bei KMU. Fokus auf Unternehmen mit 50&ndash;500 Mitarbeitern.</div>
             </div>
 
             <div style="width:100%;height:1px;background:var(--border);margin-top:56px;"></div>
 
-            <!-- 2. Sekundaere Zielgruppe -->
+            <!-- 2. Sekundaere Zielgruppen -->
             <div style="padding:56px 0 0;">
-                <div style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:28px;">2. Sekund&auml;re Zielgruppe</div>
-                <div style="margin-bottom:24px;">
-                    <div style="font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:12px;">Lebensmittel &amp; Gastro</div>
-                    <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;margin-bottom:16px;">B&auml;ckereien, Lebensmittelhersteller und Gastro-Betriebe mit spezifischen Verpackungsanforderungen. Entscheider: Produktionsleiter, Einkauf.</div>
-                </div>
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px;">
+                <div style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:28px;">2. Sekund&auml;re Zielgruppen</div>
+                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px;">
                     <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px;">
-                        <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.6;"><strong style="color:var(--green);">Vorteil:</strong> Hoher Bedarf an spezialisierten Verpackungen, oft unzufrieden mit Standardl&ouml;sungen. Bereitschaft f&uuml;r individuelle Beratung.</div>
+                        <div style="font-size:0.68rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Segment B</div>
+                        <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:4px;">Food &amp; Gastro</div>
+                        <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.6;">Verpackungsfolien, Feinkartonagen &mdash; Unternehmen mit regelm&auml;&szlig;igem Verpackungsbedarf.</div>
                     </div>
                     <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px;">
-                        <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.6;"><strong style="color:var(--text);">Potenzial:</strong> Regelm&auml;&szlig;ige Bestellungen, kalkulierbarer Umsatz pro Kunde, Cross-Selling-M&ouml;glichkeiten.</div>
+                        <div style="font-size:0.68rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Segment C</div>
+                        <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:4px;">E-Commerce</div>
+                        <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.6;">Versandverpackungen f&uuml;r Online-H&auml;ndler &mdash; wachsendes Segment mit hohem Volumen.</div>
+                    </div>
+                    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px;">
+                        <div style="font-size:0.68rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Segment D</div>
+                        <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:4px;">Elektronik &amp; Pharma</div>
+                        <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.6;">Schaumstoff-Schutzverpackungen &mdash; spezialisiertes Segment mit h&ouml;heren Margen.</div>
                     </div>
                 </div>
             </div>
@@ -1149,20 +1356,24 @@
                 <div style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:28px;">3. Kan&auml;le</div>
                 <div style="margin-bottom:32px;">
                     <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:6px;">Cold Email (Hauptkanal)</div>
-                    <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;">Bis zu 10.000 personalisierte E-Mails pro Monat an verifizierte Entscheider. Eigene Sending-Infrastruktur, SPF/DKIM/DMARC, laufendes Deliverability-Monitoring. Ihre Hauptdomain wird nie ber&uuml;hrt.</div>
+                    <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;">10.000 E-Mails/Monat, KI-personalisiert pro Empf&auml;nger. Eigene Infrastruktur, Warm-up, SPF/DKIM/DMARC, laufendes Deliverability-Monitoring.</div>
                 </div>
                 <div style="margin-bottom:32px;">
-                    <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:6px;">LinkedIn (Sekund&auml;rkanal)</div>
-                    <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;">Multi-Touch-Ansatz: E-Mail + LinkedIn-Touchpoint erh&ouml;ht die Reply-Rate signifikant. Einkaufsleiter und Gesch&auml;ftsf&uuml;hrer sind auf LinkedIn aktiv.</div>
+                    <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:6px;">LinkedIn (erg&auml;nzend f&uuml;r High-Value Accounts)</div>
+                    <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;">Multi-Touch-Ansatz: E-Mail + LinkedIn-Touchpoint erh&ouml;ht Reply-Rate signifikant bei Entscheidern in gr&ouml;&szlig;eren Unternehmen.</div>
+                </div>
+                <div style="margin-bottom:32px;">
+                    <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:6px;">Telefon (nur bei warmen Leads)</div>
+                    <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;">Kein Kalt-Calling. Nur Follow-Up bei Leads die bereits per E-Mail oder LinkedIn reagiert haben &mdash; h&ouml;chste Conversion-Rate.</div>
                 </div>
             </div>
 
             <div style="width:100%;height:1px;background:var(--border);margin-top:56px;"></div>
 
-            <!-- 4. Ansatz -->
+            <!-- 4. Ansatz pro Segment -->
             <div style="padding:56px 0 0;">
-                <div style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:28px;">4. Personalisierungsansatz</div>
-                <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;margin-bottom:24px;">Jede E-Mail wird &uuml;ber KI personalisiert &mdash; basierend auf Branche, spezifischem Verpackungsbedarf und aktueller Lieferantenstruktur des Empf&auml;ngers. Keine Massen-E-Mails, sondern relevante Nachrichten die einen Mehrwert bieten.</div>
+                <div style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:28px;">4. Ansatz pro Segment</div>
+                <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;margin-bottom:16px;">Personalisierung &uuml;ber Branche + Verpackungsbedarf. Hook: &bdquo;Aktuell 12 &euro; pro Datensatz bei 5% Trefferquote &mdash; wir liefern qualifizierte Anfragen automatisiert.&ldquo; Messaging: Projektarbeit-Sprache (Michael denkt in Projekten).</div>
             </div>
 
             <div style="width:100%;height:1px;background:var(--border);margin-top:56px;"></div>
@@ -1170,41 +1381,34 @@
             <!-- 5. Daten & Tools -->
             <div style="padding:56px 0 0;">
                 <div style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:28px;">5. Daten &amp; Tools</div>
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px;">
-                    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px;">
-                        <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.6;"><strong style="color:var(--text);">75+ Datenquellen:</strong> Clay, Apollo, LinkedIn Sales Navigator, Firmendatenbanken &mdash; f&uuml;r maximale Abdeckung im DACH-Markt.</div>
-                    </div>
-                    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px;">
-                        <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.6;"><strong style="color:var(--text);">Instantly + RevyOps:</strong> Kampagnen-Management, A/B-Testing, Deliverability-Monitoring &mdash; alles in einem System.</div>
-                    </div>
-                </div>
+                <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;margin-bottom:16px;">75+ Datenquellen, ICP-basiertes Scoring A&ndash;D, Blockliste f&uuml;r Bestandskunden (Domain-Abgleich), w&ouml;chentliche Justierung der Zielgruppe.</div>
             </div>
 
             <div style="width:100%;height:1px;background:var(--border);margin-top:56px;"></div>
 
             <!-- 6. Priorisierung -->
             <div style="padding:56px 0 0;">
-                <div style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:28px;">6. Priorisierung &mdash; Die ersten 3 Monate</div>
+                <div style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:28px;">6. Priorisierung</div>
                 <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:28px;">
                     <div style="display:flex;gap:16px;align-items:flex-start;">
                         <div style="flex-shrink:0;width:32px;height:32px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;color:white;">1</div>
                         <div>
-                            <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:4px;">Hersteller &amp; Produzenten (h&ouml;chstes Potenzial)</div>
-                            <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;">Gr&ouml;&szlig;tes Segment im DACH-Markt, h&ouml;chste Auftragswerte, langfristige Gesch&auml;ftsbeziehungen. Hier starten wir zuerst.</div>
+                            <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:4px;">Fertigung/Industrie DACH</div>
+                            <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;">Gr&ouml;&szlig;tes Segment, schnellste Wins. Hier liegt der Kern des elitec-Portfolios.</div>
                         </div>
                     </div>
                     <div style="display:flex;gap:16px;align-items:flex-start;">
                         <div style="flex-shrink:0;width:32px;height:32px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;color:white;">2</div>
                         <div>
-                            <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:4px;">Lebensmittel &amp; Gastro</div>
-                            <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;">Parallel ab Monat 2, wenn die erste Kampagne optimiert l&auml;uft. Hoher Spezialisierungsbedarf = starke Positionierung f&uuml;r elitec.</div>
+                            <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:4px;">Food &amp; Gastro</div>
+                            <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;">Zweites Segment ab Monat 2 &mdash; regelm&auml;&szlig;iger Bedarf, k&uuml;rzere Entscheidungswege.</div>
                         </div>
                     </div>
                     <div style="display:flex;gap:16px;align-items:flex-start;">
                         <div style="flex-shrink:0;width:32px;height:32px;background:rgba(79,125,249,0.3);border:1px solid var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;color:var(--accent);">3</div>
                         <div>
-                            <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:4px;">Bestandskunden-Reaktivierung</div>
-                            <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;">Neue Kontakt-Enrichment f&uuml;r bestehende Kunden, 4 Kontaktzyklen pro Jahr. Erh&ouml;ht den Umsatz pro Bestandskunde ohne zus&auml;tzliche Akquise-Kosten.</div>
+                            <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:4px;">E-Commerce / Pharma</div>
+                            <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;">Ab Monat 3+ auf Basis der Learnings aus Phase 1 und 2.</div>
                         </div>
                     </div>
                 </div>
@@ -1215,26 +1419,7 @@
             <!-- 7. Erwartete Ergebnisse -->
             <div style="padding:56px 0 0;">
                 <div style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:28px;">7. Erwartete Ergebnisse</div>
-                <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;">
-                    <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;margin-bottom:16px;">Basierend auf einem adressierbaren Markt von ~16.000 Unternehmen im DACH-Raum:</div>
-                    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
-                        <div style="text-align:center;padding:16px;background:var(--layer-subtle);border-radius:var(--radius-sm);">
-                            <div style="font-size:1.4rem;font-weight:800;color:var(--accent);">60&ndash;90</div>
-                            <div style="font-size:0.78rem;color:var(--text-muted);margin-top:4px;">Qualifizierte Leads</div>
-                            <div style="font-size:0.7rem;color:var(--text-dim);margin-top:2px;">in 3 Kampagnenmonaten</div>
-                        </div>
-                        <div style="text-align:center;padding:16px;background:var(--layer-subtle);border-radius:var(--radius-sm);">
-                            <div style="font-size:1.4rem;font-weight:800;color:var(--accent);">10.000</div>
-                            <div style="font-size:0.78rem;color:var(--text-muted);margin-top:4px;">E-Mails/Monat</div>
-                            <div style="font-size:0.7rem;color:var(--text-dim);margin-top:2px;">personalisiert &amp; verifiziert</div>
-                        </div>
-                        <div style="text-align:center;padding:16px;background:var(--layer-subtle);border-radius:var(--radius-sm);">
-                            <div style="font-size:1.4rem;font-weight:800;color:var(--accent);">3</div>
-                            <div style="font-size:0.78rem;color:var(--text-muted);margin-top:4px;">Kampagnen-Cluster</div>
-                            <div style="font-size:0.7rem;color:var(--text-dim);margin-top:2px;">parallel optimiert</div>
-                        </div>
-                    </div>
-                </div>
+                <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;">60&ndash;100 qualifizierte Leads in den ersten 3 Kampagnenmonaten. Bei 4 Vertrieblern: deutliche Entlastung der Recherche-Zeit, mehr Fokus auf Verkauf.</div>
             </div>
 
             <div style="padding:48px 0 0;text-align:center;border-top:1px solid var(--border);margin-top:56px;">
@@ -1254,135 +1439,149 @@
             <h2>Von der Entscheidung zu den ersten Leads</h2>
             <p class="lead">Ein gemeinsamer Plan &mdash; damit auf beiden Seiten klar ist, was als n&auml;chstes passiert und wer was &uuml;bernimmt.</p>
 
-            <div class="map-intro" style="background:rgba(79,125,249,0.07);border:1px solid var(--border-accent);border-radius:var(--radius);padding:20px 24px;margin-bottom:28px;">
-                <p style="font-size:0.87rem;color:var(--blue-text);line-height:1.7;">Dieser Aktionsplan zeigt den Weg von heute bis zu den ersten qualifizierten Leads in Ihrem Postfach. Jeder Schritt hat einen klaren Verantwortlichen &mdash; bei Grundwerk und bei elitec AG.</p>
+            <div class="map-intro">
+                <p>Dieser Aktionsplan zeigt den Weg von heute bis zu den ersten qualifizierten Leads im Postfach des Vertriebsteams. Michael kann diesen Plan direkt mit Stefan gemeinsam durchgehen.</p>
             </div>
 
-            <div class="map-phases" style="display:flex;flex-direction:column;gap:14px;">
+            <div class="map-phases">
 
-                <!-- Phase 1: Erstgespraech & Analyse — DONE -->
-                <div class="map-phase" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;">
-                    <div class="map-phase-header" style="display:flex;align-items:center;gap:14px;padding:14px 20px;background:var(--layer-subtle);border-bottom:1px solid var(--border);">
-                        <div class="map-phase-num" style="width:28px;height:28px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:0.74rem;font-weight:800;flex-shrink:0;">1</div>
-                        <div class="map-phase-title" style="font-size:0.9rem;font-weight:700;flex:1;color:var(--text);">Erstgespr&auml;ch &amp; Analyse</div>
-                        <div class="map-phase-date" style="font-size:0.74rem;color:var(--green);white-space:nowrap;font-weight:600;">Erledigt</div>
+                <!-- Phase 1 -->
+                <div class="map-phase">
+                    <div class="map-phase-header">
+                        <div class="map-phase-num">1</div>
+                        <div class="map-phase-title">Erstgespr&auml;ch &amp; Analyse &#10003;</div>
+                        <div class="map-phase-date">erledigt</div>
                     </div>
-                    <ul class="map-tasks" style="list-style:none;padding:14px 20px;display:flex;flex-direction:column;gap:11px;">
-                        <li class="map-task" style="display:flex;align-items:flex-start;gap:12px;">
-                            <div class="map-checkbox checked" style="width:18px;height:18px;border:2px solid var(--green);border-radius:4px;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;background:var(--green);color:white;font-size:0.65rem;font-weight:800;">&#10003;</div>
-                            <div class="map-task-text" style="flex:1;">
-                                <div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">Erstgespr&auml;ch am 09.03.2026</div>
-                                <div class="map-task-owner" style="font-size:0.74rem;color:var(--text-muted);margin-top:2px;"><strong style="color:var(--green);font-weight:600;">Grundwerk + elitec AG</strong> &middot; Kennenlernen, Anforderungen, DSGVO-Kl&auml;rung</div>
+                    <ul class="map-tasks">
+                        <li class="map-task">
+                            <div class="map-checkbox checked" onclick="toggleCheck(this)">&#10003;</div>
+                            <div class="map-task-text">
+                                <div class="map-task-title">Erstgespr&auml;ch am 16.02.2026 &mdash; Michael Matiz &amp; Tom Soto Schiller</div>
+                                <div class="map-task-owner"><strong>Grundwerk + elitec</strong></div>
                             </div>
                         </li>
-                        <li class="map-task" style="display:flex;align-items:flex-start;gap:12px;">
-                            <div class="map-checkbox checked" style="width:18px;height:18px;border:2px solid var(--green);border-radius:4px;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;background:var(--green);color:white;font-size:0.65rem;font-weight:800;">&#10003;</div>
-                            <div class="map-task-text" style="flex:1;">
-                                <div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">Follow-up &amp; Angebot versendet</div>
-                                <div class="map-task-owner" style="font-size:0.74rem;color:var(--text-muted);margin-top:2px;"><strong style="color:var(--green);font-weight:600;">Grundwerk</strong> &middot; Individuelles Angebot erstellt</div>
+                        <li class="map-task">
+                            <div class="map-checkbox checked" onclick="toggleCheck(this)">&#10003;</div>
+                            <div class="map-task-text">
+                                <div class="map-task-title">R&uuml;ckfragen-Meeting am 09.03.2026 &mdash; Michael, Stefan &amp; Tom</div>
+                                <div class="map-task-owner"><strong>Grundwerk + elitec</strong></div>
+                            </div>
+                        </li>
+                        <li class="map-task">
+                            <div class="map-checkbox checked" onclick="toggleCheck(this)">&#10003;</div>
+                            <div class="map-task-text">
+                                <div class="map-task-title">Sales Room erstellt und verschickt</div>
+                                <div class="map-task-owner"><strong>Grundwerk</strong></div>
                             </div>
                         </li>
                     </ul>
                 </div>
 
-                <!-- Phase 2: Finales Gespräch & Entscheidung — OPEN -->
-                <div class="map-phase" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;">
-                    <div class="map-phase-header" style="display:flex;align-items:center;gap:14px;padding:14px 20px;background:var(--layer-subtle);border-bottom:1px solid var(--border);">
-                        <div class="map-phase-num" style="width:28px;height:28px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:0.74rem;font-weight:800;flex-shrink:0;">2</div>
-                        <div class="map-phase-title" style="font-size:0.9rem;font-weight:700;flex:1;color:var(--text);">Finales Gespr&auml;ch &amp; Entscheidung</div>
-                        <div class="map-phase-date" style="font-size:0.74rem;color:var(--text-dim);white-space:nowrap;">Woche 1</div>
+                <!-- Phase 2 -->
+                <div class="map-phase">
+                    <div class="map-phase-header">
+                        <div class="map-phase-num">2</div>
+                        <div class="map-phase-title">Entscheidung &amp; Vertragsabschluss</div>
+                        <div class="map-phase-date">diese Woche</div>
                     </div>
-                    <ul class="map-tasks" style="list-style:none;padding:14px 20px;display:flex;flex-direction:column;gap:11px;">
-                        <li class="map-task" style="display:flex;align-items:flex-start;gap:12px;">
-                            <div class="map-checkbox" onclick="toggleCheck(this)" style="width:18px;height:18px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;"></div>
-                            <div class="map-task-text" style="flex:1;">
-                                <div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">Schriftliche Vereinbarung</div>
-                                <div class="map-task-owner" style="font-size:0.74rem;color:var(--text-muted);margin-top:2px;"><strong style="color:var(--accent);font-weight:600;">Herr Matiz + Grundwerk</strong> &middot; Vereinbarung + AVV digital unterzeichnen</div>
+                    <ul class="map-tasks">
+                        <li class="map-task">
+                            <div class="map-checkbox" onclick="toggleCheck(this)"></div>
+                            <div class="map-task-text">
+                                <div class="map-task-title">Interne Abstimmung bei elitec (16.03.2026)</div>
+                                <div class="map-task-owner"><strong>elitec AG</strong></div>
                             </div>
                         </li>
-                        <li class="map-task" style="display:flex;align-items:flex-start;gap:12px;">
-                            <div class="map-checkbox" onclick="toggleCheck(this)" style="width:18px;height:18px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;"></div>
-                            <div class="map-task-text" style="flex:1;">
-                                <div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">30-Min. Onboarding-Call</div>
-                                <div class="map-task-owner" style="font-size:0.74rem;color:var(--text-muted);margin-top:2px;"><strong style="color:var(--accent);font-weight:600;">Herr Matiz + Tom</strong> &middot; Zug&auml;nge, Kalender, Kommunikation</div>
+                        <li class="map-task">
+                            <div class="map-checkbox" onclick="toggleCheck(this)"></div>
+                            <div class="map-task-text">
+                                <div class="map-task-title">Vertragsunterzeichnung</div>
+                                <div class="map-task-owner"><strong>Grundwerk + elitec</strong></div>
                             </div>
                         </li>
-                        <li class="map-task" style="display:flex;align-items:flex-start;gap:12px;">
-                            <div class="map-checkbox" onclick="toggleCheck(this)" style="width:18px;height:18px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;"></div>
-                            <div class="map-task-text" style="flex:1;">
-                                <div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">1h KickOff-Workshop</div>
-                                <div class="map-task-owner" style="font-size:0.74rem;color:var(--text-muted);margin-top:2px;"><strong style="color:var(--accent);font-weight:600;">Herr Matiz + Tom</strong> &middot; ICP, Zielmarkt, Messaging, Bestandskunden-Daten</div>
+                        <li class="map-task">
+                            <div class="map-checkbox" onclick="toggleCheck(this)"></div>
+                            <div class="map-task-text">
+                                <div class="map-task-title">AVV &amp; Datenschutz-Dokumentation</div>
+                                <div class="map-task-owner"><strong>Grundwerk</strong></div>
                             </div>
                         </li>
                     </ul>
                 </div>
 
-                <!-- Phase 3: Setup & Launch — OPEN -->
-                <div class="map-phase" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;">
-                    <div class="map-phase-header" style="display:flex;align-items:center;gap:14px;padding:14px 20px;background:var(--layer-subtle);border-bottom:1px solid var(--border);">
-                        <div class="map-phase-num" style="width:28px;height:28px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:0.74rem;font-weight:800;flex-shrink:0;">3</div>
-                        <div class="map-phase-title" style="font-size:0.9rem;font-weight:700;flex:1;color:var(--text);">Setup &amp; Launch</div>
-                        <div class="map-phase-date" style="font-size:0.74rem;color:var(--text-dim);white-space:nowrap;">Woche 1&ndash;5</div>
+                <!-- Phase 3 -->
+                <div class="map-phase">
+                    <div class="map-phase-header">
+                        <div class="map-phase-num">3</div>
+                        <div class="map-phase-title">KickOff &amp; Setup</div>
+                        <div class="map-phase-date">Woche 1&ndash;4</div>
                     </div>
-                    <ul class="map-tasks" style="list-style:none;padding:14px 20px;display:flex;flex-direction:column;gap:11px;">
-                        <li class="map-task" style="display:flex;align-items:flex-start;gap:12px;">
-                            <div class="map-checkbox" onclick="toggleCheck(this)" style="width:18px;height:18px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;"></div>
-                            <div class="map-task-text" style="flex:1;">
-                                <div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">Technische Infrastruktur aufsetzen</div>
-                                <div class="map-task-owner" style="font-size:0.74rem;color:var(--text-muted);margin-top:2px;"><strong style="color:var(--accent);font-weight:600;">Grundwerk</strong> &middot; Domains, Inboxen, Warmup, SPF/DKIM/DMARC</div>
+                    <ul class="map-tasks">
+                        <li class="map-task">
+                            <div class="map-checkbox" onclick="toggleCheck(this)"></div>
+                            <div class="map-task-text">
+                                <div class="map-task-title">KickOff-Workshop (1h) &mdash; Michael + Vertriebsteam + Tom Morawe</div>
+                                <div class="map-task-owner"><strong>Grundwerk + elitec</strong></div>
                             </div>
                         </li>
-                        <li class="map-task" style="display:flex;align-items:flex-start;gap:12px;">
-                            <div class="map-checkbox" onclick="toggleCheck(this)" style="width:18px;height:18px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;"></div>
-                            <div class="map-task-text" style="flex:1;">
-                                <div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">Lead-Listen &amp; ICP-Daten aufbauen</div>
-                                <div class="map-task-owner" style="font-size:0.74rem;color:var(--text-muted);margin-top:2px;"><strong style="color:var(--accent);font-weight:600;">Grundwerk</strong> &middot; Research aus 75+ Datenquellen</div>
+                        <li class="map-task">
+                            <div class="map-checkbox" onclick="toggleCheck(this)"></div>
+                            <div class="map-task-text">
+                                <div class="map-task-title">ICP-Definition &amp; Zielmarkt-Mapping</div>
+                                <div class="map-task-owner"><strong>Grundwerk</strong></div>
                             </div>
                         </li>
-                        <li class="map-task" style="display:flex;align-items:flex-start;gap:12px;">
-                            <div class="map-checkbox" onclick="toggleCheck(this)" style="width:18px;height:18px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;"></div>
-                            <div class="map-task-text" style="flex:1;">
-                                <div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">Copywriting &amp; Kampagnen-Freigabe</div>
-                                <div class="map-task-owner" style="font-size:0.74rem;color:var(--text-muted);margin-top:2px;"><strong style="color:var(--accent);font-weight:600;">Grundwerk &rarr; Herr Matiz</strong> &middot; Feedback auf Entw&uuml;rfe (~30 Min.)</div>
+                        <li class="map-task">
+                            <div class="map-checkbox" onclick="toggleCheck(this)"></div>
+                            <div class="map-task-text">
+                                <div class="map-task-title">Domain- &amp; Inbox-Setup, Deliverability</div>
+                                <div class="map-task-owner"><strong>Grundwerk</strong></div>
                             </div>
                         </li>
-                        <li class="map-task" style="display:flex;align-items:flex-start;gap:12px;">
-                            <div class="map-checkbox" onclick="toggleCheck(this)" style="width:18px;height:18px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;"></div>
-                            <div class="map-task-text" style="flex:1;">
-                                <div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">Kampagnenstart (~Woche 5)</div>
-                                <div class="map-task-owner" style="font-size:0.74rem;color:var(--text-muted);margin-top:2px;"><strong style="color:var(--accent);font-weight:600;">Grundwerk</strong> &middot; 3+ Kampagnen, segmentiert nach ICP-Clustern</div>
+                        <li class="map-task">
+                            <div class="map-checkbox" onclick="toggleCheck(this)"></div>
+                            <div class="map-task-text">
+                                <div class="map-task-title">Lead-Listen f&uuml;r Segment 1 (Fertigung/Industrie)</div>
+                                <div class="map-task-owner"><strong>Grundwerk</strong></div>
                             </div>
                         </li>
                     </ul>
                 </div>
 
-                <!-- Phase 4: Scale & Pipeline — OPEN -->
-                <div class="map-phase" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;">
-                    <div class="map-phase-header" style="display:flex;align-items:center;gap:14px;padding:14px 20px;background:var(--layer-subtle);border-bottom:1px solid var(--border);">
-                        <div class="map-phase-num" style="width:28px;height:28px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:0.74rem;font-weight:800;flex-shrink:0;">4</div>
-                        <div class="map-phase-title" style="font-size:0.9rem;font-weight:700;flex:1;color:var(--text);">Scale &amp; Pipeline</div>
-                        <div class="map-phase-date" style="font-size:0.74rem;color:var(--text-dim);white-space:nowrap;">Monat 2&ndash;4+</div>
+                <!-- Phase 4 -->
+                <div class="map-phase">
+                    <div class="map-phase-header">
+                        <div class="map-phase-num">4</div>
+                        <div class="map-phase-title">Kampagnen-Start &amp; erste Leads</div>
+                        <div class="map-phase-date">Woche 5&ndash;8</div>
                     </div>
-                    <ul class="map-tasks" style="list-style:none;padding:14px 20px;display:flex;flex-direction:column;gap:11px;">
-                        <li class="map-task" style="display:flex;align-items:flex-start;gap:12px;">
-                            <div class="map-checkbox" onclick="toggleCheck(this)" style="width:18px;height:18px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;"></div>
-                            <div class="map-task-text" style="flex:1;">
-                                <div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">Volumen &amp; Segmente skalieren</div>
-                                <div class="map-task-owner" style="font-size:0.74rem;color:var(--text-muted);margin-top:2px;"><strong style="color:var(--accent);font-weight:600;">Grundwerk</strong> &middot; Lebensmittel &amp; Gastro-Kampagnen starten</div>
+                    <ul class="map-tasks">
+                        <li class="map-task">
+                            <div class="map-checkbox" onclick="toggleCheck(this)"></div>
+                            <div class="map-task-text">
+                                <div class="map-task-title">Kampagnen-Launch: 3+ Segmente parallel</div>
+                                <div class="map-task-owner"><strong>Grundwerk</strong></div>
                             </div>
                         </li>
-                        <li class="map-task" style="display:flex;align-items:flex-start;gap:12px;">
-                            <div class="map-checkbox" onclick="toggleCheck(this)" style="width:18px;height:18px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;"></div>
-                            <div class="map-task-text" style="flex:1;">
-                                <div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">Planbare Pipeline etabliert</div>
-                                <div class="map-task-owner" style="font-size:0.74rem;color:var(--text-muted);margin-top:2px;"><strong style="color:var(--accent);font-weight:600;">Gemeinsam</strong> &middot; 60&ndash;90 qualifizierte Leads in 3 Kampagnenmonaten</div>
+                        <li class="map-task">
+                            <div class="map-checkbox" onclick="toggleCheck(this)"></div>
+                            <div class="map-task-text">
+                                <div class="map-task-title">Erste qualifizierte Replies</div>
+                                <div class="map-task-owner"><strong>Grundwerk &rarr; elitec</strong></div>
                             </div>
                         </li>
-                        <li class="map-task" style="display:flex;align-items:flex-start;gap:12px;">
-                            <div class="map-checkbox" onclick="toggleCheck(this)" style="width:18px;height:18px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;"></div>
-                            <div class="map-task-text" style="flex:1;">
-                                <div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">W&ouml;chentliche 30-Min. Reporting-Calls</div>
-                                <div class="map-task-owner" style="font-size:0.74rem;color:var(--text-muted);margin-top:2px;"><strong style="color:var(--accent);font-weight:600;">Herr Matiz + Tom</strong> &middot; Daten, Optimierungen, n&auml;chste Schritte</div>
+                        <li class="map-task">
+                            <div class="map-checkbox" onclick="toggleCheck(this)"></div>
+                            <div class="map-task-text">
+                                <div class="map-task-title">W&ouml;chentliche 30-Min Reporting Calls</div>
+                                <div class="map-task-owner"><strong>Michael + Grundwerk</strong></div>
+                            </div>
+                        </li>
+                        <li class="map-task">
+                            <div class="map-checkbox" onclick="toggleCheck(this)"></div>
+                            <div class="map-task-text">
+                                <div class="map-task-title">Justierung &amp; Optimierung</div>
+                                <div class="map-task-owner"><strong>Grundwerk</strong></div>
                             </div>
                         </li>
                     </ul>
@@ -1398,12 +1597,12 @@
     <div class="panel-inner">
         <div class="container">
 
-            <div class="cta-header" style="text-align:center;margin-bottom:36px;">
+            <div class="cta-header">
                 <span class="section-label">N&auml;chster Schritt</span>
-                <h2 style="max-width:520px;margin:0 auto 10px;">Bereit f&uuml;r ein 30-min&uuml;tiges Gespr&auml;ch?</h2>
-                <p class="lead" style="margin:0 auto;text-align:center;">
-                    Mit Tom Soto Schiller &mdash; kein Verkaufsdruck.<br>
-                    Wenn es kein Fit ist, sagen wir es Ihnen.
+                <h2>Bereit f&uuml;r ein 30-min&uuml;tiges Gespr&auml;ch?</h2>
+                <p class="lead">
+                    Mit Tom &mdash; gemeinsam mit Stefan, wenn du m&ouml;chtest.<br>
+                    Kein Verkaufsdruck: wenn es kein Fit ist, sagen wir es dir.
                 </p>
             </div>
 
@@ -1415,59 +1614,48 @@
             </div>
 
             <p class="cta-direct" style="text-align:center;font-size:0.82rem;color:var(--text-dim);line-height:1.9;margin-bottom:48px;">
-                Direkt erreichbar: <strong style="color:var(--text-muted);">tom.schiller@grundwerk.digital</strong> &middot; <strong style="color:var(--text-muted);">+49 155 6633 1147</strong><br>
-                Oder per <a href="https://wa.me/4915566331147" target="_blank" style="color:var(--accent);text-decoration:none;">WhatsApp</a>.
+                Direkt erreichbar: <strong style="color:var(--text-muted);">tom.schiller@grundwerk.digital</strong><br>
+                Stefan ist bei einem gemeinsamen Termin gerne dabei.
             </p>
 
             <div style="max-width:700px; margin:0 auto;">
                 <span class="section-label" style="margin-bottom:16px; display:block;">H&auml;ufige Fragen</span>
                 <div class="faq-list" style="display:flex;flex-direction:column;gap:8px;">
-
-                    <!-- FAQ 1: DSGVO -->
                     <div class="faq-item" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;">
                         <button class="faq-q" onclick="toggleFaq(this)" style="width:100%;background:none;border:none;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;text-align:left;font-family:inherit;">
-                            <span class="faq-q-text" style="font-size:0.87rem;font-weight:600;color:var(--text);">&bdquo;Ist Cold Email &uuml;berhaupt DSGVO-konform?&ldquo;</span>
+                            <span class="faq-q-text" style="font-size:0.87rem;font-weight:600;color:var(--text);">&bdquo;Ist Cold Email B2B datenschutzkonform?&ldquo;</span>
                             <span class="faq-icon" style="font-size:1.1rem;color:var(--text-dim);flex-shrink:0;margin-left:14px;">+</span>
                         </button>
-                        <div class="faq-a" style="display:none;padding:0 22px 18px;font-size:0.84rem;color:var(--text-muted);line-height:1.7;">Ja. B2B Cold Email ist unter &bdquo;berechtigtes Interesse&ldquo; (Art. 6 Abs. 1 lit. f DSGVO) zul&auml;ssig &mdash; wenn die Bedingungen stimmen: Nur gesch&auml;ftliche E-Mail-Adressen, ein klarer Opt-out in jeder E-Mail, und eine nachvollziehbare Interessenabw&auml;gung. Wir versenden ausschlie&szlig;lich an B2B-Kontakte, nie an Privatpersonen. Ein Auftragsverarbeitungsvertrag (AVV) ist im Paket enthalten und regelt alle datenschutzrechtlichen Pflichten verbindlich. <strong style="color:var(--text);">Wichtig: Wir sagen niemals &bdquo;100% legal&ldquo;</strong> &mdash; aber die Rechtslage ist klar und wird von tausenden B2B-Unternehmen t&auml;glich genutzt.</div>
+                        <div class="faq-a" style="display:none;padding:0 22px 18px;font-size:0.84rem;color:var(--text-muted);line-height:1.7;">Ja. B2B-Kommunikation an gesch&auml;ftliche E-Mail-Adressen ist unter Art. 6 Abs. 1 lit. f DSGVO (&bdquo;berechtigtes Interesse&ldquo;) zul&auml;ssig. Wir kontaktieren ausschlie&szlig;lich berufliche Adressen, nie private. Jede E-Mail enth&auml;lt einen funktionierenden Opt-Out-Link.</div>
                     </div>
-
-                    <!-- FAQ 2: Beschwerde -->
                     <div class="faq-item" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;">
                         <button class="faq-q" onclick="toggleFaq(this)" style="width:100%;background:none;border:none;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;text-align:left;font-family:inherit;">
-                            <span class="faq-q-text" style="font-size:0.87rem;font-weight:600;color:var(--text);">&bdquo;Was passiert wenn sich jemand beschwert?&ldquo;</span>
+                            <span class="faq-q-text" style="font-size:0.87rem;font-weight:600;color:var(--text);">&bdquo;Was passiert, wenn jemand sich beschwert?&ldquo;</span>
                             <span class="faq-icon" style="font-size:1.1rem;color:var(--text-dim);flex-shrink:0;margin-left:14px;">+</span>
                         </button>
-                        <div class="faq-a" style="display:none;padding:0 22px 18px;font-size:0.84rem;color:var(--text-muted);line-height:1.7;">Jede E-Mail enth&auml;lt einen funktionierenden Opt-out-Link. Bei einer Beschwerde wird der Kontakt <strong style="color:var(--text);">sofort und dauerhaft</strong> auf die Blocklist gesetzt &mdash; keine weitere Kontaktaufnahme. Das ist automatisiert und l&auml;uft ohne manuellen Aufwand. Der AVV regelt zus&auml;tzlich die L&ouml;schpflichten und Meldewege.</div>
+                        <div class="faq-a" style="display:none;padding:0 22px 18px;font-size:0.84rem;color:var(--text-muted);line-height:1.7;">Automatischer sofortiger Opt-Out &mdash; kein weiterer Kontakt. Wir &uuml;bernehmen die komplette Bearbeitung. In &uuml;ber 50 Projekten und 10 Mio.+ versendeten E-Mails hatten wir keinerlei rechtliche Konsequenzen. Der Fall auf LinkedIn (Daniel Abt) betraf eine andere Art der Datenverarbeitung als das, was wir machen.</div>
                     </div>
-
-                    <!-- FAQ 3: Domain-Schutz -->
                     <div class="faq-item" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;">
                         <button class="faq-q" onclick="toggleFaq(this)" style="width:100%;background:none;border:none;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;text-align:left;font-family:inherit;">
-                            <span class="faq-q-text" style="font-size:0.87rem;font-weight:600;color:var(--text);">&bdquo;Wie sch&uuml;tzt ihr unsere Domain?&ldquo;</span>
+                            <span class="faq-q-text" style="font-size:0.87rem;font-weight:600;color:var(--text);">&bdquo;K&ouml;nnen unsere Kundendaten missbraucht werden?&ldquo;</span>
                             <span class="faq-icon" style="font-size:1.1rem;color:var(--text-dim);flex-shrink:0;margin-left:14px;">+</span>
                         </button>
-                        <div class="faq-a" style="display:none;padding:0 22px 18px;font-size:0.84rem;color:var(--text-muted);line-height:1.7;">Wir bauen eine <strong style="color:var(--text);">komplett separate Sending-Infrastruktur</strong> mit eigenen Domains und Inboxen. Ihre Hauptdomain (elitecag.com / elitecag.li) wird nie f&uuml;r den Versand genutzt. Alle Sending-Domains haben eigene SPF/DKIM/DMARC-Eintr&auml;ge und durchlaufen einen professionellen Warm-up-Prozess. Ergebnis: Ihre bestehende E-Mail-Kommunikation wird zu keinem Zeitpunkt beeintr&auml;chtigt.</div>
+                        <div class="faq-a" style="display:none;padding:0 22px 18px;font-size:0.84rem;color:var(--text-muted);line-height:1.7;">Nein. Wir arbeiten mit einer klaren AVV (Auftragsverarbeitungsvertrag). Eure Bestandskunden werden &uuml;ber Domain-Abgleich automatisch von der Blockliste ausgeschlossen &mdash; die werden nie kontaktiert. Wir haben keinen Zugriff auf eure CRM-Daten, nur auf die Blockliste.</div>
                     </div>
-
-                    <!-- FAQ 4: Interner Aufwand -->
                     <div class="faq-item" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;">
                         <button class="faq-q" onclick="toggleFaq(this)" style="width:100%;background:none;border:none;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;text-align:left;font-family:inherit;">
-                            <span class="faq-q-text" style="font-size:0.87rem;font-weight:600;color:var(--text);">&bdquo;Wie viel Aufwand entsteht intern?&ldquo;</span>
+                            <span class="faq-q-text" style="font-size:0.87rem;font-weight:600;color:var(--text);">&bdquo;Wird unsere Haupt-Domain beeintr&auml;chtigt?&ldquo;</span>
                             <span class="faq-icon" style="font-size:1.1rem;color:var(--text-dim);flex-shrink:0;margin-left:14px;">+</span>
                         </button>
-                        <div class="faq-a" style="display:none;padding:0 22px 18px;font-size:0.84rem;color:var(--text-muted);line-height:1.7;">Minimal. Der KickOff-Workshop dauert 1 Stunde &mdash; danach &uuml;bernehmen wir die gesamte operative Ausf&uuml;hrung: Daten, Kampagnen, Optimierung, Reporting. Sie nehmen einmal pro Woche an einem <strong style="color:var(--text);">30-Minuten-Update</strong> teil. Mehr braucht es intern nicht. Der Au&szlig;endienst wird nicht belastet &mdash; er erh&auml;lt nur die qualifizierten Leads.</div>
+                        <div class="faq-a" style="display:none;padding:0 22px 18px;font-size:0.84rem;color:var(--text-muted);line-height:1.7;">Nein. Wir bauen eine komplett separate Sending-Infrastruktur auf (eigene Domains, eigene Inboxen). Eure Haupt-Domain elitecag.li/elitecag.com wird nie f&uuml;r Kampagnen verwendet. SPF/DKIM/DMARC sch&uuml;tzen eure bestehende E-Mail-Reputation.</div>
                     </div>
-
-                    <!-- FAQ 5: Zeitraum bis Ergebnisse -->
                     <div class="faq-item" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;">
                         <button class="faq-q" onclick="toggleFaq(this)" style="width:100%;background:none;border:none;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;text-align:left;font-family:inherit;">
-                            <span class="faq-q-text" style="font-size:0.87rem;font-weight:600;color:var(--text);">&bdquo;Wie lange bis erste Ergebnisse?&ldquo;</span>
+                            <span class="faq-q-text" style="font-size:0.87rem;font-weight:600;color:var(--text);">&bdquo;Wie viel internen Aufwand haben wir?&ldquo;</span>
                             <span class="faq-icon" style="font-size:1.1rem;color:var(--text-dim);flex-shrink:0;margin-left:14px;">+</span>
                         </button>
-                        <div class="faq-a" style="display:none;padding:0 22px 18px;font-size:0.84rem;color:var(--text-muted);line-height:1.7;">Monat 1 ist Setup &mdash; Infrastruktur, Daten, Kampagnenarchitektur. <strong style="color:var(--text);">Woche 5: Kampagnenstart.</strong> Woche 6&ndash;8: Erste qualifizierte Leads. Ab Monat 3 ist das System optimiert und l&auml;uft auf Volumen. Wer Ihnen Leads in Woche 1 verspricht, l&uuml;gt.</div>
+                        <div class="faq-a" style="display:none;padding:0 22px 18px;font-size:0.84rem;color:var(--text-muted);line-height:1.7;">Minimal. 1h KickOff-Workshop, dann 30 Minuten pro Woche f&uuml;r Reporting. Alles andere &mdash; Daten, Kampagnen, Optimierung, Lead-Qualifizierung &mdash; &uuml;bernimmt Grundwerk. Michael und das Team bekommen nur die qualifizierten Anfragen zugestellt.</div>
                     </div>
-
                 </div>
             </div>
 
@@ -1488,10 +1676,10 @@
 </footer>
 
 <script>
-    var TABS = ['hello', 'situation', 'system', 'results', 'invest', 'strategy', 'plan', 'booking'];
+    const TABS = ['hello', 'situation', 'system', 'results', 'invest', 'strategy', 'plan', 'booking'];
 
     function switchTab(id) {
-        TABS.forEach(function(t) {
+        TABS.forEach(t => {
             document.getElementById('panel-' + t).classList.remove('active');
             document.querySelector('[data-tab="' + t + '"]').classList.remove('active');
         });
@@ -1501,11 +1689,11 @@
         document.getElementById('pb').style.width = ((TABS.indexOf(id) + 1) / TABS.length * 100) + '%';
 
         if (id === 'situation') {
-            setTimeout(function() {
-                var b1 = document.getElementById('bar1');
-                var b2 = document.getElementById('bar2');
+            setTimeout(() => {
+                const b1 = document.getElementById('bar1');
+                const b2 = document.getElementById('bar2');
                 if (b1) b1.style.width = '100%';
-                if (b2) b2.style.width = '0.4%';
+                if (b2) b2.style.width = '2%';
             }, 180);
         }
     }
@@ -1523,22 +1711,7 @@
             if (icon) icon.style.transform = 'rotate(0deg)';
         }
     }
-
-    function toggleCheck(el) {
-        el.classList.toggle('checked');
-        if (el.classList.contains('checked')) {
-            el.style.background = 'var(--green)';
-            el.style.borderColor = 'var(--green)';
-            el.innerHTML = '\u2713';
-            el.style.color = 'white';
-            el.style.fontSize = '0.65rem';
-            el.style.fontWeight = '800';
-        } else {
-            el.style.background = 'transparent';
-            el.style.borderColor = 'var(--border)';
-            el.innerHTML = '';
-        }
-    }
+    function toggleCheck(el) { el.classList.toggle('checked'); }
 
     document.getElementById('pb').style.width = (1 / TABS.length * 100) + '%';
 
@@ -1547,7 +1720,7 @@
         var isLight = html.getAttribute('data-theme') === 'light';
         var next = isLight ? 'dark' : 'light';
         html.setAttribute('data-theme', next);
-        document.getElementById('theme-btn').innerHTML = next === 'light' ? '\uD83C\uDF19 Dark' : '\u2600\uFE0F Bright';
+        document.getElementById('theme-btn').innerHTML = next === 'light' ? '🌙 Dark' : '☀️ Bright';
         localStorage.setItem('theme', next);
         updateCalendlyTheme(next);
     }
@@ -1564,7 +1737,7 @@
     (function() {
         if (document.documentElement.getAttribute('data-theme') === 'light') {
             var btn = document.getElementById('theme-btn');
-            if (btn) btn.innerHTML = '\uD83C\uDF19 Dark';
+            if (btn) btn.innerHTML = '🌙 Dark';
         }
     })();
 
@@ -1580,7 +1753,6 @@
             });
         });
     });
-
     document.addEventListener('click', function(e) {
         var dd = document.querySelector('.nav-contact-dropdown');
         if (dd && !e.target.closest('.nav-contact')) dd.style.display = 'none';
