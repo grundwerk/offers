@@ -1,10 +1,10 @@
-<!-- GRUNDWERK-OFFER v2 | 2026-03-16 09:00 | Rebuild: Fix Investition-Layout, Ergebnisse 1:1, Wistia-Fallback -->
+<!-- GRUNDWERK-OFFER v3 | 2026-03-16 | Rebuild: 3-Stufen Investition (Template-1:1), Ergebnisse 1:1, Wistia-Fallback, DSGVO-FAQ -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII=" />
-    <meta name="offer-version" content="v2 | 2026-03-16">
+    <meta name="offer-version" content="v3 | 2026-03-16">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>elitec AG &times; Grundwerk Digital &mdash; Sales Room</title>
     <script>
@@ -1230,79 +1230,195 @@
     </div>
 </div>
 
-<!-- TAB 5 — INVESTITION (template structure, custom content) -->
+<!-- TAB 5 — INVESTITION                                -->
+<!-- ═══════════════════════════════════════════════════ -->
 <div class="panel" id="panel-invest">
     <div class="panel-inner">
         <div class="container">
 
             <span class="section-label">Investition</span>
             <h2>Was du investierst &mdash; und welche Ergebnisse du generierst</h2>
-            <p class="lead">Transparenz von Anfang an. Zwei klare Optionen &mdash; abgestimmt auf die Situation bei elitec.</p>
+            <p class="lead">Transparenz von Anfang an. Ein klarer Stufenplan &mdash; vom Einstieg bis zur vollautomatisierten Vertriebsmaschine.</p>
 
-            <div class="pricing-grid">
-                <!-- EINSTEIGER (links) -->
-                <div class="price-card">
-                    <div class="price-name">EINSTEIGER</div>
-                    <div class="price-setup">Setup: <strong>990 &euro;</strong> (einmalig)</div>
-                    <div class="price-monthly">3.000 &euro;</div>
-                    <div class="price-per">pro Monat &middot; mind. 4 Monate</div>
-                    <div class="price-total">Gesamt-Invest (4 Monate): <strong>990 &euro; + 4 &times; 3.000 &euro; = 12.990 &euro;</strong></div>
-                    <ul class="price-features">
-                        <li>1h KickOff-Workshop</li>
-                        <li>ICP-Definition &amp; Zielmarkt-Mapping</li>
-                        <li>Dedizierte Sending-Infrastruktur</li>
-                        <li>SPF/DKIM/DMARC Setup &amp; Warm-Up</li>
-                        <li>Bis zu 10.000 E-Mails/Monat</li>
-                        <li>KI-personalisierte Kampagnen</li>
-                        <li>Lead-Research (75+ Datenquellen)</li>
-                        <li>W&ouml;chentliche 30-Min Reporting Calls</li>
-                        <li>MasterInbox &amp; Grundwerk Web App</li>
-                        <li>AVV &amp; DSGVO-konforme Prozesse</li>
-                    </ul>
+            <!-- ── STUFE 1: INITIALPAKET (4 Monate) ── -->
+            <div style="margin-bottom:32px;">
+                <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+                    <div style="background:var(--accent);color:white;font-weight:800;font-size:0.75rem;padding:4px 12px;border-radius:20px;">STUFE 1</div>
+                    <h3 style="font-size:1.05rem;font-weight:700;">Initialpaket &mdash; Die ersten 4 Monate</h3>
                 </div>
+                <div class="pricing-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:24px;align-items:stretch;grid-auto-rows:minmax(620px,auto);">
+                    <!-- ── STARTER (links, E-Mail) ── -->
+                    <div class="price-card" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:26px 24px;position:relative;">
+                        <div class="price-name" style="font-size:0.75rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">Starter</div>
+                        <div style="font-size:0.78rem;color:var(--accent);font-weight:600;margin-bottom:14px;">E-Mail</div>
+                        <div class="price-setup" style="font-size:0.85rem;color:var(--text-muted);margin-bottom:4px;">zzgl. <strong style="color:var(--text);font-size:0.95rem;">990 &euro;</strong> Setup-Geb&uuml;hr</div>
+                        <div class="price-monthly" style="font-size:2.2rem;font-weight:800;letter-spacing:-0.04em;line-height:1;color:var(--text);">3.000 &euro;</div>
+                        <div class="price-per" style="font-size:0.76rem;color:var(--text-muted);margin-bottom:4px;">pro Monat &middot; 4 Monate Mindestlaufzeit</div>
+                        <div class="price-total" style="font-size:0.8rem;color:var(--text-muted);background:var(--layer-subtle-2);border:1px solid var(--border);padding:7px 12px;border-radius:var(--radius-sm);margin-bottom:16px;">Gesamt: <strong style="color:var(--text);">12.990 &euro;</strong></div>
 
-                <!-- STANDARD (rechts, empfohlen) -->
-                <div class="price-card rec">
-                    <div class="rec-badge">Empfohlen</div>
-                    <div class="price-name">STANDARD</div>
-                    <div class="price-setup">Setup: <strong>1.990 &euro;</strong> (einmalig)</div>
-                    <div class="price-monthly">3.500 &euro;</div>
-                    <div class="price-per">pro Monat &middot; mind. 6 Monate</div>
-                    <div class="price-total">Gesamt-Invest (6 Monate): <strong>1.990 &euro; + 6 &times; 3.500 &euro; = 22.990 &euro;</strong></div>
-                    <ul class="price-features">
-                        <li>Alles aus Einsteiger +</li>
-                        <li>Bis zu 20.000 E-Mails/Monat</li>
-                        <li>LinkedIn Multi-Touch Outreach</li>
-                        <li>Erweiterte Daten-Anreicherung</li>
-                        <li>CRM-Integration (Close CRM)</li>
-                        <li>Sales Tracking &amp; Projections</li>
-                        <li>Dedizierter Account Manager</li>
-                        <li>Exit-Klausel nach 4 Monaten</li>
+                        <!-- Akkordeon: Setup / Coaching -->
+                        <details style="margin-bottom:8px;">
+                            <summary style="cursor:pointer;font-weight:700;font-size:0.82rem;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);list-style:none;display:flex;justify-content:space-between;align-items:center;">Setup / Coaching <span style="font-size:0.7rem;color:var(--text-muted);transition:transform 0.2s;">&#9660;</span></summary>
+                            <ul style="list-style:none;display:flex;flex-direction:column;gap:6px;padding:10px 0 4px;font-size:0.82rem;">
+                                <li>&#10003; 1h Workshop: Strategy KickOff</li>
+                                <li>&#10003; Email-Infrastruktur Setup</li>
+                                <li>&#10003; 10+ Guides inkl. Calendly Setup, Reply Management etc.</li>
+                                <li>&#10003; AVV &amp; DSGVO-konforme Prozesse</li>
+                            </ul>
+                        </details>
+
+                        <!-- Akkordeon: Services -->
+                        <details style="margin-bottom:8px;">
+                            <summary style="cursor:pointer;font-weight:700;font-size:0.82rem;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);list-style:none;display:flex;justify-content:space-between;align-items:center;">Services <span style="font-size:0.7rem;color:var(--text-muted);transition:transform 0.2s;">&#9660;</span></summary>
+                            <ul style="list-style:none;display:flex;flex-direction:column;gap:6px;padding:10px 0 4px;font-size:0.82rem;">
+                                <li>&#10003; Leadlistengenerierung + csv-Export</li>
+                                <li>&#10003; Kampagnenstrategie</li>
+                                <li>&#10003; Email Copywriting</li>
+                                <li>&#10003; Kampagnenmanagement</li>
+                                <li>&#10003; A/B-Tests &amp; Optimierung</li>
+                            </ul>
+                        </details>
+
+                        <!-- Akkordeon: Tech / Data -->
+                        <details style="margin-bottom:8px;">
+                            <summary style="cursor:pointer;font-weight:700;font-size:0.82rem;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);list-style:none;display:flex;justify-content:space-between;align-items:center;">Tech / Data <span style="font-size:0.7rem;color:var(--text-muted);transition:transform 0.2s;">&#9660;</span></summary>
+                            <ul style="list-style:none;display:flex;flex-direction:column;gap:6px;padding:10px 0 4px;font-size:0.82rem;">
+                                <li>&#10003; Alle Datenkosten inklusive</li>
+                                <li>&#10003; Interested Reply Integration</li>
+                                <li>&#10003; C-Level Reporting</li>
+                                <li>&#10003; Grundwerk Web App</li>
+                                <li>&#10003; Internes Setup</li>
+                            </ul>
+                        </details>
+
+                        <!-- Akkordeon: Volumen -->
+                        <details style="margin-bottom:0;">
+                            <summary style="cursor:pointer;font-weight:700;font-size:0.82rem;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);list-style:none;display:flex;justify-content:space-between;align-items:center;">Volumen <span style="font-size:0.7rem;color:var(--text-muted);transition:transform 0.2s;">&#9660;</span></summary>
+                            <ul style="list-style:none;display:flex;flex-direction:column;gap:6px;padding:10px 0 4px;font-size:0.82rem;">
+                                <li>&#10003; Bis zu 10.000 E-Mails pro Monat</li>
+                                <li>&#10003; GEO: DACH (Schwerpunkt CH/LI/AT/DE)</li>
+                            </ul>
+                        </details>
+                    </div>
+
+                    <!-- ── GROWTH (Mitte, E-Mail + LinkedIn, empfohlen) ── -->
+                    <div class="price-card rec" style="background:var(--bg-accent);border:1px solid var(--accent);border-radius:var(--radius);padding:26px 24px;position:relative;">
+                        <div class="rec-badge" style="position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--accent);color:white;font-size:0.7rem;font-weight:700;padding:3px 14px;border-radius:100px;white-space:nowrap;">Empfohlen f&uuml;r elitec AG</div>
+                        <div class="price-name" style="font-size:0.75rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">Growth</div>
+                        <div style="font-size:0.78rem;color:var(--accent);font-weight:600;margin-bottom:14px;">E-Mail + LinkedIn</div>
+                        <div class="price-setup" style="font-size:0.85rem;color:var(--text-muted);margin-bottom:4px;">zzgl. <strong style="color:var(--text);font-size:0.95rem;">1.990 &euro;</strong> Workshop-Geb&uuml;hr</div>
+                        <div class="price-monthly" style="font-size:2.2rem;font-weight:800;letter-spacing:-0.04em;line-height:1;color:var(--text);">3.500 &euro;</div>
+                        <div class="price-per" style="font-size:0.76rem;color:var(--text-muted);margin-bottom:4px;">pro Monat &middot; 4 Monate Mindestlaufzeit</div>
+                        <div class="price-total" style="font-size:0.8rem;color:var(--text-muted);background:var(--layer-subtle-2);border:1px solid var(--border);padding:7px 12px;border-radius:var(--radius-sm);margin-bottom:16px;">Gesamt: <strong style="color:var(--text);">15.990 &euro;</strong></div>
+                        <div style="font-weight:700;font-size:0.82rem;color:var(--text);margin-bottom:10px;">Inhalte</div>
+                        <ul class="price-features" style="list-style:none;display:flex;flex-direction:column;gap:7px;padding:0;font-size:0.85rem;">
+                            <li style="font-weight:900;font-size:0.95rem;color:var(--text);">&#10003; <strong>Alles aus Starter</strong></li>
+                            <li>&#10003; LinkedIn Profil &Uuml;berarbeitung</li>
+                            <li>&#10003; LinkedIn Copywriting</li>
+                            <li>&#10003; LinkedIn Kampagnenmanagement</li>
+                            <li>&#10003; 3 LinkedIn Profile</li>
+                        </ul>
+                    </div>
+
+                    <!-- ── SCALE (rechts, Full Outreach) ── -->
+                    <div class="price-card" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:26px 24px;position:relative;">
+                        <div class="price-name" style="font-size:0.75rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">Scale</div>
+                        <div style="font-size:0.78rem;color:var(--green);font-weight:600;margin-bottom:14px;">Cold-, Warm- &amp; Hot-Outreach</div>
+                        <div class="price-setup" style="font-size:0.85rem;color:var(--text-muted);margin-bottom:4px;">zzgl. <strong style="color:var(--text);font-size:0.95rem;">1.990 &euro;</strong> Workshop-Geb&uuml;hr</div>
+                        <div class="price-monthly" style="font-size:2.2rem;font-weight:800;letter-spacing:-0.04em;line-height:1;color:var(--text);">8.500 &euro;</div>
+                        <div class="price-per" style="font-size:0.76rem;color:var(--text-muted);margin-bottom:4px;">pro Monat &middot; 4 Monate Mindestlaufzeit</div>
+                        <div class="price-total" style="font-size:0.8rem;color:var(--text-muted);background:var(--layer-subtle-2);border:1px solid var(--border);padding:7px 12px;border-radius:var(--radius-sm);margin-bottom:16px;">Gesamt: <strong style="color:var(--text);">35.990 &euro;</strong></div>
+                        <div style="font-weight:700;font-size:0.82rem;color:var(--text);margin-bottom:10px;">Inhalte</div>
+                        <ul class="price-features" style="list-style:none;display:flex;flex-direction:column;gap:7px;padding:0;font-size:0.85rem;">
+                            <li style="font-weight:900;font-size:0.95rem;color:var(--text);">&#10003; <strong>Alles aus Growth</strong></li>
+                            <li>&#10003; Warm Outreach: LinkedIn Retargeting</li>
+                            <li>&#10003; Warm Outreach: Competitor Retargeting</li>
+                            <li>&#10003; Leadscoring</li>
+                            <li>&#10003; Hot Outreach f&uuml;r Tier 1 Leads</li>
+                            <li>&#10003; Monatlicher Strategy Call (60 Min.)</li>
+                            <li>&#10003; &#128142; Diamond Account Priorisierung</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;margin-top:16px;">
+                    <h4 style="font-size:0.9rem;font-weight:700;margin-bottom:10px;">Ziele nach 4 Monaten:</h4>
+                    <ul style="font-size:0.85rem;color:var(--text);line-height:1.8;list-style:none;padding:0;">
+                        <li>&#9989; Technische Infrastruktur aufgebaut &amp; aufgew&auml;rmt</li>
+                        <li>&#9989; ICP definiert, Zielmarkt gemappt, erste Kampagnen live</li>
+                        <li>&#9989; Erste qualifizierte Leads &amp; Meetings in der Pipeline</li>
+                        <li>&#9989; Datenbasierte Entscheidungsgrundlage: Was funktioniert, was nicht</li>
+                        <li>&#9989; Proof of Concept &mdash; Outbound funktioniert f&uuml;r elitec AG</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- ROI Box -->
-            <div class="roi-box">
-                <h3>Erwarteter ROI (konservativ bis optimistisch)</h3>
-                <div class="roi-grid">
-                    <div class="roi-item">
-                        <div class="roi-lbl">Konservativ</div>
-                        <div class="roi-val pos">20.000 &euro;</div>
-                        <div class="roi-sub">60 Leads &rarr; 3% = 2 Neukunden</div>
+            <!-- ── STUFE 2: JAHRESVERTRAG ── -->
+            <div style="margin-bottom:32px;">
+                <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+                    <div style="background:var(--green);color:white;font-weight:800;font-size:0.75rem;padding:4px 12px;border-radius:20px;">STUFE 2</div>
+                    <h3 style="font-size:1.05rem;font-weight:700;">Jahresvertrag &mdash; Skalierung &amp; Optimierung</h3>
+                </div>
+                <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;">
+                    <p style="font-size:0.88rem;color:var(--text);line-height:1.7;margin-bottom:16px;">Nach dem erfolgreichen Initialprojekt verl&auml;ngern wir in einen Jahresvertrag. Der genaue Scope wird basierend auf den Ergebnissen der ersten 4 Monate gemeinsam definiert.</p>
+                    <div class="invest-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+                        <div style="background:var(--layer-subtle);border-radius:var(--radius-sm);padding:16px;">
+                            <div style="font-weight:700;font-size:0.85rem;margin-bottom:8px;color:var(--text);">Im Jahresvertrag:</div>
+                            <ul style="font-size:0.82rem;color:var(--text-muted);line-height:1.8;list-style:none;padding:0;">
+                                <li>&rarr; Volumen-Skalierung (40k+ E-Mails/Monat)</li>
+                                <li>&rarr; CRM-Integration &amp; Pipeline-Automatisierung</li>
+                                <li>&rarr; Multi-Channel: Email + LinkedIn + Warm Outreach</li>
+                                <li>&rarr; Lead Scoring &amp; Priorisierung</li>
+                                <li>&rarr; Dedicated Account Manager</li>
+                            </ul>
+                        </div>
+                        <div style="background:var(--layer-subtle);border-radius:var(--radius-sm);padding:16px;">
+                            <div style="font-weight:700;font-size:0.85rem;margin-bottom:8px;color:var(--text);">Jahresziele:</div>
+                            <ul style="font-size:0.82rem;color:var(--text-muted);line-height:1.8;list-style:none;padding:0;">
+                                <li>&rarr; Planbare, steuerbare Pipeline (50+ Leads/Monat)</li>
+                                <li>&rarr; Outbound als zweitst&auml;rkster Akquise-Kanal</li>
+                                <li>&rarr; Messbar positiver ROI auf das Gesamtjahr</li>
+                                <li>&rarr; Vertriebsteam arbeitet auf voller Kapazit&auml;t</li>
+                                <li>&rarr; 30%+ weniger Recherchezeit pro Vertriebler</li>
+                                <li>&rarr; Datenbank von 5.000+ qualifizierten Kontakten</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="roi-item">
-                        <div class="roi-lbl">Realistisch</div>
-                        <div class="roi-val pos">40.000 &euro;</div>
-                        <div class="roi-sub">80 Leads &rarr; 5% = 4 Neukunden</div>
-                    </div>
-                    <div class="roi-item">
-                        <div class="roi-lbl">Optimistisch</div>
-                        <div class="roi-val pos">80.000 &euro;</div>
-                        <div class="roi-sub">100 Leads &rarr; 8% = 8 Neukunden</div>
+                    <div style="margin-top:16px;padding:14px 16px;background:var(--accent-glow);border:1px solid var(--border-accent);border-radius:var(--radius-sm);">
+                        <div style="font-size:0.82rem;color:var(--text);">
+                            <strong>Verg&uuml;tungsmodell ab Jahresvertrag:</strong> Retainer + Provision auf generierte Abschl&uuml;sse. Das genaue Modell wird nach Abschluss des Initialprojekts gemeinsam verhandelt &mdash; basierend auf den realen Ergebnissen.
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <!-- ── STUFE 3: LANGFRIST-VISION ── -->
+            <div style="margin-bottom:32px;">
+                <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+                    <div style="background:#1a6b3c;color:white;font-weight:800;font-size:0.75rem;padding:4px 12px;border-radius:20px;">&#11088; STUFE 3</div>
+                    <h3 style="font-size:1.05rem;font-weight:700;">Langfristige Vision &mdash; Vollautomatisierter Vertrieb</h3>
+                </div>
+                <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;">
+                    <p style="font-size:0.88rem;color:var(--text);line-height:1.7;margin-bottom:16px;">Das Ziel nach dem Ziel: Eine Vertriebsmaschine, die unabh&auml;ngig von einzelnen Personen funktioniert.</p>
+                    <div class="vision-3col" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+                        <div style="text-align:center;padding:20px 14px;background:var(--layer-subtle);border-radius:var(--radius-sm);">
+                            <div style="font-size:1.4rem;margin-bottom:6px;">&#129302;</div>
+                            <div style="font-weight:700;font-size:0.85rem;color:var(--text);margin-bottom:4px;">Vollautomatisiert</div>
+                            <div style="font-size:0.75rem;color:var(--text-muted);">AI-gest&uuml;tztes Outbound-System l&auml;uft ohne manuellen Aufwand &mdash; Leads kommen automatisch in die Pipeline</div>
+                        </div>
+                        <div style="text-align:center;padding:20px 14px;background:var(--layer-subtle);border-radius:var(--radius-sm);">
+                            <div style="font-size:1.4rem;margin-bottom:6px;">&#128200;</div>
+                            <div style="font-weight:700;font-size:0.85rem;color:var(--text);margin-bottom:4px;">Performance-Maximierung</div>
+                            <div style="font-size:0.75rem;color:var(--text-muted);">Jeder Vertriebler arbeitet auf voller Kapazit&auml;t mit genug Pipeline &mdash; keine Recherche mehr, nur noch Verkauf</div>
+                        </div>
+                        <div style="text-align:center;padding:20px 14px;background:var(--layer-subtle);border-radius:var(--radius-sm);">
+                            <div style="font-size:1.4rem;margin-bottom:6px;">&#127959;&#65039;</div>
+                            <div style="font-weight:700;font-size:0.85rem;color:var(--text);margin-bottom:4px;">Eigene Vertriebsabteilung</div>
+                            <div style="font-size:0.75rem;color:var(--text-muted);">Grundwerk baut das System, elitec AG besitzt es &mdash; mit eigenem Team, eigenen Prozessen und voller Kontrolle</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
         </div>
     </div>
