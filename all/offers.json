@@ -151,5 +151,14 @@
     "secure": "9113086612",
     "icon": "🎪",
     "created": "2026-03-17"
+  },
+  {
+    "slug": "make-a-design",
+    "name": "Make a Design GmbH",
+    "subtitle": "80 Leads Garantie — Sales Room",
+    "type": "sales-room",
+    "secure": "7395841026",
+    "icon": "🎨",
+    "created": "2026-03-17"
   }
 ]
