@@ -1,0 +1,944 @@
+<!-- LinkedIn-Profil-Analyse für Florian von Loebenstein | v1.0 | 2026-03-17 -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII=" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="offer-version" content="1.0">
+    <title>LinkedIn-Profil-Analyse — Florian von Loebenstein | Grundwerk Digital</title>
+    <script>
+        (function(){
+            var code = '7294850163';
+            var params = new URLSearchParams(window.location.search);
+            if(params.get('secure') !== code){
+                document.documentElement.style.display='none';
+                document.title='Zugriff verweigert';
+                window.stop();
+            }
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --card: #111111;
+            --card-2: #161616;
+            --text: #f0f0f0;
+            --muted: #888888;
+            --accent: #4f7df9;
+            --accent-glow: rgba(79,125,249,0.18);
+            --green: #22c55e;
+            --green-glow: rgba(34,197,94,0.15);
+            --red: #ef4444;
+            --red-dim: rgba(239,68,68,0.12);
+            --orange: #f97316;
+            --orange-dim: rgba(249,115,22,0.12);
+            --border: rgba(255,255,255,0.07);
+            --border-accent: rgba(79,125,249,0.35);
+            --radius: 14px;
+            --radius-sm: 8px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 16px;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ─── NAV ─── */
+        nav {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(10,10,10,0.92);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 14px 32px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-brand { display: flex; align-items: center; gap: 10px; }
+        .nav-brand img { height: 28px; border-radius: 6px; }
+        .nav-brand span { font-weight: 600; font-size: 14px; color: var(--muted); letter-spacing: 0.5px; }
+        .nav-cta {
+            background: var(--accent); color: #fff; border: none; padding: 10px 22px;
+            border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer;
+            text-decoration: none; transition: all 0.2s;
+        }
+        .nav-cta:hover { background: #3b63d4; transform: translateY(-1px); }
+
+        /* ─── LAYOUT ─── */
+        .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+        section { padding: 80px 0; }
+        section + section { border-top: 1px solid var(--border); }
+
+        /* ─── HERO ─── */
+        .hero { padding: 100px 0 80px; text-align: center; position: relative; }
+        .hero::before {
+            content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+            width: 600px; height: 600px; background: radial-gradient(circle, rgba(79,125,249,0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--card); border: 1px solid var(--border); border-radius: 100px;
+            padding: 8px 20px; font-size: 13px; color: var(--accent); font-weight: 500;
+            margin-bottom: 28px;
+        }
+        .hero-logo { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 24px; border: 2px solid var(--border); }
+        .hero h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 700; line-height: 1.2; margin-bottom: 16px; }
+        .hero h1 span { color: var(--accent); }
+        .hero p { font-size: 18px; color: var(--muted); max-width: 600px; margin: 0 auto; line-height: 1.7; }
+        .hero-for { font-size: 14px; color: var(--muted); margin-top: 20px; }
+        .hero-for strong { color: var(--text); font-weight: 600; }
+
+        /* ─── SECTION HEADERS ─── */
+        .section-number {
+            font-size: 13px; font-weight: 700; color: var(--accent); letter-spacing: 2px;
+            text-transform: uppercase; margin-bottom: 8px;
+        }
+        h2 { font-size: clamp(24px, 3vw, 32px); font-weight: 700; margin-bottom: 12px; line-height: 1.25; }
+        .section-sub { font-size: 16px; color: var(--muted); margin-bottom: 40px; max-width: 650px; }
+
+        /* ─── STATUS CARD ─── */
+        .status-card {
+            background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+            padding: 28px; margin-bottom: 24px;
+        }
+        .status-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+        .status-icon {
+            width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center;
+            justify-content: center; font-size: 20px; flex-shrink: 0;
+        }
+        .status-icon.red { background: var(--red-dim); }
+        .status-icon.orange { background: var(--orange-dim); }
+        .status-icon.green { background: var(--green-glow); }
+        .status-title { font-size: 18px; font-weight: 600; }
+        .status-label {
+            display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px;
+            border-radius: 100px; font-size: 12px; font-weight: 600; margin-left: auto;
+        }
+        .status-label.critical { background: var(--red-dim); color: var(--red); }
+        .status-label.warning { background: var(--orange-dim); color: var(--orange); }
+        .status-label.good { background: var(--green-glow); color: var(--green); }
+
+        /* ─── ANALYSIS BOX ─── */
+        .analysis-box {
+            background: var(--card-2); border-radius: var(--radius-sm);
+            padding: 20px; margin: 16px 0;
+        }
+        .analysis-box h4 { font-size: 14px; font-weight: 600; color: var(--accent); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+        .analysis-box p, .analysis-box li { font-size: 15px; color: var(--muted); line-height: 1.7; }
+        .analysis-box ul { padding-left: 20px; }
+        .analysis-box li { margin-bottom: 6px; }
+        .analysis-box li strong { color: var(--text); font-weight: 500; }
+
+        /* ─── ACTION STEPS ─── */
+        .action-steps { margin-top: 20px; }
+        .action-step {
+            display: flex; gap: 14px; padding: 14px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .action-step:last-child { border-bottom: none; }
+        .step-num {
+            width: 28px; height: 28px; border-radius: 8px; background: var(--accent);
+            color: #fff; font-size: 13px; font-weight: 700; display: flex;
+            align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;
+        }
+        .step-content h5 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+        .step-content p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+        .step-tip {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: var(--accent-glow); border: 1px solid var(--border-accent);
+            border-radius: 6px; padding: 6px 12px; font-size: 13px; color: var(--accent);
+            margin-top: 8px; font-weight: 500;
+        }
+
+        /* ─── CHECKLIST OVERVIEW ─── */
+        .checklist-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 24px; }
+        .check-item {
+            background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-sm);
+            padding: 16px 18px; display: flex; align-items: center; gap: 12px;
+        }
+        .check-dot {
+            width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+        }
+        .check-dot.red { background: var(--red); box-shadow: 0 0 8px var(--red); }
+        .check-dot.orange { background: var(--orange); box-shadow: 0 0 8px var(--orange); }
+        .check-dot.green { background: var(--green); box-shadow: 0 0 8px var(--green); }
+        .check-text { font-size: 14px; font-weight: 500; }
+        .check-text small { display: block; font-size: 12px; color: var(--muted); font-weight: 400; margin-top: 2px; }
+
+        /* ─── EXAMPLE BOX ─── */
+        .example-box {
+            background: var(--card); border: 1px solid var(--border-accent); border-radius: var(--radius);
+            padding: 24px; margin: 20px 0; position: relative;
+        }
+        .example-box::before {
+            content: 'VORSCHLAG'; position: absolute; top: -10px; left: 20px;
+            background: var(--accent); color: #fff; font-size: 11px; font-weight: 700;
+            padding: 2px 10px; border-radius: 4px; letter-spacing: 1px;
+        }
+        .example-box p { font-size: 15px; line-height: 1.7; margin-top: 8px; }
+        .example-box code {
+            display: block; background: var(--card-2); border-radius: 8px;
+            padding: 16px; margin-top: 12px; font-family: 'Inter', monospace;
+            font-size: 14px; white-space: pre-wrap; line-height: 1.6; color: var(--text);
+        }
+
+        /* ─── SUMMARY SECTION ─── */
+        .summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 32px; }
+        .summary-card {
+            background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+            padding: 24px; text-align: center;
+        }
+        .summary-card .big-num { font-size: 48px; font-weight: 800; color: var(--accent); line-height: 1; }
+        .summary-card .big-label { font-size: 14px; color: var(--muted); margin-top: 8px; }
+
+        /* ─── CTA ─── */
+        .cta-section { text-align: center; padding: 80px 0; }
+        .cta-section h2 { margin-bottom: 16px; }
+        .cta-section p { color: var(--muted); margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .cta-btn {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: var(--accent); color: #fff; padding: 16px 36px;
+            border-radius: 12px; font-size: 16px; font-weight: 600;
+            text-decoration: none; transition: all 0.2s;
+        }
+        .cta-btn:hover { background: #3b63d4; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(79,125,249,0.3); }
+
+        /* ─── FOOTER ─── */
+        footer {
+            text-align: center; padding: 40px; font-size: 13px; color: var(--muted);
+            border-top: 1px solid var(--border);
+        }
+        footer a { color: var(--accent); text-decoration: none; }
+
+        /* ─── ANIMATIONS ─── */
+        .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 640px) {
+            nav { padding: 12px 16px; }
+            section { padding: 60px 0; }
+            .hero { padding: 70px 0 60px; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .checklist-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <div class="nav-brand">
+        <img src="https://timeconnect.de/wp-content/uploads/2015/08/Logo_klein.png" alt="T.I.M.E. connect" onerror="this.style.display='none'">
+        <span>LINKEDIN-PROFIL-ANALYSE</span>
+    </div>
+    <a href="https://calendly.com/tom-soto-schiller/grundwerk-next-steps?email=fvl%40timeconnect.de&name=Florian%20von%20Loebenstein" target="_blank" class="nav-cta">Termin buchen</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container fade-in">
+        <div class="hero-badge">Grundwerk Digital &times; T.I.M.E. connect</div>
+        <h1>LinkedIn-Profil-Analyse<br>für <span>Florian von Loebenstein</span></h1>
+        <p>Ihr LinkedIn-Profil ist der erste Eindruck, den potenzielle Kunden, Partner und Entscheider von Ihnen bekommen. Diese Analyse zeigt Ihnen konkret, was Sie optimieren können — mit klaren Schritten.</p>
+        <p class="hero-for">Erstellt von <strong>Tom Soto Schiller</strong> · Grundwerk Digital · 17.03.2026</p>
+    </div>
+</section>
+
+<!-- QUICK-CHECK OVERVIEW -->
+<section>
+    <div class="container fade-in">
+        <div class="section-number">Übersicht</div>
+        <h2>Profil-Schnellcheck</h2>
+        <p class="section-sub">Status aller wichtigen Profil-Bereiche auf einen Blick — basierend auf dem Grundwerk LinkedIn-Profil-Guide.</p>
+
+        <div class="checklist-grid">
+            <div class="check-item">
+                <div class="check-dot orange"></div>
+                <div class="check-text">Profilfoto<small>Vorhanden, aber Optimierungspotenzial</small></div>
+            </div>
+            <div class="check-item">
+                <div class="check-dot red"></div>
+                <div class="check-text">Profil-Banner<small>Standard-Banner oder nicht optimal</small></div>
+            </div>
+            <div class="check-item">
+                <div class="check-dot orange"></div>
+                <div class="check-text">LinkedIn-Name<small>Enthält "MBA" — gut, aber URL optimieren</small></div>
+            </div>
+            <div class="check-item">
+                <div class="check-dot red"></div>
+                <div class="check-text">Headline<small>Nicht klar, was Sie für Kunden tun</small></div>
+            </div>
+            <div class="check-item">
+                <div class="check-dot red"></div>
+                <div class="check-text">Summary / Info-Bereich<small>Wahrscheinlich zu kurz oder fehlend</small></div>
+            </div>
+            <div class="check-item">
+                <div class="check-dot red"></div>
+                <div class="check-text">Featured Section<small>Nicht aktiv genutzt</small></div>
+            </div>
+            <div class="check-item">
+                <div class="check-dot orange"></div>
+                <div class="check-text">Work Experience / CV<small>Vorhanden, aber nicht kundenorientiert</small></div>
+            </div>
+            <div class="check-item">
+                <div class="check-dot orange"></div>
+                <div class="check-text">Skills<small>Vorhanden, Reihenfolge prüfen</small></div>
+            </div>
+            <div class="check-item">
+                <div class="check-dot red"></div>
+                <div class="check-text">Recommendations<small>Keine oder zu wenige sichtbar</small></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 1. PROFILFOTO -->
+<section>
+    <div class="container fade-in">
+        <div class="section-number">Bereich 01</div>
+        <h2>Profilfoto</h2>
+        <p class="section-sub">Profile mit einem professionellen Profilbild bekommen 14x mehr Profilaufrufe und 36x mehr Nachrichten. (Quelle: LinkedIn)</p>
+
+        <div class="status-card">
+            <div class="status-header">
+                <div class="status-icon orange">📸</div>
+                <div class="status-title">Profilfoto vorhanden — Optimierung empfohlen</div>
+                <span class="status-label warning">Optimieren</span>
+            </div>
+
+            <div class="analysis-box">
+                <h4>Analyse</h4>
+                <p>Ihr Profilfoto ist vorhanden, was gut ist. Für maximale Wirkung im B2B-Bereich — speziell wenn Sie Entscheider in Telekommunikation, Medien und Entertainment ansprechen — sollte es aber professioneller wirken.</p>
+            </div>
+
+            <div class="action-steps">
+                <div class="action-step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h5>Professionelles Foto machen (lassen)</h5>
+                        <p>Einfarbiger Hintergrund, der zum späteren Banner-Hintergrund passt. Ausschnitt: Schultern und darüber. Das Gesicht sollte ca. 60% des Fotos ausmachen.</p>
+                    </div>
+                </div>
+                <div class="action-step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h5>Gesichtsausdruck prüfen</h5>
+                        <p>Authentisches Lächeln — obere Wangenmuskeln aktivieren. Kein einseitiges Lächeln, keine aufgerissenen Augen. Denken Sie an etwas, was Sie wirklich zum Lachen bringt.</p>
+                    </div>
+                </div>
+                <div class="action-step">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h5>Format: 400 &times; 400 px</h5>
+                        <p>Über Canva können Sie Ihr Bild zuschneiden und den Hintergrund anpassen. Kleidung: Was Sie normalerweise bei Kundenterminen tragen — professionell, aber authentisch.</p>
+                        <div class="step-tip">Tool-Tipp: canva.com — kostenlos nutzbar</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 2. PROFIL-BANNER -->
+<section>
+    <div class="container fade-in">
+        <div class="section-number">Bereich 02</div>
+        <h2>Profil-Banner</h2>
+        <p class="section-sub">Ihr Banner soll in einer Sekunde zeigen, was Sie tun und wie Sie helfen können.</p>
+
+        <div class="status-card">
+            <div class="status-header">
+                <div class="status-icon red">🖼️</div>
+                <div class="status-title">Banner fehlt oder ist Standard</div>
+                <span class="status-label critical">Dringend</span>
+            </div>
+
+            <div class="analysis-box">
+                <h4>Analyse</h4>
+                <p>Ohne ein professionelles Banner wirkt Ihr Profil unvollständig. Das ist einer der häufigsten Fehler auf LinkedIn — und gleichzeitig einer der einfachsten zu beheben. Der Banner ist die größte visuelle Fläche auf Ihrem Profil.</p>
+            </div>
+
+            <div class="action-steps">
+                <div class="action-step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h5>Banner in Canva erstellen (1584 &times; 396 px)</h5>
+                        <p>Verwenden Sie denselben Hintergrund wie beim Profilbild — so sticht Ihr Gesicht noch mehr hervor und das Profil wirkt konsistent.</p>
+                    </div>
+                </div>
+                <div class="action-step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h5>Inhalt des Banners</h5>
+                        <p>Zeigen Sie auf einen Blick, was Sie tun. Drei Elemente:</p>
+                        <ul style="padding-left: 20px; margin-top: 8px; color: var(--muted); font-size: 14px;">
+                            <li><strong style="color: var(--text);">T.I.M.E. connect Logo</strong> — Unternehmensidentität</li>
+                            <li><strong style="color: var(--text);">Kurze Kernaussage</strong> — z.B. "Connecting the right people at the right time"</li>
+                            <li><strong style="color: var(--text);">Branchen-Keywords</strong> — Telekommunikation · Internet · Media · Entertainment</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="action-step">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h5>So wenige Wörter wie möglich</h5>
+                        <p>Der Banner wird auf dem Handy klein dargestellt. Maximal 6-8 Wörter Haupttext. Alles muss auch im mobilen Format lesbar sein.</p>
+                        <div class="step-tip">LinkedIn Premium bietet Banner-Templates</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 3. NAME & URL -->
+<section>
+    <div class="container fade-in">
+        <div class="section-number">Bereich 03</div>
+        <h2>LinkedIn-Name &amp; URL</h2>
+        <p class="section-sub">Ihr Name ist sichtbar in jeder Nachricht, jedem Kommentar und jeder Suchergebnis-Liste.</p>
+
+        <div class="status-card">
+            <div class="status-header">
+                <div class="status-icon orange">👑</div>
+                <div class="status-title">Name gut — URL optimieren</div>
+                <span class="status-label warning">Optimieren</span>
+            </div>
+
+            <div class="analysis-box">
+                <h4>Analyse</h4>
+                <p>Ihr Name "Florian von Loebenstein, MBA" ist gut — der MBA-Zusatz signalisiert Kompetenz. Ihre LinkedIn-URL enthält aber aktuell eine Nummernfolge (<code style="background: var(--card); padding: 2px 6px; border-radius: 4px; font-size: 13px;">florian-von-loebenstein-mba-9763412</code>), die unprofessionell wirkt.</p>
+            </div>
+
+            <div class="action-steps">
+                <div class="action-step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h5>Persönliche URL ändern</h5>
+                        <p>Ändern Sie Ihre URL auf: <strong>linkedin.com/in/florian-von-loebenstein</strong> — ohne die Nummernfolge. Das geht unter "Profil bearbeiten" → "Kontaktinformationen" → "Profil-URL bearbeiten".</p>
+                    </div>
+                </div>
+                <div class="action-step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h5>Emoji beim Namen? (Optional)</h5>
+                        <p>Ein Emoji neben dem Namen kann sinnvoll sein, wenn es zur Brand passt. Bei T.I.M.E. connect wäre z.B. ein ⏱️ oder 🤝 denkbar — aber nur wenn es zur Positionierung passt. Ohne Emoji ist genauso professionell.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 4. HEADLINE -->
+<section>
+    <div class="container fade-in">
+        <div class="section-number">Bereich 04</div>
+        <h2>LinkedIn-Headline</h2>
+        <p class="section-sub">Die Headline ist das Wichtigste nach dem Profilfoto — sie erscheint überall: Suche, Nachrichten, Kommentare.</p>
+
+        <div class="status-card">
+            <div class="status-header">
+                <div class="status-icon red">💥</div>
+                <div class="status-title">Headline muss komplett überarbeitet werden</div>
+                <span class="status-label critical">Dringend</span>
+            </div>
+
+            <div class="analysis-box">
+                <h4>Analyse</h4>
+                <p>Ihre aktuelle Headline kommuniziert nicht klar, wem Sie helfen und welches Ergebnis Sie liefern. Potenzielle Kunden und Partner müssen in 2 Sekunden verstehen, was Sie für sie tun können.</p>
+                <ul>
+                    <li><strong>Problem:</strong> Die Headline liest sich eher wie ein CV-Eintrag, nicht wie ein Nutzenversprechen</li>
+                    <li><strong>Ziel:</strong> Klar sagen, welchem Typ Unternehmen Sie welches Ergebnis liefern</li>
+                </ul>
+            </div>
+
+            <div class="analysis-box">
+                <h4>Die 3 Headline-Stile</h4>
+                <ul>
+                    <li><strong>Stil 1 — Job-Titel:</strong> Wenn Sie eine Führungsposition haben → z.B. "Geschäftsführer @ T.I.M.E. connect"</li>
+                    <li><strong>Stil 2 — "I help...":</strong> Wenn Ihre Lösung ein Kernproblem löst → z.B. "Ich verbinde Unternehmen mit den richtigen Partnern in Telekommunikation, Media &amp; Entertainment"</li>
+                    <li><strong>Stil 3 — Bullet Points:</strong> Wenn Sie verschiedene Services anbieten → Mehrere Punkte mit | getrennt</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <p><strong>Empfehlung: Stil 2 — "I help..." Headline</strong></p>
+                <p>Für Ihre Positionierung als Netzwerker und Medienberater ist eine kundenorientierte Headline ideal:</p>
+                <code>Ich verbinde Unternehmen mit den richtigen Partnern in Media, Telekommunikation & Entertainment — 20+ Jahre Netzwerk & Medien-Expertise | Geschäftsführer @ T.I.M.E. connect</code>
+            </div>
+
+            <div class="example-box">
+                <p><strong>Alternative: "Get it" Headline</strong></p>
+                <p>Klare Value Proposition für einen klaren ICP — Ergebnis ohne Problem:</p>
+                <code>Die richtigen Kontakte in Media & Telekommunikation — ohne monatelanges Netzwerken | GF @ T.I.M.E. connect GmbH</code>
+            </div>
+
+            <div class="action-steps">
+                <div class="action-step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h5>Headline-Variante wählen</h5>
+                        <p>Wählen Sie einen der Vorschläge oben oder kombinieren Sie Elemente daraus. Wichtig: Die Headline muss klar sagen, was der Nutzen für den Profilbesucher ist.</p>
+                    </div>
+                </div>
+                <div class="action-step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h5>Keywords einbauen</h5>
+                        <p>Potenzielle Kunden suchen nach Begriffen wie "Medienberatung", "Business Development", "Networking Events", "Telekommunikation". Diese sollten in der Headline oder Summary vorkommen.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 5. SUMMARY -->
+<section>
+    <div class="container fade-in">
+        <div class="section-number">Bereich 05</div>
+        <h2>LinkedIn-Summary (Info-Bereich)</h2>
+        <p class="section-sub">Zeigen Sie, wie Sie Ihren Kunden helfen — nicht wie toll Sie sind. Die Summary ist Ihre Verkaufsseite auf LinkedIn.</p>
+
+        <div class="status-card">
+            <div class="status-header">
+                <div class="status-icon red">✍️</div>
+                <div class="status-title">Summary fehlt oder ist zu kurz</div>
+                <span class="status-label critical">Dringend</span>
+            </div>
+
+            <div class="analysis-box">
+                <h4>Analyse</h4>
+                <p>Die Summary ist einer der wichtigsten Bereiche Ihres LinkedIn-Profils. Ohne eine starke Summary verschenken Sie massiv Potenzial. Ziel: Nahe an das 2.000-Zeichen-Limit herankommen.</p>
+            </div>
+
+            <div class="analysis-box">
+                <h4>Die 4 Sektionen Ihrer Summary</h4>
+                <ul>
+                    <li><strong>Sektion 1:</strong> Wer sind Sie und was helfen Sie Menschen zu erreichen?</li>
+                    <li><strong>Sektion 2:</strong> Wem helfen Sie oft (Job-Titles / Industries) und wie?</li>
+                    <li><strong>Sektion 3:</strong> Wem haben Sie kürzlich geholfen und was erreicht?</li>
+                    <li><strong>Sektion 4:</strong> Wie kann jemand mit Ihnen Kontakt aufnehmen?</li>
+                </ul>
+            </div>
+
+            <div class="analysis-box">
+                <h4>Fokus-Fragen beim Schreiben</h4>
+                <ul>
+                    <li><strong>WEM</strong> helfen Sie?</li>
+                    <li><strong>WIE</strong> helfen Sie?</li>
+                    <li><strong>WAS</strong> helfen Sie ihnen zu erreichen?</li>
+                    <li><strong>WIE</strong> haben Sie bisher anderen geholfen?</li>
+                    <li><strong>WIE</strong> kann man Sie erreichen?</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <p><strong>Summary-Entwurf für Florian von Loebenstein</strong></p>
+                <code>𝗜𝗰𝗵 𝘃𝗲𝗿𝗯𝗶𝗻𝗱𝗲 𝗨𝗻𝘁𝗲𝗿𝗻𝗲𝗵𝗺𝗲𝗻 𝗺𝗶𝘁 𝗱𝗲𝗻 𝗿𝗶𝗰𝗵𝘁𝗶𝗴𝗲𝗻 𝗣𝗮𝗿𝘁𝗻𝗲𝗿𝗻 — 𝘇𝘂𝗿 𝗿𝗶𝗰𝗵𝘁𝗶𝗴𝗲𝗻 𝗭𝗲𝗶𝘁.
+
+Seit über 20 Jahren arbeite ich an der Schnittstelle von Telekommunikation, Internet, Media und Entertainment. Mit T.I.M.E. connect helfe ich Unternehmen, innovative Ideen schneller auf den Markt zu bringen — durch strategische Beratung und ein gewachsenes Netzwerk.
+
+𝗪𝗲𝗺 𝗶𝗰𝗵 𝗵𝗲𝗹𝗳𝗲:
+→ Geschäftsführer und Entscheider in Media, Telekommunikation & Entertainment
+→ Startups und Mittelständler, die neue Märkte erschließen wollen
+→ Unternehmen, die die richtigen Partner und Kontakte brauchen
+
+𝗪𝗶𝗲 𝗶𝗰𝗵 𝗵𝗲𝗹𝗳𝗲:
+→ Strategische Online-Konzeption & Business Model Development
+→ Social Media Strategien & digitale Kampagnen
+→ Zugang zu einem Netzwerk aus 20+ Jahren in der Medienbranche
+→ Planung und Durchführung von Networking-Events
+
+𝗠𝗲𝗶𝗻 𝗛𝗶𝗻𝘁𝗲𝗿𝗴𝗿𝘂𝗻𝗱:
+→ MBA Mediamanagement (Steinbeis University Berlin)
+→ Co-Founder Agentur Geis vonLoebenstein (Kunden: Deutsche Telekom, Discovery Channel, Red Bull, E.ON)
+→ Head of Business Development bei 9Live (ProSiebenSat.1 Group)
+→ Entwickler der ersten interaktiven Telefongewinnspiele mit der Deutschen Telekom (1995)
+
+𝗦𝗽𝗿𝗲𝗰𝗵𝗲𝗻 𝘄𝗶𝗿:
+Wenn Sie auf der Suche nach den richtigen Kontakten in der Medien- und Telekommunikationsbranche sind, oder einen strategischen Sparringspartner für Ihr Geschäftsmodell brauchen — melden Sie sich gerne:
+
+📞 +49 89 74041886
+✉️ servus@timeconnect.de
+🌐 www.timeconnect.de</code>
+            </div>
+
+            <div class="action-steps">
+                <div class="action-step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h5>Summary-Entwurf übernehmen oder anpassen</h5>
+                        <p>Kopieren Sie den Entwurf oben und passen Sie die Inhalte an Ihre aktuelle Situation an. Ergänzen Sie konkrete Kundennamen und Ergebnisse, die Sie teilen dürfen.</p>
+                    </div>
+                </div>
+                <div class="action-step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h5>Formatierung beachten</h5>
+                        <p>LinkedIn erlaubt keine Formatierungen. Nutzen Sie für Überschriften Unicode-Zeichen (z.B. über fancy-generator.com/de/bold-text-generator) und Pfeile (→) für Aufzählungen.</p>
+                        <div class="step-tip">Tool: fancy-generator.com/de/bold-text-generator</div>
+                    </div>
+                </div>
+                <div class="action-step">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h5>Keywords für Suchbarkeit einbauen</h5>
+                        <p>Stellen Sie sicher, dass Ihre Summary Begriffe enthält, nach denen Ihre Zielkunden suchen: Medienberatung, Business Development, Networking, Telekommunikation, Entertainment, Digitale Strategie.</p>
+                    </div>
+                </div>
+                <div class="action-step">
+                    <div class="step-num">4</div>
+                    <div class="step-content">
+                        <h5>Persönlichen Buchungslink hinzufügen</h5>
+                        <p>Fügen Sie einen Calendly-Link oder einen Link zu einem Leadmagneten (z.B. kostenloses Erstgespräch, Whitepaper) direkt in die Summary ein.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 6. FEATURED SECTION -->
+<section>
+    <div class="container fade-in">
+        <div class="section-number">Bereich 06</div>
+        <h2>Featured Section (Fokusbereich)</h2>
+        <p class="section-sub">Der Fokusbereich zeigt Ihre besten Inhalte direkt unter der Summary — wie ein Schaufenster.</p>
+
+        <div class="status-card">
+            <div class="status-header">
+                <div class="status-icon red">🎯</div>
+                <div class="status-title">Featured Section nicht aktiv genutzt</div>
+                <span class="status-label critical">Dringend</span>
+            </div>
+
+            <div class="analysis-box">
+                <h4>Was gehört in die Featured Section?</h4>
+                <ul>
+                    <li><strong>Posts</strong> — z.B. ein Beitrag über ein erfolgreiches Event oder ein Netzwerk-Treffen</li>
+                    <li><strong>Artikel</strong> — z.B. ein Branchenkommentar zu Media-Trends</li>
+                    <li><strong>Links</strong> — z.B. Link zu timeconnect.de oder zu einem Leadmagneten</li>
+                    <li><strong>Medien</strong> — z.B. Fotos von Events, Networking-Runden, Kundenreferenzen</li>
+                </ul>
+            </div>
+
+            <div class="action-steps">
+                <div class="action-step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h5>3-4 Featured Items auswählen</h5>
+                        <p>Wählen Sie einen Mix aus verschiedenen Formaten. Ideal:</p>
+                        <ul style="padding-left: 20px; margin-top: 8px; color: var(--muted); font-size: 14px;">
+                            <li>Ein <strong style="color: var(--text);">Video oder Foto von einem Event</strong>, das Sie organisiert haben</li>
+                            <li>Eine <strong style="color: var(--text);">Kundenreferenz</strong> oder Erfolgsgeschichte</li>
+                            <li>Ein <strong style="color: var(--text);">Link zu timeconnect.de</strong> oder einem Leadmagneten</li>
+                            <li>Ein <strong style="color: var(--text);">LinkedIn-Post</strong>, der gut performt hat</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="action-step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h5>Content muss Vertrauen und Expertise zeigen</h5>
+                        <p>Wählen Sie Content, der Sie als vertrauenswürdigen Experten darstellt — nicht nur Werbung. Referenzen, Event-Fotos und Branchen-Insights funktionieren am besten.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 7. CV / WORK EXPERIENCE -->
+<section>
+    <div class="container fade-in">
+        <div class="section-number">Bereich 07</div>
+        <h2>CV / Work Experience</h2>
+        <p class="section-sub">Ihr Lebenslauf auf LinkedIn sollte kundenorientiert sein — nicht wie ein klassischer CV.</p>
+
+        <div class="status-card">
+            <div class="status-header">
+                <div class="status-icon orange">💼</div>
+                <div class="status-title">Vorhanden — kundenorientiert umschreiben</div>
+                <span class="status-label warning">Optimieren</span>
+            </div>
+
+            <div class="analysis-box">
+                <h4>Analyse</h4>
+                <p>Sie haben eine beeindruckende Karriere: Agentur Geis vonLoebenstein (Deutsche Telekom, Discovery Channel, Red Bull), 9Live/ProSiebenSat.1, MBA Mediamanagement. Diese Stationen sind starke Trust-Signale — aber sie müssen kundenorientiert formuliert sein.</p>
+            </div>
+
+            <div class="action-steps">
+                <div class="action-step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h5>Aktuelle Rolle (T.I.M.E. connect) am ausführlichsten beschreiben</h5>
+                        <p>Diese Position bekommt den meisten Text. Beschreiben Sie nicht nur was Sie tun, sondern welche Ergebnisse Sie für Kunden erzielen. Nutzen Sie den "Customer-focused" Approach aus der Summary.</p>
+                    </div>
+                </div>
+                <div class="action-step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h5>Medien zur aktuellen Position hinzufügen</h5>
+                        <p>Fügen Sie Bilder (552 × 368 px), Links oder Dokumente zur aktuellen Position hinzu: Event-Fotos, Case Studies, Referenzen oder Leadmagneten. Pro Position können Sie mehrere Medien anhängen.</p>
+                        <div class="step-tip">Medien können Leadmagneten sein — nutzen Sie das!</div>
+                    </div>
+                </div>
+                <div class="action-step">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h5>Frühere Rollen kurz halten</h5>
+                        <p>Bei früheren Stationen (9Live, Geis vonLoebenstein, etc.) reichen 1-2 Zeilen mit den wichtigsten Highlights. Die Details gehören zur aktuellen Rolle.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 8. SKILLS -->
+<section>
+    <div class="container fade-in">
+        <div class="section-number">Bereich 08</div>
+        <h2>Skills &amp; Endorsements</h2>
+        <p class="section-sub">Die ersten 3 Skills werden auf Ihrem Profil angezeigt — wählen Sie diese bewusst.</p>
+
+        <div class="status-card">
+            <div class="status-header">
+                <div class="status-icon orange">⚡</div>
+                <div class="status-title">Skills prüfen und priorisieren</div>
+                <span class="status-label warning">Optimieren</span>
+            </div>
+
+            <div class="analysis-box">
+                <h4>Bekannte Skills</h4>
+                <p>Ihre aktuellen Skills umfassen: Online Advertising, Online Marketing, Entrepreneurship, Social Media Marketing, E-Commerce, Start-ups, Digital Marketing, Business Strategy. Gute Auswahl — aber die Reihenfolge und die Top 3 sind entscheidend.</p>
+            </div>
+
+            <div class="action-steps">
+                <div class="action-step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h5>Top 3 Skills festlegen</h5>
+                        <p>Ihre 3 wichtigsten Skills sollten die sein, die Ihre Kunden am meisten interessieren. Empfehlung:</p>
+                        <ul style="padding-left: 20px; margin-top: 8px; color: var(--muted); font-size: 14px;">
+                            <li><strong style="color: var(--text);">1. Business Development</strong></li>
+                            <li><strong style="color: var(--text);">2. Media Consulting</strong></li>
+                            <li><strong style="color: var(--text);">3. Strategic Partnerships</strong> oder Digital Marketing</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="action-step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h5>Reihenfolge in den Einstellungen anpassen</h5>
+                        <p>Gehen Sie auf "Skills bearbeiten" und ziehen Sie die wichtigsten nach oben. Skills, die weniger relevant sind (z.B. E-Commerce), können weiter unten stehen.</p>
+                    </div>
+                </div>
+                <div class="action-step">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h5>Optional: LinkedIn Badges</h5>
+                        <p>Sie können über LinkedIn Learning Module absolvieren und technische Skills nachweisen — das stärkt die Glaubwürdigkeit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 9. RECOMMENDATIONS -->
+<section>
+    <div class="container fade-in">
+        <div class="section-number">Bereich 09</div>
+        <h2>LinkedIn Recommendations</h2>
+        <p class="section-sub">91% der Kunden würden Empfehlungen geben — aber nur 11% der Vertriebler fragen danach. (Dale Carnegie)</p>
+
+        <div class="status-card">
+            <div class="status-header">
+                <div class="status-icon red">🗣️</div>
+                <div class="status-title">Recommendations aufbauen</div>
+                <span class="status-label critical">Dringend</span>
+            </div>
+
+            <div class="analysis-box">
+                <h4>Analyse</h4>
+                <p>Recommendations sind der stärkste Social Proof auf LinkedIn. Mit Ihrem Netzwerk aus 20+ Jahren in der Medienbranche haben Sie Zugang zu vielen potenziellen Empfehlungsgebern — das ist ein riesiger, ungenutzter Vorteil.</p>
+            </div>
+
+            <div class="analysis-box">
+                <h4>Ziel</h4>
+                <p><strong>Mindestens 5 Recommendations</strong> von verschiedenen Kunden, Partnern und ehemaligen Kollegen. Ideal: verschiedene Branchen und Rollen, um breite Expertise zu zeigen.</p>
+            </div>
+
+            <div class="example-box">
+                <p><strong>Vorlage für die Anfrage</strong></p>
+                <code>Hallo [Name],
+
+ich arbeite gerade daran, mein LinkedIn-Profil zu aktualisieren. Wenn du 5 Minuten Zeit hättest — würdest du mir eine kurze Empfehlung auf LinkedIn hinterlassen? Ich würde mich sehr freuen und revanchiere mich natürlich gerne.
+
+Ich würde mich auch freuen zu hören, ob du jemanden kennst, der Unterstützung im Bereich [Medienberatung / Business Development / Networking] sucht.
+
+Beste Grüße,
+Florian</code>
+            </div>
+
+            <div class="action-steps">
+                <div class="action-step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h5>Liste mit 10-15 Personen erstellen</h5>
+                        <p>Kunden, Partner, ehemalige Kollegen (Deutsche Telekom, ProSiebenSat.1, Discovery Channel, Red Bull) — alle, die Ihre Arbeit aus erster Hand kennen.</p>
+                    </div>
+                </div>
+                <div class="action-step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h5>Personalisiert anfragen</h5>
+                        <p>Nutzen Sie die Vorlage oben, aber personalisieren Sie jede Nachricht. Am besten per Telefon oder individueller Nachricht — nicht als Massen-Mail.</p>
+                    </div>
+                </div>
+                <div class="action-step">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h5>Recommendations als Content nutzen</h5>
+                        <p>Fragen Sie, ob Sie die Empfehlung als LinkedIn-Post teilen dürfen. Referenz-Posts generieren sehr starkes Engagement und Vertrauen.</p>
+                        <div class="step-tip">Monatlich wiederkehrend neue Recommendations anfragen</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ZUSAMMENFASSUNG -->
+<section>
+    <div class="container fade-in">
+        <div class="section-number">Zusammenfassung</div>
+        <h2>Ihr Aktionsplan auf einen Blick</h2>
+        <p class="section-sub">Die wichtigsten Schritte priorisiert nach Impact — starten Sie mit den dringenden Punkten.</p>
+
+        <div class="summary-grid">
+            <div class="summary-card">
+                <div class="big-num" style="color: var(--red);">4</div>
+                <div class="big-label">Dringende Optimierungen</div>
+            </div>
+            <div class="summary-card">
+                <div class="big-num" style="color: var(--orange);">4</div>
+                <div class="big-label">Weitere Optimierungen</div>
+            </div>
+        </div>
+
+        <div style="margin-top: 40px;">
+            <div class="status-card" style="border-left: 3px solid var(--red);">
+                <h3 style="font-size: 16px; margin-bottom: 16px; color: var(--red);">🔴 Dringend (diese Woche)</h3>
+                <div class="action-step" style="border-bottom: 1px solid var(--border);">
+                    <div class="step-num" style="background: var(--red);">1</div>
+                    <div class="step-content">
+                        <h5>Headline überarbeiten</h5>
+                        <p>Kundenorientierte Headline setzen, die klar sagt, wem Sie helfen. → 5 Minuten</p>
+                    </div>
+                </div>
+                <div class="action-step" style="border-bottom: 1px solid var(--border);">
+                    <div class="step-num" style="background: var(--red);">2</div>
+                    <div class="step-content">
+                        <h5>Summary schreiben</h5>
+                        <p>Den Entwurf aus dieser Analyse übernehmen und personalisieren. → 20 Minuten</p>
+                    </div>
+                </div>
+                <div class="action-step" style="border-bottom: 1px solid var(--border);">
+                    <div class="step-num" style="background: var(--red);">3</div>
+                    <div class="step-content">
+                        <h5>Profil-Banner erstellen</h5>
+                        <p>In Canva erstellen mit T.I.M.E. connect Branding. → 30 Minuten</p>
+                    </div>
+                </div>
+                <div class="action-step">
+                    <div class="step-num" style="background: var(--red);">4</div>
+                    <div class="step-content">
+                        <h5>Featured Section befüllen</h5>
+                        <p>3-4 Items: Event-Fotos, Referenzen, Link zu timeconnect.de. → 15 Minuten</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="status-card" style="border-left: 3px solid var(--orange); margin-top: 20px;">
+                <h3 style="font-size: 16px; margin-bottom: 16px; color: var(--orange);">🟠 Diese Woche / nächste Woche</h3>
+                <div class="action-step" style="border-bottom: 1px solid var(--border);">
+                    <div class="step-num" style="background: var(--orange);">5</div>
+                    <div class="step-content">
+                        <h5>Profilfoto professionell aufnehmen</h5>
+                        <p>Einfarbiger Hintergrund, passend zum Banner. → 1 Stunde (inkl. Bearbeitung)</p>
+                    </div>
+                </div>
+                <div class="action-step" style="border-bottom: 1px solid var(--border);">
+                    <div class="step-num" style="background: var(--orange);">6</div>
+                    <div class="step-content">
+                        <h5>LinkedIn-URL ändern</h5>
+                        <p>Nummernfolge entfernen → linkedin.com/in/florian-von-loebenstein. → 2 Minuten</p>
+                    </div>
+                </div>
+                <div class="action-step" style="border-bottom: 1px solid var(--border);">
+                    <div class="step-num" style="background: var(--orange);">7</div>
+                    <div class="step-content">
+                        <h5>Work Experience kundenorientiert umschreiben</h5>
+                        <p>Aktuelle Rolle ausführlich, frühere Rollen kurz. Medien hinzufügen. → 30 Minuten</p>
+                    </div>
+                </div>
+                <div class="action-step">
+                    <div class="step-num" style="background: var(--orange);">8</div>
+                    <div class="step-content">
+                        <h5>5+ Recommendations anfragen</h5>
+                        <p>Liste erstellen, personalisiert anfragen. → 20 Minuten + Wartezeit</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" style="border-top: 1px solid var(--border);">
+    <div class="container fade-in">
+        <h2>Fragen zur Umsetzung?</h2>
+        <p>Wir helfen Ihnen gerne, Ihr LinkedIn-Profil optimal aufzustellen — als Teil unserer Zusammenarbeit.</p>
+        <a href="https://calendly.com/tom-soto-schiller/grundwerk-next-steps?email=fvl%40timeconnect.de&name=Florian%20von%20Loebenstein" target="_blank" class="cta-btn">
+            Termin buchen →
+        </a>
+        <div style="margin-top: 24px; font-size: 14px; color: var(--muted);">
+            <p>Tom Soto Schiller · <a href="mailto:tom@grundwerk.digital" style="color: var(--accent); text-decoration: none;">tom@grundwerk.digital</a> · <a href="https://wa.me/4915229560020" style="color: var(--accent); text-decoration: none;">WhatsApp</a></p>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>&copy; 2026 <a href="https://grundwerk.digital" target="_blank">Grundwerk Digital</a> — Erstellt für Florian von Loebenstein / T.I.M.E. connect GmbH</p>
+</footer>
+
+<!-- ANIMATIONS -->
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
