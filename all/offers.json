@@ -133,5 +133,14 @@
     "secure": "7263048519",
     "icon": "🍫",
     "created": "2026-03-16"
+  },
+  {
+    "slug": "time-connect",
+    "name": "T.I.M.E. connect",
+    "subtitle": "Oktoberfest Tischreservierungen — 100 Anfragen",
+    "type": "sales-room",
+    "secure": "9113086612",
+    "icon": "🎪",
+    "created": "2026-03-17"
   }
 ]
