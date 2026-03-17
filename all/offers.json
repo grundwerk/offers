@@ -1,5 +1,14 @@
 [
   {
+    "slug": "home-of-jobs",
+    "name": "home of jobs",
+    "subtitle": "Planbare Erstgespräche für home of jobs — Sales Room",
+    "type": "sales-room",
+    "secure": "7391824560",
+    "icon": "🏠",
+    "created": "2026-03-17"
+  },
+  {
     "slug": "meow-berlin",
     "name": "Meow Berlin",
     "subtitle": "Planbare Buchungen — Sales Room",
