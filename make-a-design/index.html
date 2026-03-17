@@ -595,7 +595,7 @@
 </div>
 
 <!-- ═══════════════════════════════════════════ TAB 5: INVESTITION ═══ -->
-<div class="tab-content" id="tab-5" style="display:none;">
+<div class="panel" id="panel-investition">
     <div class="container" style="max-width:1200px;margin:0 auto;padding:40px 2rem;">
 
         <div style="text-align:center;margin-bottom:48px;">
@@ -803,7 +803,7 @@
 </div>
 
 <!-- ═══════════════════════════════════════════ TAB 6: STRATEGIE ═══ -->
-<div class="tab-content" id="tab-6" style="display:none;">
+<div class="panel" id="panel-strategie">
     <div class="container" style="max-width:1200px;margin:0 auto;padding:40px 2rem;">
 
         <div style="text-align:center;margin-bottom:48px;">
@@ -974,7 +974,7 @@
 </div>
 
 <!-- ═══════════════════════════════════════════ TAB 7: AKTIONSPLAN ═══ -->
-<div class="tab-content" id="tab-7" style="display:none;">
+<div class="panel" id="panel-aktionsplan">
     <div class="container" style="max-width:900px;margin:0 auto;padding:40px 2rem;">
 
         <div style="text-align:center;margin-bottom:48px;">
@@ -1067,7 +1067,7 @@
 </div>
 
 <!-- ═══════════════════════════════════════════ TAB 8: TERMIN ═══ -->
-<div class="tab-content" id="tab-8" style="display:none;">
+<div class="panel" id="panel-termin">
     <div class="container" style="max-width:900px;margin:0 auto;padding:40px 2rem;">
 
         <div style="text-align:center;margin-bottom:48px;">
@@ -1178,43 +1178,17 @@
 <!-- ═══════════════════════════════════════════ JAVASCRIPT ═══ -->
 <script>
 // ── Tab Navigation ──
-const tabs = document.querySelectorAll('.tab-btn');
-const contents = document.querySelectorAll('.tab-content');
-const guaranteeSection = document.getElementById('guarantee-section');
-
-function showTab(tabId) {
-    tabs.forEach(t => {
-        t.classList.remove('active');
-        t.style.color = '';
-        t.style.borderBottomColor = 'transparent';
-        t.style.fontWeight = '500';
-    });
-    contents.forEach(c => c.style.display = 'none');
-
-    const activeBtn = document.querySelector('[data-tab="' + tabId + '"]');
-    if (activeBtn) {
-        activeBtn.classList.add('active');
-        activeBtn.style.color = 'var(--accent)';
-        activeBtn.style.borderBottomColor = 'var(--accent)';
-        activeBtn.style.fontWeight = '700';
-    }
-    const activeContent = document.getElementById(tabId);
-    if (activeContent) activeContent.style.display = 'block';
-
-    // Show guarantee section only on Tab 5
-    if (guaranteeSection) {
-        guaranteeSection.style.display = (tabId === 'tab-5') ? 'block' : 'none';
-    }
-
+function switchTab(name) {
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    var panel = document.getElementById('panel-' + name);
+    if (panel) panel.classList.add('active');
+    var btn = document.querySelector('[data-tab="' + name + '"]');
+    if (btn) btn.classList.add('active');
+    var gs = document.getElementById('guarantee-section');
+    if (gs) gs.style.display = (name === 'investition') ? 'block' : 'none';
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-
-tabs.forEach(btn => {
-    btn.addEventListener('click', () => showTab(btn.dataset.tab));
-});
-
-// Initialize: show tab-1
-showTab('tab-1');
 
 // ── Exclusive Accordions ──
 document.querySelectorAll('.accordion-group').forEach(group => {
