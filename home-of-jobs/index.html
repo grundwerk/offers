@@ -243,6 +243,7 @@
     <button class="tab-btn"        data-tab="results"   onclick="switchTab('results')">  <span>&#128202;</span> Ergebnisse</button>
     <button class="tab-btn"        data-tab="strategy"  onclick="switchTab('strategy')"> <span>&#129504;</span> Strategie</button>
     <button class="tab-btn"        data-tab="plan"      onclick="switchTab('plan')">     <span>&#128506;</span> Aktionsplan</button>
+    <button class="tab-btn"        data-tab="angebot"   onclick="switchTab('angebot')">  <span>&#128179;</span> Angebot</button>
     <button class="tab-btn"        data-tab="booking"   onclick="switchTab('booking')">  <span>&#128197;</span> Termin</button>
 </div>
 
@@ -861,6 +862,158 @@
       </ul>
     </div>
 
+  </div>
+</section>
+
+<!-- ===================== TAB ANGEBOT ===================== -->
+<section id="panel-angebot" class="panel" style="padding:60px 24px 80px;">
+  <div style="max-width:860px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:52px;">
+      <div class="badge" style="display:inline-block;background:rgba(79,125,249,0.1);border:1px solid rgba(79,125,249,0.25);color:var(--accent);padding:6px 16px;border-radius:20px;font-size:0.78rem;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:16px;">
+        Investition
+      </div>
+      <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;color:var(--text);margin-bottom:14px;">Das Angebot f&uuml;r home of jobs</h2>
+      <p style="color:var(--text-muted);font-size:1rem;max-width:600px;margin:0 auto;line-height:1.65;">
+        Transparente Kostenstruktur &mdash; kein versteckter Aufpreis, keine langen Bindungsfristen.
+      </p>
+    </div>
+
+    <!-- Pricing Cards -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-bottom:48px;">
+
+      <!-- Setup -->
+      <div style="background:var(--bg-card);border:1px solid var(--border-accent);border-radius:16px;padding:36px;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent);border-radius:16px 16px 0 0;"></div>
+        <div style="font-size:0.68rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:8px;">Einmalig &mdash; April</div>
+        <h3 style="font-size:1.3rem;font-weight:800;color:var(--text);margin-bottom:6px;">Setup &amp; Onboarding</h3>
+        <div style="font-size:2.8rem;font-weight:800;color:var(--text);letter-spacing:-0.04em;line-height:1;margin-bottom:4px;">1.990&nbsp;<span style="font-size:1.4rem;color:var(--text-muted);">&euro;</span></div>
+        <div style="font-size:0.8rem;color:var(--text-muted);margin-bottom:28px;">einmalige Setup-Geb&uuml;hr</div>
+        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:12px;">
+          <li style="display:flex;gap:10px;align-items:flex-start;font-size:0.87rem;color:var(--text-muted);line-height:1.5;">
+            <span style="color:var(--green);font-weight:700;min-width:16px;margin-top:1px;">&#10003;</span>
+            ICP-Definition &amp; Zielregionen (Sachsen-Anhalt, Sachsen, BW, Hessen, Bayern)
+          </li>
+          <li style="display:flex;gap:10px;align-items:flex-start;font-size:0.87rem;color:var(--text-muted);line-height:1.5;">
+            <span style="color:var(--green);font-weight:700;min-width:16px;margin-top:1px;">&#10003;</span>
+            E-Mail-Infrastruktur &amp; Domain-Setup (Aufwärmphase inklusive)
+          </li>
+          <li style="display:flex;gap:10px;align-items:flex-start;font-size:0.87rem;color:var(--text-muted);line-height:1.5;">
+            <span style="color:var(--green);font-weight:700;min-width:16px;margin-top:1px;">&#10003;</span>
+            Erste vorqualifizierte Lead-Listen aufgebaut
+          </li>
+          <li style="display:flex;gap:10px;align-items:flex-start;font-size:0.87rem;color:var(--text-muted);line-height:1.5;">
+            <span style="color:var(--green);font-weight:700;min-width:16px;margin-top:1px;">&#10003;</span>
+            KickOff-Workshop: Strategie, Messaging &amp; ICP-Validierung
+          </li>
+          <li style="display:flex;gap:10px;align-items:flex-start;font-size:0.87rem;color:var(--text-muted);line-height:1.5;">
+            <span style="color:var(--green);font-weight:700;min-width:16px;margin-top:1px;">&#10003;</span>
+            Stellenanzeigen-Trigger-System konfiguriert
+          </li>
+        </ul>
+      </div>
+
+      <!-- Retainer -->
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:36px;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--green);border-radius:16px 16px 0 0;"></div>
+        <div style="font-size:0.68rem;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:8px;">Monatlich &mdash; ab Mai</div>
+        <h3 style="font-size:1.3rem;font-weight:800;color:var(--text);margin-bottom:6px;">Laufende Betreuung</h3>
+        <div style="font-size:2.8rem;font-weight:800;color:var(--text);letter-spacing:-0.04em;line-height:1;margin-bottom:4px;">3.400&nbsp;<span style="font-size:1.4rem;color:var(--text-muted);">&euro;</span></div>
+        <div style="font-size:0.8rem;color:var(--text-muted);margin-bottom:28px;">pro Monat, monatlich k&uuml;ndbar</div>
+        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:12px;">
+          <li style="display:flex;gap:10px;align-items:flex-start;font-size:0.87rem;color:var(--text-muted);line-height:1.5;">
+            <span style="color:var(--green);font-weight:700;min-width:16px;margin-top:1px;">&#10003;</span>
+            Aktive Kampagnen-Betreuung &amp; laufende Optimierung
+          </li>
+          <li style="display:flex;gap:10px;align-items:flex-start;font-size:0.87rem;color:var(--text-muted);line-height:1.5;">
+            <span style="color:var(--green);font-weight:700;min-width:16px;margin-top:1px;">&#10003;</span>
+            Neue vorqualifizierte Lead-Listen pro Monat
+          </li>
+          <li style="display:flex;gap:10px;align-items:flex-start;font-size:0.87rem;color:var(--text-muted);line-height:1.5;">
+            <span style="color:var(--green);font-weight:700;min-width:16px;margin-top:1px;">&#10003;</span>
+            Reply-Management &amp; Blacklist-Pflege
+          </li>
+          <li style="display:flex;gap:10px;align-items:flex-start;font-size:0.87rem;color:var(--text-muted);line-height:1.5;">
+            <span style="color:var(--green);font-weight:700;min-width:16px;margin-top:1px;">&#10003;</span>
+            CSV-Export f&uuml;r Cold Calling mit Kontext-Tags
+          </li>
+          <li style="display:flex;gap:10px;align-items:flex-start;font-size:0.87rem;color:var(--text-muted);line-height:1.5;">
+            <span style="color:var(--green);font-weight:700;min-width:16px;margin-top:1px;">&#10003;</span>
+            W&ouml;chentliches Reporting &amp; monatliches Strategy-Call
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Zeitplan -->
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:32px;margin-bottom:32px;">
+      <div style="font-size:0.7rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:24px;">Zeitplan</div>
+      <div style="display:flex;flex-direction:column;gap:0;">
+        <div style="display:flex;gap:20px;align-items:flex-start;padding-bottom:24px;position:relative;">
+          <div style="position:absolute;left:15px;top:28px;bottom:0;width:2px;background:var(--border);"></div>
+          <div style="width:32px;height:32px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:0.72rem;font-weight:800;color:white;flex-shrink:0;z-index:1;">Apr</div>
+          <div>
+            <div style="font-size:0.9rem;font-weight:700;color:var(--text);margin-bottom:4px;">Setup-Monat &mdash; 1.990 &euro;</div>
+            <div style="font-size:0.84rem;color:var(--text-muted);line-height:1.6;">ICP-Validierung, Infrastruktur-Aufbau, Lead-Listen, Infrastruktur aufwärmen, KickOff-Workshop</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:20px;align-items:flex-start;padding-bottom:24px;position:relative;">
+          <div style="position:absolute;left:15px;top:28px;bottom:0;width:2px;background:var(--border);"></div>
+          <div style="width:32px;height:32px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:0.72rem;font-weight:800;color:white;flex-shrink:0;z-index:1;">Mai</div>
+          <div>
+            <div style="font-size:0.9rem;font-weight:700;color:var(--text);margin-bottom:4px;">Kampagnen-Launch &mdash; 3.400 &euro;/Monat</div>
+            <div style="font-size:0.84rem;color:var(--text-muted);line-height:1.6;">3+ Kampagnen live, erste Replies, &Uuml;bergabe an Nicole, w&ouml;chentliches Reporting</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:20px;align-items:flex-start;">
+          <div style="width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,0.06);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:0.68rem;font-weight:800;color:var(--text-muted);flex-shrink:0;">Jun+</div>
+          <div>
+            <div style="font-size:0.9rem;font-weight:700;color:var(--text);margin-bottom:4px;">Skalierung</div>
+            <div style="font-size:0.84rem;color:var(--text-muted);line-height:1.6;">Beste Kampagnen skalieren, neue Segmente erschlie&szlig;en, Volumen erh&ouml;hen</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROI-Box -->
+    <div style="background:rgba(34,197,94,0.05);border:1px solid rgba(34,197,94,0.2);border-radius:16px;padding:32px;margin-bottom:40px;">
+      <div style="font-size:0.7rem;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:20px;">Konservative ROI-Rechnung</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:24px;">
+        <div style="text-align:center;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:10px;padding:16px 12px;">
+          <div style="font-size:1.4rem;font-weight:800;color:var(--accent);margin-bottom:3px;">15&ndash;30</div>
+          <div style="font-size:0.76rem;color:var(--text-muted);">Erstgespr&auml;che / Monat (konservativ)</div>
+        </div>
+        <div style="text-align:center;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:10px;padding:16px 12px;">
+          <div style="font-size:1.4rem;font-weight:800;color:var(--text);margin-bottom:3px;">10%</div>
+          <div style="font-size:0.76rem;color:var(--text-muted);">Abschlussrate (eurer Erfahrungswert)</div>
+        </div>
+        <div style="text-align:center;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:10px;padding:16px 12px;">
+          <div style="font-size:1.4rem;font-weight:800;color:var(--green);margin-bottom:3px;">2&ndash;3</div>
+          <div style="font-size:0.76rem;color:var(--text-muted);">Neue Kunden / Monat</div>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding-top:16px;border-top:1px solid rgba(34,197,94,0.15);flex-wrap:wrap;gap:8px;">
+        <div>
+          <div style="font-size:0.9rem;color:var(--text);font-weight:600;">Monatlicher Mehrwert</div>
+          <div style="font-size:0.78rem;color:var(--text-muted);margin-top:2px;">2&ndash;3 Neukunden &times; &oslash; 21.500 &euro; vs. 3.400 &euro; Retainer</div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:1.4rem;font-weight:800;color:var(--green);">~43.000&ndash;64.500 &euro;</div>
+          <div style="font-size:0.72rem;color:var(--text-muted);">potenzieller Mehrumsatz / Monat</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div style="text-align:center;">
+      <a href="#" onclick="switchTab('booking');return false;"
+         style="display:inline-block;background:var(--accent);color:white;padding:16px 40px;border-radius:10px;font-weight:700;font-size:1rem;text-decoration:none;margin-bottom:12px;">
+        Jetzt Termin buchen &rarr;
+      </a>
+      <div style="font-size:0.8rem;color:var(--text-muted);margin-top:10px;">Monatlich k&uuml;ndbar &mdash; keine langen Bindungsfristen</div>
+    </div>
+
+    <div style="height:60px;"></div>
   </div>
 </section>
 
