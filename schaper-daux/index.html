@@ -1,0 +1,505 @@
+<!-- GRUNDWERK-OFFER v1 | 2026-03-20 11:30 | Initial deploy -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII=" />
+<script>
+(function(){
+var code='7341826509';
+var params=new URLSearchParams(window.location.search);
+if(params.get('secure')!==code){document.documentElement.style.display='none';document.title='Zugriff verweigert';window.stop();}
+})();
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="offer-version" content="v1 | 2026-03-20">
+<title>SchaperDaux &times; Grundwerk &mdash; Dein Angebot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--bg-card:#111111;--bg-card-hover:#161616;--bg-accent:#1a1a2e;--text:#f0f0f0;--text-muted:#888;--text-dim:#666;--accent:#4f7df9;--accent-glow:rgba(79,125,249,0.15);--green:#22c55e;--green-glow:rgba(34,197,94,0.15);--red:#ef4444;--red-dim:rgba(239,68,68,0.15);--yellow:#eab308;--border:rgba(255,255,255,0.06);--border-accent:rgba(79,125,249,0.3);--radius:16px;--radius-sm:10px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.7;}
+.container{max-width:1200px;margin:0 auto;padding:0 2rem;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-weight:700;font-size:0.95rem;color:var(--text);}
+.nav-cta{background:var(--accent);color:#fff;padding:8px 20px;border-radius:100px;font-size:0.82rem;font-weight:600;text-decoration:none;transition:opacity 0.2s;}
+.nav-cta:hover{opacity:0.85;}
+section{padding:100px 2rem;}
+.section-label{font-size:0.78rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent);font-weight:600;margin-bottom:12px;}
+.section-title{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:1rem;}
+.section-sub{font-size:1rem;color:var(--text-muted);max-width:600px;margin-bottom:3rem;}
+.fade-in{opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:80px 2rem;}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(79,125,249,0.12),transparent 70%);pointer-events:none;}
+.hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px);background-size:60px 60px;mask-image:linear-gradient(to bottom,rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.3) 40%,transparent 75%);-webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.3) 40%,transparent 75%);pointer-events:none;}
+.hero-content{position:relative;z-index:1;max-width:780px;}
+.hero-logo{margin-bottom:2rem;}
+.hero-logo img{height:52px;filter:brightness(0) invert(1);opacity:0.9;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--accent-glow);border:1px solid var(--border-accent);border-radius:100px;padding:6px 18px;font-size:0.78rem;font-weight:600;color:var(--accent);margin-bottom:1.5rem;}
+h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:800;letter-spacing:-0.04em;line-height:1.1;margin-bottom:1.5rem;}
+h1 .grad{background:linear-gradient(135deg,#4f7df9,#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-sub{font-size:1.1rem;color:var(--text-muted);margin-bottom:2.5rem;line-height:1.8;}
+.hero-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn-primary{background:var(--accent);color:#fff;padding:14px 32px;border-radius:100px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.2s;}
+.btn-primary:hover{opacity:0.9;transform:translateY(-1px);}
+.btn-secondary{background:transparent;color:var(--text);padding:14px 32px;border-radius:100px;font-weight:600;font-size:0.95rem;text-decoration:none;border:1px solid var(--border);transition:all 0.2s;}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent);}
+.ticker-wrap{overflow:hidden;position:relative;padding:20px 0 80px;}
+.ticker-wrap::before,.ticker-wrap::after{content:'';position:absolute;top:0;bottom:0;width:20%;z-index:2;pointer-events:none;}
+.ticker-wrap::before{left:0;background:linear-gradient(to right,var(--bg) 60%,transparent);}
+.ticker-wrap::after{right:0;background:linear-gradient(to left,var(--bg) 60%,transparent);}
+.ticker-row{display:flex;gap:48px;width:max-content;margin-bottom:20px;}
+.ticker-row.fwd{animation:tickFwd 40s linear infinite;}
+.ticker-row.rev{animation:tickRev 45s linear infinite;}
+@keyframes tickFwd{from{transform:translateX(-25%)}to{transform:translateX(-75%)}}
+@keyframes tickRev{from{transform:translateX(-75%)}to{transform:translateX(-25%)}}
+.client-logo{height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);transition:opacity 0.3s,filter 0.3s;flex-shrink:0;}
+.client-logo:hover{opacity:0.8;filter:none;}
+.stat-bar{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.stat-item{background:var(--bg-card);padding:32px 24px;text-align:center;}
+.stat-number{font-size:2.5rem;font-weight:800;color:var(--accent);letter-spacing:-0.03em;}
+.stat-label{font-size:0.82rem;color:var(--text-muted);margin-top:4px;}
+.problem-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:16px;}
+.problem-card .icon{font-size:1.8rem;margin-bottom:12px;}
+.problem-card h3{font-size:1rem;font-weight:700;margin-bottom:8px;}
+.problem-card p{font-size:0.88rem;color:var(--text-muted);line-height:1.6;}
+.solution-box{background:var(--bg-accent);border:1px solid var(--border-accent);border-radius:var(--radius);padding:36px;position:sticky;top:90px;}
+.solution-box h3{font-size:1.4rem;font-weight:800;margin-bottom:16px;color:var(--accent);}
+.solution-box p{font-size:0.9rem;color:var(--text-muted);margin-bottom:20px;}
+.cost-item{background:rgba(255,255,255,0.04);border-radius:var(--radius-sm);padding:16px 20px;display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
+.cost-item .clabel{font-size:0.82rem;color:var(--text-muted);}
+.cost-item .cvalue{font-size:1rem;font-weight:700;}
+.cost-item .cvalue.red{color:var(--red);}
+.cost-item .cvalue.green{color:var(--green);}
+.process-step{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px 20px;text-align:center;}
+.step-num{width:44px;height:44px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem;color:#fff;margin:0 auto 16px;}
+.process-step h4{font-size:0.9rem;font-weight:700;margin-bottom:8px;}
+.process-step p{font-size:0.8rem;color:var(--text-muted);}
+.tool-ticker-section{padding:60px 2rem;background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.ticker-header{text-align:center;margin-bottom:32px;}
+.ticker-header h3{font-size:1.3rem;font-weight:800;}
+.ticker-header h3 span{color:var(--accent);}
+.ticker-label{font-size:0.8rem;color:var(--text-muted);margin-top:6px;}
+.tool-ticker-wrap{overflow:hidden;position:relative;}
+.tool-ticker-wrap::before,.tool-ticker-wrap::after{content:'';position:absolute;top:0;bottom:0;width:20%;z-index:2;pointer-events:none;}
+.tool-ticker-wrap::before{left:0;background:linear-gradient(to right,var(--bg-card) 60%,transparent);}
+.tool-ticker-wrap::after{right:0;background:linear-gradient(to left,var(--bg-card) 60%,transparent);}
+.tool-row{display:flex;gap:12px;width:max-content;margin-bottom:12px;}
+.tool-row.fwd{animation:tickFwd 35s linear infinite;}
+.tool-row.rev{animation:tickRev 40s linear infinite;}
+.tool-pill{display:flex;align-items:center;gap:8px;background:var(--bg);border:1px solid var(--border);border-radius:100px;padding:6px 16px;font-size:0.8rem;white-space:nowrap;}
+.dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+.dot.blue{background:#4f7df9;}.dot.green{background:#22c55e;}.dot.purple{background:#a855f7;}.dot.orange{background:#f97316;}.dot.cyan{background:#06b6d4;}.dot.red{background:#ef4444;}
+.campaign-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;}
+.campaign-icon{font-size:2.2rem;margin-bottom:16px;}
+.campaign-card h3{font-size:1rem;font-weight:700;margin-bottom:12px;}
+.campaign-card .tag{display:inline-block;background:var(--accent-glow);color:var(--accent);font-size:0.72rem;font-weight:600;padding:3px 10px;border-radius:100px;margin-bottom:10px;}
+.campaign-card p{font-size:0.85rem;color:var(--text-muted);}
+.team-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;}
+.team-avatar{width:56px;height:56px;border-radius:50%;background:var(--accent-glow);border:2px solid var(--border-accent);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:16px;}
+.team-card h3{font-size:1rem;font-weight:700;margin-bottom:6px;}
+.team-card .role{font-size:0.78rem;color:var(--accent);font-weight:600;margin-bottom:12px;}
+.team-card p{font-size:0.85rem;color:var(--text-muted);}
+.offer-section{background:linear-gradient(180deg,var(--bg) 0%,var(--bg-accent) 100%);}
+.price-card{background:var(--bg-accent);border:2px solid var(--accent);border-radius:var(--radius);padding:36px 32px;position:relative;margin-bottom:24px;}
+.rec-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:0.72rem;font-weight:700;padding:4px 18px;border-radius:100px;}
+.price-name{font-size:1.2rem;font-weight:800;margin-bottom:6px;}
+.price-channel{font-size:0.82rem;color:var(--text-muted);margin-bottom:16px;}
+.price-setup{font-size:0.85rem;color:var(--text-muted);margin-bottom:8px;}
+.price-monthly{font-size:2.8rem;font-weight:800;color:var(--text);letter-spacing:-0.03em;}
+.price-per{font-size:0.82rem;color:var(--text-muted);margin-bottom:16px;}
+.price-total{background:var(--green-glow);border:1px solid var(--green);border-radius:var(--radius-sm);padding:10px 16px;font-size:0.88rem;font-weight:700;color:var(--green);margin-bottom:20px;}
+.price-features{list-style:none;text-align:left;margin-bottom:20px;}
+.price-features li{font-size:0.88rem;color:var(--text-muted);padding:6px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;}
+.price-features li::before{content:'\2713';color:var(--green);font-weight:700;flex-shrink:0;}
+.payment-plan{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin-top:16px;text-align:left;}
+.payment-plan h4{font-size:0.9rem;font-weight:700;margin-bottom:16px;}
+.payment-row{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:rgba(255,255,255,0.04);border-radius:var(--radius-sm);margin-bottom:10px;}
+.payment-row.hl{background:var(--accent-glow);border:1px solid var(--border-accent);}
+.payment-row .pmonth{font-size:0.82rem;color:var(--text-muted);}
+.payment-row .pamount{font-size:1rem;font-weight:700;}
+.payment-row .pdetails{font-size:0.75rem;color:var(--text-dim);}
+.forecast-table{width:100%;border-collapse:collapse;margin-bottom:28px;}
+.forecast-table th{text-align:left;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);padding:12px 16px;border-bottom:1px solid var(--border);}
+.forecast-table td{padding:14px 16px;border-bottom:1px solid var(--border);font-size:0.9rem;}
+.forecast-table tr:last-child td{font-weight:700;color:var(--green);}
+.forecast-note{background:var(--green-glow);border:1px solid var(--green);border-radius:var(--radius-sm);padding:16px 20px;font-size:0.85rem;color:var(--green);margin-bottom:24px;}
+.roi-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;text-align:center;}
+.roi-card.hl{background:var(--accent-glow);border-color:var(--border-accent);}
+.roi-label{font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-bottom:12px;}
+.roi-num{font-size:2.8rem;font-weight:800;color:var(--green);margin-bottom:8px;}
+.roi-detail{font-size:0.82rem;color:var(--text-muted);}
+.bonus-item{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;display:flex;align-items:flex-start;gap:16px;margin-bottom:16px;}
+.bonus-icon{font-size:1.8rem;flex-shrink:0;}
+.bonus-item h4{font-size:0.9rem;font-weight:700;margin-bottom:4px;}
+.bonus-item p{font-size:0.82rem;color:var(--text-muted);}
+.timeline{position:relative;padding-left:32px;}
+.timeline::before{content:'';position:absolute;left:10px;top:0;bottom:0;width:2px;background:var(--border-accent);}
+.timeline-item{position:relative;margin-bottom:32px;}
+.timeline-item::before{content:'';position:absolute;left:-26px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid var(--bg);}
+.timeline-item h4{font-size:0.95rem;font-weight:700;margin-bottom:4px;}
+.timeline-item p{font-size:0.85rem;color:var(--text-muted);}
+.tl-hl{background:var(--accent-glow);border:1px solid var(--border-accent);border-radius:var(--radius);padding:20px 24px;margin-top:24px;text-align:center;font-weight:700;font-size:1rem;}
+.cta-section{text-align:center;}
+.contact-info{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:2rem;}
+.contact-chip{background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:10px 20px;font-size:0.85rem;display:flex;align-items:center;gap:8px;}
+footer{text-align:center;padding:32px 2rem;color:var(--text-dim);font-size:0.82rem;border-top:1px solid var(--border);}
+@media(max-width:900px){
+.process-steps-grid{grid-template-columns:repeat(2,1fr)!important;}
+.team-grid,.roi-grid,.campaign-grid{grid-template-columns:1fr!important;}
+.problem-grid{grid-template-columns:1fr!important;}
+.compare-grid,.bonus-grid-2{grid-template-columns:1fr!important;}
+}
+@media(max-width:600px){section{padding:60px 1.25rem;}.stat-bar{grid-template-columns:repeat(2,1fr)!important;}.process-steps-grid{grid-template-columns:1fr!important;}}
+</style>
+</head>
+<body>
+<nav>
+<div class="nav-inner">
+<div class="nav-logo">SchaperDaux &times; Grundwerk</div>
+<a href="#angebot" class="nav-cta">Zum Angebot</a>
+</div>
+</nav>
+
+<section class="hero">
+<div class="hero-bg"></div>
+<div class="hero-content fade-in">
+<div class="hero-logo">
+<img src="https://schaper-daux.de/wp-content/uploads/2024/09/SchaperDauX-Logo-Vektor-schwarz.png" alt="SchaperDaux" style="height:52px;filter:brightness(0) invert(1);opacity:0.9;">
+</div>
+<div class="hero-eyebrow">&#128640; Pers&ouml;nliches Angebot &mdash; Marcy &amp; Mats</div>
+<h1>Neue B2B-Kunden auf <span class="grad">Autopilot</span> &mdash;<br>Skalierbarer Outreach f&uuml;r SchaperDaux</h1>
+<p class="hero-sub">Du weisst, dass E-Mail-Outreach funktioniert &mdash; du hast es selbst bewiesen.<br>Jetzt professionalisieren wir das gemeinsam und bringen euch systematisch an Unternehmen, die noch keine Teamkleidung haben.</p>
+<div class="hero-ctas">
+<a href="#angebot" class="btn-primary">Angebot ansehen</a>
+<a href="#prozess" class="btn-secondary">Wie funktioniert das?</a>
+</div>
+</div>
+</section>
+
+<div class="ticker-wrap">
+<div class="ticker-row fwd">
+<img class="client-logo" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel">
+<img class="client-logo" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes">
+<img class="client-logo" src="https://www.hrs.de/_next/static/media/hrs_logo_red.7cccdfd9.svg" alt="HRS">
+<img class="client-logo" src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang">
+<img class="client-logo" src="https://cdn.prod.website-files.com/673602757a06be245e484913/678d467526d221b55f5dc3e0_mc-logo-1-black.svg" alt="Michelscom">
+<img class="client-logo" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel">
+<img class="client-logo" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes">
+<img class="client-logo" src="https://www.hrs.de/_next/static/media/hrs_logo_red.7cccdfd9.svg" alt="HRS">
+<img class="client-logo" src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang">
+<img class="client-logo" src="https://cdn.prod.website-files.com/673602757a06be245e484913/678d467526d221b55f5dc3e0_mc-logo-1-black.svg" alt="Michelscom">
+<img class="client-logo" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel">
+<img class="client-logo" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes">
+<img class="client-logo" src="https://www.hrs.de/_next/static/media/hrs_logo_red.7cccdfd9.svg" alt="HRS">
+<img class="client-logo" src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang">
+<img class="client-logo" src="https://cdn.prod.website-files.com/673602757a06be245e484913/678d467526d221b55f5dc3e0_mc-logo-1-black.svg" alt="Michelscom">
+<img class="client-logo" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel">
+<img class="client-logo" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes">
+<img class="client-logo" src="https://www.hrs.de/_next/static/media/hrs_logo_red.7cccdfd9.svg" alt="HRS">
+<img class="client-logo" src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang">
+<img class="client-logo" src="https://cdn.prod.website-files.com/673602757a06be245e484913/678d467526d221b55f5dc3e0_mc-logo-1-black.svg" alt="Michelscom">
+</div>
+<div class="ticker-row rev">
+<img class="client-logo" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="SmartBridges">
+<img class="client-logo" src="https://d2bw95mh2ee04s.cloudfront.net/prod/content/wp-content/uploads/2025/01/02134814/Property-Logo-Main.svg" alt="SellerLogic">
+<img class="client-logo" src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly">
+<img class="client-logo" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy">
+<img class="client-logo" src="https://digitalnow.online/logo.png" alt="Digital Now">
+<img class="client-logo" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="SmartBridges">
+<img class="client-logo" src="https://d2bw95mh2ee04s.cloudfront.net/prod/content/wp-content/uploads/2025/01/02134814/Property-Logo-Main.svg" alt="SellerLogic">
+<img class="client-logo" src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly">
+<img class="client-logo" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy">
+<img class="client-logo" src="https://digitalnow.online/logo.png" alt="Digital Now">
+<img class="client-logo" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="SmartBridges">
+<img class="client-logo" src="https://d2bw95mh2ee04s.cloudfront.net/prod/content/wp-content/uploads/2025/01/02134814/Property-Logo-Main.svg" alt="SellerLogic">
+<img class="client-logo" src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly">
+<img class="client-logo" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy">
+<img class="client-logo" src="https://digitalnow.online/logo.png" alt="Digital Now">
+<img class="client-logo" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="SmartBridges">
+<img class="client-logo" src="https://d2bw95mh2ee04s.cloudfront.net/prod/content/wp-content/uploads/2025/01/02134814/Property-Logo-Main.svg" alt="SellerLogic">
+<img class="client-logo" src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly">
+<img class="client-logo" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy">
+<img class="client-logo" src="https://digitalnow.online/logo.png" alt="Digital Now">
+</div>
+</div>
+
+<section style="padding:0 2rem 80px;">
+<div class="container">
+<div class="stat-bar fade-in" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;">
+<div class="stat-item"><div class="stat-number">10 Mio.+</div><div class="stat-label">E-Mails versendet</div></div>
+<div class="stat-item"><div class="stat-number">50+</div><div class="stat-label">Erfolgreiche B2B-Projekte</div></div>
+<div class="stat-item"><div class="stat-number">75+</div><div class="stat-label">Tools &amp; Datenanbieter</div></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="problem-grid fade-in" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;">
+<div>
+<div class="section-label">Die Herausforderung</div>
+<div class="section-title">Das bremst euch gerade</div>
+<div class="problem-card">
+<div class="icon">&#128683;</div>
+<h3>Neukunden finden ist m&uuml;hsam</h3>
+<p>Unternehmen, die noch keine Teamkleidung haben, sind schwer zu identifizieren &mdash; und noch schwerer zu erreichen. Empfehlungen und Messen skalieren nicht.</p>
+</div>
+<div class="problem-card">
+<div class="icon">&#128465;</div>
+<h3>Kundenverluste unkontrollierbar</h3>
+<p>Wenn ein Kunde wegen Insolvenz oder Schlie&szlig;ung wegf&auml;llt, gibt es keinen aktiven Kanal, um die L&uuml;cke schnell zu f&uuml;llen. Wachstum bleibt dem Zufall &uuml;berlassen.</p>
+</div>
+<div class="problem-card">
+<div class="icon">&#9878;</div>
+<h3>Rechtliche Unsicherheit hat gebremst</h3>
+<p>Ein Jahr lang war Cold Email kein Thema &mdash; aus Angst vor Abmahnungen. Dabei habt ihr mit dem Vereins-Outreach selbst bewiesen, wie gut es funktioniert.</p>
+</div>
+</div>
+<div class="solution-box">
+<h3>&#128279; Die L&ouml;sung</h3>
+<p>Wir bauen euren B2B-Outreach professionell auf: rechtlich abgesichert, automatisiert und skalierbar &mdash; damit ihr euch auf Angebote und Abschl&uuml;sse konzentrieren k&ouml;nnt.</p>
+<div class="cost-item"><span class="clabel">Kosten pro qualif. Termin &mdash; Meta Ads</span><span class="cvalue red">~1.750 &euro;</span></div>
+<div class="cost-item"><span class="clabel">Kosten pro qualif. Termin &mdash; Cold Outreach</span><span class="cvalue green">~250 &euro;</span></div>
+<div class="cost-item"><span class="clabel">Einsparung pro Termin</span><span class="cvalue green">1.500 &euro;</span></div>
+</div>
+</div>
+</div>
+</section>
+<section id="prozess" style="background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+<div class="container">
+<div class="section-label">Unser System</div>
+<div class="section-title fade-in">Wie wir B2B-Leads generieren</div>
+<div class="section-sub fade-in">Von Zielgruppe bis zur positiven Antwort in eurem Postfach &mdash; vollautomatisiert.</div>
+<div class="process-steps-grid fade-in" style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px;">
+<div class="process-step"><div class="step-num" style="width:44px;height:44px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;margin:0 auto 16px;">1</div><h4>Zielgruppe definieren</h4><p>Wir identifizieren Unternehmen 50&ndash;200 MA, die noch keine Teamkleidung beziehen.</p></div>
+<div class="process-step"><div class="step-num" style="width:44px;height:44px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;margin:0 auto 16px;">2</div><h4>Entscheider finden</h4><p>GF &amp; Einkaufsverantwortliche mit verifizierten Kontaktdaten aus 75+ Quellen.</p></div>
+<div class="process-step"><div class="step-num" style="width:44px;height:44px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;margin:0 auto 16px;">3</div><h4>Personalisierte Ansprache</h4><p>Individualisierte E-Mail-Sequenzen mit mehreren Variablen &mdash; kein Massen-Spam.</p></div>
+<div class="process-step"><div class="step-num" style="width:44px;height:44px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;margin:0 auto 16px;">4</div><h4>MasterInbox</h4><p>Alle positiven Antworten aus allen Postf&auml;chern zentral geb&uuml;ndelt in einem System.</p></div>
+<div class="process-step"><div class="step-num" style="width:44px;height:44px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;margin:0 auto 16px;">5</div><h4>Warme Leads</h4><p>Nur echte, interessierte Kontakte landen bei euch &mdash; keine Zeitverschwendung.</p></div>
+</div>
+</div>
+</section>
+
+<div class="tool-ticker-section">
+<div class="ticker-header">
+<h3>75+ Tools &amp; Datenanbieter &rarr; <span>0&euro; Fixkosten f&uuml;r euch</span></h3>
+<div class="ticker-label">Enterprise-GTM-Setup &mdash; wir tragen die Infrastrukturkosten</div>
+</div>
+<div class="tool-ticker-wrap">
+<div class="tool-row fwd">
+<span class="tool-pill"><span class="dot blue"></span>Apollo.io</span><span class="tool-pill"><span class="dot orange"></span>Clay</span><span class="tool-pill"><span class="dot green"></span>Instantly</span><span class="tool-pill"><span class="dot purple"></span>OpenAI</span><span class="tool-pill"><span class="dot cyan"></span>Findymail</span><span class="tool-pill"><span class="dot blue"></span>MasterInbox</span><span class="tool-pill"><span class="dot green"></span>Heyreach</span><span class="tool-pill"><span class="dot orange"></span>RevyOps</span><span class="tool-pill"><span class="dot blue"></span>Supabase</span><span class="tool-pill"><span class="dot purple"></span>LinkedIn Sales Nav</span><span class="tool-pill"><span class="dot green"></span>Prospeo</span><span class="tool-pill"><span class="dot red"></span>Millionverifier</span>
+<span class="tool-pill"><span class="dot blue"></span>Apollo.io</span><span class="tool-pill"><span class="dot orange"></span>Clay</span><span class="tool-pill"><span class="dot green"></span>Instantly</span><span class="tool-pill"><span class="dot purple"></span>OpenAI</span><span class="tool-pill"><span class="dot cyan"></span>Findymail</span><span class="tool-pill"><span class="dot blue"></span>MasterInbox</span><span class="tool-pill"><span class="dot green"></span>Heyreach</span><span class="tool-pill"><span class="dot orange"></span>RevyOps</span><span class="tool-pill"><span class="dot blue"></span>Supabase</span><span class="tool-pill"><span class="dot purple"></span>LinkedIn Sales Nav</span><span class="tool-pill"><span class="dot green"></span>Prospeo</span><span class="tool-pill"><span class="dot red"></span>Millionverifier</span>
+<span class="tool-pill"><span class="dot blue"></span>Apollo.io</span><span class="tool-pill"><span class="dot orange"></span>Clay</span><span class="tool-pill"><span class="dot green"></span>Instantly</span><span class="tool-pill"><span class="dot purple"></span>OpenAI</span><span class="tool-pill"><span class="dot cyan"></span>Findymail</span><span class="tool-pill"><span class="dot blue"></span>MasterInbox</span><span class="tool-pill"><span class="dot green"></span>Heyreach</span><span class="tool-pill"><span class="dot orange"></span>RevyOps</span><span class="tool-pill"><span class="dot blue"></span>Supabase</span><span class="tool-pill"><span class="dot purple"></span>LinkedIn Sales Nav</span><span class="tool-pill"><span class="dot green"></span>Prospeo</span><span class="tool-pill"><span class="dot red"></span>Millionverifier</span>
+<span class="tool-pill"><span class="dot blue"></span>Apollo.io</span><span class="tool-pill"><span class="dot orange"></span>Clay</span><span class="tool-pill"><span class="dot green"></span>Instantly</span><span class="tool-pill"><span class="dot purple"></span>OpenAI</span><span class="tool-pill"><span class="dot cyan"></span>Findymail</span><span class="tool-pill"><span class="dot blue"></span>MasterInbox</span>
+</div>
+<div class="tool-row rev">
+<span class="tool-pill"><span class="dot purple"></span>Claude AI</span><span class="tool-pill"><span class="dot blue"></span>Northdata</span><span class="tool-pill"><span class="dot orange"></span>n8n</span><span class="tool-pill"><span class="dot green"></span>Mailreach</span><span class="tool-pill"><span class="dot cyan"></span>Lusha</span><span class="tool-pill"><span class="dot red"></span>BounceBan</span><span class="tool-pill"><span class="dot purple"></span>Perplexity</span><span class="tool-pill"><span class="dot blue"></span>Brightdata</span><span class="tool-pill"><span class="dot orange"></span>Make</span><span class="tool-pill"><span class="dot green"></span>Ocean.io</span><span class="tool-pill"><span class="dot cyan"></span>Bettercontact</span><span class="tool-pill"><span class="dot red"></span>Icypeas</span>
+<span class="tool-pill"><span class="dot purple"></span>Claude AI</span><span class="tool-pill"><span class="dot blue"></span>Northdata</span><span class="tool-pill"><span class="dot orange"></span>n8n</span><span class="tool-pill"><span class="dot green"></span>Mailreach</span><span class="tool-pill"><span class="dot cyan"></span>Lusha</span><span class="tool-pill"><span class="dot red"></span>BounceBan</span><span class="tool-pill"><span class="dot purple"></span>Perplexity</span><span class="tool-pill"><span class="dot blue"></span>Brightdata</span><span class="tool-pill"><span class="dot orange"></span>Make</span><span class="tool-pill"><span class="dot green"></span>Ocean.io</span><span class="tool-pill"><span class="dot cyan"></span>Bettercontact</span><span class="tool-pill"><span class="dot red"></span>Icypeas</span>
+<span class="tool-pill"><span class="dot purple"></span>Claude AI</span><span class="tool-pill"><span class="dot blue"></span>Northdata</span><span class="tool-pill"><span class="dot orange"></span>n8n</span><span class="tool-pill"><span class="dot green"></span>Mailreach</span><span class="tool-pill"><span class="dot cyan"></span>Lusha</span><span class="tool-pill"><span class="dot red"></span>BounceBan</span><span class="tool-pill"><span class="dot purple"></span>Perplexity</span><span class="tool-pill"><span class="dot blue"></span>Brightdata</span><span class="tool-pill"><span class="dot orange"></span>Make</span><span class="tool-pill"><span class="dot green"></span>Ocean.io</span><span class="tool-pill"><span class="dot cyan"></span>Bettercontact</span><span class="tool-pill"><span class="dot red"></span>Icypeas</span>
+<span class="tool-pill"><span class="dot purple"></span>Claude AI</span><span class="tool-pill"><span class="dot blue"></span>Northdata</span><span class="tool-pill"><span class="dot orange"></span>n8n</span><span class="tool-pill"><span class="dot green"></span>Mailreach</span><span class="tool-pill"><span class="dot cyan"></span>Lusha</span><span class="tool-pill"><span class="dot red"></span>BounceBan</span>
+</div>
+</div>
+</div>
+
+<section>
+<div class="container">
+<div class="section-label">Strategie</div>
+<div class="section-title fade-in">Eure 3 Kampagnen-Cluster</div>
+<div class="section-sub fade-in">Jede Kampagne spricht einen spezifischen Schmerz der Zielgruppe an &mdash; personalisiert, nicht generisch.</div>
+<div class="campaign-grid fade-in" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+<div class="campaign-card">
+<div class="campaign-icon">&#127970;</div>
+<div class="tag">Prim&auml;r-Kampagne</div>
+<h3>Mittelstand ohne Teamkleidung</h3>
+<p>Unternehmen 50&ndash;200 Mitarbeiter, die noch keine standardisierte Arbeits- oder Teamkleidung beziehen. Angle: &bdquo;Einheitliches Auftreten steigert das Wir-Gef&uuml;hl.&ldquo; Ziel: GF &amp; Einkaufsleiter.</p>
+</div>
+<div class="campaign-card">
+<div class="campaign-icon">&#127936;</div>
+<div class="tag">Wachstums-Kampagne</div>
+<h3>Sportvereine &amp; Clubs</h3>
+<p>Vereine, die neu gegr&uuml;ndet wurden oder stark wachsen und erstmals Trikots &amp; Clubkleidung brauchen. Angle: &bdquo;Euer erster Lieferant f&uuml;r professionelles Vereins-Outfit.&ldquo;</p>
+</div>
+<div class="campaign-card">
+<div class="campaign-icon">&#128736;</div>
+<div class="tag">Handwerk-Kampagne</div>
+<h3>Handwerk &amp; Dienstleister</h3>
+<p>Kleinbetriebe mit Teams, die professionelle Arbeitskleidung und Stickerei-Logos brauchen. Angle: &bdquo;Professionelles Auftreten beim Kunden &mdash; ohne Agenturpreise.&ldquo;</p>
+</div>
+</div>
+</div>
+</section>
+
+<section style="background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+<div class="container">
+<div class="section-label">Euer Team</div>
+<div class="section-title fade-in">Das Execution-Team hinter dem Erfolg</div>
+<div class="team-grid fade-in" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+<div class="team-card"><div class="team-avatar" style="width:56px;height:56px;border-radius:50%;background:var(--accent-glow);border:2px solid var(--border-accent);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:16px;">&#129335;</div><h3>Account Manager</h3><div class="role">Strategie &amp; Kampagnenoptimierung</div><p>Euer pers&ouml;nlicher Ansprechpartner. Er plant, optimiert und reportet &mdash; ihr bleibt immer im Bild.</p></div>
+<div class="team-card"><div class="team-avatar" style="width:56px;height:56px;border-radius:50%;background:var(--accent-glow);border:2px solid var(--border-accent);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:16px;">&#128202;</div><h3>Clay Engineer</h3><div class="role">Daten, Leadlisten &amp; Enrichment</div><p>Baut die Zielgruppenlisten mit verifizierten Entscheider-Daten aus 75+ Quellen &mdash; f&uuml;r maximale Treffsicherheit.</p></div>
+<div class="team-card"><div class="team-avatar" style="width:56px;height:56px;border-radius:50%;background:var(--accent-glow);border:2px solid var(--border-accent);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:16px;">&#9889;</div><h3>Automations Expert</h3><div class="role">Infrastruktur &amp; Deliverability</div><p>Richtet Domains, Inboxen und Sequenzen so ein, dass E-Mails ankommen &mdash; und nicht im Spam landen.</p></div>
+</div>
+</div>
+</section>
+<section id="angebot" class="offer-section" style="background:linear-gradient(180deg,var(--bg) 0%,var(--bg-accent) 100%);">
+<div class="container">
+<div class="section-label">Investition</div>
+<div class="section-title fade-in" style="text-align:center;">Dein Angebot, Marcy</div>
+<div class="section-sub fade-in" style="text-align:center;margin-left:auto;margin-right:auto;">Basierend auf eurem Call vom 20. M&auml;rz 2026 &mdash; f&uuml;r den Einstieg ins B2B-Outreach.</div>
+<div class="fade-in" style="max-width:520px;margin:0 auto;text-align:center;">
+<div class="price-card" style="background:var(--bg-accent);border:2px solid var(--accent);border-radius:var(--radius);padding:36px 32px;position:relative;margin-bottom:24px;">
+<div class="rec-badge" style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:0.72rem;font-weight:700;padding:4px 18px;border-radius:100px;">Empfohlen f&uuml;r SchaperDaux</div>
+<div class="price-name">B2B-Outreach Starter</div>
+<div class="price-channel">E-Mail-Kanal &mdash; 10.000 E-Mails / Monat</div>
+<div class="price-setup">zzgl. <strong>1.990 &euro;</strong> einmalige Kickoff-Geb&uuml;hr</div>
+<div class="price-monthly">2.000 &euro;</div>
+<div class="price-per">pro Monat &middot; 4 Monate Mindestlaufzeit</div>
+<div class="price-total">Gesamt: 9.990 &euro; (inkl. Setup)</div>
+<ul class="price-features" style="list-style:none;text-align:left;margin-bottom:20px;">
+<li style="font-size:0.88rem;color:var(--text-muted);padding:6px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;"><span style="color:var(--green);font-weight:700;flex-shrink:0;">&#10003;</span>Zielgruppen-Research &amp; Leadlisten (5.000 Kontakte / Monat)</li>
+<li style="font-size:0.88rem;color:var(--text-muted);padding:6px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;"><span style="color:var(--green);font-weight:700;flex-shrink:0;">&#10003;</span>Entscheider-Identifikation mit Dreifach-Verifikation</li>
+<li style="font-size:0.88rem;color:var(--text-muted);padding:6px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;"><span style="color:var(--green);font-weight:700;flex-shrink:0;">&#10003;</span>3&ndash;4 personalisierte E-Mail-Kampagnen</li>
+<li style="font-size:0.88rem;color:var(--text-muted);padding:6px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;"><span style="color:var(--green);font-weight:700;flex-shrink:0;">&#10003;</span>Grundwerk Web App (MasterInbox) &mdash; alle Antworten zentral</li>
+<li style="font-size:0.88rem;color:var(--text-muted);padding:6px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;"><span style="color:var(--green);font-weight:700;flex-shrink:0;">&#10003;</span>Rechtliches Abmahn-Management (Anwalt im Hintergrund)</li>
+<li style="font-size:0.88rem;color:var(--text-muted);padding:6px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;"><span style="color:var(--green);font-weight:700;flex-shrink:0;">&#10003;</span>W&ouml;chentliches Reporting &amp; Optimierung</li>
+<li style="font-size:0.88rem;color:var(--text-muted);padding:6px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;"><span style="color:var(--green);font-weight:700;flex-shrink:0;">&#10003;</span>Bi-Weekly Call mit Account Manager</li>
+<li style="font-size:0.88rem;color:var(--text-muted);padding:6px 0;display:flex;align-items:flex-start;gap:10px;"><span style="color:var(--green);font-weight:700;flex-shrink:0;">&#10003;</span>Onboarding Workshop (1h KickOff)</li>
+</ul>
+<details style="margin-bottom:8px;text-align:left;">
+<summary style="cursor:pointer;font-weight:700;font-size:0.82rem;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);list-style:none;display:flex;justify-content:space-between;align-items:center;">Technische Infrastruktur <span style="font-size:0.7rem;color:var(--text-muted);">&#9660;</span></summary>
+<ul style="list-style:none;display:flex;flex-direction:column;gap:6px;padding:10px 0 4px;font-size:0.82rem;color:var(--text-muted);">
+<li>&#10003; 10&ndash;15 Domains + Postf&auml;cher (Werbebudget ~300 &euro;/Monat, bei euch)</li>
+<li>&#10003; Domain-Warming &amp; Deliverability-Monitoring</li>
+<li>&#10003; Eigene Domains bleiben bei euch auch nach Ende der Zusammenarbeit</li>
+</ul>
+</details>
+<details style="margin-bottom:8px;text-align:left;">
+<summary style="cursor:pointer;font-weight:700;font-size:0.82rem;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);list-style:none;display:flex;justify-content:space-between;align-items:center;">Datenschutz &amp; Rechtliches <span style="font-size:0.7rem;color:var(--text-muted);">&#9660;</span></summary>
+<ul style="list-style:none;display:flex;flex-direction:column;gap:6px;padding:10px 0 4px;font-size:0.82rem;color:var(--text-muted);">
+<li>&#10003; Reply-Bot bearbeitet Ablehnungen sofort</li>
+<li>&#10003; Externer Anwalt &uuml;bernimmt etwaige F&auml;lle</li>
+<li>&#10003; Historischer Wert: ~300 &euro; Kosten auf 40.000 E-Mails</li>
+</ul>
+</details>
+</div>
+<div class="payment-plan" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin-top:16px;text-align:left;">
+<h4 style="font-size:0.9rem;font-weight:700;margin-bottom:16px;">&#128197; Zahlungsplan</h4>
+<div class="payment-row hl" style="display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:var(--accent-glow);border:1px solid var(--border-accent);border-radius:var(--radius-sm);margin-bottom:10px;">
+<div><div class="pmonth" style="font-size:0.82rem;color:var(--text-muted);">Monat 1 &mdash; Kickoff &amp; Setup</div><div class="pdetails" style="font-size:0.75rem;color:var(--text-dim);">Einmalige Kickoff-Geb&uuml;hr + erster Retainer</div></div>
+<div class="pamount" style="font-size:1rem;font-weight:700;">3.990 &euro;</div>
+</div>
+<div class="payment-row" style="display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:rgba(255,255,255,0.04);border-radius:var(--radius-sm);margin-bottom:10px;">
+<div><div class="pmonth" style="font-size:0.82rem;color:var(--text-muted);">Monat 2 &mdash; Kampagne live</div><div class="pdetails" style="font-size:0.75rem;color:var(--text-dim);">Erste E-Mails gehen raus</div></div>
+<div class="pamount" style="font-size:1rem;font-weight:700;">2.000 &euro;</div>
+</div>
+<div class="payment-row" style="display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:rgba(255,255,255,0.04);border-radius:var(--radius-sm);margin-bottom:10px;">
+<div><div class="pmonth" style="font-size:0.82rem;color:var(--text-muted);">Monat 3 &mdash; Optimierung</div><div class="pdetails" style="font-size:0.75rem;color:var(--text-dim);">Kampagnen werden optimiert &amp; skaliert</div></div>
+<div class="pamount" style="font-size:1rem;font-weight:700;">2.000 &euro;</div>
+</div>
+<div class="payment-row" style="display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:rgba(255,255,255,0.04);border-radius:var(--radius-sm);">
+<div><div class="pmonth" style="font-size:0.82rem;color:var(--text-muted);">Monat 4 &mdash; Abschluss &amp; Auswertung</div><div class="pdetails" style="font-size:0.75rem;color:var(--text-dim);">Ergebnisse, Learnings, Verl&auml;ngerungsentscheidung</div></div>
+<div class="pamount" style="font-size:1rem;font-weight:700;">2.000 &euro;</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section>
+<div class="container">
+<div class="section-label">Prognose</div>
+<div class="section-title fade-in">Erwartete Leads in 4 Monaten</div>
+<div class="section-sub fade-in">Konservativ gerechnet &mdash; basierend auf Branchenbenchmarks und euren bisherigen Erfahrungswerten.</div>
+<table class="forecast-table fade-in" style="width:100%;border-collapse:collapse;margin-bottom:28px;">
+<thead><tr><th style="text-align:left;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);padding:12px 16px;border-bottom:1px solid var(--border);">Monat</th><th style="text-align:left;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);padding:12px 16px;border-bottom:1px solid var(--border);">Prospects kontaktiert</th><th style="text-align:left;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);padding:12px 16px;border-bottom:1px solid var(--border);">Erwartete Leads</th><th style="text-align:left;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);padding:12px 16px;border-bottom:1px solid var(--border);">Kumuliert</th></tr></thead>
+<tbody>
+<tr><td style="padding:14px 16px;border-bottom:1px solid var(--border);">Monat 1 (Setup)</td><td style="padding:14px 16px;border-bottom:1px solid var(--border);">&mdash;</td><td style="padding:14px 16px;border-bottom:1px solid var(--border);">&mdash;</td><td style="padding:14px 16px;border-bottom:1px solid var(--border);">0 Leads</td></tr>
+<tr><td style="padding:14px 16px;border-bottom:1px solid var(--border);">Monat 2</td><td style="padding:14px 16px;border-bottom:1px solid var(--border);">5.000+</td><td style="padding:14px 16px;border-bottom:1px solid var(--border);">20&ndash;35 Leads</td><td style="padding:14px 16px;border-bottom:1px solid var(--border);">20&ndash;35 Leads</td></tr>
+<tr><td style="padding:14px 16px;border-bottom:1px solid var(--border);">Monat 3</td><td style="padding:14px 16px;border-bottom:1px solid var(--border);">5.000+</td><td style="padding:14px 16px;border-bottom:1px solid var(--border);">30&ndash;50 Leads</td><td style="padding:14px 16px;border-bottom:1px solid var(--border);">50&ndash;85 Leads</td></tr>
+<tr><td style="padding:14px 16px;font-weight:700;color:var(--green);">Monat 4</td><td style="padding:14px 16px;font-weight:700;color:var(--green);">5.000+</td><td style="padding:14px 16px;font-weight:700;color:var(--green);">30&ndash;50 Leads</td><td style="padding:14px 16px;font-weight:700;color:var(--green);">80&ndash;135 Leads</td></tr>
+</tbody>
+</table>
+<div class="forecast-note fade-in" style="background:var(--green-glow);border:1px solid var(--green);border-radius:var(--radius-sm);padding:16px 20px;font-size:0.85rem;color:var(--green);margin-bottom:24px;">&#128994; Selbst bei konservativem Szenario: 1&ndash;2 neue B2B-Kunden (je 10.000 &euro; Jahresumsatz) decken die gesamte Investition ab.</div>
+<div class="compare-grid fade-in" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+<div style="background:var(--bg-card);border:1px solid var(--red-dim);border-radius:var(--radius);padding:24px;text-align:center;">
+<div style="font-size:0.78rem;color:var(--text-muted);margin-bottom:8px;">Kosten pro qual. Termin &mdash; Meta Ads</div>
+<div style="font-size:2rem;font-weight:800;color:var(--red);">~1.750 &euro;</div>
+<div style="font-size:0.78rem;color:var(--text-dim);margin-top:4px;">Kosten, Konkurrenz, Qualit&auml;t variabel</div>
+</div>
+<div style="background:var(--green-glow);border:1px solid var(--green);border-radius:var(--radius);padding:24px;text-align:center;">
+<div style="font-size:0.78rem;color:var(--text-muted);margin-bottom:8px;">Kosten pro qual. Termin &mdash; Cold Outreach</div>
+<div style="font-size:2rem;font-weight:800;color:var(--green);">~250 &euro;</div>
+<div style="font-size:0.78rem;color:var(--text-dim);margin-top:4px;">Planbar, skalierbar, rechtlich abgesichert</div>
+</div>
+</div>
+</div>
+</section>
+
+<section style="background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+<div class="container">
+<div class="section-label">Return on Invest</div>
+<div class="section-title fade-in">Was euch das bringt</div>
+<div class="section-sub fade-in">Gerechnet mit eurem durchschnittlichen Kundenwert von 10.000 &euro; / Auftrag.</div>
+<div class="roi-grid fade-in" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+<div class="roi-card"><div class="roi-label">Konservativ</div><div class="roi-num">2x ROI</div><div class="roi-detail">2 neue Kunden &rarr; 20.000 &euro; Jahresumsatz<br>bei 9.990 &euro; Invest</div></div>
+<div class="roi-card hl" style="background:var(--accent-glow);border-color:var(--border-accent);"><div class="roi-label">Realistisch</div><div class="roi-num">5x ROI</div><div class="roi-detail">5 neue Kunden &rarr; 50.000 &euro; Jahresumsatz<br>in den ersten 4 Monaten</div></div>
+<div class="roi-card"><div class="roi-label">Optimistisch</div><div class="roi-num">10x ROI</div><div class="roi-detail">10 neue Kunden &rarr; 100.000 &euro; Jahresumsatz<br>bei gr&ouml;&szlig;eren Auftr&auml;gen</div></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="section-label">Bonusse inklusive</div>
+<div class="section-title fade-in">Was ihr zus&auml;tzlich bekommt</div>
+<div class="bonus-grid-2 fade-in" style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;">
+<div class="bonus-item"><div class="bonus-icon">&#127919;</div><div><h4>ICP-Definition &amp; Zielgruppen-Clustering</h4><p>Wir definieren exakt, welche Unternehmen und Entscheider am besten konvertieren &mdash; und f&uuml;r SchaperDaux passen.</p></div></div>
+<div class="bonus-item"><div class="bonus-icon">&#128140;</div><div><h4>Personalisierte E-Mail-Sequenzen</h4><p>Copywriting mit mehreren Variablen, auf eure Zielgruppen zugeschnitten. Ihr lest alles gegen, bevor es rausgeht.</p></div></div>
+<div class="bonus-item"><div class="bonus-icon">&#128234;</div><div><h4>Grundwerk Web App (MasterInbox)</h4><p>Alle positiven Antworten aus allen Postf&auml;chern zentral &mdash; kein Tab-Chaos, kein verpasster Lead.</p></div></div>
+<div class="bonus-item"><div class="bonus-icon">&#128200;</div><div><h4>Sales Projections &amp; Tracking</h4><p>W&ouml;chentliches Dashboard: wie viele E-Mails raus, wie viele Leads rein, wie viel Umsatz generiert.</p></div></div>
+<div class="bonus-item"><div class="bonus-icon">&#128196;</div><div><h4>Vertr&auml;ge via PandaDoc</h4><p>Professionelle Angebotsstruktur f&uuml;r euren Vertrieb &mdash; direkt integriert in euren Workflow.</p></div></div>
+<div class="bonus-item"><div class="bonus-icon">&#128279;</div><div><h4>Calendly-Integration</h4><p>Terminbuchung f&uuml;r interessierte Kontakte &mdash; damit Leads direkt in eurem Kalender landen.</p></div></div>
+</div>
+</div>
+</section>
+
+<section style="background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+<div class="container">
+<div class="section-label">N&auml;chste Schritte</div>
+<div class="section-title fade-in">Von heute bis zu ersten Leads</div>
+<div style="max-width:600px;margin:0 auto;">
+<div class="timeline fade-in">
+<div class="timeline-item"><h4>Jetzt &mdash; Entscheidung &amp; Vertrag</h4><p>Ihr sprecht intern, stellt eure Fragen im Follow-Up-Call am Dienstag, 25.03. um 14 Uhr. Dann Vertrag unterzeichnen.</p></div>
+<div class="timeline-item"><h4>Woche 1 &mdash; Kickoff Workshop (1h)</h4><p>Euer Account Manager lernt euren Markt kennen. Zielgruppen, Pain Points, Wettbewerb &mdash; alles wird durchgegangen.</p></div>
+<div class="timeline-item"><h4>Woche 2&ndash;4 &mdash; Technisches Setup</h4><p>Domains und Postf&auml;cher werden aufgesetzt und gew&auml;rmt. Leadlisten erstellt und verifiziert. Copywriting und Review.</p></div>
+<div class="timeline-item"><h4>Monat 2 &mdash; Kampagnen gehen live</h4><p>Erste E-Mails gehen raus. Erste Antworten landen in eurer MasterInbox. Ihr bearbeitet nur die positiven Kontakte.</p></div>
+<div class="timeline-item"><h4>Monat 2&ndash;4 &mdash; Optimieren &amp; Skalieren</h4><p>Wir messen, was funktioniert, und skalieren die besten Kampagnen. Ziel: stetig mehr qualifizierte Anfragen.</p></div>
+</div>
+<div class="tl-hl">&#128640; Erste Leads in Monat 2 &mdash; bei maximal 2 Antworten pro Tag Startkapazit&auml;t.</div>
+</div>
+</div>
+</section>
+
+<section class="cta-section" style="background:linear-gradient(135deg,var(--bg-accent),var(--bg));text-align:center;padding:100px 2rem;">
+<div class="container">
+<div class="section-label fade-in">Bereit?</div>
+<h2 class="fade-in" style="font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:1rem;">Der beste Zeitpunkt war vor einem Jahr.<br>Der zweitbeste ist jetzt.</h2>
+<p class="fade-in" style="font-size:1rem;color:var(--text-muted);margin:1rem auto 2.5rem;max-width:500px;">Ihr habt bewiesen, dass E-Mail-Outreach funktioniert. Jetzt professionalisieren wir das gemeinsam &mdash; skalierbar, rechtlich sicher, messbar.</p>
+<a href="https://calendly.com/anthony-katzur-grundwerk/30min" class="btn-primary fade-in" style="font-size:1rem;padding:16px 40px;">Jetzt Gespr&auml;ch buchen</a>
+<div class="contact-info fade-in">
+<div class="contact-chip">&#9993; anthony.katzur@grundwerk.digital</div>
+<div class="contact-chip">&#128222; +49 176 47189941</div>
+</div>
+</div>
+</section>
+
+<footer><p>&copy; 2026 Grundwerk Digital &middot; Alle Rechte vorbehalten &middot; F&uuml;r SchaperDaux mit &#10084; erstellt</p></footer>
+
+<script>
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
