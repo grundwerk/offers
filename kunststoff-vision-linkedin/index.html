@@ -1,0 +1,688 @@
+<!-- LinkedIn-Profil-Analyse für Hannes Staudt | v1.0 | 21.03.2026 -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="offer-version" content="1.0">
+<title>LinkedIn-Profil-Analyse — Hannes Staudt | Grundwerk Digital</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII=" />
+<script>
+(function(){var c='8291374650',p=new URLSearchParams(window.location.search);if(p.get('secure')!==c){document.documentElement.style.display='none';document.title='Zugriff verweigert';window.stop();}})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--card:#111111;--card-2:#161616;--text:#f0f0f0;--muted:#888;--accent:#4f7df9;--accent-glow:rgba(79,125,249,0.15);--green:#22c55e;--green-glow:rgba(34,197,94,0.12);--red:#ef4444;--red-dim:rgba(239,68,68,0.1);--orange:#f97316;--orange-dim:rgba(249,115,22,0.1);--border:rgba(255,255,255,0.07);--border-acc:rgba(79,125,249,0.3);--r:14px;--r-sm:8px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.6;overflow-x:hidden;}
+a{color:var(--accent);text-decoration:none;}
+.w{max-width:1100px;margin:0 auto;padding:0 clamp(1rem,4vw,3rem);}
+section{padding:72px 0;}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,10,10,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+.nav-in{max-width:1100px;margin:0 auto;padding:0 clamp(1rem,4vw,3rem);height:58px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.nav-brand{display:flex;align-items:center;gap:10px;}
+.nav-logo-img{height:24px;opacity:0.9;filter:brightness(2);}
+.nav-tag{font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.nav-cta{background:var(--accent);color:#fff;padding:8px 20px;border-radius:100px;font-weight:700;font-size:0.8rem;white-space:nowrap;transition:opacity 0.2s;}
+.nav-cta:hover{opacity:0.85;color:#fff;}
+/* TYPOGRAPHY */
+.section-label{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);font-weight:600;display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.section-label::after{content:'';flex:1;height:1px;background:var(--border-acc);}
+.section-title{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;letter-spacing:-0.03em;line-height:1.15;margin-bottom:12px;}
+/* STATUS CARDS */
+.status-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:28px;margin-bottom:20px;}
+.status-header{display:flex;align-items:center;gap:14px;margin-bottom:20px;flex-wrap:wrap;}
+.status-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;}
+.status-icon.red{background:var(--red-dim);border:1px solid rgba(239,68,68,0.25);}
+.status-icon.orange{background:var(--orange-dim);border:1px solid rgba(249,115,22,0.25);}
+.status-icon.green{background:var(--green-glow);border:1px solid rgba(34,197,94,0.25);}
+.status-title{font-weight:800;font-size:1.05rem;flex:1;}
+.status-label{padding:4px 12px;border-radius:100px;font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;white-space:nowrap;}
+.status-label.critical{background:var(--red-dim);color:var(--red);border:1px solid rgba(239,68,68,0.2);}
+.status-label.warning{background:var(--orange-dim);color:var(--orange);border:1px solid rgba(249,115,22,0.2);}
+.status-label.good{background:var(--green-glow);color:var(--green);border:1px solid rgba(34,197,94,0.2);}
+.analysis-box{background:var(--card-2);border-radius:var(--r-sm);padding:18px 20px;margin-bottom:18px;border-left:3px solid var(--border);}
+.analysis-box h4{font-size:0.78rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);margin-bottom:8px;font-weight:600;}
+.analysis-box p,.analysis-box ul{font-size:0.9rem;color:var(--muted);line-height:1.7;}
+.analysis-box ul{padding-left:18px;display:flex;flex-direction:column;gap:4px;}
+.example-box{background:rgba(79,125,249,0.06);border:1px solid var(--border-acc);border-radius:var(--r-sm);padding:18px 20px;margin-bottom:14px;position:relative;padding-top:32px;}
+.example-box::before{content:'VORSCHLAG';position:absolute;top:10px;left:16px;font-size:0.65rem;font-weight:800;letter-spacing:0.15em;color:var(--accent);text-transform:uppercase;}
+.example-box code{display:block;font-family:'Inter',sans-serif;font-size:0.88rem;color:var(--text);line-height:1.7;white-space:pre-wrap;word-break:break-word;}
+.example-box p{font-size:0.82rem;color:var(--muted);margin-bottom:8px;}
+.action-steps{display:flex;flex-direction:column;gap:12px;margin-top:18px;}
+.action-step{display:flex;gap:14px;align-items:flex-start;}
+.step-num{width:26px;height:26px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;font-size:0.78rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.step-content h5{font-size:0.9rem;font-weight:700;margin-bottom:3px;}
+.step-content p{font-size:0.85rem;color:var(--muted);line-height:1.6;}
+.step-tip{margin-top:6px;padding:8px 12px;background:var(--card-2);border-radius:6px;font-size:0.8rem;color:var(--accent);}
+/* CHECKLIST GRID */
+.checklist-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:32px;}
+.check-item{display:flex;align-items:flex-start;gap:12px;background:var(--card);border:1px solid var(--border);border-radius:var(--r-sm);padding:14px 16px;}
+.check-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:3px;}
+.check-dot.red{background:var(--red);box-shadow:0 0 6px rgba(239,68,68,0.5);}
+.check-dot.orange{background:var(--orange);box-shadow:0 0 6px rgba(249,115,22,0.4);}
+.check-dot.green{background:var(--green);box-shadow:0 0 6px rgba(34,197,94,0.4);}
+.check-text{font-size:0.88rem;font-weight:600;line-height:1.3;}
+.check-text small{display:block;font-size:0.78rem;color:var(--muted);font-weight:400;margin-top:2px;}
+/* SUMMARY */
+.summary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:36px;}
+.summary-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:24px;text-align:center;}
+.big-num{font-size:3rem;font-weight:900;letter-spacing:-0.05em;line-height:1;}
+.big-label{font-size:0.82rem;color:var(--muted);margin-top:6px;}
+/* PRIORITY ITEMS */
+.priority-item{background:var(--card);border-radius:var(--r);padding:20px 24px;margin-bottom:12px;display:flex;align-items:flex-start;gap:14px;}
+.priority-item.p-red{border-left:3px solid var(--red);}
+.priority-item.p-orange{border-left:3px solid var(--orange);}
+.priority-num{font-weight:800;font-size:0.85rem;color:var(--muted);min-width:24px;}
+.priority-content h4{font-weight:700;font-size:0.95rem;margin-bottom:3px;}
+.priority-content p{font-size:0.85rem;color:var(--muted);}
+/* CTA SECTION */
+.cta-box{background:linear-gradient(135deg,rgba(79,125,249,0.08),rgba(79,125,249,0.02));border:1px solid var(--border-acc);border-radius:var(--r);padding:clamp(32px,5vw,56px);text-align:center;}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;padding:14px 32px;border-radius:100px;font-weight:700;font-size:0.9rem;transition:opacity 0.2s,transform 0.2s;}
+.btn-primary:hover{opacity:0.88;transform:translateY(-1px);color:#fff;}
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--text);padding:14px 28px;border-radius:100px;font-weight:600;font-size:0.9rem;border:1px solid var(--border);transition:border-color 0.2s;}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent);}
+/* FADE */
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+/* HERO PROFILE */
+.profile-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:28px 32px;display:flex;align-items:center;gap:20px;margin-bottom:28px;}
+.profile-avatar{width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#4f7df9,#7c9dff);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.4rem;color:#fff;flex-shrink:0;}
+.profile-name{font-size:1.1rem;font-weight:800;}
+.profile-sub{font-size:0.85rem;color:var(--muted);margin-top:2px;}
+.profile-url{font-size:0.78rem;color:var(--accent);margin-top:4px;}
+/* RESPONSIVE */
+@media(max-width:768px){.checklist-grid{grid-template-columns:1fr 1fr;}.summary-grid{grid-template-columns:1fr;}}
+@media(max-width:480px){.checklist-grid{grid-template-columns:1fr;}.status-header{flex-wrap:wrap;}.profile-card{flex-direction:column;align-items:flex-start;}}
+</style>
+</head>
+<body>
+<!-- NAV -->
+<nav>
+<div class="nav-in">
+  <div class="nav-brand">
+    <img class="nav-logo-img" src="https://www.kunststoff.film/assets/img/logo-light.png" alt="kunststoff">
+    <span class="nav-tag">LinkedIn-Profil-Analyse</span>
+  </div>
+  <a class="nav-cta" href="https://calendly.com/tom-grundwerk/linkedin-call" target="_blank">Termin buchen</a>
+</div>
+</nav>
+
+<!-- HERO -->
+<section style="padding-top:120px;padding-bottom:48px;">
+<div class="w">
+  <div class="section-label">Grundwerk Digital · Profil-Analyse</div>
+  <h1 class="section-title">LinkedIn-Profil-Analyse<br><span style="color:var(--accent);">Hannes Staudt</span></h1>
+  <p style="font-size:0.95rem;color:var(--muted);max-width:620px;margin-bottom:32px;">Systematische Analyse deines LinkedIn-Profils gegen den Grundwerk Profil-Guide — mit konkreten Optimierungen, fertigen Textentwürfen und klaren Schritten für mehr Sichtbarkeit und Anfragen.</p>
+
+  <div class="profile-card fade-in">
+    <div class="profile-avatar">H</div>
+    <div>
+      <div class="profile-name">Hannes Staudt</div>
+      <div class="profile-sub">Geschäftsführer · kunststoff DIE FILMAGENTUR GmbH · Stuttgart</div>
+      <div class="profile-url">linkedin.com/in/hannes-staudt-7321a420</div>
+    </div>
+  </div>
+
+  <div style="display:flex;align-items:center;gap:8px;font-size:0.8rem;color:var(--muted);margin-bottom:0;">
+    <span>Erstellt von</span>
+    <strong style="color:var(--text);">Tom · Grundwerk Digital</strong>
+    <span>·</span>
+    <span>21.03.2026</span>
+  </div>
+</div>
+</section>
+
+<!-- SCHNELLCHECK -->
+<section style="padding-top:0;padding-bottom:56px;">
+<div class="w">
+  <div class="section-label fade-in">Ampel-Übersicht</div>
+  <h2 class="section-title fade-in">Profil-Schnellcheck</h2>
+  <p style="font-size:0.9rem;color:var(--muted);margin-bottom:8px;" class="fade-in">Alle 9 Profil-Bereiche auf einen Blick.</p>
+
+  <div class="checklist-grid fade-in">
+    <div class="check-item">
+      <div class="check-dot orange"></div>
+      <div class="check-text">Profilfoto<small>Vorhanden, aber Hintergrund & Framing optimierbar</small></div>
+    </div>
+    <div class="check-item">
+      <div class="check-dot orange"></div>
+      <div class="check-text">Profil-Banner<small>Kein professioneller Custom-Banner sichtbar</small></div>
+    </div>
+    <div class="check-item">
+      <div class="check-dot orange"></div>
+      <div class="check-text">Name & URL<small>URL enthält zufälligen Code (7321a420)</small></div>
+    </div>
+    <div class="check-item">
+      <div class="check-dot red"></div>
+      <div class="check-text">Headline<small>Zeigt nur „kunststoff.vision" — keine Botschaft</small></div>
+    </div>
+    <div class="check-item">
+      <div class="check-dot red"></div>
+      <div class="check-text">Summary<small>Kaum Inhalt — größtes Potenzial komplett ungenutzt</small></div>
+    </div>
+    <div class="check-item">
+      <div class="check-dot red"></div>
+      <div class="check-text">Featured Section<small>Leer oder nicht sichtbar — wichtigster Conversion-Bereich</small></div>
+    </div>
+    <div class="check-item">
+      <div class="check-dot orange"></div>
+      <div class="check-text">CV / Work Experience<small>Grundstruktur da, aber ohne Beschreibungen & Medien</small></div>
+    </div>
+    <div class="check-item">
+      <div class="check-dot orange"></div>
+      <div class="check-text">Skills<small>Skills vorhanden, Priorisierung unklar</small></div>
+    </div>
+    <div class="check-item">
+      <div class="check-dot orange"></div>
+      <div class="check-text">Recommendations<small>Unter 5 sichtbare Empfehlungen</small></div>
+    </div>
+  </div>
+</div>
+</section>
+<!-- DIVIDER -->
+<div style="height:1px;background:var(--border);margin:0;"></div>
+
+<!-- BEREICHE SECTION HEADER -->
+<section style="padding-bottom:24px;">
+<div class="w">
+  <div class="section-label fade-in">9 Bereiche · Detailanalyse</div>
+  <h2 class="section-title fade-in">Die vollständige Analyse</h2>
+</div>
+</section>
+
+<!-- BEREICH 1: PROFILFOTO -->
+<section style="padding-top:0;padding-bottom:40px;">
+<div class="w">
+  <p style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:16px;" class="fade-in">01 / Profilfoto</p>
+  <div class="status-card fade-in">
+    <div class="status-header">
+      <div class="status-icon orange">📸</div>
+      <div class="status-title">Profilfoto</div>
+      <span class="status-label warning">Optimieren</span>
+    </div>
+    <div class="analysis-box">
+      <h4>Analyse</h4>
+      <p>Ein Foto ist vorhanden, was schon mal gut ist. Allerdings zeigt das aktuelle Bild den Kontext nicht optimal: Der Hintergrund ist unruhig und lenkt vom Gesicht ab. Nach dem Guide sollte das Gesicht 60 % des Bildausschnitts füllen, der Hintergrund einfarbig oder weich verschwommen sein, und die Auflösung mindestens 400×400px betragen. Als CEO einer Filmagentur ist das Profilfoto auch ein Statement über visuelles Qualitätsbewusstsein.</p>
+    </div>
+    <div class="action-steps">
+      <div class="action-step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h5>Neues Foto aufnehmen (oder vorhandenes nutzen)</h5>
+          <p>Neutraler Hintergrund (weiß, grau, dunkel), Gesicht klar sichtbar, professioneller Ausdruck. Ein Foto aus einem Dreh reicht — solange Licht und Hintergrund stimmen.</p>
+          <div class="step-tip">Tool-Tipp: Pfaff Foto Stuttgart oder einfach Smartphone + Ring Light + weißer Wand</div>
+        </div>
+      </div>
+      <div class="action-step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h5>Hintergrund freistellen falls nötig</h5>
+          <p>remove.bg entfernt den Hintergrund in Sekunden — dann einen einfarbigen oder Gradient-Hintergrund einfügen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- BEREICH 2: PROFIL-BANNER -->
+<section style="padding-top:0;padding-bottom:40px;">
+<div class="w">
+  <p style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:16px;" class="fade-in">02 / Profil-Banner</p>
+  <div class="status-card fade-in">
+    <div class="status-header">
+      <div class="status-icon orange">🖼️</div>
+      <div class="status-title">Profil-Banner</div>
+      <span class="status-label warning">Optimieren</span>
+    </div>
+    <div class="analysis-box">
+      <h4>Analyse</h4>
+      <p>Der aktuelle Banner zeigt kein klares Statement, was Hannes tut und für wen. Ein gutes Banner kommuniziert innerhalb von 2 Sekunden: Das bin ich, das mache ich. Für eine Filmagentur ist der Banner auch eine Visitenkarte für visuelles Können.</p>
+    </div>
+    <div class="example-box">
+      <p><strong>Banner-Konzept: Filmset-Look</strong></p>
+      <code>Hintergrund: dunkles Foto von einem Dreh (Kamera, Licht, Crew) — oder abstraktes Filmmaterial-Bild
+Text links: "B2B-Videoproduktion für die Industrie" (groß, weiß)
+Text klein darunter: kunststoff.film
+Optionales Branding: kleines Logo oben rechts</code>
+    </div>
+    <div class="action-steps">
+      <div class="action-step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h5>Canva-Template nutzen</h5>
+          <p>Canva hat fertige LinkedIn-Banner-Templates (1584×396px). Einfach Farbe auf Kunststoff-CI anpassen, Foto einfügen, Text ergänzen — fertig in 15 Minuten.</p>
+          <div class="step-tip">Canva → Suche "LinkedIn Banner" → Kategorie "Business"</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- BEREICH 3: NAME & URL -->
+<section style="padding-top:0;padding-bottom:40px;">
+<div class="w">
+  <p style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:16px;" class="fade-in">03 / Name & URL</p>
+  <div class="status-card fade-in">
+    <div class="status-header">
+      <div class="status-icon orange">🔗</div>
+      <div class="status-title">Name & Custom URL</div>
+      <span class="status-label warning">Optimieren</span>
+    </div>
+    <div class="analysis-box">
+      <h4>Analyse</h4>
+      <p>Die aktuelle URL lautet: <code style="color:var(--orange);background:var(--orange-dim);padding:2px 6px;border-radius:4px;font-size:0.85rem;">linkedin.com/in/hannes-staudt-7321a420</code> — der zufällige Code „7321a420" macht sie nicht professionell und schwer merkbar. Eine saubere URL ohne Nummern wie <code style="color:var(--green);background:var(--green-glow);padding:2px 6px;border-radius:4px;font-size:0.85rem;">linkedin.com/in/hannes-staudt</code> wirkt deutlich professioneller und ist leichter zu teilen.</p>
+    </div>
+    <div class="action-steps">
+      <div class="action-step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h5>Custom URL einrichten (3 Minuten)</h5>
+          <p>LinkedIn Profil → "Profil bearbeiten" → "Öffentliche Profil-URL bearbeiten" → auf „hannes-staudt" oder „hannes-staudt-film" ändern.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<!-- BEREICH 4: HEADLINE -->
+<section style="padding-top:0;padding-bottom:40px;">
+<div class="w">
+  <p style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:16px;" class="fade-in">04 / Headline</p>
+  <div class="status-card fade-in">
+    <div class="status-header">
+      <div class="status-icon red">📢</div>
+      <div class="status-title">LinkedIn-Headline</div>
+      <span class="status-label critical">Dringend</span>
+    </div>
+    <div class="analysis-box">
+      <h4>Analyse</h4>
+      <p>Die aktuelle Headline lautet schlicht <strong style="color:var(--text);">„kunststoff.vision"</strong> — das ist ein Markenname, aber keine Botschaft. Wer auf das Profil klickt, weiß nicht, was Hannes tut, für wen er es tut, und warum das relevant ist. Die Headline ist das erste, was bei LinkedIn-Suchen und in der Feed-Ansicht erscheint — sie ist der größte organische Hebel für Sichtbarkeit und Kontaktanfragen.</p>
+      <ul>
+        <li>Kein Keyword für LinkedIn-Suche (z.B. "Videoproduktion", "B2B Film")</li>
+        <li>Keine Zielgruppe oder Nutzen kommuniziert</li>
+        <li>Wirkt wie ein Platzhalter, nicht wie eine Positionierung</li>
+      </ul>
+    </div>
+    <div class="example-box">
+      <p><strong>Variante 1: Job-Titel-Stil (klar, keyword-stark)</strong></p>
+      <code>Geschäftsführer · B2B Videoproduktion für Industrie & Maschinenbau | kunststoff DIE FILMAGENTUR</code>
+    </div>
+    <div class="example-box">
+      <p><strong>Variante 2: „I help"-Stil (kundenorientiert)</strong></p>
+      <code>Ich helfe B2B-Unternehmen aus Industrie & Maschinenbau, ihre Produkte & Prozesse mit Erklärvideos zu kommunizieren → mehr Vertrauen, weniger Erkläraufwand</code>
+    </div>
+    <div class="example-box">
+      <p><strong>Variante 3: Bullet-Point-Stil (kompakt & aufmerksamkeitsstark)</strong></p>
+      <code>🎬 B2B-Videoproduktion seit 2008 · 🏭 Industrie, Maschinenbau, Kunststoff · 📍 Stuttgart · kunststoff.film</code>
+    </div>
+    <div class="action-steps">
+      <div class="action-step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h5>Eine der 3 Varianten testen</h5>
+          <p>Variante 2 wird empfohlen — sie kommuniziert sofort den Kundennutzen. LinkedIn erlaubt 220 Zeichen in der Headline.</p>
+        </div>
+      </div>
+      <div class="action-step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h5>Keywords einfügen</h5>
+          <p>Die Headline wird von der LinkedIn-Suche indexiert. Keywords wie „Videoproduktion", „Industriefilm", „Erklärfilm" oder „B2B Video" erhöhen die Auffindbarkeit erheblich.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- BEREICH 5: SUMMARY -->
+<section style="padding-top:0;padding-bottom:40px;">
+<div class="w">
+  <p style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:16px;" class="fade-in">05 / Summary (Info-Bereich)</p>
+  <div class="status-card fade-in">
+    <div class="status-header">
+      <div class="status-icon red">✍️</div>
+      <div class="status-title">LinkedIn Summary (Info)</div>
+      <span class="status-label critical">Dringend</span>
+    </div>
+    <div class="analysis-box">
+      <h4>Analyse</h4>
+      <p>Die Summary ist der Bereich mit dem größten ungenutzten Potenzial auf dem Profil. LinkedIn erlaubt 2.000 Zeichen — der Bereich ist aktuell entweder leer oder deutlich unter dem Limit. Eine gute Summary beantwortet 4 Fragen: Wer bist du? Wie arbeitest du? Was sagen andere? Wie kann man mit dir in Kontakt treten? Sie ist keine Selbstbeschreibung — sie spricht den idealen Kunden direkt an.</p>
+    </div>
+    <div class="example-box">
+      <p><strong>Summary-Entwurf (fertig zum Einfügen, ~1.800 Zeichen)</strong></p>
+      <code>𝗦𝗶𝗲 𝗯𝗮𝘂𝗲𝗻 𝗞𝗼𝗺𝗽𝗹𝗲𝘅𝗲𝘀. 𝗪𝗶𝗿 𝗲𝗿𝗸𝗹ä𝗿𝗲𝗻 𝗲𝘀.
+
+B2B-Unternehmen aus Industrie und Maschinenbau haben oft das gleiche Problem: Ihre Produkte und Leistungen sind erklärungsbedürftig — und klassische Texte oder Broschüren reichen nicht mehr aus, um Kunden zu überzeugen.
+
+Seit 2008 produziert kunststoff DIE FILMAGENTUR Erklärvideos, Imagefilme und Prozessfilme für genau diese Unternehmen.
+
+━━━━━━━━━━━━━━━━━━━━━━━
+
+𝗪𝗶𝗲 𝘄𝗶𝗿 𝗮𝗿𝗯𝗲𝗶𝘁𝗲𝗻:
+
+▸ Strategie-Gespräch: Wir verstehen Ihre Ziele, Zielgruppen und den Kontext
+▸ Konzept: Wir entwickeln Drehbuch und Storyboard — klar und zielgerichtet
+▸ Produktion: Vollständiger Dreh mit eigenem Equipment und erfahrenem Team
+▸ Post-Production: Schnitt, Grafik, Sound, Musik — alles aus einer Hand
+
+━━━━━━━━━━━━━━━━━━━━━━━
+
+𝗕𝗲𝗶𝘀𝗽𝗶𝗲𝗹𝗲 𝘂𝗻𝘀𝗲𝗿𝗲𝗿 𝗔𝗿𝗯𝗲𝗶𝘁:
+→ Imagefilm für einen Maschinenbauer aus dem Mittelstand
+→ Recruiting-Video für ein Industrieunternehmen mit 3.000+ Mitarbeitern
+→ Produktfilm für eine Neuheit auf der Fachmesse
+
+Über 50 realisierte Projekte seit der Gründung 2008.
+
+━━━━━━━━━━━━━━━━━━━━━━━
+
+𝗙ü𝗿 𝘄𝗲𝗻 𝗱𝗮𝘀 𝗽𝗮𝘀𝘀𝘁:
+B2B-Unternehmen aus Industrie, Maschinenbau, Kunststoff und Technik — die wissen, dass Video funktioniert, aber bisher keinen verlässlichen Partner gefunden haben.
+
+𝗦𝗶𝗲 𝘄𝗼𝗹𝗹𝗲𝗻 𝗺𝗲𝗵𝗿 𝗲𝗿𝗳𝗮𝗵𝗿𝗲𝗻?
+→ Schreiben Sie mir direkt auf LinkedIn
+→ Oder buchen Sie ein kurzes Kennenlerngespräch: kunststoff.film</code>
+    </div>
+    <div class="action-steps">
+      <div class="action-step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h5>Summary einfügen und anpassen</h5>
+          <p>Den obigen Entwurf in LinkedIn einfügen (Profil bearbeiten → Info → Bearbeiten). Den Text auf echte Referenz-Projekte und eigene Zahlen anpassen.</p>
+        </div>
+      </div>
+      <div class="action-step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h5>Fettschrift via Unicode</h5>
+          <p>LinkedIn unterstützt kein Standard-Fettschrift im Text — aber Unicode-Zeichen wie 𝗕𝗼𝗹𝗱 wirken wie Bold. Generator: lingojam.com/BoldTextGenerator</p>
+          <div class="step-tip">Tool-Tipp: lingojam.com/BoldTextGenerator oder yaytext.com</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- BEREICH 6: FEATURED -->
+<section style="padding-top:0;padding-bottom:40px;">
+<div class="w">
+  <p style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:16px;" class="fade-in">06 / Featured Section</p>
+  <div class="status-card fade-in">
+    <div class="status-header">
+      <div class="status-icon red">⭐</div>
+      <div class="status-title">Featured Section</div>
+      <span class="status-label critical">Dringend</span>
+    </div>
+    <div class="analysis-box">
+      <h4>Analyse</h4>
+      <p>Die Featured Section erscheint direkt unter der Summary und ist der erste Bereich, den Besucher aktiv erkunden. Sie ist ideal, um Vertrauen aufzubauen: Videoreels, Case Studies, Links zur Website, Posts mit hoher Reichweite. Aktuell ist dieser Bereich leer — damit fehlt ein wesentlicher Social-Proof-Anker auf dem Profil.</p>
+    </div>
+    <div class="example-box">
+      <p><strong>Empfohlener Inhalt für die Featured Section</strong></p>
+      <code>1. Link zum Demo-Reel (YouTube/Vimeo) — "Unsere besten Industriefilme 2023/24"
+2. Link zur Website kunststoff.film — mit Vorschaubild des Hero-Videos
+3. Bester LinkedIn-Post (wenn einer viral gegangen ist)
+4. Case Study als PDF oder Notion-Link — "Wie wir [Kunde X] geholfen haben"</code>
+    </div>
+    <div class="action-steps">
+      <div class="action-step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h5>Featured Section aktivieren</h5>
+          <p>Profil bearbeiten → „Abschnitt hinzufügen" → „Featured" → Link oder Beitrag hinzufügen.</p>
+        </div>
+      </div>
+      <div class="action-step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h5>Demo-Reel als erstes Item setzen</h5>
+          <p>Das beste Showreel als YouTube-Link einfügen — das ist der wirkungsvollste Einstieg für potenzielle Kunden auf dem Profil.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<!-- BEREICH 7: CV -->
+<section style="padding-top:0;padding-bottom:40px;">
+<div class="w">
+  <p style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:16px;" class="fade-in">07 / CV & Work Experience</p>
+  <div class="status-card fade-in">
+    <div class="status-header">
+      <div class="status-icon orange">💼</div>
+      <div class="status-title">CV / Work Experience</div>
+      <span class="status-label warning">Optimieren</span>
+    </div>
+    <div class="analysis-box">
+      <h4>Analyse</h4>
+      <p>Hannes ist seit 2008 Geschäftsführer bei kunststoff DIE FILMAGENTUR GmbH — das ist eine solide Grundlage. Die aktuelle Darstellung enthält jedoch kaum Beschreibungen der Leistungen, Projekte oder Erfolge. Der Guide empfiehlt: aktuelle Rolle ausführlich (was du tust, für wen, mit welchen Ergebnissen), frühere Stationen kurz, und mindestens 1–2 Medien (Fotos, Videostills, Links) als visuelle Anker.</p>
+    </div>
+    <div class="example-box">
+      <p><strong>Beschreibung für aktuelle Rolle (kunststoff DIE FILMAGENTUR GmbH)</strong></p>
+      <code>Seit 2008 führe ich kunststoff als Full-Service B2B-Filmagentur mit Sitz in Stuttgart.
+
+Wir produzieren Erklärvideos, Imagefilme, Recruiting-Videos und Produktfilme — speziell für Unternehmen aus Industrie, Maschinenbau und Technik.
+
+▸ Konzept & Drehbuch bis Endprodukt aus einer Hand
+▸ Eigenständiges Team und Equipment
+▸ Fokus auf B2B-Kommunikation mit messbarer Wirkung
+
+Projekte auf kunststoff.film</code>
+    </div>
+    <div class="action-steps">
+      <div class="action-step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h5>Beschreibung zur aktuellen Rolle ergänzen</h5>
+          <p>Den obigen Text (oder eine eigene Version) in die aktuelle Position einfügen. Konkrete Zahlen oder Projekt-Highlights machen es stärker.</p>
+        </div>
+      </div>
+      <div class="action-step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h5>Medien zur Stelle hinzufügen</h5>
+          <p>LinkedIn erlaubt das Hochladen von Fotos, Links und Videos direkt zur Arbeitsstelle. Ein Still vom besten Dreh oder ein Showreel-Link wirkt hier sehr gut.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- BEREICH 8: SKILLS -->
+<section style="padding-top:0;padding-bottom:40px;">
+<div class="w">
+  <p style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:16px;" class="fade-in">08 / Skills</p>
+  <div class="status-card fade-in">
+    <div class="status-header">
+      <div class="status-icon orange">🎯</div>
+      <div class="status-title">Skills & Endorsements</div>
+      <span class="status-label warning">Optimieren</span>
+    </div>
+    <div class="analysis-box">
+      <h4>Analyse</h4>
+      <p>Skills sind vorhanden, aber die Priorisierung (welche 3 Skills ganz oben stehen) ist unklar. LinkedIn zeigt standardmäßig die Top-3-Skills prominent an — diese sollten die relevantesten für potenzielle Kunden sein. Skills werden auch in der LinkedIn-Suche berücksichtigt.</p>
+    </div>
+    <div class="example-box">
+      <p><strong>Empfohlene Top-3 Skills (für maximale Sichtbarkeit)</strong></p>
+      <code>1. Videoproduktion / Video Production
+2. Industriefilm / Corporate Film
+3. B2B-Marketing oder Filmregie / Film Direction</code>
+    </div>
+    <div class="action-steps">
+      <div class="action-step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h5>Top-3 Skills anpassen</h5>
+          <p>Profil bearbeiten → Skills → Reihenfolge anpassen, sodass die relevantesten ganz oben stehen. "Videoproduktion" und "Corporate Film" sind die stärksten Keywords für Kundensuchen.</p>
+        </div>
+      </div>
+      <div class="action-step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h5>Endorsements einholen</h5>
+          <p>Bestehende Kunden oder Kollegen bitten, die Top-Skills zu bestätigen. 10+ Endorsements pro Skill wirken deutlich vertrauenswürdiger.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- BEREICH 9: RECOMMENDATIONS -->
+<section style="padding-top:0;padding-bottom:40px;">
+<div class="w">
+  <p style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:16px;" class="fade-in">09 / Recommendations</p>
+  <div class="status-card fade-in">
+    <div class="status-header">
+      <div class="status-icon orange">⭐</div>
+      <div class="status-title">LinkedIn Recommendations</div>
+      <span class="status-label warning">Optimieren</span>
+    </div>
+    <div class="analysis-box">
+      <h4>Analyse</h4>
+      <p>Aktuell sind weniger als 5 sichtbare Empfehlungen vorhanden. Recommendations sind echter Social Proof — geschrieben von echten Kunden oder Partnern, öffentlich einsehbar. Der Guide empfiehlt mindestens 5 Recommendations auf dem Profil. Sie sind einer der stärksten Vertrauenssignale für neue Profilbesucher.</p>
+    </div>
+    <div class="example-box">
+      <p><strong>Anfrage-Nachricht (Copy-Paste-fertig)</strong></p>
+      <code>Hallo [Name],
+
+wir haben ja zusammen [Projekt / Film / Zusammenarbeit] realisiert — ich war sehr froh über die Zusammenarbeit.
+
+Ich überarbeite gerade mein LinkedIn-Profil und würde mich sehr freuen, wenn du kurz eine Empfehlung schreiben könntest. Das muss nicht lang sein — 3–4 Sätze über deine Erfahrung mit unserer Zusammenarbeit reichen völlig.
+
+Hier der direkte Link: linkedin.com/in/hannes-staudt → „Empfehlung schreiben"
+
+Vielen Dank im Voraus!
+Hannes</code>
+    </div>
+    <div class="action-steps">
+      <div class="action-step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h5>5 bestehende Kunden oder Partner anfragen</h5>
+          <p>Die obige Nachricht an 5–8 Kontakte schicken, die bereits mit kunststoff gearbeitet haben. Personalisiere den ersten Satz auf die gemeinsame Zusammenarbeit.</p>
+        </div>
+      </div>
+      <div class="action-step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h5>Gegenleistung anbieten</h5>
+          <p>Wer eine Empfehlung gibt, bekommt eine zurück — das erhöht die Rücklaufquote deutlich und stärkt beide Profile.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<!-- ZUSAMMENFASSUNG / AKTIONSPLAN -->
+<section style="padding-top:16px;">
+<div class="w">
+  <div class="section-label fade-in">Aktionsplan</div>
+  <h2 class="section-title fade-in">Zusammenfassung & Prioritäten</h2>
+
+  <div class="summary-grid fade-in">
+    <div class="summary-card">
+      <div class="big-num" style="color:var(--red);">3</div>
+      <div class="big-label">Dringende Optimierungen</div>
+    </div>
+    <div class="summary-card">
+      <div class="big-num" style="color:var(--orange);">6</div>
+      <div class="big-label">Weitere Optimierungen</div>
+    </div>
+    <div class="summary-card">
+      <div class="big-num" style="color:var(--muted);">0</div>
+      <div class="big-label">Bereits optimal</div>
+    </div>
+  </div>
+
+  <p style="font-size:0.9rem;color:var(--muted);margin-bottom:24px;" class="fade-in">Empfohlene Reihenfolge — beginne mit den roten Bereichen, da sie den größten sofortigen Einfluss haben:</p>
+
+  <div class="priority-item p-red fade-in">
+    <div class="priority-num">1.</div>
+    <div class="priority-content">
+      <h4>🔴 Headline überarbeiten — sofort</h4>
+      <p>Die größte Hebelwirkung mit dem geringsten Aufwand. Einen der 3 Vorschläge einfügen → fertiger Text liegt oben. Zeitaufwand: 5 Minuten.</p>
+    </div>
+  </div>
+  <div class="priority-item p-red fade-in">
+    <div class="priority-num">2.</div>
+    <div class="priority-content">
+      <h4>🔴 Summary schreiben — diese Woche</h4>
+      <p>Der fertige Entwurf ist oben — einfach einfügen und auf eigene Zahlen/Projekte anpassen. Zeitaufwand: 20–30 Minuten.</p>
+    </div>
+  </div>
+  <div class="priority-item p-red fade-in">
+    <div class="priority-num">3.</div>
+    <div class="priority-content">
+      <h4>🔴 Featured Section befüllen — diese Woche</h4>
+      <p>Demo-Reel Link + Website-Link einfügen. Enormer Vertrauens-Boost für jeden Profilbesucher. Zeitaufwand: 10 Minuten.</p>
+    </div>
+  </div>
+  <div class="priority-item p-orange fade-in">
+    <div class="priority-num">4.</div>
+    <div class="priority-content">
+      <h4>🟠 URL bereinigen — 3 Minuten</h4>
+      <p>„7321a420" aus der URL entfernen → „hannes-staudt" setzen. Einmalige Aktion, dauerhafter Effekt.</p>
+    </div>
+  </div>
+  <div class="priority-item p-orange fade-in">
+    <div class="priority-num">5.</div>
+    <div class="priority-content">
+      <h4>🟠 Recommendations anfragen — diesen Monat</h4>
+      <p>5–8 Nachrichten an bestehende Kunden schicken (Vorlage oben). Ziel: 5+ Recommendations auf dem Profil.</p>
+    </div>
+  </div>
+  <div class="priority-item p-orange fade-in">
+    <div class="priority-num">6.</div>
+    <div class="priority-content">
+      <h4>🟠 Banner + Profilfoto erneuern — diesen Monat</h4>
+      <p>Canva-Banner in 15 Minuten erstellen. Profilfoto ggf. neu aufnehmen oder Hintergrund freistellen.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- CTA -->
+<section>
+<div class="w">
+  <div class="cta-box fade-in">
+    <p style="font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:12px;">Nächste Schritte</p>
+    <h2 style="font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:12px;">Lass uns das gemeinsam umsetzen.</h2>
+    <p style="font-size:0.95rem;color:var(--muted);max-width:560px;margin:0 auto 32px;">Diese Analyse zeigt, wo Potenzial liegt — Grundwerk Digital kann dabei helfen, das LinkedIn-Profil nicht nur zu optimieren, sondern auch die richtige Outreach-Strategie aufzubauen.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;">
+      <a class="btn-primary" href="https://calendly.com/tom-grundwerk/linkedin-call" target="_blank">📅 Termin buchen</a>
+      <a class="btn-secondary" href="mailto:tom@grundwerk.digital">✉️ E-Mail schreiben</a>
+    </div>
+    <p style="font-size:0.8rem;color:var(--muted);margin-top:20px;">Tom · Grundwerk Digital · tom@grundwerk.digital</p>
+  </div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer style="border-top:1px solid var(--border);padding:32px 0;">
+<div class="w" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+  <div style="font-size:0.8rem;color:var(--muted);">© 2026 Grundwerk Digital GmbH · Analyse für Hannes Staudt</div>
+  <div style="font-size:0.8rem;color:var(--muted);">Erstellt am 21.03.2026 · Vertraulich</div>
+</div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
