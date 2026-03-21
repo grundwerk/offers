@@ -1,701 +1,609 @@
-<!-- GRUNDWERK-OFFER v1 | 2026-03-16 13:00 | Initial deploy - kunststoff.Vision LinkedIn -->
+<!-- GRUNDWERK-OFFER v3 | 2026-03-21 | Cinematic Redesign - kunststoff.Vision -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="offer-version" content="v1 | 2026-03-16">
+<meta name="offer-version" content="v3 | 2026-03-21">
 <title>kunststoff.Vision x Grundwerk &mdash; LinkedIn-Strategie</title>
 <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII=" />
 <script>
-    (function(){
-        var code = '7364128905';
-        var params = new URLSearchParams(window.location.search);
-        if(params.get('secure') !== code){
-            document.documentElement.style.display='none';
-            document.title='Zugriff verweigert';
-            window.stop();
-        }
-    })();
+(function(){var c='7364128905',p=new URLSearchParams(window.location.search);if(p.get('secure')!==c){document.documentElement.style.display='none';document.title='Zugriff verweigert';window.stop();}})();
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 :root {
-    --bg: #0a0a0a;
-    --bg-card: #111111;
-    --bg-card-hover: #161616;
-    --bg-accent: #1a1a2e;
-    --text: #f0f0f0;
-    --text-muted: #888;
-    --text-dim: #666;
-    --accent: #4f7df9;
-    --accent-glow: rgba(79,125,249,0.15);
-    --green: #22c55e;
-    --green-glow: rgba(34,197,94,0.15);
-    --red: #ef4444;
-    --red-dim: rgba(239,68,68,0.15);
-    --yellow: #eab308;
-    --border: rgba(255,255,255,0.06);
-    --border-accent: rgba(79,125,249,0.3);
-    --radius: 16px;
-    --radius-sm: 10px;
+  --bg: #080808;
+  --bg-card: #0f0f0f;
+  --bg-card-2: #141414;
+  --text: #f0ede8;
+  --text-muted: #7a7a72;
+  --text-dim: #3a3a35;
+  --gold: #e8c76a;
+  --gold-glow: rgba(232,199,106,0.12);
+  --gold-border: rgba(232,199,106,0.25);
+  --orange: #ff6b35;
+  --green: #4ade80;
+  --green-glow: rgba(74,222,128,0.1);
+  --red: #f87171;
+  --red-dim: rgba(248,113,113,0.1);
+  --border: rgba(255,255,255,0.05);
+  --border-light: rgba(255,255,255,0.08);
+  --radius: 2px;
+  --radius-lg: 4px;
 }
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.7; }
-a { color: var(--accent); text-decoration: none; }
-.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-section { padding: 100px 2rem; max-width: 1200px; margin: 0 auto; }
-.section-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 600; margin-bottom: 12px; }
-.section-title { font-size: clamp(1.8rem,3.5vw,2.8rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 16px; }
-.section-sub { font-size: 1.05rem; color: var(--text-muted); max-width: 600px; }
-.card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; }
-.btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #fff; padding: 14px 28px; border-radius: 100px; font-weight: 700; font-size: 0.95rem; transition: opacity 0.2s, transform 0.2s; cursor: pointer; border: none; }
-.btn-primary:hover { opacity: 0.9; transform: translateY(-1px); color: #fff; }
-.btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--text); padding: 14px 28px; border-radius: 100px; font-weight: 600; font-size: 0.95rem; border: 1px solid var(--border); transition: border-color 0.2s; cursor: pointer; }
-.btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
-.fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
-.fade-in.visible { opacity: 1; transform: translateY(0); }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.6;overflow-x:hidden;}
+a{color:var(--gold);text-decoration:none;}
+/* GRAIN OVERLAY */
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");opacity:0.35;pointer-events:none;z-index:1000;mix-blend-mode:overlay;}
+/* FILM FRAME LINES */
+.frame-line{width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--gold-border) 20%,var(--gold-border) 80%,transparent);margin:0;opacity:0.6;}
+/* SCENE LABEL */
+.scene-num{font-size:0.68rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);font-weight:600;display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.scene-num::after{content:'';flex:1;height:1px;background:var(--gold-border);}
+/* TYPOGRAPHY */
+.display{font-family:'DM Serif Display',serif;font-size:clamp(3rem,7vw,6.5rem);line-height:1.0;letter-spacing:-0.02em;color:var(--text);}
+.display em{font-style:italic;color:var(--gold);}
+.display-sm{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3.5rem);line-height:1.1;letter-spacing:-0.02em;}
+.display-sm em{font-style:italic;color:var(--gold);}
+.headline{font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;letter-spacing:-0.03em;line-height:1.2;}
+.label{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);font-weight:500;}
+.body-lg{font-size:1.05rem;color:var(--text-muted);line-height:1.8;}
+.body-sm{font-size:0.88rem;color:var(--text-muted);line-height:1.7;}
+/* LAYOUT */
+.w{max-width:1200px;margin:0 auto;padding:0 clamp(1.5rem,5vw,4rem);}
+section{padding:clamp(80px,10vw,140px) 0;}
 /* NAV */
-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); background: rgba(10,10,10,0.85); border-bottom: 1px solid var(--border); }
-.nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; height: 64px; display: flex; align-items: center; justify-content: space-between; }
-.nav-logo { font-weight: 800; font-size: 1rem; letter-spacing: -0.01em; }
-.nav-logo span { color: var(--accent); }
-.nav-cta { background: var(--accent); color: #fff; padding: 8px 20px; border-radius: 100px; font-weight: 700; font-size: 0.85rem; transition: opacity 0.2s; }
-.nav-cta:hover { opacity: 0.85; color: #fff; }
-/* HERO */
-.hero { min-height: 100vh; display: flex; align-items: center; padding: 120px 2rem 80px; position: relative; overflow: hidden; max-width: 100%; }
-.hero::before { content: ''; position: absolute; top: 20%; left: 50%; transform: translateX(-50%); width: 800px; height: 600px; background: radial-gradient(ellipse, rgba(79,125,249,0.08) 0%, transparent 70%); pointer-events: none; }
-.hero::after { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px); background-size: 60px 60px; mask-image: linear-gradient(to bottom,rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.3) 40%,transparent 75%); -webkit-mask-image: linear-gradient(to bottom,rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.3) 40%,transparent 75%); pointer-events: none; }
-.hero-content { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; width: 100%; }
-.hero-logo { display: inline-flex; align-items: center; gap: 12px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 12px 20px; margin-bottom: 32px; }
-.hero-logo-text { font-weight: 800; font-size: 1.1rem; letter-spacing: -0.02em; }
-.hero-logo-text span { color: var(--accent); }
-.hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--accent-glow); border: 1px solid var(--border-accent); border-radius: 100px; padding: 6px 16px; font-size: 0.8rem; font-weight: 600; color: var(--accent); margin-bottom: 24px; }
-.hero h1 { font-size: clamp(2.4rem,5vw,4rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1.1; margin-bottom: 24px; }
-.hero h1 .gradient { background: linear-gradient(135deg, var(--accent) 0%, #7c9dff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.hero-sub { font-size: 1.15rem; color: var(--text-muted); max-width: 600px; margin-bottom: 40px; line-height: 1.7; }
-.hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
-/* LOGO TICKER */
-.logo-ticker-section { padding: 20px 0 80px; overflow: hidden; position: relative; }
-.logo-ticker-section::before, .logo-ticker-section::after { content: ''; position: absolute; top: 0; bottom: 0; width: 20%; z-index: 2; pointer-events: none; }
-.logo-ticker-section::before { left: 0; background: linear-gradient(to right, var(--bg) 60%, transparent); }
-.logo-ticker-section::after { right: 0; background: linear-gradient(to left, var(--bg) 60%, transparent); }
-.ticker-row { display: flex; gap: 48px; overflow: hidden; margin-bottom: 24px; }
-.ticker-track { display: flex; gap: 48px; animation: ticker-fwd 40s linear infinite; white-space: nowrap; }
-.ticker-track-rev { display: flex; gap: 48px; animation: ticker-rev 45s linear infinite; white-space: nowrap; }
-@keyframes ticker-fwd { from { transform: translateX(-25%); } to { transform: translateX(-75%); } }
-@keyframes ticker-rev { from { transform: translateX(-75%); } to { transform: translateX(-25%); } }
-.client-logo { height: 28px; opacity: 0.4; filter: grayscale(100%) brightness(2); transition: opacity 0.3s, filter 0.3s; flex-shrink: 0; object-fit: contain; }
-.client-logo:hover { opacity: 0.8; filter: grayscale(0%) brightness(1); }
-/* STAT BAR */
-.stat-bar { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border-radius: var(--radius); overflow: hidden; margin: 0 2rem; max-width: 1200px; margin-left: auto; margin-right: auto; }
-.stat-item { background: var(--bg-card); padding: 36px 28px; text-align: center; }
-.stat-number { font-size: 2.5rem; font-weight: 800; color: var(--accent); letter-spacing: -0.04em; display: block; }
-.stat-label { font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; }
+nav{position:fixed;top:0;left:0;right:0;z-index:500;border-bottom:1px solid var(--border);}
+.nav-bg{background:rgba(8,8,8,0.92);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 clamp(1.5rem,5vw,4rem);height:60px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{display:flex;align-items:center;gap:12px;}
+.nav-logo img{height:22px;filter:brightness(0) invert(1);opacity:0.9;}
+.nav-logo-sep{color:var(--border-light);font-size:1rem;font-weight:300;}
+.nav-logo-gw{font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);}
+.nav-pill{background:var(--gold);color:#080808;padding:8px 22px;border-radius:100px;font-weight:800;font-size:0.8rem;letter-spacing:0.04em;text-transform:uppercase;transition:opacity 0.2s;}
+.nav-pill:hover{opacity:0.85;color:#080808;}
+/* BUTTONS */
+.btn-gold{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:#080808;padding:16px 36px;font-weight:800;font-size:0.9rem;letter-spacing:0.05em;text-transform:uppercase;transition:opacity 0.2s,transform 0.2s;border:none;cursor:pointer;}
+.btn-gold:hover{opacity:0.88;transform:translateY(-1px);color:#080808;}
+.btn-ghost{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--text);padding:16px 36px;font-weight:600;font-size:0.9rem;letter-spacing:0.04em;border:1px solid var(--border-light);transition:border-color 0.2s;}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+/* CARDS */
+.card{background:var(--bg-card);border:1px solid var(--border);padding:28px;}
+.card-gold{background:var(--gold-glow);border:1px solid var(--gold-border);padding:28px;}
+/* FADE IN */
+.fade{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.fade.in{opacity:1;transform:translateY(0);}
+/* CHECK LIST */
+.checklist{display:flex;flex-direction:column;gap:10px;}
+.checklist li{display:flex;align-items:flex-start;gap:12px;font-size:0.9rem;list-style:none;}
+.checklist li::before{content:'';width:16px;height:16px;border-radius:50%;background:var(--green-glow);border:1px solid var(--green);display:flex;flex-shrink:0;margin-top:2px;}
+.check-icon{color:var(--green);margin-top:2px;flex-shrink:0;font-size:0.75rem;}
+/* NUMBER BIG */
+.num-big{font-family:'DM Serif Display',serif;font-size:clamp(3rem,6vw,5rem);color:var(--gold);letter-spacing:-0.03em;line-height:1;}
+/* DIVIDER */
+.divider{width:60px;height:2px;background:var(--gold);margin:24px 0;}
 </style>
 </head>
 <body>
 <!-- NAV -->
 <nav>
-  <div class="nav-inner">
-    <div class="nav-logo">kunststoff<span>.Vision</span> &times; Grundwerk</div>
-    <a href="#angebot" class="nav-cta">Zum Angebot &rarr;</a>
+  <div class="nav-bg">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <img src="https://www.kunststoff.film/assets/img/logo-light.png" alt="kunststoff.vision">
+        <span class="nav-logo-sep">&times;</span>
+        <span class="nav-logo-gw">Grundwerk</span>
+      </div>
+      <a href="#angebot" class="nav-pill">Zum Angebot &rarr;</a>
+    </div>
   </div>
 </nav>
+
 <!-- HERO -->
-<div class="hero">
-  <div class="hero-content">
-    <div class="hero-logo">
-      <div style="width:36px;height:36px;background:var(--accent);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1rem;color:#fff;">K</div>
-      <div class="hero-logo-text">kunststoff<span>.Vision</span></div>
+<div style="min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding-top:60px;position:relative;overflow:hidden;">
+  <!-- Background: subtle grid -->
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(232,199,106,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(232,199,106,0.03) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;"></div>
+  <!-- Glow -->
+  <div style="position:absolute;top:30%;left:50%;transform:translate(-50%,-50%);width:900px;height:600px;background:radial-gradient(ellipse,rgba(232,199,106,0.05) 0%,transparent 65%);pointer-events:none;"></div>
+  <!-- Top film line -->
+  <div style="position:absolute;top:80px;left:0;right:0;" class="frame-line"></div>
+
+  <div class="w" style="padding-top:clamp(80px,15vw,160px);padding-bottom:clamp(60px,8vw,100px);position:relative;z-index:2;">
+    <!-- Badge -->
+    <div style="display:inline-flex;align-items:center;gap:10px;border:1px solid var(--gold-border);padding:6px 16px;margin-bottom:40px;">
+      <span style="width:6px;height:6px;border-radius:50%;background:var(--gold);display:block;"></span>
+      <span style="font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:600;">Exklusiv &middot; Hannes Staudt &middot; kunststoff DIE FILMAGENTUR</span>
     </div>
-    <div class="hero-badge">&#128279; Exklusiv f&uuml;r Hannes Staudt &mdash; kunststoff DIE FILMAGENTUR</div>
-    <h1>Dein LinkedIn-Netzwerk<br>in der Kunststoffbranche&mdash;<br><span class="gradient">systematisch aufgebaut.</span></h1>
-    <p class="hero-sub">Automatisiert. Personalisiert. Mit 95% Annahmerate. &mdash; Damit du dich auf das konzentrierst, was z&auml;hlt: echte Gespr&auml;che mit den richtigen Entscheidern.</p>
-    <div class="hero-ctas">
-      <a href="#angebot" class="btn-primary">Angebot ansehen &rarr;</a>
-      <a href="#prozess" class="btn-secondary">Wie funktioniert das?</a>
+    <!-- Headline -->
+    <h1 class="display" style="max-width:900px;margin-bottom:32px;">
+      Die Kunststoffbranche<br>
+      braucht eine Stimme.<br>
+      <em>Deine.</em>
+    </h1>
+    <div class="frame-line" style="max-width:900px;margin-bottom:32px;"></div>
+    <p class="body-lg" style="max-width:640px;margin-bottom:48px;">
+      35 personalisierte Vernetzungsanfragen t&auml;glich. 95&nbsp;% Annahmerate. Wir bauen deinen LinkedIn-Account als den Branchenbotschafter der Kunststoffwelt auf &mdash; systematisch, bis deine Case Studies im September live gehen und du mit echter Autorit&auml;t skalierst.
+    </p>
+    <!-- Stats row -->
+    <div style="display:flex;gap:clamp(24px,5vw,60px);flex-wrap:wrap;margin-bottom:52px;padding:28px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+      <div>
+        <div class="num-big">35</div>
+        <div class="label" style="margin-top:6px;">Anfragen / Tag</div>
+      </div>
+      <div style="width:1px;background:var(--border);align-self:stretch;"></div>
+      <div>
+        <div class="num-big">95<span style="font-size:2rem;">%</span></div>
+        <div class="label" style="margin-top:6px;">Annahmerate</div>
+      </div>
+      <div style="width:1px;background:var(--border);align-self:stretch;"></div>
+      <div>
+        <div class="num-big">500<span style="font-size:2rem;">+</span></div>
+        <div class="label" style="margin-top:6px;">Interaktionen / Woche</div>
+      </div>
+      <div style="width:1px;background:var(--border);align-self:stretch;"></div>
+      <div>
+        <div class="num-big">99<span style="font-size:2rem;">&euro;</span></div>
+        <div class="label" style="margin-top:6px;">Setup (einmalig)</div>
+      </div>
+    </div>
+    <!-- CTAs -->
+    <div style="display:flex;gap:16px;flex-wrap:wrap;">
+      <a href="#angebot" class="btn-gold">Angebot ansehen &rarr;</a>
+      <a href="#szene-02" class="btn-ghost">Wie es funktioniert</a>
     </div>
   </div>
+  <!-- Bottom film line -->
+  <div class="frame-line"></div>
 </div>
-<!-- LOGO TICKER -->
-<div class="logo-ticker-section">
-  <div class="ticker-row">
-    <div class="ticker-track">
-      <img class="client-logo" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel">
-      <img class="client-logo" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes">
-      <img class="client-logo" src="https://www.hrs.de/_next/static/media/hrs_logo_red.7cccdfd9.svg" alt="HRS">
-      <img class="client-logo" src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO">
-      <img class="client-logo" src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview">
-      <img class="client-logo" src="https://cdn.prod.website-files.com/673602757a06be245e484913/678d467526d221b55f5dc3e0_mc-logo-1-black.svg" alt="Michelscom">
-      <img class="client-logo" src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang">
-      <img class="client-logo" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel">
-      <img class="client-logo" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes">
-      <img class="client-logo" src="https://www.hrs.de/_next/static/media/hrs_logo_red.7cccdfd9.svg" alt="HRS">
-      <img class="client-logo" src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO">
-      <img class="client-logo" src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview">
-      <img class="client-logo" src="https://cdn.prod.website-files.com/673602757a06be245e484913/678d467526d221b55f5dc3e0_mc-logo-1-black.svg" alt="Michelscom">
-      <img class="client-logo" src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang">
-      <img class="client-logo" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel">
-      <img class="client-logo" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes">
-      <img class="client-logo" src="https://www.hrs.de/_next/static/media/hrs_logo_red.7cccdfd9.svg" alt="HRS">
-      <img class="client-logo" src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO">
-      <img class="client-logo" src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview">
-      <img class="client-logo" src="https://cdn.prod.website-files.com/673602757a06be245e484913/678d467526d221b55f5dc3e0_mc-logo-1-black.svg" alt="Michelscom">
-      <img class="client-logo" src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang">
-      <img class="client-logo" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel">
-      <img class="client-logo" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes">
-      <img class="client-logo" src="https://www.hrs.de/_next/static/media/hrs_logo_red.7cccdfd9.svg" alt="HRS">
+
+<!-- SZENE 01: AUSGANGSLAGE -->
+<section id="szene-01" class="fade">
+  <div class="w">
+    <div class="scene-num">Szene 01 &nbsp;/&nbsp; Die Ausgangslage</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,80px);align-items:start;" class="two-col">
+      <div>
+        <h2 class="display-sm" style="margin-bottom:24px;">1.300 Follower.<br>800 Company Page.<br><em>Die Branche kennt dich noch nicht.</em></h2>
+        <div class="divider"></div>
+        <p class="body-lg" style="margin-bottom:24px;">Du bist seit zweieinhalb Jahren in der Kunststoffbranche aktiv. Du kennst die Gesichter auf den Messen. Du hast mit acht Kunden die gro&szlig;e L&ouml;sung entwickelt. Und du wei&szlig;t: Im September kommen die Case Studies &mdash; dann muss die Reichweite da sein.</p>
+        <p class="body-lg">Nicht erst aufgebaut werden. <strong style="color:var(--text);">Da sein.</strong></p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:20px;">
+        <div class="card fade" style="border-left:3px solid var(--gold);padding:24px 28px;">
+          <div style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Das Problem</div>
+          <div class="headline" style="font-size:1rem;margin-bottom:8px;">Manuell &mdash; durch deine Zeit begrenzt</div>
+          <p class="body-sm">Jede Vernetzung per Hand. Du kennst die Branche nach 2,5 Jahren besser als jeder andere &mdash; aber das Tempo ist eine Funktion deiner verf&uuml;gbaren Zeit.</p>
+        </div>
+        <div class="card fade" style="border-left:3px solid var(--gold);padding:24px 28px;">
+          <div style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Das Problem</div>
+          <div class="headline" style="font-size:1rem;margin-bottom:8px;">Entscheider sind schwer zu aktivieren</div>
+          <p class="body-sm">Gesch&auml;ftsf&uuml;hrer, Head of Marketing, Product Manager &mdash; sie treffen sich auf denselben Messen. Ohne systematischen Touchpoint-Aufbau vor der Messe ist das Gegen&uuml;ber ein Fremder.</p>
+        </div>
+        <div class="card fade" style="border-left:3px solid var(--gold);padding:24px 28px;">
+          <div style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Das Problem</div>
+          <div class="headline" style="font-size:1rem;margin-bottom:8px;">Company Page braucht Relevanz</div>
+          <p class="body-sm">800 Follower auf kunststoff.Vision. Wenn dein Content im September viral geht, muss das Publikum bereits da sein &mdash; nicht erst gewonnen werden.</p>
+        </div>
+        <!-- Call-Quote -->
+        <div style="padding:20px 24px;background:var(--gold-glow);border:1px solid var(--gold-border);">
+          <p style="font-size:0.9rem;font-style:italic;color:var(--text-muted);line-height:1.7;">&bdquo;Wenn wir nur schreiben &lsquo;Vernetzt sich mit mir&rsquo; &mdash; dann sind wir bei unter 15%. Schreibe ich den Namen dazu und den Branchenkontext &mdash; liegen wir bei 95%.&ldquo;</p>
+          <p style="font-size:0.75rem;color:var(--text-dim);margin-top:10px;letter-spacing:0.05em;">Hannes Staudt, aus dem Gespr&auml;ch mit Grundwerk &middot; 17.03.2026</p>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="ticker-row">
-    <div class="ticker-track-rev">
-      <img class="client-logo" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges">
-      <img class="client-logo" src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios">
-      <img class="client-logo" src="https://d2bw95mh2ee04s.cloudfront.net/prod/content/wp-content/uploads/2025/01/02134814/Property-Logo-Main.svg" alt="SellerLogic">
-      <img class="client-logo" src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly">
-      <img class="client-logo" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy">
-      <img class="client-logo" src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic">
-      <img class="client-logo" src="https://digitalnow.online/logo.png" alt="Digital Now">
-      <img class="client-logo" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges">
-      <img class="client-logo" src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios">
-      <img class="client-logo" src="https://d2bw95mh2ee04s.cloudfront.net/prod/content/wp-content/uploads/2025/01/02134814/Property-Logo-Main.svg" alt="SellerLogic">
-      <img class="client-logo" src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly">
-      <img class="client-logo" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy">
-      <img class="client-logo" src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic">
-      <img class="client-logo" src="https://digitalnow.online/logo.png" alt="Digital Now">
-      <img class="client-logo" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges">
-      <img class="client-logo" src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios">
-      <img class="client-logo" src="https://d2bw95mh2ee04s.cloudfront.net/prod/content/wp-content/uploads/2025/01/02134814/Property-Logo-Main.svg" alt="SellerLogic">
-      <img class="client-logo" src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly">
-      <img class="client-logo" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy">
-      <img class="client-logo" src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic">
-      <img class="client-logo" src="https://digitalnow.online/logo.png" alt="Digital Now">
-      <img class="client-logo" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges">
-      <img class="client-logo" src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios">
-      <img class="client-logo" src="https://d2bw95mh2ee04s.cloudfront.net/prod/content/wp-content/uploads/2025/01/02134814/Property-Logo-Main.svg" alt="SellerLogic">
+</section>
+<div class="frame-line"></div>
+<!-- SZENE 02: DER DREH (Prozess) -->
+<section id="szene-02" class="fade">
+  <div class="w">
+    <div class="scene-num">Szene 02 &nbsp;/&nbsp; Der Dreh</div>
+    <h2 class="display-sm" style="max-width:700px;margin-bottom:16px;">F&uuml;nf Schritte.<br><em>Ein Branchenbotschafter.</em></h2>
+    <p class="body-lg" style="max-width:560px;margin-bottom:64px;">Wir laufen &uuml;ber deinen pers&ouml;nlichen Account &mdash; keine Fake-Profile, keine Massenanfragen ohne Kontext. Alles personalisiert, alles unter deinem Namen.</p>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--border);" class="process-grid">
+      <div style="padding:28px 20px;border-right:1px solid var(--border);">
+        <div style="font-family:'DM Serif Display',serif;font-size:2.5rem;color:var(--gold);opacity:0.4;margin-bottom:16px;">01</div>
+        <div style="font-weight:700;font-size:0.95rem;margin-bottom:8px;">Zielgruppe definieren</div>
+        <p class="body-sm">GF, Head of Marketing, Product Manager &mdash; in der Kunststoffbranche. Keine Sales Agents. Keine Streuung.</p>
+      </div>
+      <div style="padding:28px 20px;border-right:1px solid var(--border);">
+        <div style="font-family:'DM Serif Display',serif;font-size:2.5rem;color:var(--gold);opacity:0.4;margin-bottom:16px;">02</div>
+        <div style="font-weight:700;font-size:0.95rem;margin-bottom:8px;">Profile validieren</div>
+        <p class="body-sm">Nur aktiv genutzte LinkedIn-Profile. Wer die Plattform nicht nutzt, sieht deine Nachricht nie &mdash; das sch&uuml;tzt deinen Account-Score.</p>
+      </div>
+      <div style="padding:28px 20px;border-right:1px solid var(--border);">
+        <div style="font-family:'DM Serif Display',serif;font-size:2.5rem;color:var(--gold);opacity:0.4;margin-bottom:16px;">03</div>
+        <div style="font-weight:700;font-size:0.95rem;margin-bottom:8px;">35 Anfragen / Tag</div>
+        <p class="body-sm">Aus deinem Account. Mit Name + Branchenkontext. 95&nbsp;% Annahmerate &mdash; kein Spam-Gef&uuml;hl, volle Authentizit&auml;t.</p>
+      </div>
+      <div style="padding:28px 20px;border-right:1px solid var(--border);">
+        <div style="font-family:'DM Serif Display',serif;font-size:2.5rem;color:var(--gold);opacity:0.4;margin-bottom:16px;">04</div>
+        <div style="font-weight:700;font-size:0.95rem;margin-bottom:8px;">Follow-up + CTA</div>
+        <p class="body-sm">Nach Vernetzung: pers&ouml;nliche Nachricht + Einladung, der kunststoff.Vision Company Page zu folgen.</p>
+      </div>
+      <div style="padding:28px 20px;">
+        <div style="font-family:'DM Serif Display',serif;font-size:2.5rem;color:var(--gold);opacity:0.4;margin-bottom:16px;">05</div>
+        <div style="font-weight:700;font-size:0.95rem;margin-bottom:8px;">MasterInbox</div>
+        <p class="body-sm">Alle Antworten zentral, KI-vorqualifiziert. Du siehst nur die echten Interessenten &mdash; das Zepter liegt bei dir.</p>
+      </div>
+    </div>
+    <!-- Flow visual -->
+    <div style="margin-top:32px;padding:20px 28px;background:var(--gold-glow);border:1px solid var(--gold-border);display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+      <span style="font-size:0.85rem;font-weight:700;color:var(--gold);">Der Fluss:</span>
+      <span class="body-sm">Vernetzungsanfrage</span>
+      <span style="color:var(--gold);">&rarr;</span>
+      <span class="body-sm">Annahme (~95%)</span>
+      <span style="color:var(--gold);">&rarr;</span>
+      <span class="body-sm">Follow-up Nachricht</span>
+      <span style="color:var(--gold);">&rarr;</span>
+      <span class="body-sm">Einladung Company Page</span>
+      <span style="color:var(--gold);">&rarr;</span>
+      <span class="body-sm">Echte Konversation (bei dir)</span>
     </div>
   </div>
-</div>
-<!-- STAT BAR -->
-<div style="padding:0 2rem;max-width:1200px;margin:0 auto 80px;">
-  <div class="stat-bar" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border-radius:var(--radius);overflow:hidden;">
-    <div class="stat-item" style="background:var(--bg-card);padding:36px 28px;text-align:center;">
-      <span class="stat-number" style="font-size:2.5rem;font-weight:800;color:var(--accent);letter-spacing:-0.04em;display:block;">10 Mio.+</span>
-      <span class="stat-label" style="font-size:0.85rem;color:var(--text-muted);">Nachrichten versendet</span>
-    </div>
-    <div class="stat-item" style="background:var(--bg-card);padding:36px 28px;text-align:center;">
-      <span class="stat-number" style="font-size:2.5rem;font-weight:800;color:var(--accent);letter-spacing:-0.04em;display:block;">50+</span>
-      <span class="stat-label" style="font-size:0.85rem;color:var(--text-muted);">Erfolgreiche B2B-Projekte</span>
-    </div>
-    <div class="stat-item" style="background:var(--bg-card);padding:36px 28px;text-align:center;">
-      <span class="stat-number" style="font-size:2.5rem;font-weight:800;color:var(--accent);letter-spacing:-0.04em;display:block;">75+</span>
-      <span class="stat-label" style="font-size:0.85rem;color:var(--text-muted);">Tools &amp; Datenanbieter</span>
+</section>
+<div class="frame-line"></div>
+
+<!-- SZENE 03: DIE STRATEGIE -->
+<section id="szene-03" class="fade">
+  <div class="w">
+    <div class="scene-num">Szene 03 &nbsp;/&nbsp; Die Strategie</div>
+    <h2 class="display-sm" style="max-width:700px;margin-bottom:16px;">Drei Phasen.<br><em>Ein Ziel: September.</em></h2>
+    <p class="body-lg" style="max-width:560px;margin-bottom:64px;">Wenn deine Case Studies im September live gehen, willst du nicht bei null starten. Du willst mit 700&ndash;1.000+ qualifizierten Kontakten in der Branche &mdash; und einer Company Page die bereits Autorität hat.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--border);" class="strat-grid">
+      <div style="padding:36px 28px;border-right:1px solid var(--border);position:relative;">
+        <div style="position:absolute;top:28px;right:28px;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);opacity:0.6;">Monat 1&ndash;4</div>
+        <div style="font-size:2.5rem;margin-bottom:20px;">&#127760;</div>
+        <div class="headline" style="font-size:1.1rem;margin-bottom:12px;">Netzwerkaufbau</div>
+        <p class="body-sm" style="margin-bottom:20px;">35 personalisierte Anfragen/Tag an GF, Head of Marketing und Product Manager in der Kunststoffbranche. ~1.050 neue Kontaktanfragen pro Monat.</p>
+        <div style="padding:12px 16px;background:var(--bg-card-2);border-left:2px solid var(--gold);">
+          <span style="font-size:0.8rem;color:var(--gold);font-weight:600;">Ziel: 700&ndash;1.150 neue Kontakte</span>
+        </div>
+      </div>
+      <div style="padding:36px 28px;border-right:1px solid var(--border);position:relative;">
+        <div style="position:absolute;top:28px;right:28px;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);opacity:0.6;">Parallel</div>
+        <div style="font-size:2.5rem;margin-bottom:20px;">&#127981;</div>
+        <div class="headline" style="font-size:1.1rem;margin-bottom:12px;">Company Page Wachstum</div>
+        <p class="body-sm" style="margin-bottom:20px;">Jeder neue Kontakt bekommt eine Einladung zur kunststoff.Vision Unternehmensseite. Pers&ouml;nlich. Ohne Druck. Von 800 auf 2.000+ Follower.</p>
+        <div style="padding:12px 16px;background:var(--bg-card-2);border-left:2px solid var(--gold);">
+          <span style="font-size:0.8rem;color:var(--gold);font-weight:600;">Ziel: 2.000+ qualif. Follower</span>
+        </div>
+      </div>
+      <div style="padding:36px 28px;position:relative;background:var(--gold-glow);">
+        <div style="position:absolute;top:28px;right:28px;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);opacity:0.6;">September 2026</div>
+        <div style="font-size:2.5rem;margin-bottom:20px;">&#127942;</div>
+        <div class="headline" style="font-size:1.1rem;margin-bottom:12px;">Case Studies &rarr; Skalierung</div>
+        <p class="body-sm" style="margin-bottom:20px;">Wenn die 8 Kundenprojekte live gehen, hast du das Netzwerk und die Reichweite. Dann skalieren: E-Mail on top, Leitmesse-Kampagne, zweiter Account optional.</p>
+        <div style="padding:12px 16px;background:var(--bg);border-left:2px solid var(--gold);">
+          <span style="font-size:0.8rem;color:var(--gold);font-weight:600;">Ziel: Marktf&uuml;hrerschaft</span>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-<!-- PROBLEM SECTION -->
-<section id="problem" class="fade-in">
-  <div class="section-label">Die Ausgangssituation</div>
-  <h2 class="section-title">Drei Probleme, die deinen<br>Aufbau bremsen.</h2>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:48px;" class="problem-grid">
-    <div style="display:flex;flex-direction:column;gap:20px;">
-      <div class="card fade-in" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;">
-        <div style="font-size:2rem;margin-bottom:12px;">&#8987;</div>
-        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;">Manuell &amp; nicht skalierbar</h3>
-        <p style="color:var(--text-muted);font-size:0.9rem;">Jede Vernetzungsanfrage, jede Nachricht &mdash; alles per Hand. Du hast die Branche drei Jahre aufgebaut und weisst, wer relevant ist. Aber das Tempo ist durch deine Zeit gedeckelt.</p>
-        <div style="margin-top:16px;padding:14px 18px;background:rgba(79,125,249,0.06);border-left:3px solid var(--accent);border-radius:8px;">
-          <p style="font-size:0.85rem;color:var(--text-muted);font-style:italic;">&bdquo;Wenn wir nur schreiben &lsquo;Vernetzt sich mit mir&rsquo;, dann ist es bei unter 15%. Schreibe ich den Namen dazu und dass ich in der Kunststoffbranche t&auml;tig bin &mdash; liegen wir bei 95%.&ldquo;</p>
-          <p style="font-size:0.78rem;color:var(--text-dim);margin-top:6px;">&mdash; Hannes Staudt, Gesch&auml;ftsf&uuml;hrer &middot; aus dem Gespr&auml;ch mit Grundwerk</p>
-        </div>
-      </div>
-      <div class="card fade-in" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;">
-        <div style="font-size:2rem;margin-bottom:12px;">&#127981;</div>
-        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;">Konservative Zielgruppe, langer Sales-Cycle</h3>
-        <p style="color:var(--text-muted);font-size:0.9rem;">Die Kunststoffbranche ist digital wenig affin. Entscheider sind skeptisch, Annäherungsprozesse dauern 2&ndash;3 Jahre. Ohne systematischen Touchpoint-Aufbau bremst dich das aus.</p>
-        <div style="margin-top:16px;padding:14px 18px;background:rgba(79,125,249,0.06);border-left:3px solid var(--accent);border-radius:8px;">
-          <p style="font-size:0.85rem;color:var(--text-muted);font-style:italic;">&bdquo;Die m&uuml;ssen auf jeden Fall erstmal die T&uuml;r &ouml;ffnen &mdash; und dann zeigen, was du wirklich f&uuml;r Mehrwert bieten kannst.&ldquo;</p>
-          <p style="font-size:0.78rem;color:var(--text-dim);margin-top:6px;">&mdash; Hannes Staudt &middot; aus dem Gespr&auml;ch mit Grundwerk</p>
-        </div>
-      </div>
-      <div class="card fade-in" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;">
-        <div style="font-size:2rem;margin-bottom:12px;">&#127775;</div>
-        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;">4 Ansprechpartner pro Unternehmen</h3>
-        <p style="color:var(--text-muted);font-size:0.9rem;">Gesch&auml;ftsf&uuml;hrung, Marketing, Vertrieb, Entwicklung &mdash; bei jedem Unternehmen musst du mehrere Stakeholder erreichen. Das potenziert den manuellen Aufwand massiv.</p>
-      </div>
-    </div>
-    <div class="card" style="background:linear-gradient(135deg,rgba(79,125,249,0.08) 0%,rgba(79,125,249,0.02) 100%);border:1px solid var(--border-accent);border-radius:var(--radius);padding:36px;display:flex;flex-direction:column;justify-content:center;">
-      <div style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent);font-weight:600;margin-bottom:16px;">Die L&ouml;sung</div>
-      <h3 style="font-size:1.5rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:16px;">Automatisiert, personalisiert &mdash; auf einem Account der dir geh&ouml;rt.</h3>
-      <p style="color:var(--text-muted);font-size:0.95rem;margin-bottom:24px;">Wir bauen dir eine LinkedIn-Kampagnen-Infrastruktur, die mit mehreren Variablen personalisiert &mdash; nicht nur dem Namen. 500+ qualifizierte Vernetzungen im Monat, alle Antworten gebündelt in der MasterInbox, von der KI vorqualifiziert.</p>
-      <div style="display:flex;flex-direction:column;gap:12px;">
-        <div style="display:flex;align-items:center;gap:12px;font-size:0.9rem;">
-          <span style="color:var(--green);font-size:1.1rem;">&#10003;</span>
-          <span>95% Annahmerate mit personalisierter Ansprache</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:12px;font-size:0.9rem;">
-          <span style="color:var(--green);font-size:1.1rem;">&#10003;</span>
-          <span>Alle Antworten in einer MasterInbox &mdash; KI-vorqualifiziert</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:12px;font-size:0.9rem;">
-          <span style="color:var(--green);font-size:1.1rem;">&#10003;</span>
-          <span>Dein Account, deine Daten &mdash; auch nach Ende der Zusammenarbeit</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:12px;font-size:0.9rem;">
-          <span style="color:var(--green);font-size:1.1rem;">&#10003;</span>
-          <span>Mehrstufige Kampagnen: Vernetzung &rarr; Einstieg &rarr; Einladung Leitmesse</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:12px;font-size:0.9rem;">
-          <span style="color:var(--green);font-size:1.1rem;">&#10003;</span>
-          <span>Skalierbar auf mehrere Accounts wenn der Markt es hergibt</span>
-        </div>
-      </div>
-      <div style="margin-top:28px;padding:20px;background:var(--bg);border-radius:var(--radius-sm);border:1px solid var(--border);">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;text-align:center;">
-          <div>
-            <div style="font-size:1.6rem;font-weight:800;color:var(--red);">~1.750 &euro;</div>
-            <div style="font-size:0.78rem;color:var(--text-muted);">pro qual. Termin via Meta Ads</div>
+</section>
+<div class="frame-line"></div>
+<!-- SZENE 04: DAS ANGEBOT -->
+<section id="angebot" class="fade">
+  <div class="w">
+    <div class="scene-num">Szene 04 &nbsp;/&nbsp; Das Angebot</div>
+    <h2 class="display-sm" style="max-width:700px;margin-bottom:16px;">Ein Paket.<br><em>Klar. Ohne Verstecktes.</em></h2>
+    <p class="body-lg" style="max-width:560px;margin-bottom:64px;">Kein Konfigurations-Dschungel. Kein &bdquo;kommt drauf an&ldquo;. Du weisst was du bekommst, was es kostet und wann du erste Ergebnisse siehst.</p>
+
+    <div style="display:grid;grid-template-columns:3fr 2fr;gap:2px;background:var(--border);" class="offer-grid">
+      <!-- LEFT: Hauptpaket -->
+      <div style="background:var(--bg);padding:48px;">
+        <div style="display:inline-block;background:var(--gold);color:#080808;padding:4px 14px;font-size:0.7rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:24px;">Dein Paket</div>
+        <div class="headline" style="font-size:1.6rem;margin-bottom:8px;">LinkedIn Branchenbotschafter</div>
+        <p class="body-sm" style="margin-bottom:36px;">1 Account (dein pers&ouml;nliches Profil) &middot; 4 Monate Laufzeit &middot; vollst&auml;ndig managed</p>
+
+        <!-- PRICING DISPLAY -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border);margin-bottom:36px;">
+          <div style="padding:24px;border-right:1px solid var(--border);">
+            <div class="label" style="margin-bottom:8px;">Setup (einmalig)</div>
+            <div style="font-family:'DM Serif Display',serif;font-size:2.8rem;color:var(--text);">99<span style="font-size:1.4rem;">&euro;</span></div>
+            <div class="body-sm" style="margin-top:6px;">KickOff + Infrastruktur</div>
           </div>
-          <div>
-            <div style="font-size:1.6rem;font-weight:800;color:var(--green);">~250 &euro;</div>
-            <div style="font-size:0.78rem;color:var(--text-muted);">pro qual. Termin via LinkedIn Outreach</div>
+          <div style="padding:24px;background:var(--gold-glow);">
+            <div class="label" style="margin-bottom:8px;color:var(--gold);">Kampagne / Monat</div>
+            <div style="font-family:'DM Serif Display',serif;font-size:2.8rem;color:var(--gold);">1.500<span style="font-size:1.4rem;">&euro;</span></div>
+            <div class="body-sm" style="margin-top:6px;">3 Monate Kampagne</div>
+          </div>
+        </div>
+        <div style="padding:16px 20px;background:var(--bg-card);border:1px solid var(--border);margin-bottom:36px;display:flex;justify-content:space-between;align-items:center;">
+          <span class="body-sm">Gesamtinvest &middot; 4 Monate</span>
+          <span style="font-weight:800;font-size:1.1rem;color:var(--text);">4.599&nbsp;&euro;</span>
+        </div>
+
+        <!-- FEATURES -->
+        <ul class="checklist">
+          <li><span class="check-icon">&#10003;</span><span>1 LinkedIn-Account &mdash; dein pers&ouml;nliches Profil, dein Name, deine Authentizit&auml;t</span></li>
+          <li><span class="check-icon">&#10003;</span><span>35 personalisierte Vernetzungsanfragen / Tag (~1.050 / Monat)</span></li>
+          <li><span class="check-icon">&#10003;</span><span>~500 Interaktionen / Woche (Vernetzung + Follow-up)</span></li>
+          <li><span class="check-icon">&#10003;</span><span>Follow-up CTA: Einladung zur kunststoff.Vision Company Page</span></li>
+          <li><span class="check-icon">&#10003;</span><span>MasterInbox &mdash; alle Antworten zentral, KI-vorqualifiziert</span></li>
+          <li><span class="check-icon">&#10003;</span><span>1h KickOff-Workshop: Zielgruppe, Strategie, Messaging</span></li>
+          <li><span class="check-icon">&#10003;</span><span>Regelm&auml;&szlig;ige Status-Calls mit Account Manager</span></li>
+          <li><span class="check-icon">&#10003;</span><span>Grundwerk Web App: Kampagnen-Dashboard &amp; Live-Reporting</span></li>
+          <li><span class="check-icon">&#10003;</span><span>Alle Kontakte &amp; Daten bleiben bei dir &mdash; auch nach Ende der Zusammenarbeit</span></li>
+        </ul>
+        <div style="margin-top:40px;">
+          <a href="https://calendly.com/anthony-katzur-grundwerk/30min" target="_blank" class="btn-gold">Jetzt starten &rarr;</a>
+        </div>
+      </div>
+
+      <!-- RIGHT: Sidebar -->
+      <div style="background:var(--bg-card);display:flex;flex-direction:column;">
+        <!-- Bonus Stack -->
+        <div style="padding:36px 28px;border-bottom:1px solid var(--border);flex:1;">
+          <div class="label" style="color:var(--gold);margin-bottom:20px;">Bonus &mdash; ohne Aufpreis</div>
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <span style="font-size:1.2rem;flex-shrink:0;">&#127916;</span>
+              <div><div style="font-weight:700;font-size:0.88rem;margin-bottom:3px;">ICP-Leadlisten Kunststoff</div><p class="body-sm" style="font-size:0.8rem;">GF, Head of Marketing, Product Manager &mdash; fertig recherchiert.</p></div>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <span style="font-size:1.2rem;flex-shrink:0;">&#128241;</span>
+              <div><div style="font-weight:700;font-size:0.88rem;margin-bottom:3px;">MasterInbox Setup</div><p class="body-sm" style="font-size:0.8rem;">KI-Integration, du siehst nur echte Interessenten.</p></div>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <span style="font-size:1.2rem;flex-shrink:0;">&#128203;</span>
+              <div><div style="font-weight:700;font-size:0.88rem;margin-bottom:3px;">Nachrichtensequenzen</div><p class="body-sm" style="font-size:0.8rem;">Vernetzung + Follow-up + Company Page CTA &mdash; branchenspezifisch formuliert.</p></div>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <span style="font-size:1.2rem;flex-shrink:0;">&#128200;</span>
+              <div><div style="font-weight:700;font-size:0.88rem;margin-bottom:3px;">15+ Sales Guides</div><p class="body-sm" style="font-size:0.8rem;">Von Kontaktaufbau bis Gespr&auml;chsf&uuml;hrung nach der Vernetzung.</p></div>
+            </div>
+          </div>
+        </div>
+        <!-- Why now -->
+        <div style="padding:28px;background:var(--gold-glow);border-top:1px solid var(--gold-border);">
+          <div style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;">Warum jetzt?</div>
+          <p class="body-sm">Netzwerke brauchen Zeit. Wer im April startet, hat bis September 4&ndash;5 Monate qualifiziertes Wachstum &mdash; genau dann wenn jeder neue Follower Gold wert ist.</p>
+          <div style="margin-top:16px;padding:12px 16px;background:rgba(8,8,8,0.5);border-left:2px solid var(--gold);">
+            <span style="font-size:0.82rem;font-weight:700;color:var(--gold);">&#9889; Erste Vernetzungen innerhalb von 14 Tagen.</span>
+          </div>
+        </div>
+        <!-- Upgrade path -->
+        <div style="padding:28px;border-top:1px solid var(--border);">
+          <div class="label" style="margin-bottom:12px;">Ab Monat 5 (September)</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="font-size:0.82rem;color:var(--text-muted);">+ E-Mail-Kampagnen on top</div>
+            <div style="font-size:0.82rem;color:var(--text-muted);">+ Zweiter Account optional</div>
+            <div style="font-size:0.82rem;color:var(--text-muted);">+ Leitmesse-Einladungskampagne</div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- PROZESS -->
-<section id="prozess" class="fade-in" style="background:var(--bg-card);border-radius:var(--radius);border:1px solid var(--border);margin:0 2rem;padding:64px 48px;max-width:calc(1200px - 4rem);margin-left:auto;margin-right:auto;">
-  <div class="section-label">Unser Prozess</div>
-  <h2 class="section-title">In 5 Schritten zu qualifizierten<br>Kontakten in der Kunststoffbranche.</h2>
-  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:20px;margin-top:48px;" class="process-steps">
-    <div style="text-align:center;">
-      <div style="width:44px;height:44px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;margin:0 auto 16px;">1</div>
-      <h4 style="font-size:0.95rem;font-weight:700;margin-bottom:8px;">Zielgruppe</h4>
-      <p style="font-size:0.82rem;color:var(--text-muted);">GF, Marketing, Vertrieb, Entwicklung &mdash; alle 4 Entscheider-Typen in der Kunststoffbranche identifizieren.</p>
-    </div>
-    <div style="text-align:center;">
-      <div style="width:44px;height:44px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;margin:0 auto 16px;">2</div>
-      <h4 style="font-size:0.95rem;font-weight:700;margin-bottom:8px;">Daten-Validierung</h4>
-      <p style="font-size:0.82rem;color:var(--text-muted);">Kontaktdaten mehrfach gegengepr&uuml;ft &mdash; nur aktuelle, valide Profile. Kein Streuverlust durch veraltete Daten.</p>
-    </div>
-    <div style="text-align:center;">
-      <div style="width:44px;height:44px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;margin:0 auto 16px;">3</div>
-      <h4 style="font-size:0.95rem;font-weight:700;margin-bottom:8px;">Personalisierte Ansprache</h4>
-      <p style="font-size:0.82rem;color:var(--text-muted);">Automatisierte Vernetzungsanfragen mit Name, Branchenkontext und individuellem Einstieg &mdash; 95% Annahmerate.</p>
-    </div>
-    <div style="text-align:center;">
-      <div style="width:44px;height:44px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;margin:0 auto 16px;">4</div>
-      <h4 style="font-size:0.95rem;font-weight:700;margin-bottom:8px;">MasterInbox</h4>
-      <p style="font-size:0.82rem;color:var(--text-muted);">Alle LinkedIn-Antworten laufen in einer zentralen Inbox zusammen &mdash; von der KI vorqualifiziert. Du siehst nur die echten Interessenten.</p>
-    </div>
-    <div style="text-align:center;">
-      <div style="width:44px;height:44px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;margin:0 auto 16px;">5</div>
-      <h4 style="font-size:0.95rem;font-weight:700;margin-bottom:8px;">Warme Kontakte</h4>
-      <p style="font-size:0.82rem;color:var(--text-muted);">Aus Vernetzung wird Gespr&auml;ch. Du sprichst nur noch mit Menschen, die sich bereits mit dir identifiziert haben.</p>
-    </div>
-  </div>
-</section>
-<!-- TOOL TICKER -->
-<div style="padding:80px 0 60px;overflow:hidden;position:relative;">
-  <div style="text-align:center;margin-bottom:32px;">
-    <h3 style="font-size:1.3rem;font-weight:800;">75+ Tools &amp; Datenanbieter &rarr; <span style="color:var(--accent);">0&euro; Fixkosten</span></h3>
-    <div style="font-size:0.85rem;color:var(--text-muted);margin-top:6px;">Enterprise-GTM-Setup &mdash; wir tragen die Kosten</div>
-  </div>
-  <div style="position:relative;">
-    <div style="position:absolute;left:0;top:0;bottom:0;width:20%;background:linear-gradient(to right,var(--bg) 60%,transparent);z-index:2;pointer-events:none;"></div>
-    <div style="position:absolute;right:0;top:0;bottom:0;width:20%;background:linear-gradient(to left,var(--bg) 60%,transparent);z-index:2;pointer-events:none;"></div>
-    <div style="overflow:hidden;margin-bottom:16px;">
-      <div style="display:flex;gap:12px;animation:ticker-fwd 35s linear infinite;">
-        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:0.82rem;white-space:nowrap;"><span style="width:8px;height:8px;border-radius:50%;background:#4f7df9;display:inline-block;"></span>Apollo.io</span>
-        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:0.82rem;white-space:nowrap;"><span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;"></span>Clay</span>
-        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:0.82rem;white-space:nowrap;"><span style="width:8px;height:8px;border-radius:50%;background:#a855f7;display:inline-block;"></span>Heyreach</span>
-        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:0.82rem;white-space:nowrap;"><span style="width:8px;height:8px;border-radius:50%;background:#f97316;display:inline-block;"></span>OpenAI</span>
-        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:0.82rem;white-space:nowrap;"><span style="width:8px;height:8px;border-radius:50%;background:#06b6d4;display:inline-block;"></span>LinkedIn Sales Nav</span>
-        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:0.82rem;white-space:nowrap;"><span style="width:8px;height:8px;border-radius:50%;background:#4f7df9;display:inline-block;"></span>MasterInbox</span>
-        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:0.82rem;white-space:nowrap;"><span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;"></span>RevyOps</span>
-        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:0.82rem;white-space:nowrap;"><span style="width:8px;height:8px;border-radius:50%;background:#a855f7;display:inline-block;"></span>Supabase</span>
-        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:0.82rem;white-space:nowrap;"><span style="width:8px;height:8px;border-radius:50%;background:#f97316;display:inline-block;"></span>Findymail</span>
-        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:0.82rem;white-space:nowrap;"><span style="width:8px;height:8px;border-radius:50%;background:#06b6d4;display:inline-block;"></span>Prospeo</span>
-        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:0.82rem;white-space:nowrap;"><span style="width:8px;height:8px;border-radius:50%;background:#ef4444;display:inline-block;"></span>Millionverifier</span>
-        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:0.82rem;white-space:nowrap;"><span style="width:8px;height:8px;border-radius:50%;background:#4f7df9;display:inline-block;"></span>Apollo.io</span>
-        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:0.82rem;white-space:nowrap;"><span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;"></span>Clay</span>
-        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:0.82rem;white-space:nowrap;"><span style="width:8px;height:8px;border-radius:50%;background:#a855f7;display:inline-block;"></span>Heyreach</span>
-        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:0.82rem;white-space:nowrap;"><span style="width:8px;height:8px;border-radius:50%;background:#f97316;display:inline-block;"></span>OpenAI</span>
-        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:0.82rem;white-space:nowrap;"><span style="width:8px;height:8px;border-radius:50%;background:#06b6d4;display:inline-block;"></span>LinkedIn Sales Nav</span>
-        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:0.82rem;white-space:nowrap;"><span style="width:8px;height:8px;border-radius:50%;background:#4f7df9;display:inline-block;"></span>MasterInbox</span>
-        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:0.82rem;white-space:nowrap;"><span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;"></span>RevyOps</span>
-        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:0.82rem;white-space:nowrap;"><span style="width:8px;height:8px;border-radius:50%;background:#a855f7;display:inline-block;"></span>Northdata</span>
-        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:0.82rem;white-space:nowrap;"><span style="width:8px;height:8px;border-radius:50%;background:#f97316;display:inline-block;"></span>Ocean.io</span>
-        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:0.82rem;white-space:nowrap;"><span style="width:8px;height:8px;border-radius:50%;background:#06b6d4;display:inline-block;"></span>Brightdata</span>
-        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:0.82rem;white-space:nowrap;"><span style="width:8px;height:8px;border-radius:50%;background:#ef4444;display:inline-block;"></span>Perplexity</span>
-        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:0.82rem;white-space:nowrap;"><span style="width:8px;height:8px;border-radius:50%;background:#4f7df9;display:inline-block;"></span>n8n</span>
+<div class="frame-line"></div>
+<!-- SZENE 05: DIE PROGNOSE -->
+<section id="szene-05" class="fade">
+  <div class="w">
+    <div class="scene-num">Szene 05 &nbsp;/&nbsp; Die Prognose</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,80px);align-items:start;" class="two-col">
+      <div>
+        <h2 class="display-sm" style="margin-bottom:24px;">Was du in<br><em>4 Monaten</em><br>aufbaust.</h2>
+        <div class="divider"></div>
+        <p class="body-lg" style="margin-bottom:32px;">35 Anfragen/Tag &times; 30 Tage = ~1.050 ausgehende Anfragen pro Monat. Bei 95% Annahmerate in der klar definierten Zielgruppe der Kunststoffbranche.</p>
+        <!-- ROI cards -->
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--border);">
+          <div style="padding:20px 16px;text-align:center;border-right:1px solid var(--border);">
+            <div style="font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px;">Konservativ</div>
+            <div style="font-family:'DM Serif Display',serif;font-size:1.8rem;color:var(--green);">1</div>
+            <div class="body-sm" style="font-size:0.78rem;margin-top:4px;">Kunde = Break-Even</div>
+          </div>
+          <div style="padding:20px 16px;text-align:center;border-right:1px solid var(--border);background:var(--gold-glow);">
+            <div style="font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Realistisch</div>
+            <div style="font-family:'DM Serif Display',serif;font-size:1.8rem;color:var(--gold);">3&ndash;5</div>
+            <div class="body-sm" style="font-size:0.78rem;margin-top:4px;">Kunden bis Sept.</div>
+          </div>
+          <div style="padding:20px 16px;text-align:center;">
+            <div style="font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px;">Optimistisch</div>
+            <div style="font-family:'DM Serif Display',serif;font-size:1.8rem;color:var(--green);">8</div>
+            <div class="body-sm" style="font-size:0.78rem;margin-top:4px;">Dein Ziel</div>
+          </div>
+        </div>
+        <p class="body-sm" style="margin-top:16px;padding:14px 16px;background:var(--bg-card);border-left:2px solid var(--border);">Jeder Abschluss &mdash; eine langfristige Agentur-Beziehung f&uuml;r Filmproduktionen in der Kunststoffbranche. 1 Kunde &divide; 4.599&nbsp;&euro; = Break-Even.</p>
+      </div>
+      <!-- Prognose table -->
+      <div>
+        <table style="width:100%;border-collapse:collapse;font-size:0.86rem;">
+          <thead>
+            <tr style="border-bottom:1px solid var(--border);">
+              <th style="text-align:left;padding:10px 14px;color:var(--text-muted);font-weight:500;">Phase</th>
+              <th style="text-align:center;padding:10px 14px;color:var(--text-muted);font-weight:500;">Anfragen</th>
+              <th style="text-align:center;padding:10px 14px;color:var(--text-muted);font-weight:500;">Neue Kontakte</th>
+              <th style="text-align:right;padding:10px 14px;color:var(--text-muted);font-weight:500;">Kumuliert</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:14px;font-weight:600;">Monat 1 &mdash; Setup</td>
+              <td style="padding:14px;text-align:center;color:var(--text-muted);">0</td>
+              <td style="padding:14px;text-align:center;color:var(--text-muted);">Infrastruktur</td>
+              <td style="padding:14px;text-align:right;color:var(--text-muted);">0</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:14px;font-weight:600;">Monat 2 &mdash; Launch</td>
+              <td style="padding:14px;text-align:center;">~1.050</td>
+              <td style="padding:14px;text-align:center;color:var(--green);font-weight:700;">200&ndash;350</td>
+              <td style="padding:14px;text-align:right;">200&ndash;350</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:14px;font-weight:600;">Monat 3 &mdash; Skalierung</td>
+              <td style="padding:14px;text-align:center;">~1.050</td>
+              <td style="padding:14px;text-align:center;color:var(--green);font-weight:700;">250&ndash;400</td>
+              <td style="padding:14px;text-align:right;">450&ndash;750</td>
+            </tr>
+            <tr style="border-bottom:2px solid var(--gold-border);">
+              <td style="padding:14px;font-weight:600;">Monat 4 &mdash; Vor September</td>
+              <td style="padding:14px;text-align:center;">~1.050</td>
+              <td style="padding:14px;text-align:center;color:var(--green);font-weight:700;">250&ndash;400</td>
+              <td style="padding:14px;text-align:right;font-weight:800;color:var(--gold);">700&ndash;1.150+</td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- Milestone Timeline -->
+        <div style="margin-top:32px;padding:28px;border:1px solid var(--border);">
+          <div class="label" style="margin-bottom:20px;">Dein Weg bis zur Leitmesse</div>
+          <div style="position:relative;padding-left:24px;border-left:1px solid var(--border);">
+            <div style="margin-bottom:20px;position:relative;">
+              <div style="position:absolute;left:-29px;top:3px;width:10px;height:10px;border-radius:50%;background:var(--gold);border:2px solid var(--bg);"></div>
+              <div style="font-weight:700;font-size:0.88rem;">April 2026 &mdash; Start</div>
+              <div class="body-sm" style="font-size:0.8rem;">Setup, KickOff, erste 35 Anfragen/Tag live.</div>
+            </div>
+            <div style="margin-bottom:20px;position:relative;">
+              <div style="position:absolute;left:-29px;top:3px;width:10px;height:10px;border-radius:50%;background:var(--gold);border:2px solid var(--bg);"></div>
+              <div style="font-weight:700;font-size:0.88rem;">Mai&ndash;Juli 2026 &mdash; Wachstum</div>
+              <div class="body-sm" style="font-size:0.8rem;">Netzwerk w&auml;chst. Company Page gewinnt Follower. Status-Calls.</div>
+            </div>
+            <div style="margin-bottom:20px;position:relative;">
+              <div style="position:absolute;left:-29px;top:3px;width:10px;height:10px;border-radius:50%;background:var(--green);border:2px solid var(--bg);"></div>
+              <div style="font-weight:700;font-size:0.88rem;">September 2026 &mdash; Case Studies live</div>
+              <div class="body-sm" style="font-size:0.8rem;">8 Kundenprojekte werden ver&ouml;ffentlicht. Netzwerk ist bereit. Skalierung startet.</div>
+            </div>
+            <div style="position:relative;">
+              <div style="position:absolute;left:-29px;top:3px;width:10px;height:10px;border-radius:50%;background:var(--green);border:2px solid var(--bg);"></div>
+              <div style="font-weight:700;font-size:0.88rem;">Leitmesse 2026 &mdash; Branchenbotschafter</div>
+              <div class="body-sm" style="font-size:0.8rem;">Du gehst mit 700&ndash;1.150+ warmen Kontakten zur Messe. 5&ndash;6 Referenzkunden als Ziel.</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div style="overflow:hidden;">
-      <div style="display:flex;gap:12px;animation:ticker-rev 40s linear infinite;">
-        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:0.82rem;white-space:nowrap;"><span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;"></span>Claude</span>
-        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:0.82rem;white-space:nowrap;"><span style="width:8px;height:8px;border-radius:50%;background:#a855f7;display:inline-block;"></span>Make</span>
-        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:0.82rem;white-space:nowrap;"><span style="width:8px;height:8px;border-radius:50%;background:#f97316;display:inline-block;"></span>Mailreach</span>
-        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:0.82rem;white-space:nowrap;"><span style="width:8px;height:8px;border-radius:50%;background:#06b6d4;display:inline-block;"></span>Lusha</span>
-        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:0.82rem;white-space:nowrap;"><span style="width:8px;height:8px;border-radius:50%;background:#4f7df9;display:inline-block;"></span>BounceBan</span>
-        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:0.82rem;white-space:nowrap;"><span style="width:8px;height:8px;border-radius:50%;background:#ef4444;display:inline-block;"></span>Bettercontact</span>
-        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:0.82rem;white-space:nowrap;"><span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;"></span>Icypeas</span>
-        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:0.82rem;white-space:nowrap;"><span style="width:8px;height:8px;border-radius:50%;background:#a855f7;display:inline-block;"></span>Claude</span>
-        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:0.82rem;white-space:nowrap;"><span style="width:8px;height:8px;border-radius:50%;background:#f97316;display:inline-block;"></span>Make</span>
-        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:0.82rem;white-space:nowrap;"><span style="width:8px;height:8px;border-radius:50%;background:#06b6d4;display:inline-block;"></span>Mailreach</span>
-        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:0.82rem;white-space:nowrap;"><span style="width:8px;height:8px;border-radius:50%;background:#4f7df9;display:inline-block;"></span>Lusha</span>
-        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:0.82rem;white-space:nowrap;"><span style="width:8px;height:8px;border-radius:50%;background:#ef4444;display:inline-block;"></span>BounceBan</span>
-        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:0.82rem;white-space:nowrap;"><span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;"></span>Bettercontact</span>
-        <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:0.82rem;white-space:nowrap;"><span style="width:8px;height:8px;border-radius:50%;background:#a855f7;display:inline-block;"></span>Icypeas</span>
+  </div>
+</section>
+<div class="frame-line"></div>
+
+<!-- SZENE 06: DAS TEAM -->
+<section class="fade">
+  <div class="w">
+    <div class="scene-num">Szene 06 &nbsp;/&nbsp; Das Team</div>
+    <h2 class="display-sm" style="max-width:600px;margin-bottom:64px;">Drei Experten.<br><em>Eine Kampagne.</em></h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--border);" class="team-grid">
+      <div style="padding:36px 28px;border-right:1px solid var(--border);">
+        <div style="width:44px;height:44px;background:var(--gold-glow);border:1px solid var(--gold-border);display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:20px;">&#128104;&#8205;&#128187;</div>
+        <div style="font-weight:800;font-size:1rem;margin-bottom:4px;">Account Manager</div>
+        <div style="font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Strategie &amp; Betreuung</div>
+        <p class="body-sm">Dein direkter Ansprechpartner. Plant Kampagnenstrategie, f&uuml;hrt Status-Calls, optimiert Zielgruppen &mdash; du entscheidest mit.</p>
+      </div>
+      <div style="padding:36px 28px;border-right:1px solid var(--border);">
+        <div style="width:44px;height:44px;background:var(--gold-glow);border:1px solid var(--gold-border);display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:20px;">&#9881;&#65039;</div>
+        <div style="font-weight:800;font-size:1rem;margin-bottom:4px;">Clay Engineer</div>
+        <div style="font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Daten &amp; Leadlisten</div>
+        <p class="body-sm">Baut die Zielgruppen-Listen f&uuml;r die Kunststoffbranche, validiert alle Profile mehrfach &mdash; nur aktive Entscheider, kein Streuverlust.</p>
+      </div>
+      <div style="padding:36px 28px;">
+        <div style="width:44px;height:44px;background:var(--gold-glow);border:1px solid var(--gold-border);display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:20px;">&#9889;</div>
+        <div style="font-weight:800;font-size:1rem;margin-bottom:4px;">Automations Expert</div>
+        <div style="font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Infrastruktur &amp; Setup</div>
+        <p class="body-sm">Richtet die LinkedIn-Infrastruktur ein: Heyreach-Campaigns, MasterInbox-Integration, KI-Vorqualifizierung &mdash; alles unter deinem Account.</p>
       </div>
     </div>
   </div>
-</div>
-<!-- KAMPAGNENSTRATEGIE -->
-<section class="fade-in">
-  <div class="section-label">Kampagnenstrategie</div>
-  <h2 class="section-title">Drei Cluster f&uuml;r den<br>systematischen Netzwerkaufbau.</h2>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;">
-    <div class="card fade-in" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;">
-      <div style="font-size:2rem;margin-bottom:16px;">&#127760;</div>
-      <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:12px;">Branchennetzwerk-Aufbau</h3>
-      <p style="color:var(--text-muted);font-size:0.88rem;margin-bottom:16px;">Automatisierte Vernetzungsanfragen mit Name + Branchenkontext an GF, Head of Marketing, Vertriebsleiter und Entwicklungsleiter in der Kunststoffbranche.</p>
-      <div style="font-size:0.8rem;color:var(--accent);">&#8250; Gesch&auml;ftsf&uuml;hrer Kunststoff &middot; Head of Development &middot; Marketing &middot; Vertrieb</div>
-    </div>
-    <div class="card fade-in" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;">
-      <div style="font-size:2rem;margin-bottom:16px;">&#127775;</div>
-      <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:12px;">Follower-Wachstum kunststoff.Vision</h3>
-      <p style="color:var(--text-muted);font-size:0.88rem;margin-bottom:16px;">Qualifizierte Follower f&uuml;r die LinkedIn-Seite kunststoff.Vision gewinnen &mdash; branchenaffin, entscheidungsnah, auf dem Weg zur Leitmesse 2026.</p>
-      <div style="font-size:0.8rem;color:var(--accent);">&#8250; Kanal-Wachstum &middot; Content-Reichweite &middot; Branchenrelevanz</div>
-    </div>
-    <div class="card fade-in" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;">
-      <div style="font-size:2rem;margin-bottom:16px;">&#127942;</div>
-      <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:12px;">Leitmesse-Kampagne Oktober 2026</h3>
-      <p style="color:var(--text-muted);font-size:0.88rem;margin-bottom:16px;">Mehrstufige Einladungskampagne zur Leitmesse (30-j&auml;hriges Jubil&auml;um). Die aufgebauten Kontakte werden gezielt zur Messe eingeladen &mdash; mit vorgew&auml;rmtem Vertrauen.</p>
-      <div style="font-size:0.8rem;color:var(--accent);">&#8250; 5&ndash;6 Referenzkunden &middot; Messeeinladung &middot; Erst-Gespr&auml;ch vor Ort</div>
+</section>
+<div class="frame-line"></div>
+<!-- VIDEO -->
+<section class="fade" style="text-align:center;">
+  <div class="w">
+    <div class="scene-num" style="justify-content:center;">Grundwerk erkl&auml;rt &nbsp;/&nbsp; 3 Minuten</div>
+    <h2 class="display-sm" style="margin-bottom:40px;">Wie wir arbeiten.</h2>
+    <div style="max-width:760px;margin:0 auto;border:1px solid var(--border);overflow:hidden;">
+      <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+      <wistia-player media-id="tm8si6qq6m" style="width:100%;aspect-ratio:16/9;"></wistia-player>
     </div>
   </div>
 </section>
-<!-- TEAM -->
-<section class="fade-in" style="background:var(--bg-card);border-radius:var(--radius);border:1px solid var(--border);margin:0 2rem;padding:64px 48px;max-width:calc(1200px - 4rem);margin-left:auto;margin-right:auto;">
-  <div class="section-label">Dein Team</div>
-  <h2 class="section-title">Das Execution-Team hinter dem Erfolg.</h2>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;">
-    <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:28px;">
-      <div style="width:48px;height:48px;background:var(--accent-glow);border:1px solid var(--border-accent);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:16px;">&#128104;&#8205;&#128187;</div>
-      <h4 style="font-weight:700;margin-bottom:4px;">Account Manager</h4>
-      <p style="font-size:0.82rem;color:var(--accent);margin-bottom:12px;">Strategie &amp; Betreuung</p>
-      <p style="font-size:0.88rem;color:var(--text-muted);">Dein direkter Ansprechpartner. Zielt auf deine Zielgruppe, plant Kampagnenstrategie, f&uuml;hrt Weekly-Calls und optimiert kontinuierlich.</p>
-    </div>
-    <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:28px;">
-      <div style="width:48px;height:48px;background:var(--accent-glow);border:1px solid var(--border-accent);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:16px;">&#9881;&#65039;</div>
-      <h4 style="font-weight:700;margin-bottom:4px;">Clay Engineer</h4>
-      <p style="font-size:0.82rem;color:var(--accent);margin-bottom:12px;">Daten &amp; Leadlisten</p>
-      <p style="font-size:0.88rem;color:var(--text-muted);">Baut die Zielgruppen-Listen, validiert alle Kontaktdaten mehrfach und stellt sicher, dass nur aktuelle, hochqualitative Daten in die Kampagnen flie&szlig;en.</p>
-    </div>
-    <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:28px;">
-      <div style="width:48px;height:48px;background:var(--accent-glow);border:1px solid var(--border-accent);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:16px;">&#9889;</div>
-      <h4 style="font-weight:700;margin-bottom:4px;">Automations Expert</h4>
-      <p style="font-size:0.82rem;color:var(--accent);margin-bottom:12px;">Infrastruktur &amp; Setup</p>
-      <p style="font-size:0.88rem;color:var(--text-muted);">Richtet die gesamte LinkedIn-Infrastruktur ein: Heyreach-Campaigns, MasterInbox-Integration, KI-Vorqualifizierung &mdash; alles l&auml;uft &uuml;ber deinen Account.</p>
-    </div>
-  </div>
-</section>
-<!-- ANGEBOT -->
-<section id="angebot" class="fade-in">
-  <div class="section-label">Das Angebot</div>
-  <h2 class="section-title">Dein LinkedIn-Paket f&uuml;r<br>die Kunststoffbranche.</h2>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px;grid-auto-rows:minmax(620px,auto);" class="pricing-grid">
-    <!-- STANDARD -->
-    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px;display:flex;flex-direction:column;">
-      <div style="font-size:0.8rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px;">LinkedIn Starter</div>
-      <h3 style="font-size:1.4rem;font-weight:800;margin-bottom:8px;">Phase 1: Netzwerkaufbau</h3>
-      <p style="font-size:0.88rem;color:var(--text-muted);margin-bottom:24px;">1 LinkedIn-Account, vollautomatisiert mit personalisierter Ansprache. Ideal f&uuml;r den strukturierten Einstieg.</p>
-      <div style="margin-bottom:8px;">
-        <span style="font-size:2.5rem;font-weight:800;">1.500 &euro;</span>
-        <span style="color:var(--text-muted);font-size:0.9rem;"> / Monat</span>
+<div class="frame-line"></div>
+
+<!-- DER ABSPANN (CTA) -->
+<section id="kontakt" class="fade">
+  <div class="w">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border);background:var(--bg-card);" class="cta-grid">
+      <!-- Left: big text -->
+      <div style="padding:clamp(40px,6vw,72px);border-right:1px solid var(--border);display:flex;flex-direction:column;justify-content:space-between;">
+        <div>
+          <div class="scene-num">Der Abspann</div>
+          <h2 class="display-sm" style="margin-bottom:24px;">Die Kunststoffbranche<br>wartet nicht.<br><em>Du auch nicht.</em></h2>
+          <div class="divider"></div>
+          <p class="body-lg" style="margin-bottom:36px;">99&nbsp;&euro; Setup. 1.500&nbsp;&euro;/Monat. 4 Monate. Erste Vernetzungen innerhalb von 14 Tagen nach KickOff.</p>
+          <a href="https://calendly.com/anthony-katzur-grundwerk/30min" target="_blank" class="btn-gold" style="display:inline-flex;">Jetzt starten &rarr;</a>
+        </div>
+        <div style="margin-top:40px;display:flex;gap:32px;flex-wrap:wrap;">
+          <div style="font-size:0.88rem;color:var(--text-muted);">&#128222; <a href="tel:+4915888655479" style="color:var(--text-muted);">+49 158 88 655 479</a></div>
+          <div style="font-size:0.88rem;color:var(--text-muted);">&#9993; <a href="mailto:anthony.katzur@grundwerk.digital" style="color:var(--text-muted);">anthony.katzur@grundwerk.digital</a></div>
+        </div>
+        <div style="margin-top:10px;font-size:0.8rem;color:var(--text-dim);">Anthony Katzur &mdash; Senior Kundenberater, Grundwerk Digital GmbH</div>
       </div>
-      <div style="font-size:0.82rem;color:var(--text-muted);margin-bottom:28px;">zzgl. 1.990 &euro; Setup-Geb&uuml;hr &middot; 4 Monate Laufzeit</div>
-      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:28px;flex:1;">
-        <div style="display:flex;align-items:flex-start;gap:10px;font-size:0.88rem;"><span style="color:var(--green);margin-top:2px;">&#10003;</span><span>1 LinkedIn-Account (dein eigener)</span></div>
-        <div style="display:flex;align-items:flex-start;gap:10px;font-size:0.88rem;"><span style="color:var(--green);margin-top:2px;">&#10003;</span><span>~500 personalisierte Vernetzungen / Monat</span></div>
-        <div style="display:flex;align-items:flex-start;gap:10px;font-size:0.88sm;"><span style="color:var(--green);margin-top:2px;">&#10003;</span><span>MasterInbox &mdash; alle Antworten zentral &amp; KI-vorqualifiziert</span></div>
-        <div style="display:flex;align-items:flex-start;gap:10px;font-size:0.88rem;"><span style="color:var(--green);margin-top:2px;">&#10003;</span><span>Mehrstufige Kampagnen (Vernetzung + Follow-up)</span></div>
-        <div style="display:flex;align-items:flex-start;gap:10px;font-size:0.88rem;"><span style="color:var(--green);margin-top:2px;">&#10003;</span><span>Weklicher Status-Call mit Account Manager</span></div>
-        <div style="display:flex;align-items:flex-start;gap:10px;font-size:0.88rem;"><span style="color:var(--green);margin-top:2px;">&#10003;</span><span>1h KickOff-Workshop: Zielgruppe, Strategie, Messaging</span></div>
-        <div style="display:flex;align-items:flex-start;gap:10px;font-size:0.88rem;"><span style="color:var(--green);margin-top:2px;">&#10003;</span><span>Alle Daten &amp; Kontakte bleiben bei dir</span></div>
-        <div style="display:flex;align-items:flex-start;gap:10px;font-size:0.88rem;"><span style="color:var(--green);margin-top:2px;">&#10003;</span><span>Grundwerk Web App inklusive</span></div>
+      <!-- Right: summary -->
+      <div style="padding:clamp(40px,6vw,72px);background:var(--gold-glow);">
+        <div style="font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:28px;">Das Wichtigste auf einen Blick</div>
+        <div style="display:flex;flex-direction:column;gap:20px;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:20px;border-bottom:1px solid var(--gold-border);">
+            <span class="body-sm">Account</span>
+            <span style="font-weight:700;font-size:0.9rem;text-align:right;">1 &times; Hannes Staudt<br><span style="color:var(--text-muted);font-weight:400;font-size:0.82rem;">Pers&ouml;nliches Profil</span></span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:20px;border-bottom:1px solid var(--gold-border);">
+            <span class="body-sm">Volumen</span>
+            <span style="font-weight:700;font-size:0.9rem;text-align:right;">35 / Tag &rarr; ~500 / Woche<br><span style="color:var(--text-muted);font-weight:400;font-size:0.82rem;">Vernetzung + Follow-ups</span></span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:20px;border-bottom:1px solid var(--gold-border);">
+            <span class="body-sm">Zielgruppe</span>
+            <span style="font-weight:700;font-size:0.9rem;text-align:right;">GF &middot; Head of Marketing<br><span style="color:var(--text-muted);font-weight:400;font-size:0.82rem;">Product Manager &middot; Kunststoff</span></span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:20px;border-bottom:1px solid var(--gold-border);">
+            <span class="body-sm">Setup</span>
+            <span style="font-weight:700;font-size:0.9rem;">99&nbsp;&euro; einmalig</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:20px;border-bottom:1px solid var(--gold-border);">
+            <span class="body-sm">Kampagne</span>
+            <span style="font-weight:700;font-size:0.9rem;">1.500&nbsp;&euro; / Monat</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:20px;border-bottom:1px solid var(--gold-border);">
+            <span class="body-sm">Laufzeit</span>
+            <span style="font-weight:700;font-size:0.9rem;">4 Monate (1 Setup + 3 Kampagne)</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+            <span class="body-sm">Gesamt</span>
+            <span style="font-family:'DM Serif Display',serif;font-size:1.6rem;color:var(--gold);">4.599&nbsp;&euro;</span>
+          </div>
+        </div>
       </div>
-      <a href="https://calendly.com/anthony-katzur-grundwerk/30min" target="_blank" class="btn-secondary" style="text-align:center;justify-content:center;">Jetzt starten</a>
-    </div>
-    <!-- EMPFOHLEN -->
-    <div style="background:linear-gradient(135deg,rgba(79,125,249,0.08) 0%,rgba(79,125,249,0.02) 100%);border:2px solid var(--accent);border-radius:var(--radius);padding:36px;display:flex;flex-direction:column;position:relative;">
-      <div style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;padding:4px 18px;border-radius:100px;font-size:0.78rem;font-weight:700;letter-spacing:0.05em;white-space:nowrap;">EMPFOHLEN: Skalierung</div>
-      <div style="font-size:0.8rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px;">LinkedIn Growth</div>
-      <h3 style="font-size:1.4rem;font-weight:800;margin-bottom:8px;">Phase 1 + Skalierung</h3>
-      <p style="font-size:0.88rem;color:var(--text-muted);margin-bottom:24px;">3 LinkedIn-Accounts (du + 2 Mitarbeiter / weitere Personas), mehr Reichweite, schnellerer Aufbau zur Leitmesse.</p>
-      <div style="margin-bottom:8px;">
-        <span style="font-size:2.5rem;font-weight:800;color:var(--accent);">2.500 &euro;</span>
-        <span style="color:var(--text-muted);font-size:0.9rem;"> / Monat</span>
-      </div>
-      <div style="font-size:0.82rem;color:var(--text-muted);margin-bottom:16px;">zzgl. 1.990 &euro; Setup-Geb&uuml;hr &middot; 4 Monate Laufzeit</div>
-      <div style="background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);border-radius:var(--radius-sm);padding:12px 16px;margin-bottom:20px;">
-        <span style="font-size:0.85rem;color:var(--green);font-weight:600;">&#43; 1.500&ndash;1.800 zus&auml;tzliche Vernetzungen / Monat durch 2 weitere Accounts</span>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:28px;flex:1;">
-        <div style="display:flex;align-items:flex-start;gap:10px;font-size:0.88rem;"><span style="color:var(--green);margin-top:2px;">&#10003;</span><span>3 LinkedIn-Accounts (euere echten Profile)</span></div>
-        <div style="display:flex;align-items:flex-start;gap:10px;font-size:0.88rem;"><span style="color:var(--green);margin-top:2px;">&#10003;</span><span>~1.500 personalisierte Vernetzungen / Monat</span></div>
-        <div style="display:flex;align-items:flex-start;gap:10px;font-size:0.88rem;"><span style="color:var(--green);margin-top:2px;">&#10003;</span><span>MasterInbox f&uuml;r alle 3 Accounts zentral</span></div>
-        <div style="display:flex;align-items:flex-start;gap:10px;font-size:0.88rem;"><span style="color:var(--green);margin-top:2px;">&#10003;</span><span>Alle Features aus LinkedIn Starter</span></div>
-        <div style="display:flex;align-items:flex-start;gap:10px;font-size:0.88rem;"><span style="color:var(--green);margin-top:2px;">&#10003;</span><span>Parallel: Follower-Aufbau kunststoff.Vision-Seite</span></div>
-        <div style="display:flex;align-items:flex-start;gap:10px;font-size:0.88rem;"><span style="color:var(--green);margin-top:2px;">&#10003;</span><span>Leitmesse-Kampagne Oktober 2026 inklusive</span></div>
-        <div style="display:flex;align-items:flex-start;gap:10px;font-size:0.88rem;"><span style="color:var(--green);margin-top:2px;">&#10003;</span><span>Grundwerk Web App inklusive</span></div>
-        <div style="display:flex;align-items:flex-start;gap:10px;font-size:0.88rem;"><span style="color:var(--green);margin-top:2px;">&#10003;</span><span>Sp&auml;ter: E-Mail-Kampagnen wenn Referenz-Cases stehen</span></div>
-      </div>
-      <a href="https://calendly.com/anthony-katzur-grundwerk/30min" target="_blank" class="btn-primary" style="text-align:center;justify-content:center;">Jetzt starten &rarr;</a>
     </div>
   </div>
 </section>
-<!-- LEAD PROGNOSE -->
-<section class="fade-in" style="background:var(--bg-card);border-radius:var(--radius);border:1px solid var(--border);margin:0 2rem;padding:64px 48px;max-width:calc(1200px - 4rem);margin-left:auto;margin-right:auto;">
-  <div class="section-label">Prognose</div>
-  <h2 class="section-title">Was du in 4 Monaten<br>aufbaust.</h2>
-  <div style="overflow-x:auto;margin-top:40px;">
-    <table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
-      <thead>
-        <tr style="border-bottom:1px solid var(--border);">
-          <th style="text-align:left;padding:12px 16px;color:var(--text-muted);font-weight:600;">Phase</th>
-          <th style="text-align:center;padding:12px 16px;color:var(--text-muted);font-weight:600;">Kontaktierte Profile</th>
-          <th style="text-align:center;padding:12px 16px;color:var(--text-muted);font-weight:600;">Neue Vernetzungen</th>
-          <th style="text-align:center;padding:12px 16px;color:var(--text-muted);font-weight:600;">Kumuliert</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr style="border-bottom:1px solid var(--border);">
-          <td style="padding:14px 16px;font-weight:600;">Monat 1 &mdash; Setup &amp; KickOff</td>
-          <td style="padding:14px 16px;text-align:center;color:var(--text-muted);">0</td>
-          <td style="padding:14px 16px;text-align:center;color:var(--text-muted);">0 (Infrastruktur-Aufbau)</td>
-          <td style="padding:14px 16px;text-align:center;color:var(--text-muted);">0</td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--border);">
-          <td style="padding:14px 16px;font-weight:600;">Monat 2 &mdash; Erste Kampagne</td>
-          <td style="padding:14px 16px;text-align:center;">500+</td>
-          <td style="padding:14px 16px;text-align:center;color:var(--green);font-weight:700;">150&ndash;250 Leads</td>
-          <td style="padding:14px 16px;text-align:center;">150&ndash;250</td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--border);">
-          <td style="padding:14px 16px;font-weight:600;">Monat 3 &mdash; Skalierung</td>
-          <td style="padding:14px 16px;text-align:center;">500+</td>
-          <td style="padding:14px 16px;text-align:center;color:var(--green);font-weight:700;">200&ndash;300 Leads</td>
-          <td style="padding:14px 16px;text-align:center;">350&ndash;550</td>
-        </tr>
-        <tr>
-          <td style="padding:14px 16px;font-weight:600;">Monat 4 &mdash; Leitmesse-Vorbereitung</td>
-          <td style="padding:14px 16px;text-align:center;">500+</td>
-          <td style="padding:14px 16px;text-align:center;color:var(--green);font-weight:700;">200&ndash;350 Leads</td>
-          <td style="padding:14px 16px;text-align:center;font-weight:800;color:var(--accent);">550&ndash;900+</td>
-        </tr>
-      </tbody>
-    </table>
+
+<!-- FOOTER -->
+<footer style="padding:40px 0;border-top:1px solid var(--border);">
+  <div class="w" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+    <div style="font-size:0.78rem;color:var(--text-dim);">&copy; 2026 Grundwerk Digital &middot; Alle Rechte vorbehalten</div>
+    <div style="font-size:0.78rem;color:var(--text-dim);">kunststoff.Vision &times; Grundwerk &middot; v3 &middot; 21.03.2026</div>
   </div>
-  <div style="margin-top:24px;padding:16px 20px;background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);border-radius:var(--radius-sm);font-size:0.88rem;color:var(--text-muted);">
-    <strong style="color:var(--green);">Hinweis:</strong> &bdquo;Lead&ldquo; = positive Antwort / Vernetzung mit Interesse. Aus Leads entstehen Gespr&auml;che &mdash; der Abschluss liegt bei dir. Bei 50% Gespr&auml;chsquote = 275&ndash;450 warme Kontakte nach 4 Monaten.
-  </div>
-</section>
-<!-- ROI -->
-<section class="fade-in">
-  <div class="section-label">ROI</div>
-  <h2 class="section-title">Was ein Kunde wert ist &mdash;<br>und was du investierst.</h2>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;" class="roi-grid">
-    <div class="card" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;text-align:center;">
-      <div style="font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-bottom:12px;">Konservativ</div>
-      <div style="font-size:2.2rem;font-weight:800;color:var(--green);letter-spacing:-0.03em;">1 Kunde</div>
-      <div style="font-size:0.88rem;color:var(--text-muted);margin-top:8px;">= Break-Even bereits nach 1 Abschluss aus der Leitmesse. Investition komplett gedeckt.</div>
-    </div>
-    <div class="card" style="background:linear-gradient(135deg,rgba(79,125,249,0.08) 0%,rgba(79,125,249,0.02) 100%);border:2px solid var(--border-accent);border-radius:var(--radius);padding:28px;text-align:center;">
-      <div style="font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent);margin-bottom:12px;">Realistisch</div>
-      <div style="font-size:2.2rem;font-weight:800;color:var(--accent);letter-spacing:-0.03em;">3&ndash;5 Kunden</div>
-      <div style="font-size:0.88rem;color:var(--text-muted);margin-top:8px;">Bis zur Leitmesse Oktober 2026. Jeder Kunde = langfristige Agentur-Beziehung, h&ouml;herpreisig, individuell.</div>
-    </div>
-    <div class="card" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;text-align:center;">
-      <div style="font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-bottom:12px;">Optimistisch</div>
-      <div style="font-size:2.2rem;font-weight:800;color:var(--green);letter-spacing:-0.03em;">5&ndash;6 Kunden</div>
-      <div style="font-size:0.88rem;color:var(--text-muted);margin-top:8px;">Dein Ziel: 5&ndash;6 gro&szlig;e Referenzkunden zur Leitmesse. Kunststoff.Vision als digitaler Vertriebsweg f&uuml;r die gesamte Branche etabliert.</div>
-    </div>
-  </div>
-</section>
-<!-- VERGLEICH -->
-<section class="fade-in" style="background:var(--bg-card);border-radius:var(--radius);border:1px solid var(--border);margin:0 2rem;padding:64px 48px;max-width:calc(1200px - 4rem);margin-left:auto;margin-right:auto;">
-  <div class="section-label">Vergleich</div>
-  <h2 class="section-title">Warum LinkedIn Outreach<br>die bessere Alternative ist.</h2>
-  <div style="overflow-x:auto;margin-top:40px;">
-    <table style="width:100%;border-collapse:separate;border-spacing:0;font-size:0.88rem;border-radius:var(--radius);overflow:hidden;">
-      <thead>
-        <tr style="background:var(--bg);">
-          <th style="padding:14px 18px;text-align:left;font-weight:600;border-bottom:1px solid var(--border);">Kriterium</th>
-          <th style="padding:14px 18px;text-align:center;font-weight:600;border-bottom:1px solid var(--border);">Manuell / Status quo</th>
-          <th style="padding:14px 18px;text-align:center;font-weight:600;border-bottom:1px solid var(--border);">Meta Ads B2B</th>
-          <th style="padding:14px 18px;text-align:center;font-weight:600;border-bottom:1px solid var(--border);color:var(--accent);">Grundwerk LinkedIn</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr style="border-bottom:1px solid var(--border);">
-          <td style="padding:12px 18px;font-weight:500;">Skalierbarkeit</td>
-          <td style="padding:12px 18px;text-align:center;background:var(--red-dim);color:var(--red);">&#10007; Durch Zeit begrenzt</td>
-          <td style="padding:12px 18px;text-align:center;background:rgba(234,179,8,0.08);color:var(--yellow);">&#126; Durch Budget begrenzt</td>
-          <td style="padding:12px 18px;text-align:center;background:var(--green-glow);color:var(--green);">&#10003; 500&ndash;1.500+ / Monat</td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--border);">
-          <td style="padding:12px 18px;font-weight:500;">Kosten pro Lead</td>
-          <td style="padding:12px 18px;text-align:center;background:rgba(234,179,8,0.08);color:var(--yellow);">Zeitkosten hoch</td>
-          <td style="padding:12px 18px;text-align:center;background:var(--red-dim);color:var(--red);">~350 &euro;</td>
-          <td style="padding:12px 18px;text-align:center;background:var(--green-glow);color:var(--green);">~100 &euro;</td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--border);">
-          <td style="padding:12px 18px;font-weight:500;">Kosten pro qual. Termin</td>
-          <td style="padding:12px 18px;text-align:center;color:var(--text-muted);">nicht messbar</td>
-          <td style="padding:12px 18px;text-align:center;background:var(--red-dim);color:var(--red);">~1.750 &euro;</td>
-          <td style="padding:12px 18px;text-align:center;background:var(--green-glow);color:var(--green);">~250 &euro;</td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--border);">
-          <td style="padding:12px 18px;font-weight:500;">Zielgruppen-Genauigkeit</td>
-          <td style="padding:12px 18px;text-align:center;background:var(--green-glow);color:var(--green);">&#10003; Sehr hoch (manuell)</td>
-          <td style="padding:12px 18px;text-align:center;background:rgba(234,179,8,0.08);color:var(--yellow);">&#126; Mittel</td>
-          <td style="padding:12px 18px;text-align:center;background:var(--green-glow);color:var(--green);">&#10003; Sehr hoch (validiert)</td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--border);">
-          <td style="padding:12px 18px;font-weight:500;">Daten geh&ouml;ren dir</td>
-          <td style="padding:12px 18px;text-align:center;background:var(--green-glow);color:var(--green);">&#10003;</td>
-          <td style="padding:12px 18px;text-align:center;background:var(--red-dim);color:var(--red);">&#10007; Plattformabh&auml;ngig</td>
-          <td style="padding:12px 18px;text-align:center;background:var(--green-glow);color:var(--green);">&#10003; Immer</td>
-        </tr>
-        <tr>
-          <td style="padding:12px 18px;font-weight:500;">Persönlichkeit bleibt erhalten</td>
-          <td style="padding:12px 18px;text-align:center;background:var(--green-glow);color:var(--green);">&#10003;</td>
-          <td style="padding:12px 18px;text-align:center;background:var(--red-dim);color:var(--red);">&#10007;</td>
-          <td style="padding:12px 18px;text-align:center;background:var(--green-glow);color:var(--green);">&#10003; Echter Account</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-<!-- BONUSSE -->
-<section class="fade-in">
-  <div class="section-label">Bonus-Stack</div>
-  <h2 class="section-title">Was du zus&auml;tzlich bekommst &mdash;<br>ohne Aufpreis.</h2>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px;">
-    <div style="display:flex;align-items:flex-start;gap:16px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;">
-      <div style="font-size:1.6rem;">&#127916;</div>
-      <div><h4 style="font-weight:700;margin-bottom:4px;font-size:0.95rem;">ICP-Leadlisten</h4><p style="font-size:0.82rem;color:var(--text-muted);">Fertig recherchierte Zielgruppen-Listen f&uuml;r die Kunststoffbranche &mdash; direkt einsetzbar.</p></div>
-    </div>
-    <div style="display:flex;align-items:flex-start;gap:16px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;">
-      <div style="font-size:1.6rem;">&#128241;</div>
-      <div><h4 style="font-weight:700;margin-bottom:4px;font-size:0.95rem;">MasterInbox Setup</h4><p style="font-size:0.82rem;color:var(--text-muted);">Einrichtung &amp; KI-Integration f&uuml;r zentrale Nachrichtenverwaltung aller LinkedIn-Accounts.</p></div>
-    </div>
-    <div style="display:flex;align-items:flex-start;gap:16px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;">
-      <div style="font-size:1.6rem;">&#128200;</div>
-      <div><h4 style="font-weight:700;margin-bottom:4px;font-size:0.95rem;">Sales Projections</h4><p style="font-size:0.82rem;color:var(--text-muted);">W&ouml;chentliches Sales Tracking &mdash; du siehst immer genau, wo du im Aufbau stehst.</p></div>
-    </div>
-    <div style="display:flex;align-items:flex-start;gap:16px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;">
-      <div style="font-size:1.6rem;">&#128203;</div>
-      <div><h4 style="font-weight:700;margin-bottom:4px;font-size:0.95rem;">Nachrichtensequenzen</h4><p style="font-size:0.82rem;color:var(--text-muted);">Fertige LinkedIn-Sequenzen (Vernetzung + Follow-up + Messe-Einladung) &mdash; branchenspezifisch.</p></div>
-    </div>
-    <div style="display:flex;align-items:flex-start;gap:16px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;">
-      <div style="font-size:1.6rem;">&#127775;</div>
-      <div><h4 style="font-weight:700;margin-bottom:4px;font-size:0.95rem;">Grundwerk Web App</h4><p style="font-size:0.82rem;color:var(--text-muted);">Zugang zur Grundwerk-Plattform f&uuml;r Kampagnen&uuml;bersicht, Leads und Reporting.</p></div>
-    </div>
-    <div style="display:flex;align-items:flex-start;gap:16px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;">
-      <div style="font-size:1.6rem;">&#128218;</div>
-      <div><h4 style="font-weight:700;margin-bottom:4px;font-size:0.95rem;">15+ Sales Guides</h4><p style="font-size:0.82rem;color:var(--text-muted);">Datenbank mit Praxis-Guides: von Kontaktaufbau bis Gespr&auml;chsf&uuml;hrung &amp; Follow-up.</p></div>
-    </div>
-  </div>
-</section>
-<!-- TIMELINE -->
-<section class="fade-in" style="background:var(--bg-card);border-radius:var(--radius);border:1px solid var(--border);margin:0 2rem;padding:64px 48px;max-width:calc(1200px - 4rem);margin-left:auto;margin-right:auto;">
-  <div class="section-label">N&auml;chste Schritte</div>
-  <h2 class="section-title">Von heute bis zur<br>Leitmesse Oktober 2026.</h2>
-  <div style="margin-top:48px;position:relative;padding-left:32px;border-left:2px solid var(--border);">
-    <div style="margin-bottom:32px;position:relative;">
-      <div style="position:absolute;left:-41px;top:0;width:18px;height:18px;background:var(--accent);border-radius:50%;border:3px solid var(--bg-card);"></div>
-      <h4 style="font-weight:700;margin-bottom:6px;">Jetzt: Entscheidung</h4>
-      <p style="font-size:0.88rem;color:var(--text-muted);">Du gibst gr&uuml;nes Licht. Wir schicken dir Vertrag und Onboarding-Unterlagen noch heute.</p>
-    </div>
-    <div style="margin-bottom:32px;position:relative;">
-      <div style="position:absolute;left:-41px;top:0;width:18px;height:18px;background:var(--accent);border-radius:50%;border:3px solid var(--bg-card);"></div>
-      <h4 style="font-weight:700;margin-bottom:6px;">Woche 1&ndash;2: KickOff-Workshop (1h)</h4>
-      <p style="font-size:0.88rem;color:var(--text-muted);">Zielgruppen-Definition, Kampagnenstrategie, LinkedIn-Messaging &mdash; gemeinsam festgelegt. Du entscheidest mit, wen wir ansprechen.</p>
-    </div>
-    <div style="margin-bottom:32px;position:relative;">
-      <div style="position:absolute;left:-41px;top:0;width:18px;height:18px;background:var(--accent);border-radius:50%;border:3px solid var(--bg-card);"></div>
-      <h4 style="font-weight:700;margin-bottom:6px;">Woche 3&ndash;4: Setup &amp; Launch</h4>
-      <p style="font-size:0.88rem;color:var(--text-muted);">Infrastruktur wird aufgebaut, Kampagnen werden geladen, MasterInbox eingerichtet. Erste Vernetzungsanfragen gehen raus.</p>
-    </div>
-    <div style="margin-bottom:32px;position:relative;">
-      <div style="position:absolute;left:-41px;top:0;width:18px;height:18px;background:var(--green);border-radius:50%;border:3px solid var(--bg-card);"></div>
-      <h4 style="font-weight:700;margin-bottom:6px;">Monat 2&ndash;4: Erste Kontakte, erste Gespr&auml;che</h4>
-      <p style="font-size:0.88rem;color:var(--text-muted);">Dein Netzwerk w&auml;chst systematisch. Wekliche Status-Calls, Kampagnen-Optimierung, neue Zielgruppen-Cluster.</p>
-    </div>
-    <div style="position:relative;">
-      <div style="position:absolute;left:-41px;top:0;width:18px;height:18px;background:var(--green);border-radius:50%;border:3px solid var(--bg-card);"></div>
-      <h4 style="font-weight:700;margin-bottom:6px;">Oktober 2026: Leitmesse &mdash; 30. Jubil&auml;um</h4>
-      <p style="font-size:0.88rem;color:var(--text-muted);">Du gehst mit einem aufgebauten, warmen Netzwerk zur Messe. Die Einladungskampagne l&auml;uft bereits. 5&ndash;6 Referenzkunden sind das Ziel.</p>
-    </div>
-  </div>
-  <div style="margin-top:32px;padding:20px 24px;background:var(--accent-glow);border:1px solid var(--border-accent);border-radius:var(--radius-sm);">
-    <p style="font-size:0.95rem;font-weight:600;color:var(--accent);">&#9889; Erste neue Vernetzungen innerhalb von 14 Tagen nach KickOff.</p>
-  </div>
-</section>
-<!-- VIDEO WISTIA -->
-<section class="fade-in" style="text-align:center;">
-  <div class="section-label">Grundwerk erkl&auml;rt</div>
-  <h2 class="section-title" style="margin-bottom:40px;">Wie wir arbeiten &mdash;<br>in 3 Minuten.</h2>
-  <div style="max-width:720px;margin:0 auto;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);">
-    <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
-    <wistia-player media-id="tm8si6qq6m" style="width:100%;aspect-ratio:16/9;"></wistia-player>
-  </div>
-</section>
-<!-- CTA -->
-<section id="kontakt" class="fade-in" style="text-align:center;">
-  <div style="background:linear-gradient(135deg,rgba(79,125,249,0.08) 0%,rgba(79,125,249,0.02) 100%);border:1px solid var(--border-accent);border-radius:var(--radius);padding:64px 48px;max-width:800px;margin:0 auto;">
-    <div class="section-label" style="justify-content:center;display:flex;">Bereit?</div>
-    <h2 class="section-title">Dein Netzwerk in der<br>Kunststoffbranche wartet.</h2>
-    <p style="color:var(--text-muted);font-size:1rem;margin:20px auto 36px;max-width:500px;">Lass uns gemeinsam starten &mdash; strukturiert, skalierbar, mit echter Pers&ouml;nlichkeit hinter jeder Nachricht.</p>
-    <a href="https://calendly.com/anthony-katzur-grundwerk/30min" target="_blank" class="btn-primary" style="font-size:1.05rem;padding:16px 36px;margin-bottom:32px;">Jetzt starten &rarr;</a>
-    <div style="display:flex;gap:32px;justify-content:center;flex-wrap:wrap;margin-top:24px;">
-      <div style="font-size:0.88rem;color:var(--text-muted);">&#128222; <a href="tel:+4915888655479" style="color:var(--text-muted);">+49 158 88 655 479</a></div>
-      <div style="font-size:0.88rem;color:var(--text-muted);">&#9993; <a href="mailto:anthony.katzur@grundwerk.digital" style="color:var(--text-muted);">anthony.katzur@grundwerk.digital</a></div>
-    </div>
-    <div style="margin-top:8px;font-size:0.85rem;color:var(--text-dim);">Anthony Katzur &mdash; Senior Kundenberater @ Grundwerk Digital GmbH</div>
-  </div>
-</section>
-<footer style="text-align:center;padding:40px 2rem;border-top:1px solid var(--border);color:var(--text-dim);font-size:0.82rem;">
-  &copy; 2026 Grundwerk Digital &middot; Alle Rechte vorbehalten
 </footer>
+
 <!-- RESPONSIVE -->
 <style>
-@media (max-width: 900px) {
-  .problem-grid, .pricing-grid { grid-template-columns: 1fr !important; }
-  .process-steps { grid-template-columns: repeat(2,1fr) !important; }
-  .team-grid, .roi-grid { grid-template-columns: 1fr !important; }
-  section { padding: 60px 1.5rem !important; }
+@media(max-width:960px){
+  .two-col,.offer-grid,.cta-grid{grid-template-columns:1fr!important;}
+  .process-grid,.strat-grid,.team-grid{grid-template-columns:1fr!important;}
+  .process-grid>div,.strat-grid>div,.team-grid>div{border-right:none!important;border-bottom:1px solid var(--border);}
+  .offer-grid>div:first-child>div:last-child{margin-top:0;}
 }
-@media (max-width: 600px) {
-  section { padding: 60px 1.25rem !important; }
-  .process-steps { grid-template-columns: 1fr !important; }
-  .stat-bar { grid-template-columns: repeat(2,1fr) !important; }
-  .hero h1 { font-size: 2rem !important; }
+@media(max-width:600px){
+  .display{font-size:2.4rem!important;}
+  .display-sm{font-size:1.8rem!important;}
+  section{padding:60px 0!important;}
+  .num-big{font-size:2.5rem!important;}
 }
 </style>
 <script>
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('visible');
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('in');});},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
 </script>
 </body>
 </html>
