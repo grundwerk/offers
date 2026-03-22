@@ -187,5 +187,14 @@
     "secure": "7316284950",
     "icon": "🎪",
     "created": "2026-03-21"
+  },
+  {
+    "slug": "creakom",
+    "name": "Creakom Business Solutions",
+    "subtitle": "Joseph Schoengruber — CRM, Events, Digitalisierung",
+    "type": "offer",
+    "secure": "7263918450",
+    "icon": "🖥️",
+    "created": "2026-03-22"
   }
 ]
