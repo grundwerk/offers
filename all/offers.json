@@ -196,5 +196,14 @@
     "secure": "7263918450",
     "icon": "🖥️",
     "created": "2026-03-22"
+  },
+  {
+    "slug": "kintlein-ose",
+    "name": "KINTLEIN & OSE GMBH & CO. KG",
+    "subtitle": "Marcus Raschke — Solaranlagenbau, Neue Bundesländer",
+    "type": "offer",
+    "secure": "7364918205",
+    "icon": "☀️",
+    "created": "2026-03-23"
   }
 ]
