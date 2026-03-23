@@ -137,11 +137,11 @@
   {
     "slug": "misterneo",
     "name": "MisterNeo",
-    "subtitle": "B2B Team-Events für Unternehmen",
-    "type": "offer",
+    "subtitle": "Planbare B2B-Teamevent-Buchungen — Sales Room",
+    "type": "sales-room",
     "secure": "7364918250",
     "icon": "🎯",
-    "created": "2026-03-16"
+    "created": "2026-03-23"
   },
   {
     "slug": "paul-reber",
