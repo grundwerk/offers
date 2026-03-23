@@ -7,3 +7,4 @@
 !CNAME
 !.gitignore
 !assets/**
+!*/*.pdf

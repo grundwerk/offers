@@ -1,4 +1,4 @@
-<!-- GRUNDWERK-OFFER v11 | 2026-03-23 | Logo fix (Grundwerk ohne Punkt), sticky Section-Nav hinzugefügt -->
+<!-- GRUNDWERK-OFFER v12 | 2026-03-23 | Intern vs. Extern Vergleich, PDF-Download, Probleme entfernt, Favicon-Fix -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="offer-version" content="v9">
     <title>Angebot &mdash; Urbify</title>
+    <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAADtklEQVR4nO2WW0hUQRjHf7vuqmtmmZVFN7pYRBdKIoMuBNFFL0HRQxc1gt6iHoLoqUhI6yEIIhOKeyBBD0IWRTY9RJBQSmZGF7toZmW6uu7uaTP/4SyMs7vuSgR94M+cmfnmm/+c+b6ZVfg3/vcwA+eAZ0AQ+AF0yDYbuAGsGykmrg4DcFh2VgJ5gBtYCiSitTwBZowUExuALLncACYDl4EWYHNKCsnJwH3Z5wI8wFKgXPbbgRUpKSQnA0+BFqBEjicC0g08BKamopCMDDwGmoErcsxP4ATw8v/YgV+ylVwG4qT8XfLkOqAjIYUzMmgFOmVTCmm3BgmIB0gFEoFq4CwgN/g71AXPDlxVcOdCXPC8+FcjqG/gVg/xnAUKgEXRg74DRTJv+AdfAnqBSiA8vj//kwXzIWkAUVLwJi9k3HRKsEkuBS7I1dcBmKALGhVJA+LxbqKkB0OE22HkmUJJwQ1nZWbI8T/Fj1n4FO8uu2BTAKhCsqz3wkEisJv0TYS4c8T8h/KRFSfgnJgE9ygRigKHjUdAhokMIlCjNBb1p34JrWxaJZARQNKrLGBuAt8JDgVR8e/h2a5OgPkxcnT3lC9gMfAUvx3sEVrPcSGQk4R+AmcBb2vAAqEvv/i0J2Ht3X+P8UZwj/4EJQJjlQBqFXqXZ7eAR2q2oaJhGMEjIFaY/P6ATDjf+I/IpcpBJI1LfkafPiJqvhCAQI58pCZVhPwFjATeBX8GroYp0bOpKNJNiAN5AXfI7NaAdVq94R/g7sdIVt+2wPu2TsCz4DWemW2eTl5InOh1yXeCXoFmyXFzYJsJGYu/kFNOWaVW/LwYBfwRG2/FkkF7OVAI+AIUCpn/EK8C2R+0ABOB9kgDU4BqqZsn0AX0Bt4SLyLlkF0TJLkLjAWaIiXHIuqYFi5QBIyKZ8JxKvX3M4XQX7BPuCG10Ey9kT+pBH7J0t5jtYjCjHVkJJl4mPAIuE9sH0JG00LiJhXBd9x4EEkK+4jqP0NrNNf8EVpx1kDXIxX4J3fSz3/PZDO5g/gCbA0lgaJHkNb5d/qJdRuQfvkz1rpoOrF8dQfYQ+UhC8Cz4K/I5r0MBDkX9N+QXsgPXgLHBKL+JQwB3oP1MndM8ArMC9SDFMnuAhflKN1ksKk3c8RVK4J/Hy3iDT21Y5OJfD8oNDH5g19MXQWndfyG8EB3L0SqCy/7NIfSSZaP5NONhkzHfAH3FO2l6nVPr4H+mMN/4UG38AN7BldBqLFkAAAAASUVORK5CYII=">
     <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAADtklEQVR4nO2WW0hUQRjHf7vuqmtmmZVFN7pYRBdKIoMuBNFFL0HRQxc1gt6iHoLoqUhI6yEIIhOKeyBBD0IWRTY9RJBQSmZGF7toZmW6uu7uaTP/4SyMs7vuSgR94M+cmfnmm/+c+b6ZVfg3/vcwA+eAZ0AQ+AF0yDYbuAGsGykmrg4DcFh2VgJ5gBtYCiSitTwBZowUExuALLncACYDl4EWYHNKCsnJwH3Z5wI8wFKgXPbbgRUpKSQnA0+BFqBEjicC0g08BKamopCMDDwGmoErcsxP4ATw8v/YgV+ylVwG4qT8XfLkOqAjIYUzMmgFOmVTCmm3BgmIB0gFEoFq4CwgN/g71AXPDlxVcOdCXPC8+FcjqG/gVg/xnAUKgEXRg74DRTJv+AdfAnqBSiA8vj//kwXzIWkAUVLwJi9k3HRKsEkuBS7I1dcBmKALGhVJA+LxbqKkB0OE22HkmUJJwQ1nZWbI8T/Fj1n4FO8uu2BTAKhCsqz3wkEisJv0TYS4c8T8h/KRFSfgnJgE9ygRigKHjUdAhokMIlCjNBb1p34JrWxaJZARQNKrLGBuAt8JDgVR8e/h2a5OgPkxcnT3lC9gMfAUvx3sEVrPcSGQk4R+AmcBb2vAAqEvv/i0J2Ht3X+P8UZwj/4EJQJjlQBqFXqXZ7eAR2q2oaJhGMEjIFaY/P6ATDjf+I/IpcpBJI1LfkafPiJqvhCAQI58pCZVhPwFjATeBX8GroYp0bOpKNJNiAN5AXfI7NaAdVq94R/g7sdIVt+2wPu2TsCz4DWemW2eTl5InOh1yXeCXoFmyXFzYJsJGYu/kFNOWaVW/LwYBfwRG2/FkkF7OVAI+AIUCpn/EK8C2R+0ABOB9kgDU4BqqZsn0AX0Bt4SLyLlkF0TJLkLjAWaIiXHIuqYFi5QBIyKZ8JxKvX3M4XQX7BPuCG10Ey9kT+pBH7J0t5jtYjCjHVkJJl4mPAIuE9sH0JG00LiJhXBd9x4EEkK+4jqP0NrNNf8EVpx1kDXIxX4J3fSz3/PZDO5g/gCbA0lgaJHkNb5d/qJdRuQfvkz1rpoOrF8dQfYQ+UhC8Cz4K/I5r0MBDkX9N+QXsgPXgLHBKL+JQwB3oP1MndM8ArMC9SDFMnuAhflKN1ksKk3c8RVK4J/Hy3iDT21Y5OJfD8oNDH5g19MXQWndfyG8EB3L0SqCy/7NIfSSZaP5NONhkzHfAH3FO2l6nVPr4H+mMN/4UG38AN7BldBqLFkAAAAASUVORK5CYII=">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -124,6 +125,40 @@
             border-radius: var(--radius); padding: 32px; margin-top: 16px;
         }
         .konkret-box h3 { font-size: 16px; font-weight: 700; margin-bottom: 16px; color: var(--accent); }
+
+        /* Vergleich */
+        .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .compare-col { background: var(--card); border: 1px solid var(--card-border); border-radius: var(--radius); padding: 32px; }
+        .compare-col.highlight { border-color: var(--accent); }
+        .compare-col.dim { opacity: 0.7; }
+        .compare-col h3 { font-size: 16px; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
+        .compare-col h3 .tag {
+            font-size: 10px; padding: 3px 8px; border-radius: 10px;
+            text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;
+        }
+        .tag-green { background: rgba(34,197,94,0.15); color: var(--green); }
+        .tag-red { background: rgba(239,68,68,0.15); color: var(--red); }
+        .compare-row { display: flex; justify-content: space-between; padding: 8px 0; font-size: 13px; border-bottom: 1px solid rgba(255,255,255,0.04); }
+        .compare-row .cr-label { color: var(--muted); }
+        .compare-row .cr-value { font-weight: 600; }
+        .compare-total { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--card-border); display: flex; justify-content: space-between; font-size: 15px; font-weight: 700; }
+        .compare-note { margin-top: 12px; font-size: 12px; color: var(--muted); }
+        .challenge-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-top: 32px; }
+        .challenge-card { background: rgba(255,255,255,0.03); border: 1px solid var(--card-border); border-radius: 12px; padding: 16px; }
+        .challenge-card h4 { font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+        .challenge-card ul { list-style: none; }
+        .challenge-card ul li { font-size: 12px; color: var(--muted); padding: 2px 0; }
+        .pdf-btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 14px 28px; background: var(--accent); color: #fff;
+            border-radius: 10px; text-decoration: none; font-size: 14px; font-weight: 600;
+            transition: opacity 0.2s; margin-top: 24px;
+        }
+        .pdf-btn:hover { opacity: 0.85; }
+        @media (max-width: 600px) {
+            .compare-grid { grid-template-columns: 1fr; }
+            .challenge-grid { grid-template-columns: 1fr 1fr; }
+        }
 
         /* Kalkulation Table */
         .calc-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
@@ -252,7 +287,7 @@
     <div class="section-nav">
         <div class="section-nav-inner">
             <a href="#angebot">Angebot</a>
-            <a href="#probleme">Probleme</a>
+            <a href="#vergleich">Intern vs. Extern</a>
             <a href="#leistungen">Leistungen</a>
             <a href="#kalkulation">Kalkulation</a>
             <a href="#qualifizierung">Qualifizierung</a>
@@ -324,20 +359,81 @@
         </div>
     </section>
 
-    <!-- Probleme -->
-    <section id="probleme">
+    <!-- Vergleich: Intern vs. Extern -->
+    <section id="vergleich">
         <div class="container">
-            <div class="section-label">Analyse</div>
-            <h2 class="section-title">Kernprobleme</h2>
-            <div class="problem-grid">
-                <div class="card problem-card fade-in">
-                    <h3>Unausgesch&ouml;pftes Marktpotenzial durch fehlende Kontaktdaten</h3>
-                    <p>Urbify adressiert aktuell weniger als 5% des erreichbaren Marktes. Mit 400 aktiven Leads in einer Datenbank von 1.000&ndash;2.500 Unternehmen bleiben tausende potenzielle Kunden unber&uuml;hrt &mdash; weil die richtigen Ansprechpartner und deren Kontaktdaten fehlen. Jeder Tag ohne systematische Datenanreicherung ist ein Tag, an dem Wettbewerber wie Liefery diese Kontakte zuerst erreichen.</p>
+            <div class="section-label">Make or Buy?</div>
+            <h2 class="section-title">Intern aufbauen vs. Grundwerk beauftragen</h2>
+            <div class="compare-grid fade-in">
+                <div class="compare-col dim">
+                    <h3>Intern <span class="tag tag-red">Teuer &amp; langsam</span></h3>
+                    <div class="compare-row"><span class="cr-label">SDR-Gehalt (inkl. AG-Kosten)</span><span class="cr-value">&euro;5.000&ndash;6.500/Mo</span></div>
+                    <div class="compare-row"><span class="cr-label">Domains &amp; Inboxen</span><span class="cr-value">&euro;180&ndash;500/Mo</span></div>
+                    <div class="compare-row"><span class="cr-label">Instantly Lizenz</span><span class="cr-value">&euro;97/Mo</span></div>
+                    <div class="compare-row"><span class="cr-label">Datenbanken (Apollo, Ocean etc.)</span><span class="cr-value">&euro;500&ndash;2.000/Mo</span></div>
+                    <div class="compare-row"><span class="cr-label">Email-Tools (Findymail, Icypeas)</span><span class="cr-value">&euro;200&ndash;800/Mo</span></div>
+                    <div class="compare-row"><span class="cr-label">LinkedIn Sales Navigator</span><span class="cr-value">&euro;133/Mo</span></div>
+                    <div class="compare-row"><span class="cr-label">AI APIs (OpenAI, Claude)</span><span class="cr-value">&euro;100&ndash;500/Mo</span></div>
+                    <div class="compare-row"><span class="cr-label">Einarbeitung &amp; Ramp-up</span><span class="cr-value">3&ndash;6 Monate</span></div>
+                    <div class="compare-total"><span>Gesamt/Monat</span><span style="color:var(--red);">&euro;6.200&ndash;10.500</span></div>
+                    <p class="compare-note">+ Recruiting, Management-Overhead, Krankheit, K&uuml;ndigung. Erste Ergebnisse fr&uuml;hestens nach 3&ndash;6 Monaten.</p>
                 </div>
-                <div class="card problem-card fade-in">
-                    <h3>Conversion-Verluste durch technische Setup-Fehler</h3>
-                    <p>12.500 versendete E-Mails mit einer Response-Rate von 3% statt dem Benchmark von 15&ndash;25%. Das Problem liegt nicht an der Zielgruppe, sondern am technischen Setup: fehlende Domain-Authentifizierung, keine Inbox-Rotation, keine Warm-up-Phase. Dazu werden info@-Adressen statt Entscheider angeschrieben. Jede schlecht konfigurierte Kampagne verbrennt nicht nur Budget &mdash; sie sch&auml;digt die Domain-Reputation langfristig.</p>
+                <div class="compare-col highlight">
+                    <h3>Grundwerk <span class="tag tag-green">All-inclusive</span></h3>
+                    <div class="compare-row"><span class="cr-label">Monatlicher Retainer</span><span class="cr-value">&euro;3.500/Mo</span></div>
+                    <div class="compare-row"><span class="cr-label">75+ Tools &amp; Datenquellen</span><span class="cr-value" style="color:var(--green);">Inklusive</span></div>
+                    <div class="compare-row"><span class="cr-label">Domains &amp; Inboxen</span><span class="cr-value" style="color:var(--green);">Inklusive</span></div>
+                    <div class="compare-row"><span class="cr-label">AI-Qualifizierung &amp; Anreicherung</span><span class="cr-value" style="color:var(--green);">Inklusive</span></div>
+                    <div class="compare-row"><span class="cr-label">Email + LinkedIn Kampagnen</span><span class="cr-value" style="color:var(--green);">Inklusive</span></div>
+                    <div class="compare-row"><span class="cr-label">Copywriting &amp; A/B-Tests</span><span class="cr-value" style="color:var(--green);">Inklusive</span></div>
+                    <div class="compare-row"><span class="cr-label">Reporting &amp; Optimierung</span><span class="cr-value" style="color:var(--green);">Inklusive</span></div>
+                    <div class="compare-row"><span class="cr-label">Time to Value</span><span class="cr-value" style="color:var(--green);">4 Wochen</span></div>
+                    <div class="compare-total"><span>Gesamt/Monat</span><span style="color:var(--green);">&euro;3.500</span></div>
+                    <p class="compare-note">Kein Recruiting, kein Ramp-up, kein Tool-Management. Ergebnisse ab Monat 2.</p>
                 </div>
+            </div>
+
+            <!-- Herausforderungen beim Inhouse-Aufbau -->
+            <h3 style="margin-top:48px; margin-bottom:16px; font-size:18px;">Herausforderungen beim Inhouse-Aufbau</h3>
+            <div class="challenge-grid fade-in">
+                <div class="challenge-card">
+                    <h4>1. Buchhaltung &amp; Finance</h4>
+                    <ul>
+                        <li>40+ Tool-Subscriptions</li>
+                        <li>Subscription Deadlines</li>
+                        <li>Laufzeit-Entscheidungen</li>
+                        <li>Monatliches Verbuchen</li>
+                    </ul>
+                </div>
+                <div class="challenge-card">
+                    <h4>2. Welche Tools?</h4>
+                    <ul>
+                        <li>30min Demo-Calls pro Tool</li>
+                        <li>Missed Opportunities (fehlende Tools)</li>
+                        <li>Hohe Kosten (falsche Tools)</li>
+                    </ul>
+                </div>
+                <div class="challenge-card">
+                    <h4>3. Konstante &Auml;nderungen</h4>
+                    <ul>
+                        <li>T&auml;glich neue Tools</li>
+                        <li>Zeitaufwand f&uuml;r Bewertung</li>
+                    </ul>
+                </div>
+                <div class="challenge-card">
+                    <h4>4. Menschliche Fehler</h4>
+                    <ul>
+                        <li>&bdquo;Verklickt und 500&euro; weg&ldquo;</li>
+                        <li>Qualit&auml;ts-Kontrolle</li>
+                        <li>Weiterbildung</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- PDF Download -->
+            <div style="text-align:center; margin-top:32px;">
+                <a href="modern-salestools.pdf" download class="pdf-btn">&#128196; Modern Salestools PDF herunterladen</a>
+                <p style="font-size:12px; color:var(--muted); margin-top:8px;">Detaillierte &Uuml;bersicht aller 75+ Tools und Kostenvergleich</p>
             </div>
         </div>
     </section>
