@@ -28,12 +28,12 @@
   },
   {
     "slug": "kunststoff-vision",
-    "name": "kunststoff.Vision",
-    "subtitle": "LinkedIn-Netzwerkaufbau Kunststoffbranche",
-    "type": "offer",
+    "name": "kunststoff.vision",
+    "subtitle": "LinkedIn Branchenbotschafter — Sales Room",
+    "type": "sales-room",
     "secure": "7364128905",
-    "icon": "K",
-    "created": "2026-03-16"
+    "icon": "⚙️",
+    "created": "2026-03-25"
   },
   {
     "slug": "das-schaffenswerk",
