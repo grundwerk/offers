@@ -1,0 +1,602 @@
+<!-- GRUNDWERK-OFFER v1 | 2026-03-27 | Initial offer for Future Machine Labs GmbH -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII="/>
+<link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII="/>
+<script>(function(){var code='4829163750';var p=new URLSearchParams(window.location.search);if(p.get('secure')!==code){document.documentElement.style.display='none';document.title='Zugriff verweigert';window.stop();}})();</script>
+<meta name="offer-version" content="v1 | 2026-03-27">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Future Machine Labs &times; Grundwerk Digital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0a0a;--bg-card:#111111;--bg-card-hover:#161616;--bg-accent:#1a1a2e;
+  --text:#f0f0f0;--text-muted:#888;--text-dim:#666;
+  --accent:#4f7df9;--accent-glow:rgba(79,125,249,0.15);
+  --green:#22c55e;--green-glow:rgba(34,197,94,0.15);
+  --red:#ef4444;--red-dim:rgba(239,68,68,0.15);--yellow:#eab308;
+  --border:rgba(255,255,255,0.06);--border-accent:rgba(79,125,249,0.3);
+  --radius:16px;--radius-sm:10px;
+}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:16px;line-height:1.7;overflow-x:hidden}
+a{color:var(--accent);text-decoration:none}
+img{max-width:100%;height:auto}
+section{padding:100px 2rem}
+.section-label{font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent);margin-bottom:12px}
+.section-title{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-0.03em;line-height:1.15;margin-bottom:20px}
+.section-title span{background:linear-gradient(135deg,var(--accent),#7c9fff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.section-sub{font-size:1rem;color:var(--text-muted);max-width:640px;line-height:1.7}
+.fade-in{opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,10,10,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-weight:700;font-size:0.9rem}
+.nav-cta{background:var(--accent);color:#fff;padding:8px 20px;border-radius:100px;font-size:0.85rem;font-weight:700;transition:background 0.2s}
+.nav-cta:hover{background:#3d6cf0}
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 2rem 80px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(79,125,249,0.08),transparent 60%);pointer-events:none}
+.hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px);background-size:60px 60px;mask-image:linear-gradient(to bottom,rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.3) 40%,transparent 75%);-webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.3) 40%,transparent 75%);pointer-events:none}
+.hero-content{max-width:1200px;margin:0 auto;width:100%;position:relative;z-index:1}
+.ticker-section{padding:20px 0 80px;overflow:hidden;position:relative}
+.ticker-section::before,.ticker-section::after{content:'';position:absolute;top:0;bottom:0;width:20%;z-index:2;pointer-events:none}
+.ticker-section::before{left:0;background:linear-gradient(90deg,var(--bg) 60%,transparent)}
+.ticker-section::after{right:0;background:linear-gradient(-90deg,var(--bg) 60%,transparent)}
+.ticker-row{display:flex;gap:60px;width:max-content;animation:tickerFwd 40s linear infinite}
+.ticker-row-rev{animation:tickerRev 45s linear infinite}
+.ticker-row+.ticker-row{margin-top:20px}
+.client-logo{height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);transition:opacity 0.3s,filter 0.3s;flex-shrink:0;object-fit:contain}
+.client-logo:hover{opacity:0.8;filter:none}
+@keyframes tickerFwd{from{transform:translateX(-25%)}to{transform:translateX(-75%)}}
+@keyframes tickerRev{from{transform:translateX(-75%)}to{transform:translateX(-25%)}}
+.stat-bar{background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:60px 2rem}
+.stat-bar-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:32px;text-align:center}
+.stat-number{font-size:2.5rem;font-weight:800;color:var(--accent);letter-spacing:-0.03em}
+.stat-label{font-size:0.85rem;color:var(--text-muted);margin-top:6px}
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;margin-top:48px}
+.prob-cards{display:flex;flex-direction:column;gap:16px}
+.problem-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;display:flex;gap:16px;align-items:flex-start}
+.problem-card:hover{border-color:rgba(239,68,68,0.3)}
+.problem-icon{width:44px;height:44px;min-width:44px;background:var(--red-dim);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.problem-card h3{font-size:0.95rem;font-weight:700;margin-bottom:6px}
+.problem-card p{font-size:0.82rem;color:var(--text-muted);line-height:1.6}
+.solution-box{background:var(--bg-accent);border:1px solid var(--border-accent);border-radius:var(--radius);padding:32px}
+.solution-box h3{font-size:1.2rem;font-weight:800;margin-bottom:12px}
+.solution-box p{font-size:0.875rem;color:var(--text-muted);margin-bottom:20px;line-height:1.7}
+.sol-stat{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-top:1px solid var(--border);font-size:0.875rem}
+.sol-stat .bad{color:var(--red);font-weight:700}
+.sol-stat .good{color:var(--green);font-weight:700}
+.strategy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.strategy-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px}
+.strategy-card:hover{border-color:var(--border-accent)}
+.strategy-card .si{font-size:2rem;margin-bottom:14px}
+.strategy-card h3{font-size:0.95rem;font-weight:700;margin-bottom:10px}
+.strategy-card p{font-size:0.82rem;color:var(--text-muted);line-height:1.6}
+.stag{display:inline-block;background:var(--accent-glow);color:var(--accent);font-size:0.72rem;font-weight:600;padding:3px 10px;border-radius:100px;margin-top:12px}
+.proof-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:32px}
+.proof-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;transition:border-color 0.2s,transform 0.2s}
+.proof-card:hover{border-color:rgba(34,197,94,0.3);transform:translateY(-2px)}
+.proof-co{font-size:0.7rem;font-weight:700;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px}
+.proof-num{font-size:1.8rem;font-weight:800;color:var(--green);letter-spacing:-0.04em;line-height:1.1;margin-bottom:3px}
+.proof-period{font-size:0.75rem;color:var(--text-muted);margin-bottom:12px}
+.proof-desc{font-size:0.8rem;color:var(--text-muted);line-height:1.6}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.team-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;text-align:center}
+.team-card:hover{border-color:var(--border-accent)}
+.team-av{width:60px;height:60px;background:var(--accent-glow);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin:0 auto 14px;border:1px solid var(--border-accent)}
+.team-card h3{font-size:0.95rem;font-weight:700;margin-bottom:4px}
+.team-role{font-size:0.78rem;color:var(--accent);font-weight:600;margin-bottom:10px}
+.team-card p{font-size:0.8rem;color:var(--text-muted);line-height:1.6}
+.offer-section{background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:100px 2rem}
+.pricing-single{max-width:500px;margin:0 auto;position:relative}
+.price-card{background:var(--bg-accent);border:2px solid var(--accent);border-radius:var(--radius);padding:36px;position:relative}
+.rec-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:0.72rem;font-weight:700;padding:4px 20px;border-radius:100px;white-space:nowrap}
+.price-name{font-size:1.15rem;font-weight:800;margin-bottom:6px}
+.price-ch{font-size:0.82rem;color:var(--accent);font-weight:600;margin-bottom:10px}
+.price-setup{font-size:0.82rem;color:var(--text-muted);margin-bottom:6px}
+.price-big{font-size:3rem;font-weight:800;letter-spacing:-0.04em;line-height:1;margin-bottom:4px}
+.price-per{font-size:0.82rem;color:var(--text-muted);margin-bottom:14px}
+.price-total{font-size:0.875rem;background:rgba(255,255,255,0.04);border-radius:8px;padding:10px 16px;margin-bottom:20px;color:var(--text-muted)}
+.price-total strong{color:var(--text)}
+.price-features{list-style:none;display:flex;flex-direction:column;gap:8px;font-size:0.85rem}
+.price-features li{display:flex;align-items:flex-start;gap:8px}
+.price-features li .ck{color:var(--green);flex-shrink:0}
+.bonus-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:48px}
+.bonus-item{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 22px;display:flex;gap:14px;align-items:flex-start}
+.bonus-item:hover{border-color:var(--border-accent)}
+.bi-icon{font-size:1.4rem;width:36px;flex-shrink:0;text-align:center}
+.bonus-item h4{font-size:0.88rem;font-weight:700;margin-bottom:4px}
+.bonus-item p{font-size:0.78rem;color:var(--text-muted);line-height:1.5}
+.b-val{font-size:0.72rem;color:var(--green);font-weight:600;margin-top:4px}
+.timeline{position:relative;margin-top:48px;padding-left:36px;max-width:720px}
+.timeline::before{content:'';position:absolute;left:10px;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,var(--accent),transparent)}
+.tl-item{position:relative;margin-bottom:32px;padding-left:16px}
+.tl-item::before{content:'';position:absolute;left:-26px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid var(--bg)}
+.tl-tag{display:inline-block;font-size:0.72rem;font-weight:700;color:var(--accent);background:var(--accent-glow);border-radius:100px;padding:2px 10px;margin-bottom:6px}
+.tl-item h4{font-size:0.95rem;font-weight:700;margin-bottom:4px}
+.tl-item p{font-size:0.82rem;color:var(--text-muted);line-height:1.6}
+.cta-section{text-align:center;padding:100px 2rem;background:radial-gradient(ellipse at 50% 50%,var(--accent-glow),transparent 65%)}
+.cta-section h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;letter-spacing:-0.03em;margin:0 auto 20px;max-width:680px;line-height:1.2}
+.cta-section p{font-size:1rem;color:var(--text-muted);margin:0 auto 40px;max-width:500px}
+.cta-contact{margin-top:32px;display:flex;gap:32px;justify-content:center;flex-wrap:wrap;font-size:0.875rem;color:var(--text-muted)}
+footer{padding:40px 2rem;border-top:1px solid var(--border);text-align:center;font-size:0.8rem;color:var(--text-dim)}
+.tool-ticker{padding:60px 0;overflow:hidden;position:relative;background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.tool-ticker::before,.tool-ticker::after{content:'';position:absolute;top:0;bottom:0;width:20%;z-index:2;pointer-events:none}
+.tool-ticker::before{left:0;background:linear-gradient(90deg,var(--bg-card) 60%,transparent)}
+.tool-ticker::after{right:0;background:linear-gradient(-90deg,var(--bg-card) 60%,transparent)}
+.ticker-header{text-align:center;margin-bottom:32px;padding:0 2rem}
+.ticker-header h3{font-size:1.2rem;font-weight:800;margin-bottom:6px}
+.ticker-header h3 span{color:var(--green)}
+.ticker-label{font-size:0.82rem;color:var(--text-muted)}
+.tool-row{display:flex;gap:12px;width:max-content;animation:tickerFwd 35s linear infinite;margin-bottom:12px}
+.tool-row-rev{animation:tickerRev 40s linear infinite}
+.tool-pill{display:flex;align-items:center;gap:8px;background:var(--bg);border:1px solid var(--border);border-radius:100px;padding:7px 16px;font-size:0.78rem;font-weight:500;white-space:nowrap;flex-shrink:0}
+.dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.db{background:#4f7df9}.dg{background:#22c55e}.dp{background:#a855f7}.do{background:#f97316}.dc{background:#06b6d4}.dr{background:#ef4444}
+@media(max-width:900px){
+  .problem-grid{grid-template-columns:1fr}
+  .strategy-grid,.team-grid,.bonus-grid{grid-template-columns:1fr}
+  .stat-bar-inner{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:600px){
+  section{padding:60px 1.25rem}
+  .stat-bar-inner{grid-template-columns:repeat(2,1fr)}
+  .hero{padding:100px 1.25rem 60px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">Grundwerk</div>
+    <a href="#angebot" class="nav-cta">Zum Angebot</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero fade-in">
+  <div class="hero-content">
+    <div style="background:#161616;border:1px solid var(--border);border-radius:12px;padding:14px 24px;display:inline-flex;align-items:center;gap:18px;margin-bottom:32px;">
+      <img src="https://fm-labs.de/images/fm-labs-logo.svg" alt="Future Machine Labs" style="height:32px;object-fit:contain;opacity:0.9;">
+      <span style="color:var(--text-dim);font-size:1rem;font-weight:300;">&times;</span>
+      <img src="https://media.licdn.com/dms/image/v2/D4D0BAQFnSDRdZOa2eQ/company-logo_200_200/company-logo_200_200/0/1732389493215/grundwerk_digital_gmbh_logo?e=2147483647&amp;v=beta&amp;t=l2uIVRn5Is5QyVJZ0Fjlp9ZYwadOoQ1LT4sYGsGeOCs" alt="Grundwerk Digital" style="height:26px;width:26px;object-fit:contain;border-radius:6px;">
+    </div>
+    <div style="display:inline-block;background:var(--accent-glow);border:1px solid var(--border-accent);color:var(--accent);font-size:0.78rem;font-weight:600;padding:6px 16px;border-radius:100px;margin-bottom:24px;">
+      Pers&ouml;nliches Outreach-Konzept &middot; Cold Email
+    </div>
+    <h1 style="font-size:clamp(2.4rem,5vw,3.8rem);font-weight:800;letter-spacing:-0.04em;line-height:1.1;margin-bottom:24px;max-width:800px;">
+      Mehr qualifizierte Leads &mdash;<br>
+      <span style="background:linear-gradient(135deg,#4f7df9,#7c9fff,#60efff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">ohne Cold Caller zu &uuml;berlasten.</span>
+    </h1>
+    <p style="font-size:1.05rem;color:var(--text-muted);max-width:560px;margin-bottom:40px;line-height:1.7;">
+      Hey Max &amp; Nick &mdash; hier findet ihr alles, was ihr f&uuml;r eine fundierte Entscheidung braucht. Professioneller E-Mail-Outreach als skalierbarer Kanal neben euren Cold Callern.
+    </p>
+    <!-- LOOM VIDEO -->
+    <div style="margin-bottom:40px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);max-width:640px;">
+      <div style="position:relative;padding-bottom:56.25%;height:0;">
+        <iframe src="https://www.loom.com/embed/ce983dddbbb3423eaf78e1dfed371133?hide_owner=true&amp;hide_share=true&amp;hide_title=true&amp;hideEmbedTopBar=true" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+      </div>
+    </div>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;">
+      <a href="#angebot" style="display:inline-block;background:var(--accent);color:#fff;padding:14px 32px;border-radius:100px;font-weight:700;font-size:0.95rem;">Angebot ansehen</a>
+      <a href="#prozess" style="display:inline-block;background:transparent;color:var(--text);padding:14px 32px;border-radius:100px;font-weight:600;font-size:0.95rem;border:1px solid var(--border);">Wie funktioniert das?</a>
+    </div>
+  </div>
+</section>
+
+<!-- KUNDEN LOGOS -->
+<div class="ticker-section">
+  <div class="ticker-row">
+    <img src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel" class="client-logo">
+    <img src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes" class="client-logo">
+    <img src="https://www.hrs.de/_next/static/media/hrs_logo_red.7cccdfd9.svg" alt="HRS" class="client-logo">
+    <img src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang" class="client-logo">
+    <img src="https://cdn.prod.website-files.com/673602757a06be245e484913/678d467526d221b55f5dc3e0_mc-logo-1-black.svg" alt="Michelscom" class="client-logo">
+    <img src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel" class="client-logo">
+    <img src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes" class="client-logo">
+    <img src="https://www.hrs.de/_next/static/media/hrs_logo_red.7cccdfd9.svg" alt="HRS" class="client-logo">
+    <img src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang" class="client-logo">
+    <img src="https://cdn.prod.website-files.com/673602757a06be245e484913/678d467526d221b55f5dc3e0_mc-logo-1-black.svg" alt="Michelscom" class="client-logo">
+    <img src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel" class="client-logo">
+    <img src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes" class="client-logo">
+    <img src="https://www.hrs.de/_next/static/media/hrs_logo_red.7cccdfd9.svg" alt="HRS" class="client-logo">
+    <img src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang" class="client-logo">
+    <img src="https://cdn.prod.website-files.com/673602757a06be245e484913/678d467526d221b55f5dc3e0_mc-logo-1-black.svg" alt="Michelscom" class="client-logo">
+    <img src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel" class="client-logo">
+    <img src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes" class="client-logo">
+    <img src="https://www.hrs.de/_next/static/media/hrs_logo_red.7cccdfd9.svg" alt="HRS" class="client-logo">
+  </div>
+  <div class="ticker-row ticker-row-rev" style="margin-top:20px;">
+    <img src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="SmartBridges" class="client-logo">
+    <img src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly" class="client-logo">
+    <img src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy" class="client-logo">
+    <img src="https://d2bw95mh2ee04s.cloudfront.net/prod/content/wp-content/uploads/2025/01/02134814/Property-Logo-Main.svg" alt="SellerLogic" class="client-logo">
+    <img src="https://digitalnow.online/logo.png" alt="Digital Now" class="client-logo">
+    <img src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="SmartBridges" class="client-logo">
+    <img src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly" class="client-logo">
+    <img src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy" class="client-logo">
+    <img src="https://d2bw95mh2ee04s.cloudfront.net/prod/content/wp-content/uploads/2025/01/02134814/Property-Logo-Main.svg" alt="SellerLogic" class="client-logo">
+    <img src="https://digitalnow.online/logo.png" alt="Digital Now" class="client-logo">
+    <img src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="SmartBridges" class="client-logo">
+    <img src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly" class="client-logo">
+    <img src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy" class="client-logo">
+    <img src="https://d2bw95mh2ee04s.cloudfront.net/prod/content/wp-content/uploads/2025/01/02134814/Property-Logo-Main.svg" alt="SellerLogic" class="client-logo">
+    <img src="https://digitalnow.online/logo.png" alt="Digital Now" class="client-logo">
+    <img src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="SmartBridges" class="client-logo">
+    <img src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly" class="client-logo">
+    <img src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy" class="client-logo">
+  </div>
+</div>
+
+<!-- STAT BAR -->
+<div class="stat-bar">
+  <div class="stat-bar-inner">
+    <div><div class="stat-number">10 Mio.+</div><div class="stat-label">E-Mails versendet</div></div>
+    <div><div class="stat-number">50+</div><div class="stat-label">Erfolgreiche B2B-Projekte</div></div>
+    <div><div class="stat-number">75+</div><div class="stat-label">Tools &amp; Datenanbieter</div></div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="fade-in" id="problem">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="section-label">Die Herausforderung</div>
+    <h2 class="section-title">Cold Caller ohne Leads &mdash; <span>ein teures Problem.</span></h2>
+    <p class="section-sub">Euer Vertrieb hat Kapazit&auml;t, aber der Input fehlt. Wenn Leads knapp werden, sinkt die Performance &mdash; und der Terminpreis steigt.</p>
+    <div class="problem-grid">
+      <div class="prob-cards">
+        <div class="problem-card">
+          <div class="problem-icon">&#128200;</div>
+          <div>
+            <h3>Zu wenig Leads f&uuml;r eure Cold Caller</h3>
+            <p>Wenn die Caller nicht genug Leads haben, sinkt die Performance und der Terminpreis steigt. Gekaufte Lead-Listen mit Nummern lassen Kontakte ohne Telefonnummer komplett links liegen.</p>
+          </div>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">&#9200;</div>
+          <div>
+            <h3>Keine Zeit f&uuml;r den E-Mail-Kanal</h3>
+            <p>&bdquo;Zu lange nichts mit den Kampagnen gemacht &mdash; h&auml;tten viel fr&uuml;her starten m&uuml;ssen, aber keine Zeit.&ldquo; Das letzte Mal vor 10 Monaten 1 Woche daf&uuml;r gehabt.</p>
+          </div>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">&#128232;</div>
+          <div>
+            <h3>E-Mail-Setup &amp; Zustellbarkeit</h3>
+            <p>Domain-Abh&auml;ngigkeit limitiert das E-Mail-Volumen. Professioneller Aufbau, Zustellbarkeit und Volumen halten &mdash; alles Themen die ohne Expertise liegen bleiben.</p>
+          </div>
+        </div>
+      </div>
+      <div class="solution-box">
+        <h3>&#128161; Die L&ouml;sung</h3>
+        <p>Professioneller E-Mail-Outreach als zweiter Kanal &mdash; mit 20.000 E-Mails pro Monat an Hotels, Schulen, Turnhallen und Pflegeheime. Eure Cold Caller bekommen mehr und bessere Leads.</p>
+        <div class="sol-stat"><span>E-Mail-Volumen</span><span class="bad">Aktuell: limitiert</span></div>
+        <div class="sol-stat"><span>Nach Setup</span><span class="good">20.000 E-Mails/Monat</span></div>
+        <div class="sol-stat"><span>Zeitaufwand intern</span><span class="good">30 Min/Woche</span></div>
+        <div class="sol-stat"><span>Einarbeitungszeit</span><span class="good">30-60 Minuten</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROZESS / 3 SÄULEN -->
+<section class="fade-in" id="prozess">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="section-label">Unser Ansatz</div>
+    <h2 class="section-title">Drei S&auml;ulen f&uuml;r <span>planbaren Outreach.</span></h2>
+    <p class="section-sub">Von der Datenbank bis zum fertigen System &mdash; so bauen wir euren E-Mail-Kanal auf.</p>
+    <div class="strategy-grid">
+      <div class="strategy-card">
+        <div class="si">&#128269;</div>
+        <h3>1. Daten &amp; Segmentierung</h3>
+        <p>Vernebelte Fensterscheibe wird zur glasklaren Excelliste. 30+ Tools &amp; Datenbanken liefern jedes ICP klar segmentiert &mdash; Unternehmen, Personen und E-Mail-Adressen f&uuml;r Hotels, Schulen, Turnhallen und Pflegeheime.</p>
+        <div class="stag">30+ Datenquellen</div>
+      </div>
+      <div class="strategy-card">
+        <div class="si">&#129302;</div>
+        <h3>2. KI-Personalisierung</h3>
+        <p>Generischer Outreach wird zu hyperpersonalisierter Relevanz. Kontext-Recherche + KI-Frameworks erzeugen Personalisierungsvariablen &mdash; jede E-Mail referenziert den konkreten Bedarf des Empf&auml;ngers.</p>
+        <div class="stag">95% Genauigkeit</div>
+      </div>
+      <div class="strategy-card">
+        <div class="si">&#9881;&#65039;</div>
+        <h3>3. System &amp; Reporting</h3>
+        <p>Chaos wird zum planbaren System. Instantly + MasterInbox + Webapp mit Auto-Tagging, Reply-Bot und Reporting. Delegierbar an einen Vertriebler mit 30-60 Minuten Einarbeitung + Videoanleitungen.</p>
+        <div class="stag">Komplett delegierbar</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL TICKER -->
+<div class="tool-ticker">
+  <div class="ticker-header">
+    <h3><span>75+</span> Tools &amp; Datenquellen im Einsatz</h3>
+    <p class="ticker-label">Datenbanken, Scraper, KI-Modelle, Automationen &amp; Infrastruktur</p>
+  </div>
+  <div class="tool-row">
+    <div class="tool-pill"><span class="dot db"></span>Instantly</div>
+    <div class="tool-pill"><span class="dot dg"></span>Clay</div>
+    <div class="tool-pill"><span class="dot dp"></span>Claude AI</div>
+    <div class="tool-pill"><span class="dot do"></span>Apollo.io</div>
+    <div class="tool-pill"><span class="dot dc"></span>Hunter.io</div>
+    <div class="tool-pill"><span class="dot dr"></span>ZeroBounce</div>
+    <div class="tool-pill"><span class="dot db"></span>MasterInbox</div>
+    <div class="tool-pill"><span class="dot dg"></span>n8n</div>
+    <div class="tool-pill"><span class="dot dp"></span>Trigger.dev</div>
+    <div class="tool-pill"><span class="dot do"></span>Serper</div>
+    <div class="tool-pill"><span class="dot dc"></span>Apify</div>
+    <div class="tool-pill"><span class="dot db"></span>Instantly</div>
+    <div class="tool-pill"><span class="dot dg"></span>Clay</div>
+    <div class="tool-pill"><span class="dot dp"></span>Claude AI</div>
+    <div class="tool-pill"><span class="dot do"></span>Apollo.io</div>
+    <div class="tool-pill"><span class="dot dc"></span>Hunter.io</div>
+    <div class="tool-pill"><span class="dot dr"></span>ZeroBounce</div>
+    <div class="tool-pill"><span class="dot db"></span>MasterInbox</div>
+    <div class="tool-pill"><span class="dot dg"></span>n8n</div>
+    <div class="tool-pill"><span class="dot dp"></span>Trigger.dev</div>
+    <div class="tool-pill"><span class="dot do"></span>Serper</div>
+    <div class="tool-pill"><span class="dot dc"></span>Apify</div>
+  </div>
+  <div class="tool-row tool-row-rev">
+    <div class="tool-pill"><span class="dot dg"></span>Supabase</div>
+    <div class="tool-pill"><span class="dot db"></span>Close CRM</div>
+    <div class="tool-pill"><span class="dot dp"></span>OpenAI</div>
+    <div class="tool-pill"><span class="dot do"></span>Calendly</div>
+    <div class="tool-pill"><span class="dot dc"></span>Webshare Proxy</div>
+    <div class="tool-pill"><span class="dot dr"></span>Icypeas</div>
+    <div class="tool-pill"><span class="dot db"></span>Google Workspace</div>
+    <div class="tool-pill"><span class="dot dg"></span>PandaDoc</div>
+    <div class="tool-pill"><span class="dot dp"></span>DataForSEO</div>
+    <div class="tool-pill"><span class="dot do"></span>Slack</div>
+    <div class="tool-pill"><span class="dot dc"></span>Loom</div>
+    <div class="tool-pill"><span class="dot dg"></span>Supabase</div>
+    <div class="tool-pill"><span class="dot db"></span>Close CRM</div>
+    <div class="tool-pill"><span class="dot dp"></span>OpenAI</div>
+    <div class="tool-pill"><span class="dot do"></span>Calendly</div>
+    <div class="tool-pill"><span class="dot dc"></span>Webshare Proxy</div>
+    <div class="tool-pill"><span class="dot dr"></span>Icypeas</div>
+    <div class="tool-pill"><span class="dot db"></span>Google Workspace</div>
+    <div class="tool-pill"><span class="dot dg"></span>PandaDoc</div>
+    <div class="tool-pill"><span class="dot dp"></span>DataForSEO</div>
+    <div class="tool-pill"><span class="dot do"></span>Slack</div>
+    <div class="tool-pill"><span class="dot dc"></span>Loom</div>
+  </div>
+</div>
+
+<!-- SOCIAL PROOF -->
+<section class="fade-in" id="ergebnisse">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="section-label">Ergebnisse</div>
+    <h2 class="section-title">Was unsere Kunden <span>erreicht haben.</span></h2>
+    <div class="proof-grid">
+      <div class="proof-card">
+        <div class="proof-co">Smart Bridges GmbH &middot; Berlin</div>
+        <div class="proof-num">397 Leads</div>
+        <div class="proof-period">in 3 Monaten</div>
+        <div class="proof-desc">Ingo Boldt, Gesch&auml;ftsf&uuml;hrung</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-co">Hivebuy &middot; Berlin</div>
+        <div class="proof-num">100.000&euro;</div>
+        <div class="proof-period">Auftragswert in 9 Monaten</div>
+        <div class="proof-desc">Moritz Liehnert, Gesch&auml;ftsf&uuml;hrung</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-co">Greenlovers &middot; Hamburg</div>
+        <div class="proof-num">172 Leads</div>
+        <div class="proof-period">+ 14 Auftr&auml;ge in 3 Monaten</div>
+        <div class="proof-desc">Stephan Meinecke, Gesch&auml;ftsf&uuml;hrung</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-co">Birdsview GmbH</div>
+        <div class="proof-num">28 Termine</div>
+        <div class="proof-period">in 3 Monaten</div>
+        <div class="proof-desc">Tim Kuesters, Gesch&auml;ftsf&uuml;hrung</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-co">Peer Studios &middot; Berlin</div>
+        <div class="proof-num">20 Opportunities</div>
+        <div class="proof-period">in 13 Tagen</div>
+        <div class="proof-desc">Lasse Petry, Gesch&auml;ftsf&uuml;hrung</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-co">Cervis</div>
+        <div class="proof-num">ROI 2.7x</div>
+        <div class="proof-period">in 3 Monaten</div>
+        <div class="proof-desc">Philipp K&ouml;hnlein, Gesch&auml;ftsf&uuml;hrung</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WISTIA ERKLÄRVIDEO -->
+<section class="fade-in">
+  <div style="max-width:800px;margin:0 auto;text-align:center;">
+    <div class="section-label">So funktioniert es</div>
+    <h2 class="section-title" style="text-align:center;">Das Grundwerk <span>Outreach-System</span> in 3 Minuten</h2>
+    <div style="margin-top:32px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);">
+      <div style="position:relative;padding-bottom:56.25%;height:0;">
+        <iframe src="https://fast.wistia.net/embed/iframe/tm8si6qq6m?seo=true&videoFoam=false" title="Grundwerk Erkl&auml;rvideo" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="fade-in" id="team">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="section-label">Euer Team</div>
+    <h2 class="section-title">Das Execution-Team hinter <span>dem Erfolg</span></h2>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-av">&#128188;</div>
+        <h3>Tom Soto Schiller</h3>
+        <div class="team-role">Gesch&auml;ftsf&uuml;hrung &amp; Strategie</div>
+        <p>&Uuml;berwacht die Gesamtstrategie und stellt sicher, dass eure Kampagnen die richtigen Zielgruppen erreichen.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-av">&#128736;&#65039;</div>
+        <h3>Account Manager</h3>
+        <div class="team-role">Operatives Management</div>
+        <p>Euer direkter Ansprechpartner. W&ouml;chentliche Calls, Slack-Channel, Antwort innerhalb von 24h.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-av">&#129302;</div>
+        <h3>Data &amp; Automations Team</h3>
+        <div class="team-role">Daten, KI &amp; Technik</div>
+        <p>Baut eure Leadlisten, entwickelt KI-Personalisierung und optimiert die technische Infrastruktur.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ANGEBOT -->
+<section class="offer-section fade-in" id="angebot">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:48px;">
+      <div class="section-label">Das Angebot</div>
+      <h2 class="section-title" style="text-align:center;">Euer Outreach-Paket &mdash; <span>auf den Punkt.</span></h2>
+    </div>
+    <div class="pricing-single">
+      <div class="price-card">
+        <div class="rec-badge">Empfohlen f&uuml;r Future Machine Labs</div>
+        <div style="margin-top:16px;">
+          <div class="price-name">E-Mail Outreach Komplett</div>
+          <div class="price-ch">Hotels &middot; Schulen &middot; Turnhallen &middot; Pflegeheime</div>
+          <div class="price-setup">Einmaliger KickOff-Workshop</div>
+          <div class="price-big">1.990&euro;</div>
+          <div class="price-per" style="margin-bottom:20px;">einmalig</div>
+          <div style="height:1px;background:var(--border);margin-bottom:20px;"></div>
+          <div class="price-setup">Monatliche Betreuungsgeb&uuml;hr</div>
+          <div class="price-big">3.500&euro;</div>
+          <div class="price-per">pro Monat &middot; 3 Monate Laufzeit</div>
+          <div class="price-total">
+            Gesamtinvestment: <strong>12.490&euro;</strong> (Setup + 3 Monate)
+          </div>
+          <ul class="price-features">
+            <li><span class="ck">&#10003;</span> Alle Kampagnen (Hotels, Schulen, Turnhallen, Pflegeheime)</li>
+            <li><span class="ck">&#10003;</span> Bis zu 20.000 E-Mails pro Monat</li>
+            <li><span class="ck">&#10003;</span> Alle Kontaktdaten inkl. E-Mail-Adressen inklusive</li>
+            <li><span class="ck">&#10003;</span> KI-personalisierte Kampagnen-Texte</li>
+            <li><span class="ck">&#10003;</span> MasterInbox mit Auto-Tagging &amp; Reply-Bot</li>
+            <li><span class="ck">&#10003;</span> W&ouml;chentlicher 30-Minuten-Call</li>
+            <li><span class="ck">&#10003;</span> Slack-Channel mit Antwort innerhalb 24h</li>
+            <li><span class="ck">&#10003;</span> Webapp-Reporting &amp; Videoanleitungen</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BONUSSE -->
+  <div style="max-width:1200px;margin:64px auto 0;">
+    <div style="text-align:center;margin-bottom:32px;">
+      <div class="section-label">Inklusive Bonusse</div>
+      <h2 class="section-title" style="text-align:center;">Was ihr <span>zus&auml;tzlich</span> bekommt</h2>
+    </div>
+    <div class="bonus-grid">
+      <div class="bonus-item">
+        <div class="bi-icon">&#128202;</div>
+        <div>
+          <h4>Sales Tracking &amp; Reporting</h4>
+          <p>W&ouml;chentliche Auswertung aller Kampagnen-Metriken in der Grundwerk Web App.</p>
+        </div>
+      </div>
+      <div class="bonus-item">
+        <div class="bi-icon">&#128218;</div>
+        <div>
+          <h4>15+ Guides inklusive</h4>
+          <p>Anleitungen f&uuml;r MasterInbox, Calendly-Buchung, Follow-Up-Strukturen und mehr.</p>
+        </div>
+      </div>
+      <div class="bonus-item">
+        <div class="bi-icon">&#128241;</div>
+        <div>
+          <h4>Grundwerk Web App</h4>
+          <p>Kostenloser Zugang zur Webapp mit Lead-Replies, Kampagnen-&Uuml;bersicht und Scorecard.</p>
+        </div>
+      </div>
+      <div class="bonus-item">
+        <div class="bi-icon">&#128222;</div>
+        <div>
+          <h4>Direkte Telefonnummern</h4>
+          <p>Eure Cold Caller bekommen zus&auml;tzlich direkte Durchwahlen zu Entscheidern &mdash; kein Gatekeeper.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="fade-in" id="ablauf">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="section-label">N&auml;chste Schritte</div>
+    <h2 class="section-title">So geht es <span>weiter.</span></h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-tag">Schritt 1</div>
+        <h4>Vertrag unterschreiben</h4>
+        <p>Max und Nick unterschreiben den Vertrag. Ihr bekommt den Link per E-Mail.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-tag">Schritt 2</div>
+        <h4>Onboarding-Call</h4>
+        <p>30 Minuten mit eurem Account Manager &mdash; Zugang einrichten, Zielgruppen finalisieren.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-tag">Schritt 3</div>
+        <h4>KickOff-Workshop (1 Stunde)</h4>
+        <p>ICP-Definition, Messaging-Strategie, Kampagnenplanung f&uuml;r Hotels, Schulen, Turnhallen, Pflegeheime.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-tag">Woche 2-4</div>
+        <h4>Setup &amp; erste Kampagnen</h4>
+        <p>Domain-Setup, Inbox-Warm-Up, Daten-Recherche, KI-Personalisierung. Erste Kampagnen gehen live.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-tag">Ab Monat 2</div>
+        <h4>Volle Fahrt</h4>
+        <p>20.000 E-Mails/Monat, w&ouml;chentliche Optimierung, Reporting in der Webapp. Eure Cold Caller bekommen kontinuierlich frische Leads.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section fade-in" id="termin">
+  <h2>Bereit f&uuml;r planbaren<br>Outreach?</h2>
+  <p>Bucht direkt euren n&auml;chsten Termin &mdash; wir kl&auml;ren offene Fragen und starten durch.</p>
+  <a href="https://calendly.com/tom-soto-schiller/grundwerk-next-steps?email=maximilian.mandel%40futuremachinelabs.de&name=Maximilian%20Mandel" style="display:inline-block;background:var(--accent);color:#fff;padding:16px 40px;border-radius:100px;font-weight:700;font-size:1.05rem;transition:background 0.2s;">Termin buchen</a>
+  <div class="cta-contact">
+    <span>&#128231; tom.schiller@grundwerk.digital</span>
+    <span>&#128222; +49 176 4392 3062</span>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 Grundwerk Digital GmbH &middot; Alle Rechte vorbehalten</p>
+</footer>
+
+<!-- FADE-IN OBSERVER -->
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var els=document.querySelectorAll('.fade-in');
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
+    },{threshold:0.1});
+    els.forEach(function(el){obs.observe(el);});
+  } else {
+    els.forEach(function(el){el.classList.add('visible');});
+  }
+});
+</script>
+</body>
+</html>
