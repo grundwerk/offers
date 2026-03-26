@@ -1,4 +1,4 @@
-<!-- GRUNDWERK-OFFER v5 | 2026-03-27 | Nav: nur "Angebot" zentriert -->
+<!-- GRUNDWERK-OFFER v6 | 2026-03-27 | Stats als Kacheln unter Angebot -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -6,7 +6,7 @@
 <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII="/>
 <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII="/>
 <script>(function(){var code='4829163750';var p=new URLSearchParams(window.location.search);if(p.get('secure')!==code){document.documentElement.style.display='none';document.title='Zugriff verweigert';window.stop();}})();</script>
-<meta name="offer-version" content="v5 | 2026-03-27">
+<meta name="offer-version" content="v6 | 2026-03-27">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Future Machine Labs &times; Grundwerk Digital</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -109,11 +109,9 @@ footer{padding:40px 2rem;border-top:1px solid var(--border);text-align:center;fo
 @media(max-width:900px){
   .method-grid{grid-template-columns:1fr}
   .method-tile:nth-child(2),.method-tile:nth-child(3){margin-top:0}
-  .stat-bar-inner{grid-template-columns:repeat(3,1fr)}
 }
 @media(max-width:600px){
   section{padding:60px 1.25rem}
-  .stat-bar-inner{grid-template-columns:repeat(2,1fr)}
   .hero{padding:100px 1.25rem 60px}
 }
 </style>
@@ -196,15 +194,6 @@ footer{padding:40px 2rem;border-top:1px solid var(--border);text-align:center;fo
   </div>
 </div>
 
-<!-- STAT BAR -->
-<div class="stat-bar">
-  <div class="stat-bar-inner">
-    <div><div class="stat-number">10 Mio.+</div><div class="stat-label">E-Mails versendet</div></div>
-    <div><div class="stat-number">50+</div><div class="stat-label">Erfolgreiche B2B-Projekte</div></div>
-    <div><div class="stat-number">75+</div><div class="stat-label">Tools &amp; Datenanbieter</div></div>
-  </div>
-</div>
-
 <!-- ANGEBOT -->
 <section class="offer-section fade-in" id="angebot">
   <div style="max-width:1200px;margin:0 auto;">
@@ -240,6 +229,24 @@ footer{padding:40px 2rem;border-top:1px solid var(--border);text-align:center;fo
           </ul>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS KACHELN -->
+<section class="fade-in" style="padding:60px 2rem 80px;">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:40px 28px;text-align:center;">
+      <div style="font-size:2.6rem;font-weight:800;color:var(--accent);letter-spacing:-0.03em;">10 Mio.+</div>
+      <div style="font-size:0.85rem;color:var(--text-muted);margin-top:8px;">E-Mails versendet</div>
+    </div>
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:40px 28px;text-align:center;">
+      <div style="font-size:2.6rem;font-weight:800;color:var(--accent);letter-spacing:-0.03em;">50+</div>
+      <div style="font-size:0.85rem;color:var(--text-muted);margin-top:8px;">Erfolgreiche B2B-Projekte</div>
+    </div>
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:40px 28px;text-align:center;">
+      <div style="font-size:2.6rem;font-weight:800;color:var(--accent);letter-spacing:-0.03em;">75+</div>
+      <div style="font-size:0.85rem;color:var(--text-muted);margin-top:8px;">Tools &amp; Datenanbieter</div>
     </div>
   </div>
 </section>
