@@ -1,5 +1,14 @@
 [
   {
+    "slug": "dwinity",
+    "name": "Dwinity GmbH (CryptoChat)",
+    "subtitle": "Christian Mangold — E-Mail Outreach Strafverteidiger, Journalisten, IP-Anwälte",
+    "type": "sales-room",
+    "secure": "7391845620",
+    "icon": "🔐",
+    "created": "2026-04-02"
+  },
+  {
     "slug": "future-machine-labs",
     "name": "Future Machine Labs GmbH",
     "subtitle": "Max & Nick — E-Mail Outreach Hotels, Schulen, Turnhallen, Pflegeheime",
