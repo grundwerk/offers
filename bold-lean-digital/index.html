@@ -1,4 +1,4 @@
-<!-- GRUNDWERK-OFFER v2 | 2026-04-02 17:00 | Fix: Logo, remove Meta Ads comparison -->
+<!-- GRUNDWERK-OFFER v3 | 2026-04-04 12:00 | Fix: Add Matthias, fix logo ticker -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -6,7 +6,7 @@
 <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII=">
 <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII=">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="offer-version" content="v2 | 2026-04-02">
+<meta name="offer-version" content="v3 | 2026-04-04">
 <title>Bold Lean Digital &times; Grundwerk</title>
 <script>
 (function(){
@@ -59,16 +59,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;backdrop-filter:blur(20px);
 .btn-secondary:hover{border-color:var(--accent);color:var(--accent);}
 
 /* LOGO TICKER */
-.logo-ticker{padding:20px 0 80px;overflow:hidden;position:relative;}
-.logo-ticker::before,.logo-ticker::after{content:'';position:absolute;top:0;bottom:0;width:20%;z-index:2;pointer-events:none;}
-.logo-ticker::before{left:0;background:linear-gradient(to right,var(--bg) 60%,transparent);}
-.logo-ticker::after{right:0;background:linear-gradient(to left,var(--bg) 60%,transparent);}
-.ticker-row{display:flex;gap:48px;align-items:center;white-space:nowrap;margin-bottom:16px;}
+.logo-ticker{padding:20px 0 40px;overflow:hidden;position:relative;}
+.logo-ticker::before,.logo-ticker::after{content:'';position:absolute;top:0;bottom:0;width:10%;z-index:2;pointer-events:none;}
+.logo-ticker::before{left:0;background:linear-gradient(to right,var(--bg) 40%,transparent);}
+.logo-ticker::after{right:0;background:linear-gradient(to left,var(--bg) 40%,transparent);}
+.ticker-row{display:flex;gap:48px;align-items:center;white-space:nowrap;margin-bottom:16px;will-change:transform;}
 .ticker-row.forward{animation:tickerForward 40s linear infinite;}
 .ticker-row.reverse{animation:tickerReverse 45s linear infinite;}
-@keyframes tickerForward{from{transform:translateX(-25%)}to{transform:translateX(-75%)}}
-@keyframes tickerReverse{from{transform:translateX(-75%)}to{transform:translateX(-25%)}}
-.client-logo{height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);transition:opacity 0.3s,filter 0.3s;flex-shrink:0;}
+@keyframes tickerForward{from{transform:translateX(0%)}to{transform:translateX(-50%)}}
+@keyframes tickerReverse{from{transform:translateX(-50%)}to{transform:translateX(0%)}}
+.client-logo{height:36px;opacity:0.4;filter:grayscale(100%) brightness(2);transition:opacity 0.3s,filter 0.3s;flex-shrink:0;}
 .client-logo:hover{opacity:0.8;filter:grayscale(0%) brightness(1);}
 
 /* STAT BAR */
@@ -264,7 +264,7 @@ section{padding:60px 1.25rem;}
 <div class="hero-content" style="position:relative;z-index:1;max-width:800px;">
 <img src="https://media.licdn.com/dms/image/v2/D4D0BAQEWkiE7dZxg8A/company-logo_200_200/B4DZvfiEiFGUAM-/0/1768981809893?e=2147483647&v=beta&t=Pyx8pHzLJcF9Bsp40fruaTdqbPtvutKDuP9IE6wGagk" alt="Bold Lean Digital" style="width:120px;height:120px;border-radius:16px;object-fit:cover;margin:0 auto 32px;display:block;border:1px solid rgba(79,125,249,0.3);">
 <h1 style="font-size:clamp(2rem,5vw,3.5rem);font-weight:800;letter-spacing:-0.03em;line-height:1.15;margin-bottom:20px;">Planbar neue Kunden gewinnen &mdash;<br><span class="gradient">bevor euer Netzwerk komplett abgefr&uuml;hst&uuml;ckt ist.</span></h1>
-<p style="font-size:1.1rem;color:#888;max-width:600px;margin:0 auto 32px;">Tobias, Alex &mdash; hier findet ihr alles, was ihr braucht, um eine informierte Entscheidung zu treffen. Kein Verkaufs&shy;druck, nur Fakten.</p>
+<p style="font-size:1.1rem;color:#888;max-width:600px;margin:0 auto 32px;">Tobias, Alex, Matthias &mdash; hier findet ihr alles, was ihr braucht, um eine informierte Entscheidung zu treffen. Kein Verkaufs&shy;druck, nur Fakten.</p>
 <div class="hero-btns" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
 <a href="#angebot" class="btn-primary">Angebot ansehen</a>
 <a href="#prozess" class="btn-secondary">Wie funktioniert das?</a>
@@ -273,46 +273,46 @@ section{padding:60px 1.25rem;}
 </section>
 
 <!-- LOGO TICKER -->
-<div class="logo-ticker" style="padding:20px 0 80px;overflow:hidden;position:relative;">
+<div class="logo-ticker" style="padding:20px 0 40px;overflow:hidden;position:relative;">
 <div class="ticker-row forward" style="display:flex;gap:48px;align-items:center;white-space:nowrap;margin-bottom:16px;">
-<img class="client-logo" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);">
-<img class="client-logo" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);">
-<img class="client-logo" src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);">
-<img class="client-logo" src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);">
-<img class="client-logo" src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);">
-<img class="client-logo" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);">
-<img class="client-logo" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);">
-<img class="client-logo" src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);">
-<img class="client-logo" src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);">
-<img class="client-logo" src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);">
-<img class="client-logo" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);">
-<img class="client-logo" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);">
-<img class="client-logo" src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);">
-<img class="client-logo" src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);">
-<img class="client-logo" src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);">
-<img class="client-logo" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);">
-<img class="client-logo" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);">
-<img class="client-logo" src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);">
-<img class="client-logo" src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);">
-<img class="client-logo" src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);">
+<img class="client-logo" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel" style="height:36px;opacity:0.4;filter:grayscale(100%) brightness(2);" loading="eager">
+<img class="client-logo" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes" style="height:36px;opacity:0.4;filter:grayscale(100%) brightness(2);" loading="eager">
+<img class="client-logo" src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang" style="height:36px;opacity:0.4;filter:grayscale(100%) brightness(2);" loading="eager">
+<img class="client-logo" src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO" style="height:36px;opacity:0.4;filter:grayscale(100%) brightness(2);" loading="eager">
+<img class="client-logo" src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview" style="height:36px;opacity:0.4;filter:grayscale(100%) brightness(2);" loading="eager">
+<img class="client-logo" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel" style="height:36px;opacity:0.4;filter:grayscale(100%) brightness(2);" loading="eager">
+<img class="client-logo" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes" style="height:36px;opacity:0.4;filter:grayscale(100%) brightness(2);" loading="eager">
+<img class="client-logo" src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang" style="height:36px;opacity:0.4;filter:grayscale(100%) brightness(2);" loading="eager">
+<img class="client-logo" src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO" style="height:36px;opacity:0.4;filter:grayscale(100%) brightness(2);" loading="eager">
+<img class="client-logo" src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview" style="height:36px;opacity:0.4;filter:grayscale(100%) brightness(2);" loading="eager">
+<img class="client-logo" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel" style="height:36px;opacity:0.4;filter:grayscale(100%) brightness(2);" loading="eager">
+<img class="client-logo" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes" style="height:36px;opacity:0.4;filter:grayscale(100%) brightness(2);" loading="eager">
+<img class="client-logo" src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang" style="height:36px;opacity:0.4;filter:grayscale(100%) brightness(2);" loading="eager">
+<img class="client-logo" src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO" style="height:36px;opacity:0.4;filter:grayscale(100%) brightness(2);" loading="eager">
+<img class="client-logo" src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview" style="height:36px;opacity:0.4;filter:grayscale(100%) brightness(2);" loading="eager">
+<img class="client-logo" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel" style="height:36px;opacity:0.4;filter:grayscale(100%) brightness(2);" loading="eager">
+<img class="client-logo" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes" style="height:36px;opacity:0.4;filter:grayscale(100%) brightness(2);" loading="eager">
+<img class="client-logo" src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang" style="height:36px;opacity:0.4;filter:grayscale(100%) brightness(2);" loading="eager">
+<img class="client-logo" src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO" style="height:36px;opacity:0.4;filter:grayscale(100%) brightness(2);" loading="eager">
+<img class="client-logo" src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview" style="height:36px;opacity:0.4;filter:grayscale(100%) brightness(2);" loading="eager">
 </div>
 <div class="ticker-row reverse" style="display:flex;gap:48px;align-items:center;white-space:nowrap;">
-<img class="client-logo" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);">
-<img class="client-logo" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);">
-<img class="client-logo" src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);">
-<img class="client-logo" src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);">
-<img class="client-logo" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);">
-<img class="client-logo" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);">
-<img class="client-logo" src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);">
-<img class="client-logo" src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);">
-<img class="client-logo" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);">
-<img class="client-logo" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);">
-<img class="client-logo" src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);">
-<img class="client-logo" src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);">
-<img class="client-logo" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);">
-<img class="client-logo" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);">
-<img class="client-logo" src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);">
-<img class="client-logo" src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);">
+<img class="client-logo" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges" style="height:36px;opacity:0.4;filter:grayscale(100%) brightness(2);" loading="eager">
+<img class="client-logo" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy" style="height:36px;opacity:0.4;filter:grayscale(100%) brightness(2);" loading="eager">
+<img class="client-logo" src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios" style="height:36px;opacity:0.4;filter:grayscale(100%) brightness(2);" loading="eager">
+<img class="client-logo" src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic" style="height:36px;opacity:0.4;filter:grayscale(100%) brightness(2);" loading="eager">
+<img class="client-logo" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges" style="height:36px;opacity:0.4;filter:grayscale(100%) brightness(2);" loading="eager">
+<img class="client-logo" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy" style="height:36px;opacity:0.4;filter:grayscale(100%) brightness(2);" loading="eager">
+<img class="client-logo" src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios" style="height:36px;opacity:0.4;filter:grayscale(100%) brightness(2);" loading="eager">
+<img class="client-logo" src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic" style="height:36px;opacity:0.4;filter:grayscale(100%) brightness(2);" loading="eager">
+<img class="client-logo" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges" style="height:36px;opacity:0.4;filter:grayscale(100%) brightness(2);" loading="eager">
+<img class="client-logo" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy" style="height:36px;opacity:0.4;filter:grayscale(100%) brightness(2);" loading="eager">
+<img class="client-logo" src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios" style="height:36px;opacity:0.4;filter:grayscale(100%) brightness(2);" loading="eager">
+<img class="client-logo" src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic" style="height:36px;opacity:0.4;filter:grayscale(100%) brightness(2);" loading="eager">
+<img class="client-logo" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges" style="height:36px;opacity:0.4;filter:grayscale(100%) brightness(2);" loading="eager">
+<img class="client-logo" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy" style="height:36px;opacity:0.4;filter:grayscale(100%) brightness(2);" loading="eager">
+<img class="client-logo" src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios" style="height:36px;opacity:0.4;filter:grayscale(100%) brightness(2);" loading="eager">
+<img class="client-logo" src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic" style="height:36px;opacity:0.4;filter:grayscale(100%) brightness(2);" loading="eager">
 </div>
 </div>
 
