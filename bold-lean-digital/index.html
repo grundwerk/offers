@@ -1,4 +1,4 @@
-<!-- GRUNDWERK-OFFER v8 | 2026-04-07 | Restructure: Offer+Garantie up, remove Strategy/Team/Forecast/ROI -->
+<!-- GRUNDWERK-OFFER v9 | 2026-04-07 | 8 bonus tiles, fix Woche 5 dashes -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -6,7 +6,7 @@
 <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII=">
 <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII=">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="offer-version" content="v8 | 2026-04-07">
+<meta name="offer-version" content="v9 | 2026-04-07">
 <title>Bold Lean Digital &times; Grundwerk</title>
 <script>
 (function(){
@@ -559,7 +559,7 @@ section{padding:60px 1.25rem;}
 </div>
 <div class="faq-item" style="border-bottom:1px solid rgba(255,255,255,0.06);padding:20px 0;">
 <div class="faq-q" style="display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:600;font-size:0.95rem;" onclick="this.classList.toggle('open');this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block';">Wie schnell sehen wir erste Ergebnisse?</div>
-<div class="faq-a" style="display:none;padding-top:12px;font-size:0.85rem;color:#888;line-height:1.7;">Monat 1 ist Setup: KickOff, ICP-Definition, Infrastruktur aufbauen, Domains warmen. Ab Monat 2 gehen die ersten Kampagnen live. Erste Leads kommen typischerweise ab Woche 5-6. Die volle Performance erreicht ihr ab Monat 3 wenn alle Kampagnen-Cluster optimiert sind.</div>
+<div class="faq-a" style="display:none;padding-top:12px;font-size:0.85rem;color:#888;line-height:1.7;">Monat 1 ist Setup: KickOff, ICP-Definition, Infrastruktur aufbauen, Domains warmen. Ab Monat 2 gehen die ersten Kampagnen live. Erste Leads kommen typischerweise ab Woche 5. Die volle Performance erreicht ihr ab Monat 3 wenn alle Kampagnen-Cluster optimiert sind.</div>
 </div>
 <div class="faq-item" style="border-bottom:1px solid rgba(255,255,255,0.06);padding:20px 0;">
 <div class="faq-q" style="display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:600;font-size:0.95rem;" onclick="this.classList.toggle('open');this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block';">Was kosten Domains &amp; Inboxen zus&auml;tzlich?</div>
@@ -602,6 +602,14 @@ section{padding:60px 1.25rem;}
 <div class="bonus-icon">&#x1F4D6;</div>
 <div><h4 style="font-size:0.9rem;font-weight:700;margin-bottom:4px;">Sales Guides &amp; Playbooks</h4><p style="font-size:0.8rem;color:#888;">Frameworks f&uuml;r Erstgespr&auml;che mit Cold-Leads, damit ihr die Termine auch konvertiert.</p></div>
 </div>
+<div class="bonus-item" style="display:flex;gap:16px;align-items:flex-start;background:#111;border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:20px;">
+<div class="bonus-icon">&#x1F4C5;</div>
+<div><h4 style="font-size:0.9rem;font-weight:700;margin-bottom:4px;">Bi-Weekly Strategy Calls</h4><p style="font-size:0.8rem;color:#888;">Alle zwei Wochen ein 30-min&uuml;tiger Call mit eurem Account Manager zur Optimierung und Strategieabstimmung.</p></div>
+</div>
+<div class="bonus-item" style="display:flex;gap:16px;align-items:flex-start;background:#111;border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:20px;">
+<div class="bonus-icon">&#x1F4E9;</div>
+<div><h4 style="font-size:0.9rem;font-weight:700;margin-bottom:4px;">MasterInbox &amp; Deliverability Monitoring</h4><p style="font-size:0.8rem;color:#888;">Alle Antworten in einem Dashboard, plus aktives Bounce-Monitoring und Reputation-Management f&uuml;r maximale Zustellraten.</p></div>
+</div>
 </div>
 </div>
 </section>
@@ -625,7 +633,7 @@ section{padding:60px 1.25rem;}
 </div>
 <div class="timeline-item" style="position:relative;margin-bottom:32px;">
 <div style="position:absolute;left:-33px;top:6px;width:12px;height:12px;border-radius:50%;background:#4f7df9;border:2px solid #0a0a0a;"></div>
-<h4 style="font-size:0.95rem;font-weight:700;margin-bottom:4px;">Setup-Phase (Woche 1&ndash;4)</h4>
+<h4 style="font-size:0.95rem;font-weight:700;margin-bottom:4px;">Setup-Phase (Woche 1 bis 4)</h4>
 <p style="font-size:0.85rem;color:#888;">ICP-Definition, Datenrecherche, Inbox-Infrastruktur aufbauen, erste E-Mail-Sequenzen texten.</p>
 </div>
 <div class="timeline-item" style="position:relative;margin-bottom:32px;">
@@ -635,7 +643,7 @@ section{padding:60px 1.25rem;}
 </div>
 </div>
 <div class="highlight-box" style="background:linear-gradient(135deg,rgba(79,125,249,0.08),rgba(79,125,249,0.02));border:1px solid rgba(79,125,249,0.3);border-radius:16px;padding:32px;text-align:center;margin-top:40px;">
-<h3 style="font-size:1.3rem;font-weight:800;margin-bottom:8px;">Erste Leads ab Woche 5&ndash;6</h3>
+<h3 style="font-size:1.3rem;font-weight:800;margin-bottom:8px;">Erste Leads ab Woche 5</h3>
 <p style="font-size:0.9rem;color:#888;">Sobald die Infrastruktur steht und die ersten Kampagnen live sind, kommen die Antworten. Direkt in eure MasterInbox.</p>
 </div>
 </div>
