@@ -1,0 +1,380 @@
+<!-- GRUNDWERK-OFFER v1 | MC-MARKETING-BRIEFING | 2026-04-13 -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<script>(function(){var code='7421';var p=new URLSearchParams(window.location.search);if(p.get('secure')!==code){document.documentElement.style.display='none';document.title='Zugriff verweigert';window.stop();}})();</script>
+<meta name="offer-version" content="v1 | 2026-04-13">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>MC Marketing &times; Grundwerk Digital — Briefing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0a0a;--bg-card:#111111;--bg-card-hover:#161616;--bg-accent:#1a1a2e;
+  --text:#f0f0f0;--text-muted:#888;--text-dim:#666;
+  --accent:#4f7df9;--accent-glow:rgba(79,125,249,0.15);
+  --green:#22c55e;--green-glow:rgba(34,197,94,0.15);
+  --orange:#f59e0b;--orange-glow:rgba(245,158,11,0.15);
+  --red:#ef4444;--red-glow:rgba(239,68,68,0.15);
+  --border:rgba(255,255,255,0.08);
+  --radius:16px;--radius-sm:10px;
+}
+html,body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:16px;line-height:1.7;overflow-x:hidden}
+a{color:var(--accent);text-decoration:none}
+section{padding:80px 2rem}
+.container{max-width:1100px;margin:0 auto}
+.section-label{font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:var(--accent);margin-bottom:14px}
+.section-title{font-size:clamp(1.7rem,3.2vw,2.4rem);font-weight:800;letter-spacing:-0.03em;line-height:1.2;margin-bottom:16px}
+.section-title span{background:linear-gradient(135deg,var(--accent),#7c9fff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.section-sub{font-size:1rem;color:var(--text-muted);max-width:720px;line-height:1.7;margin-bottom:40px}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 2rem;height:60px;display:flex;align-items:center;justify-content:space-between;font-size:0.9rem}
+.nav-logo{font-weight:800;letter-spacing:-0.02em}
+.nav-meta{color:var(--text-muted);font-size:0.8rem}
+.hero{min-height:70vh;display:flex;align-items:center;padding:140px 2rem 80px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(79,125,249,0.1),transparent 60%);pointer-events:none}
+.hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px);background-size:60px 60px;mask-image:linear-gradient(to bottom,rgba(0,0,0,0.5),transparent 75%);-webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,0.5),transparent 75%);pointer-events:none}
+.hero-inner{max-width:1100px;margin:0 auto;width:100%;position:relative;z-index:1}
+.hero-tag{display:inline-block;font-size:0.78rem;font-weight:700;color:var(--accent);background:var(--accent-glow);border:1px solid var(--border);border-radius:100px;padding:6px 16px;margin-bottom:20px;letter-spacing:0.08em;text-transform:uppercase}
+.hero h1{font-size:clamp(2rem,4.5vw,3.4rem);font-weight:800;letter-spacing:-0.03em;line-height:1.1;margin-bottom:20px}
+.hero h1 span{background:linear-gradient(135deg,var(--accent),#7c9fff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:1.1rem;color:var(--text-muted);max-width:720px;line-height:1.7;margin-bottom:30px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:24px;font-size:0.88rem;color:var(--text-muted)}
+.hero-meta strong{color:var(--text);font-weight:600}
+
+/* KONTEXT */
+.ctx-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:24px}
+.ctx-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:22px}
+.ctx-card-label{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent);margin-bottom:10px}
+.ctx-card p{font-size:0.92rem;color:var(--text);line-height:1.6}
+.quote{background:var(--bg-card);border-left:3px solid var(--accent);border-radius:8px;padding:20px 24px;margin:32px 0;font-style:italic;color:var(--text);font-size:0.98rem;line-height:1.7}
+.quote-attr{display:block;margin-top:10px;font-size:0.82rem;color:var(--text-muted);font-style:normal}
+
+/* TAKTIKEN */
+.taktik-section{background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.taktik-grid{display:flex;flex-direction:column;gap:24px;margin-top:40px}
+.taktik{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:32px;position:relative;transition:border-color 0.2s}
+.taktik:hover{border-color:rgba(79,125,249,0.3)}
+.taktik-head{display:flex;align-items:flex-start;gap:20px;margin-bottom:22px;flex-wrap:wrap}
+.taktik-num{width:48px;height:48px;border-radius:12px;background:var(--accent-glow);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:800;border:1px solid var(--border);flex-shrink:0}
+.taktik-head-text{flex:1;min-width:0}
+.taktik-tag{display:inline-block;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;padding:3px 10px;border-radius:100px;margin-bottom:8px}
+.tag-hot{background:var(--green-glow);color:var(--green)}
+.tag-warm{background:var(--orange-glow);color:var(--orange)}
+.tag-exp{background:var(--accent-glow);color:var(--accent)}
+.taktik h3{font-size:1.3rem;font-weight:800;letter-spacing:-0.02em;line-height:1.2}
+.taktik-angle{font-size:0.9rem;color:var(--text-muted);margin-top:4px}
+.taktik-body{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:680px){.taktik-body{grid-template-columns:1fr}}
+.taktik-block h4{font-size:0.74rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-bottom:10px}
+.taktik-block ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.taktik-block li{font-size:0.9rem;color:var(--text);line-height:1.55;padding-left:18px;position:relative}
+.taktik-block li::before{content:'';position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.taktik-pitch{background:rgba(79,125,249,0.06);border:1px dashed rgba(79,125,249,0.3);border-radius:10px;padding:18px 22px;margin-top:22px;font-size:0.92rem;color:var(--text);line-height:1.65}
+.taktik-pitch strong{color:var(--accent);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.12em;font-weight:700;display:block;margin-bottom:8px}
+.taktik-metrics{display:flex;gap:20px;margin-top:20px;flex-wrap:wrap}
+.metric{background:rgba(255,255,255,0.03);border-radius:8px;padding:10px 16px;font-size:0.82rem;color:var(--text-muted)}
+.metric strong{color:var(--text);font-weight:700;display:block;font-size:1.1rem;margin-bottom:2px}
+
+/* EINSCHAETZUNG */
+.real-box{background:linear-gradient(135deg,rgba(79,125,249,0.08),rgba(79,125,249,0.02));border:1px solid rgba(79,125,249,0.2);border-radius:var(--radius);padding:36px;margin-top:32px}
+.real-box h3{font-size:1.2rem;font-weight:800;margin-bottom:16px;letter-spacing:-0.02em}
+.real-row{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:24px}
+@media(max-width:680px){.real-row{grid-template-columns:1fr}}
+.real-col h4{font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.real-col.for h4{color:var(--green)}
+.real-col.against h4{color:var(--orange)}
+.real-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.real-col li{font-size:0.92rem;color:var(--text);line-height:1.6;padding-left:22px;position:relative}
+.real-col.for li::before{content:'+';position:absolute;left:0;top:-2px;color:var(--green);font-weight:800;font-size:1.15rem}
+.real-col.against li::before{content:'−';position:absolute;left:0;top:-2px;color:var(--orange);font-weight:800;font-size:1.15rem}
+
+/* NAECHSTE SCHRITTE */
+.steps-section{background:var(--bg-card);border-top:1px solid var(--border)}
+.steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:32px}
+.step{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:24px;position:relative}
+.step-num{font-size:0.75rem;font-weight:700;color:var(--accent);letter-spacing:0.1em;margin-bottom:10px;text-transform:uppercase}
+.step h4{font-size:1rem;font-weight:700;margin-bottom:8px;letter-spacing:-0.01em}
+.step p{font-size:0.88rem;color:var(--text-muted);line-height:1.6}
+
+footer{padding:40px 2rem;text-align:center;font-size:0.82rem;color:var(--text-dim);border-top:1px solid var(--border)}
+footer a{color:var(--text-muted)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">Grundwerk</div>
+    <div class="nav-meta">MC Marketing Corporation &middot; 13.04.2026</div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <span class="hero-tag">Briefing zum Follow-up</span>
+    <h1>Drei Taktiken fuer <span>ESG-as-a-Service Leadgen</span> im Mittelstand</h1>
+    <p class="hero-sub">Thomas, wie besprochen — hier meine Vorbereitung fuer unser heutiges Gespraech. Keine Pitch-Folien, sondern drei konkrete Wege, wie wir das ESG-Produkt von MC Marketing aus der Netzwerk-Limitierung rausbekommen — plus eine ehrliche Einschaetzung, wo ich Chancen sehe und wo nicht.</p>
+    <div class="hero-meta">
+      <div><strong>Fuer:</strong> Thomas Berns</div>
+      <div><strong>Von:</strong> Anthony Katzur, Grundwerk Digital</div>
+      <div><strong>Fokus:</strong> ESG-as-a-Service &middot; Kreislaufwirtschaft</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">Ausgangslage</div>
+    <h2 class="section-title">Was ich aus unserem <span>letzten Call</span> mitgenommen habe</h2>
+    <p class="section-sub">Damit wir nicht bei Null anfangen — so verstehe ich die Situation. Korrigier mich, wenn ich falsch liege.</p>
+
+    <div class="ctx-grid">
+      <div class="ctx-card">
+        <div class="ctx-card-label">Produkt</div>
+        <p>ESG-as-a-Service fuer Mittelstand. Externes Nachhaltigkeitsmanagement fuer Unternehmen, die ESG brauchen, aber keine Vollzeit-Stelle auslasten koennen.</p>
+      </div>
+      <div class="ctx-card">
+        <div class="ctx-card-label">Team & Substanz</div>
+        <p>Herbert als Fachlead (Uni Berlin, Informatiker, akademisch stark). Reifen-Use-Case existiert bereits. Eigenes KI-Diagnostiktool mit Uni Heidelberg gebaut.</p>
+      </div>
+      <div class="ctx-card">
+        <div class="ctx-card-label">Pain</div>
+        <p>LinkedIn-Kampagnen laufen ins Leere. Aus 200 Firmen ~5 Reaktionen, max. 1 Gespraech. Konversion, die nicht mehr traegt.</p>
+      </div>
+      <div class="ctx-card">
+        <div class="ctx-card-label">Marktlage</div>
+        <p>Regulatorik unter Trump-Einfluss gelockert. CSRD-Pflicht fuer einen Grossteil entfaellt. &quot;Must-have&quot;-Budgets werden knapper — die extra Meile wird nicht mehr gegangen.</p>
+      </div>
+      <div class="ctx-card">
+        <div class="ctx-card-label">Was NICHT das Thema ist</div>
+        <p>Executive Search (laeuft ueber Netzwerk, Millionen-Rahmenvertraege wie Telekom, Colt, DB). Da ist Outbound kein Hebel — verstanden.</p>
+      </div>
+      <div class="ctx-card">
+        <div class="ctx-card-label">Wo wir reinpassen</div>
+        <p>Digitale Ansprache als Grundwerk-Staerke. Technology-Stack, KI-Workflows, 1:1-Kontaktierung. Nicht Beratungstiefe — das ist Euer Part.</p>
+      </div>
+    </div>
+
+    <div class="quote">
+      &bdquo;Ich will jetzt erstmal ein Briefing von dir haben [...] biete ich dir an, dass man in 14 Tagen noch mal guckt, dass du mir einfach konkret sagst: das sind die 3 Themen — oder nichts Neues.&ldquo;
+      <span class="quote-attr">— Thomas Berns, 30.03.2026</span>
+    </div>
+  </div>
+</section>
+
+<section class="taktik-section">
+  <div class="container">
+    <div class="section-label">Meine Vorschlaege</div>
+    <h2 class="section-title">Drei Taktiken. Jede fuer sich <span>buchbar und messbar.</span></h2>
+    <p class="section-sub">Keine &quot;Big Bang&quot;-Strategie. Drei abgegrenzte Angles mit unterschiedlichem Risiko, Aufwand und Signal-Staerke. Ich wuerde mit Taktik 1 starten — sie hat das klarste Intent-Signal und ist am schnellsten testbar.</p>
+
+    <div class="taktik-grid">
+
+      <!-- TAKTIK 1 -->
+      <div class="taktik">
+        <div class="taktik-head">
+          <div class="taktik-num">01</div>
+          <div class="taktik-head-text">
+            <span class="taktik-tag tag-hot">Hoechstes Intent-Signal</span>
+            <h3>Stellenanzeigen-Trigger: ESG-Manager-Sucher ansprechen</h3>
+            <div class="taktik-angle">&bdquo;Ihr sucht eine Vollzeit-Stelle, die durch die Regulatorik-Lockerung nicht mehr ausgelastet wird.&ldquo;</div>
+          </div>
+        </div>
+
+        <div class="taktik-body">
+          <div class="taktik-block">
+            <h4>So funktioniert&#39;s</h4>
+            <ul>
+              <li>Scraping aller offenen ESG-/Nachhaltigkeitsmanager-Stellen in DACH (Indeed, LinkedIn Jobs, Stepstone, Unternehmensseiten)</li>
+              <li>Anreicherung: Geschaeftsfuehrung, CFO oder Head of HR als Entscheider</li>
+              <li>Personalisierte E-Mail plus LinkedIn-Impuls binnen 48h nach Stellenschaltung</li>
+              <li>Angle: &quot;25%-Auslastungs-Problem&quot; — Regulatorik gelockert, Vollzeit-Stelle schwer zu rechnen</li>
+            </ul>
+          </div>
+          <div class="taktik-block">
+            <h4>Warum das funktioniert</h4>
+            <ul>
+              <li>Offene Stelle = bewiesener Bedarf, klares Timing</li>
+              <li>Zielgruppe exakt Mittelstand (Konzerne haben ESG-Teams, Kleine suchen nicht aktiv)</li>
+              <li>Botschaft zahlt 1:1 auf die aktuelle Marktlage ein, statt gegen sie zu arbeiten</li>
+              <li>Volumen realistisch: ~100-250 offene Stellen/Monat in DACH adressierbar</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="taktik-pitch">
+          <strong>Beispiel-Opening (Entwurf)</strong>
+          Hallo Herr Mueller — Ihre Stellenausschreibung zum ESG-Manager ist mir aufgefallen. Unter der Hand: Durch die CSRD-Lockerung bekommen viele Mittelstaendler die Auslastung fuer eine Vollzeit-Stelle nicht mehr rund. Wir betreuen das Thema seit Jahren als externes Team — bei Bedarf eine kurze Demo, wie ESG-as-a-Service bei einem vergleichbaren Unternehmen aussieht.
+        </div>
+
+        <div class="taktik-metrics">
+          <div class="metric"><strong>~150/Monat</strong>Adressierbare Trigger DACH</div>
+          <div class="metric"><strong>4-6 Wochen</strong>Bis erster Termin</div>
+          <div class="metric"><strong>Mittel</strong>Setup-Aufwand</div>
+        </div>
+      </div>
+
+      <!-- TAKTIK 2 -->
+      <div class="taktik">
+        <div class="taktik-head">
+          <div class="taktik-num">02</div>
+          <div class="taktik-head-text">
+            <span class="taktik-tag tag-warm">Nische mit Eurem Vertrauens-Bonus</span>
+            <h3>Reifen-Use-Case: Eigene Branche als Case-Study ausbauen</h3>
+            <div class="taktik-angle">&bdquo;Ihr kennt die Branche schon — jetzt bringt Ihr den Kreislaufwirtschaft-Layer ein.&ldquo;</div>
+          </div>
+        </div>
+
+        <div class="taktik-body">
+          <div class="taktik-block">
+            <h4>So funktioniert&#39;s</h4>
+            <ul>
+              <li>Klar umrissene Zielgruppe: Reifenhersteller, -haendler, -entsorger in DACH (~80-150 Firmen)</li>
+              <li>Doppel-Angle: Executive-Search-Referenz als Tueroeffner, Kreislaufwirtschafts-Expertise als Inhalt</li>
+              <li>Whitepaper &bdquo;Reifen-Kreislaufwirtschaft 2026 — Was jetzt Pflicht wird&ldquo; als Gesprächsaufhänger</li>
+              <li>Kleinserie, jede Ansprache qualitativ — keine Massenwelle</li>
+            </ul>
+          </div>
+          <div class="taktik-block">
+            <h4>Warum das funktioniert</h4>
+            <ul>
+              <li>Ihr habt bereits Vertrauen und Daten in der Branche (5-6 Executive-Search-Kunden)</li>
+              <li>Kleine Zielgruppe ist kein Nachteil — erlaubt maximale Personalisierung</li>
+              <li>Reifen-Entsorgung ist zigmillionenschwerer Markt mit realem Regulierungsdruck</li>
+              <li>Eine echte Case-Study aus dieser Runde macht Taktik 3 und weitere Nischen moeglich</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="taktik-pitch">
+          <strong>Beispiel-Opening (Entwurf)</strong>
+          Herr [Name], wir kennen uns aus dem Personalbereich — MC Marketing vermittelt seit Jahren Fuehrungskraefte in der Reifenbranche. Parallel haben wir in den letzten 12 Monaten mit einem Ingenieurs-Team unser Kreislaufwirtschafts-Produkt ausgebaut. Fuer Reifenhersteller und -haendler zunehmend relevant: Entsorgungs-Footprint und ESG-Reporting. Ein 20-minuetiger Blick drauf — ja oder nein?
+        </div>
+
+        <div class="taktik-metrics">
+          <div class="metric"><strong>80-150</strong>Firmen DACH</div>
+          <div class="metric"><strong>6-8 Wochen</strong>Bis Case-Study-Pilot</div>
+          <div class="metric"><strong>Hoch</strong>Strategischer Wert</div>
+        </div>
+      </div>
+
+      <!-- TAKTIK 3 -->
+      <div class="taktik">
+        <div class="taktik-head">
+          <div class="taktik-num">03</div>
+          <div class="taktik-head-text">
+            <span class="taktik-tag tag-exp">Experimentell, schnelles Feedback</span>
+            <h3>Supply-Chain-Druck: Wenn Kunden/Banken ESG fordern, auch ohne Gesetz</h3>
+            <div class="taktik-angle">&bdquo;Die Pflicht ist weg, der Druck nicht.&ldquo;</div>
+          </div>
+        </div>
+
+        <div class="taktik-body">
+          <div class="taktik-block">
+            <h4>So funktioniert&#39;s</h4>
+            <ul>
+              <li>Zielgruppe: Mittelstaendler (250-500 MA), die Zulieferer sind fuer grosse CSRD-pflichtige Konzerne</li>
+              <li>Identifikation ueber Branchen-Filter + oeffentliche Kundenlisten + Banken-Exposure</li>
+              <li>Angle: &bdquo;Eure Kunden verlangen ESG-Daten. Gesetz weg, Anforderung bleibt — wer macht das bei Euch?&ldquo;</li>
+              <li>Kombinierbar mit Taktik 1 — gleicher Kanal, andere Botschaft</li>
+            </ul>
+          </div>
+          <div class="taktik-block">
+            <h4>Warum das funktioniert</h4>
+            <ul>
+              <li>Dreht die schlechte Marktlage zum Vorteil: &quot;Ihr spart die Festanstellung — müsst aber liefern.&quot;</li>
+              <li>Druck von Kunden und Hausbanken ist real und steigt</li>
+              <li>Messbar: Wir koennen im ersten Monat sehen, ob die Response-Rate ueber Taktik 1 liegt</li>
+              <li>Falls die Response schwach bleibt — klares Signal, Produkt auf anderen Kanal zu shiften</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="taktik-pitch">
+          <strong>Beispiel-Opening (Entwurf)</strong>
+          Hallo Herr [Name], kurze Frage: Bekommt Ihr aktuell ESG-Fragebogen von Euren groesseren Kunden oder von der Hausbank? Die gesetzliche Pflicht ist fuer Euch entfallen — die Anforderung der Abnehmer nicht. Wir uebernehmen das fuer Mittelstaendler als externes Team, damit kein Mitarbeiter dafuer eingestellt werden muss. Kurz drueber sprechen?
+        </div>
+
+        <div class="taktik-metrics">
+          <div class="metric"><strong>~2.000</strong>Zielfirmen DACH</div>
+          <div class="metric"><strong>4 Wochen</strong>Bis erstes Signal</div>
+          <div class="metric"><strong>Niedrig</strong>Zusaetzlicher Setup</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">Ehrliche Einschaetzung</div>
+    <h2 class="section-title">Wo ich Chancen sehe — <span>und wo nicht.</span></h2>
+    <p class="section-sub">Du hast beim letzten Call klar gesagt: lieber &quot;mir faellt nichts ein&quot; als Schoenreden. Hier mein ehrliches Abwaegen.</p>
+
+    <div class="real-box">
+      <h3>Pro vs. Contra aus meiner Sicht</h3>
+      <div class="real-row">
+        <div class="real-col for">
+          <h4>Was fuer eine Zusammenarbeit spricht</h4>
+          <ul>
+            <li>Reifen-Nische ist ein echter Joker — Kombination aus bestehendem Branchen-Vertrauen und neuem Produkt-Angle, die sonst niemand so hat</li>
+            <li>ESG-Stellenanzeigen-Trigger funktioniert in verwandten B2B-Maerkten gut — es ist ein Signal, nicht nur eine Vermutung</li>
+            <li>Eure Produkt-Substanz (Herbert, KI-Diagnostik, Uni-Kooperationen) ist weit ueber Durchschnitt. Inhaltlich gibt&#39;s genug, worueber man reden kann</li>
+            <li>Wir koennen klein starten: EIN Angle, 6-8 Wochen, klares Abbruch-Kriterium</li>
+          </ul>
+        </div>
+        <div class="real-col against">
+          <h4>Was gegen eine Zusammenarbeit spricht</h4>
+          <ul>
+            <li>Marktlage ist objektiv rau — Lockerung reduziert akuten Handlungsdruck bei einem Grossteil der potenziellen Kunden</li>
+            <li>Mittelstand kauft bei &quot;nice to have&quot; gerade extrem zurueckhaltend ein. Das ist real, und kein Outbound-Setup aendert das</li>
+            <li>Euer Sales-Zyklus bei ESG-Projekten ist vermutlich lang (Vertrauensaufbau, Beratungsverkauf) — Outbound liefert Leads, keine fertigen Abschluesse</li>
+            <li>Wir muessten uns inhaltlich einarbeiten — Messaging &amp; Objection-Handling brauchen Eure Expertise, sonst wird&#39;s flach</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="steps-section">
+  <div class="container">
+    <div class="section-label">Naechste Schritte</div>
+    <h2 class="section-title">Mein <span>Vorschlag</span> fuer heute</h2>
+    <p class="section-sub">Kein fertiges Angebot — das waere nach diesem Gespraech unehrlich. Stattdessen ein Weg, wie wir validieren, ob das Setup ueberhaupt Sinn macht, bevor Ihr Budget bindet.</p>
+
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">Heute</div>
+        <h4>Taktik-Priorisierung gemeinsam</h4>
+        <p>Wir gehen die drei Taktiken durch. Du sagst, welche fuer Euch marktlich und wirtschaftlich Sinn macht. Moeglich: eine, zwei oder keine.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">Woche 1-2</div>
+        <h4>Messaging-Sprint mit Herbert</h4>
+        <p>Wenn eine Taktik bleibt: ein 90-Min-Workshop mit Herbert und mir, um Messaging &amp; ICP wasserdicht zu machen. Ohne das startet nichts.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">Woche 3-6</div>
+        <h4>Pilot mit klarem Abbruch-Kriterium</h4>
+        <p>Kleiner Pilot auf EINE Taktik, 4 Wochen Laufzeit, fixer Deal: erreichen wir definierte KPI — weiter. Wenn nicht — Stop, keine Nachverhandlung.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">Ab Woche 7</div>
+        <h4>Skalierung oder ehrliches Ende</h4>
+        <p>Funktioniert&#39;s, bauen wir aus. Funktioniert&#39;s nicht, bekommst Du von mir eine schriftliche Einschaetzung, warum — damit Ihr was davon habt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Grundwerk Digital GmbH &middot; Pappelallee 78/79, 10437 Berlin &middot; <a href="mailto:anthony@grundwerk.digital">anthony@grundwerk.digital</a>
+</footer>
+
+</body>
+</html>
