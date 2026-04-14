@@ -684,10 +684,9 @@
 <div class="tab-bar">
     <button class="tab-btn active" data-tab="hello"     onclick="switchTab('hello')">    <span class="tab-emoji">👋</span> Willkommen</button>
     <button class="tab-btn"        data-tab="situation" onclick="switchTab('situation')"><span class="tab-emoji">🎯</span> Situation</button>
-    <button class="tab-btn"        data-tab="system"    onclick="switchTab('system')">   <span class="tab-emoji">🚀</span> Das System</button>
-    <button class="tab-btn"        data-tab="results"   onclick="switchTab('results')">  <span class="tab-emoji">📊</span> Ergebnisse</button>
-    <button class="tab-btn"        data-tab="invest"    onclick="switchTab('invest')">   <span class="tab-emoji">💰</span> Investition</button>
     <button class="tab-btn"        data-tab="strategy"  onclick="switchTab('strategy')"> <span class="tab-emoji">🧠</span> Strategie</button>
+    <button class="tab-btn"        data-tab="invest"    onclick="switchTab('invest')">   <span class="tab-emoji">💰</span> Investition</button>
+    <button class="tab-btn"        data-tab="system"    onclick="switchTab('system')">   <span class="tab-emoji">🚀</span> System &amp; Ergebnisse</button>
     <button class="tab-btn"        data-tab="plan"      onclick="switchTab('plan')">     <span class="tab-emoji">🗺️</span> Aktionsplan</button>
     <button class="tab-btn"        data-tab="booking"   onclick="switchTab('booking')">  <span class="tab-emoji">📅</span> Termin</button>
 </div>
@@ -895,20 +894,11 @@
                 </div>
             </div>
 
-        </div>
-    </div>
-</div>
-
-<!-- ═══════════════════════════════════════════════════ -->
-<!-- TAB 4 — ERGEBNISSE (100% STATIC FROM TEMPLATE)     -->
-<!-- ═══════════════════════════════════════════════════ -->
-<div class="panel" id="panel-results">
-    <div class="panel-inner">
-        <div class="container">
-
-            <span class="section-label" style="display:inline-block;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent);font-weight:600;">Nachgewiesene Ergebnisse</span>
-            <h2 style="font-size:2rem;font-weight:800;margin:12px 0 8px;">Was andere B2B-Unternehmen damit erreicht haben</h2>
-            <p class="lead" style="max-width:560px;margin-bottom:32px;line-height:1.7;color:var(--text-muted);font-size:0.95rem;">Echte Zahlen aus aktiven Projekten &mdash; von Startups bis Mittelstand.</p>
+            <!-- ── Ergebnisse (merged) ── -->
+            <div style="margin-top:48px;padding-top:48px;border-top:1px solid var(--border);">
+                <span class="section-label" style="display:inline-block;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent);font-weight:600;">Nachgewiesene Ergebnisse</span>
+                <h3 style="font-size:1.5rem;font-weight:800;margin:12px 0 8px;">Was andere B2B-Unternehmen damit erreicht haben</h3>
+                <p style="max-width:560px;margin-bottom:32px;line-height:1.7;color:var(--text-muted);font-size:0.95rem;">Echte Zahlen aus aktiven Projekten &mdash; von Startups bis Mittelstand.</p>
 
             <!-- ── Kunden-Logo Ticker ── -->
             <div class="logo-ticker-section" style="padding:10px 0 20px;overflow:hidden;">
@@ -1008,6 +998,7 @@
                 </div>
             </div>
 
+            </div><!-- /merged Ergebnisse -->
 
         </div>
     </div>
@@ -1473,7 +1464,7 @@
 </footer>
 
 <script>
-    const TABS = ['hello', 'situation', 'system', 'results', 'invest', 'strategy', 'plan', 'booking'];
+    const TABS = ['hello', 'situation', 'strategy', 'invest', 'system', 'plan', 'booking'];
 
     function switchTab(id) {
         TABS.forEach(t => {
