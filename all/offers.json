@@ -1,5 +1,14 @@
 [
   {
+    "slug": "tomorrow-university",
+    "name": "Tomorrow University",
+    "subtitle": "Gianluca Muscas — Tech Fellowship Lead-Pipeline, 4 Monate",
+    "type": "offer",
+    "secure": "7432918650",
+    "icon": "🎓",
+    "created": "2026-04-15"
+  },
+  {
     "slug": "biogastechnik-sued-v3",
     "name": "Biogastechnik Süd GmbH",
     "subtitle": "Josef Schele — Close CRM Setup, Anfragen-Automation, Bestandskunden-Aktivierung",
