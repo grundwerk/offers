@@ -1,0 +1,719 @@
+<!-- GRUNDWERK-OFFER v1 | 2026-04-15 | Initial deploy Tomorrow University -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII=">
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII=">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="offer-version" content="v1 | 2026-04-15">
+    <title>Tomorrow University x Grundwerk &mdash; Angebot</title>
+    <script>
+        (function(){
+            var code = '7432918650';
+            var params = new URLSearchParams(window.location.search);
+            if(params.get('secure') !== code){
+                document.documentElement.style.display='none';
+                document.title='Zugriff verweigert';
+                window.stop();
+            }
+        })();
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        :root {
+            --bg: #0a0a0a;
+            --bg-card: #111111;
+            --bg-card-hover: #161616;
+            --text: #f0f0f0;
+            --text-muted: #888;
+            --text-dim: #666;
+            --accent: #4f7df9;
+            --accent-glow: rgba(79, 125, 249, 0.15);
+            --green: #22c55e;
+            --green-glow: rgba(34, 197, 94, 0.15);
+            --red: #ef4444;
+            --red-dim: rgba(239, 68, 68, 0.15);
+            --yellow: #eab308;
+            --border: rgba(255, 255, 255, 0.06);
+            --border-accent: rgba(79, 125, 249, 0.3);
+            --radius: 16px;
+            --radius-sm: 10px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,10,10,0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+        .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo { font-weight: 700; font-size: 0.95rem; letter-spacing: -0.02em; }
+        .nav-cta { background: var(--accent); color: #fff; padding: 0.5rem 1.25rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: opacity 0.2s; }
+        .nav-cta:hover { opacity: 0.85; }
+
+        section { padding: 100px 2rem; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 600; margin-bottom: 0.75rem; }
+        .section-title { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 1.25rem; }
+        .section-subtitle { color: var(--text-muted); font-size: 1.05rem; max-width: 700px; line-height: 1.7; }
+        .gradient-text { background: linear-gradient(135deg, var(--accent), #3b7de0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* HERO */
+        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 100px; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: -50%; left: 50%; transform: translateX(-50%); width: 800px; height: 800px; background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%); pointer-events: none; }
+        .hero::after { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 60px 60px; mask-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 40%, transparent 75%); -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 40%, transparent 75%); pointer-events: none; }
+        .hero-content { position: relative; z-index: 1; max-width: 900px; }
+        .hero-brand { display: inline-block; padding: 0.5rem 1.25rem; border: 1px solid var(--border); border-radius: 100px; font-size: 0.85rem; font-weight: 600; color: var(--text-muted); margin-bottom: 2rem; background: rgba(255,255,255,0.02); }
+        .hero-brand span { color: var(--accent); }
+        .hero h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 1.25rem; }
+        .hero p { color: var(--text-muted); font-size: 1.15rem; max-width: 680px; margin: 0 auto 2.5rem; line-height: 1.7; }
+        .hero-ctas { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .btn-primary { background: var(--accent); color: #fff; padding: 0.85rem 2rem; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: all 0.2s; border: none; cursor: pointer; display: inline-block; }
+        .btn-primary:hover { opacity: 0.85; transform: translateY(-1px); }
+        .btn-secondary { background: transparent; color: var(--text); padding: 0.85rem 2rem; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 1rem; border: 1px solid var(--border); transition: all 0.2s; display: inline-block; }
+        .btn-secondary:hover { border-color: var(--text-muted); }
+
+        /* STAT BAR */
+        .stat-bar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        .stat-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; text-align: center; }
+        .stat-number { font-size: 2.5rem; font-weight: 800; color: var(--accent); letter-spacing: -0.03em; }
+        .stat-label { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.25rem; }
+
+        /* PROBLEM */
+        .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
+        .problem-cards { display: flex; flex-direction: column; gap: 1.25rem; }
+        .problem-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; display: flex; gap: 1rem; align-items: flex-start; }
+        .problem-card .icon { font-size: 1.5rem; flex-shrink: 0; width: 44px; height: 44px; background: var(--red-dim); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; }
+        .problem-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.35rem; }
+        .problem-card p { color: var(--text-muted); font-size: 0.9rem; }
+        .solution-box { background: linear-gradient(135deg, var(--accent-glow), rgba(79, 125, 249, 0.05)); border: 1px solid var(--border-accent); border-radius: var(--radius); padding: 2.5rem; display: flex; flex-direction: column; justify-content: center; }
+        .solution-box h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 1rem; color: var(--accent); }
+        .solution-box p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem; }
+        .solution-box .highlight { color: var(--text); font-weight: 700; }
+
+        /* QUOTES */
+        .quote-box { background: var(--bg-card); border-left: 3px solid var(--accent); border-radius: var(--radius-sm); padding: 1.25rem 1.5rem; margin-top: 1.5rem; font-style: italic; color: var(--text-muted); font-size: 0.9rem; }
+        .quote-box .quote-author { display: block; margin-top: 0.5rem; color: var(--text-dim); font-size: 0.8rem; font-style: normal; }
+
+        /* PROCESS */
+        .process-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.25rem; margin-top: 3rem; }
+        .process-step { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem 1.25rem; text-align: center; }
+        .step-num { width: 40px; height: 40px; background: var(--accent); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1rem; margin: 0 auto 1rem; }
+        .process-step h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .process-step p { color: var(--text-muted); font-size: 0.8rem; }
+
+        /* CAMPAIGN */
+        .campaign-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 3rem; }
+        .campaign-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; }
+        .campaign-card .card-icon { font-size: 2rem; margin-bottom: 1rem; }
+        .campaign-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .campaign-card .target { color: var(--accent); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem; }
+        .campaign-card p { color: var(--text-muted); font-size: 0.9rem; }
+
+        /* OFFER */
+        .offer-wrap { margin-top: 3rem; display: flex; justify-content: center; }
+        .offer-card { background: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius); padding: 2.75rem; position: relative; max-width: 680px; width: 100%; background: linear-gradient(180deg, rgba(79, 125, 249, 0.08) 0%, var(--bg-card) 40%); }
+        .offer-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #fff; padding: 0.35rem 1.25rem; border-radius: 20px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+        .offer-card h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem; }
+        .offer-card .offer-desc { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.75rem; }
+        .offer-price { display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.25rem; }
+        .offer-price .amount { font-size: 2.8rem; font-weight: 800; letter-spacing: -0.03em; }
+        .offer-price .period { color: var(--text-muted); font-size: 0.95rem; }
+        .offer-price-detail { color: var(--text-dim); font-size: 0.85rem; margin-bottom: 2rem; padding-bottom: 1.75rem; border-bottom: 1px solid var(--border); }
+        .offer-setup { display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.03); padding: 0.9rem 1.15rem; border-radius: var(--radius-sm); margin-bottom: 1.75rem; font-size: 0.9rem; }
+        .offer-setup .setup-label { color: var(--text-muted); }
+        .offer-setup .setup-val { font-weight: 700; color: var(--text); }
+        .offer-features { list-style: none; margin-bottom: 1.75rem; }
+        .offer-features li { color: var(--text); font-size: 0.92rem; padding: 0.5rem 0; padding-left: 1.75rem; position: relative; }
+        .offer-features li::before { content: '\2713'; color: var(--green); position: absolute; left: 0; font-weight: 800; font-size: 1rem; }
+        .offer-total { background: var(--green-glow); border: 1px solid rgba(34, 197, 94, 0.25); border-radius: var(--radius-sm); padding: 1rem 1.25rem; text-align: center; margin-bottom: 1.25rem; }
+        .offer-total .total-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 0.25rem; }
+        .offer-total .total-amount { font-size: 1.5rem; font-weight: 800; color: var(--green); }
+        .offer-footer { text-align: center; color: var(--text-dim); font-size: 0.8rem; }
+
+        /* FORECAST */
+        .forecast-table { width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 3rem; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); }
+        .forecast-table th, .forecast-table td { padding: 1rem 1.25rem; text-align: left; border-bottom: 1px solid var(--border); }
+        .forecast-table th { background: var(--bg-card); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); }
+        .forecast-table td { background: var(--bg); font-size: 0.95rem; }
+        .forecast-table tr:last-child td { border-bottom: none; font-weight: 700; background: var(--bg-card); }
+        .forecast-note { color: var(--text-dim); font-size: 0.8rem; margin-top: 0.75rem; text-align: right; }
+
+        /* ROI */
+        .roi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 3rem; }
+        .roi-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; text-align: center; }
+        .roi-card.highlight { border-color: var(--border-accent); background: linear-gradient(180deg, rgba(79, 125, 249, 0.1) 0%, var(--bg-card) 40%); }
+        .roi-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 0.75rem; font-weight: 600; }
+        .roi-value { font-size: 2.2rem; font-weight: 800; color: var(--green); letter-spacing: -0.03em; line-height: 1; margin-bottom: 0.5rem; }
+        .roi-detail { color: var(--text-muted); font-size: 0.82rem; line-height: 1.5; }
+
+        /* COMPARISON */
+        .comparison-table { width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 3rem; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); }
+        .comparison-table th, .comparison-table td { padding: 1rem 1.25rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+        .comparison-table th { background: var(--bg-card); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); font-size: 0.78rem; }
+        .comparison-table td { background: var(--bg); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .cell-bad { color: var(--red); font-weight: 600; }
+        .cell-good { color: var(--green); font-weight: 600; }
+        .cell-meh { color: var(--yellow); font-weight: 600; }
+
+        /* TEAM */
+        .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 3rem; }
+        .team-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; text-align: center; }
+        .team-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+        .team-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .team-card p { color: var(--text-muted); font-size: 0.85rem; }
+
+        /* BONUS */
+        .bonus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-top: 3rem; }
+        .bonus-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; display: flex; gap: 1rem; align-items: flex-start; }
+        .bonus-icon { font-size: 1.5rem; flex-shrink: 0; width: 44px; height: 44px; background: var(--accent-glow); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; }
+        .bonus-item h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.3rem; }
+        .bonus-item p { color: var(--text-muted); font-size: 0.82rem; }
+
+        /* TIMELINE */
+        .timeline { margin-top: 3rem; position: relative; padding-left: 2rem; }
+        .timeline::before { content: ''; position: absolute; left: 8px; top: 12px; bottom: 12px; width: 2px; background: var(--border); }
+        .timeline-item { position: relative; padding: 0.5rem 0 2rem 2rem; }
+        .timeline-item::before { content: ''; position: absolute; left: -2rem; top: 0.8rem; width: 18px; height: 18px; border-radius: 50%; background: var(--accent); border: 3px solid var(--bg); box-shadow: 0 0 0 1px var(--border-accent); }
+        .timeline-item:last-child { padding-bottom: 0; }
+        .timeline-item h4 { font-size: 1rem; font-weight: 700; margin-bottom: 0.35rem; }
+        .timeline-item .time-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); font-weight: 600; margin-bottom: 0.25rem; }
+        .timeline-item p { color: var(--text-muted); font-size: 0.9rem; }
+        .timeline-highlight { background: linear-gradient(135deg, var(--green-glow), transparent); border: 1px solid rgba(34, 197, 94, 0.2); border-radius: var(--radius); padding: 1.5rem 2rem; margin-top: 2.5rem; }
+        .timeline-highlight h4 { font-weight: 700; font-size: 1.05rem; margin-bottom: 0.25rem; color: var(--green); }
+        .timeline-highlight p { color: var(--text-muted); font-size: 0.9rem; }
+
+        /* CTA */
+        .cta { text-align: center; }
+        .cta h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 1rem; }
+        .cta p { color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto 2rem; }
+        .cta-contact { margin-top: 2.5rem; color: var(--text-dim); font-size: 0.9rem; line-height: 1.8; }
+        .cta-contact a { color: var(--text-muted); text-decoration: none; border-bottom: 1px solid var(--border); transition: color 0.2s; }
+        .cta-contact a:hover { color: var(--accent); }
+        .cta-box { background: linear-gradient(135deg, var(--accent-glow), rgba(79, 125, 249, 0.02)); border: 1px solid var(--border-accent); border-radius: var(--radius); padding: 2rem; margin-top: 2rem; display: inline-block; text-align: left; }
+        .cta-box .cta-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); font-weight: 600; margin-bottom: 0.35rem; }
+        .cta-box h4 { font-weight: 700; font-size: 1.05rem; margin-bottom: 0.3rem; }
+        .cta-box p { color: var(--text-muted); font-size: 0.9rem; margin: 0; }
+
+        /* FOOTER */
+        footer { text-align: center; padding: 2.5rem 2rem; color: var(--text-dim); font-size: 0.85rem; border-top: 1px solid var(--border); }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .problem-grid, .offer-grid { grid-template-columns: 1fr; }
+            .process-steps { grid-template-columns: repeat(2, 1fr); }
+            .team-grid, .roi-grid { grid-template-columns: 1fr; }
+            .stat-bar { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 600px) {
+            section { padding: 60px 1.25rem; }
+            .process-steps { grid-template-columns: 1fr; }
+            .offer-card { padding: 1.75rem; }
+            .nav-inner { padding: 0 1.25rem; }
+            .forecast-table th, .forecast-table td,
+            .comparison-table th, .comparison-table td { padding: 0.7rem 0.5rem; font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-inner">
+        <div class="nav-logo">Tomorrow University &times; Grundwerk</div>
+        <a href="#angebot" class="nav-cta">Zum Angebot</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-brand">Tomorrow University <span>&times;</span> Grundwerk Digital</div>
+        <h1>Planbarer Lead-Flow f&uuml;r dein <span class="gradient-text">Tech Fellowship</span></h1>
+        <p>Hey Gianluca &mdash; hier findest du alles, was du brauchst, um intern zu entscheiden, ob Grundwerk der richtige Partner ist, um deine n&auml;chsten drei Kohorten zu f&uuml;llen und dein Jahresziel von 1,2 Mio. EUR zu erreichen.</p>
+        <div class="hero-ctas">
+            <a href="#angebot" class="btn-primary">Angebot ansehen</a>
+            <a href="#prozess" class="btn-secondary">Wie funktioniert das?</a>
+        </div>
+    </div>
+</section>
+
+<!-- STAT BAR -->
+<section style="padding-top: 0;">
+    <div class="container">
+        <div class="stat-bar fade-in" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
+            <div class="stat-item">
+                <div class="stat-number">10 Mio.+</div>
+                <div class="stat-label">E-Mails versendet</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Erfolgreiche B2B-Projekte</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">75+</div>
+                <div class="stat-label">Tools &amp; Datenanbieter</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROBLEM -->
+<section>
+    <div class="container">
+        <div class="fade-in">
+            <div class="section-label">Deine Situation</div>
+            <h2 class="section-title">Warme Kontakte sind endlich. Deine Kohorten nicht.</h2>
+            <p class="section-subtitle">80 Meetings in 3&ndash;4 Monaten, 15 Abschl&uuml;sse, 50 Teilnehmer &mdash; aber alles aus dem warmen Netzwerk. Quartal f&uuml;r Quartal wird diese Quelle leerer, und du bist alleine im Vertrieb.</p>
+        </div>
+
+        <div class="problem-grid fade-in" style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;">
+            <div class="problem-cards">
+                <div class="problem-card">
+                    <div class="icon">&#x23F3;</div>
+                    <div>
+                        <h3>Warme Kontakte sind erschöpft</h3>
+                        <p>Die 80 Meetings kamen von Kollegen, Followern und bestehenden Verbindungen. F&uuml;r die n&auml;chsten drei Kohorten brauchst du Entscheider, die Tomorrow University noch nicht kennen.</p>
+                    </div>
+                </div>
+                <div class="problem-card">
+                    <div class="icon">&#x2716;</div>
+                    <div>
+                        <h3>Cold Outreach funktioniert (noch) nicht</h3>
+                        <p>Du hast es probiert &mdash; &bdquo;wenig bis gar nichts&ldquo; kam zur&uuml;ck. Ohne die richtige Infrastruktur, Personalisierung und das n&ouml;tige Volumen landet alles im Spam oder wird ignoriert.</p>
+                    </div>
+                </div>
+                <div class="problem-card">
+                    <div class="icon">&#x23F0;</div>
+                    <div>
+                        <h3>2&ndash;3 Tage pro Woche gehen f&uuml;r Recherche drauf</h3>
+                        <p>Du willst Meetings f&uuml;hren und abschlie&szlig;en. Stattdessen geht die halbe Woche f&uuml;r Zielgruppenrecherche, Copy und Nachfassen drauf &mdash; Zeit, die du im Pitch verlierst.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="solution-box">
+                <h3>Die Lösung: Inbound-Feeling durch Outbound-Maschine</h3>
+                <p>Du wolltest Inbound-Leads &mdash; Leute, die auf deiner Webseite landen und sich melden. Wir liefern das Gef&uuml;hl genau so: Du siehst nur die <span class="highlight">interessierten, qualifizierten Replies</span> in deiner Master-Inbox. Den Rest &mdash; Zielgruppenrecherche, Entscheider-Identifikation, Personalisierung, Zustellbarkeit &mdash; &uuml;bernehmen wir.</p>
+                <p>Statt 50&ndash;130 Nachrichten pro Monat manuell &uuml;ber LinkedIn versenden wir <span class="highlight">20.000 hochgradig personalisierte E-Mails pro Monat</span> an L&amp;D-Entscheider, COOs und HR-Leads, die Tomorrow University noch nicht kennen.</p>
+                <div class="quote-box">
+                    &bdquo;Ich m&ouml;chte jetzt nicht unbedingt nur per LinkedIn aussenden, sondern wir m&ouml;chten eigentlich das generieren, dass wir ab einem gewissen Zeitpunkt gen&uuml;gend Inbound Leads generieren.&ldquo;
+                    <span class="quote-author">&mdash; Gianluca Muscas, Tomorrow University</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESS -->
+<section id="prozess">
+    <div class="container">
+        <div class="fade-in">
+            <div class="section-label">So läuft es ab</div>
+            <h2 class="section-title">In 5 Schritten vom Prospect zum qualifizierten Lead</h2>
+            <p class="section-subtitle">Dein Teil: Meetings f&uuml;hren und abschlie&szlig;en. Unser Teil: Alles davor.</p>
+        </div>
+
+        <div class="process-steps fade-in" style="display:grid;grid-template-columns:repeat(5,1fr);gap:1.25rem;">
+            <div class="process-step">
+                <div class="step-num">1</div>
+                <h4>Zielgruppe</h4>
+                <p>L&amp;D-Departments in KMU 10&ndash;50 MA, Mittelstand, C-Level bei kleinen Firmen</p>
+            </div>
+            <div class="process-step">
+                <div class="step-num">2</div>
+                <h4>Entscheider</h4>
+                <p>COOs, Head of HR, L&amp;D-Specialists &mdash; identifiziert &uuml;ber 75+ Datenquellen</p>
+            </div>
+            <div class="process-step">
+                <div class="step-num">3</div>
+                <h4>Ansprache</h4>
+                <p>Hochgradig personalisierte E-Mails mit Variablen &mdash; jede wirkt wie handgeschrieben</p>
+            </div>
+            <div class="process-step">
+                <div class="step-num">4</div>
+                <h4>MasterInbox</h4>
+                <p>Alle positiven Replies zentralisiert, vorkategorisiert, direkt in dein CRM</p>
+            </div>
+            <div class="process-step">
+                <div class="step-num">5</div>
+                <h4>Warme Leads</h4>
+                <p>Du rufst durch, terminierst und schlie&szlig;t ab &mdash; 1&ndash;2 Stunden pro Tag reichen</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CAMPAIGN STRATEGY -->
+<section>
+    <div class="container">
+        <div class="fade-in">
+            <div class="section-label">Kampagnenstrategie</div>
+            <h2 class="section-title">Drei Zielgruppen, drei Kampagnen</h2>
+            <p class="section-subtitle">Basierend auf dem, was du im Call beschrieben hast &mdash; wir gehen dort rein, wo du die h&ouml;chste Abschlussquote hast.</p>
+        </div>
+
+        <div class="campaign-grid fade-in" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;">
+            <div class="campaign-card">
+                <div class="card-icon">&#x1F3AF;</div>
+                <div class="target">Primärzielgruppe</div>
+                <h3>KMU 10&ndash;50 Mitarbeiter</h3>
+                <p>Deine beste Abschlussquote. Entscheider: CEO / C-Level. Angle: Bildungsgutschein &amp; AZAV-Zertifizierung &mdash; 100% gef&ouml;rdert, keine Investition aus Firmenkasse.</p>
+            </div>
+            <div class="campaign-card">
+                <div class="card-icon">&#x1F4C8;</div>
+                <div class="target">Sekundärzielgruppe</div>
+                <h3>Mittelstand L&amp;D-Specialists</h3>
+                <p>Spricht die Entscheider-Vorstufe an. Angle: KI-Upskilling als Hebel f&uuml;r Produktivit&auml;t, projektbasiertes Lernen vs. klassische Theorie-Schulungen.</p>
+            </div>
+            <div class="campaign-card">
+                <div class="card-icon">&#x1F3DB;</div>
+                <div class="target">Strategiezielgruppe</div>
+                <h3>HR-Leads &amp; COOs</h3>
+                <p>F&uuml;r die Quartals-Kohorten ab Q3. Angle: Von Idee zu Outcome &mdash; Mitarbeiter bringen eigene Unternehmens-Problemstellungen mit, L&ouml;sung als Service-Strategie.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- OFFER -->
+<section id="angebot">
+    <div class="container">
+        <div class="fade-in" style="text-align:center;">
+            <div class="section-label">Dein Angebot</div>
+            <h2 class="section-title">Startpaket f&uuml;r Tomorrow University</h2>
+            <p class="section-subtitle" style="margin: 0 auto;">Ein individuell zugeschnittenes Paket &mdash; Cold Email-First, 20.000 E-Mails pro Monat, 4 Monate Mindestlaufzeit.</p>
+        </div>
+
+        <div class="offer-wrap fade-in">
+            <div class="offer-card" style="background:linear-gradient(180deg,rgba(79,125,249,0.08) 0%,var(--bg-card) 40%);border:1px solid rgba(79,125,249,0.3);border-radius:16px;padding:2.75rem;">
+                <div class="offer-badge">Empfohlen</div>
+                <h3>Grundwerk Cold Email Campaign</h3>
+                <p class="offer-desc">Ideal f&uuml;r dich, um ab September die n&auml;chsten drei Kohorten verl&auml;sslich zu f&uuml;llen.</p>
+
+                <div class="offer-price">
+                    <div class="amount">3.000&nbsp;&euro;</div>
+                    <div class="period">/ Monat</div>
+                </div>
+                <div class="offer-price-detail">netto &middot; 4 Monate Mindestlaufzeit</div>
+
+                <div class="offer-setup">
+                    <div class="setup-label">Einmaliges Setup</div>
+                    <div class="setup-val">1.990&nbsp;&euro; netto</div>
+                </div>
+
+                <ul class="offer-features">
+                    <li>20.000 hochgradig personalisierte E-Mails pro Monat</li>
+                    <li>10.000 kontaktierte Leads pro Monat (2 Touches: Mail + Follow-Up)</li>
+                    <li>ICP- &amp; Persona-Definition (L&amp;D, COOs, HR-Leads, C-Level)</li>
+                    <li>Komplettes Zielgruppen-Scraping &amp; Leadlisten-Aufbau</li>
+                    <li>Entscheider-Identifikation &uuml;ber 75+ Datenquellen (99,8% Aktualit&auml;t)</li>
+                    <li>Personalisierte Copy mit mehreren Variablen pro Lead</li>
+                    <li>MasterInbox &mdash; alle positiven Replies zentralisiert</li>
+                    <li>CRM-Integration f&uuml;r nahtlosen &Uuml;bergang in deinen Vertrieb</li>
+                    <li>Dedizierter Account Manager &amp; w&ouml;chentlicher Status-Call</li>
+                    <li>Reporting, Copy-Optimierung &amp; Deliverability-Monitoring</li>
+                </ul>
+
+                <div class="offer-total">
+                    <div class="total-label">Gesamtinvestment &uuml;ber 4 Monate</div>
+                    <div class="total-amount">13.990&nbsp;&euro; netto</div>
+                </div>
+                <div class="offer-footer">Setup 1.990&nbsp;&euro; + 4&times;3.000&nbsp;&euro; Retainer. Alle Preise netto zzgl. USt.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FORECAST -->
+<section>
+    <div class="container">
+        <div class="fade-in">
+            <div class="section-label">Lead-Prognose</div>
+            <h2 class="section-title">Was du in 4 Monaten erwarten kannst</h2>
+            <p class="section-subtitle">Konservativ kalkuliert auf Basis unserer Erfahrungswerte im Bildungsmarkt. Die erste Kampagne startet nach 1 Monat Setup &amp; Slow-Ramp-up.</p>
+        </div>
+
+        <table class="forecast-table fade-in" style="width:100%;border-collapse:separate;border-spacing:0;border:1px solid rgba(255,255,255,0.06);border-radius:16px;overflow:hidden;">
+            <thead>
+                <tr>
+                    <th>Monat</th>
+                    <th>Prospects kontaktiert</th>
+                    <th>Erwartete Leads</th>
+                    <th>Kumuliert</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Monat 1</strong> &mdash; Setup &amp; Slow-Ramp-up</td>
+                    <td>0 (Domain-Warmup)</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td><strong>Monat 2</strong> &mdash; Voll-Volumen</td>
+                    <td>10.000</td>
+                    <td>50&ndash;75</td>
+                    <td>50&ndash;75</td>
+                </tr>
+                <tr>
+                    <td><strong>Monat 3</strong></td>
+                    <td>10.000</td>
+                    <td>50&ndash;75</td>
+                    <td>100&ndash;150</td>
+                </tr>
+                <tr>
+                    <td><strong>Monat 4</strong></td>
+                    <td>10.000</td>
+                    <td>50&ndash;75</td>
+                    <td>150&ndash;225</td>
+                </tr>
+                <tr>
+                    <td><strong>Gesamt &uuml;ber 4 Monate</strong></td>
+                    <td><strong>30.000</strong></td>
+                    <td><strong>150&ndash;225</strong></td>
+                    <td><strong>150&ndash;225 Leads</strong></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="forecast-note">Reply Rate 6&ndash;7% &middot; davon ca. 20% mit Interesse &middot; konservativ kalkuliert.</div>
+    </div>
+</section>
+
+<!-- ROI -->
+<section>
+    <div class="container">
+        <div class="fade-in">
+            <div class="section-label">ROI-Kalkulation</div>
+            <h2 class="section-title">Was das f&uuml;r dein 1,2-Mio.-Ziel bedeutet</h2>
+            <p class="section-subtitle">Berechnet mit deinen eigenen Zahlen: 6.700 &euro; Ticketpreis, 18,75% Abschlussquote im Meeting (15 von 80 aus deinen Daten), 50% Terminierungsquote von positiven Replies.</p>
+        </div>
+
+        <div class="roi-grid fade-in" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;">
+            <div class="roi-card">
+                <div class="roi-label">Konservativ</div>
+                <div class="roi-value">73.700&nbsp;&euro;</div>
+                <div class="roi-detail">150 Leads &rarr; 75 Termine &rarr; 11 Abschl&uuml;sse &times; 6.700&nbsp;&euro;. <br><strong>ROI: 5,3&times;</strong> (bei 13.990 &euro; Invest)</div>
+            </div>
+            <div class="roi-card highlight" style="border:1px solid rgba(79,125,249,0.3);background:linear-gradient(180deg,rgba(79,125,249,0.1) 0%,var(--bg-card) 40%);">
+                <div class="roi-label">Realistisch</div>
+                <div class="roi-value">120.600&nbsp;&euro;</div>
+                <div class="roi-detail">185 Leads &rarr; 92 Termine &rarr; 18 Abschl&uuml;sse &times; 6.700&nbsp;&euro;. <br><strong>ROI: 8,6&times;</strong></div>
+            </div>
+            <div class="roi-card">
+                <div class="roi-label">Optimistisch</div>
+                <div class="roi-value">180.900&nbsp;&euro;</div>
+                <div class="roi-detail">225 Leads &rarr; 112 Termine &rarr; 27 Abschl&uuml;sse &times; 6.700&nbsp;&euro;. <br><strong>ROI: 12,9&times;</strong></div>
+            </div>
+        </div>
+        <div class="forecast-note" style="margin-top:1.5rem;">Break-Even: 3 Abschl&uuml;sse. Alles dar&uuml;ber hinaus ist netter Mehrwert f&uuml;r euer 1,2-Mio.-Ziel.</div>
+    </div>
+</section>
+
+<!-- COMPARISON -->
+<section>
+    <div class="container">
+        <div class="fade-in">
+            <div class="section-label">Vergleich</div>
+            <h2 class="section-title">LinkedIn manuell vs. Grundwerk Cold Email</h2>
+            <p class="section-subtitle">Was sich &auml;ndert, wenn du von manuellem LinkedIn-Outreach (dein aktueller Stand) auf eine gemanagte Cold-Email-Kampagne umstellst.</p>
+        </div>
+
+        <table class="comparison-table fade-in" style="width:100%;border-collapse:separate;border-spacing:0;border:1px solid rgba(255,255,255,0.06);border-radius:16px;overflow:hidden;">
+            <thead>
+                <tr>
+                    <th>Kriterium</th>
+                    <th>LinkedIn manuell (aktuell)</th>
+                    <th>Grundwerk Cold Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Nachrichten / Monat</td>
+                    <td class="cell-meh">50&ndash;130</td>
+                    <td class="cell-good">20.000</td>
+                </tr>
+                <tr>
+                    <td>Kontaktierte Leads / Monat</td>
+                    <td class="cell-meh">~130</td>
+                    <td class="cell-good">10.000</td>
+                </tr>
+                <tr>
+                    <td>Zeitaufwand im Team</td>
+                    <td class="cell-bad">2&ndash;3 Tage / Woche</td>
+                    <td class="cell-good">1&ndash;2 Stunden / Tag</td>
+                </tr>
+                <tr>
+                    <td>Zielgruppenabdeckung</td>
+                    <td class="cell-bad">Nur warme Kontakte</td>
+                    <td class="cell-good">Komplette Zielgruppe DACH</td>
+                </tr>
+                <tr>
+                    <td>Skalierbarkeit</td>
+                    <td class="cell-bad">Deckel bei ~35 Msgs/Tag/Account</td>
+                    <td class="cell-good">Bis 40.000 E-Mails / Monat</td>
+                </tr>
+                <tr>
+                    <td>Leads / Monat (erwartet)</td>
+                    <td class="cell-meh">25&ndash;30</td>
+                    <td class="cell-good">50&ndash;75</td>
+                </tr>
+                <tr>
+                    <td>Abh&auml;ngigkeit von Gianluca</td>
+                    <td class="cell-bad">Hoch &mdash; Single Point of Failure</td>
+                    <td class="cell-good">Keine &mdash; Pipeline l&auml;uft auch im Urlaub</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- TEAM -->
+<section>
+    <div class="container">
+        <div class="fade-in">
+            <div class="section-label">Wer für dich arbeitet</div>
+            <h2 class="section-title">Das Execution-Team hinter dem Erfolg</h2>
+            <p class="section-subtitle">Drei Expertenrollen, die jeden Tag an deiner Pipeline arbeiten &mdash; damit du dich auf Meetings und Abschl&uuml;sse konzentrieren kannst.</p>
+        </div>
+
+        <div class="team-grid fade-in" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;">
+            <div class="team-card">
+                <div class="team-icon">&#x1F464;</div>
+                <h3>Account Manager</h3>
+                <p>Strategie, w&ouml;chentliche Calls, Kampagnen-Optimierung und direkte Eskalationsstelle.</p>
+            </div>
+            <div class="team-card">
+                <div class="team-icon">&#x1F9EA;</div>
+                <h3>Clay Engineer</h3>
+                <p>Daten-Scraping, Leadlisten-Aufbau, Entscheider-Identifikation und Enrichment &uuml;ber 75+ Quellen.</p>
+            </div>
+            <div class="team-card">
+                <div class="team-icon">&#x2699;</div>
+                <h3>Automations Expert</h3>
+                <p>Infrastruktur-Setup, Inbox-Warmup, Deliverability-Monitoring und Copy-Automation.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BONUS -->
+<section>
+    <div class="container">
+        <div class="fade-in">
+            <div class="section-label">Inklusive Bonusse</div>
+            <h2 class="section-title">Was wir obendrauf legen</h2>
+            <p class="section-subtitle">Zus&auml;tzlich zum Kernpaket bekommst du Werkzeuge, die deinen Vertrieb st&auml;rken &mdash; ohne Extra-Kosten.</p>
+        </div>
+
+        <div class="bonus-grid fade-in" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem;">
+            <div class="bonus-item">
+                <div class="bonus-icon">&#x1F4CB;</div>
+                <div>
+                    <h4>ICP- &amp; Persona-Workshop</h4>
+                    <p>Ein 1-st&uuml;ndiger Kickoff, um eure Zielgruppe pr&auml;zise zu schneiden &mdash; gemeinsam mit dir und dem Co-Founder.</p>
+                </div>
+            </div>
+            <div class="bonus-item">
+                <div class="bonus-icon">&#x1F4E7;</div>
+                <div>
+                    <h4>Reply-Playbook f&uuml;r deinen Vertrieb</h4>
+                    <p>Fertige Antwort-Vorlagen f&uuml;r die 5 h&auml;ufigsten Replies &mdash; du terminierst schneller, ohne jedes Mal neu zu texten.</p>
+                </div>
+            </div>
+            <div class="bonus-item">
+                <div class="bonus-icon">&#x1F4CA;</div>
+                <div>
+                    <h4>CRM-Integration</h4>
+                    <p>Alle positiven Replies automatisch in euer CRM &mdash; inklusive Kontaktdaten, Quelle und Kampagnenkontext.</p>
+                </div>
+            </div>
+            <div class="bonus-item">
+                <div class="bonus-icon">&#x1F4C8;</div>
+                <div>
+                    <h4>W&ouml;chentliche Performance-Reports</h4>
+                    <p>Reply Rates, qualifizierte Leads, Zielgruppen-Performance &mdash; damit du jederzeit wei&szlig;t, wo ihr steht.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TIMELINE -->
+<section>
+    <div class="container">
+        <div class="fade-in">
+            <div class="section-label">Timeline</div>
+            <h2 class="section-title">Vom Start bis zur ersten Kohorte im September</h2>
+            <p class="section-subtitle">Startdatum abgestimmt auf euren Plan: Juni-Kohorte auslassen, September als Haupt-Start &mdash; erste Leads bereits ab Woche 6.</p>
+        </div>
+
+        <div class="timeline fade-in">
+            <div class="timeline-item">
+                <div class="time-label">Woche 1</div>
+                <h4>Kickoff-Workshop &amp; ICP-Definition</h4>
+                <p>1-st&uuml;ndiger Kickoff mit dir und dem Co-Founder. Zielgruppen-Mapping, Persona-Definition, Kampagnen-Angles festzurren.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="time-label">Woche 2&ndash;4</div>
+                <h4>Setup-Phase &amp; Slow-Ramp-up</h4>
+                <p>Domains aufsetzen, Inboxes warmlaufen lassen, Leadlisten aufbauen, Copy schreiben, MasterInbox &amp; CRM integrieren. In dieser Phase keine Leads &mdash; daf&uuml;r saubere Zustellbarkeit ab Tag 1 von Voll-Volumen.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="time-label">Woche 5&ndash;6</div>
+                <h4>Voll-Volumen startet</h4>
+                <p>20.000 E-Mails pro Monat gehen raus. Erste qualifizierte Replies landen in der MasterInbox &mdash; du beginnst zu terminieren und abzuschlie&szlig;en.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="time-label">Ab September</div>
+                <h4>Deine September-Kohorte f&uuml;llt sich aus Grundwerk-Pipeline</h4>
+                <p>Zwischen 150&ndash;225 qualifizierte Leads &uuml;ber die 4 Monate &mdash; daraus 11&ndash;27 Abschl&uuml;sse f&uuml;r die kommenden Quartale.</p>
+            </div>
+        </div>
+
+        <div class="timeline-highlight" style="background:linear-gradient(135deg,rgba(34,197,94,0.15),transparent);border:1px solid rgba(34,197,94,0.2);border-radius:16px;padding:1.5rem 2rem;margin-top:2.5rem;">
+            <h4>Start im Mai = erste Leads im Juni. Start im Juni = erste Leads im Juli.</h4>
+            <p>Jeder Monat Verz&ouml;gerung = 50&ndash;75 Leads weniger f&uuml;r die September-Kohorte. Je fr&uuml;her wir anfangen, desto voller der Trichter.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" style="padding-bottom:120px;">
+    <div class="container">
+        <div class="fade-in">
+            <h2>Bereit f&uuml;r planbare Leads?</h2>
+            <p>Wir haben am <strong>Montag, 20. April um 14:00 Uhr</strong> den n&auml;chsten Termin im Kalender &mdash; dort besprechen wir offene Fragen, dein Feedback und die n&auml;chsten Schritte.</p>
+
+            <div class="cta-box" style="background:linear-gradient(135deg,rgba(79,125,249,0.15),rgba(79,125,249,0.02));border:1px solid rgba(79,125,249,0.3);border-radius:16px;padding:2rem;margin-top:2rem;display:inline-block;text-align:left;">
+                <div class="cta-label">N&auml;chster Termin</div>
+                <h4>Montag, 20. April 2026 &middot; 14:00 Uhr</h4>
+                <p>Bereits im Kalender &mdash; Link zum Meeting-Raum liegt in deiner Kalender-Einladung.</p>
+            </div>
+
+            <div class="cta-contact">
+                Fragen vorab?<br>
+                <a href="mailto:anthony.katzur@grundwerk.digital">anthony.katzur@grundwerk.digital</a>
+                &nbsp;&middot;&nbsp;
+                <a href="tel:+4917647189941">+49 176 47189941</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    &copy; 2026 Grundwerk Digital &middot; Alle Rechte vorbehalten
+</footer>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
