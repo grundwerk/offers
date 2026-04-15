@@ -1,4 +1,4 @@
-<!-- GRUNDWERK-OFFER v1 | 2026-04-15 | Initial deploy Tomorrow University -->
+<!-- GRUNDWERK-OFFER v2 | 2026-04-15 | Add client logo ticker -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -6,7 +6,7 @@
     <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII=">
     <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII=">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="offer-version" content="v1 | 2026-04-15">
+    <meta name="offer-version" content="v2 | 2026-04-15">
     <title>Tomorrow University x Grundwerk &mdash; Angebot</title>
     <script>
         (function(){
@@ -216,6 +216,27 @@
             .forecast-table th, .forecast-table td,
             .comparison-table th, .comparison-table td { padding: 0.7rem 0.5rem; font-size: 0.8rem; }
         }
+
+        /* Logo Ticker */
+        .logo-ticker-wrapper { padding: 20px 0 80px; overflow: hidden; position: relative; }
+        .logo-ticker-wrapper::before,
+        .logo-ticker-wrapper::after { content: ''; position: absolute; top: 0; bottom: 0; width: 20%; z-index: 2; pointer-events: none; }
+        .logo-ticker-wrapper::before { left: 0; background: linear-gradient(to right, var(--bg) 0%, var(--bg) 60%, transparent 100%); }
+        .logo-ticker-wrapper::after { right: 0; background: linear-gradient(to left, var(--bg) 0%, var(--bg) 60%, transparent 100%); }
+        .logo-ticker-row { display: flex; gap: 4rem; align-items: center; margin-bottom: 1.5rem; white-space: nowrap; }
+        .logo-ticker-row:last-child { margin-bottom: 0; }
+        .logo-ticker-row-forward { animation: ticker-forward 40s linear infinite; }
+        .logo-ticker-row-reverse { animation: ticker-reverse 45s linear infinite; }
+        .client-logo { height: 28px; opacity: 0.4; filter: grayscale(100%) brightness(2); transition: opacity 0.3s, filter 0.3s; flex-shrink: 0; }
+        .client-logo:hover { opacity: 0.8; filter: grayscale(0%) brightness(1); }
+        @keyframes ticker-forward {
+            0% { transform: translateX(-25%); }
+            100% { transform: translateX(-75%); }
+        }
+        @keyframes ticker-reverse {
+            0% { transform: translateX(-75%); }
+            100% { transform: translateX(-25%); }
+        }
     </style>
 </head>
 <body>
@@ -239,6 +260,52 @@
         </div>
     </div>
 </section>
+
+<!-- CLIENT LOGOS -->
+<div class="logo-ticker-wrapper">
+    <div class="container">
+        <div class="logo-ticker-row logo-ticker-row-forward">
+            <img class="client-logo" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel">
+            <img class="client-logo" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes">
+            <img class="client-logo" src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang">
+            <img class="client-logo" src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO">
+            <img class="client-logo" src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview">
+            <img class="client-logo" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel">
+            <img class="client-logo" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes">
+            <img class="client-logo" src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang">
+            <img class="client-logo" src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO">
+            <img class="client-logo" src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview">
+            <img class="client-logo" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel">
+            <img class="client-logo" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes">
+            <img class="client-logo" src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang">
+            <img class="client-logo" src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO">
+            <img class="client-logo" src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview">
+            <img class="client-logo" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel">
+            <img class="client-logo" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes">
+            <img class="client-logo" src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang">
+            <img class="client-logo" src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO">
+            <img class="client-logo" src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview">
+        </div>
+        <div class="logo-ticker-row logo-ticker-row-reverse">
+            <img class="client-logo" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges">
+            <img class="client-logo" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy">
+            <img class="client-logo" src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios">
+            <img class="client-logo" src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic">
+            <img class="client-logo" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges">
+            <img class="client-logo" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy">
+            <img class="client-logo" src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios">
+            <img class="client-logo" src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic">
+            <img class="client-logo" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges">
+            <img class="client-logo" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy">
+            <img class="client-logo" src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios">
+            <img class="client-logo" src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic">
+            <img class="client-logo" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges">
+            <img class="client-logo" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy">
+            <img class="client-logo" src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios">
+            <img class="client-logo" src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic">
+        </div>
+    </div>
+</div>
 
 <!-- STAT BAR -->
 <section style="padding-top: 0;">
