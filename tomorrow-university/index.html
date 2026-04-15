@@ -1,4 +1,4 @@
-<!-- GRUNDWERK-OFFER v22 | 2026-04-16 | Hey Gianluca raus, 800k→800k-1,2M, Termine-Zeile + Timeline-Dringlichkeitsbox entfernt -->
+<!-- GRUNDWERK-OFFER v23 | 2026-04-16 | Wie-funktioniert-Button raus, Angebotskarte kompakter + Gruen-Akzente -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -6,7 +6,7 @@
     <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII=">
     <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII=">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="offer-version" content="v22 | 2026-04-16">
+    <meta name="offer-version" content="v23 | 2026-04-16">
     <title>Tomorrow University x Grundwerk &mdash; Angebot</title>
     <script>
         (function(){
@@ -119,23 +119,23 @@
 
         /* OFFER */
         .offer-wrap { margin-top: 3rem; display: flex; justify-content: center; }
-        .offer-card { background: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius); padding: 2.75rem; position: relative; max-width: 680px; width: 100%; background: linear-gradient(180deg, rgba(79, 125, 249, 0.08) 0%, var(--bg-card) 40%); }
-        .offer-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #fff; padding: 0.35rem 1.25rem; border-radius: 20px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
-        .offer-card h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem; }
-        .offer-card .offer-desc { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.75rem; }
-        .offer-price { display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.25rem; }
-        .offer-price .amount { font-size: 2.8rem; font-weight: 800; letter-spacing: -0.03em; }
-        .offer-price .period { color: var(--text-muted); font-size: 0.95rem; }
-        .offer-price-detail { color: var(--text-dim); font-size: 0.85rem; margin-bottom: 2rem; padding-bottom: 1.75rem; border-bottom: 1px solid var(--border); }
-        .offer-setup { display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.03); padding: 0.9rem 1.15rem; border-radius: var(--radius-sm); margin-bottom: 1.75rem; font-size: 0.9rem; }
+        .offer-card { background: linear-gradient(180deg, rgba(34, 197, 94, 0.08) 0%, var(--bg-card) 35%); border: 1px solid rgba(34, 197, 94, 0.25); border-radius: var(--radius); padding: 2rem; position: relative; max-width: 560px; width: 100%; }
+        .offer-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--green); color: #fff; padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+        .offer-card h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 0.4rem; }
+        .offer-card .offer-desc { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.35rem; line-height: 1.5; }
+        .offer-price { display: flex; align-items: baseline; gap: 0.45rem; margin-bottom: 0.2rem; }
+        .offer-price .amount { font-size: 2.3rem; font-weight: 800; letter-spacing: -0.03em; color: var(--green); text-shadow: 0 0 24px rgba(34, 197, 94, 0.2); }
+        .offer-price .period { color: var(--text-muted); font-size: 0.9rem; }
+        .offer-price-detail { color: var(--text-dim); font-size: 0.78rem; margin-bottom: 1.25rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border); }
+        .offer-setup { display: flex; justify-content: space-between; align-items: center; background: rgba(34, 197, 94, 0.06); border: 1px solid rgba(34, 197, 94, 0.12); padding: 0.7rem 1rem; border-radius: var(--radius-sm); margin-bottom: 1.35rem; font-size: 0.85rem; }
         .offer-setup .setup-label { color: var(--text-muted); }
-        .offer-setup .setup-val { font-weight: 700; color: var(--text); }
-        .offer-features { list-style: none; margin-bottom: 1.75rem; }
-        .offer-features li { color: var(--text); font-size: 0.92rem; padding: 0.5rem 0; padding-left: 1.75rem; position: relative; }
-        .offer-features li::before { content: '\2713'; color: var(--green); position: absolute; left: 0; font-weight: 800; font-size: 1rem; }
-        .offer-total { background: var(--green-glow); border: 1px solid rgba(34, 197, 94, 0.25); border-radius: var(--radius-sm); padding: 1rem 1.25rem; text-align: center; margin-bottom: 1.25rem; }
-        .offer-total .total-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 0.25rem; }
-        .offer-total .total-amount { font-size: 1.5rem; font-weight: 800; color: var(--green); }
+        .offer-setup .setup-val { font-weight: 700; color: var(--green); }
+        .offer-features { list-style: none; margin-bottom: 1.35rem; }
+        .offer-features li { color: var(--text); font-size: 0.85rem; padding: 0.38rem 0; padding-left: 1.5rem; position: relative; }
+        .offer-features li::before { content: '\2713'; color: var(--green); position: absolute; left: 0; font-weight: 800; font-size: 0.9rem; }
+        .offer-total { background: linear-gradient(135deg, rgba(34, 197, 94, 0.18), rgba(34, 197, 94, 0.05)); border: 1px solid rgba(34, 197, 94, 0.35); border-radius: var(--radius-sm); padding: 0.9rem 1.1rem; text-align: center; margin-bottom: 0.9rem; box-shadow: 0 0 32px rgba(34, 197, 94, 0.08); }
+        .offer-total .total-label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 0.25rem; font-weight: 600; }
+        .offer-total .total-amount { font-size: 1.6rem; font-weight: 800; color: var(--green); letter-spacing: -0.02em; }
         .offer-footer { text-align: center; color: var(--text-dim); font-size: 0.8rem; }
 
         /* FORECAST */
@@ -266,7 +266,6 @@
         <p>Hier findest du alles, was du brauchst, um intern zu entscheiden, ob Grundwerk der richtige Partner ist, um deine quartalsweisen Kohorten zuverl&auml;ssig zu f&uuml;llen und euer Ziel von <strong>800.000&nbsp;&euro; bis 1,2&nbsp;Mio.&nbsp;&euro;</strong> zu erreichen.</p>
         <div class="hero-ctas">
             <a href="#angebot" class="btn-primary">Angebot ansehen</a>
-            <a href="#prozess" class="btn-secondary">Wie funktioniert das?</a>
         </div>
     </div>
 </section>
@@ -428,7 +427,7 @@
         </div>
 
         <div class="offer-wrap fade-in">
-            <div class="offer-card" style="background:linear-gradient(180deg,rgba(79,125,249,0.08) 0%,var(--bg-card) 40%);border:1px solid rgba(79,125,249,0.3);border-radius:16px;padding:2.75rem;">
+            <div class="offer-card">
                 <div class="offer-badge">Empfohlen</div>
                 <h3>Grundwerk Cold Email Campaign</h3>
                 <p class="offer-desc">Ideal f&uuml;r dich, um die quartalsweisen Kohorten unabh&auml;ngig vom warmen Netzwerk zu f&uuml;llen.</p>
