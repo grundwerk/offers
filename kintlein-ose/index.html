@@ -1,11 +1,11 @@
-<!-- GRUNDWERK-OFFER v18 | 2026-04-16 | Beispiel-Copy Sektion mit Varianten A/B, Follow-up und Prinzipien hinzugefuegt -->
+<!-- GRUNDWERK-OFFER v19 | 2026-04-16 | Beispiel-Copy kompakter: Tab-Layout fuer A/B/Follow-up, kleinere Prinzipien-Cards, inline Variablen-Legende -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
 <meta charset="UTF-8">
 <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII="/>
 <script>(function(){var code='7364918205';var p=new URLSearchParams(window.location.search);if(p.get('secure')!==code){document.documentElement.style.display='none';document.title='Zugriff verweigert';window.stop();}})();</script>
-<meta name="offer-version" content="v18 | 2026-04-16">
+<meta name="offer-version" content="v19 | 2026-04-16">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>KINTLEIN &amp; OSE &times; Grundwerk Digital</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -583,16 +583,120 @@ footer{padding:40px 2rem;border-top:1px solid var(--border);text-align:center;fo
   </div>
 </section>
 <!-- BEISPIEL-COPY -->
-<section id="beispiel-copy" class="fade-in" style="padding:100px 2rem;background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+<style>
+.bc-tabs{display:flex;gap:4px;margin-top:32px;background:var(--bg);padding:6px;border-radius:12px;border:1px solid var(--border);width:fit-content;flex-wrap:wrap}
+.bc-tab{background:transparent;color:var(--text-muted);border:none;padding:10px 18px;border-radius:8px;font-family:inherit;font-size:0.82rem;font-weight:700;cursor:pointer;letter-spacing:0.04em;transition:all 0.2s}
+.bc-tab:hover{color:var(--text)}
+.bc-tab.active{background:var(--accent);color:#fff}
+.bc-panel{display:none;margin-top:20px}
+.bc-panel.active{display:block}
+.bc-email{background:var(--bg);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.bc-email-head{padding:12px 20px;background:rgba(79,125,249,0.06);border-bottom:1px solid var(--border);display:flex;gap:20px;align-items:center;flex-wrap:wrap;font-size:0.82rem}
+.bc-email-head .lbl{color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;font-size:0.68rem;margin-right:6px}
+.bc-email-body{margin:0;padding:20px 22px;font-family:'Inter',sans-serif;font-size:0.88rem;line-height:1.7;color:var(--text);white-space:pre-wrap;word-wrap:break-word;background:transparent}
+.bc-reasons{margin-top:12px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px}
+.bc-reason{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px 14px}
+.bc-reason-lbl{font-size:0.65rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;font-weight:700;margin-bottom:4px}
+.bc-reason p{font-size:0.78rem;color:var(--text-muted);line-height:1.55;margin:0}
+.bc-prinzipien{margin-top:48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.bc-prinzip{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:16px}
+.bc-prinzip-num{display:inline-block;width:24px;height:24px;background:var(--accent-glow);color:var(--accent);border-radius:6px;text-align:center;line-height:24px;font-size:0.72rem;font-weight:800;margin-bottom:8px}
+.bc-prinzip h4{font-size:0.85rem;font-weight:700;margin-bottom:6px;line-height:1.35}
+.bc-prinzip p{font-size:0.76rem;color:var(--text-muted);line-height:1.55;margin:0}
+.bc-var-legend{margin-top:32px;background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:16px 18px;display:flex;flex-wrap:wrap;gap:8px 14px;font-size:0.78rem}
+.bc-var-legend code{background:rgba(79,125,249,0.1);padding:2px 8px;border-radius:5px;color:var(--accent);font-size:0.92em}
+.bc-var-legend span{color:var(--text-muted);margin-right:4px}
+.bc-einsatz{background:rgba(79,125,249,0.12);padding:2px 7px;border-radius:5px;color:var(--accent);font-size:0.92em;font-family:monospace}
+</style>
+<section id="beispiel-copy" class="fade-in" style="padding:70px 2rem;background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
   <div style="max-width:1200px;margin:0 auto;">
     <div class="section-label">Beispiel-Copy</div>
     <h2 class="section-title">So sehen eure E-Mails <span>konkret aus</span></h2>
-    <p class="section-sub">Zwei A/B-Varianten fuer Step 1 plus ein Follow-up. Verifiziert mit euren echten Daten (seit 2009, 80+ MWp, Gewerbe &amp; Industrie). Zahlen die wir nicht belastbar verifizieren konnten, stehen als <code style="background:rgba(79,125,249,0.12);padding:2px 8px;border-radius:6px;color:var(--accent);font-size:0.82em;">[EINSATZ]</code>-Marker drin &mdash; die fuellt ihr selber mit euren echten Referenzzahlen.</p>
+    <p class="section-sub">Zwei A/B-Varianten fuer Step 1 plus ein Follow-up. Framework: <strong>Trigger &rarr; Value Prop &rarr; Social Proof &rarr; CTA</strong>. Verifiziert mit euren Daten (seit 2009, 80+ MWp, Gewerbe &amp; Industrie) &mdash; unbelegte Zahlen als <span class="bc-einsatz">[EINSATZ]</span>-Marker zum Selbstfuellen.</p>
 
-    <!-- INTRO-BOX: Warum dieser Aufbau -->
-    <div style="margin-top:40px;background:var(--bg-accent);border:1px solid var(--border-accent);border-radius:var(--radius);padding:28px;">
-      <div style="font-size:0.78rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;font-weight:700;margin-bottom:10px;">Grundprinzip</div>
-      <p style="font-size:0.95rem;line-height:1.7;color:var(--text);">Jede Copy folgt dem Framework <strong>Trigger &rarr; Value Prop &rarr; Social Proof &rarr; CTA</strong>. Die erste Zeile beantwortet: &bdquo;Wer ist diese Person und warum schreibt sie <em>mir</em>?&ldquo; &mdash; der Rest eliminiert Reibung bis zum &bdquo;Ja&ldquo;.</p>
+    <!-- TABS -->
+    <div class="bc-tabs" role="tablist">
+      <button class="bc-tab active" data-bc-tab="a">Variante A</button>
+      <button class="bc-tab" data-bc-tab="b">Variante B</button>
+      <button class="bc-tab" data-bc-tab="f">Step 2 &middot; Follow-up</button>
+    </div>
+
+    <!-- PANEL A -->
+    <div class="bc-panel active" data-bc-panel="a">
+      <div style="font-size:0.82rem;color:var(--text-muted);margin-bottom:10px;">Angle: Dachflaeche + Eigenverbrauch</div>
+      <div class="bc-email">
+        <div class="bc-email-head">
+          <div><span class="lbl">Betreff</span><strong>Dachflaeche</strong></div>
+          <div><span class="lbl">Preview</span><span style="color:var(--text-muted);">Hallo [Name], waehrend meiner Recherche...</span></div>
+        </div>
+        <pre class="bc-email-body">{{OPENING_LINE_FORMAL}} {{firstName}},
+
+waehrend meiner Recherche zu produzierenden Betrieben in {{BUNDESLAND}} ist mir {{COMPANY_NAME}} aufgefallen.
+
+Bei einer Dachflaeche in Ihrer Groessenordnung laesst sich mit einer Photovoltaikanlage ein erheblicher Teil des Strombedarfs selbst decken. Planung und Bau uebernehmen wir, inklusive Betriebsfuehrung und Monitoring nach Inbetriebnahme.
+
+Seit 2009 realisieren wir PV-Anlagen fuer Gewerbe und Industrie, ueber 80 MWp haben wir bereits umgesetzt.
+
+Spricht etwas gegen einen kurzen Austausch diese oder naechste Woche, ob das fuer {{COMPANY_NAME}} auch passt?
+
+{{accountSignature}}</pre>
+      </div>
+      <div class="bc-reasons">
+        <div class="bc-reason"><div class="bc-reason-lbl">Trigger</div><p>Segment-basiert: &bdquo;produzierende Betriebe in {{BUNDESLAND}}&ldquo;.</p></div>
+        <div class="bc-reason"><div class="bc-reason-lbl">Value Prop</div><p>&bdquo;Strombedarf selbst decken&ldquo; &mdash; Outcome in Kundensprache.</p></div>
+        <div class="bc-reason"><div class="bc-reason-lbl">Social Proof</div><p>&bdquo;Seit 2009, 80+ MWp&ldquo; &mdash; spezifisch statt Floskeln.</p></div>
+        <div class="bc-reason"><div class="bc-reason-lbl">CTA</div><p>Reverse Negation &mdash; niedrigere Huerde als Terminvorschlag.</p></div>
+      </div>
+    </div>
+
+    <!-- PANEL B -->
+    <div class="bc-panel" data-bc-panel="b">
+      <div style="font-size:0.82rem;color:var(--text-muted);margin-bottom:10px;">Angle: Strombedarf + Marge</div>
+      <div class="bc-email">
+        <div class="bc-email-head">
+          <div><span class="lbl">Betreff</span><strong>kurze frage</strong></div>
+          <div><span class="lbl">Preview</span><span style="color:var(--text-muted);">Hallo [Name], kurz zu Ihrem Standort...</span></div>
+        </div>
+        <pre class="bc-email-body">{{OPENING_LINE_FORMAL}} {{firstName}},
+
+kurz zu Ihrem Standort in {{LOCATION}}.
+
+Bei einem Strombedarf ab [EINSATZ: kWh/Jahr Schwelle, z.B. 100.000 kWh] jaehrlich rechnet sich eine eigene Photovoltaikanlage auf der Dachflaeche von {{COMPANY_NAME}} in der Regel deutlich. Die Differenz zwischen Netzbezug und eigener Erzeugung fliesst direkt in die Marge.
+
+Wir planen, bauen und fuehren solche Anlagen fuer Betriebe wie Ihren &mdash; seit 2009 und mit ueber 80 MWp im Portfolio.
+
+Haben Sie ein paar Minuten in den naechsten Tagen, um darueber zu sprechen?
+
+{{accountSignature}}</pre>
+      </div>
+      <div class="bc-reasons">
+        <div class="bc-reason"><div class="bc-reason-lbl">Unterschied zu A</div><p>Wirtschaftlicher Angle. &bdquo;Marge&ldquo; spricht CFO/Eigentuemer an.</p></div>
+        <div class="bc-reason"><div class="bc-reason-lbl">Betreff</div><p>&bdquo;kurze frage&ldquo; &mdash; kleingeschrieben, wirkt wie interne Mail.</p></div>
+        <div class="bc-reason"><div class="bc-reason-lbl">Mechanik</div><p>&bdquo;Netzbezug vs. Eigenerzeugung&ldquo; &mdash; konkret statt Buzzword.</p></div>
+        <div class="bc-reason"><div class="bc-reason-lbl">CTA</div><p>Softer direct ask. Kein Link, nur Zeit fuer ein Gespraech.</p></div>
+      </div>
+    </div>
+
+    <!-- PANEL FOLLOW-UP -->
+    <div class="bc-panel" data-bc-panel="f">
+      <div style="font-size:0.82rem;color:var(--text-muted);margin-bottom:10px;">Ohne Betreff &middot; 2&ndash;3 Tage nach Step 1</div>
+      <div class="bc-email">
+        <div class="bc-email-head">
+          <div><span class="lbl">Betreff</span><span style="color:var(--text-muted);font-style:italic;">(kein Betreff &mdash; schiebt Step 1 hoch)</span></div>
+        </div>
+        <pre class="bc-email-body">{{OPENING_LINE_FORMAL}} {{firstName}},
+
+kurz nochmal hierzu.
+
+Fuer Betriebe wie {{COMPANY_NAME}} sehen wir typischerweise [EINSATZ: Anlagengroesse kWp-Range aus Referenzprojekten] Potenzial auf dem Dach. Falls die Dachhaut aelter ist, machen wir die Sanierung gleich mit.
+
+Passt ein kurzer Austausch diese Woche?
+
+{{accountSignature}}</pre>
+      </div>
+      <div class="bc-reasons" style="grid-template-columns:1fr;">
+        <div class="bc-reason"><div class="bc-reason-lbl">Warum so kurz?</div><p>Follow-up soll Step 1 in den Posteingang zurueckschieben, nicht neu erzaehlen. Ein neuer Info-Happen (Dachsanierung, aufgespart fuer Step 2) + weicherer CTA.</p></div>
+      </div>
     </div>
 
     <!-- VARIANTE A -->
@@ -710,75 +814,32 @@ Passt ein kurzer Austausch diese Woche?
     </div>
 
     <!-- PRINZIPIEN -->
-    <div style="margin-top:80px;">
-      <h3 style="font-size:1.5rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:8px;">Prinzipien, die hinter jeder Zeile stehen</h3>
-      <p style="font-size:0.9rem;color:var(--text-muted);max-width:700px;line-height:1.7;">Warum diese Copy so aussieht &mdash; und warum wir NICHT wie eine typische Sales-Mail klingen.</p>
-      <div style="margin-top:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;">
-
-        <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px;">
-          <div style="width:40px;height:40px;background:var(--accent-glow);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:1.2rem;">01</div>
-          <h4 style="font-size:0.98rem;font-weight:700;margin-bottom:8px;">Betreff: 1&ndash;3 Worte, kleingeschrieben</h4>
-          <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.65;">&bdquo;Dachflaeche&ldquo; oder &bdquo;kurze frage&ldquo; &mdash; soll aussehen wie eine Mail von einem Kollegen, nicht wie Marketing. Keine Punkte, keine Ausrufezeichen, kein &bdquo;Re:&ldquo; oder &bdquo;Fwd:&ldquo; (= Catfishing). Die Headline triggert NUR das Oeffnen &mdash; nicht verkaufen mit der Headline.</p>
-        </div>
-
-        <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px;">
-          <div style="width:40px;height:40px;background:var(--accent-glow);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:1.2rem;">02</div>
-          <h4 style="font-size:0.98rem;font-weight:700;margin-bottom:8px;">Opening nie mit &bdquo;Ich&ldquo;</h4>
-          <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.65;">Deutsche Hoeflichkeitsregel: nach der Begruessung nicht mit &bdquo;Ich&ldquo; beginnen. &bdquo;Waehrend meiner Recherche...&ldquo; statt &bdquo;Ich habe recherchiert...&ldquo;. &bdquo;Hope you&#39;re well&ldquo;-Opener werden sofort geloescht &mdash; erste 3&ndash;8 Worte muessen herausstechen.</p>
-        </div>
-
-        <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px;">
-          <div style="width:40px;height:40px;background:var(--accent-glow);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:1.2rem;">03</div>
-          <h4 style="font-size:0.98rem;font-weight:700;margin-bottom:8px;">Spezifitaet &gt; Adjektive</h4>
-          <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.65;">&bdquo;Seit 2009, 80+ MWp, Gewerbe und Industrie&ldquo; &mdash; konkrete Zahlen. Keine Adverben wie &bdquo;unglaublich&ldquo;, &bdquo;hochgradig&ldquo;, &bdquo;revolutionaer&ldquo;. Keine Buzzwords. Wenn ihr Zahlen nicht 100% belegen koennt &rarr; <code style="background:rgba(79,125,249,0.12);padding:1px 6px;border-radius:4px;color:var(--accent);font-size:0.92em;">[EINSATZ]</code>-Marker statt raten. Prospects in eurer Branche sind Experten &mdash; falsche Zahlen = Vertrauensbruch.</p>
-        </div>
-
-        <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px;">
-          <div style="width:40px;height:40px;background:var(--accent-glow);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:1.2rem;">04</div>
-          <h4 style="font-size:0.98rem;font-weight:700;margin-bottom:8px;">Ein CTA pro Mail &mdash; immer als Frage</h4>
-          <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.65;">Step 1 = Hard CTA (Termin). Step 2 = Soft CTA. Mit jedem Step weicher werden. Nie zwei CTAs gleichzeitig &mdash; Prospect entscheidet sonst gar nichts.</p>
-        </div>
-
-        <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px;">
-          <div style="width:40px;height:40px;background:var(--accent-glow);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:1.2rem;">05</div>
-          <h4 style="font-size:0.98rem;font-weight:700;margin-bottom:8px;">Linebreak nach jedem Satz</h4>
-          <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.65;">Textbloecke sind ein No-Go &mdash; 42% der Mails werden auf dem Handy gelesen. Max. ein Bindestrich pro Copy (sonst wirkt es KI-generiert). Keine Formatierung, keine Bullet-Points ohne Personalisierung, keine Emojis.</p>
-        </div>
-
-        <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px;">
-          <div style="width:40px;height:40px;background:var(--accent-glow);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:1.2rem;">06</div>
-          <h4 style="font-size:0.98rem;font-weight:700;margin-bottom:8px;">Personalisierung fuer Step 2 aufsparen</h4>
-          <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.65;">Nur EIN Trigger/Signal in Step 1. Weitere Details in Step 2 &mdash; damit der Follow-up nicht generisch wirkt sondern wie ein echter Nachhaker.</p>
-        </div>
-
-        <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px;">
-          <div style="width:40px;height:40px;background:var(--accent-glow);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:1.2rem;">07</div>
-          <h4 style="font-size:0.98rem;font-weight:700;margin-bottom:8px;">A/B testen heisst: EINE Variable</h4>
-          <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.65;">Variante A vs. B &mdash; unterschiedlicher Angle (Dachflaeche vs. Marge). In realen Tests immer NUR EINE Sache pro Test aendern: Betreff ODER Opening ODER Angle ODER CTA. Sonst weiss man nicht, was den Unterschied gemacht hat.</p>
-        </div>
-
-        <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px;">
-          <div style="width:40px;height:40px;background:var(--accent-glow);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:1.2rem;">08</div>
-          <h4 style="font-size:0.98rem;font-weight:700;margin-bottom:8px;">Verbotene Woerter</h4>
-          <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.65;">Keine Spam-Trigger: &bdquo;100% garantiert&ldquo;, &bdquo;Jetzt kaufen&ldquo;, &bdquo;Kostenlos&ldquo;, &bdquo;Einmalige Chance&ldquo;. Keine Sales-Floskeln: &bdquo;Ich weiss, Sie sind beschaeftigt&ldquo;, &bdquo;Quick Call&ldquo;, &bdquo;Synergie&ldquo;, &bdquo;Kurz bei euch reinhoeren&ldquo;.</p>
-        </div>
-
-      </div>
+    <h3 style="font-size:1.15rem;font-weight:800;letter-spacing:-0.02em;margin-top:56px;margin-bottom:4px;">Prinzipien hinter jeder Zeile</h3>
+    <p style="font-size:0.82rem;color:var(--text-muted);">Warum das NICHT nach Sales-Mail klingt.</p>
+    <div class="bc-prinzipien">
+      <div class="bc-prinzip"><div class="bc-prinzip-num">01</div><h4>Betreff: 1&ndash;3 Worte, kleingeschrieben</h4><p>Wie Mail vom Kollegen, nicht wie Marketing. Keine Punkte, kein &bdquo;Re:&ldquo;. Triggert nur das Oeffnen.</p></div>
+      <div class="bc-prinzip"><div class="bc-prinzip-num">02</div><h4>Opening nie mit &bdquo;Ich&ldquo;</h4><p>&bdquo;Waehrend meiner Recherche...&ldquo; statt &bdquo;Ich habe...&ldquo;. &bdquo;Hope you&#39;re well&ldquo; wird geloescht.</p></div>
+      <div class="bc-prinzip"><div class="bc-prinzip-num">03</div><h4>Spezifitaet &gt; Adjektive</h4><p>Konkrete Zahlen statt &bdquo;unglaublich&ldquo;/&bdquo;revolutionaer&ldquo;. Unbelegte Zahlen &rarr; <span class="bc-einsatz">[EINSATZ]</span>. Falsche Zahlen = Vertrauensbruch.</p></div>
+      <div class="bc-prinzip"><div class="bc-prinzip-num">04</div><h4>Ein CTA pro Mail</h4><p>Step 1 = hard (Termin). Step 2 = soft. Nie zwei CTAs &mdash; Prospect entscheidet sonst nichts.</p></div>
+      <div class="bc-prinzip"><div class="bc-prinzip-num">05</div><h4>Linebreak pro Satz</h4><p>42% mobil gelesen. Max. 1 Bindestrich/Copy. Keine Formatierung, keine Emojis.</p></div>
+      <div class="bc-prinzip"><div class="bc-prinzip-num">06</div><h4>Step-2-Personalisierung aufsparen</h4><p>Nur EIN Trigger in Step 1. Weitere Details in Step 2 &mdash; Follow-up wirkt wie echter Nachhaker.</p></div>
+      <div class="bc-prinzip"><div class="bc-prinzip-num">07</div><h4>A/B-Test: EINE Variable</h4><p>Betreff ODER Opening ODER Angle ODER CTA. Sonst weiss man nicht, was gewirkt hat.</p></div>
+      <div class="bc-prinzip"><div class="bc-prinzip-num">08</div><h4>Verbotene Woerter</h4><p>Kein &bdquo;100% garantiert&ldquo;, &bdquo;kostenlos&ldquo;, &bdquo;Quick Call&ldquo;, &bdquo;Synergie&ldquo;, &bdquo;kurz reinhoeren&ldquo;.</p></div>
     </div>
 
     <!-- VARIABLEN-LEGENDE -->
-    <div style="margin-top:56px;background:var(--bg-accent);border:1px solid var(--border-accent);border-radius:var(--radius);padding:28px;">
-      <div style="font-size:0.78rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;font-weight:700;margin-bottom:14px;">Variablen-Legende</div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;font-size:0.85rem;">
-        <div><code style="background:rgba(255,255,255,0.05);padding:2px 8px;border-radius:6px;color:var(--accent);font-size:0.92em;">{{firstName}}</code> <span style="color:var(--text-muted);">&mdash; Vorname des Empfaengers</span></div>
-        <div><code style="background:rgba(255,255,255,0.05);padding:2px 8px;border-radius:6px;color:var(--accent);font-size:0.92em;">{{COMPANY_NAME}}</code> <span style="color:var(--text-muted);">&mdash; Firmenname</span></div>
-        <div><code style="background:rgba(255,255,255,0.05);padding:2px 8px;border-radius:6px;color:var(--accent);font-size:0.92em;">{{BUNDESLAND}}</code> <span style="color:var(--text-muted);">&mdash; Bundesland des Standorts</span></div>
-        <div><code style="background:rgba(255,255,255,0.05);padding:2px 8px;border-radius:6px;color:var(--accent);font-size:0.92em;">{{LOCATION}}</code> <span style="color:var(--text-muted);">&mdash; Stadt / Ort</span></div>
-        <div><code style="background:rgba(255,255,255,0.05);padding:2px 8px;border-radius:6px;color:var(--accent);font-size:0.92em;">{{OPENING_LINE_FORMAL}}</code> <span style="color:var(--text-muted);">&mdash; &bdquo;Hallo / Gruess dich / Guten Tag&ldquo; (Spintax)</span></div>
-        <div><code style="background:rgba(255,255,255,0.05);padding:2px 8px;border-radius:6px;color:var(--accent);font-size:0.92em;">{{accountSignature}}</code> <span style="color:var(--text-muted);">&mdash; Signatur des versendenden Accounts</span></div>
-        <div><code style="background:rgba(79,125,249,0.12);padding:2px 8px;border-radius:6px;color:var(--accent);font-size:0.92em;">[EINSATZ: ...]</code> <span style="color:var(--text-muted);">&mdash; Ihr fuellt manuell mit echten Referenzzahlen</span></div>
-      </div>
+    <div class="bc-var-legend">
+      <div style="font-size:0.68rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;font-weight:700;width:100%;margin-bottom:2px;">Variablen-Legende</div>
+      <div><code>{{firstName}}</code><span>Vorname</span></div>
+      <div><code>{{COMPANY_NAME}}</code><span>Firmenname</span></div>
+      <div><code>{{BUNDESLAND}}</code><span>Bundesland</span></div>
+      <div><code>{{LOCATION}}</code><span>Stadt</span></div>
+      <div><code>{{OPENING_LINE_FORMAL}}</code><span>Hallo/Gruess dich (Spintax)</span></div>
+      <div><code>{{accountSignature}}</code><span>Account-Signatur</span></div>
+      <div><span class="bc-einsatz">[EINSATZ: ...]</span><span>selbst ausfuellen</span></div>
     </div>
+
+    <script>(function(){var tabs=document.querySelectorAll('.bc-tab');var panels=document.querySelectorAll('.bc-panel');tabs.forEach(function(t){t.addEventListener('click',function(){var k=t.getAttribute('data-bc-tab');tabs.forEach(function(x){x.classList.remove('active')});panels.forEach(function(p){p.classList.remove('active')});t.classList.add('active');document.querySelector('[data-bc-panel="'+k+'"]').classList.add('active');});});})();</script>
 
   </div>
 </section>
