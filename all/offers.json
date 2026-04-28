@@ -1,5 +1,14 @@
 [
   {
+    "slug": "flexlog",
+    "name": "flexlog GmbH",
+    "subtitle": "Dr.-Ing. Thomas Stoll & Corinna Schaller — Sales Room für Intralogistik-Software, Hardware-Steuerungen & Berater-Segment, 4 Monate Initialpaket mit Lead-Garantie",
+    "type": "sales-room",
+    "secure": "7392841056",
+    "icon": "📦",
+    "created": "2026-04-28"
+  },
+  {
     "slug": "htp-med",
     "name": "HTP med GmbH",
     "subtitle": "Mohammad Sahraie & Zlatko Durakovic — Cold E-Mail Outreach an Ärzte, Ordinationen, Krankenhäuser & Pflege in Österreich, 4 Monate",
