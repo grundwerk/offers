@@ -1,5 +1,14 @@
 [
   {
+    "slug": "meyers-catering",
+    "name": "Meyers Catering GmbH",
+    "subtitle": "Sascha Meyer — BAFA-gefördertes Beratungsangebot für planbaren B2B-Vertriebsaufbau, 2 Beratungstage über 2 Monate, 50% BAFA-Förderung Hamburg",
+    "type": "offer",
+    "secure": "7392648510",
+    "icon": "🍽️",
+    "created": "2026-05-06"
+  },
+  {
     "slug": "flexlog",
     "name": "flexlog GmbH",
     "subtitle": "Dr.-Ing. Thomas Stoll & Corinna Schaller — Sales Room für Intralogistik-Software, Hardware-Steuerungen & Berater-Segment, 4 Monate Initialpaket mit Lead-Garantie",
