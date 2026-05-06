@@ -1,5 +1,14 @@
 [
   {
+    "slug": "ebiz-consulting",
+    "name": "eBiz Consulting GmbH",
+    "subtitle": "Halit Oener — Outbound für Cloud/IT/AI-Beratung, zwei Paket-Optionen (3 Monate ohne Setup vs. 2 Monate mit BAFA-fähigem Setup-Workshop), HubSpot-Integration",
+    "type": "offer",
+    "secure": "4892175630",
+    "icon": "☁️",
+    "created": "2026-05-06"
+  },
+  {
     "slug": "meyers-catering",
     "name": "Meyers Catering GmbH",
     "subtitle": "Sascha Meyer — BAFA-gefördertes Beratungsangebot für planbaren B2B-Vertriebsaufbau, 2 Beratungstage über 2 Monate, 50% BAFA-Förderung Hamburg",
