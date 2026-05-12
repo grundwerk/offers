@@ -1,11 +1,11 @@
-<!-- GRUNDWERK-OFFER v8 | 2026-05-12 | Tab 2 schlanker (Findings/Kosten/Prognose raus), Wording-Cleanups: Mails+Inboxen anlegen, Zielgruppen-Scraping, Slow Ramp Up, CRM-Sync, Zeitangaben raus, Aktionsplan Phase 1 verkuerzt -->
+<!-- GRUNDWERK-OFFER v9 | 2026-05-12 | Tab 7 Tasks straffer (Scraper-Task raus, Volumen raus, Zeitangaben raus), Tab 8 Calendly weg, Termin-bestaetigt-Card -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII=" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="offer-version" content="v8 | 2026-05-12">
+    <meta name="offer-version" content="v9 | 2026-05-12">
     <title>Acadoro × Grundwerk Digital — Sales Room</title>
     <script>
         (function(){
@@ -1382,21 +1382,14 @@
                         <li class="map-task" style="display:flex;align-items:flex-start;gap:12px;">
                             <div class="map-checkbox" onclick="toggleCheck(this)" style="width:18px;height:18px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;"></div>
                             <div class="map-task-text" style="flex:1;">
-                                <div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">Custom-Scraper laeuft &mdash; Lead-Datenbank wird aufgebaut</div>
-                                <div class="map-task-owner" style="font-size:0.74rem;color:var(--text-muted);margin-top:2px;"><strong style="color:var(--accent);font-weight:600;">Grundwerk</strong> &middot; Sanierungs- &amp; Rohrreinigungsfirmen DACH, Entscheider-Anreicherung</div>
-                            </div>
-                        </li>
-                        <li class="map-task" style="display:flex;align-items:flex-start;gap:12px;">
-                            <div class="map-checkbox" onclick="toggleCheck(this)" style="width:18px;height:18px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;"></div>
-                            <div class="map-task-text" style="flex:1;">
-                                <div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">Copy-Freigabe (ca. 30 Min.)</div>
+                                <div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">Copy-Freigabe</div>
                                 <div class="map-task-owner" style="font-size:0.74rem;color:var(--text-muted);margin-top:2px;"><strong style="color:var(--accent);font-weight:600;">Daniel</strong> &middot; 2&ndash;3 Copy-Varianten pro Segment freigeben oder anpassen</div>
                             </div>
                         </li>
                         <li class="map-task" style="display:flex;align-items:flex-start;gap:12px;">
                             <div class="map-checkbox" onclick="toggleCheck(this)" style="width:18px;height:18px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;"></div>
                             <div class="map-task-text" style="flex:1;">
-                                <div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">Slow-Ramp-up: 1 &rarr; 2 &rarr; 3&hellip; Mails pro Tag</div>
+                                <div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">Slow-Ramp-up</div>
                                 <div class="map-task-owner" style="font-size:0.74rem;color:var(--text-muted);margin-top:2px;"><strong style="color:var(--accent);font-weight:600;">Grundwerk</strong> &middot; Schonende Domain-Aufwaermung ueber 3&ndash;4 Wochen</div>
                             </div>
                         </li>
@@ -1413,8 +1406,8 @@
                         <li class="map-task" style="display:flex;align-items:flex-start;gap:12px;">
                             <div class="map-checkbox" onclick="toggleCheck(this)" style="width:18px;height:18px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;"></div>
                             <div class="map-task-text" style="flex:1;">
-                                <div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">Beide Kampagnen live: Sanierung + Rohrreinigung</div>
-                                <div class="map-task-owner" style="font-size:0.74rem;color:var(--text-muted);margin-top:2px;"><strong style="color:var(--accent);font-weight:600;">Grundwerk</strong> &middot; 3.000&ndash;5.000 hochpersonalisierte E-Mails/Monat im Vollbetrieb</div>
+                                <div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">Kampagnen live</div>
+                                <div class="map-task-owner" style="font-size:0.74rem;color:var(--text-muted);margin-top:2px;"><strong style="color:var(--accent);font-weight:600;">Grundwerk</strong></div>
                             </div>
                         </li>
                         <li class="map-task" style="display:flex;align-items:flex-start;gap:12px;">
@@ -1434,7 +1427,7 @@
                         <li class="map-task" style="display:flex;align-items:flex-start;gap:12px;">
                             <div class="map-checkbox" onclick="toggleCheck(this)" style="width:18px;height:18px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;"></div>
                             <div class="map-task-text" style="flex:1;">
-                                <div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">Woechentliche Reporting-Calls (30 Min.)</div>
+                                <div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">Woechentliche Reporting-Calls</div>
                                 <div class="map-task-owner" style="font-size:0.74rem;color:var(--text-muted);margin-top:2px;"><strong style="color:var(--accent);font-weight:600;">Daniel + Grundwerk</strong> &middot; Daten aus der Web App, A/B-Test-Optimierungen, naechste Schritte</div>
                             </div>
                         </li>
@@ -1485,25 +1478,23 @@
         <div class="container">
 
             <div class="cta-header">
-                <span class="section-label">Naechster Schritt</span>
+                <span class="section-label">Termin bestaetigt</span>
                 <h2>Folgetermin am 21.05.2026 um 11:30 Uhr</h2>
                 <p class="lead">
-                    Der Termin ist bereits im Postfach &mdash; falls verschoben werden soll, geht das auch ueber Calendly oder per E-Mail.<br>
-                    Kein Verkaufsdruck: wenn es nach der internen Abstimmung kein Fit ist, ist das auch eine valide Antwort.
+                    Der Termin ist bereits gebucht und steht im Postfach. Bei Bedarf gerne den Vertriebsleiter oder das Vertriebsteam mitbringen.
                 </p>
             </div>
 
-            <div class="calendly-wrap" style="max-width:700px;margin:0 auto 24px;background:var(--bg-card);border-radius:var(--radius);border:1px solid var(--border);overflow:hidden;">
-                <div class="calendly-inline-widget"
-                     data-url="https://calendly.com/anthony-katzur/grundwerk-next-steps?hide_event_type_details=1&hide_gdpr_banner=1&background_color=111111&text_color=f0f0f0&primary_color=4f7df9"
-                     style="min-width:320px;height:700px;"></div>
-                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+            <div style="max-width:520px;margin:32px auto 48px;padding:28px 32px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);text-align:center;">
+                <div style="font-size:2.4rem;margin-bottom:10px;">&#9989;</div>
+                <div style="font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:6px;">Donnerstag, 21.05.2026 &middot; 11:30 Uhr</div>
+                <div style="font-size:0.85rem;color:var(--text-muted);margin-bottom:18px;">Anthony Katzur &times; Daniel Breining &middot; Google Meet</div>
+                <div style="font-size:0.8rem;color:var(--text-dim);line-height:1.7;padding-top:16px;border-top:1px solid var(--border);">
+                    Rueckfragen jederzeit per E-Mail oder Telefon:<br>
+                    <strong style="color:var(--text-muted);">anthony.katzur@grundwerk.digital</strong><br>
+                    <strong style="color:var(--text-muted);">+49 176 47189941</strong>
+                </div>
             </div>
-
-            <p class="cta-direct" style="text-align:center;font-size:0.82rem;color:var(--text-dim);line-height:1.9;margin-bottom:48px;">
-                Direkt erreichbar: <strong style="color:var(--text-muted);">anthony.katzur@grundwerk.digital</strong> &middot; <strong style="color:var(--text-muted);">+49 176 47189941</strong><br>
-                Bei Bedarf gerne den Vertriebsleiter oder das Vertriebsteam zum Folgetermin mitbringen.
-            </p>
 
             <div style="max-width:700px; margin:0 auto;">
                 <span class="section-label" style="margin-bottom:16px; display:block;">Antworten auf die Punkte aus dem Call</span>
