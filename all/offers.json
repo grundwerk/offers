@@ -331,5 +331,14 @@
     "secure": "7364918205",
     "icon": "☀️",
     "created": "2026-03-23"
+  },
+  {
+    "slug": "kaulfuss",
+    "name": "Kaulfuß",
+    "subtitle": "2-Monats-Pilot · 7.000€ Total",
+    "type": "offer",
+    "secure": "7382951406",
+    "icon": "🔧",
+    "created": "2026-05-19"
   }
 ]
