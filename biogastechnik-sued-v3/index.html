@@ -355,6 +355,134 @@ footer p+p{margin-top:6px}
   </div>
 </section>
 
+<!-- BEISPIEL-COPY -->
+<style>
+.bc-tabs{display:flex;gap:4px;margin-top:32px;background:var(--bg);padding:6px;border-radius:12px;border:1px solid var(--border);width:fit-content;flex-wrap:wrap}
+.bc-tab{background:transparent;color:var(--text-muted);border:none;padding:10px 18px;border-radius:8px;font-family:inherit;font-size:0.82rem;font-weight:700;cursor:pointer;letter-spacing:0.04em;transition:all 0.2s}
+.bc-tab:hover{color:var(--text)}
+.bc-tab.active{background:var(--accent);color:#fff}
+.bc-panel{display:none;margin-top:20px}
+.bc-panel.active{display:block}
+.bc-email{background:var(--bg);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.bc-email-head{padding:12px 20px;background:rgba(79,125,249,0.06);border-bottom:1px solid var(--border);display:flex;gap:20px;align-items:center;flex-wrap:wrap;font-size:0.82rem}
+.bc-email-head .lbl{color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;font-size:0.68rem;margin-right:6px}
+.bc-email-body{margin:0;padding:20px 22px;font-family:'Inter',sans-serif;font-size:0.88rem;line-height:1.7;color:var(--text);white-space:pre-wrap;word-wrap:break-word;background:transparent}
+.bc-reasons{margin-top:12px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px}
+.bc-reason{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px 14px}
+.bc-reason-lbl{font-size:0.65rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;font-weight:700;margin-bottom:4px}
+.bc-reason p{font-size:0.78rem;color:var(--text-muted);line-height:1.55;margin:0}
+.bc-var-legend{margin-top:32px;background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:16px 18px;display:flex;flex-wrap:wrap;gap:8px 14px;font-size:0.78rem}
+.bc-var-legend code{background:rgba(79,125,249,0.1);padding:2px 8px;border-radius:5px;color:var(--accent);font-size:0.92em}
+.bc-var-legend span{color:var(--text-muted);margin-right:4px}
+.bc-einsatz{background:rgba(79,125,249,0.12);padding:2px 7px;border-radius:5px;color:var(--accent);font-size:0.92em;font-family:monospace}
+</style>
+<section id="beispiel-copy" class="fade-in" style="background:var(--bg-card-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="wrap">
+    <div class="section-label">Beispiel-Copy</div>
+    <h2 class="section-title">So sehen eure E-Mails <span class="accent">konkret aus</span>.</h2>
+    <p class="section-sub">Zwei A/B-Varianten f&uuml;r Step 1 plus ein Follow-up. Framework: <strong>Trigger &rarr; Value Prop &rarr; Social Proof &rarr; CTA</strong>. Unbelegte Zahlen sind als <span class="bc-einsatz">[EINSATZ]</span>-Marker markiert &mdash; die f&uuml;llen wir gemeinsam mit euren echten Referenzdaten im KickOff.</p>
+
+    <!-- TABS -->
+    <div class="bc-tabs" role="tablist">
+      <button class="bc-tab active" data-bc-tab="a">Variante A</button>
+      <button class="bc-tab" data-bc-tab="b">Variante B</button>
+      <button class="bc-tab" data-bc-tab="f">Step 2 &middot; Follow-up</button>
+    </div>
+
+    <!-- PANEL A -->
+    <div class="bc-panel active" data-bc-panel="a">
+      <div style="font-size:0.82rem;color:var(--text-muted);margin-bottom:10px;">Angle: Verf&uuml;gbarkeit &amp; ungeplante Stillst&auml;nde</div>
+      <div class="bc-email">
+        <div class="bc-email-head">
+          <div><span class="lbl">Betreff</span><strong>kurze frage</strong></div>
+          <div><span class="lbl">Preview</span><span style="color:var(--text-muted);">Hallo [Name], w&auml;hrend meiner Recherche...</span></div>
+        </div>
+        <pre class="bc-email-body">{{OPENING_LINE_FORMAL}} {{firstName}},
+
+w&auml;hrend meiner Recherche zu Biogasanlagen in {{LOCATION}} ist mir {{COMPANY_NAME}} aufgefallen.
+
+Bei Anlagen ab [EINSATZ: Leistung kW, z.B. 500 kW] geht jeder ungeplante Stillstand schnell in den vier- bis f&uuml;nfstelligen Bereich pro Tag &mdash; durch entgangene EEG-Verg&uuml;tung und Substratverluste. Eine planbare Wartung und schneller Service halten die Verf&uuml;gbarkeit oben.
+
+Seit &uuml;ber 20 Jahren bauen und betreuen wir Biogasanlagen in S&uuml;ddeutschland, [EINSATZ: Anzahl aktive Servicevertr&auml;ge, z.B. 200+] im laufenden Servicevertrag.
+
+Spricht etwas dagegen, kurz zu schauen, wie das bei {{COMPANY_NAME}} aussieht?
+
+{{accountSignature}}</pre>
+      </div>
+      <div class="bc-reasons">
+        <div class="bc-reason"><div class="bc-reason-lbl">Trigger</div><p>Segment-basiert: &bdquo;Biogasanlagen in {{LOCATION}}&ldquo;.</p></div>
+        <div class="bc-reason"><div class="bc-reason-lbl">Value Prop</div><p>&bdquo;Stillstand kostet vier- bis f&uuml;nfstellig pro Tag&ldquo; &mdash; Pain in Zahlen.</p></div>
+        <div class="bc-reason"><div class="bc-reason-lbl">Social Proof</div><p>&bdquo;20 Jahre, 200+ Servicevertr&auml;ge&ldquo; &mdash; spezifisch statt Floskeln.</p></div>
+        <div class="bc-reason"><div class="bc-reason-lbl">CTA</div><p>Reverse Negation &mdash; niedrigere H&uuml;rde als Terminvorschlag.</p></div>
+      </div>
+    </div>
+
+    <!-- PANEL B -->
+    <div class="bc-panel" data-bc-panel="b">
+      <div style="font-size:0.82rem;color:var(--text-muted);margin-bottom:10px;">Angle: Repowering &amp; Wirkungsgrad</div>
+      <div class="bc-email">
+        <div class="bc-email-head">
+          <div><span class="lbl">Betreff</span><strong>repowering</strong></div>
+          <div><span class="lbl">Preview</span><span style="color:var(--text-muted);">Hallo [Name], kurz zu eurer Anlage...</span></div>
+        </div>
+        <pre class="bc-email-body">{{OPENING_LINE_FORMAL}} {{firstName}},
+
+kurz zu eurer Anlage in {{LOCATION}}.
+
+Ab einem Anlagenalter von [EINSATZ: Jahre, z.B. 10 Jahren] sinkt der Wirkungsgrad in vielen Fermentern messbar &mdash; bei den aktuellen Substratpreisen frisst das die Marge. Repowering und gezielter Komponententausch holen typischerweise [EINSATZ: % Wirkungsgrad-Plus aus Referenzprojekten] mehr aus dem gleichen Input.
+
+Wir planen und realisieren das seit &uuml;ber 20 Jahren &mdash; mit kurzen Stillstandzeiten und ohne dass die Anlage l&auml;nger als n&ouml;tig steht.
+
+Haben Sie diese oder n&auml;chste Woche 15 Minuten, um darauf zu schauen?
+
+{{accountSignature}}</pre>
+      </div>
+      <div class="bc-reasons">
+        <div class="bc-reason"><div class="bc-reason-lbl">Unterschied zu A</div><p>Wirtschaftlicher Angle. &bdquo;Marge&ldquo; spricht Eigent&uuml;mer/Betriebsleiter an.</p></div>
+        <div class="bc-reason"><div class="bc-reason-lbl">Betreff</div><p>&bdquo;repowering&ldquo; &mdash; ein Wort, kleingeschrieben, wirkt wie interne Mail.</p></div>
+        <div class="bc-reason"><div class="bc-reason-lbl">Mechanik</div><p>&bdquo;Wirkungsgrad &darr; bei steigenden Substratpreisen&ldquo; &mdash; konkret statt Buzzword.</p></div>
+        <div class="bc-reason"><div class="bc-reason-lbl">CTA</div><p>Direct ask mit Zeitfenster. Kein Link, kein Calendly.</p></div>
+      </div>
+    </div>
+
+    <!-- PANEL FOLLOW-UP -->
+    <div class="bc-panel" data-bc-panel="f">
+      <div style="font-size:0.82rem;color:var(--text-muted);margin-bottom:10px;">Ohne Betreff &middot; 2&ndash;3 Tage nach Step 1</div>
+      <div class="bc-email">
+        <div class="bc-email-head">
+          <div><span class="lbl">Betreff</span><span style="color:var(--text-muted);font-style:italic;">(kein Betreff &mdash; schiebt Step 1 hoch)</span></div>
+        </div>
+        <pre class="bc-email-body">{{OPENING_LINE_FORMAL}} {{firstName}},
+
+kurz nochmal hierzu.
+
+F&uuml;r Anlagen in der Gr&ouml;&szlig;enordnung von {{COMPANY_NAME}} ist bei der EEG-Anschlussverg&uuml;tung gerade Bewegung &mdash; [EINSATZ: konkreter Trigger, z.B. Ausschreibungstermin, F&ouml;rderprogramm, neue Substratquelle]. Wir pr&uuml;fen das pro Anlage individuell.
+
+Passt ein kurzer Austausch diese Woche?
+
+{{accountSignature}}</pre>
+      </div>
+      <div class="bc-reasons" style="grid-template-columns:1fr;">
+        <div class="bc-reason"><div class="bc-reason-lbl">Warum so kurz?</div><p>Follow-up soll Step 1 in den Posteingang zur&uuml;ckschieben, nicht neu erz&auml;hlen. Ein neuer Info-Happen (EEG-Trigger, aufgespart f&uuml;r Step 2) + weicherer CTA.</p></div>
+      </div>
+    </div>
+
+    <!-- VARIABLEN-LEGENDE -->
+    <div class="bc-var-legend">
+      <div style="font-size:0.68rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;font-weight:700;width:100%;margin-bottom:2px;">Variablen-Legende</div>
+      <div><code>{{firstName}}</code><span>Vorname</span></div>
+      <div><code>{{COMPANY_NAME}}</code><span>Firmen-/Anlagenname</span></div>
+      <div><code>{{LOCATION}}</code><span>Stadt/Region</span></div>
+      <div><code>{{OPENING_LINE_FORMAL}}</code><span>Hallo/Guten Tag (Spintax)</span></div>
+      <div><code>{{accountSignature}}</code><span>Account-Signatur</span></div>
+      <div><span class="bc-einsatz">[EINSATZ: ...]</span><span>im KickOff gemeinsam f&uuml;llen</span></div>
+    </div>
+
+    <script>(function(){var tabs=document.querySelectorAll('.bc-tab');var panels=document.querySelectorAll('.bc-panel');tabs.forEach(function(t){t.addEventListener('click',function(){var k=t.getAttribute('data-bc-tab');tabs.forEach(function(x){x.classList.remove('active')});panels.forEach(function(p){p.classList.remove('active')});t.classList.add('active');document.querySelector('[data-bc-panel="'+k+'"]').classList.add('active');});});})();</script>
+
+  </div>
+</section>
+
 <!-- PERSPEKTIVE -->
 <section class="fade-in">
   <div class="wrap">
