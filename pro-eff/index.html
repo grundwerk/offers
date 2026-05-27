@@ -1,55 +1,11 @@
-<!-- GRUNDWERK-OFFER v1 | 2026-05-27 | Initial deploy PRO.EFF Sales Room -->
-  GRUNDWERK SALES ROOM TEMPLATE v1.1 (sanitisiert 2026-05-24 nach deeploi-Bug)
-
-  Erstellt: März 2026 (initiale Version basierte auf Urbify Sales Room)
-  Sanitization: 2026-05-24 — Urbify-Specific-Strings durch {{STRATEGY_*}}-Platzhalter ersetzt
-
-  ⚠️  CRITICAL — LESEN vor jedem neuen Sales-Room-Build:
-  Dieses Template ist KEIN „passabler Default-Content". Es ist ein CSS/JS/HTML-SKELETT.
-  ALLE Custom-Content-Blöcke (Tab 1, 2, 3, 5, 6, 7, 8) MÜSSEN pro Kunde komplett neu
-  aus dem Sales-Call-Transkript geschrieben werden. Nur Tab 4 (Ergebnisse) bleibt 1:1.
-
-  Falls keine Strategie im Call besprochen wurde → Tab 6 KOMPLETT entfernen, NICHT
-  Default-Content stehen lassen (siehe references/tab-6-strategie.md HARD-FAIL).
-
-  Pre-Deploy Pflicht: bash ~/grundwerk-skills/create-offer-website/scripts/content-drift-check.sh ./index.html
-
-  ANLEITUNG:
-  1. Ordner kopieren: cp -r template-v1/ [kunde-slug]/
-  2. Alle {{PLATZHALTER}} ersetzen (siehe Liste unten)
-  3. Offers: Standard ist 3-Tier (Einsteiger/Standard/Ultra) — kann vom Closer überschrieben werden
-  4. FAQs: Aus grundwerk/claude-context → grundwerk/objection-handling.md personalisieren
-  5. Strategie: Aus dem Sales Call Transkript extrahieren (siehe Skill)
-  6. In offers.json eintragen und pushen
-
-  PLATZHALTER:
-  PRO.EFF      — Firmenname des Kunden
-  https://proeff.de/wp-content/uploads/logo.svg  — URL zum Firmenlogo (SVG/PNG)
-  PRO.EFF         — Vorname des Decision Makers
-  das PRO.EFF Team     — Vollständiger Name des DM
-  Cord Rodenberg       — Hauptkontaktperson (Name)
-  Geschäftsführer — Rolle der Hauptkontaktperson
-  Juan Bellver-Garcia       — Zweite Kontaktperson
-  Friedrich Wilhelm Hahne       — Dritte Kontaktperson
-  Anthony Katzur     — Name des Closers
-  anthony.katzur@grundwerk.digital    — E-Mail des Closers
-  +4915888655479      — Telefon des Closers
-  +49 158 88655479 — Telefon formatiert
-  4915888655479   — WhatsApp Nummer (ohne +)
-  ../assets/team/anthony-katzur.jpeg     — Pfad zum Closer-Foto (../assets/team/...)
-  27.05.2026      — Datum des Sales Calls (TT.MM.JJJJ)
-  30      — Dauer in Minuten
-  6294817503     — Zugangscode (10-stellig)
-  tm8si6qq6m       — Wistia Video ID
-  https://calendly.com/anthony-katzur/grundwerk-call    — Calendly Booking URL
--->
+<!-- GRUNDWERK-OFFER v2 | 2026-05-27 | Fix leaked template comment header -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII=" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="offer-version" content="v1 | 2026-05-27">
+    <meta name="offer-version" content="v2 | 2026-05-27">
     <title>PRO.EFF × Grundwerk Digital — Sales Room</title>
     <script>
         (function(){
