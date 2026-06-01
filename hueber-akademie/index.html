@@ -1,4 +1,4 @@
-<!-- GRUNDWERK-OFFER v2 | 2026-06-01 12:30 | Stufe 1: 2-Monats-Pilot 3.500 EUR/Mo, 0 EUR Setup -->
+<!-- GRUNDWERK-OFFER v3 | 2026-06-01 13:30 | Beide Logos als Bilder in Nav + Hero -->
 <!--
   GRUNDWERK SALES ROOM TEMPLATE v1.1 (sanitisiert 2026-05-24 nach deeploi-Bug)
 
@@ -48,7 +48,7 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="offer-version" content="v2 | 2026-06-01">
+    <meta name="offer-version" content="v3 | 2026-06-01">
     <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII=" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hueber Akademie × Grundwerk Digital — Sales Room</title>
@@ -699,10 +699,10 @@
 <!-- ─── NAV ─── -->
 <nav>
     <div class="nav-logo">
-        <img src="https://framerusercontent.com/images/4xEctZIb7Nfq9zuWT0Qa9v8GVHM.png" alt="Grundwerk" class="nav-client-logo">
-        <span class="nav-logo-text">Grundwerk</span>
+        <img src="https://framerusercontent.com/images/4xEctZIb7Nfq9zuWT0Qa9v8GVHM.png" alt="Grundwerk" class="nav-client-logo" style="width:28px;height:28px;object-fit:contain;flex-shrink:0;border-radius:6px;">
+        <span class="nav-logo-text" style="color:var(--text);font-weight:800;">Grundwerk</span>
         <span class="nav-logo-sep">×</span>
-        <span class="nav-logo-client">Hueber Akademie</span>
+        <img src="https://www.hueber-akademie.de/wp-content/uploads/2026/04/B_RGB_Logo_HueberAkademie_quer_061125_zw.png" alt="Hueber Akademie" style="height:22px;max-width:140px;object-fit:contain;flex-shrink:0;border-radius:4px;">
     </div>
     <div class="nav-right" style="display:flex;align-items:center;gap:10px;">
         <button class="theme-toggle" id="theme-btn" onclick="toggleTheme()" style="background:var(--bg-card);border:1px solid var(--border);color:var(--text-muted);border-radius:var(--radius-sm);padding:7px 13px;cursor:pointer;font-size:0.8rem;font-family:inherit;font-weight:500;display:flex;align-items:center;gap:6px;white-space:nowrap;">☀️ Bright</button>
@@ -747,12 +747,14 @@
     <div class="hero-panel">
         <div class="hero-content">
 
-            <div class="hero-logos">
-                <img src="https://www.hueber-akademie.de/wp-content/uploads/2024/09/Hueber-Akademie-Logo.png"
-                     alt="Hueber Akademie" class="hero-logo"
+            <div class="hero-logos" style="display:flex;align-items:center;gap:16px;margin-bottom:32px;">
+                <img src="https://www.hueber-akademie.de/wp-content/uploads/2026/04/B_RGB_Logo_HueberAkademie_quer_061125_zw.png"
+                     alt="Hueber Akademie" style="height:44px;max-width:200px;object-fit:contain;border-radius:6px;"
                      onerror="this.outerHTML='<span style=\'font-weight:800;font-size:1.1rem;color:var(--text)\'>Hueber Akademie</span>'">
-                <span class="hero-logo-sep">×</span>
-                <div class="gw-wordmark">Grundwerk</div>
+                <span class="hero-logo-sep" style="font-size:1.2rem;color:var(--text-dim);font-weight:300;">×</span>
+                <img src="https://framerusercontent.com/images/4xEctZIb7Nfq9zuWT0Qa9v8GVHM.png"
+                     alt="Grundwerk" style="height:44px;max-width:140px;object-fit:contain;border-radius:6px;"
+                     onerror="this.outerHTML='<span style=\'font-family:Montserrat,sans-serif;font-size:1.1rem;font-weight:800;color:var(--text)\'>Grundwerk</span>'">
             </div>
 
             <div class="hero-badge">Vertraulich — Für Helga Grabbe</div>
