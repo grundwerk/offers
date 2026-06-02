@@ -1,11 +1,11 @@
-<!-- GRUNDWERK-OFFER v5 | 2026-06-02 | Aktionsplan-Header reduziert auf "Action Plan" -->
+<!-- GRUNDWERK-OFFER v7 | 2026-06-02 | Finding 3 gekürzt, BAFA-31.12. Prognose raus, Calendly-CTA in Tab 6, Hero-Logos auf 72px -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII=" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="offer-version" content="v6 | 2026-06-02">
+    <meta name="offer-version" content="v7 | 2026-06-02">
     <title>Agentur D'Agostino × Grundwerk Digital — Sales Room</title>
     <script>
         (function(){
@@ -271,19 +271,20 @@
             max-width: 960px; margin: 0 auto;
         }
         .hero-logos {
-            display: flex; align-items: center; gap: 16px; margin-bottom: 32px;
+            display: flex; align-items: center; gap: 28px; margin-bottom: 40px;
         }
         .hero-logo {
-            height: 38px; max-width: 140px; object-fit: contain;
-            border-radius: 10px; background: rgba(255,255,255,0.9); padding: 8px 14px;
+            height: 72px; max-width: 280px; object-fit: contain;
+            filter: drop-shadow(0 2px 12px rgba(0,0,0,0.35));
         }
         [data-theme="light"] .hero-logo {
-            background: rgba(0,0,0,0.04); padding: 8px 14px;
+            background: rgba(0,0,0,0.04); padding: 10px 18px; border-radius: 12px;
+            filter: none;
         }
-        .hero-logo-sep { font-size: 1rem; color: var(--text-dim); font-weight: 300; }
+        .hero-logo-sep { font-size: 1.8rem; color: var(--text-dim); font-weight: 300; }
         .gw-wordmark {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1rem; font-weight: 800; letter-spacing: -0.01em; color: var(--text);
+            font-size: 1.7rem; font-weight: 800; letter-spacing: -0.02em; color: var(--text);
         }
 
 
@@ -753,7 +754,7 @@
 
                 <div style="margin-bottom:32px;">
                     <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:6px;">3. 4-6 Anfragen pro Woche möglich — Auslastung liegt deutlich darunter</div>
-                    <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;">Die Geschäftsführung könnte 4-6 Anfragen pro Woche verarbeiten — die Lehrtätigkeit lässt sich runterfahren, sobald die Pipeline anzieht. Aktuell wird Kapazität von Wochen zu Wochen verschenkt. <strong style="color:var(--text);">Das ist kein Vertriebs-, sondern ein Zuflussproblem.</strong></div>
+                    <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;">Aktuell wird Kapazität von Wochen zu Wochen verschenkt. <strong style="color:var(--text);">Das ist kein Vertriebs-, sondern ein Zuflussproblem.</strong></div>
                 </div>
 
                 <div style="margin-bottom:32px;">
@@ -778,8 +779,7 @@
                     <li style="padding:12px 0;border-bottom:1px solid var(--border);font-size:0.9rem;color:var(--text-muted);padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--text-dim);">—</span>1-2 Stunden manuelles Mailing pro Woche binden Zeit, die nebenberuflich ohnehin knapp ist</li>
                     <li style="padding:12px 0;border-bottom:1px solid var(--border);font-size:0.9rem;color:var(--text-muted);padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--text-dim);">—</span>Marketing-Abteilungen und E-Commerce-Brands werden ohne System nicht erreicht — Wettbewerber besetzen die Slots</li>
                     <li style="padding:12px 0;border-bottom:1px solid var(--border);font-size:0.9rem;color:var(--text-muted);padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--text-dim);">—</span>Ohne CRM keine Forecast-Fähigkeit, keine Lead-Historie, keine Optimierungs-Basis</li>
-                    <li style="padding:12px 0;border-bottom:1px solid var(--border);font-size:0.9rem;color:var(--text-muted);padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--text-dim);">—</span>BAFA-Förderung läuft 31.12.2026 aus — danach komplette Eigenfinanzierung</li>
-                    <li style="padding:12px 0;font-size:0.9rem;color:var(--text-muted);padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--text-dim);">—</span>Jeder Monat ohne System = ein Monat ohne planbare Pipeline</li>
+                                        <li style="padding:12px 0;font-size:0.9rem;color:var(--text-muted);padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--text-dim);">—</span>Jeder Monat ohne System = ein Monat ohne planbare Pipeline</li>
                 </ul>
             </div>
 
@@ -1193,7 +1193,7 @@
     </div>
 </div>
 
-<!-- <!-- TAB 7 — AKTIONSPLAN (MAP)                          -->
+<!-- TAB 6 — AKTIONSPLAN (MAP)                          -->
 <!-- ═══════════════════════════════════════════════════ -->
 <!-- PERSONALISIEREN: Aktionsplan-Schritte an Kundenkontext anpassen (Kontaktpersonen, Rollen, Timings) -->
 <div class="panel" id="panel-plan">
@@ -1319,11 +1319,20 @@
                 </div>
 
             </div>
+
+            <!-- Calendly CTA -->
+            <div style="text-align:center;margin-top:40px;padding:32px 24px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);">
+                <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:8px;">Termin bestätigen oder verschieben</div>
+                <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:18px;line-height:1.6;max-width:480px;margin-left:auto;margin-right:auto;">Der Folgetermin am 09.06.2026 um 8:30 Uhr ist bereits im Kalender. Bei Änderungswünschen direkt über Calendly buchen oder verschieben.</p>
+                <a href="https://calendly.com/anthony-katzur/grundwerk-termin-buchen" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#fff;padding:13px 26px;border-radius:100px;font-size:0.9rem;font-weight:700;text-decoration:none;box-shadow:0 8px 24px rgba(79,125,249,0.3);">Termin buchen → calendly.com/anthony-katzur</a>
+            </div>
+
         </div>
     </div>
 </div>
 
-<!-- <!-- TAB 7 — TERMIN                                     -->
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- TAB 7 — TERMIN                                     -->
 <!-- ═══════════════════════════════════════════════════ -->
 <div class="panel" id="panel-booking">
     <div class="panel-inner">
