@@ -1,0 +1,454 @@
+<!-- GRUNDWERK-OFFER v1 | 2026-06-03 18:00 | Claude-Code-Workshop Landingpage (starres Template, Slots: LOGO/HEADER/SUBHEADER/AGENCY) -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII=">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII=">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="offer-version" content="v1 | 2026-06-03">
+<title>Claude Code Workshop für Agenturen &times; Grundwerk</title>
+<script>
+(function(){
+var code='7204815639';
+var params=new URLSearchParams(window.location.search);
+if(params.get('secure')!==code){document.documentElement.style.display='none';document.title='Zugriff verweigert';window.stop();}
+})();
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+--bg:#0a0a0a;--bg-card:#111111;--bg-card-hover:#161616;--bg-accent:#1a1a2e;
+--text:#f0f0f0;--text-muted:#888;--text-dim:#666;
+--accent:#4f7df9;--accent-glow:rgba(79,125,249,0.15);
+--green:#22c55e;--green-glow:rgba(34,197,94,0.15);
+--red:#ef4444;--yellow:#eab308;
+--border:rgba(255,255,255,0.06);--border-accent:rgba(79,125,249,0.3);
+--radius:16px;--radius-sm:10px;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px;overflow-x:hidden;}
+a{color:var(--accent);text-decoration:none;}
+.container{max-width:1140px;margin:0 auto;padding:0 2rem;}
+section{padding:100px 2rem;}
+.section-label{font-size:0.8rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent);font-weight:600;margin-bottom:12px;}
+.section-title{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-0.03em;line-height:1.2;margin-bottom:18px;}
+.section-sub{color:var(--text-muted);font-size:1.05rem;max-width:720px;line-height:1.7;}
+.center{text-align:center;margin-left:auto;margin-right:auto;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);background:rgba(10,10,10,0.85);border-bottom:1px solid var(--border);}
+.nav-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;padding:0 2rem;}
+.nav-logo{font-weight:800;font-size:1.05rem;letter-spacing:-0.02em;}
+.nav-logo span{color:var(--text-muted);font-weight:400;font-size:0.85rem;}
+.nav-cta{background:var(--accent);color:#fff;padding:9px 20px;border-radius:100px;font-size:0.85rem;font-weight:600;transition:all 0.2s;}
+.nav-cta:hover{opacity:0.9;transform:translateY(-1px);}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;padding:120px 2rem 80px;}
+.hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px);background-size:60px 60px;mask-image:linear-gradient(to bottom,rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.3) 40%,transparent 75%);-webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.3) 40%,transparent 75%);pointer-events:none;}
+.hero-content{position:relative;z-index:1;max-width:820px;}
+.hero-lockup{display:inline-flex;align-items:center;gap:14px;margin:0 auto 28px;padding:10px 18px;border:1px solid var(--border-accent);border-radius:100px;background:rgba(79,125,249,0.06);font-weight:700;font-size:0.95rem;}
+.hero-lockup .x{color:var(--text-dim);font-weight:400;}
+.hero-lockup .agency{color:var(--accent);}
+.hero-lockup img{height:24px;width:auto;display:block;}
+.badge{display:inline-block;background:var(--green-glow);color:var(--green);border:1px solid rgba(34,197,94,0.3);padding:6px 16px;border-radius:100px;font-size:0.78rem;font-weight:600;letter-spacing:0.02em;margin-bottom:22px;}
+.hero h1{font-size:clamp(2.1rem,5vw,3.6rem);font-weight:800;letter-spacing:-0.03em;line-height:1.12;margin-bottom:22px;}
+.hero h1 .gradient{background:linear-gradient(135deg,var(--accent),#818cf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero p.lead{font-size:1.15rem;color:var(--text-muted);max-width:640px;margin:0 auto 34px;line-height:1.7;}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn-primary{background:var(--accent);color:#fff;padding:15px 34px;border-radius:100px;font-weight:600;font-size:0.98rem;transition:all 0.2s;display:inline-block;}
+.btn-primary:hover{opacity:0.92;transform:translateY(-2px);}
+.btn-secondary{background:transparent;color:var(--text);padding:15px 30px;border-radius:100px;font-weight:600;font-size:0.98rem;border:1px solid var(--border);transition:all 0.2s;}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent);}
+
+/* LOGO TICKER */
+.logo-ticker{padding:24px 0 48px;overflow:hidden;position:relative;}
+.logo-ticker::before,.logo-ticker::after{content:'';position:absolute;top:0;bottom:0;width:10%;z-index:2;pointer-events:none;}
+.logo-ticker::before{left:0;background:linear-gradient(to right,var(--bg) 40%,transparent);}
+.logo-ticker::after{right:0;background:linear-gradient(to left,var(--bg) 40%,transparent);}
+.ticker-row{display:flex;gap:48px;align-items:center;white-space:nowrap;margin-bottom:18px;will-change:transform;}
+.ticker-row.forward{animation:tickerForward 42s linear infinite;}
+.ticker-row.reverse{animation:tickerReverse 48s linear infinite;}
+@keyframes tickerForward{from{transform:translateX(0%)}to{transform:translateX(-50%)}}
+@keyframes tickerReverse{from{transform:translateX(-50%)}to{transform:translateX(0%)}}
+.client-logo{height:34px;width:auto;opacity:0.42;filter:grayscale(100%) brightness(2);transition:opacity 0.3s,filter 0.3s;flex-shrink:0;}
+.client-logo:hover{opacity:0.85;filter:grayscale(0%) brightness(1);}
+
+/* STAT BAR */
+.stat-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1000px;margin:0 auto;}
+.stat-item{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px 20px;text-align:center;}
+.stat-number{font-size:2.2rem;font-weight:800;color:var(--accent);letter-spacing:-0.02em;line-height:1;margin-bottom:8px;}
+.stat-label{font-size:0.86rem;color:var(--text-muted);line-height:1.4;}
+
+/* PROBLEM */
+.problem-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:stretch;}
+.problem-cards{display:flex;flex-direction:column;gap:16px;}
+.problem-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;}
+.problem-card .ic{font-size:1.4rem;margin-bottom:10px;}
+.problem-card h3{font-size:1.05rem;font-weight:700;margin-bottom:8px;}
+.problem-card p{font-size:0.92rem;color:var(--text-muted);}
+.solution-box{background:linear-gradient(135deg,rgba(79,125,249,0.12),rgba(79,125,249,0.04));border:1px solid var(--border-accent);border-radius:var(--radius);padding:32px;display:flex;flex-direction:column;justify-content:center;}
+.solution-box .section-label{margin-bottom:10px;}
+.solution-box h3{font-size:1.5rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:14px;line-height:1.25;}
+.solution-box p{color:var(--text-muted);font-size:0.98rem;}
+
+/* FEATURE CARDS */
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.feature-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:border-color 0.2s,transform 0.2s;}
+.feature-card:hover{border-color:var(--border-accent);transform:translateY(-3px);}
+.feature-card .ic{width:44px;height:44px;border-radius:12px;background:var(--accent-glow);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:16px;}
+.feature-card h3{font-size:1.12rem;font-weight:700;margin-bottom:10px;}
+.feature-card p{font-size:0.93rem;color:var(--text-muted);}
+
+/* PREP LIST */
+.prep-list{display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;max-width:900px;margin:0 auto;}
+.prep-item{display:flex;gap:14px;align-items:flex-start;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px 20px;}
+.prep-item .check{color:var(--green);font-weight:800;flex-shrink:0;margin-top:1px;}
+.prep-item div h4{font-size:0.98rem;font-weight:600;margin-bottom:3px;}
+.prep-item div p{font-size:0.86rem;color:var(--text-muted);}
+
+/* TIMELINE / AGENDA */
+.agenda{max-width:860px;margin:0 auto;border-left:2px solid var(--border-accent);padding-left:30px;display:flex;flex-direction:column;gap:26px;}
+.agenda-item{position:relative;}
+.agenda-item::before{content:'';position:absolute;left:-39px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(79,125,249,0.18);}
+.agenda-item .when{font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent);font-weight:600;margin-bottom:5px;}
+.agenda-item h4{font-size:1.12rem;font-weight:700;margin-bottom:6px;}
+.agenda-item p{font-size:0.94rem;color:var(--text-muted);}
+.day-result{margin:34px auto 0;max-width:860px;background:var(--green-glow);border:1px solid rgba(34,197,94,0.3);border-radius:var(--radius);padding:22px 26px;}
+.day-result strong{color:var(--green);}
+
+/* AFTERCARE STEPS */
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.step-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:26px;text-align:center;}
+.step-num{width:42px;height:42px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;margin:0 auto 16px;}
+.step-card h4{font-size:1.05rem;font-weight:700;margin-bottom:9px;}
+.step-card p{font-size:0.9rem;color:var(--text-muted);}
+
+/* GUARANTEE */
+.guarantee{text-align:center;background:radial-gradient(ellipse at 50% 50%,rgba(34,197,94,0.14) 0%,transparent 70%);}
+.guarantee .badge{margin-bottom:20px;}
+.guarantee h2{font-size:clamp(1.6rem,3.2vw,2.4rem);font-weight:800;max-width:780px;margin:0 auto 18px;line-height:1.25;letter-spacing:-0.02em;}
+.guarantee p{color:var(--text-muted);max-width:640px;margin:0 auto;font-size:1rem;}
+
+/* OUTCOME */
+.outcome-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:960px;margin:0 auto;}
+.outcome-item{display:flex;gap:14px;align-items:flex-start;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 22px;}
+.outcome-item .check{color:var(--green);font-weight:800;font-size:1.1rem;flex-shrink:0;}
+.outcome-item p{font-size:0.96rem;color:var(--text);}
+.outcome-item p span{color:var(--text-muted);}
+
+/* TEAM */
+.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:760px;margin:0 auto;}
+.team-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:26px;display:flex;gap:18px;align-items:center;}
+.team-card img{width:68px;height:68px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1px solid var(--border-accent);}
+.team-card h4{font-size:1.05rem;font-weight:700;}
+.team-card .role{font-size:0.85rem;color:var(--accent);margin-bottom:6px;}
+.team-card .contact{font-size:0.82rem;color:var(--text-muted);}
+
+/* FAQ */
+.faq{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
+.faq-item{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;}
+.faq-q{padding:20px 24px;font-weight:600;font-size:1rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;}
+.faq-q .plus{color:var(--accent);font-size:1.3rem;font-weight:400;flex-shrink:0;transition:transform 0.25s;}
+.faq-item.open .faq-q .plus{transform:rotate(45deg);}
+.faq-a{display:none;padding:0 24px 22px;color:var(--text-muted);font-size:0.94rem;line-height:1.7;}
+
+/* CTA */
+.cta-section{text-align:center;background:radial-gradient(ellipse at 50% 50%,rgba(79,125,249,0.15) 0%,transparent 70%);}
+.cta-section h2{font-size:clamp(1.9rem,3.6vw,2.9rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:16px;}
+.cta-section p{color:var(--text-muted);max-width:560px;margin:0 auto 32px;font-size:1.05rem;}
+.cta-contacts{display:flex;gap:32px;justify-content:center;flex-wrap:wrap;margin-top:34px;color:var(--text-muted);font-size:0.9rem;}
+.cta-contacts a{color:var(--text);}
+
+/* FOOTER */
+footer{text-align:center;padding:40px 2rem;border-top:1px solid var(--border);color:var(--text-dim);font-size:0.85rem;}
+footer a{color:var(--text-dim);}
+
+/* FADE-IN */
+.fade-in{opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+
+@media (max-width:900px){
+.problem-grid,.feature-grid,.steps-grid,.team-grid,.outcome-grid,.prep-list{grid-template-columns:1fr;}
+.stat-bar{grid-template-columns:repeat(2,1fr);}
+}
+@media (max-width:600px){
+section{padding:64px 1.25rem;}
+.hero{padding:104px 1.25rem 64px;}
+.nav-cta{display:none;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">Grundwerk <span>&times; Claude Code Workshop</span></div>
+    <a href="https://calendly.com/tom-soto-schiller/grundwerk-next-steps?hide_event_type_details=1&amp;hide_gdpr_banner=1&amp;background_color=111111&amp;text_color=f0f0f0&amp;primary_color=4f7df9" class="nav-cta" target="_blank" rel="noopener">Erstgespräch buchen</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-content">
+    <!-- SLOT:LOGO START (Skill ersetzt den Inhalt durch das gescrapte Agentur-Logo) -->
+    <div class="hero-lockup">
+      <span>Grundwerk</span>
+      <span class="x">&times;</span>
+      <span class="agency"><!-- SLOT:AGENCY_NAME START -->Eure Agentur<!-- SLOT:AGENCY_NAME END --></span>
+    </div>
+    <!-- SLOT:LOGO END -->
+    <div class="badge">Garantie: mindestens eine Automation läuft</div>
+    <h1><!-- SLOT:HEADER START -->Euer ganzes Team baut eigene <span class="gradient">KI-Automationen</span>. Schon nach einem Tag.<!-- SLOT:HEADER END --></h1>
+    <p class="lead"><!-- SLOT:SUBHEADER START -->Wir befähigen euer komplettes Team auf Claude Code und Antigravity, bauen im Workshop eure erste Automation kostenlos fertig und begleiten euch vier Wochen, bis sie produktiv läuft.<!-- SLOT:SUBHEADER END --></p>
+    <div class="hero-btns">
+      <a href="https://calendly.com/tom-soto-schiller/grundwerk-next-steps?hide_event_type_details=1&amp;hide_gdpr_banner=1&amp;background_color=111111&amp;text_color=f0f0f0&amp;primary_color=4f7df9" class="btn-primary" target="_blank" rel="noopener">Erstgespräch buchen</a>
+      <a href="#ablauf" class="btn-secondary">So läuft der Workshop ab</a>
+    </div>
+  </div>
+</header>
+
+<!-- TRUST: LOGO TICKER -->
+<div class="logo-ticker">
+  <div class="ticker-row forward">
+    <img class="client-logo" loading="eager" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel">
+    <img class="client-logo" loading="eager" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes">
+    <img class="client-logo" loading="eager" src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO">
+    <img class="client-logo" loading="eager" src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview">
+    <img class="client-logo" loading="eager" src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly">
+    <img class="client-logo" loading="eager" src="https://cocomin.de/wp-content/uploads/2024/11/cocomin-logo.svg" alt="COCOMIN">
+    <img class="client-logo" loading="eager" src="https://greenlovers.de/media/greenlovers/greenlovers-logo.svg" alt="Greenlovers">
+    <img class="client-logo" loading="eager" src="https://cdn.prod.website-files.com/636be452cfaef27bb708348b/64c007bb670af5c4b3350452_logo-echte-media.png" alt="echte Media">
+    <img class="client-logo" loading="eager" src="https://onecdn.io/media/c58d65a7-af81-47c7-8212-697f330d436f/xlg" alt="Hearthunting">
+    <img class="client-logo" loading="eager" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel">
+    <img class="client-logo" loading="eager" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes">
+    <img class="client-logo" loading="eager" src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO">
+    <img class="client-logo" loading="eager" src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview">
+    <img class="client-logo" loading="eager" src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly">
+    <img class="client-logo" loading="eager" src="https://cocomin.de/wp-content/uploads/2024/11/cocomin-logo.svg" alt="COCOMIN">
+    <img class="client-logo" loading="eager" src="https://greenlovers.de/media/greenlovers/greenlovers-logo.svg" alt="Greenlovers">
+    <img class="client-logo" loading="eager" src="https://cdn.prod.website-files.com/636be452cfaef27bb708348b/64c007bb670af5c4b3350452_logo-echte-media.png" alt="echte Media">
+    <img class="client-logo" loading="eager" src="https://onecdn.io/media/c58d65a7-af81-47c7-8212-697f330d436f/xlg" alt="Hearthunting">
+  </div>
+  <div class="ticker-row reverse">
+    <img class="client-logo" loading="eager" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges">
+    <img class="client-logo" loading="eager" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy">
+    <img class="client-logo" loading="eager" src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&amp;t=1761169171551" alt="Peer Studios">
+    <img class="client-logo" loading="eager" src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic">
+    <img class="client-logo" loading="eager" src="/assets/logos/cervis.svg" alt="Cervis">
+    <img class="client-logo" loading="eager" src="https://www.salz-berlin.de/fileadmin/template/images/salz-logo.svg" alt="Salz Berlin">
+    <img class="client-logo" loading="eager" src="https://static.wixstatic.com/media/ca8e40_dea24fe36b6542a8ab40001f4073231d~mv2.png" alt="Agentiq">
+    <img class="client-logo" loading="eager" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges">
+    <img class="client-logo" loading="eager" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy">
+    <img class="client-logo" loading="eager" src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&amp;t=1761169171551" alt="Peer Studios">
+    <img class="client-logo" loading="eager" src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic">
+    <img class="client-logo" loading="eager" src="/assets/logos/cervis.svg" alt="Cervis">
+    <img class="client-logo" loading="eager" src="https://www.salz-berlin.de/fileadmin/template/images/salz-logo.svg" alt="Salz Berlin">
+    <img class="client-logo" loading="eager" src="https://static.wixstatic.com/media/ca8e40_dea24fe36b6542a8ab40001f4073231d~mv2.png" alt="Agentiq">
+  </div>
+</div>
+
+<!-- STAT BAR -->
+<section style="padding-top:20px;padding-bottom:40px;">
+  <div class="container">
+    <div class="stat-bar fade-in">
+      <div class="stat-item"><div class="stat-number">50+</div><div class="stat-label">B2B-Unternehmen unterstützt</div></div>
+      <div class="stat-item"><div class="stat-number">Live</div><div class="stat-label">eigene Software selbst deployed</div></div>
+      <div class="stat-item"><div class="stat-number">1 Tag</div><div class="stat-label">bis zur ersten eigenen Automation</div></div>
+      <div class="stat-item"><div class="stat-number">Garantie</div><div class="stat-label">mindestens eine Automation läuft</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM / SOLUTION -->
+<section>
+  <div class="container">
+    <div class="problem-grid fade-in">
+      <div>
+        <div class="section-label">Die Realität in den meisten Agenturen</div>
+        <h2 class="section-title" style="margin-bottom:24px;">KI ist überall. Genutzt wird sie kaum.</h2>
+        <div class="problem-cards">
+          <div class="problem-card"><div class="ic">🧩</div><h3>Tools, aber kein System</h3><p>Jeder probiert für sich etwas aus. Niemand baut echte, wiederkehrende Automationen, die dem Team täglich Arbeit abnehmen.</p></div>
+          <div class="problem-card"><div class="ic">🔒</div><h3>Wissen bei einer Person</h3><p>Wenn überhaupt jemand automatisiert, dann eine Person. Fällt sie aus, steht alles still. Das Team bleibt abhängig.</p></div>
+          <div class="problem-card"><div class="ic">⏳</div><h3>Viel Reden, wenig Umsetzung</h3><p>Es gibt Ideen und Webinare, aber am Ende läuft nichts produktiv. Der Sprung von "interessant" zu "läuft im Alltag" passiert nicht.</p></div>
+        </div>
+      </div>
+      <div class="solution-box">
+        <div class="section-label">Unser Ansatz</div>
+        <h3>Wir befähigen euer Team, statt euch ein Tool zu verkaufen.</h3>
+        <p>In einem Workshop-Tag richten wir euer komplettes Setup ein, bauen mit euch eure erste echte Automation und geben jedem im Team eine eigene Aufgabe. Danach begleiten wir euch vier Wochen, bis es produktiv läuft. Am Ende kann euer Team eigene Automationen bauen, ohne uns.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOUR TEAM CAN DO -->
+<section style="background:#0d0d0d;border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="center fade-in" style="margin-bottom:46px;">
+      <div class="section-label">Was euer Team nach dem Workshop kann</div>
+      <h2 class="section-title">Das gleiche Setup, mit dem wir intern arbeiten</h2>
+      <p class="section-sub center">Wir setzen bei euch genau das auf, womit Grundwerk täglich Automationen und eigene Software baut. Kein Demo-Account, sondern euer echtes Arbeits-Setup.</p>
+    </div>
+    <div class="feature-grid fade-in">
+      <div class="feature-card"><div class="ic">⚡</div><h3>Team-Enabling auf Claude Code</h3><p>Jeder im Team lernt, mit Claude Code zu arbeiten und eigene Abläufe zu automatisieren. Auch ohne Programmier-Hintergrund.</p></div>
+      <div class="feature-card"><div class="ic">🛠️</div><h3>Antigravity eingerichtet</h3><p>Wir richten Antigravity auf allen Rechnern ein, sodass euer Team sofort produktiv loslegen kann.</p></div>
+      <div class="feature-card"><div class="ic">🏗️</div><h3>Euer komplettes Setup</h3><p>Wir bauen das gesamte System bei euch auf, das wir intern nutzen. Ihr arbeitet ab Tag eins mit einer erprobten Grundlage.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- VORBEREITUNG -->
+<section>
+  <div class="container">
+    <div class="center fade-in" style="margin-bottom:42px;">
+      <div class="section-label">Vorbereitung</div>
+      <h2 class="section-title">Was wir von euch vor dem Workshop brauchen</h2>
+      <p class="section-sub center">Wenig. Den Rest bringen wir mit. Diese Punkte klären wir gemeinsam im Vorgespräch.</p>
+    </div>
+    <div class="prep-list fade-in">
+      <div class="prep-item"><span class="check">✓</span><div><h4>Ein Rechner pro Teilnehmer</h4><p>Mac oder Windows. Mehr Hardware ist nicht nötig.</p></div></div>
+      <div class="prep-item"><span class="check">✓</span><div><h4>Zugang zu Claude</h4><p>Falls noch nicht vorhanden, stellen wir den Zugang für den Workshop bereit.</p></div></div>
+      <div class="prep-item"><span class="check">✓</span><div><h4>Zwei bis drei Aufgaben aus eurem Alltag</h4><p>Wiederkehrende Tätigkeiten, die sich lohnen zu automatisieren. Wir sammeln sie vorab mit euch.</p></div></div>
+      <div class="prep-item"><span class="check">✓</span><div><h4>Das Team für einen Tag freigeräumt</h4><p>Der Workshop ist am wirksamsten, wenn das ganze Team dabei ist.</p></div></div>
+      <div class="prep-item"><span class="check">✓</span><div><h4>Zugänge zu euren Tools</h4><p>Für die Systeme, die ihr automatisieren wollt. Optional, je nach Aufgabe.</p></div></div>
+      <div class="prep-item"><span class="check">✓</span><div><h4>Offenheit, Dinge anders zu machen</h4><p>Das Wichtigste. Den Rest übernehmen wir.</p></div></div>
+    </div>
+    <p class="center" style="margin-top:24px;color:var(--text-dim);font-size:0.84rem;">Den genauen Vorbereitungs-Umfang stimmen wir im Erstgespräch auf euer Team ab.</p>
+  </div>
+</section>
+
+<!-- WORKSHOP-TAG ABLAUF -->
+<section id="ablauf" style="background:#0d0d0d;border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="center fade-in" style="margin-bottom:46px;">
+      <div class="section-label">Aufbau des Workshop-Tags</div>
+      <h2 class="section-title">Ein Tag. Am Ende läuft eine Automation.</h2>
+      <p class="section-sub center">Das ganze Team ist dabei, keine Vorkenntnisse nötig. Wir arbeiten an euren echten Aufgaben, nicht an Beispielen.</p>
+    </div>
+    <div class="agenda fade-in">
+      <div class="agenda-item"><div class="when">Vormittag</div><h4>Setup und Grundlagen</h4><p>Wir richten Claude Code und Antigravity auf allen Rechnern ein und zeigen dem Team, wie es damit arbeitet. Danach bauen wir gemeinsam die erste Automation.</p></div>
+      <div class="agenda-item"><div class="when">Mittag</div><h4>Jeder bekommt eine eigene Aufgabe</h4><p>Jedes Team-Mitglied bekommt eine konkrete Automations-Aufgabe aus dem eigenen Arbeitsalltag. So lernt jeder am echten Fall.</p></div>
+      <div class="agenda-item"><div class="when">Nachmittag</div><h4>Bauen, testen, live schalten</h4><p>Wir begleiten jeden beim Umsetzen. Eine Automation für das Unternehmen bauen wir komplett fertig, kostenlos und inklusive.</p></div>
+      <div class="agenda-item"><div class="when">Ende des Tages</div><h4>Euer Setup steht</h4><p>Das Setup läuft, mindestens eine Automation ist produktiv, und jeder im Team hat seine eigene Aufgabe begonnen.</p></div>
+    </div>
+    <div class="day-result fade-in"><strong>Ergebnis am Abend:</strong> Euer Setup ist eingerichtet, eine Automation läuft bereits produktiv, und jeder im Team weiß, wie er weiterbaut.</div>
+  </div>
+</section>
+
+<!-- NACHBETREUUNG -->
+<section>
+  <div class="container">
+    <div class="center fade-in" style="margin-bottom:46px;">
+      <div class="section-label">Nachbetreuung</div>
+      <h2 class="section-title">Wir lassen euch nach dem Tag nicht allein</h2>
+      <p class="section-sub center">Der Workshop ist der Start. In den vier Wochen danach bringen wir die Automationen über die Ziellinie.</p>
+    </div>
+    <div class="steps-grid fade-in">
+      <div class="step-card"><div class="step-num">1</div><h4>Session nach zwei Wochen</h4><p>Zwei Wochen nach dem Workshop klären wir gemeinsam offene Fragen und finalisieren die Automationen.</p></div>
+      <div class="step-card"><div class="step-num">2</div><h4>Zusätzlicher 30-Minuten-Call</h4><p>Danach gibt es einen weiteren Call für alle Rückfragen, die unterwegs aufkommen.</p></div>
+      <div class="step-card"><div class="step-num">3</div><h4>Umsetzungs-Kontrolle</h4><p>Wir prüfen aktiv, dass die im Workshop gestarteten Automationen auch wirklich live gehen.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="guarantee">
+  <div class="container">
+    <div class="fade-in">
+      <div class="badge">Unsere Garantie</div>
+      <h2>Mindestens eine Automation läuft. Garantiert.</h2>
+      <p>Wenn am Ende der Begleitung nicht mindestens eine Automation produktiv in eurem Alltag läuft, bauen wir sie fertig. Ohne Zusatzkosten. Ihr geht kein Risiko ein.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ERGEBNIS NACH 4 WOCHEN -->
+<section style="background:#0d0d0d;border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="center fade-in" style="margin-bottom:42px;">
+      <div class="section-label">Ergebnis nach vier Wochen</div>
+      <h2 class="section-title">Was ihr in der Hand habt</h2>
+    </div>
+    <div class="outcome-grid fade-in">
+      <div class="outcome-item"><span class="check">✓</span><p>Euer Team arbeitet täglich mit Claude Code und Antigravity. <span>Routine statt Experiment.</span></p></div>
+      <div class="outcome-item"><span class="check">✓</span><p>Mindestens eine Automation läuft produktiv. <span>Garantiert, meist sind es mehrere.</span></p></div>
+      <div class="outcome-item"><span class="check">✓</span><p>Jeder im Team kann eigene Automationen bauen. <span>Ohne dass ihr uns dafür braucht.</span></p></div>
+      <div class="outcome-item"><span class="check">✓</span><p>Ihr habt das Setup, mit dem wir intern arbeiten. <span>Erprobt, nicht improvisiert.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section>
+  <div class="container">
+    <div class="center fade-in" style="margin-bottom:42px;">
+      <div class="section-label">Wer das macht</div>
+      <h2 class="section-title">Die Leute hinter dem Workshop</h2>
+    </div>
+    <div class="team-grid fade-in">
+      <div class="team-card"><img src="https://start.grundwerk.digital/assets/team/tom-soto-schiller.jpeg" alt="Tom Soto Schiller"><div><h4>Tom Soto Schiller</h4><div class="role">Gründer, Grundwerk Digital</div><div class="contact">tom.schiller@grundwerk.digital</div></div></div>
+      <div class="team-card"><img src="https://start.grundwerk.digital/assets/team/anthony-katzur.jpeg" alt="Anthony Katzur"><div><h4>Anthony Katzur</h4><div class="role">Grundwerk Digital</div><div class="contact">anthony.katzur@grundwerk.digital</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background:#0d0d0d;border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="center fade-in" style="margin-bottom:42px;">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Häufige Fragen</h2>
+    </div>
+    <div class="faq fade-in">
+      <div class="faq-item"><div class="faq-q">Braucht unser Team Programmier-Kenntnisse?<span class="plus">+</span></div><div class="faq-a">Nein. Claude Code und Antigravity sind genau dafür gemacht, dass auch Menschen ohne Entwickler-Hintergrund Automationen bauen. Wir holen jeden im Team ab, unabhängig vom Vorwissen.</div></div>
+      <div class="faq-item"><div class="faq-q">Wie lange dauert das Ganze?<span class="plus">+</span></div><div class="faq-a">Ein Workshop-Tag, plus vier Wochen Begleitung mit einer Session nach zwei Wochen und einem zusätzlichen 30-Minuten-Call. Den Workshop-Tag legen wir gemeinsam fest.</div></div>
+      <div class="faq-item"><div class="faq-q">Was, wenn bei uns am Ende nichts läuft?<span class="plus">+</span></div><div class="faq-a">Das passiert nicht, und falls doch, greift unsere Garantie: Läuft am Ende der Begleitung nicht mindestens eine Automation produktiv, bauen wir sie ohne Zusatzkosten fertig.</div></div>
+      <div class="faq-item"><div class="faq-q">Für wen ist das gedacht?<span class="plus">+</span></div><div class="faq-a">Für Agenturen, die mit KI nicht nur experimentieren, sondern ihr Team wirklich befähigen wollen, eigene Automationen zu bauen und produktiv zu nutzen.</div></div>
+      <div class="faq-item"><div class="faq-q">Welche Tools setzen wir ein?<span class="plus">+</span></div><div class="faq-a">Claude Code und Antigravity als Grundlage, dazu die Tools, die ihr ohnehin im Einsatz habt. Wir bauen auf eurem bestehenden Setup auf, statt euch ein neues aufzuzwingen.</div></div>
+      <div class="faq-item"><div class="faq-q">Was kostet der Workshop?<span class="plus">+</span></div><div class="faq-a">Den genauen Umfang und die Investition stimmen wir im Erstgespräch auf eure Teamgröße ab. Die erste Automation und ihre Nachbetreuung sind im Paket enthalten.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="fade-in">
+      <h2>Bereit, euer Team auf KI-Automation zu heben?</h2>
+      <p>Lasst uns in einem kurzen Erstgespräch klären, wie der Workshop für euer Team aussieht. Unverbindlich.</p>
+      <a href="https://calendly.com/tom-soto-schiller/grundwerk-next-steps?hide_event_type_details=1&amp;hide_gdpr_banner=1&amp;background_color=111111&amp;text_color=f0f0f0&amp;primary_color=4f7df9" class="btn-primary" target="_blank" rel="noopener">Erstgespräch buchen</a>
+      <div class="cta-contacts">
+        <div>Tom Soto Schiller<br><a href="mailto:tom.schiller@grundwerk.digital">tom.schiller@grundwerk.digital</a><br>+49 155 66331147</div>
+        <div>Anthony Katzur<br><a href="mailto:anthony.katzur@grundwerk.digital">anthony.katzur@grundwerk.digital</a><br>+49 176 47189941</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 Grundwerk Digital. Alle Rechte vorbehalten. &nbsp;&middot;&nbsp;
+  <a href="https://grundwerk.digital/impressum" target="_blank" rel="noopener">Impressum</a> &nbsp;&middot;&nbsp;
+  <a href="https://grundwerk.digital/datenschutz" target="_blank" rel="noopener">Datenschutz</a>
+</footer>
+
+<script>
+// Fade-in on scroll
+var observer=new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){ if(entry.isIntersecting) entry.target.classList.add('visible'); });
+},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.fade-in').forEach(function(el){observer.observe(el);});
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(function(q){
+  q.addEventListener('click',function(){
+    var item=q.parentElement;
+    var open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');i.querySelector('.faq-a').style.display='none';});
+    if(!open){item.classList.add('open');item.querySelector('.faq-a').style.display='block';}
+  });
+});
+</script>
+</body>
+</html>
