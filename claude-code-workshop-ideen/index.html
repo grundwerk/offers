@@ -1,0 +1,393 @@
+<!-- GRUNDWERK-OFFER v1 | 2026-06-04 | Claude Code Workshop, Design-Ideen-Galerie (50 nummerierte Konzepte) -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII=">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="offer-version" content="v1 | 2026-06-04">
+<title>Claude Code Workshop, 50 Design-Ideen &times; Grundwerk</title>
+<script>
+(function(){var code='7204815639';var p=new URLSearchParams(window.location.search);if(p.get('secure')!==code){document.documentElement.style.display='none';document.title='Zugriff verweigert';window.stop();}})();
+</script>
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" rel="stylesheet">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--bg:#030306;--panel:#0b0b11;--panel2:#101019;--border:#1c2030;--text:#f1f5f9;--muted:#94a3b8;--dim:#5b6678;--blue:#0066ff;--blue2:#3b82ff;--bsoft:rgba(0,102,255,.10);--bline:rgba(0,102,255,.30);--claude:#d97757;--green:#22c55e;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+.dsp{font-family:'Clash Display','Inter',sans-serif;}
+a{color:inherit;text-decoration:none;}
+/* header */
+.lab-head{padding:64px 5vw 30px;border-bottom:1px solid var(--border);position:relative;}
+.lab-head::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse 60% 80% at 30% 0%,#000,transparent 70%);-webkit-mask-image:radial-gradient(ellipse 60% 80% at 30% 0%,#000,transparent 70%);pointer-events:none;}
+.lab-badge{display:inline-flex;align-items:center;gap:8px;background:var(--bsoft);color:#7aa7ff;border:1px solid var(--bline);padding:7px 15px;border-radius:100px;font-size:.78rem;font-weight:600;margin-bottom:18px;position:relative;}
+.lab-badge .d{width:7px;height:7px;border-radius:50%;background:var(--blue);box-shadow:0 0 8px var(--blue);}
+.lab-head h1{font-family:'Clash Display','Inter',sans-serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:600;letter-spacing:-.02em;line-height:1.05;margin-bottom:14px;position:relative;}
+.lab-head h1 .hl{color:var(--blue);}
+.lab-head p{color:var(--muted);max-width:680px;font-size:1.05rem;position:relative;}
+.lab-head .hint{margin-top:14px;color:var(--dim);font-size:.86rem;position:relative;}
+.lab-head .hint b{color:var(--claude);}
+/* grid */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:22px;padding:38px 5vw 90px;}
+.tile{background:var(--panel);border:1px solid var(--border);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .25s,transform .25s,box-shadow .25s;}
+.tile:hover{border-color:var(--bline);transform:translateY(-3px);box-shadow:0 14px 40px rgba(0,0,0,.4);}
+.tile cap,.tile .cap{display:flex;align-items:center;gap:11px;padding:16px 18px 12px;}
+.num{font-family:'Clash Display',serif;font-weight:600;font-size:1.05rem;color:var(--blue);background:var(--bsoft);border:1px solid var(--bline);min-width:40px;height:30px;display:inline-flex;align-items:center;justify-content:center;border-radius:8px;padding:0 8px;}
+.cap h3{font-size:.96rem;font-weight:600;letter-spacing:-.01em;}
+.cap .sub{font-size:.78rem;color:var(--dim);margin-top:1px;}
+.demo{height:186px;margin:0 14px 14px;border-radius:11px;background:var(--panel2);border:1px solid var(--border);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.demo.light{background:#f4f4f1;border-color:#e3e3dd;}
+.demo.light .lc{color:#0c1320;}
+.demo.light .mut{color:#52607a;}
+.tile .tags{padding:0 18px 16px;display:flex;flex-wrap:wrap;gap:6px;}
+.tag{font-size:.68rem;color:var(--muted);background:var(--panel2);border:1px solid var(--border);border-radius:6px;padding:3px 8px;}
+.tag.b{color:#7aa7ff;border-color:var(--bline);background:var(--bsoft);}
+/* logo chip placeholder (steht fuer das gescrapte Kundenlogo) */
+.logochip{display:inline-flex;align-items:center;gap:7px;background:#fff;color:#0c1320;font-weight:700;font-size:.72rem;letter-spacing:.02em;padding:6px 11px;border-radius:7px;box-shadow:0 2px 10px rgba(0,0,0,.25);white-space:nowrap;}
+.logochip .cd{width:8px;height:8px;border-radius:2px;background:var(--claude);}
+.logochip.sm{font-size:.62rem;padding:4px 8px;gap:5px;}
+.logochip.ghost{background:transparent;color:var(--muted);border:1.5px dashed var(--bline);box-shadow:none;}
+/* claude mark */
+.cmk line{stroke:var(--claude);stroke-width:2.6;stroke-linecap:round;}
+.mono{font-family:'JetBrains Mono',monospace;}
+
+/* ===== ANIMATION PRIMITIVES (laufen wenn .tile.play) ===== */
+@keyframes pulse{0%{transform:scale(.85);opacity:.7}70%{transform:scale(1.7);opacity:0}100%{opacity:0}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes dashdraw{to{stroke-dashoffset:0}}
+@keyframes flowdash{to{stroke-dashoffset:-32}}
+@keyframes blink{50%{opacity:0}}
+@keyframes popin{0%{opacity:0;transform:translateY(14px) scale(.92)}100%{opacity:1;transform:none}}
+@keyframes fillbar{to{width:var(--w,80%)}}
+@keyframes sweepx{0%{left:-30%}100%{left:130%}}
+@keyframes glowpulse{0%,100%{box-shadow:0 0 0 0 rgba(0,102,255,.0)}50%{box-shadow:0 0 22px 2px rgba(0,102,255,.45)}}
+@keyframes traveldot{0%{offset-distance:0%}100%{offset-distance:100%}}
+@keyframes risein{0%{opacity:0;transform:translateY(18px)}100%{opacity:1;transform:none}}
+@keyframes graytocolor{0%{filter:grayscale(1) opacity(.4)}100%{filter:none}}
+@keyframes widen{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes drift{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* helpers used across demos */
+.dot{width:10px;height:10px;border-radius:50%;background:var(--blue);}
+.ring{position:absolute;width:60px;height:60px;border-radius:50%;border:2px solid var(--blue);opacity:0;}
+.tile.play .ring{animation:pulse 2.4s ease-out infinite;}
+.tile.play .ring.r2{animation-delay:.8s;}
+.tile.play .ring.r3{animation-delay:1.6s;}
+.node{position:absolute;background:var(--panel);border:1px solid var(--bline);border-radius:9px;padding:7px 10px;font-size:.7rem;font-weight:600;color:var(--text);box-shadow:0 4px 14px rgba(0,0,0,.3);opacity:0;}
+.tile.play .node{animation:popin .6s cubic-bezier(.16,1,.3,1) forwards;}
+.svgfull{position:absolute;inset:0;width:100%;height:100%;}
+.tile.play .draw{stroke-dasharray:240;stroke-dashoffset:240;animation:dashdraw 1.3s ease forwards;}
+.tile.play .flow{stroke-dasharray:6 10;animation:flowdash 1s linear infinite;}
+.chip-orbit{position:absolute;font-size:.62rem;font-weight:600;color:#7aa7ff;background:var(--bsoft);border:1px solid var(--bline);border-radius:100px;padding:3px 8px;opacity:0;}
+.tile.play .chip-orbit{animation:risein .6s ease forwards;}
+.bar{height:7px;border-radius:4px;background:var(--blue);width:0;}
+.tile.play .bar{animation:fillbar 1.4s cubic-bezier(.16,1,.3,1) forwards;}
+.sweep{position:absolute;top:0;bottom:0;width:30%;background:linear-gradient(90deg,transparent,rgba(0,102,255,.18),transparent);}
+.tile.play .sweep{animation:sweepx 2.6s ease-in-out infinite;}
+.stagger > *{opacity:0;}
+.tile.play .stagger > *{animation:risein .55s cubic-bezier(.16,1,.3,1) forwards;}
+.tile.play .stagger > *:nth-child(2){animation-delay:.12s}
+.tile.play .stagger > *:nth-child(3){animation-delay:.24s}
+.tile.play .stagger > *:nth-child(4){animation-delay:.36s}
+.tile.play .stagger > *:nth-child(5){animation-delay:.48s}
+.cursor{display:inline-block;width:8px;height:15px;background:var(--blue);margin-left:2px;vertical-align:middle;}
+.tile.play .cursor{animation:blink 1s step-end infinite;}
+.spin-slow{animation:spin 16s linear infinite;}
+.lc{color:var(--text);} .mut{color:var(--muted);}
+.center-col{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;padding:14px;}
+@media(max-width:560px){.grid{grid-template-columns:1fr;}.lab-head{padding:48px 6vw 26px;}}
+</style>
+</head>
+<body>
+<header class="lab-head">
+  <div class="lab-badge"><span class="d"></span>Design-Labor, nur intern</div>
+  <h1 class="dsp">50 Animations-Ideen f&uuml;r die <span class="hl">Claude Code Workshop</span>-Landingpage</h1>
+  <p>Jede Kachel ist ein echter Mini-Prototyp im Grundwerk-Look. Das wei&szlig;e Feld <span class="logochip ghost sm">EURE AGENTUR</span> steht &uuml;berall f&uuml;r das gescrapte Kundenlogo, das sp&auml;ter automatisch eingesetzt wird.</p>
+  <p class="hint">Scroll durch, merk dir die <b>Nummern</b>, die dir gefallen, und sag mir z.B. &bdquo;13, 21, 29 sind geil&ldquo;. Dann baue ich die Gewinner production-ready aus.</p>
+</header>
+<main class="grid" id="grid">
+<!-- 1 -->
+<figure class="tile" id="t01"><div class="cap"><span class="num">01</span><div><h3>Headline, Wort f&uuml;r Wort</h3><div class="sub">gestaffelter Reveal</div></div></div>
+<div class="demo"><div class="stagger dsp" style="font-size:1.15rem;font-weight:600;line-height:1.25;padding:0 16px;text-align:center;"><div>Euer Team</div><div>baut eigene</div><div style="color:var(--blue)">KI-Automationen</div></div></div>
+<div class="tags"><span class="tag b">Hero</span><span class="tag">Clash Display</span></div></figure>
+<!-- 2 -->
+<figure class="tile" id="t02"><div class="cap"><span class="num">02</span><div><h3>Blaue Unterstreichung</h3><div class="sub">zieht sich unter dem Keyword</div></div></div>
+<div class="demo"><div class="dsp" style="font-size:1.2rem;font-weight:600;text-align:center;">KI, die euer<br>Team <span style="position:relative;color:var(--blue)">selbst baut<span style="position:absolute;left:0;right:0;bottom:-5px;height:3px;background:var(--blue);border-radius:3px;transform-origin:left;transform:scaleX(0)" class="uline"></span></span></div></div>
+<div class="tags"><span class="tag b">Hero</span><span class="tag">SVG/CSS</span></div></figure>
+<!-- 3 -->
+<figure class="tile" id="t03"><div class="cap"><span class="num">03</span><div><h3>Spotlight-Sweep</h3><div class="sub">Lichtstreifen &uuml;ber Headline</div></div></div>
+<div class="demo"><div class="sweep"></div><div class="dsp" style="font-size:1.2rem;font-weight:600;text-align:center;padding:0 14px;">Ein Workshop-Tag.<br>Eine Automation live.</div></div>
+<div class="tags"><span class="tag b">Hero</span><span class="tag">Loop</span></div></figure>
+<!-- 4 -->
+<figure class="tile" id="t04"><div class="cap"><span class="num">04</span><div><h3>Co-Brand-Lockup</h3><div class="sub">Grundwerk &times; Claude &times; Logo</div></div></div>
+<div class="demo"><div class="stagger" style="display:flex;align-items:center;gap:9px;font-weight:600;font-size:.92rem;"><span class="dsp">Grundwerk</span><svg class="cmk" width="17" height="17" viewBox="0 0 40 40"><g><line x1="20" y1="5" x2="20" y2="13"/><line x1="20" y1="5" x2="20" y2="13" transform="rotate(45 20 20)"/><line x1="20" y1="5" x2="20" y2="13" transform="rotate(90 20 20)"/><line x1="20" y1="5" x2="20" y2="13" transform="rotate(135 20 20)"/><line x1="20" y1="5" x2="20" y2="13" transform="rotate(180 20 20)"/><line x1="20" y1="5" x2="20" y2="13" transform="rotate(225 20 20)"/><line x1="20" y1="5" x2="20" y2="13" transform="rotate(270 20 20)"/><line x1="20" y1="5" x2="20" y2="13" transform="rotate(315 20 20)"/></g></svg><span class="logochip sm">EURE AGENTUR</span></div></div>
+<div class="tags"><span class="tag b">Logo</span><span class="tag claude" style="color:var(--claude)">Claude-Mark</span></div></figure>
+<!-- 5 -->
+<figure class="tile" id="t05"><div class="cap"><span class="num">05</span><div><h3>Typewriter-Subline</h3><div class="sub">tippt sich live</div></div></div>
+<div class="demo"><div class="center-col"><div class="dsp" style="font-size:1.15rem;font-weight:600;">Euer Team, bef&auml;higt.</div><div class="mono" style="font-size:.8rem;color:var(--muted)"><span class="js-type" data-text="Claude Code + Antigravity, in einem Tag"></span><span class="cursor"></span></div></div></div>
+<div class="tags"><span class="tag b">Hero</span><span class="tag">JS</span></div></figure>
+<!-- 6 -->
+<figure class="tile" id="t06"><div class="cap"><span class="num">06</span><div><h3>Kinetic Counter</h3><div class="sub">Zahl z&auml;hlt hoch</div></div></div>
+<div class="demo"><div class="center-col"><div class="dsp" style="font-size:3rem;font-weight:600;color:var(--blue);line-height:1"><span class="js-count" data-to="50">0</span>+</div><div class="mut" style="font-size:.82rem">B2B-Unternehmen bef&auml;higt</div></div></div>
+<div class="tags"><span class="tag b">Trust</span><span class="tag">JS</span></div></figure>
+<!-- 7 -->
+<figure class="tile" id="t07"><div class="cap"><span class="num">07</span><div><h3>Logo mit Puls-Ring</h3><div class="sub">lebendiger Marken-Anker</div></div></div>
+<div class="demo"><div style="position:relative;display:flex;align-items:center;justify-content:center"><span class="ring"></span><span class="ring r2"></span><span class="ring r3"></span><span class="logochip">EURE AGENTUR</span></div></div>
+<div class="tags"><span class="tag b">Logo</span><span class="tag">CSS</span></div></figure>
+<!-- 8 -->
+<figure class="tile" id="t08"><div class="cap"><span class="num">08</span><div><h3>Logo als Output-Stempel</h3><div class="sub">grau wird farbig</div></div></div>
+<div class="demo"><div class="node" style="position:static;opacity:1;display:flex;flex-direction:column;gap:7px;align-items:center;padding:14px 16px"><div class="mono" style="font-size:.68rem;color:var(--green)">&#10003; Report erstellt</div><span class="logochip reveal8">EURE AGENTUR</span><div class="mut" style="font-size:.66rem">Eure Brand. Euer Ergebnis.</div></div></div>
+<div class="tags"><span class="tag b">Logo</span><span class="tag">Reveal</span></div></figure>
+<!-- 9 -->
+<figure class="tile" id="t09"><div class="cap"><span class="num">09</span><div><h3>Logo, von Skills umkreist</h3><div class="sub">Orbit</div></div></div>
+<div class="demo"><div style="position:relative;width:160px;height:160px;display:flex;align-items:center;justify-content:center"><div class="orbit9 spin-slow" style="position:absolute;inset:0"><span class="chip-orbit" style="top:0;left:50%;margin-left:-26px;animation-delay:.1s">Outreach</span><span class="chip-orbit" style="top:50%;right:-2px;margin-top:-10px;animation-delay:.3s">Leads</span><span class="chip-orbit" style="bottom:0;left:50%;margin-left:-20px;animation-delay:.5s">Inbox</span><span class="chip-orbit" style="top:50%;left:-2px;margin-top:-10px;animation-delay:.7s">Report</span></div><span class="logochip sm">EURE AGENTUR</span></div></div>
+<div class="tags"><span class="tag b">Skills</span><span class="tag">Orbit</span></div></figure>
+<!-- 10 -->
+<figure class="tile" id="t10"><div class="cap"><span class="num">10</span><div><h3>Partikel konvergieren</h3><div class="sub">Kraft b&uuml;ndelt sich aufs Logo</div></div></div>
+<div class="demo"><div style="position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center"><span class="conv" style="--x:-70px;--y:-40px"></span><span class="conv" style="--x:80px;--y:-30px;animation-delay:.2s"></span><span class="conv" style="--x:-60px;--y:45px;animation-delay:.4s"></span><span class="conv" style="--x:70px;--y:50px;animation-delay:.6s"></span><span class="conv" style="--x:0;--y:-65px;animation-delay:.8s"></span><span class="logochip sm" style="z-index:2">EURE AGENTUR</span></div></div>
+<div class="tags"><span class="tag b">Logo</span><span class="tag">CSS</span></div></figure>
+<!-- 11 -->
+<figure class="tile" id="t11"><div class="cap"><span class="num">11</span><div><h3>Logo f&auml;llt in die Pipeline</h3><div class="sub">als Input ins System</div></div></div>
+<div class="demo"><div style="position:relative;width:100%;height:100%"><span class="logochip sm dropin" style="position:absolute;top:8px;left:50%;margin-left:-46px">EURE AGENTUR</span><div style="position:absolute;bottom:24px;left:0;right:0;display:flex;justify-content:center;gap:8px"><span class="node" style="position:static;opacity:1">Trigger</span><span class="node" style="position:static;opacity:1;border-color:var(--bline)">&#10003; Output</span></div><svg class="svgfull" viewBox="0 0 300 186" preserveAspectRatio="none"><path class="draw" d="M150 40 L150 130" stroke="var(--blue)" stroke-width="2" fill="none"/></svg></div></div>
+<div class="tags"><span class="tag b">Logo</span><span class="tag">Flow</span></div></figure>
+<!-- 12 -->
+<figure class="tile" id="t12"><div class="cap"><span class="num">12</span><div><h3>Transfer-Beam</h3><div class="sub">Grundwerk &rarr; euer Team</div></div></div>
+<div class="demo"><div style="display:flex;align-items:center;gap:0;width:100%;padding:0 18px"><span class="node" style="position:static;opacity:1">Grundwerk</span><div style="flex:1;height:2px;position:relative;margin:0 6px;background:var(--border)"><div class="beam" style="position:absolute;top:0;left:0;height:100%;width:36%;background:linear-gradient(90deg,transparent,var(--blue))"></div></div><span class="logochip sm">EURE AGENTUR</span></div></div>
+<div class="tags"><span class="tag b">Transfer</span><span class="tag">Loop</span></div></figure>
+<!-- 13 -->
+<figure class="tile" id="t13"><div class="cap"><span class="num">13</span><div><h3>Journey-Pipeline &#11088;</h3><div class="sub">Logo wandert heute &rarr; autonom</div></div></div>
+<div class="demo"><div style="position:relative;width:100%;height:100%"><div style="position:absolute;top:74px;left:24px;right:24px;height:2px;background:var(--border)"><div class="jline" style="height:100%;width:0;background:var(--blue);box-shadow:0 0 8px var(--blue)"></div></div><div style="position:absolute;top:62px;left:24px;right:24px;display:flex;justify-content:space-between"><span class="jnode" style="--d:0s"></span><span class="jnode" style="--d:.5s"></span><span class="jnode" style="--d:1s"></span><span class="jnode" style="--d:1.5s"></span></div><span class="logochip sm jchip" style="position:absolute;top:48px">EURE AGENTUR</span><div style="position:absolute;bottom:14px;left:24px;right:24px;display:flex;justify-content:space-between;font-size:.6rem;color:var(--dim)"><span>heute</span><span>Workshop</span><span>live</span><span>autonom</span></div></div></div>
+<div class="tags"><span class="tag b">Prozess-Flow</span><span class="tag">Scroll/Loop</span></div></figure>
+<!-- 14 -->
+<figure class="tile" id="t14"><div class="cap"><span class="num">14</span><div><h3>Vertikale Timeline</h3><div class="sub">Meilensteine zeichnen sich</div></div></div>
+<div class="demo"><div style="position:relative;padding:14px 0 14px 30px"><svg style="position:absolute;left:14px;top:14px;height:150px;width:4" viewBox="0 0 4 150" preserveAspectRatio="none"><path class="draw" d="M2 0 L2 150" stroke="var(--blue)" stroke-width="2"/></svg><div class="stagger" style="display:flex;flex-direction:column;gap:11px"><div style="font-size:.78rem"><b class="lc">Setup</b><div class="mut" style="font-size:.66rem">Claude Code + Antigravity</div></div><div style="font-size:.78rem"><b class="lc">Erste Automation</b><div class="mut" style="font-size:.66rem">live am Workshop-Tag</div></div><div style="font-size:.78rem"><b class="lc">Team baut selbst</b><div class="mut" style="font-size:.66rem">nach 4 Wochen</div></div></div></div></div>
+<div class="tags"><span class="tag b">Prozess</span><span class="tag">SVG-Draw</span></div></figure>
+<!-- 15 -->
+<figure class="tile" id="t15"><div class="cap"><span class="num">15</span><div><h3>Vorher / Nachher</h3><div class="sub">Chaos vs. automatisiert</div></div></div>
+<div class="demo" style="padding:0"><div style="display:flex;width:100%;height:100%"><div style="flex:1;background:#15151c;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;font-size:.62rem;color:var(--dim)"><div style="font-size:1.1rem">&#129529;</div>manuell<br>&amp; verstreut</div><div style="width:2px;background:var(--blue)"></div><div style="flex:1;background:var(--bsoft);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;font-size:.62rem;color:#7aa7ff"><div style="font-size:1.1rem">&#9889;</div>automatisiert<br>&amp; live</div></div></div>
+<div class="tags"><span class="tag b">Prozess</span><span class="tag">Split</span></div></figure>
+<!-- 16 -->
+<figure class="tile" id="t16"><div class="cap"><span class="num">16</span><div><h3>Prozess-Ring</h3><div class="sub">4 Phasen rotieren</div></div></div>
+<div class="demo"><div style="position:relative;width:130px;height:130px"><svg class="svgfull" viewBox="0 0 120 120"><circle cx="60" cy="60" r="48" fill="none" stroke="var(--border)" stroke-width="6"/><circle class="ring16" cx="60" cy="60" r="48" fill="none" stroke="var(--blue)" stroke-width="6" stroke-linecap="round" transform="rotate(-90 60 60)"/></svg><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:.66rem;font-weight:600;text-align:center">Setup &middot; Bau<br>Live &middot; Skalierung</div></div></div>
+<div class="tags"><span class="tag b">Prozess</span><span class="tag">Ring</span></div></figure>
+<!-- 17 -->
+<figure class="tile" id="t17"><div class="cap"><span class="num">17</span><div><h3>Step-Cards flippen</h3><div class="sub">nacheinander</div></div></div>
+<div class="demo"><div class="stagger" style="display:flex;gap:9px">
+<div class="flipcard"><span style="color:var(--blue);font-weight:700">1</span><br>Setup</div>
+<div class="flipcard"><span style="color:var(--blue);font-weight:700">2</span><br>Bauen</div>
+<div class="flipcard"><span style="color:var(--blue);font-weight:700">3</span><br>Live</div></div></div>
+<div class="tags"><span class="tag b">Prozess</span><span class="tag">Flip</span></div></figure>
+<!-- 18 -->
+<figure class="tile" id="t18"><div class="cap"><span class="num">18</span><div><h3>Wandernder Puls</h3><div class="sub">Daten flie&szlig;en durch</div></div></div>
+<div class="demo"><svg class="svgfull" viewBox="0 0 300 186"><path id="p18" d="M30 150 C 110 30, 190 30, 270 120" fill="none" stroke="var(--border)" stroke-width="2"/><path d="M30 150 C 110 30, 190 30, 270 120" fill="none" stroke="var(--blue)" stroke-width="2" class="draw" style="stroke-dasharray:330;stroke-dashoffset:330"/></svg><span class="pulsedot18 dot" style="position:absolute;top:0;left:0;box-shadow:0 0 10px var(--blue)"></span></div>
+<div class="tags"><span class="tag b">Prozess</span><span class="tag">offset-path</span></div></figure>
+<!-- 19 -->
+<figure class="tile" id="t19"><div class="cap"><span class="num">19</span><div><h3>Chaos wird Ordnung</h3><div class="sub">Icons sortieren sich</div></div></div>
+<div class="demo"><div style="position:relative;width:150px;height:120px">
+<span class="ord" style="--fx:-40px;--fy:-30px;--fr:-18deg">&#9993;</span>
+<span class="ord" style="--fx:50px;--fy:-20px;--fr:14deg;animation-delay:.1s">&#128202;</span>
+<span class="ord" style="--fx:-30px;--fy:40px;--fr:22deg;animation-delay:.2s">&#128203;</span>
+<span class="ord" style="--fx:45px;--fy:38px;--fr:-12deg;animation-delay:.3s">&#128231;</span></div></div>
+<div class="tags"><span class="tag b">Prozess</span><span class="tag">CSS</span></div></figure>
+<!-- 20 -->
+<figure class="tile" id="t20"><div class="cap"><span class="num">20</span><div><h3>Wochen-Fortschritt</h3><div class="sub">Woche 1 bis 4 f&uuml;llt</div></div></div>
+<div class="demo"><div class="center-col" style="width:80%"><div style="width:100%;display:flex;flex-direction:column;gap:9px">
+<div><div style="font-size:.66rem;color:var(--muted);margin-bottom:3px">Woche 1 &middot; Setup</div><div style="background:var(--border);border-radius:4px;height:7px"><div class="bar" style="--w:100%"></div></div></div>
+<div><div style="font-size:.66rem;color:var(--muted);margin-bottom:3px">Woche 2 &middot; Finalisieren</div><div style="background:var(--border);border-radius:4px;height:7px"><div class="bar" style="--w:80%"></div></div></div>
+<div><div style="font-size:.66rem;color:var(--muted);margin-bottom:3px">Woche 4 &middot; Team autonom</div><div style="background:var(--border);border-radius:4px;height:7px"><div class="bar" style="--w:65%"></div></div></div></div></div></div>
+<div class="tags"><span class="tag b">Prozess</span><span class="tag">Bars</span></div></figure>
+<!-- 21 -->
+<figure class="tile" id="t21"><div class="cap"><span class="num">21</span><div><h3>Claude baut live &#11088;</h3><div class="sub">Terminal-Assembly</div></div></div>
+<div class="demo" style="padding:0"><div class="mono" style="width:100%;height:100%;background:#08080d;padding:14px;font-size:.66rem;line-height:1.7;color:var(--muted)"><div style="color:var(--dim)">&#10095; inbox-triage f&uuml;r <span style="color:#7aa7ff">EURE AGENTUR</span></div><div style="color:var(--claude)">&#10033; Claude: skill classify-inbox</div><div class="t21r"><span class="logochip sm" style="vertical-align:middle">EURE AGENTUR</span> &rarr; baut...</div><div class="t21d" style="color:var(--green)">&#10003; 42 Mails sortiert<span class="cursor"></span></div></div></div>
+<div class="tags"><span class="tag b">Claude</span><span class="tag">JS-Type</span></div></figure>
+<!-- 22 -->
+<figure class="tile" id="t22"><div class="cap"><span class="num">22</span><div><h3>Chat-Verlauf</h3><div class="sub">Prompt &rarr; Claude &rarr; Ergebnis</div></div></div>
+<div class="demo"><div class="stagger" style="display:flex;flex-direction:column;gap:8px;width:80%"><div class="bub user">Schreib unsere Outreach-Mail</div><div class="bub claude">&#10033; Entwurf + 2 Varianten, gepr&uuml;ft</div><div class="bub ok">&#10003; bereit zum Senden</div></div></div>
+<div class="tags"><span class="tag b">Claude</span><span class="tag">Bubbles</span></div></figure>
+<!-- 23 -->
+<figure class="tile" id="t23"><div class="cap"><span class="num">23</span><div><h3>Claude-Spark</h3><div class="sub">strahlt, pulsiert</div></div></div>
+<div class="demo"><div style="position:relative;display:flex;align-items:center;justify-content:center"><span class="ring" style="border-color:var(--claude)"></span><span class="ring r2" style="border-color:var(--claude)"></span><svg class="cmk spark23" width="58" height="58" viewBox="0 0 40 40"><g><line x1="20" y1="3" x2="20" y2="12"/><line x1="20" y1="3" x2="20" y2="12" transform="rotate(30 20 20)"/><line x1="20" y1="6" x2="20" y2="13" transform="rotate(60 20 20)"/><line x1="20" y1="3" x2="20" y2="12" transform="rotate(90 20 20)"/><line x1="20" y1="6" x2="20" y2="13" transform="rotate(120 20 20)"/><line x1="20" y1="3" x2="20" y2="12" transform="rotate(150 20 20)"/><line x1="20" y1="3" x2="20" y2="12" transform="rotate(180 20 20)"/><line x1="20" y1="6" x2="20" y2="13" transform="rotate(210 20 20)"/><line x1="20" y1="3" x2="20" y2="12" transform="rotate(240 20 20)"/><line x1="20" y1="6" x2="20" y2="13" transform="rotate(270 20 20)"/><line x1="20" y1="3" x2="20" y2="12" transform="rotate(300 20 20)"/><line x1="20" y1="6" x2="20" y2="13" transform="rotate(330 20 20)"/></g></svg></div></div>
+<div class="tags"><span class="tag" style="color:var(--claude)">Claude-Mark</span><span class="tag">Loop</span></div></figure>
+<!-- 24 -->
+<figure class="tile" id="t24"><div class="cap"><span class="num">24</span><div><h3>Reasoning &rarr; Skill spawnt</h3><div class="sub">Denken wird sichtbar</div></div></div>
+<div class="demo"><div class="center-col"><div class="mono" style="font-size:.64rem;color:var(--claude)">&#10033; w&auml;hle passenden Skill...</div><div class="node skillspawn" style="position:static;display:flex;align-items:center;gap:6px"><span style="color:var(--blue)">&#9881;</span> create-automation</div></div></div>
+<div class="tags"><span class="tag b">Claude</span><span class="tag">Spawn</span></div></figure>
+<!-- 25 -->
+<figure class="tile" id="t25"><div class="cap"><span class="num">25</span><div><h3>Code tippt, Ergebnis</h3><div class="sub">Build &rarr; gr&uuml;ner Haken</div></div></div>
+<div class="demo" style="padding:0"><div class="mono" style="width:100%;height:100%;background:#08080d;padding:14px;font-size:.64rem;line-height:1.8"><div class="stagger" style="display:flex;flex-direction:column"><div style="color:#7aa7ff">task("send-report")</div><div style="color:var(--muted)">&nbsp;&nbsp;.run(client)</div><div style="color:var(--muted)">&nbsp;&nbsp;.deploy()</div><div style="color:var(--green)">&#10003; live</div></div></div></div>
+<div class="tags"><span class="tag b">Claude</span><span class="tag">Code</span></div></figure>
+<!-- 26 -->
+<figure class="tile" id="t26"><div class="cap"><span class="num">26</span><div><h3>Slack-Toast</h3><div class="sub">Ergebnis ploppt mit Logo</div></div></div>
+<div class="demo"><div class="toast26" style="display:flex;gap:9px;align-items:center;background:var(--panel);border:1px solid var(--border);border-radius:11px;padding:11px 13px;box-shadow:0 10px 30px rgba(0,0,0,.4)"><span class="logochip sm">EURE AGENTUR</span><div style="font-size:.7rem"><b class="lc">Automation live</b><div class="mut" style="font-size:.62rem">42 Mails sortiert &middot; jetzt</div></div></div></div>
+<div class="tags"><span class="tag b">Claude</span><span class="tag">Pop</span></div></figure>
+<!-- 27 -->
+<figure class="tile" id="t27"><div class="cap"><span class="num">27</span><div><h3>Claude als Gehirn</h3><div class="sub">Inputs &rarr; Outputs</div></div></div>
+<div class="demo"><div style="display:flex;align-items:center;gap:10px"><div style="display:flex;flex-direction:column;gap:6px"><span class="inout in">Leads</span><span class="inout in" style="animation-delay:.15s">Mails</span><span class="inout in" style="animation-delay:.3s">Daten</span></div><svg class="cmk spin-slow" width="34" height="34" viewBox="0 0 40 40"><g><line x1="20" y1="4" x2="20" y2="12"/><line x1="20" y1="4" x2="20" y2="12" transform="rotate(45 20 20)"/><line x1="20" y1="4" x2="20" y2="12" transform="rotate(90 20 20)"/><line x1="20" y1="4" x2="20" y2="12" transform="rotate(135 20 20)"/><line x1="20" y1="4" x2="20" y2="12" transform="rotate(180 20 20)"/><line x1="20" y1="4" x2="20" y2="12" transform="rotate(225 20 20)"/><line x1="20" y1="4" x2="20" y2="12" transform="rotate(270 20 20)"/><line x1="20" y1="4" x2="20" y2="12" transform="rotate(315 20 20)"/></g></svg><div style="display:flex;flex-direction:column;gap:6px"><span class="inout out">Report</span><span class="inout out" style="animation-delay:.2s">Kampagne</span><span class="inout out" style="animation-delay:.4s">CRM</span></div></div></div>
+<div class="tags"><span class="tag b">Claude</span><span class="tag">Flow</span></div></figure>
+<!-- 28 -->
+<figure class="tile" id="t28"><div class="cap"><span class="num">28</span><div><h3>Skill-Karten austeilen</h3><div class="sub">Claude verteilt F&auml;higkeiten</div></div></div>
+<div class="demo"><div class="stagger" style="display:flex;gap:7px"><span class="dealcard">Outreach</span><span class="dealcard">Research</span><span class="dealcard">Report</span><span class="dealcard">Triage</span></div></div>
+<div class="tags"><span class="tag b">Skills</span><span class="tag">Deal</span></div></figure>
+<!-- 29 -->
+<figure class="tile" id="t29"><div class="cap"><span class="num">29</span><div><h3>Skills-Constellation &#11088;</h3><div class="sub">F&auml;higkeiten orbiten euer Logo</div></div></div>
+<div class="demo"><div style="position:relative;width:170px;height:160px"><svg class="svgfull" viewBox="0 0 170 160"><g stroke="var(--blue)" stroke-width="1.5" fill="none" opacity=".5"><path class="draw" d="M85 80 L40 30" style="stroke-dasharray:70;stroke-dashoffset:70"/><path class="draw" d="M85 80 L130 30" style="stroke-dasharray:70;stroke-dashoffset:70;animation-delay:.15s"/><path class="draw" d="M85 80 L25 90" style="stroke-dasharray:62;stroke-dashoffset:62;animation-delay:.3s"/><path class="draw" d="M85 80 L145 90" style="stroke-dasharray:62;stroke-dashoffset:62;animation-delay:.45s"/><path class="draw" d="M85 80 L60 140" style="stroke-dasharray:66;stroke-dashoffset:66;animation-delay:.6s"/><path class="draw" d="M85 80 L112 140" style="stroke-dasharray:66;stroke-dashoffset:66;animation-delay:.75s"/></g></svg><span class="chip-orbit" style="top:18px;left:8px">Outreach</span><span class="chip-orbit" style="top:18px;right:8px;animation-delay:.15s">Leads</span><span class="chip-orbit" style="top:80px;left:0;animation-delay:.3s">Report</span><span class="chip-orbit" style="top:80px;right:0;animation-delay:.45s">Inbox</span><span class="chip-orbit" style="bottom:6px;left:24px;animation-delay:.6s">Sales</span><span class="chip-orbit" style="bottom:6px;right:18px;animation-delay:.75s">Content</span><span class="logochip sm" style="position:absolute;top:66px;left:50%;margin-left:-46px">EURE AGENTUR</span></div></div>
+<div class="tags"><span class="tag b">Skills</span><span class="tag">SVG-Draw</span></div></figure>
+<!-- 30 -->
+<figure class="tile" id="t30"><div class="cap"><span class="num">30</span><div><h3>Skill-Grid mit Stats</h3><div class="sub">Zeitersparnis je Skill</div></div></div>
+<div class="demo"><div class="stagger" style="display:grid;grid-template-columns:1fr 1fr;gap:7px;width:88%">
+<div class="statcard">Outreach<br><b>2h &rarr; 15m</b></div><div class="statcard">Reporting<br><b>4h &rarr; 20m</b></div>
+<div class="statcard">Research<br><b>3h &rarr; 10m</b></div><div class="statcard">Inbox<br><b>1h &rarr; 2m</b></div></div></div>
+<div class="tags"><span class="tag b">Skills</span><span class="tag">Stats</span></div></figure>
+<!-- 31 -->
+<figure class="tile" id="t31"><div class="cap"><span class="num">31</span><div><h3>Skill-Ticker</h3><div class="sub">F&auml;higkeiten laufen durch</div></div></div>
+<div class="demo" style="padding:0"><div style="overflow:hidden;width:100%"><div class="ticker31" style="display:flex;gap:9px;white-space:nowrap;will-change:transform"><span class="dealcard">Outreach-Copy</span><span class="dealcard">Lead-Research</span><span class="dealcard">Inbox-Triage</span><span class="dealcard">Reporting</span><span class="dealcard">Sales-Prep</span><span class="dealcard">Outreach-Copy</span><span class="dealcard">Lead-Research</span><span class="dealcard">Inbox-Triage</span><span class="dealcard">Reporting</span><span class="dealcard">Sales-Prep</span></div></div></div>
+<div class="tags"><span class="tag b">Skills</span><span class="tag">Ticker</span></div></figure>
+<!-- 32 -->
+<figure class="tile" id="t32"><div class="cap"><span class="num">32</span><div><h3>Skill-Honeycomb</h3><div class="sub">Waben leuchten auf</div></div></div>
+<div class="demo"><div class="stagger" style="display:flex;gap:6px;align-items:center"><span class="hex">Mail</span><div style="display:flex;flex-direction:column;gap:6px"><span class="hex">Leads</span><span class="hex">Inbox</span></div><span class="hex" style="background:var(--bsoft);border-color:var(--bline);color:#7aa7ff">Report</span></div></div>
+<div class="tags"><span class="tag b">Skills</span><span class="tag">Grid</span></div></figure>
+<!-- 33 -->
+<figure class="tile" id="t33"><div class="cap"><span class="num">33</span><div><h3>Automatisierungs-Welle &#11088;</h3><div class="sub">jeder MA bekommt eine</div></div></div>
+<div class="demo"><div style="position:relative;width:100%;height:100%"><svg class="svgfull" viewBox="0 0 300 186" preserveAspectRatio="none"><path class="wave33" d="M0 90 Q 75 60 150 90 T 300 90 V186 H0 Z" fill="rgba(0,102,255,.10)" stroke="var(--blue)" stroke-width="1.5"/></svg><div class="stagger" style="position:absolute;bottom:30px;left:0;right:0;display:flex;justify-content:space-around;padding:0 14px"><span class="avat">&#128100;</span><span class="avat">&#128100;</span><span class="avat">&#128100;</span><span class="avat">&#128100;</span><span class="avat">&#128100;</span></div><span class="logochip sm" style="position:absolute;bottom:6px;left:50%;margin-left:-46px">EURE AGENTUR</span></div></div>
+<div class="tags"><span class="tag b">Team</span><span class="tag">Wave</span></div></figure>
+<!-- 34 -->
+<figure class="tile" id="t34"><div class="cap"><span class="num">34</span><div><h3>Team-Grid, live-Badges</h3><div class="sub">jede Automation geht live</div></div></div>
+<div class="demo"><div class="stagger" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
+<div class="member">&#128100;<span class="livebadge">live</span></div><div class="member">&#128100;<span class="livebadge">live</span></div><div class="member">&#128100;<span class="livebadge">live</span></div>
+<div class="member">&#128100;<span class="livebadge">live</span></div><div class="member">&#128100;<span class="livebadge">live</span></div><div class="member" style="background:var(--bsoft);border-color:var(--bline)"><span class="logochip sm">AGENTUR</span></div></div></div>
+<div class="tags"><span class="tag b">Team</span><span class="tag">Stagger</span></div></figure>
+<!-- 35 -->
+<figure class="tile" id="t35"><div class="cap"><span class="num">35</span><div><h3>Org-Chart verbindet sich</h3><div class="sub">vom Logo zum Team</div></div></div>
+<div class="demo"><div style="position:relative;width:170px;height:120px"><svg class="svgfull" viewBox="0 0 170 120"><g stroke="var(--blue)" stroke-width="1.5" fill="none"><path class="draw" d="M85 30 L40 80" style="stroke-dasharray:66;stroke-dashoffset:66"/><path class="draw" d="M85 30 L85 80" style="stroke-dasharray:50;stroke-dashoffset:50;animation-delay:.15s"/><path class="draw" d="M85 30 L130 80" style="stroke-dasharray:66;stroke-dashoffset:66;animation-delay:.3s"/></g></svg><span class="logochip sm" style="position:absolute;top:14px;left:50%;margin-left:-46px">EURE AGENTUR</span><div style="position:absolute;top:82px;left:0;right:0;display:flex;justify-content:space-around"><span class="avat">&#128100;</span><span class="avat">&#128100;</span><span class="avat">&#128100;</span></div></div></div>
+<div class="tags"><span class="tag b">Team</span><span class="tag">SVG</span></div></figure>
+<!-- 36 -->
+<figure class="tile" id="t36"><div class="cap"><span class="num">36</span><div><h3>Team-Sprechblasen</h3><div class="sub">&bdquo;meine Automation l&auml;uft&ldquo;</div></div></div>
+<div class="demo"><div class="stagger" style="display:flex;flex-direction:column;gap:8px;width:84%"><div class="bub2"><span>&#128100;</span> &bdquo;Mein Reporting l&auml;uft selbst&ldquo;</div><div class="bub2" style="align-self:flex-end"><span>&#128100;</span> &bdquo;Inbox sortiert sich&ldquo;</div><div class="bub2"><span>&#128100;</span> &bdquo;Leads kommen rein&ldquo;</div></div></div>
+<div class="tags"><span class="tag b">Team</span><span class="tag">Bubbles</span></div></figure>
+<!-- 37 -->
+<figure class="tile" id="t37"><div class="cap"><span class="num">37</span><div><h3>Node-Graph &#11088;</h3><div class="sub">Trigger &rarr; Claude &rarr; Ergebnis</div></div></div>
+<div class="demo"><div style="position:relative;width:100%;height:100%"><svg class="svgfull" viewBox="0 0 300 186"><line x1="62" y1="93" x2="120" y2="93" stroke="var(--blue)" stroke-width="2" class="flow"/><line x1="180" y1="93" x2="238" y2="93" stroke="var(--blue)" stroke-width="2" class="flow"/></svg><div style="position:absolute;top:78px;left:18px"><span class="node" style="position:static;opacity:1">Trigger</span></div><div style="position:absolute;top:74px;left:50%;margin-left:-26px"><span class="node" style="position:static;opacity:1;border-color:var(--claude);color:var(--claude)">&#10033; Claude</span></div><div style="position:absolute;top:74px;right:14px"><span class="node out37" style="position:static;display:flex;flex-direction:column;align-items:center;gap:4px"><span class="logochip sm">AGENTUR</span></span></div></div></div>
+<div class="tags"><span class="tag b">Automation</span><span class="tag">Pulse</span></div></figure>
+<!-- 38 -->
+<figure class="tile" id="t38"><div class="cap"><span class="num">38</span><div><h3>Flow mit Paketen</h3><div class="sub">n8n-Stil, Daten wandern</div></div></div>
+<div class="demo"><svg class="svgfull" viewBox="0 0 300 186"><path id="p38" d="M30 140 L100 60 L200 120 L270 50" fill="none" stroke="var(--border)" stroke-width="2"/><path d="M30 140 L100 60 L200 120 L270 50" fill="none" stroke="var(--blue)" stroke-width="2" class="flow"/><circle cx="30" cy="140" r="5" fill="var(--blue)"/><circle cx="100" cy="60" r="5" fill="var(--blue)"/><circle cx="200" cy="120" r="5" fill="var(--blue)"/><circle cx="270" cy="50" r="5" fill="var(--claude)"/></svg><span class="pkt38 dot" style="position:absolute;top:0;left:0;box-shadow:0 0 8px var(--blue)"></span></div>
+<div class="tags"><span class="tag b">Automation</span><span class="tag">offset-path</span></div></figure>
+<!-- 39 -->
+<figure class="tile" id="t39"><div class="cap"><span class="num">39</span><div><h3>Zahnr&auml;der greifen</h3><div class="sub">System l&auml;uft</div></div></div>
+<div class="demo"><div style="display:flex;align-items:center;gap:0"><svg width="58" height="58" viewBox="0 0 24 24" class="spin-slow" style="color:var(--blue)" fill="currentColor"><path d="M12 8a4 4 0 100 8 4 4 0 000-8zm9 4l-2 .4.5 2-1.7 1-1.3-1.5-1.8 1 .2 2-2 .6-.8-1.9-2 .3-.8-1.9 1.7-1.2-1.3-1.6 1.5-1.4 1.8 1 .8-1.8 2 .6 .2-2 2 .3 .5 2 1.9-.6 1.3 1.5 1.7-1 -.2 2L21 12z" opacity=".85"/></svg><svg width="40" height="40" viewBox="0 0 24 24" style="color:var(--claude);margin-left:-6px;animation:spin 11s linear infinite reverse" fill="currentColor"><path d="M12 8a4 4 0 100 8 4 4 0 000-8z" opacity=".9"/><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="3 3"/></svg></div></div>
+<div class="tags"><span class="tag b">Automation</span><span class="tag">Spin</span></div></figure>
+<!-- 40 -->
+<figure class="tile" id="t40"><div class="cap"><span class="num">40</span><div><h3>Live-Dashboard</h3><div class="sub">Zahlen z&auml;hlen hoch</div></div></div>
+<div class="demo"><div style="display:grid;grid-template-columns:1fr 1fr;gap:9px;width:84%">
+<div class="kpi"><div class="dsp" style="color:var(--blue);font-size:1.5rem"><span class="js-count" data-to="128">0</span></div><div class="mut" style="font-size:.62rem">Mails sortiert</div></div>
+<div class="kpi"><div class="dsp" style="color:var(--blue);font-size:1.5rem"><span class="js-count" data-to="47">0</span></div><div class="mut" style="font-size:.62rem">Leads angereichert</div></div>
+<div class="kpi"><div class="dsp" style="color:var(--blue);font-size:1.5rem"><span class="js-count" data-to="12">0</span></div><div class="mut" style="font-size:.62rem">Reports erstellt</div></div>
+<div class="kpi"><div class="dsp" style="color:var(--green);font-size:1.5rem"><span class="js-count" data-to="5">0</span></div><div class="mut" style="font-size:.62rem">Automationen live</div></div></div></div>
+<div class="tags"><span class="tag b">Automation</span><span class="tag">JS-Count</span></div></figure>
+<!-- 41 -->
+<figure class="tile" id="t41"><div class="cap"><span class="num">41</span><div><h3>Kundenlogo-Ticker</h3><div class="sub">Social Proof l&auml;uft</div></div></div>
+<div class="demo" style="padding:0"><div style="overflow:hidden;width:100%"><div class="ticker31" style="display:flex;gap:22px;white-space:nowrap;align-items:center;will-change:transform;filter:grayscale(1) brightness(1.8);opacity:.6"><img src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" style="height:22px"><img src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" style="height:22px"><img src="https://cocomin.de/wp-content/uploads/2024/11/cocomin-logo.svg" style="height:20px"><img src="https://greenlovers.de/media/greenlovers/greenlovers-logo.svg" style="height:20px"><img src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" style="height:22px"><img src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" style="height:22px"><img src="https://cocomin.de/wp-content/uploads/2024/11/cocomin-logo.svg" style="height:20px"><img src="https://greenlovers.de/media/greenlovers/greenlovers-logo.svg" style="height:20px"></div></div></div>
+<div class="tags"><span class="tag b">Trust</span><span class="tag">Ticker</span></div></figure>
+<!-- 42 -->
+<figure class="tile" id="t42"><div class="cap"><span class="num">42</span><div><h3>Stat-Counter-Reihe</h3><div class="sub">Trust-Zahlen z&auml;hlen hoch</div></div></div>
+<div class="demo"><div style="display:flex;gap:18px;text-align:center"><div><div class="dsp" style="color:var(--blue);font-size:1.7rem"><span class="js-count" data-to="50">0</span>+</div><div class="mut" style="font-size:.6rem">B2B</div></div><div><div class="dsp" style="color:var(--blue);font-size:1.7rem"><span class="js-count" data-to="2">0</span></div><div class="mut" style="font-size:.6rem">Jahre</div></div><div><div class="dsp" style="color:var(--green);font-size:1.7rem"><span class="js-count" data-to="100">0</span>%</div><div class="mut" style="font-size:.6rem">Garantie</div></div></div></div>
+<div class="tags"><span class="tag b">Trust</span><span class="tag">Count</span></div></figure>
+<!-- 43 -->
+<figure class="tile" id="t43"><div class="cap"><span class="num">43</span><div><h3>Garantie-Siegel</h3><div class="sub">stempelt sich auf</div></div></div>
+<div class="demo"><div class="seal43" style="width:84px;height:84px;border-radius:50%;border:2px solid var(--green);display:flex;align-items:center;justify-content:center;color:var(--green);font-weight:700;font-size:.66rem;text-align:center;background:rgba(34,197,94,.08)">1 Auto-<br>mation<br>garantiert</div></div>
+<div class="tags"><span class="tag b">Garantie</span><span class="tag">Stamp</span></div></figure>
+<!-- 44 -->
+<figure class="tile" id="t44"><div class="cap"><span class="num">44</span><div><h3>Pulsierender CTA</h3><div class="sub">Button zieht den Blick</div></div></div>
+<div class="demo"><a class="ctabtn44" style="background:var(--blue);color:#fff;padding:13px 26px;border-radius:11px;font-weight:600;font-size:.86rem">Erstgespr&auml;ch buchen</a></div>
+<div class="tags"><span class="tag b">CTA</span><span class="tag">Glow</span></div></figure>
+<!-- 45 -->
+<figure class="tile" id="t45"><div class="cap"><span class="num">45</span><div><h3>Antigravity startet</h3><div class="sub">IDE f&auml;hrt hoch</div></div></div>
+<div class="demo"><div class="ide45" style="width:78%;background:#08080d;border:1px solid var(--border);border-radius:9px;overflow:hidden"><div style="display:flex;gap:5px;padding:7px 9px;border-bottom:1px solid var(--border)"><span style="width:8px;height:8px;border-radius:50%;background:#ef4444"></span><span style="width:8px;height:8px;border-radius:50%;background:#eab308"></span><span style="width:8px;height:8px;border-radius:50%;background:var(--green)"></span><span class="mono" style="font-size:.6rem;color:var(--dim);margin-left:auto">antigravity</span></div><div class="mono stagger" style="padding:10px;font-size:.6rem;line-height:1.8"><div style="color:#7aa7ff">&gt; setup workspace</div><div style="color:var(--muted)">&nbsp;&nbsp;installing skills...</div><div style="color:var(--green)">&#10003; bereit</div></div></div></div>
+<div class="tags"><span class="tag b">Setup</span><span class="tag">IDE</span></div></figure>
+<!-- 46 -->
+<figure class="tile" id="t46"><div class="cap"><span class="num">46</span><div><h3>Setup-Checkliste</h3><div class="sub">hakt sich selbst ab</div></div></div>
+<div class="demo"><div class="stagger" style="display:flex;flex-direction:column;gap:9px;font-size:.8rem"><div class="chk"><span class="cb">&#10003;</span> Claude Code installiert</div><div class="chk"><span class="cb">&#10003;</span> Antigravity eingerichtet</div><div class="chk"><span class="cb">&#10003;</span> Skills angelegt</div><div class="chk"><span class="cb">&#10003;</span> Erste Automation live</div></div></div>
+<div class="tags"><span class="tag b">Setup</span><span class="tag">Check</span></div></figure>
+<!-- 47 -->
+<figure class="tile" id="t47"><div class="cap"><span class="num">47</span><div><h3>Termin-Slot</h3><div class="sub">Kalender w&auml;hlt sich</div></div></div>
+<div class="demo"><div style="background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:12px"><div class="mut" style="font-size:.62rem;margin-bottom:7px">Erstgespr&auml;ch, 15 Min</div><div class="stagger" style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px"><span class="slot">Di 10:00</span><span class="slot sel">Mi 14:00</span><span class="slot">Do 11:00</span></div></div></div>
+<div class="tags"><span class="tag b">CTA</span><span class="tag">Calendar</span></div></figure>
+<!-- 48 -->
+<figure class="tile" id="t48"><div class="cap"><span class="num">48</span><div><h3>Metrik flippt</h3><div class="sub">Stunden &rarr; Minuten</div></div></div>
+<div class="demo"><div class="center-col"><div class="mut" style="font-size:.72rem">Reporting pro Woche</div><div class="dsp" style="font-size:1.8rem;font-weight:600"><span style="color:var(--dim);text-decoration:line-through">4h</span> <span style="color:var(--blue)">&rarr; 20m</span></div></div></div>
+<div class="tags"><span class="tag b">Stats</span><span class="tag">Flip</span></div></figure>
+<!-- 49 -->
+<figure class="tile" id="t49"><div class="cap"><span class="num">49</span><div><h3>CTA-Band mit Raster</h3><div class="sub">Hero-Finale</div></div></div>
+<div class="demo" style="padding:0"><div style="position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--blue)"><div class="raster49" style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.12) 1px,transparent 1px);background-size:26px 26px;mask-image:radial-gradient(ellipse at 50% 0%,#000,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at 50% 0%,#000,transparent 75%)"></div><div class="dsp" style="color:#fff;font-weight:600;font-size:1.1rem;position:relative;text-align:center">Bereit f&uuml;r euer<br>autonomes Team?</div></div></div>
+<div class="tags"><span class="tag b">CTA</span><span class="tag">Band</span></div></figure>
+<!-- 50 -->
+<figure class="tile" id="t50"><div class="cap"><span class="num">50</span><div><h3>Logo-Finale</h3><div class="sub">euer Logo + Abschluss-CTA</div></div></div>
+<div class="demo"><div class="center-col stagger"><span class="logochip">EURE AGENTUR</span><div class="dsp" style="font-size:1rem;font-weight:600">Euer Team. Autonom.</div><a class="ctabtn44" style="background:var(--blue);color:#fff;padding:9px 18px;border-radius:9px;font-weight:600;font-size:.74rem">Jetzt starten</a></div></div>
+<div class="tags"><span class="tag b">CTA</span><span class="tag">Logo</span></div></figure>
+</main>
+<style>
+.tile.play .uline{animation:widen .8s .3s cubic-bezier(.16,1,.3,1) forwards}
+.reveal8{filter:grayscale(1) opacity(.5)}.tile.play .reveal8{animation:graytocolor 1s .4s forwards}
+.conv{position:absolute;width:7px;height:7px;border-radius:50%;background:var(--blue);box-shadow:0 0 8px var(--blue);transform:translate(var(--x),var(--y));opacity:0}
+.tile.play .conv{animation:converge 1.8s ease-in infinite}
+@keyframes converge{0%{transform:translate(var(--x),var(--y));opacity:0}30%{opacity:1}100%{transform:translate(0,0);opacity:0}}
+.dropin{opacity:0}.tile.play .dropin{animation:dropdown 1.6s ease infinite}
+@keyframes dropdown{0%{opacity:0;transform:translateY(-16px)}25%{opacity:1;transform:translateY(0)}80%{opacity:1}100%{opacity:0}}
+.tile.play .beam{animation:beammove 1.8s ease-in-out infinite}
+@keyframes beammove{0%{left:-36%}100%{left:100%}}
+.tile.play .jline{animation:fillbar 3.4s cubic-bezier(.16,1,.3,1) infinite}
+.jnode{width:13px;height:13px;border-radius:50%;background:var(--panel2);border:2px solid var(--border)}
+.tile.play .jnode{animation:litnode 3.4s infinite;animation-delay:var(--d)}
+@keyframes litnode{0%,100%{background:var(--panel2);border-color:var(--border);box-shadow:none}40%,92%{background:var(--blue);border-color:var(--blue);box-shadow:0 0 10px var(--blue)}}
+.tile.play .jchip{animation:jtravel 3.4s cubic-bezier(.45,0,.55,1) infinite}
+@keyframes jtravel{0%{left:24px;filter:grayscale(1)}100%{left:calc(100% - 116px);filter:none}}
+.ring16{stroke-dasharray:302;stroke-dashoffset:302}.tile.play .ring16{animation:dashdraw 2.6s ease forwards}
+.flipcard{flex:1;background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:15px 6px;text-align:center;font-size:.74rem;color:var(--muted);line-height:1.5}
+.pulsedot18{offset-path:path('M30 150 C 110 30, 190 30, 270 120');offset-rotate:0deg}.tile.play .pulsedot18{animation:travelpath 2.6s linear infinite}
+@keyframes travelpath{0%{offset-distance:0%}100%{offset-distance:100%}}
+.ord{position:absolute;top:50%;left:50%;font-size:1.15rem;transform:translate(calc(-50% + var(--fx)),calc(-50% + var(--fy))) rotate(var(--fr))}.tile.play .ord{animation:tidy 3s ease infinite}
+@keyframes tidy{0%{transform:translate(calc(-50% + var(--fx)),calc(-50% + var(--fy))) rotate(var(--fr))}45%,82%{transform:translate(-50%,-50%) rotate(0)}100%{transform:translate(calc(-50% + var(--fx)),calc(-50% + var(--fy))) rotate(var(--fr))}}
+.bub{font-size:.72rem;padding:8px 11px;border-radius:10px}
+.bub.user{background:var(--panel2);border:1px solid var(--border)}
+.bub.claude{background:rgba(217,119,87,.1);border:1px solid rgba(217,119,87,.3);color:var(--claude)}
+.bub.ok{background:var(--bsoft);border:1px solid var(--bline);color:#7aa7ff}
+.spark23{color:var(--claude)}.tile.play .spark23{animation:floaty 3s ease-in-out infinite}
+.skillspawn{opacity:0}.tile.play .skillspawn{animation:popin .6s .5s forwards}
+.inout{font-size:.62rem;padding:4px 8px;border-radius:6px;background:var(--panel2);border:1px solid var(--border);opacity:0;color:var(--muted)}
+.tile.play .inout.in{animation:risein .5s forwards}
+.tile.play .inout.out{animation:popin .6s forwards;border-color:var(--bline);color:#7aa7ff}
+.dealcard{font-size:.66rem;padding:7px 11px;border-radius:8px;background:var(--panel2);border:1px solid var(--border);color:var(--muted);white-space:nowrap}
+.statcard{font-size:.64rem;color:var(--muted);background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:9px;text-align:center;line-height:1.5}
+.statcard b{color:var(--blue);font-size:.78rem}
+.hex{font-size:.64rem;padding:11px 14px;border-radius:10px;background:var(--panel2);border:1px solid var(--border);color:var(--muted)}
+.tile.play .wave33{animation:wavemove 4.5s ease-in-out infinite}
+@keyframes wavemove{0%,100%{transform:translateX(-10%)}50%{transform:translateX(2%)}}
+.avat{font-size:1.2rem;opacity:.4}.tile.play .avat{animation:litavat .6s forwards}
+@keyframes litavat{to{opacity:1;filter:drop-shadow(0 0 6px var(--blue))}}
+.member{position:relative;background:var(--panel2);border:1px solid var(--border);border-radius:9px;padding:13px;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.livebadge{position:absolute;top:4px;right:4px;font-size:.5rem;color:var(--green);background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.3);border-radius:5px;padding:1px 4px}
+.bub2{font-size:.68rem;background:var(--panel2);border:1px solid var(--border);border-radius:9px;padding:7px 10px;color:var(--muted)}
+.out37{border-color:var(--bline)!important}
+.pkt38{offset-path:path('M30 140 L100 60 L200 120 L270 50')}.tile.play .pkt38{animation:travelpath 2.4s linear infinite}
+.kpi{background:var(--panel2);border:1px solid var(--border);border-radius:9px;padding:11px;text-align:center}
+.tile.play .ticker31{animation:drift 16s linear infinite}
+.seal43{transform:scale(.6) rotate(-12deg);opacity:0}.tile.play .seal43{animation:stamp .6s .3s cubic-bezier(.2,1.4,.4,1) forwards}
+@keyframes stamp{to{transform:scale(1) rotate(-8deg);opacity:1}}
+.tile.play .ctabtn44{animation:glowpulse 2s ease-in-out infinite}
+.ide45{opacity:0;transform:translateY(14px)}.tile.play .ide45{animation:risein .6s forwards}
+.chk{display:flex;align-items:center;gap:9px;color:var(--muted)}.chk .cb{color:var(--green);background:rgba(34,197,94,.12);border-radius:5px;width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;font-size:.7rem;flex-shrink:0}
+.slot{font-size:.62rem;text-align:center;padding:7px 4px;border-radius:6px;background:var(--panel2);border:1px solid var(--border);color:var(--muted)}
+.slot.sel{background:var(--bsoft);border-color:var(--bline);color:#7aa7ff}
+.t21r,.t21d{opacity:0}.tile.play .t21r{animation:risein .4s .6s forwards}.tile.play .t21d{animation:risein .4s 1.2s forwards}
+</style>
+<script>
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var el=e.target;el.classList.add('play');el.querySelectorAll('.js-type').forEach(typewrite);el.querySelectorAll('.js-count').forEach(countup);}});},{threshold:.25});
+document.querySelectorAll('.tile').forEach(function(t){io.observe(t);});
+function typewrite(s){if(s.dataset.done)return;s.dataset.done=1;var txt=s.dataset.text||'',i=0;(function tick(){if(i<=txt.length){s.textContent=txt.slice(0,i);i++;setTimeout(tick,40);}})();}
+function countup(s){if(s.dataset.done)return;s.dataset.done=1;var to=+s.dataset.to,t0=null;function step(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/1200,1);s.textContent=Math.round(p*to);if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);}
+</script>
+</body>
+</html>
