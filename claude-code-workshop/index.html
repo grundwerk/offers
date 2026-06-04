@@ -213,7 +213,7 @@ footer a{color:var(--dim);}
 .octrail{stroke:var(--blue);stroke-width:2;fill:none;stroke-dasharray:6 9}
 .in .octrail{animation:ocflow 1s linear infinite}@keyframes ocflow{to{stroke-dashoffset:-30}}
 /* === Departments hub === */
-.hub{position:relative;width:100%;max-width:900px;height:440px;margin:0 auto}
+.hub{position:relative;width:100%;max-width:900px;height:560px;margin:0 auto}
 .hubcenter{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:8px;z-index:3}
 .hubcenter .cm{width:70px;height:70px;border-radius:20px;background:var(--light-card);border:1px solid var(--blue-line);display:flex;align-items:center;justify-content:center;box-shadow:0 0 34px rgba(0,102,255,.25)}
 .hubcenter .cm .cmk line{stroke:var(--claude);stroke-width:2.6;stroke-linecap:round}
@@ -243,7 +243,7 @@ footer a{color:var(--dim);}
 .tcard .who img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:1px solid var(--border);flex-shrink:0;background:var(--panel-2)}
 .tcard .who .nm{font-weight:600;font-size:.85rem}.tcard .who .rl{font-size:.76rem;color:var(--dim)}
 @media(max-width:980px){.tcols{grid-template-columns:1fr 1fr}.tcol.col3{display:none}}
-@media(max-width:640px){.tcols{grid-template-columns:1fr}.tcol:nth-child(2),.tcol.col3{display:none}.orchestrate{flex-direction:column;gap:18px}.ocsvg{display:none}.hub{height:600px}}
+@media(max-width:640px){.tcols{grid-template-columns:1fr}.tcol:nth-child(2),.tcol.col3{display:none}.orchestrate{flex-direction:column;gap:18px}.ocsvg{display:none}.hub{height:auto;display:flex;flex-direction:column;gap:12px}.hub>svg{display:none}.hubcenter{position:static;transform:none;flex-direction:row;justify-content:center;gap:10px;margin-bottom:6px}.dept{position:static!important;inset:auto!important;width:100%!important}}
 /* === Floating chat popup === */
 .cfab{position:fixed;right:24px;bottom:24px;z-index:120;display:inline-flex;align-items:center;gap:9px;background:var(--blue);color:#fff;border:none;padding:14px 22px;border-radius:100px;font-weight:600;font-size:.92rem;cursor:pointer;box-shadow:0 10px 30px rgba(0,102,255,.4);font-family:inherit}
 .cfab:hover{background:var(--blue-deep)}.cfab .cmk line{stroke:#fff;stroke-width:2.6;stroke-linecap:round}
@@ -357,6 +357,7 @@ footer a{color:var(--dim);}
 @media(max-width:920px){.herogrid{grid-template-columns:1fr;gap:34px;text-align:center}.herogrid .hcol-l{text-align:center}.hero.two .lockup,.hero.two .hero-btns,.hero.two .hero-meta{justify-content:center}.hero.two .hero-meta{align-items:center}.setgrid{grid-template-columns:1fr;gap:24px}.cst{height:470px;max-width:420px}}
 @media(max-width:600px){.bt-tab{font-size:.72rem;padding:6px 11px}.jlabels .jt{font-size:.78rem}.jlabels .js2{display:none}.htbody{min-height:185px}}
 
+.htlogo{margin-left:auto;font-size:.6rem;letter-spacing:.13em;color:var(--dim);text-transform:uppercase;display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono','SF Mono',ui-monospace,monospace}.htlogo img{height:15px;width:auto;max-width:88px;border-radius:3px;opacity:.92;object-fit:contain}
 </style>
 </head>
 <body>
@@ -398,7 +399,7 @@ footer a{color:var(--dim);}
    </div>
    <div class="hcol-r h-anim d4">
     <div class="heroterm">
-     <div class="htbar"><i style="background:#ef4444"></i><i style="background:#eab308"></i><i style="background:#22c55e"></i><span class="t">claude-code</span></div>
+     <div class="htbar"><i style="background:#ef4444"></i><i style="background:#eab308"></i><i style="background:#22c55e"></i><span class="t">claude-code</span><span class="htlogo"><!-- SLOT:CUSTOMER_ICON START --><span class="ph">EURE AGENTUR</span><!-- SLOT:CUSTOMER_ICON END --></span></div>
      <div class="htbody" id="htbody"></div>
     </div>
    </div>
@@ -427,7 +428,7 @@ footer a{color:var(--dim);}
   </div>
   <div class="reveal">
    <div class="bigterm">
-    <div class="htbar"><i style="background:#ef4444"></i><i style="background:#eab308"></i><i style="background:#22c55e"></i><span class="t">claude-code</span></div>
+    <div class="htbar"><i style="background:#ef4444"></i><i style="background:#eab308"></i><i style="background:#22c55e"></i><span class="t">claude-code</span><span class="htlogo"><!-- SLOT:CUSTOMER_ICON START --><span class="ph">EURE AGENTUR</span><!-- SLOT:CUSTOMER_ICON END --></span></div>
     <div class="htbody" id="btbody"></div>
    </div>
    <div class="bt-tabs"><span class="bt-tab">Inbox-Triage</span><span class="bt-tab">Outreach</span><span class="bt-tab">Lead-Recherche</span><span class="bt-tab">Reporting</span></div>
@@ -548,7 +549,7 @@ footer a{color:var(--dim);}
   <div class="reveal"><div class="hub">
    <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 900 440" preserveAspectRatio="none"><path class="hubline" d="M450 220 L150 70"/><path class="hubline" d="M450 220 L750 70"/><path class="hubline" d="M450 220 L120 215"/><path class="hubline" d="M450 220 L780 215"/><path class="hubline" d="M450 220 L210 385"/><path class="hubline" d="M450 220 L690 385"/></svg>
    <div class="hubcenter"><div class="cm"><svg class="cmk" width="40" height="40" viewBox="0 0 40 40"><g><circle cx="20" cy="20" r="2.1" fill="#d97757" stroke="none"/><line x1="20" y1="3" x2="20" y2="13.5"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(30 20 20)"/><line x1="20" y1="3" x2="20" y2="13.5" transform="rotate(60 20 20)"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(90 20 20)"/><line x1="20" y1="3" x2="20" y2="13.5" transform="rotate(120 20 20)"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(150 20 20)"/><line x1="20" y1="3" x2="20" y2="13.5" transform="rotate(180 20 20)"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(210 20 20)"/><line x1="20" y1="3" x2="20" y2="13.5" transform="rotate(240 20 20)"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(270 20 20)"/><line x1="20" y1="3" x2="20" y2="13.5" transform="rotate(300 20 20)"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(330 20 20)"/></g></svg></div><div class="lbl">CLAUDE</div></div>
-   <div class="dept" style="left:14px;top:10px"><h4>&#128226; Sales</h4><div class="ck"><span class="b">&#10003;</span>Outreach-Mails geschrieben</div><div class="ck"><span class="b">&#10003;</span>Leads recherchiert</div><div class="ck"><span class="b">&#10003;</span>CRM aktualisiert</div></div><div class="dept" style="right:14px;top:10px"><h4>&#128221; Marketing</h4><div class="ck"><span class="b">&#10003;</span>Content erstellt</div><div class="ck"><span class="b">&#10003;</span>Kampagnen-Copy</div><div class="ck"><span class="b">&#10003;</span>Reports gebaut</div></div><div class="dept" style="left:0;top:182px"><h4>&#129309; Recruiting</h4><div class="ck"><span class="b">&#10003;</span>Stellen-Anzeigen gescreent</div><div class="ck"><span class="b">&#10003;</span>Kandidaten vorsortiert</div></div><div class="dept" style="right:0;top:182px"><h4>&#128172; Support</h4><div class="ck"><span class="b">&#10003;</span>Inbox klassifiziert</div><div class="ck"><span class="b">&#10003;</span>Antworten entworfen</div></div><div class="dept" style="left:80px;bottom:10px"><h4>&#9881; Operations</h4><div class="ck"><span class="b">&#10003;</span>Daten angereichert</div><div class="ck"><span class="b">&#10003;</span>Prozesse dokumentiert</div></div><div class="dept" style="right:80px;bottom:10px"><h4>&#128176; Finance</h4><div class="ck"><span class="b">&#10003;</span>Belege sortiert</div><div class="ck"><span class="b">&#10003;</span>Rechnungen gepr&uuml;ft</div></div>
+   <div class="dept" style="left:14px;top:10px"><h4>&#128226; Sales</h4><div class="ck"><span class="b">&#10003;</span>Outreach-Mails geschrieben</div><div class="ck"><span class="b">&#10003;</span>Leads recherchiert</div><div class="ck"><span class="b">&#10003;</span>CRM aktualisiert</div></div><div class="dept" style="right:14px;top:10px"><h4>&#128221; Marketing</h4><div class="ck"><span class="b">&#10003;</span>Content erstellt</div><div class="ck"><span class="b">&#10003;</span>Kampagnen-Copy</div><div class="ck"><span class="b">&#10003;</span>Reports gebaut</div></div><div class="dept" style="left:0;top:206px"><h4>&#129309; Recruiting</h4><div class="ck"><span class="b">&#10003;</span>Stellen-Anzeigen gescreent</div><div class="ck"><span class="b">&#10003;</span>Kandidaten vorsortiert</div></div><div class="dept" style="right:0;top:206px"><h4>&#128172; Support</h4><div class="ck"><span class="b">&#10003;</span>Inbox klassifiziert</div><div class="ck"><span class="b">&#10003;</span>Antworten entworfen</div></div><div class="dept" style="left:80px;bottom:18px"><h4>&#9881; Operations</h4><div class="ck"><span class="b">&#10003;</span>Daten angereichert</div><div class="ck"><span class="b">&#10003;</span>Prozesse dokumentiert</div></div><div class="dept" style="right:80px;bottom:18px"><h4>&#128176; Finance</h4><div class="ck"><span class="b">&#10003;</span>Belege sortiert</div><div class="ck"><span class="b">&#10003;</span>Rechnungen gepr&uuml;ft</div></div>
   </div></div>
  </div>
 </section>
@@ -575,7 +576,7 @@ footer a{color:var(--dim);}
    <div class="jtrack">
     <div class="jfill"></div>
     <div class="jnodes"><span class="jdot"></span><span class="jdot"></span><span class="jdot"></span><span class="jdot"></span></div>
-    <div class="jchipwrap"><span class="jchip"><span style="color:var(--claude)">&#10031;</span> Eure Agentur</span></div>
+    <div class="jchipwrap"><span class="jchip"><span style="color:var(--claude)">&#10031;</span> <!-- SLOT:AGENCY_NAME START -->Eure Agentur<!-- SLOT:AGENCY_NAME END --></span></div>
    </div>
    <div class="jlabels">
     <div><span class="jt">Heute</span><span class="js2">manuell &amp; zeitfressend</span></div>
@@ -615,7 +616,7 @@ footer a{color:var(--dim);}
    <span class="cstchip c4" style="left:88%;top:50%"><span class="e">&#10031;</span> Inbox-Triage</span>
    <span class="cstchip c5" style="left:24%;top:86%"><span class="e">&#10031;</span> Sales-CRM</span>
    <span class="cstchip c6" style="left:76%;top:86%"><span class="e">&#10031;</span> Content</span>
-   <div class="cstc"><div class="lc">Eure Agentur</div></div>
+   <div class="cstc"><div class="lc"><!-- SLOT:AGENCY_NAME START -->Eure Agentur<!-- SLOT:AGENCY_NAME END --></div></div>
   </div>
  </div>
 </section>
@@ -628,20 +629,6 @@ footer a{color:var(--dim);}
       <div class="stat-item"><div class="stat-number">Live</div><div class="stat-label">eigene Software selbst deployed</div></div>
       <div class="stat-item"><div class="stat-number">1 Tag</div><div class="stat-label">bis zur ersten eigenen Automation</div></div>
       <div class="stat-item"><div class="stat-number" data-count="100" data-suf="%">100%</div><div class="stat-label">Garantie auf eine laufende Automation</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- TEAM -->
-<section class="sec-light">
-  <div class="container">
-    <div class="center reveal" style="margin-bottom:42px;">
-      <div class="eyebrow">Wer das macht</div>
-      <h2 class="title dsp">Die Leute hinter dem Workshop</h2>
-    </div>
-    <div class="team stagger reveal">
-      <div class="t-card"><img src="https://start.grundwerk.digital/assets/team/tom-soto-schiller.jpeg" alt="Tom Soto Schiller"><div><h4>Tom Soto Schiller</h4><div class="role">Gründer, Grundwerk Digital</div><div class="contact">tom.schiller@grundwerk.digital</div></div></div>
-      <div class="t-card"><img src="https://start.grundwerk.digital/assets/team/anthony-katzur.jpeg" alt="Anthony Katzur"><div><h4>Anthony Katzur</h4><div class="role">Grundwerk Digital</div><div class="contact">anthony.katzur@grundwerk.digital</div></div></div>
     </div>
   </div>
 </section>
@@ -674,7 +661,6 @@ footer a{color:var(--dim);}
       <a href="https://calendly.com/tom-soto-schiller/grundwerk-next-steps?hide_event_type_details=1&amp;hide_gdpr_banner=1&amp;background_color=0b0b11&amp;text_color=f1f5f9&amp;primary_color=0066ff" class="btn btn-blue btn-pulse" target="_blank" rel="noopener">Erstgespräch buchen</a>
       <div style="position:relative"><span class="cta-guarantee">&#10003; Eine Automation. Garantiert.</span></div>
       <div class="cta-contacts">
-        <div>Tom Soto Schiller<br><a href="mailto:tom.schiller@grundwerk.digital">tom.schiller@grundwerk.digital</a><br>+49 155 66331147</div>
         <div>Anthony Katzur<br><a href="mailto:anthony.katzur@grundwerk.digital">anthony.katzur@grundwerk.digital</a><br>+49 176 47189941</div>
       </div>
     </div>
@@ -697,7 +683,7 @@ document.querySelectorAll('.faq-q').forEach(function(q){q.addEventListener('clic
 </script>
 <button class="cfab" id="cfab"><svg class="cmk" width="18" height="18" viewBox="0 0 40 40"><g><circle cx="20" cy="20" r="2.1" fill="#d97757" stroke="none"/><line x1="20" y1="3" x2="20" y2="13.5"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(30 20 20)"/><line x1="20" y1="3" x2="20" y2="13.5" transform="rotate(60 20 20)"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(90 20 20)"/><line x1="20" y1="3" x2="20" y2="13.5" transform="rotate(120 20 20)"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(150 20 20)"/><line x1="20" y1="3" x2="20" y2="13.5" transform="rotate(180 20 20)"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(210 20 20)"/><line x1="20" y1="3" x2="20" y2="13.5" transform="rotate(240 20 20)"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(270 20 20)"/><line x1="20" y1="3" x2="20" y2="13.5" transform="rotate(300 20 20)"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(330 20 20)"/></g></svg> Mit Claude chatten</button>
 <div class="popov" id="popov"><div class="popbox"><button class="popclose" id="popclose">&times;</button>
-<div class="ccchat"><div class="ccbar"><span class="dotr cls" id="ccdotred" role="button" tabindex="0" aria-label="Chat schlie&szlig;en" title="Schlie&szlig;en" style="background:#ef4444"></span><span class="dotr" style="background:#eab308"></span><span class="dotr" style="background:#22c55e"></span><span class="t">claude-code</span></div>
+<div class="ccchat"><div class="ccbar"><span class="dotr cls" id="ccdotred" role="button" tabindex="0" aria-label="Chat schlie&szlig;en" title="Schlie&szlig;en" style="background:#ef4444"></span><span class="dotr" style="background:#eab308"></span><span class="dotr" style="background:#22c55e"></span><span class="t">claude-code</span><span class="htlogo"><!-- SLOT:CUSTOMER_ICON START --><span class="ph">EURE AGENTUR</span><!-- SLOT:CUSTOMER_ICON END --></span></div>
 <div class="ccbody" id="ccbodyL"><div class="ccmsg a"><div class="ci"><svg class="cmk" width="14" height="14" viewBox="0 0 40 40"><g><circle cx="20" cy="20" r="2.1" fill="#d97757" stroke="none"/><line x1="20" y1="3" x2="20" y2="13.5"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(30 20 20)"/><line x1="20" y1="3" x2="20" y2="13.5" transform="rotate(60 20 20)"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(90 20 20)"/><line x1="20" y1="3" x2="20" y2="13.5" transform="rotate(120 20 20)"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(150 20 20)"/><line x1="20" y1="3" x2="20" y2="13.5" transform="rotate(180 20 20)"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(210 20 20)"/><line x1="20" y1="3" x2="20" y2="13.5" transform="rotate(240 20 20)"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(270 20 20)"/><line x1="20" y1="3" x2="20" y2="13.5" transform="rotate(300 20 20)"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(330 20 20)"/></g></svg> Claude</div>Frag mich, was wir f&uuml;r euer Team automatisieren k&ouml;nnten.</div></div>
 <div class="ccinput"><input id="ccinL" placeholder="z.B. Wie automatisiere ich unser Reporting?" /><button id="ccsendL">Senden</button></div></div></div></div>
 <script>
