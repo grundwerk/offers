@@ -5,8 +5,8 @@
 <meta charset="UTF-8">
 <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII=">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="offer-version" content="v1-mattheis | 2026-06-04">
-<title>Claude Code Workshop für Agenturen &times; Grundwerk</title>
+<meta name="offer-version" content="v1 | 2026-06-03">
+<title>Claude Code Workshop &times; Grundwerk</title>
 <script>
 (function(){
 var code='7204815639';
@@ -241,6 +241,7 @@ footer a{color:var(--dim);}
 .tcard p{font-size:.88rem;line-height:1.62;color:var(--muted);margin:0}
 .tcard .who{display:flex;align-items:center;gap:12px;margin-top:16px}
 .tcard .who img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:1px solid var(--border);flex-shrink:0;background:var(--panel-2)}
+.tav-mono{width:40px;height:40px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:600;color:#fff;background:var(--blue);border:1px solid var(--border)}
 .tcard .who .nm{font-weight:600;font-size:.85rem}.tcard .who .rl{font-size:.76rem;color:var(--dim)}
 @media(max-width:980px){.tcols{grid-template-columns:1fr 1fr}.tcol.col3{display:none}}
 @media(max-width:640px){.tcols{grid-template-columns:1fr}.tcol:nth-child(2),.tcol.col3{display:none}.orchestrate{flex-direction:column;gap:18px}.ocsvg{display:none}.hub{height:auto;display:flex;flex-direction:column;gap:12px}.hub>svg{display:none}.hubcenter{position:static;transform:none;flex-direction:row;justify-content:center;gap:10px;margin-bottom:6px}.dept{position:static!important;inset:auto!important;width:100%!important}}
@@ -269,6 +270,7 @@ footer a{color:var(--dim);}
 .cta-guarantee{display:inline-flex;align-items:center;gap:8px;margin-top:20px;color:#22c55e;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.32);padding:9px 18px;border-radius:100px;font-size:.84rem;font-weight:600}
 .site-footer{background:var(--bg);border-top:1px solid var(--border);padding:64px 2rem 30px}
 .ft-grid{display:grid;grid-template-columns:1.7fr 1fr 1fr;gap:40px;max-width:1120px;margin:0 auto}
+.ft-brand{text-align:left}
 .ft-brand .ft-logo{font-weight:600;font-size:1.05rem;margin-bottom:12px}
 .ft-brand p{color:var(--muted);font-size:.85rem;line-height:1.6;max-width:400px;margin-bottom:14px}
 .ft-contact{color:var(--dim);font-size:.84rem}
@@ -483,13 +485,12 @@ footer a{color:var(--dim);}
     </div>
   </div>
 </section>
-
 <!-- PROBLEM / SOLUTION -->
 <section class="sec-dark">
   <div class="container">
     <div class="split">
       <div class="reveal">
-        <div class="eyebrow">Die Realität in den meisten Agenturen</div>
+        <div class="eyebrow"><!-- SLOT:VERTICAL_REALITY START -->Die Realität in den meisten Agenturen<!-- SLOT:VERTICAL_REALITY END --></div>
         <h2 class="title dsp">KI ist überall. Genutzt wird sie kaum.</h2>
         <div class="prob">
           <div class="prob-row"><div class="ic">🧩</div><div><h4>Tools, aber kein System</h4><p>Jeder probiert für sich etwas aus. Niemand baut echte, wiederkehrende Automationen, die dem Team täglich Arbeit abnehmen.</p></div></div>
@@ -668,7 +669,7 @@ footer a{color:var(--dim);}
       <div class="faq-item"><div class="faq-q">Braucht unser Team Programmier-Kenntnisse?<span class="plus">+</span></div><div class="faq-a">Nein. Claude Code und Antigravity sind genau dafür gemacht, dass auch Menschen ohne Entwickler-Hintergrund Automationen bauen. Wir holen jeden im Team ab, unabhängig vom Vorwissen.</div></div>
       <div class="faq-item"><div class="faq-q">Wie lange dauert das Ganze?<span class="plus">+</span></div><div class="faq-a">Ein Workshop-Tag, plus vier Wochen Begleitung mit einer Session nach zwei Wochen und einem zusätzlichen 30-Minuten-Call.</div></div>
       <div class="faq-item"><div class="faq-q">Was, wenn bei uns am Ende nichts läuft?<span class="plus">+</span></div><div class="faq-a">Das passiert nicht, und falls doch, greift unsere Garantie: Läuft am Ende nicht mindestens eine Automation produktiv, bauen wir sie ohne Zusatzkosten fertig.</div></div>
-      <div class="faq-item"><div class="faq-q">Für wen ist das gedacht?<span class="plus">+</span></div><div class="faq-a">Für Agenturen, die mit KI nicht nur experimentieren, sondern ihr Team wirklich befähigen wollen, eigene Automationen zu bauen und produktiv zu nutzen.</div></div>
+      <div class="faq-item"><div class="faq-q">Für wen ist das gedacht?<span class="plus">+</span></div><div class="faq-a">Für <!-- SLOT:VERTICAL_NOUN START -->Agenturen<!-- SLOT:VERTICAL_NOUN END -->, die mit KI nicht nur experimentieren, sondern ihr Team wirklich befähigen wollen, eigene Automationen zu bauen und produktiv zu nutzen.</div></div>
       <div class="faq-item"><div class="faq-q">Welche Tools setzen wir ein?<span class="plus">+</span></div><div class="faq-a">Claude Code und Antigravity als Grundlage, dazu die Tools, die ihr ohnehin im Einsatz habt. Wir bauen auf eurem bestehenden Setup auf.</div></div>
       <div class="faq-item"><div class="faq-q">Was kostet der Workshop?<span class="plus">+</span></div><div class="faq-a">Den genauen Umfang und die Investition stimmen wir im Erstgespräch auf eure Teamgröße ab. Die erste Automation und ihre Nachbetreuung sind im Paket enthalten.</div></div>
     </div>
@@ -691,7 +692,7 @@ footer a{color:var(--dim);}
 
 <footer class="site-footer">
   <div class="ft-grid">
-    <div class="ft-brand"><div class="ft-logo dsp">Grundwerk Digital GmbH</div><p>Euer Agentur-Partner f&uuml;r effiziente KI-Kaltakquise-Prozesse. Wir automatisieren eure Vertriebsprozesse und &uuml;bernehmen die n&ouml;tige Software, f&uuml;r maximale Rendite bei minimalem Aufwand.</p><div class="ft-contact">Kontakt: +49 158 88573752</div></div>
+    <div class="ft-brand"><div class="ft-logo dsp">Grundwerk Digital GmbH</div><p>Wir befähigen euer ganzes Team auf Claude Code und Antigravity. Im Workshop baut ihr eure erste eigene Automation fertig, und wir begleiten euch vier Wochen, bis sie produktiv läuft.</p></div>
     <div class="ft-col"><h4>Sektionen</h4><a href="https://grundwerk.digital/" target="_blank" rel="noopener">Home</a><a href="https://grundwerk.digital/ueber-uns" target="_blank" rel="noopener">&Uuml;ber uns</a><a href="https://grundwerk.digital/kontakt" target="_blank" rel="noopener">Kontakt</a><a href="https://grundwerk.digital/values" target="_blank" rel="noopener">Unsere Werte</a></div>
     <div class="ft-col"><h4>Rechtliches</h4><a href="https://grundwerk.digital/impressum" target="_blank" rel="noopener">Impressum</a><a href="https://grundwerk.digital/dsgvo" target="_blank" rel="noopener">Datenschutzerkl&auml;rung</a></div>
   </div>
@@ -707,7 +708,7 @@ document.querySelectorAll('.faq-q').forEach(function(q){q.addEventListener('clic
 <div class="popov" id="popov"><div class="popbox"><button class="popclose" id="popclose">&times;</button>
 <div class="ccchat"><div class="ccbar"><span class="dotr cls" id="ccdotred" role="button" tabindex="0" aria-label="Chat schlie&szlig;en" title="Schlie&szlig;en" style="background:#ef4444"></span><span class="dotr" style="background:#eab308"></span><span class="dotr" style="background:#22c55e"></span><span class="t">claude-code</span><span class="htlogo"><!-- SLOT:CUSTOMER_ICON START --><img src="https://www.mattheis-berlin.de/wp-content/uploads/2024/10/Logo-mattheis-2024-neg.svg" alt="mattheis"><!-- SLOT:CUSTOMER_ICON END --></span></div>
 <div class="ccbody" id="ccbodyL"><div class="ccmsg a"><div class="ci"><svg class="cmk" width="14" height="14" viewBox="0 0 40 40"><g><circle cx="20" cy="20" r="2.1" fill="#d97757" stroke="none"/><line x1="20" y1="3" x2="20" y2="13.5"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(30 20 20)"/><line x1="20" y1="3" x2="20" y2="13.5" transform="rotate(60 20 20)"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(90 20 20)"/><line x1="20" y1="3" x2="20" y2="13.5" transform="rotate(120 20 20)"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(150 20 20)"/><line x1="20" y1="3" x2="20" y2="13.5" transform="rotate(180 20 20)"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(210 20 20)"/><line x1="20" y1="3" x2="20" y2="13.5" transform="rotate(240 20 20)"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(270 20 20)"/><line x1="20" y1="3" x2="20" y2="13.5" transform="rotate(300 20 20)"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(330 20 20)"/></g></svg> Claude</div>Frag mich, was wir f&uuml;r euer Team automatisieren k&ouml;nnten.</div></div>
-<div class="ccinput"><input id="ccinL" placeholder="z.B. Wie automatisiere ich unser Reporting?" /><button id="ccsendL">Senden</button></div></div></div></div>
+<div class="ccinput"><input id="ccinL" value="Wie automatisiere ich unser Reporting?" placeholder="z.B. Wie automatisiere ich unser Reporting?" /><button id="ccsendL">Senden</button></div></div></div></div>
 <script>
 (function(){var ov=document.getElementById('popov'),op=document.getElementById('cfab'),cl=document.getElementById('popclose'),rd=document.getElementById('ccdotred');function mark(){try{sessionStorage.setItem('ccshown30','1')}catch(e){}}function openChat(){ov.classList.add('open');mark();}function closeChat(){ov.classList.remove('open');}if(ov&&op){op.addEventListener('click',openChat);if(cl)cl.addEventListener('click',closeChat);if(rd){rd.addEventListener('click',closeChat);rd.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();closeChat();}});}ov.addEventListener('click',function(e){if(e.target===ov)closeChat();});document.addEventListener('keydown',function(e){if(e.key==='Escape')closeChat();});}if(ov){setTimeout(function(){if(!sessionStorage.getItem('ccshown30')&&!ov.classList.contains('open')){ov.classList.add('open');mark();}},30000);}
 var i2=document.getElementById('ccinL'),s2=document.getElementById('ccsendL'),b2=document.getElementById('ccbodyL');if(!i2)return;var CAL='https://calendly.com/tom-soto-schiller/grundwerk-claude-workshop?hide_event_type_details=1&hide_gdpr_banner=1&background_color=0b0b11&text_color=f1f5f9&primary_color=0066ff';
@@ -737,7 +738,7 @@ s2.addEventListener('click',go);i2.addEventListener('keydown',function(e){if(e.k
   if(rot){
     var rc=rot.querySelector('.rc'), tn=document.createTextNode('');
     rot.insertBefore(tn, rc);
-    var phr=['claude > erstelle-leadliste --icp Agenturen','claude > follow-up --offene-threads','claude > pflege-crm --aus-call-notizen','claude > bau-report --weekly'];
+    var phr=['claude > erstelle-leadliste --icp wunschkunden','claude > follow-up --offene-threads','claude > pflege-crm --aus-call-notizen','claude > bau-report --weekly'];
     var pi=0,ci=0,del=false;
     (function tick(){
       var w=phr[pi];
@@ -794,5 +795,9 @@ s2.addEventListener('click',go);i2.addEventListener('keydown',function(e){if(e.k
 })();
 </script>
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script>/* Testimonial avatars: the gwd/people/*.svg assets are not hosted (404). Swap them
+   for clean initials-monograms before they fetch, so no broken image and no 404.
+   If real client photos are added later (different URL), update this guard too. */
+(function(){function ini(n){return (n||'?').trim().split(/\s+/).map(function(w){return w.charAt(0);}).slice(0,2).join('').toUpperCase();}function swap(img){var d=document.createElement('div');d.className='tav-mono';d.textContent=ini(img.getAttribute('alt'));if(img.parentNode)img.parentNode.replaceChild(d,img);}function run(){document.querySelectorAll('.tcard .who img').forEach(function(img){var s=img.getAttribute('src')||'';if(/\/gwd\/people\//.test(s)||(img.complete&&img.naturalWidth===0)){swap(img);return;}img.addEventListener('error',function(){swap(img);});});}if(document.readyState!=='loading')run();else document.addEventListener('DOMContentLoaded',run);})();</script>
 </body>
 </html>
