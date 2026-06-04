@@ -277,6 +277,86 @@ footer a{color:var(--dim);}
 .ft-col a:hover{color:var(--blue)}
 .ft-bottom{max-width:1120px;margin:36px auto 0;padding-top:22px;border-top:1px solid var(--border);color:var(--dim);font-size:.82rem;text-align:center}
 @media(max-width:760px){.ft-grid{grid-template-columns:1fr;gap:26px}}
+
+/* ===== KURATIERTE ELEMENTE (Tom approved 2026-06-04) ===== */
+.hero.two{padding-top:118px}
+.herogrid{display:grid;grid-template-columns:1.04fr .96fr;gap:50px;align-items:center;max-width:1180px;width:100%;position:relative;z-index:1}
+.herogrid .hcol-l{text-align:left}
+.hero.two .lockup{margin-left:0}
+.hero.two .hero-btns{justify-content:flex-start}
+.hero.two .hero-meta{justify-content:flex-start;flex-direction:column;gap:9px;align-items:flex-start;margin-top:22px}
+.hero.two h1{margin-top:14px;font-size:clamp(2.05rem,3.5vw,3.4rem);line-height:1.07}
+.hero.two p.sub{margin-left:0}
+.rot{color:var(--claude);font-family:'JetBrains Mono','SF Mono',ui-monospace,monospace;font-size:.9rem;font-weight:500;margin-top:8px;min-height:1.5em;display:block;letter-spacing:.01em}
+.htcur,.rc{display:inline-block;width:8px;height:14px;background:#7aa7ff;vertical-align:-2px;margin-left:1px;animation:htblink 1s steps(1) infinite}
+.rc{background:var(--claude)}
+@keyframes htblink{50%{opacity:0}}
+.heroterm,.bigterm{background:#08080d;border:1px solid var(--border);overflow:hidden;font-family:'JetBrains Mono','SF Mono',ui-monospace,monospace}
+.heroterm{border-radius:14px;box-shadow:0 30px 90px rgba(0,0,0,.55)}
+.htbar{display:flex;align-items:center;gap:7px;padding:11px 14px;border-bottom:1px solid var(--border);background:#0b0b12}
+.htbar i{width:10px;height:10px;border-radius:50%;display:inline-block}
+.htbar .t{margin-left:8px;font-size:.73rem;color:var(--muted)}
+.htbody{padding:16px 17px 20px;font-size:.82rem;line-height:1.75;min-height:208px}
+.htbody .ln{white-space:pre-wrap;margin:0}
+.htp{color:#7aa7ff}.htc{color:var(--claude)}.htok{color:#22c55e}.htdim{color:var(--dim)}
+.hero h1 .hl{position:relative;color:var(--blue)}
+.hero h1 .hl::after{content:'';position:absolute;left:0;right:0;bottom:-.05em;height:.085em;background:linear-gradient(90deg,var(--blue),#5b9bff);border-radius:3px;transform:scaleX(0);transform-origin:left;animation:ulgrow 1s cubic-bezier(.16,1,.3,1) .95s forwards;box-shadow:0 2px 14px rgba(0,102,255,.6)}
+@keyframes ulgrow{to{transform:scaleX(1)}}
+.bigterm{max-width:780px;margin:0 auto;border-radius:16px;box-shadow:0 24px 70px rgba(0,0,0,.5)}
+.bigterm .htbody{min-height:238px;font-size:.9rem}
+.bt-tabs{display:flex;gap:7px;flex-wrap:wrap;justify-content:center;margin-top:26px}
+.bt-tab{font-size:.8rem;color:var(--muted);border:1px solid var(--border);background:var(--panel);border-radius:100px;padding:7px 15px;transition:.25s}
+.bt-tab.on{color:#fff;border-color:var(--blue);background:var(--blue-soft)}
+.jny{max-width:840px;margin:26px auto 0;position:relative}
+.jtrack{position:relative;height:3px;background:var(--border);border-radius:3px;margin:58px 30px 0}
+.jfill{position:absolute;left:0;top:0;height:100%;width:0;background:linear-gradient(90deg,var(--blue),#5b9bff);border-radius:3px;box-shadow:0 0 14px var(--blue)}
+.in .jfill{animation:jnyfill 2.6s cubic-bezier(.4,0,.2,1) forwards}
+@keyframes jnyfill{to{width:100%}}
+.jnodes{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);display:flex;justify-content:space-between}
+.jdot{width:17px;height:17px;border-radius:50%;background:var(--bg);border:2px solid var(--border)}
+.jchipwrap{position:absolute;top:-44px;left:30px;right:30px;height:30px;pointer-events:none}
+.jchip{position:absolute;left:0;top:0;display:inline-flex;align-items:center;gap:6px;background:var(--panel);border:1px solid var(--blue-line);color:#fff;font-size:.74rem;padding:5px 12px;border-radius:100px;white-space:nowrap;transform:translateX(-50%);box-shadow:0 6px 18px rgba(0,0,0,.45)}
+.in .jchip{animation:jnymove 2.6s cubic-bezier(.4,0,.2,1) forwards}
+@keyframes jnymove{from{left:0}to{left:100%}}
+.jlabels{display:flex;justify-content:space-between;margin:20px 16px 0}
+.jlabels div{flex:1;text-align:center;padding:0 6px}
+.jlabels .jt{font-family:'Clash Display','Inter',sans-serif;font-weight:600;color:var(--text);display:block;font-size:.98rem}
+.jlabels .js2{color:var(--dim);font-size:.76rem;display:block;margin-top:2px}
+.cst{position:relative;width:100%;max-width:740px;height:400px;margin:0 auto}
+.cstc{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:3}
+.cstc .lc{background:var(--panel);border:1px solid var(--blue-line);color:#fff;font-weight:600;padding:14px 22px;border-radius:14px;box-shadow:0 0 40px rgba(0,102,255,.32);font-family:'Clash Display','Inter',sans-serif;white-space:nowrap}
+.cstchip{position:absolute;transform:translate(-50%,-50%) scale(.7);background:var(--panel-2);border:1px solid var(--border);border-radius:100px;padding:9px 17px;font-size:.86rem;color:var(--text);display:inline-flex;align-items:center;gap:8px;opacity:0;z-index:2;white-space:nowrap}
+.cstchip .e{color:var(--claude)}
+.in .cstchip{animation:cstpop .55s cubic-bezier(.16,1,.3,1) forwards}
+.in .cstchip.c1{animation-delay:.55s}.in .cstchip.c2{animation-delay:.67s}.in .cstchip.c3{animation-delay:.79s}.in .cstchip.c4{animation-delay:.91s}.in .cstchip.c5{animation-delay:1.03s}.in .cstchip.c6{animation-delay:1.15s}
+@keyframes cstpop{to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+.cstline{stroke:var(--blue);stroke-width:1.6;fill:none;opacity:.36;stroke-dasharray:280;stroke-dashoffset:280}
+.in .cstline{animation:cstdraw 1s ease forwards}@keyframes cstdraw{to{stroke-dashoffset:0}}
+.setgrid{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center;max-width:980px;margin:0 auto}
+.ide{background:#0a0a10;border:1px solid var(--border);border-radius:13px;overflow:hidden;font-family:'JetBrains Mono','SF Mono',ui-monospace,monospace;box-shadow:0 20px 50px rgba(0,0,0,.45)}
+.ideb{display:flex;align-items:center;gap:7px;padding:10px 13px;border-bottom:1px solid var(--border);background:#0c0c14}
+.ideb i{width:9px;height:9px;border-radius:50%;display:inline-block}
+.ideb .t{margin-left:7px;font-size:.72rem;color:var(--muted)}
+.idebody{padding:16px;font-size:.82rem;line-height:1.9;min-height:150px;color:#e2e8f0}
+.idel{opacity:0;white-space:pre-wrap;margin:0}
+.idel .ok{color:#22c55e}.idel .p{color:#7aa7ff}.idel .d{color:var(--dim)}
+.in .idel{animation:ideline .5s ease forwards}
+.in .idel.l1{animation-delay:.2s}.in .idel.l2{animation-delay:.75s}.in .idel.l3{animation-delay:1.3s}.in .idel.l4{animation-delay:1.85s}.in .idel.l5{animation-delay:2.4s}
+@keyframes ideline{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.setl{list-style:none;display:flex;flex-direction:column;gap:15px}
+.setl li{display:flex;align-items:center;gap:13px;font-size:1.02rem;color:var(--light-text);opacity:0}
+.in .setl li{animation:setlin .5s ease forwards}
+.in .setl li.l1{animation-delay:.4s}.in .setl li.l2{animation-delay:1s}.in .setl li.l3{animation-delay:1.6s}.in .setl li.l4{animation-delay:2.2s}
+@keyframes setlin{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:none}}
+.setl .sb{flex-shrink:0;width:27px;height:27px;border-radius:50%;background:rgba(34,197,94,.14);border:1px solid rgba(34,197,94,.5);color:#16a34a;display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:800}
+.btn-pulse{animation:ctapulse 2.2s ease-in-out infinite}
+@keyframes ctapulse{0%,100%{box-shadow:0 6px 22px rgba(0,102,255,.32)}50%{box-shadow:0 6px 30px rgba(0,102,255,.7),0 0 0 6px rgba(0,102,255,.08)}}
+.guarantee .seal.green{background:rgba(34,197,94,.18);border:2px solid rgba(255,255,255,.6);flex-direction:column;gap:0;line-height:1}
+.guarantee .seal .sn{font-family:'Clash Display','Inter',sans-serif;font-weight:600;font-size:1.2rem;color:#fff}
+.guarantee .seal .sl{font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.8);margin-top:1px}
+@media(max-width:920px){.herogrid{grid-template-columns:1fr;gap:34px;text-align:center}.herogrid .hcol-l{text-align:center}.hero.two .lockup,.hero.two .hero-btns,.hero.two .hero-meta{justify-content:center}.hero.two .hero-meta{align-items:center}.setgrid{grid-template-columns:1fr;gap:24px}.cst{height:470px;max-width:420px}}
+@media(max-width:600px){.bt-tab{font-size:.72rem;padding:6px 11px}.jlabels .jt{font-size:.78rem}.jlabels .js2{display:none}.htbody{min-height:185px}}
+
 </style>
 </head>
 <body>
@@ -292,8 +372,9 @@ footer a{color:var(--dim);}
 </nav>
 
 <!-- HERO -->
-<header class="hero sec-dark">
-  <div class="hero-content">
+<header class="hero sec-dark two">
+  <div class="herogrid">
+  <div class="hero-content hcol-l">
     <!-- SLOT:LOGO START -->
     <div class="lockup h-anim d1">
       <span>Grundwerk</span><span class="x">&times;</span>
@@ -313,6 +394,14 @@ footer a{color:var(--dim);}
       <span><span class="tick">✓</span> 4 Wochen Nachbetreuung</span>
       <span><span class="tick">✓</span> Garantie auf eine laufende Automation</span>
     </div>
+    <span class="rot" id="rotline"><span class="rc"></span></span>
+   </div>
+   <div class="hcol-r h-anim d4">
+    <div class="heroterm">
+     <div class="htbar"><i style="background:#ef4444"></i><i style="background:#eab308"></i><i style="background:#22c55e"></i><span class="t">claude-code</span></div>
+     <div class="htbody" id="htbody"></div>
+    </div>
+   </div>
   </div>
 </header>
 
@@ -324,6 +413,24 @@ footer a{color:var(--dim);}
    <div class="ocol left"><span class="ochip">&#128231; Inbox</span><span class="ochip">&#128202; Leads</span><span class="ochip">&#128203; Reporting</span></div>
    <div class="oclaude"><div class="ocbrain"><svg class="cmk" width="46" height="46" viewBox="0 0 40 40"><g><circle cx="20" cy="20" r="2.1" fill="#d97757" stroke="none"/><line x1="20" y1="3" x2="20" y2="13.5"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(30 20 20)"/><line x1="20" y1="3" x2="20" y2="13.5" transform="rotate(60 20 20)"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(90 20 20)"/><line x1="20" y1="3" x2="20" y2="13.5" transform="rotate(120 20 20)"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(150 20 20)"/><line x1="20" y1="3" x2="20" y2="13.5" transform="rotate(180 20 20)"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(210 20 20)"/><line x1="20" y1="3" x2="20" y2="13.5" transform="rotate(240 20 20)"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(270 20 20)"/><line x1="20" y1="3" x2="20" y2="13.5" transform="rotate(300 20 20)"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(330 20 20)"/></g></svg></div><span class="oclbl">CLAUDE</span></div>
    <div class="ocol right"><span class="ochip ok">Sales</span><span class="ochip ok">Marketing</span><span class="ochip ok">Support</span></div>
+  </div>
+ </div>
+</section>
+
+<!-- WE-21 LIVE-TERMINAL (Claude baut live) -->
+<section class="sec-dark" style="padding-top:40px;padding-bottom:92px">
+ <div class="container">
+  <div class="center reveal" style="margin-bottom:34px">
+    <div class="eyebrow">So baut Claude bei euch</div>
+    <h2 class="title dsp">Eine Aufgabe eintippen. Claude erledigt sie.</h2>
+    <p class="lead center muted">Genau das lernt euer Team im Workshop, an euren echten Aufgaben.</p>
+  </div>
+  <div class="reveal">
+   <div class="bigterm">
+    <div class="htbar"><i style="background:#ef4444"></i><i style="background:#eab308"></i><i style="background:#22c55e"></i><span class="t">claude-code</span></div>
+    <div class="htbody" id="btbody"></div>
+   </div>
+   <div class="bt-tabs"><span class="bt-tab">Inbox-Triage</span><span class="bt-tab">Outreach</span><span class="bt-tab">Lead-Recherche</span><span class="bt-tab">Reporting</span></div>
   </div>
  </div>
 </section>
@@ -372,6 +479,31 @@ footer a{color:var(--dim);}
       </div>
     </div>
   </div>
+</section>
+
+<!-- WE-45/46 SETUP (Vorbereitung) -->
+<section class="sec-light">
+ <div class="container">
+  <div class="center reveal" style="margin-bottom:46px"><div class="eyebrow">Vorbereitung &amp; Setup</div><h2 class="title dsp">Am Workshop-Tag startklar, ohne Vorarbeit</h2><p class="lead center muted">Ihr braucht nur eure Rechner. Den Rest richten wir live mit euch ein.</p></div>
+  <div class="setgrid reveal">
+   <div class="ide">
+    <div class="ideb"><i style="background:#ef4444"></i><i style="background:#eab308"></i><i style="background:#22c55e"></i><span class="t">antigravity</span></div>
+    <div class="idebody">
+     <p class="idel l1"><span class="p">$</span> setup workspace --team</p>
+     <p class="idel l2"><span class="d">&nbsp;&nbsp;Claude Code wird installiert &hellip;</span></p>
+     <p class="idel l3"><span class="d">&nbsp;&nbsp;Skills &amp; Vorlagen werden angelegt &hellip;</span></p>
+     <p class="idel l4"><span class="d">&nbsp;&nbsp;Antigravity verbunden &hellip;</span></p>
+     <p class="idel l5"><span class="ok">&#10003; bereit. Viel Spa&szlig; beim Bauen.</span></p>
+    </div>
+   </div>
+   <ul class="setl">
+    <li class="l1"><span class="sb">&#10003;</span> Claude Code auf allen Rechnern installiert</li>
+    <li class="l2"><span class="sb">&#10003;</span> Antigravity eingerichtet &amp; verbunden</li>
+    <li class="l3"><span class="sb">&#10003;</span> Eure Skills &amp; Vorlagen angelegt</li>
+    <li class="l4"><span class="sb">&#10003;</span> Erste Automation am selben Tag live</li>
+   </ul>
+  </div>
+ </div>
 </section>
 
 <!-- WORKSHOP-TAG ABLAUF -->
@@ -428,11 +560,31 @@ footer a{color:var(--dim);}
 <section class="guarantee">
   <div class="container">
     <div class="reveal">
-      <div class="seal">🛡️</div>
+      <div class="seal green"><span class="sn">100%</span><span class="sl">Garantie</span></div>
       <h2 class="dsp">Mindestens eine Automation läuft. Garantiert.</h2>
       <p>Wenn am Ende der Begleitung nicht mindestens eine Automation produktiv in eurem Alltag läuft, bauen wir sie fertig. Ohne Zusatzkosten. Ihr geht kein Risiko ein.</p>
     </div>
   </div>
+</section>
+
+<!-- WE-13 JOURNEY -->
+<section class="sec-dark">
+ <div class="container">
+  <div class="center reveal" style="margin-bottom:8px"><div class="eyebrow">Euer Weg</div><h2 class="title dsp">Von heute bis autonom, in vier Wochen</h2></div>
+  <div class="jny reveal">
+   <div class="jtrack">
+    <div class="jfill"></div>
+    <div class="jnodes"><span class="jdot"></span><span class="jdot"></span><span class="jdot"></span><span class="jdot"></span></div>
+    <div class="jchipwrap"><span class="jchip"><span style="color:var(--claude)">&#10031;</span> Eure Agentur</span></div>
+   </div>
+   <div class="jlabels">
+    <div><span class="jt">Heute</span><span class="js2">manuell &amp; zeitfressend</span></div>
+    <div><span class="jt">Workshop</span><span class="js2">1 Tag: Setup + 1. Automation</span></div>
+    <div><span class="jt">Nach 4 Wochen</span><span class="js2">min. 1 Automation live</span></div>
+    <div><span class="jt">Autonom</span><span class="js2">Team baut selbst weiter</span></div>
+   </div>
+  </div>
+ </div>
 </section>
 
 <!-- ERGEBNIS NACH 4 WOCHEN -->
@@ -451,14 +603,31 @@ footer a{color:var(--dim);}
   </div>
 </section>
 
+<!-- WE-29 AGENTUR-SKILLS-CONSTELLATION -->
+<section class="sec-dark">
+ <div class="container">
+  <div class="center reveal" style="margin-bottom:28px"><div class="eyebrow">Was danach l&auml;uft</div><h2 class="title dsp">Die Automationen, die euer Team selbst baut</h2><p class="lead center muted">Nach dem Workshop baut ihr diese Abl&auml;ufe eigenst&auml;ndig. Ohne uns.</p></div>
+  <div class="cst reveal">
+   <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 740 400" preserveAspectRatio="none"><path class="cstline" d="M370 200 L162 56"/><path class="cstline" d="M370 200 L577 56"/><path class="cstline" d="M370 200 L89 200"/><path class="cstline" d="M370 200 L651 200"/><path class="cstline" d="M370 200 L178 344"/><path class="cstline" d="M370 200 L562 344"/></svg>
+   <span class="cstchip c1" style="left:22%;top:14%"><span class="e">&#10031;</span> Outreach-Mails</span>
+   <span class="cstchip c2" style="left:78%;top:14%"><span class="e">&#10031;</span> Lead-Recherche</span>
+   <span class="cstchip c3" style="left:12%;top:50%"><span class="e">&#10031;</span> Reporting</span>
+   <span class="cstchip c4" style="left:88%;top:50%"><span class="e">&#10031;</span> Inbox-Triage</span>
+   <span class="cstchip c5" style="left:24%;top:86%"><span class="e">&#10031;</span> Sales-CRM</span>
+   <span class="cstchip c6" style="left:76%;top:86%"><span class="e">&#10031;</span> Content</span>
+   <div class="cstc"><div class="lc">Eure Agentur</div></div>
+  </div>
+ </div>
+</section>
+
 <!-- STATS -->
 <section class="sec-dark" style="padding-top:80px;padding-bottom:80px;">
   <div class="container">
     <div class="stat-bar reveal">
-      <div class="stat-item"><div class="stat-number">50+</div><div class="stat-label">B2B-Unternehmen unterstützt</div></div>
+      <div class="stat-item"><div class="stat-number" data-count="50" data-suf="+">50+</div><div class="stat-label">B2B-Unternehmen unterstützt</div></div>
       <div class="stat-item"><div class="stat-number">Live</div><div class="stat-label">eigene Software selbst deployed</div></div>
       <div class="stat-item"><div class="stat-number">1 Tag</div><div class="stat-label">bis zur ersten eigenen Automation</div></div>
-      <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">Garantie auf eine laufende Automation</div></div>
+      <div class="stat-item"><div class="stat-number" data-count="100" data-suf="%">100%</div><div class="stat-label">Garantie auf eine laufende Automation</div></div>
     </div>
   </div>
 </section>
@@ -502,7 +671,7 @@ footer a{color:var(--dim);}
       <div class="cta-eyebrow">Euer Team baut ab Tag 1 mit</div>
       <h2 class="dsp">Bereit, euer Team auf KI-Automation zu heben?</h2>
       <p>Lasst uns in einem kurzen Erstgespräch klären, wie der Workshop für euer Team aussieht. Unverbindlich.</p>
-      <a href="https://calendly.com/tom-soto-schiller/grundwerk-next-steps?hide_event_type_details=1&amp;hide_gdpr_banner=1&amp;background_color=0b0b11&amp;text_color=f1f5f9&amp;primary_color=0066ff" class="btn btn-blue" target="_blank" rel="noopener">Erstgespräch buchen</a>
+      <a href="https://calendly.com/tom-soto-schiller/grundwerk-next-steps?hide_event_type_details=1&amp;hide_gdpr_banner=1&amp;background_color=0b0b11&amp;text_color=f1f5f9&amp;primary_color=0066ff" class="btn btn-blue btn-pulse" target="_blank" rel="noopener">Erstgespräch buchen</a>
       <div style="position:relative"><span class="cta-guarantee">&#10003; Eine Automation. Garantiert.</span></div>
       <div class="cta-contacts">
         <div>Tom Soto Schiller<br><a href="mailto:tom.schiller@grundwerk.digital">tom.schiller@grundwerk.digital</a><br>+49 155 66331147</div>
@@ -537,6 +706,87 @@ var i2=document.getElementById('ccinL'),s2=document.getElementById('ccsendL'),b2
 function add(c,html){var d=document.createElement('div');d.className='ccmsg '+c;d.innerHTML=html;b2.appendChild(d);b2.scrollTop=b2.scrollHeight;return d;}
 function go(){var v=i2.value;if(!v.trim())return;add('u',v.replace(/</g,'&lt;'));i2.value='';var th=add('a','<div class="ci">&#10033; Claude</div>...');setTimeout(function(){th.remove();add('a','<div class="ci">&#10033; Claude</div>Spannend, &bdquo;'+v.trim().replace(/</g,'&lt;')+'&ldquo; l&auml;sst sich bei euch fast sicher automatisieren. Am besten schauen wir uns das gemeinsam an, bucht euch ein kurzes Erstgespr&auml;ch.<a href="'+CAL+'" target="_blank" rel="noopener">Termin buchen &rarr;</a>');},650);}
 s2.addEventListener('click',go);i2.addEventListener('keydown',function(e){if(e.key==='Enter')go();});})();
+</script>
+
+<script>
+(function(){
+  function typeSession(body, lines, done){
+    var li=0;
+    function run(){
+      if(li>=lines.length){ if(done)done(); return; }
+      var L=lines[li], p=document.createElement('p'); p.className='ln '+(L.cls||''); body.appendChild(p);
+      var cur=document.createElement('span'); cur.className='htcur'; p.appendChild(cur);
+      var k=0, txt=L.text;
+      (function ch(){
+        if(k<txt.length){ cur.insertAdjacentText('beforebegin', txt.charAt(k)); k++; setTimeout(ch, L.speed||24); }
+        else { cur.remove(); li++; setTimeout(run, L.pause||420); }
+      })();
+    }
+    run();
+  }
+  // WE-5 rotating typewriter line in hero
+  var rot=document.getElementById('rotline');
+  if(rot){
+    var rc=rot.querySelector('.rc'), tn=document.createTextNode('');
+    rot.insertBefore(tn, rc);
+    var phr=['claude > inbox-triage --team','claude > schreib-outreach --kunde Acme','claude > recherchiere-leads --icp Agenturen','claude > bau-report --weekly'];
+    var pi=0,ci=0,del=false;
+    (function tick(){
+      var w=phr[pi];
+      if(!del){ tn.textContent=w.substring(0,ci); ci++; if(ci>w.length){ del=true; setTimeout(tick,1400); return; } setTimeout(tick,62); }
+      else { ci--; tn.textContent=w.substring(0,ci); if(ci<=0){ del=false; pi=(pi+1)%phr.length; setTimeout(tick,240); return; } setTimeout(tick,30); }
+    })();
+  }
+  // Hero terminal: single evolving session, loops
+  var ht=document.getElementById('htbody');
+  if(ht){
+    var heroLines=[
+      {cls:'htp',text:'$ claude'},
+      {cls:'',text:'Automatisiere unsere Angebots-Mails',speed:22,pause:320},
+      {cls:'htc',text:'✷ Claude  waehle skill: outreach-copy',pause:300},
+      {cls:'htdim',text:'  schreibe Entwurf + 2 Varianten …',pause:560},
+      {cls:'htok',text:'✓ fertig · geprüft · bereit zum Senden',pause:1700}
+    ];
+    (function loop(){ ht.innerHTML=''; typeSession(ht, heroLines, function(){ setTimeout(loop, 2600); }); })();
+  }
+  // WE-21 big terminal: use-case carousel
+  var bt=document.getElementById('btbody');
+  if(bt){
+    var tabs=document.querySelectorAll('.bt-tab');
+    var sets=[
+      [{cls:'htp',text:'$ claude > inbox-triage'},{cls:'htc',text:'✷ Claude  skill: classify-inbox'},{cls:'htdim',text:'  42 Mails analysiert …'},{cls:'htok',text:'✓ 42 Mails sortiert · 6 als wichtig markiert'}],
+      [{cls:'htp',text:'$ claude > schreib-outreach --kunde Acme'},{cls:'htc',text:'✷ Claude  skill: outreach-copy'},{cls:'htdim',text:'  recherchiere + texte 3 Varianten …'},{cls:'htok',text:'✓ 3 Mails bereit · im CRM hinterlegt'}],
+      [{cls:'htp',text:'$ claude > recherchiere-leads --icp Agenturen'},{cls:'htc',text:'✷ Claude  skill: lead-generation'},{cls:'htdim',text:'  finde Firmen + reichere Kontakte an …'},{cls:'htok',text:'✓ 120 Leads gefunden & angereichert'}],
+      [{cls:'htp',text:'$ claude > bau-report --weekly'},{cls:'htc',text:'✷ Claude  skill: client-data-report'},{cls:'htdim',text:'  ziehe Zahlen, baue PDF …'},{cls:'htok',text:'✓ Report erstellt & in Slack gepostet'}]
+    ];
+    var si=0;
+    function cyc(){
+      tabs.forEach(function(t,i){ t.classList.toggle('on', i===si); });
+      bt.innerHTML='';
+      typeSession(bt, sets[si], function(){ setTimeout(function(){ si=(si+1)%sets.length; cyc(); }, 2400); });
+    }
+    cyc();
+  }
+  // WE-6 counter on stat-bar reveal
+  var sb=document.querySelector('.stat-bar');
+  if(sb && 'IntersectionObserver' in window){
+    var fired=false;
+    var ob=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting && !fired){
+          fired=true;
+          sb.querySelectorAll('[data-count]').forEach(function(el){
+            var to=parseInt(el.getAttribute('data-count'),10), suf=el.getAttribute('data-suf')||'', t0=null;
+            function step(ts){ if(!t0)t0=ts; var p=Math.min((ts-t0)/1300,1); el.textContent=Math.round(p*to)+suf; if(p<1)requestAnimationFrame(step); }
+            requestAnimationFrame(step);
+          });
+          ob.disconnect();
+        }
+      });
+    },{threshold:.4});
+    ob.observe(sb);
+  }
+})();
 </script>
 </body>
 </html>
