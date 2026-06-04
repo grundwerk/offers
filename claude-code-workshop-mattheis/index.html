@@ -384,7 +384,7 @@ footer a{color:var(--dim);}
     </div>
     <!-- SLOT:LOGO END -->
     <div class="badge h-anim d2" style="margin-bottom:0;"><span class="dot"></span>Claude Code Workshop für Agenturen</div>
-    <h1 class="dsp h-anim d3"><!-- SLOT:HEADER START -->Euer ganzes Team baut eigene <span class="hl">KI-Automationen</span>. Schon nach einem Tag.<!-- SLOT:HEADER END --></h1>
+    <h1 class="dsp h-anim d3"><!-- SLOT:HEADER START -->Das ganze mattheis-Team baut eigene <span class="hl">KI-Automationen</span>. Schon nach einem Tag.<!-- SLOT:HEADER END --></h1>
     <p class="sub h-anim d4"><!-- SLOT:SUBHEADER START -->Wir befähigen das Team von mattheis auf Claude Code und Antigravity, bauen im Workshop eure erste Automation kostenlos fertig und begleiten euch vier Wochen, bis sie produktiv läuft.<!-- SLOT:SUBHEADER END --></p>
     <div class="hero-btns h-anim d5">
       <a href="https://calendly.com/tom-soto-schiller/grundwerk-next-steps?hide_event_type_details=1&amp;hide_gdpr_banner=1&amp;background_color=0b0b11&amp;text_color=f1f5f9&amp;primary_color=0066ff" class="btn btn-blue" target="_blank" rel="noopener">Erstgespräch buchen</a>
@@ -431,7 +431,7 @@ footer a{color:var(--dim);}
     <div class="htbar"><i style="background:#ef4444"></i><i style="background:#eab308"></i><i style="background:#22c55e"></i><span class="t">claude-code</span><span class="htlogo"><!-- SLOT:CUSTOMER_ICON START --><img src="https://www.mattheis-berlin.de/wp-content/uploads/2024/10/Logo-mattheis-2024-neg.svg" alt="mattheis"><!-- SLOT:CUSTOMER_ICON END --></span></div>
     <div class="htbody" id="btbody"></div>
    </div>
-   <div class="bt-tabs"><span class="bt-tab">Inbox-Triage</span><span class="bt-tab">Outreach</span><span class="bt-tab">Lead-Recherche</span><span class="bt-tab">Reporting</span></div>
+   <div class="bt-tabs"><span class="bt-tab">Leadlisten erstellen</span><span class="bt-tab">Follow-ups verschicken</span><span class="bt-tab">CRM pflegen</span><span class="bt-tab">Reports bauen</span><span class="bt-tab">Verträge entwerfen</span><span class="bt-tab">LinkedIn-Post schreiben</span><span class="bt-tab">Rechnungen schreiben</span><span class="bt-tab">Angebote erstellen</span></div>
   </div>
  </div>
 </section>
@@ -613,7 +613,7 @@ footer a{color:var(--dim);}
    <span class="cstchip c1" style="left:22%;top:14%"><span class="e">&#10031;</span> Outreach-Mails</span>
    <span class="cstchip c2" style="left:78%;top:14%"><span class="e">&#10031;</span> Lead-Recherche</span>
    <span class="cstchip c3" style="left:12%;top:50%"><span class="e">&#10031;</span> Reporting</span>
-   <span class="cstchip c4" style="left:88%;top:50%"><span class="e">&#10031;</span> Inbox-Triage</span>
+   <span class="cstchip c4" style="left:88%;top:50%"><span class="e">&#10031;</span> Angebote</span>
    <span class="cstchip c5" style="left:24%;top:86%"><span class="e">&#10031;</span> Sales-CRM</span>
    <span class="cstchip c6" style="left:76%;top:86%"><span class="e">&#10031;</span> Content</span>
    <div class="cstc"><div class="lc"><!-- SLOT:AGENCY_NAME START -->mattheis<!-- SLOT:AGENCY_NAME END --></div></div>
@@ -715,7 +715,7 @@ s2.addEventListener('click',go);i2.addEventListener('keydown',function(e){if(e.k
   if(rot){
     var rc=rot.querySelector('.rc'), tn=document.createTextNode('');
     rot.insertBefore(tn, rc);
-    var phr=['claude > inbox-triage --team','claude > schreib-outreach --kunde Acme','claude > recherchiere-leads --icp Agenturen','claude > bau-report --weekly'];
+    var phr=['claude > erstelle-leadliste --icp Agenturen','claude > follow-up --offene-threads','claude > pflege-crm --aus-call-notizen','claude > bau-report --weekly'];
     var pi=0,ci=0,del=false;
     (function tick(){
       var w=phr[pi];
@@ -740,10 +740,14 @@ s2.addEventListener('click',go);i2.addEventListener('keydown',function(e){if(e.k
   if(bt){
     var tabs=document.querySelectorAll('.bt-tab');
     var sets=[
-      [{cls:'htp',text:'$ claude > inbox-triage'},{cls:'htc',text:'✷ Claude  skill: classify-inbox'},{cls:'htdim',text:'  42 Mails analysiert …'},{cls:'htok',text:'✓ 42 Mails sortiert · 6 als wichtig markiert'}],
-      [{cls:'htp',text:'$ claude > schreib-outreach --kunde Acme'},{cls:'htc',text:'✷ Claude  skill: outreach-copy'},{cls:'htdim',text:'  recherchiere + texte 3 Varianten …'},{cls:'htok',text:'✓ 3 Mails bereit · im CRM hinterlegt'}],
-      [{cls:'htp',text:'$ claude > recherchiere-leads --icp Agenturen'},{cls:'htc',text:'✷ Claude  skill: lead-generation'},{cls:'htdim',text:'  finde Firmen + reichere Kontakte an …'},{cls:'htok',text:'✓ 120 Leads gefunden & angereichert'}],
-      [{cls:'htp',text:'$ claude > bau-report --weekly'},{cls:'htc',text:'✷ Claude  skill: client-data-report'},{cls:'htdim',text:'  ziehe Zahlen, baue PDF …'},{cls:'htok',text:'✓ Report erstellt & in Slack gepostet'}]
+      [{cls:'htp',text:'$ claude > erstelle-leadliste --icp Agenturen'},{cls:'htc',text:'✷ Claude  skill: lead-generation'},{cls:'htdim',text:'  finde Firmen + reichere Kontakte an …'},{cls:'htok',text:'✓ 240 passende Leads · E-Mail + Telefon ergänzt'}],
+      [{cls:'htp',text:'$ claude > follow-up --offene-threads'},{cls:'htc',text:'✷ Claude  skill: outreach-copy'},{cls:'htdim',text:'  finde Nicht-Antworter, texte Follow-ups …'},{cls:'htok',text:'✓ 38 Follow-ups raus · im CRM geloggt'}],
+      [{cls:'htp',text:'$ claude > pflege-crm --aus-call-notizen'},{cls:'htc',text:'✷ Claude  skill: crm-sync'},{cls:'htdim',text:'  lese Notizen, aktualisiere Felder …'},{cls:'htok',text:'✓ 12 Kontakte aktualisiert in Close'}],
+      [{cls:'htp',text:'$ claude > bau-report --kunde Acme --weekly'},{cls:'htc',text:'✷ Claude  skill: client-data-report'},{cls:'htdim',text:'  ziehe Zahlen, baue PDF …'},{cls:'htok',text:'✓ Report fertig · in Slack gepostet'}],
+      [{cls:'htp',text:'$ claude > entwirf-vertrag --eckdaten brief.md'},{cls:'htc',text:'✷ Claude  skill: create-contract'},{cls:'htdim',text:'  fülle Vorlage, prüfe Klauseln …'},{cls:'htok',text:'✓ Vertragsentwurf bereit zur Freigabe'}],
+      [{cls:'htp',text:'$ claude > schreib-linkedin --thema KI-Outreach'},{cls:'htc',text:'✷ Claude  skill: outreach-copy'},{cls:'htdim',text:'  texte 3 Varianten + Hook …'},{cls:'htok',text:'✓ 3 Post-Entwürfe bereit'}],
+      [{cls:'htp',text:'$ claude > schreib-rechnung --projekt P-1024'},{cls:'htc',text:'✷ Claude  skill: buchhaltung'},{cls:'htdim',text:'  ziehe Positionen, erstelle Beleg …'},{cls:'htok',text:'✓ Rechnung in Lexware erstellt'}],
+      [{cls:'htp',text:'$ claude > erstelle-angebot --briefing brief.md'},{cls:'htc',text:'✷ Claude  skill: offer-design'},{cls:'htdim',text:'  baue Angebot im CI, kalkuliere …'},{cls:'htok',text:'✓ PDF-Angebot bereit zum Senden'}]
     ];
     var si=0;
     function cyc(){
