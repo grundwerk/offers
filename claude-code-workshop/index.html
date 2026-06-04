@@ -91,20 +91,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;backdrop-filter:blur(16px);
 .h-anim.d1{animation-delay:.05s;}.h-anim.d2{animation-delay:.16s;}.h-anim.d3{animation-delay:.28s;}.h-anim.d4{animation-delay:.40s;}.h-anim.d5{animation-delay:.52s;}
 @keyframes heroUp{to{opacity:1;transform:none;}}
 
-/* LOGO TICKER */
-.logo-ticker{background:var(--bg);padding:14px 0 64px;overflow:hidden;position:relative;}
-.ticker-cap{text-align:center;font-size:0.76rem;text-transform:uppercase;letter-spacing:0.14em;color:var(--dim);margin-bottom:28px;}
-.logo-ticker::before,.logo-ticker::after{content:'';position:absolute;top:28px;bottom:0;width:13%;z-index:2;pointer-events:none;}
-.logo-ticker::before{left:0;background:linear-gradient(to right,var(--bg) 40%,transparent);}
-.logo-ticker::after{right:0;background:linear-gradient(to left,var(--bg) 40%,transparent);}
-.ticker-row{display:flex;gap:54px;align-items:center;white-space:nowrap;margin-bottom:16px;will-change:transform;}
-.ticker-row.forward{animation:tickerF 46s linear infinite;}
-.ticker-row.reverse{animation:tickerR 52s linear infinite;}
-@keyframes tickerF{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@keyframes tickerR{from{transform:translateX(-50%)}to{transform:translateX(0)}}
-.client-logo{height:32px;width:auto;opacity:0.4;filter:grayscale(100%) brightness(1.9);transition:opacity .3s,filter .3s;flex-shrink:0;}
-.client-logo:hover{opacity:0.85;filter:grayscale(0%) brightness(1);}
-
 /* INCLUDED GRID (Workshop overview, direkt nach Hero) */
 .inc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
 .inc-card{background:var(--light-card);border:1px solid var(--light-border);border-radius:var(--radius);padding:24px;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;}
@@ -267,7 +253,7 @@ footer a{color:var(--dim);}
 .popclose{position:absolute;top:-40px;right:0;background:var(--panel);border:1px solid var(--border);color:var(--text);width:34px;height:34px;border-radius:9px;cursor:pointer;font-size:1.1rem}
 .ccchat{background:#08080d;border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.6)}
 .ccbar{display:flex;align-items:center;gap:7px;padding:12px 15px;border-bottom:1px solid var(--border)}
-.ccbar .dotr{width:9px;height:9px;border-radius:50%}.ccbar .t{margin-left:6px;font-size:.74rem;color:var(--muted);font-family:'JetBrains Mono','SF Mono',monospace}
+.ccbar .dotr{width:9px;height:9px;border-radius:50%}.ccbar .dotr.cls{cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .12s,box-shadow .12s}.ccbar .dotr.cls:hover{transform:scale(1.35);box-shadow:0 0 0 3px rgba(239,68,68,.25)}.ccbar .dotr.cls::after{content:'\00d7';color:#3a0d0d;font-size:8px;font-weight:800;line-height:1;opacity:0;transition:opacity .12s}.ccbar .dotr.cls:hover::after{opacity:1}.ccbar .t{margin-left:6px;font-size:.74rem;color:var(--muted);font-family:'JetBrains Mono','SF Mono',monospace}
 .ccbody{padding:18px;min-height:150px;max-height:300px;overflow-y:auto;display:flex;flex-direction:column;gap:12px;font-size:.88rem}
 .ccmsg{padding:12px 15px;border-radius:13px;max-width:90%;line-height:1.55}
 .ccmsg.u{background:var(--panel-2);border:1px solid var(--border);align-self:flex-end}
@@ -341,41 +327,6 @@ footer a{color:var(--dim);}
   </div>
  </div>
 </section>
-
-<!-- LOGO TICKER -->
-<div class="logo-ticker">
-  <div class="ticker-cap">Vertrauen von über 50 B2B-Unternehmen</div>
-  <div class="ticker-row forward">
-    <img class="client-logo" loading="eager" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel">
-    <img class="client-logo" loading="eager" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes">
-    <img class="client-logo" loading="eager" src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO">
-    <img class="client-logo" loading="eager" src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview">
-    <img class="client-logo" loading="eager" src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly">
-    <img class="client-logo" loading="eager" src="https://cocomin.de/wp-content/uploads/2024/11/cocomin-logo.svg" alt="COCOMIN">
-    <img class="client-logo" loading="eager" src="https://greenlovers.de/media/greenlovers/greenlovers-logo.svg" alt="Greenlovers">
-    <img class="client-logo" loading="eager" src="https://cdn.prod.website-files.com/636be452cfaef27bb708348b/64c007bb670af5c4b3350452_logo-echte-media.png" alt="echte Media">
-    <img class="client-logo" loading="eager" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel">
-    <img class="client-logo" loading="eager" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes">
-    <img class="client-logo" loading="eager" src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO">
-    <img class="client-logo" loading="eager" src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview">
-    <img class="client-logo" loading="eager" src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly">
-    <img class="client-logo" loading="eager" src="https://cocomin.de/wp-content/uploads/2024/11/cocomin-logo.svg" alt="COCOMIN">
-    <img class="client-logo" loading="eager" src="https://greenlovers.de/media/greenlovers/greenlovers-logo.svg" alt="Greenlovers">
-    <img class="client-logo" loading="eager" src="https://cdn.prod.website-files.com/636be452cfaef27bb708348b/64c007bb670af5c4b3350452_logo-echte-media.png" alt="echte Media">
-  </div>
-  <div class="ticker-row reverse">
-    <img class="client-logo" loading="eager" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges">
-    <img class="client-logo" loading="eager" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy">
-    <img class="client-logo" loading="eager" src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&amp;t=1761169171551" alt="Peer Studios">
-    <img class="client-logo" loading="eager" src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic">
-    <img class="client-logo" loading="eager" src="https://www.salz-berlin.de/fileadmin/template/images/salz-logo.svg" alt="Salz Berlin">
-    <img class="client-logo" loading="eager" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges">
-    <img class="client-logo" loading="eager" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy">
-    <img class="client-logo" loading="eager" src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&amp;t=1761169171551" alt="Peer Studios">
-    <img class="client-logo" loading="eager" src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic">
-    <img class="client-logo" loading="eager" src="https://www.salz-berlin.de/fileadmin/template/images/salz-logo.svg" alt="Salz Berlin">
-  </div>
-</div>
 
 <!-- WORKSHOP OVERVIEW (direkt nach Hero) -->
 <section id="enthalten" class="sec-light">
@@ -577,11 +528,11 @@ document.querySelectorAll('.faq-q').forEach(function(q){q.addEventListener('clic
 </script>
 <button class="cfab" id="cfab"><svg class="cmk" width="18" height="18" viewBox="0 0 40 40"><g><circle cx="20" cy="20" r="2.1" fill="#d97757" stroke="none"/><line x1="20" y1="3" x2="20" y2="13.5"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(30 20 20)"/><line x1="20" y1="3" x2="20" y2="13.5" transform="rotate(60 20 20)"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(90 20 20)"/><line x1="20" y1="3" x2="20" y2="13.5" transform="rotate(120 20 20)"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(150 20 20)"/><line x1="20" y1="3" x2="20" y2="13.5" transform="rotate(180 20 20)"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(210 20 20)"/><line x1="20" y1="3" x2="20" y2="13.5" transform="rotate(240 20 20)"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(270 20 20)"/><line x1="20" y1="3" x2="20" y2="13.5" transform="rotate(300 20 20)"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(330 20 20)"/></g></svg> Mit Claude chatten</button>
 <div class="popov" id="popov"><div class="popbox"><button class="popclose" id="popclose">&times;</button>
-<div class="ccchat"><div class="ccbar"><span class="dotr" style="background:#ef4444"></span><span class="dotr" style="background:#eab308"></span><span class="dotr" style="background:#22c55e"></span><span class="t">claude-code</span></div>
+<div class="ccchat"><div class="ccbar"><span class="dotr cls" id="ccdotred" role="button" tabindex="0" aria-label="Chat schlie&szlig;en" title="Schlie&szlig;en" style="background:#ef4444"></span><span class="dotr" style="background:#eab308"></span><span class="dotr" style="background:#22c55e"></span><span class="t">claude-code</span></div>
 <div class="ccbody" id="ccbodyL"><div class="ccmsg a"><div class="ci"><svg class="cmk" width="14" height="14" viewBox="0 0 40 40"><g><circle cx="20" cy="20" r="2.1" fill="#d97757" stroke="none"/><line x1="20" y1="3" x2="20" y2="13.5"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(30 20 20)"/><line x1="20" y1="3" x2="20" y2="13.5" transform="rotate(60 20 20)"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(90 20 20)"/><line x1="20" y1="3" x2="20" y2="13.5" transform="rotate(120 20 20)"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(150 20 20)"/><line x1="20" y1="3" x2="20" y2="13.5" transform="rotate(180 20 20)"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(210 20 20)"/><line x1="20" y1="3" x2="20" y2="13.5" transform="rotate(240 20 20)"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(270 20 20)"/><line x1="20" y1="3" x2="20" y2="13.5" transform="rotate(300 20 20)"/><line x1="20" y1="6.5" x2="20" y2="13.5" transform="rotate(330 20 20)"/></g></svg> Claude</div>Frag mich, was wir f&uuml;r euer Team automatisieren k&ouml;nnten.</div></div>
 <div class="ccinput"><input id="ccinL" placeholder="z.B. Wie automatisiere ich unser Reporting?" /><button id="ccsendL">Senden</button></div></div></div></div>
 <script>
-(function(){var ov=document.getElementById('popov'),op=document.getElementById('cfab'),cl=document.getElementById('popclose');if(ov&&op){op.addEventListener('click',function(){ov.classList.add('open')});cl.addEventListener('click',function(){ov.classList.remove('open')});ov.addEventListener('click',function(e){if(e.target===ov)ov.classList.remove('open')});}if(ov){setTimeout(function(){if(!sessionStorage.getItem('ccshown20')){ov.classList.add('open');try{sessionStorage.setItem('ccshown20','1')}catch(e){}}},20000);}
+(function(){var ov=document.getElementById('popov'),op=document.getElementById('cfab'),cl=document.getElementById('popclose'),rd=document.getElementById('ccdotred');function mark(){try{sessionStorage.setItem('ccshown20','1')}catch(e){}}function openChat(){ov.classList.add('open');mark();}function closeChat(){ov.classList.remove('open');}if(ov&&op){op.addEventListener('click',openChat);if(cl)cl.addEventListener('click',closeChat);if(rd){rd.addEventListener('click',closeChat);rd.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();closeChat();}});}ov.addEventListener('click',function(e){if(e.target===ov)closeChat();});document.addEventListener('keydown',function(e){if(e.key==='Escape')closeChat();});}if(ov){setTimeout(function(){if(!sessionStorage.getItem('ccshown20')&&!ov.classList.contains('open')){ov.classList.add('open');mark();}},20000);}
 var i2=document.getElementById('ccinL'),s2=document.getElementById('ccsendL'),b2=document.getElementById('ccbodyL');if(!i2)return;var CAL='https://calendly.com/anthony-katzur/grundwerk-termin-buchen?hide_event_type_details=1&hide_gdpr_banner=1&background_color=0b0b11&text_color=f1f5f9&primary_color=0066ff';
 function add(c,html){var d=document.createElement('div');d.className='ccmsg '+c;d.innerHTML=html;b2.appendChild(d);b2.scrollTop=b2.scrollHeight;return d;}
 function go(){var v=i2.value;if(!v.trim())return;add('u',v.replace(/</g,'&lt;'));i2.value='';var th=add('a','<div class="ci">&#10033; Claude</div>...');setTimeout(function(){th.remove();add('a','<div class="ci">&#10033; Claude</div>Spannend, &bdquo;'+v.trim().replace(/</g,'&lt;')+'&ldquo; l&auml;sst sich bei euch fast sicher automatisieren. Am besten schauen wir uns das gemeinsam an, bucht euch ein kurzes Erstgespr&auml;ch.<a href="'+CAL+'" target="_blank" rel="noopener">Termin buchen &rarr;</a>');},650);}
