@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII=">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="offer-version" content="v1-dab | 2026-06-04">
+<meta name="offer-version" content="v1-digitalagentur-berlin | 2026-06-04">
 <title>Claude Code Workshop für Agenturen &times; Grundwerk</title>
 <script>
 (function(){
@@ -407,8 +407,8 @@ footer a{color:var(--dim);}
     </div>
     <!-- SLOT:LOGO END -->
     <div class="badge h-anim d2" style="margin-bottom:0;"><span class="dot"></span>Claude Code Workshop für <!-- SLOT:INDUSTRY START -->Digitalagenturen<!-- SLOT:INDUSTRY END --></div>
-    <h1 class="dsp h-anim d3"><!-- SLOT:HEADER START -->Das ganze Team der Digitalagentur Berlin baut eigene <span class="hl">KI-Automationen</span>. Schon nach einem Tag.<!-- SLOT:HEADER END --></h1>
-    <p class="sub h-anim d4"><!-- SLOT:SUBHEADER START -->Wir befähigen das Team der Digitalagentur Berlin auf Claude Code und Antigravity, bauen im Workshop eure erste Automation kostenlos fertig und begleiten euch vier Wochen, bis sie produktiv läuft.<!-- SLOT:SUBHEADER END --></p>
+    <h1 class="dsp h-anim d3"><!-- SLOT:HEADER START -->Das ganze Digitalagentur Berlin-Team baut eigene <span class="hl">KI-Automationen</span>. Schon nach einem Tag.<!-- SLOT:HEADER END --></h1>
+    <p class="sub h-anim d4"><!-- SLOT:SUBHEADER START -->Wir befähigen das Team von Digitalagentur Berlin auf Claude Code und Antigravity, bauen im Workshop eure erste Automation kostenlos fertig und begleiten euch vier Wochen, bis sie produktiv läuft.<!-- SLOT:SUBHEADER END --></p>
     <div class="hero-btns h-anim d5">
       <a href="https://calendly.com/tom-soto-schiller/grundwerk-claude-workshop?hide_event_type_details=1&amp;hide_gdpr_banner=1&amp;background_color=0b0b11&amp;text_color=f1f5f9&amp;primary_color=0066ff" class="btn btn-blue" target="_blank" rel="noopener" onclick="if(window.Calendly){Calendly.initPopupWidget({url:this.href});return false;}">Erstgespräch buchen</a>
       <a href="#enthalten" class="btn btn-ghost">Was ist enthalten</a>
@@ -454,7 +454,8 @@ footer a{color:var(--dim);}
     <div class="htbar"><i style="background:#ef4444"></i><i style="background:#eab308"></i><i style="background:#22c55e"></i><span class="t">claude-code</span><span class="htlogo"><!-- SLOT:CUSTOMER_ICON START --><img src="https://digitalagentur.berlin/_assets/850f874ed6b036a84c5892046aa49808/Images/DAB_LOGO-RECTANGULAR_WHITE.svg" alt="Digitalagentur Berlin"><!-- SLOT:CUSTOMER_ICON END --></span></div>
     <div class="htbody" id="btbody"></div>
    </div>
-   <div class="bt-tabs"><span class="bt-tab">Leadlisten erstellen</span><span class="bt-tab">Follow-ups verschicken</span><span class="bt-tab">CRM pflegen</span><span class="bt-tab">Reports bauen</span><span class="bt-tab">Verträge entwerfen</span><span class="bt-tab">LinkedIn-Post schreiben</span><span class="bt-tab">Rechnungen schreiben</span><span class="bt-tab">Angebote erstellen</span></div>
+   <div class="bt-tabs" id="bttabs"></div>
+   <script type="application/json" id="tilesdata"><!-- SLOT:TILES START -->[{"tab": "Leadlisten erstellen", "lines": [{"cls": "htp", "text": "$ claude > erstelle-leadliste --icp Agenturen"}, {"cls": "htc", "text": "✷ Claude  skill: lead-generation"}, {"cls": "htdim", "text": "  finde Firmen + reichere Kontakte an …"}, {"cls": "htok", "text": "✓ 240 passende Leads · E-Mail + Telefon ergänzt"}]}, {"tab": "Follow-ups verschicken", "lines": [{"cls": "htp", "text": "$ claude > follow-up --offene-threads"}, {"cls": "htc", "text": "✷ Claude  skill: outreach-copy"}, {"cls": "htdim", "text": "  finde Nicht-Antworter, texte Follow-ups …"}, {"cls": "htok", "text": "✓ 38 Follow-ups raus · im CRM geloggt"}]}, {"tab": "CRM pflegen", "lines": [{"cls": "htp", "text": "$ claude > pflege-crm --aus-call-notizen"}, {"cls": "htc", "text": "✷ Claude  skill: crm-sync"}, {"cls": "htdim", "text": "  lese Notizen, aktualisiere Felder …"}, {"cls": "htok", "text": "✓ 12 Kontakte aktualisiert in Close"}]}, {"tab": "Angebote erstellen", "lines": [{"cls": "htp", "text": "$ claude > erstelle-angebot --briefing brief.md"}, {"cls": "htc", "text": "✷ Claude  skill: offer-design"}, {"cls": "htdim", "text": "  baue Angebot im CI, kalkuliere …"}, {"cls": "htok", "text": "✓ PDF-Angebot bereit zum Senden"}]}, {"tab": "Website-Audit", "lines": [{"cls": "htp", "text": "$ claude > website-audit --url kunde.de"}, {"cls": "htc", "text": "✷ Claude  skill: web-audit"}, {"cls": "htdim", "text": "  prüfe Ladezeit, SEO, Barrierefreiheit …"}, {"cls": "htok", "text": "✓ 24 Findings + Maßnahmen-Liste"}]}, {"tab": "Förder-Check", "lines": [{"cls": "htp", "text": "$ claude > foerder-check --kunde Acme"}, {"cls": "htc", "text": "✷ Claude  skill: foerder-research"}, {"cls": "htdim", "text": "  matche Programme + Fristen …"}, {"cls": "htok", "text": "✓ 3 passende Förderprogramme gefunden"}]}, {"tab": "SEO-Briefing", "lines": [{"cls": "htp", "text": "$ claude > seo-briefing --kunde Acme"}, {"cls": "htc", "text": "✷ Claude  skill: seo-research"}, {"cls": "htdim", "text": "  Keywords + Wettbewerb …"}, {"cls": "htok", "text": "✓ Content-Plan + 30 Keywords"}]}, {"tab": "Marketing-Report", "lines": [{"cls": "htp", "text": "$ claude > marketing-report --kunde Acme"}, {"cls": "htc", "text": "✷ Claude  skill: client-data-report"}, {"cls": "htdim", "text": "  ziehe Kanal-Zahlen …"}, {"cls": "htok", "text": "✓ Report + Empfehlungen fertig"}]}]<!-- SLOT:TILES END --></script>
   </div>
  </div>
 </section>
@@ -697,9 +698,7 @@ footer a{color:var(--dim);}
       <p>Lasst uns in einem kurzen Erstgespräch klären, wie der Workshop für euer Team aussieht. Unverbindlich.</p>
       <a href="https://calendly.com/tom-soto-schiller/grundwerk-claude-workshop?hide_event_type_details=1&amp;hide_gdpr_banner=1&amp;background_color=0b0b11&amp;text_color=f1f5f9&amp;primary_color=0066ff" class="btn btn-blue btn-pulse" target="_blank" rel="noopener" onclick="if(window.Calendly){Calendly.initPopupWidget({url:this.href});return false;}">Erstgespräch buchen</a>
       <div style="position:relative"><span class="cta-guarantee">&#10003; Eine Automation. Garantiert.</span></div>
-      <div class="cta-contacts">
-        <div>Anthony Katzur<br><a href="mailto:anthony.katzur@grundwerk.digital">anthony.katzur@grundwerk.digital</a><br>+49 176 47189941</div>
-      </div>
+      <div class="cta-contacts"><!-- SLOT:OWNER_CONTACT START --><div>Tom Soto Schiller<br><a href="mailto:tom.schiller@grundwerk.digital">tom.schiller@grundwerk.digital</a><br>+49 155 66331147</div><!-- SLOT:OWNER_CONTACT END --></div>
     </div>
   </div>
 </section>
@@ -775,24 +774,17 @@ s2.addEventListener('click',go);i2.addEventListener('keydown',function(e){if(e.k
   // WE-21 big terminal: use-case carousel
   var bt=document.getElementById('btbody');
   if(bt){
-    var tabs=document.querySelectorAll('.bt-tab');
-    var sets=[
-      [{cls:'htp',text:'$ claude > erstelle-leadliste --icp Agenturen'},{cls:'htc',text:'✷ Claude  skill: lead-generation'},{cls:'htdim',text:'  finde Firmen + reichere Kontakte an …'},{cls:'htok',text:'✓ 240 passende Leads · E-Mail + Telefon ergänzt'}],
-      [{cls:'htp',text:'$ claude > follow-up --offene-threads'},{cls:'htc',text:'✷ Claude  skill: outreach-copy'},{cls:'htdim',text:'  finde Nicht-Antworter, texte Follow-ups …'},{cls:'htok',text:'✓ 38 Follow-ups raus · im CRM geloggt'}],
-      [{cls:'htp',text:'$ claude > pflege-crm --aus-call-notizen'},{cls:'htc',text:'✷ Claude  skill: crm-sync'},{cls:'htdim',text:'  lese Notizen, aktualisiere Felder …'},{cls:'htok',text:'✓ 12 Kontakte aktualisiert in Close'}],
-      [{cls:'htp',text:'$ claude > bau-report --kunde Acme --weekly'},{cls:'htc',text:'✷ Claude  skill: client-data-report'},{cls:'htdim',text:'  ziehe Zahlen, baue PDF …'},{cls:'htok',text:'✓ Report fertig · in Slack gepostet'}],
-      [{cls:'htp',text:'$ claude > entwirf-vertrag --eckdaten brief.md'},{cls:'htc',text:'✷ Claude  skill: create-contract'},{cls:'htdim',text:'  fülle Vorlage, prüfe Klauseln …'},{cls:'htok',text:'✓ Vertragsentwurf bereit zur Freigabe'}],
-      [{cls:'htp',text:'$ claude > schreib-linkedin --thema KI-Outreach'},{cls:'htc',text:'✷ Claude  skill: outreach-copy'},{cls:'htdim',text:'  texte 3 Varianten + Hook …'},{cls:'htok',text:'✓ 3 Post-Entwürfe bereit'}],
-      [{cls:'htp',text:'$ claude > schreib-rechnung --projekt P-1024'},{cls:'htc',text:'✷ Claude  skill: buchhaltung'},{cls:'htdim',text:'  ziehe Positionen, erstelle Beleg …'},{cls:'htok',text:'✓ Rechnung in Lexware erstellt'}],
-      [{cls:'htp',text:'$ claude > erstelle-angebot --briefing brief.md'},{cls:'htc',text:'✷ Claude  skill: offer-design'},{cls:'htdim',text:'  baue Angebot im CI, kalkuliere …'},{cls:'htok',text:'✓ PDF-Angebot bereit zum Senden'}]
-    ];
+    var sets=[];
+    try{ sets=JSON.parse(document.getElementById('tilesdata').textContent.replace(/<!--[\s\S]*?-->/g,'').trim()); }catch(e){}
+    var wrap=document.getElementById('bttabs'), tabs=[];
+    sets.forEach(function(x){ var sp=document.createElement('span'); sp.className='bt-tab'; sp.textContent=x.tab; wrap.appendChild(sp); tabs.push(sp); });
     var si=0;
     function cyc(){
       tabs.forEach(function(t,i){ t.classList.toggle('on', i===si); });
       bt.innerHTML='';
-      typeSession(bt, sets[si], function(){ setTimeout(function(){ si=(si+1)%sets.length; cyc(); }, 2400); });
+      typeSession(bt, sets[si].lines, function(){ setTimeout(function(){ si=(si+1)%sets.length; cyc(); }, 2400); });
     }
-    cyc();
+    if(sets.length) cyc();
   }
   // WE-6 counter on stat-bar reveal
   var sb=document.querySelector('.stat-bar');
