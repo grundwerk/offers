@@ -394,5 +394,14 @@
     "secure": "7240591836",
     "icon": "🔧",
     "created": "2026-05-20"
+  },
+  {
+    "slug": "claude-code-workshop-lead-alliance",
+    "name": "lead alliance GmbH",
+    "subtitle": "Bernd Aipperspach · Claude Code Workshop · Performance-Marketing-Plattform",
+    "type": "offer",
+    "secure": "9316815615",
+    "icon": "🔗",
+    "created": "2026-06-08"
   }
 ]
