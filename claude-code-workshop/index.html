@@ -399,6 +399,22 @@ footer a{color:var(--dim);}
 .thpwrap{position:relative}
 @media(max-width:820px){.teamhub{height:auto;display:flex;flex-wrap:wrap;justify-content:center;gap:16px 10px;padding-top:6px}.teamhub svg.thlines{display:none}.thc{position:static;transform:none;order:-1;width:100%;margin-bottom:10px}.thp{position:static!important;transform:none!important;inset:auto!important;width:78px;opacity:1;animation:none}}
 
+
+/* === Wispr Flow + Tool-Slider (Offer-Update 2026-06) === */
+.wispr-pill{display:inline-flex;align-items:center;gap:9px;margin-top:20px;padding:9px 17px;border-radius:100px;background:var(--blue-soft);border:1px solid var(--blue-line);color:#8fb4ff;font-size:0.86rem;font-weight:600;letter-spacing:0.01em;}
+.sec-light .wispr-pill{color:var(--blue-deep);background:rgba(0,102,255,0.07);}
+.in .idel.l6{animation-delay:2.95s;}
+.in .setl li.l5{animation-delay:2.8s;}
+.toolslider{margin-top:52px;}
+.ts-mask{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);}
+.ts-track{display:flex;gap:16px;width:max-content;animation:tsscroll 42s linear infinite;}
+.toolslider:hover .ts-track{animation-play-state:paused;}
+.ts-card{display:flex;align-items:center;gap:14px;flex:0 0 auto;width:300px;padding:17px 19px;border-radius:var(--radius);background:var(--light-card);border:1px solid var(--light-border);box-shadow:0 2px 10px rgba(12,19,32,0.04);}
+.ts-ic{width:42px;height:42px;border-radius:11px;background:var(--blue-soft);color:var(--blue-deep);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex:0 0 auto;}
+.ts-name{font-weight:700;color:var(--light-text);font-size:0.98rem;letter-spacing:-0.01em;}
+.ts-desc{color:var(--light-muted);font-size:0.82rem;line-height:1.4;margin-top:2px;}
+@keyframes tsscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.ts-track{animation:none;flex-wrap:wrap;justify-content:center;width:auto;}.ts-mask{-webkit-mask-image:none;mask-image:none;}}
 </style>
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
@@ -465,8 +481,9 @@ footer a{color:var(--dim);}
  <div class="container">
   <div class="center reveal" style="margin-bottom:34px">
     <div class="eyebrow">So baut Claude bei euch</div>
-    <h2 class="title dsp">Eine Aufgabe eintippen. Claude erledigt sie.</h2>
+    <h2 class="title dsp">Eine Aufgabe eintippen oder diktieren. Claude erledigt sie.</h2>
     <p class="lead center muted">Genau das lernt euer Team im Workshop, an euren echten Aufgaben.</p>
+    <div class="wispr-pill">&#127908; Mit Wispr Flow einfach sprechen statt tippen. Rund 60% schneller.</div>
   </div>
   <div class="reveal">
    <div class="bigterm">
@@ -496,6 +513,10 @@ footer a{color:var(--dim);}
       <div class="inc-card"><div class="ic">🔁</div><h3>Vier Wochen Nachbetreuung</h3><p>Session nach zwei Wochen plus ein weiterer 30-Minuten-Call für alle Rückfragen.</p></div>
       <div class="inc-card"><div class="ic">✅</div><h3>Umsetzungs-Kontrolle</h3><p>Wir prüfen aktiv, dass die gestarteten Automationen auch wirklich live gehen.</p></div>
       <div class="inc-card"><div class="ic">🛡️</div><h3>Garantie</h3><p>Mindestens eine Automation läuft produktiv. Garantiert.<span class="inc-tag">risikofrei</span></p></div>
+    </div>
+    <div class="toolslider reveal">
+      <div class="eyebrow" style="text-align:center">Was wir bei euch fertig einrichten</div>
+      <div class="ts-mask"><div class="ts-track"><div class="ts-card"><div class="ts-ic">&#128187;</div><div><div class="ts-name">Claude Code</div><div class="ts-desc">Der KI-Agent, der eure Aufgaben erledigt</div></div></div><div class="ts-card"><div class="ts-ic">&#129773;</div><div><div class="ts-name">Antigravity</div><div class="ts-desc">Die Arbeitsumgebung, in der ihr mit Claude baut</div></div></div><div class="ts-card"><div class="ts-ic">&#127908;</div><div><div class="ts-name">Wispr Flow</div><div class="ts-desc">Sprechen statt Tippen, rund 60% schneller</div></div></div><div class="ts-card"><div class="ts-ic">&#10031;</div><div><div class="ts-name">Claude</div><div class="ts-desc">Euer KI-Account f&uuml;r das ganze Team</div></div></div><div class="ts-card"><div class="ts-ic">&#129513;</div><div><div class="ts-name">Skills &amp; Vorlagen</div><div class="ts-desc">Wiederverwendbare Workflows f&uuml;r euer Team</div></div></div><div class="ts-card"><div class="ts-ic">&#128279;</div><div><div class="ts-name">Eure Tools angebunden</div><div class="ts-desc">Slack, Gmail, CRM &amp; Co. mit Claude verbunden</div></div></div><div class="ts-card"><div class="ts-ic">&#128187;</div><div><div class="ts-name">Claude Code</div><div class="ts-desc">Der KI-Agent, der eure Aufgaben erledigt</div></div></div><div class="ts-card"><div class="ts-ic">&#129773;</div><div><div class="ts-name">Antigravity</div><div class="ts-desc">Die Arbeitsumgebung, in der ihr mit Claude baut</div></div></div><div class="ts-card"><div class="ts-ic">&#127908;</div><div><div class="ts-name">Wispr Flow</div><div class="ts-desc">Sprechen statt Tippen, rund 60% schneller</div></div></div><div class="ts-card"><div class="ts-ic">&#10031;</div><div><div class="ts-name">Claude</div><div class="ts-desc">Euer KI-Account f&uuml;r das ganze Team</div></div></div><div class="ts-card"><div class="ts-ic">&#129513;</div><div><div class="ts-name">Skills &amp; Vorlagen</div><div class="ts-desc">Wiederverwendbare Workflows f&uuml;r euer Team</div></div></div><div class="ts-card"><div class="ts-ic">&#128279;</div><div><div class="ts-name">Eure Tools angebunden</div><div class="ts-desc">Slack, Gmail, CRM &amp; Co. mit Claude verbunden</div></div></div></div></div>
     </div>
     <div class="center reveal" style="margin-top:42px;">
       <a href="https://calendly.com/tom-soto-schiller/grundwerk-claude-workshop?hide_event_type_details=1&amp;hide_gdpr_banner=1&amp;background_color=0b0b11&amp;text_color=f1f5f9&amp;primary_color=0066ff" class="btn btn-blue" target="_blank" rel="noopener" onclick="if(window.Calendly){Calendly.initPopupWidget({url:this.href});return false;}">Erstgespräch buchen</a>
@@ -551,14 +572,16 @@ footer a{color:var(--dim);}
      <p class="idel l2"><span class="d">&nbsp;&nbsp;Claude Code wird installiert &hellip;</span></p>
      <p class="idel l3"><span class="d">&nbsp;&nbsp;Skills &amp; Vorlagen werden angelegt &hellip;</span></p>
      <p class="idel l4"><span class="d">&nbsp;&nbsp;Antigravity verbunden &hellip;</span></p>
-     <p class="idel l5"><span class="ok">&#10003; bereit. Viel Spa&szlig; beim Bauen.</span></p>
+     <p class="idel l5"><span class="d">&nbsp;&nbsp;Wispr Flow wird eingerichtet &hellip;</span></p>
+     <p class="idel l6"><span class="ok">&#10003; bereit. Viel Spa&szlig; beim Bauen.</span></p>
     </div>
    </div>
    <ul class="setl">
     <li class="l1"><span class="sb">&#10003;</span> Claude Code auf allen Rechnern installiert</li>
     <li class="l2"><span class="sb">&#10003;</span> Antigravity eingerichtet &amp; verbunden</li>
-    <li class="l3"><span class="sb">&#10003;</span> Eure Skills &amp; Vorlagen angelegt</li>
-    <li class="l4"><span class="sb">&#10003;</span> Erste Automation am selben Tag live</li>
+    <li class="l3"><span class="sb">&#10003;</span> Wispr Flow eingerichtet: sprechen statt tippen, rund 60% schneller</li>
+    <li class="l4"><span class="sb">&#10003;</span> Eure Skills &amp; Vorlagen angelegt</li>
+    <li class="l5"><span class="sb">&#10003;</span> Erste Automation am selben Tag live</li>
    </ul>
   </div>
  </div>
