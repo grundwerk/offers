@@ -1,5 +1,14 @@
 [
   {
+    "slug": "kemper-system",
+    "name": "Kemper System GmbH",
+    "subtitle": "Kai Corthobius · Sales Room · Hersteller Flachdach- & Abdichtungssysteme, Vellmar",
+    "type": "sales-room",
+    "secure": "7390421856",
+    "icon": "🏗️",
+    "created": "2026-06-09"
+  },
+  {
     "slug": "claude-code-workshop-regiohelden",
     "name": "RegioHelden GmbH",
     "subtitle": "Christoph Kreuzer · Claude Code Workshop · Regionale Online-Marketing-Agentur (Ströer), Stuttgart",
