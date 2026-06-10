@@ -1,6 +1,8 @@
 <!doctype html><html lang="de"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>WarmedIn für Jonas Berger</title>
+<link rel="icon" type="image/png" href="assets/img/warmedin-icon.png">
+<link rel="apple-touch-icon" href="assets/img/warmedin-icon.png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -46,7 +48,8 @@ iframe.sec{display:block;width:100%;border:0;overflow:hidden}
 @keyframes bookin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 .book-card.on{display:block}
 .book-x{position:absolute;top:9px;right:12px;border:none;background:none;font-size:22px;color:#aaa;cursor:pointer;line-height:1}
-.book-av{width:46px;height:46px;border-radius:50%;background:#121212;color:#ffe01c;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:17px;margin-bottom:12px}
+.book-av{width:46px;height:46px;border-radius:50%;background:#121212;color:#ffe01c;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:17px;margin-bottom:12px;overflow:hidden}
+.book-av img{width:100%;height:100%;object-fit:cover;display:block}
 .book-h{font-size:17px;font-weight:800;margin-bottom:6px;color:#121212}
 .book-p{font-size:13.5px;color:#555;line-height:1.5;margin-bottom:16px}
 .book-btn{display:block;text-align:center;background:#ffe01c;color:#121212;font-weight:800;font-size:15px;padding:13px;border-radius:10px;text-decoration:none;border:1px solid #e6c700}
@@ -77,7 +80,7 @@ iframe.sec{display:block;width:100%;border:0;overflow:hidden}
 <div class="bookfab">
   <div class="book-card" id="bookcard">
     <button class="book-x" id="bookx" aria-label="Schliessen">&times;</button>
-    <div class="book-av">A</div>
+    <div class="book-av"><img src="assets/img/anthony.jpg" alt="Anthony Katzur"></div>
     <div class="book-h">Erstgespräch mit Anthony</div>
     <div class="book-p">30 Min, unverbindlich. Wir schauen auf dein Profil, deine Themen und deinen Plan. Kein Pitch-Deck.</div>
     <a class="book-btn" href="https://calendly.com/anthony-katzur/warmedin-dein-linkedin-erstgesprach">Jetzt Termin buchen &rarr;</a>
