@@ -1,0 +1,84 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Post Vorher/Nachher -- WarmedIn</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f5f6f8;font-family:'Inter',system-ui,sans-serif;color:#121212;padding:52px 20px 64px}
+.wrap{max-width:1180px;margin:0 auto}
+.head{text-align:center;margin-bottom:34px}
+.eyebrow{display:inline-block;background:#121212;color:#fff;font-weight:800;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;padding:5px 13px;border-radius:999px}
+h1{font-size:36px;font-weight:800;letter-spacing:-.02em;margin:14px 0 10px;line-height:1.12}
+h1 .y{background:linear-gradient(transparent 60%,#ffe01c 60%);padding:0 5px}
+.sub{color:#555;font-size:16px;max-width:640px;margin:0 auto;line-height:1.55}
+.row{display:grid;grid-template-columns:1fr 44px 1fr;gap:16px;align-items:center;margin-bottom:22px}
+@media(max-width:880px){.row{grid-template-columns:1fr}.arrow{transform:rotate(90deg);justify-self:center}}
+.arrow{width:40px;height:40px;border-radius:50%;background:#ffe01c;display:flex;align-items:center;justify-content:center;font-size:19px;font-weight:800;justify-self:center;box-shadow:0 4px 12px rgba(255,224,28,.45)}
+.lab{font-size:11.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.lab.v{color:#9aa0aa}.lab.n{color:#a98a00}
+.lab .pill{font-size:10px;background:#ffe01c;color:#121212;padding:2px 8px;border-radius:999px}
+.post{background:#fff;border:1px solid #e2e4e8;border-radius:12px;padding:14px 16px 8px;box-shadow:0 4px 16px rgba(0,0,0,.04)}
+.post.vor{filter:saturate(.55);opacity:.95}
+.post.nach{border:2px solid #ffe01c;box-shadow:0 14px 34px rgba(255,224,28,.22)}
+.ph{display:flex;gap:10px;align-items:flex-start}
+.av{width:42px;height:42px;border-radius:50%;object-fit:cover;flex-shrink:0}
+.nm{font-size:14px;font-weight:700;color:#121212;line-height:1.2}
+.mt{font-size:12px;color:#70757e;line-height:1.35}
+.dots{margin-left:auto;color:#70757e;font-weight:800;letter-spacing:1px}
+.body{font-size:14px;line-height:1.5;color:#1c1c1c;margin:11px 0 12px;white-space:pre-line}
+.body .h{font-weight:700}
+.react{display:flex;align-items:center;gap:7px;font-size:12.5px;color:#70757e;padding-bottom:8px;border-bottom:1px solid #eef0f2}
+.emo{display:flex}.emo span{width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;margin-left:-4px;border:1.5px solid #fff}
+.emo span:first-child{margin-left:0}
+.e1{background:#0a66c2}.e2{background:#e0457b}.e3{background:#f5c33b}
+.bar{display:flex;justify-content:space-around;padding:7px 0 4px;font-size:13px;font-weight:600;color:#70757e}
+.bar div{display:flex;align-items:center;gap:6px}
+.foot{text-align:center;margin-top:18px;color:#444;font-size:15px}
+.foot b{color:#111}
+</style></head><body>
+<div class="wrap">
+  <div class="head">
+    <span class="eyebrow">Vorher / Nachher</span>
+    <h1>So klingt dein LinkedIn heute. <span class="y">So klingt es mit WarmedIn.</span></h1>
+    <div class="sub">Deine letzten 3 Posts, daneben dieselben Themen, neu geschrieben. Gleiche Person, anderer Eindruck, andere Reichweite.</div>
+  </div>
+  <div id="rows"></div>
+  <div class="foot"><b>Gleiches Thema. 40x mehr Resonanz.</b> Das ist der Unterschied zwischen posten und gelesen werden.</div>
+</div>
+<script>
+var PAIRS = [
+ {
+  vor:{body:"Wir wünschen allen Kunden und Partnern frohe Feiertage und einen guten Rutsch! 🎄", r:6, c:0, rp:0},
+  nach:{body:"Vor 2 Jahren hätte ein einziger Stau uns fast einen Großkunden gekostet.\n\nHeute wissen wir 6 Stunden vorher Bescheid, wenn eine Tour kippt.\n\nWas wir geändert haben, in 3 Punkten:", r:312, c:47, rp:12}
+ },
+ {
+  vor:{body:"Wir suchen Verstärkung im Team (m/w/d). Bewerbungen bitte an info@nordlog.de", r:11, c:1, rp:0},
+  nach:{body:"Ich habe letzte Woche einen Bewerber abgelehnt, der auf dem Papier perfekt war.\n\nDer Grund hatte nichts mit seiner Qualifikation zu tun, sondern mit einer einzigen Frage, die er nicht stellte.", r:248, c:63, rp:9}
+ },
+ {
+  vor:{body:"Stolz, unser neues Lager in Hamburg zu eröffnen. Ein wichtiger Schritt für uns.", r:23, c:2, rp:1},
+  nach:{body:"Unser neues Lager hat 2,3 Mio. Euro gekostet.\n\nHier ist die ehrliche Rechnung, warum es sich in 18 Monaten trägt, und der eine Posten, den fast jeder unterschätzt.", r:419, c:88, rp:21}
+ }
+];
+function fmt(n){return n>=1000?(n/1000).toFixed(1).replace('.0','')+'k':n;}
+function card(p,cls,tag){
+  return '<div class="post '+cls+'">'+
+    '<div class="ph"><img class="av" src="../img/jonas.jpg" alt="Jonas"><div><div class="nm">Jonas Berger</div>'+
+    '<div class="mt">Geschäftsführer @ NordLog · 1.234 Follower<br>2 Tage · 🌐</div></div>'+
+    (tag?'<div class="dots">···</div>':'<div class="dots">···</div>')+'</div>'+
+    '<div class="body">'+p.body+'</div>'+
+    '<div class="react"><div class="emo"><span class="e1">👍</span><span class="e2">❤</span><span class="e3">👏</span></div> '+fmt(p.r)+' · '+p.c+' Kommentare · '+p.rp+' mal geteilt</div>'+
+    '<div class="bar"><div>👍 Gefällt mir</div><div>💬 Kommentieren</div><div>🔁 Teilen</div><div>➤ Senden</div></div>'+
+    '</div>';
+}
+var html='';
+PAIRS.forEach(function(p){
+  html+='<div class="row">'+
+    '<div><div class="lab v">Vorher</div>'+card(p.vor,'vor',false)+'</div>'+
+    '<div class="arrow">&rarr;</div>'+
+    '<div><div class="lab n">Nachher <span class="pill">Mit WarmedIn</span></div>'+card(p.nach,'nach',true)+'</div>'+
+    '</div>';
+});
+document.getElementById('rows').innerHTML=html;
+</script>
+</body></html>

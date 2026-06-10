@@ -1,0 +1,977 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Postkalender-Vergleich - WarmedIn</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --warmedin-yellow: #ffe01c;
+    --linkedin-blue: #0A66C2;
+    --linkedin-blue-light: #e8f0fb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-300: #d1d5db;
+    --gray-400: #9ca3af;
+    --gray-500: #6b7280;
+    --gray-600: #4b5563;
+    --gray-700: #374151;
+    --gray-900: #111827;
+    --white: #ffffff;
+    --post-card-bg: #ffffff;
+    --post-card-border: #e2e8f0;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #f8f9fa;
+    color: var(--gray-900);
+    padding: 0;
+  }
+
+  /* ---- SECTION WRAPPER ---- */
+  .section {
+    background: var(--white);
+    padding: 80px 24px;
+  }
+
+  .container {
+    max-width: 1160px;
+    margin: 0 auto;
+  }
+
+  /* ---- FOMO HEADER ---- */
+  .fomo-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .fomo-eyebrow {
+    display: inline-block;
+    background: #111;
+    color: var(--warmedin-yellow);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+
+  .fomo-headline {
+    font-size: clamp(22px, 4vw, 38px);
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--gray-900);
+    margin-bottom: 16px;
+  }
+
+  .fomo-headline .name-lead { color: var(--gray-400); }
+  .fomo-headline .name-comp { color: var(--linkedin-blue); }
+
+  .fomo-ratio {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff8d6;
+    border: 1.5px solid var(--warmedin-yellow);
+    border-radius: 100px;
+    padding: 8px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-top: 8px;
+  }
+
+  .fomo-ratio .ratio-num {
+    font-size: 20px;
+    font-weight: 800;
+    color: #d97706;
+  }
+
+  /* ---- COMPETITOR TABS ---- */
+  .competitor-tabs {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 36px;
+  }
+
+  .comp-tab {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    border-radius: 12px;
+    border: 2px solid var(--gray-200);
+    background: var(--white);
+    cursor: pointer;
+    transition: all 0.18s ease;
+    text-align: left;
+    min-width: 210px;
+  }
+
+  .comp-tab:hover { border-color: var(--linkedin-blue); background: var(--linkedin-blue-light); }
+  .comp-tab.active {
+    border-color: var(--linkedin-blue);
+    background: var(--linkedin-blue-light);
+    box-shadow: 0 0 0 3px rgba(10,102,194,0.12);
+  }
+
+  .comp-tab-avatar {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; color: white; flex-shrink: 0;
+  }
+
+  .comp-tab-avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block; }
+  .comp-tab-info { flex: 1; min-width: 0; }
+  .comp-tab-name { font-size: 13px; font-weight: 700; color: var(--gray-900); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .comp-tab-desc { font-size: 11px; color: var(--gray-500); margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .comp-tab-count {
+    font-size: 11px; font-weight: 700; color: var(--linkedin-blue);
+    background: var(--linkedin-blue-light); border-radius: 100px; padding: 2px 8px; flex-shrink: 0;
+  }
+
+  /* ---- CALENDARS ---- */
+  .calendars-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+
+  @media (max-width: 720px) { .calendars-wrap { grid-template-columns: 1fr; } }
+
+  /* ---- CALENDAR CARD ---- */
+  .cal-card {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 2px solid var(--gray-200);
+  }
+
+  .cal-card.cal-lead {
+    border-color: var(--gray-300);
+  }
+
+  .cal-card.cal-comp {
+    border-color: var(--linkedin-blue);
+    box-shadow: 0 8px 32px rgba(10,102,194,0.15);
+  }
+
+  .cal-header {
+    padding: 16px 20px 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .cal-card.cal-lead .cal-header { background: var(--gray-100); }
+  .cal-card.cal-comp .cal-header { background: var(--linkedin-blue); }
+
+  .cal-header-avatar {
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 800; color: white; flex-shrink: 0;
+  }
+
+  .cal-header-avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block; }
+  .cal-card.cal-lead .cal-header-avatar { background: var(--gray-400); border: 2px solid var(--gray-300); }
+  .cal-header-avatar.avatar-lead-gray img { filter: grayscale(100%); opacity: 0.7; }
+
+  .cal-header-name { font-size: 15px; font-weight: 700; }
+  .cal-card.cal-lead .cal-header-name { color: var(--gray-600); }
+  .cal-card.cal-comp .cal-header-name { color: white; }
+  .cal-header-company { font-size: 12px; margin-top: 2px; }
+  .cal-card.cal-lead .cal-header-company { color: var(--gray-400); }
+  .cal-card.cal-comp .cal-header-company { color: rgba(255,255,255,0.75); }
+  .cal-header-posts { margin-left: auto; text-align: right; }
+
+  .cal-posts-num { font-size: 22px; font-weight: 800; line-height: 1; }
+  .cal-card.cal-lead .cal-posts-num { color: var(--gray-400); }
+  .cal-card.cal-comp .cal-posts-num { color: white; }
+  .cal-posts-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 2px; }
+  .cal-card.cal-lead .cal-posts-label { color: var(--gray-400); }
+  .cal-card.cal-comp .cal-posts-label { color: rgba(255,255,255,0.7); }
+
+  /* ---- CALENDAR GRID ---- */
+  .cal-body {
+    padding: 14px 12px 16px;
+  }
+
+  .cal-card.cal-lead .cal-body { background: #fafafa; }
+  .cal-card.cal-comp .cal-body { background: white; }
+
+  .cal-month-label {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .cal-card.cal-lead .cal-month-label { color: var(--gray-400); }
+  .cal-card.cal-comp .cal-month-label { color: var(--linkedin-blue); }
+
+  .cal-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    margin-bottom: 4px;
+  }
+
+  .cal-wd {
+    text-align: center;
+    font-size: 9px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 3px 0;
+    color: var(--gray-400);
+  }
+
+  .cal-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 3px;
+    transition: opacity 0.22s ease, transform 0.22s ease;
+  }
+
+  /* ---- PLAIN (no-post) DAY CELL ---- */
+  .cal-day {
+    aspect-ratio: 1;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 500;
+    position: relative;
+    cursor: default;
+  }
+
+  .cal-day.empty { visibility: hidden; }
+
+  .cal-day.no-post { color: var(--gray-300); }
+
+  .cal-card.cal-lead .cal-day.no-post:hover::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 7px;
+    background: rgba(255, 224, 28, 0.2);
+    border: 1.5px dashed #e0c400;
+  }
+
+  /* ---- MINI LINKEDIN POST CARD CELL ---- */
+  .cal-day.has-post {
+    aspect-ratio: unset;
+    height: auto;
+    min-height: 0;
+    padding: 0;
+    border-radius: 8px;
+    overflow: visible;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .cal-day.has-post:hover {
+    transform: scale(1.06);
+    z-index: 5;
+  }
+
+  /* The actual mini LinkedIn post card */
+  .mini-post {
+    width: 100%;
+    background: var(--post-card-bg);
+    border: 1px solid var(--post-card-border);
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.09);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Grayscale / muted version for Jonas (left side) */
+  .cal-card.cal-lead .mini-post {
+    background: #f7f8fa;
+    border-color: #dde1e7;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    filter: saturate(0.1) brightness(0.96);
+  }
+
+  /* --- POST: Day number badge (top-left corner of cell, outside card) --- */
+  .post-day-num {
+    position: absolute;
+    top: -7px;
+    left: 2px;
+    font-size: 8px;
+    font-weight: 700;
+    color: var(--gray-500);
+    background: white;
+    border-radius: 3px;
+    padding: 1px 3px;
+    z-index: 4;
+    line-height: 1;
+    border: 1px solid var(--gray-200);
+  }
+
+  .cal-card.cal-lead .post-day-num { color: var(--gray-400); background: #f5f5f5; }
+
+  /* --- POST HEADER: Avatar + Name + Subline + LinkedIn badge --- */
+  .mini-post-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 5px 5px 3px 5px;
+    position: relative;
+  }
+
+  .mini-avatar {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5px;
+    font-weight: 800;
+    color: white;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .mini-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+  }
+
+  .mini-name-block {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .mini-name {
+    font-size: 7.5px;
+    font-weight: 700;
+    color: var(--gray-900);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2;
+  }
+
+  .mini-subline {
+    font-size: 6px;
+    color: var(--gray-500);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.3;
+    margin-top: 0;
+  }
+
+  /* LinkedIn "in" badge top-right of mini-post */
+  .mini-li-badge {
+    width: 11px;
+    height: 11px;
+    border-radius: 2px;
+    background: #0A66C2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .mini-li-badge svg {
+    width: 8px;
+    height: 8px;
+    display: block;
+  }
+
+  /* --- POST BODY: hook text --- */
+  .mini-post-body {
+    padding: 0 5px 3px 5px;
+    font-size: 6.5px;
+    line-height: 1.35;
+    color: var(--gray-700);
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+    min-height: 18px;
+  }
+
+  /* --- POST FOOTER: engagement bar --- */
+  .mini-post-foot {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 5px 4px 5px;
+    border-top: 1px solid #f0f2f5;
+    margin-top: auto;
+  }
+
+  .mini-reactions {
+    display: flex;
+    align-items: center;
+    gap: 1.5px;
+  }
+
+  .mini-reaction-icon {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .mini-reaction-icon svg { width: 6px; height: 6px; display: block; }
+
+  .mini-reaction-count {
+    font-size: 5.5px;
+    color: var(--gray-500);
+    font-weight: 500;
+    margin-left: 2px;
+  }
+
+  .mini-comment-wrap {
+    display: flex;
+    align-items: center;
+    gap: 1.5px;
+    margin-left: auto;
+  }
+
+  .mini-comment-icon { width: 7px; height: 7px; opacity: 0.4; }
+  .mini-comment-count { font-size: 5px; color: var(--gray-400); }
+
+  /* ---- CTA BELOW LEAD ---- */
+  .cal-cta {
+    padding: 12px 16px;
+    text-align: center;
+    background: #fffde7;
+    border-top: 1.5px dashed #e6c800;
+    font-size: 12px;
+    font-weight: 600;
+    color: #8a5c06;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .cal-cta-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--warmedin-yellow);
+    flex-shrink: 0;
+    border: 1px solid #e0c400;
+  }
+
+  /* ---- STATS BAR ---- */
+  .stats-bar {
+    display: flex;
+    gap: 0;
+    background: var(--gray-100);
+    border-radius: 14px;
+    overflow: hidden;
+    margin-top: 28px;
+    border: 1.5px solid var(--gray-200);
+  }
+
+  .stat-item {
+    flex: 1;
+    padding: 18px 16px;
+    text-align: center;
+    border-right: 1.5px solid var(--gray-200);
+  }
+
+  .stat-item:last-child { border-right: none; }
+
+  .stat-num {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--linkedin-blue);
+    line-height: 1;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .stat-label { font-size: 12px; color: var(--gray-500); margin-top: 4px; font-weight: 500; }
+
+  @media (max-width: 540px) {
+    .stats-bar { flex-direction: column; }
+    .stat-item { border-right: none; border-bottom: 1.5px solid var(--gray-200); }
+    .stat-item:last-child { border-bottom: none; }
+    .competitor-tabs { flex-direction: column; align-items: center; }
+    .comp-tab { min-width: 260px; width: 100%; max-width: 340px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cal-days, .stat-num, .comp-tab, .cal-day, .mini-post { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<section class="section">
+  <div class="container">
+
+    <!-- FOMO HEADER -->
+    <div class="fomo-header">
+      <span class="fomo-eyebrow">LinkedIn-Aktivitat im Vergleich</span>
+      <h2 class="fomo-headline">
+        <span class="name-lead" id="fomo-lead-name">Jonas Berger: 3 Posts</span>
+        &nbsp; vs &nbsp;
+        <span class="name-comp" id="fomo-comp-name">Lena Brandt: 19 Posts</span>
+        <br>diesen Monat
+      </h2>
+      <div class="fomo-ratio">
+        <span>Deine Konkurrenz postet</span>
+        <span class="ratio-num" id="fomo-ratio">6,3x</span>
+        <span>ofter</span>
+      </div>
+    </div>
+
+    <!-- COMPETITOR SELECTOR TABS -->
+    <div class="competitor-tabs" id="comp-tabs"></div>
+
+    <!-- DUAL CALENDAR -->
+    <div class="calendars-wrap">
+
+      <!-- LEFT: LEAD (Jonas) - gray / inactive -->
+      <div class="cal-card cal-lead">
+        <div class="cal-header">
+          <div class="cal-header-avatar avatar-lead-gray" style="background:#9ca3af;">
+            <img src="../img/jonas.jpg" alt="Jonas Berger"
+              onerror="this.style.display='none';this.parentNode.textContent='JB';">
+          </div>
+          <div>
+            <div class="cal-header-name">Jonas Berger</div>
+            <div class="cal-header-company">NordLog GmbH - Logistik</div>
+          </div>
+          <div class="cal-header-posts">
+            <div class="cal-posts-num">3</div>
+            <div class="cal-posts-label">Posts</div>
+          </div>
+        </div>
+        <div class="cal-body">
+          <div class="cal-month-label">Juni 2026</div>
+          <div class="cal-weekdays">
+            <div class="cal-wd">Mo</div><div class="cal-wd">Di</div><div class="cal-wd">Mi</div>
+            <div class="cal-wd">Do</div><div class="cal-wd">Fr</div><div class="cal-wd">Sa</div><div class="cal-wd">So</div>
+          </div>
+          <div class="cal-days" id="lead-days"></div>
+        </div>
+        <div class="cal-cta">
+          <div class="cal-cta-dot"></div>
+          Mit WarmedIn fullst du deinen Kalender wie sie
+        </div>
+      </div>
+
+      <!-- RIGHT: COMPETITOR - vivid / active -->
+      <div class="cal-card cal-comp">
+        <div class="cal-header">
+          <div class="cal-header-avatar" id="comp-avatar-hdr" style="background:#0A66C2;">
+            <img id="comp-avatar-hdr-img" src="../img/lena.jpg" alt="Lena Brandt"
+              onerror="this.style.display='none';this.parentNode.textContent='LB';">
+          </div>
+          <div>
+            <div class="cal-header-name" id="comp-hdr-name">Lena Brandt</div>
+            <div class="cal-header-company" id="comp-hdr-company">FreightFlow - Logistik-SaaS</div>
+          </div>
+          <div class="cal-header-posts">
+            <div class="cal-posts-num" id="comp-posts-num">19</div>
+            <div class="cal-posts-label">Posts</div>
+          </div>
+        </div>
+        <div class="cal-body">
+          <div class="cal-month-label" style="color:#0A66C2;">Juni 2026</div>
+          <div class="cal-weekdays">
+            <div class="cal-wd">Mo</div><div class="cal-wd">Di</div><div class="cal-wd">Mi</div>
+            <div class="cal-wd">Do</div><div class="cal-wd">Fr</div><div class="cal-wd">Sa</div><div class="cal-wd">So</div>
+          </div>
+          <div class="cal-days" id="comp-days"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- STATS BAR -->
+    <div class="stats-bar">
+      <div class="stat-item">
+        <div class="stat-num" id="stat-comp-posts">19</div>
+        <div class="stat-label">Posts des Wettbewerbers diesen Monat</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" id="stat-ratio">6,3x</div>
+        <div class="stat-label">mehr LinkedIn-Sichtbarkeit</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" id="stat-empty-days">27</div>
+        <div class="stat-label">Tage ohne Post (Jonas)</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+(function() {
+  // ---- DATA ----
+  var LEAD = {
+    initials: 'JB',
+    color: '#9ca3af',
+    photo: '../img/jonas.jpg',
+    name: 'Jonas Berger',
+    headline: 'NordLog GmbH',
+    postDays: [3, 14, 26],
+    total: 3
+  };
+
+  var JUNE_TOTAL = 30;
+  // June 2026 starts on Monday -> offset 0
+  var JUNE_OFFSET = 0;
+
+  // Hook texts: 10 variations rotated
+  var HOOKS = [
+    'Warum 80 % der Dispo-Teams falsch sparen.',
+    '3 Fehler im Logistik-Vertrieb.',
+    'Onboarding halbiert, so gings.',
+    'Der wahre Grund, warum Deals platzen.',
+    '5 Dinge, die ich 2026 anders mache.',
+    'Niemand redet über DAS Problem.',
+    'Ich habe 50 CEOs gefragt.',
+    'Das hatte ich früher wissen sollen.',
+    'Wie wir 3 Wochen pro Monat sparen.',
+    'Der Fehler, den fast alle machen.'
+  ];
+
+  // Engagement numbers per hook index (varied, realistic)
+  var ENGAGEMENTS = [
+    { likes: 214, comments: 31 },
+    { likes: 87,  comments: 12 },
+    { likes: 342, comments: 47 },
+    { likes: 156, comments: 18 },
+    { likes: 421, comments: 63 },
+    { likes: 298, comments: 44 },
+    { likes: 183, comments: 27 },
+    { likes: 511, comments: 72 },
+    { likes: 267, comments: 35 },
+    { likes: 139, comments: 21 }
+  ];
+
+  var COMPETITORS = [
+    {
+      id: 'lena',
+      name: 'Lena Brandt',
+      company: 'FreightFlow (Logistik-SaaS)',
+      companyShort: 'FreightFlow - Logistik-SaaS',
+      headlineShort: 'FreightFlow',
+      desc: 'Postet fast täglich',
+      color: '#0A66C2',
+      initials: 'LB',
+      photo: '../img/lena.jpg',
+      postDays: [1,2,3,5,6,7,8,9,10,12,13,14,15,16,17,19,20,22,23],
+      total: 19
+    },
+    {
+      id: 'marco',
+      name: 'Marco Stein',
+      company: 'CargoMind (TMS-Software)',
+      companyShort: 'CargoMind - TMS-Software',
+      headlineShort: 'CargoMind',
+      desc: '4-5 mal pro Woche',
+      color: '#6366f1',
+      initials: 'MS',
+      photo: '../img/marco.jpg',
+      postDays: [2,4,6,9,11,13,16,18,20,22,24,26,28],
+      total: 13
+    },
+    {
+      id: 'sophie',
+      name: 'Sophie Adler',
+      company: 'RouteIQ (Routenplanung)',
+      companyShort: 'RouteIQ - Routenplanung',
+      headlineShort: 'RouteIQ',
+      desc: '3-4 mal pro Woche',
+      color: '#059669',
+      initials: 'SA',
+      photo: '../img/sophie.jpg',
+      postDays: [1,3,7,8,10,14,15,17,21,22,24,26,28,29,30],
+      total: 15
+    },
+    {
+      id: 'tim',
+      name: 'Tim Vogt',
+      company: 'HafenLog (Hafenlogistik)',
+      companyShort: 'HafenLog - Hafenlogistik',
+      headlineShort: 'HafenLog',
+      desc: '2-3 mal pro Woche',
+      color: '#d97706',
+      initials: 'TV',
+      photo: '../img/tim.jpg',
+      postDays: [2,5,9,12,16,19,23,26,30],
+      total: 9
+    },
+    {
+      id: 'daniel',
+      name: 'Daniel Krause',
+      company: 'TransparcLog (digitale Frachtboerse)',
+      companyShort: 'TransparcLog - digitale Frachtboerse',
+      headlineShort: 'TransparcLog',
+      desc: '3-4 mal pro Woche',
+      color: '#7c3aed',
+      initials: 'DK',
+      photo: '../img/daniel.jpg',
+      postDays: [1,2,3,4,6,7,8,11,14,15,18,21,22,25,28,29],
+      total: 16
+    },
+    {
+      id: 'nina',
+      name: 'Nina Hoffmann',
+      company: 'LoadiQ (KI-Disposition)',
+      companyShort: 'LoadiQ - KI-Disposition',
+      headlineShort: 'LoadiQ',
+      desc: '2-3 mal pro Woche',
+      color: '#be185d',
+      initials: 'NH',
+      photo: '../img/nina.jpg',
+      postDays: [2,5,9,12,16,17,20,23,26,27,30],
+      total: 11
+    }
+  ];
+
+  COMPETITORS.sort(function(a, b) { return b.total - a.total; });
+  var activeId = COMPETITORS[0].id;
+
+  // ---- HELPERS ----
+  function ratio(compTotal) {
+    return (compTotal / LEAD.total).toFixed(1).replace('.', ',') + 'x';
+  }
+
+  // LinkedIn "in" badge SVG
+  var LI_SVG_INNER = '<svg viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">'
+    + '<text x="0" y="12" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="white">in</text>'
+    + '</svg>';
+
+  // Thumb SVG for reactions
+  var THUMB_SVG = '<svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">'
+    + '<path d="M2 14V7h2.5L7 2l1 .5v3.5h5l.5 1-1.5 7H2z" fill="#0A66C2"/>'
+    + '</svg>';
+
+  // Heart SVG for reactions
+  var HEART_SVG = '<svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">'
+    + '<path d="M8 13.5C8 13.5 2 9.5 2 5.5a3 3 0 016 0 3 3 0 016 0c0 4-6 8-6 8z" fill="#df704d"/>'
+    + '</svg>';
+
+  // Comment bubble SVG
+  var COMMENT_SVG = '<svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">'
+    + '<path d="M2 2h12v9H9l-3 3V11H2V2z" stroke="#9ca3af" stroke-width="1.5" fill="none"/>'
+    + '</svg>';
+
+  // Format number: 1234 -> "1,2K", < 1000 stays plain
+  function fmtNum(n) {
+    if (n >= 1000) return (n / 1000).toFixed(1).replace('.', ',') + 'K';
+    return String(n);
+  }
+
+  // Build a mini LinkedIn post card HTML for a given day, person, hookIdx
+  function miniPostCard(day, photo, initials, color, name, headlineShort, hookIdx, isMuted) {
+    var hook = HOOKS[hookIdx % HOOKS.length];
+    var eng = ENGAGEMENTS[hookIdx % ENGAGEMENTS.length];
+    var avatarFallback = initials.replace(/'/g, "\\'");
+
+    // First name only for the name block
+    var firstName = name.split(' ')[0];
+
+    var avatarHtml = '<div class="mini-avatar" style="background:' + color + ';">'
+      + '<img src="' + photo + '" alt="' + firstName + '" '
+      + 'onerror="this.style.display=\'none\';this.parentNode.innerHTML=\'' + avatarFallback + '\';">'
+      + '</div>';
+
+    var headHtml = '<div class="mini-post-head">'
+      + avatarHtml
+      + '<div class="mini-name-block">'
+        + '<div class="mini-name">' + firstName + '</div>'
+        + '<div class="mini-subline">' + headlineShort + '</div>'
+      + '</div>'
+      + '<div class="mini-li-badge">' + LI_SVG_INNER + '</div>'
+      + '</div>';
+
+    var bodyHtml = '<div class="mini-post-body">' + hook + '</div>';
+
+    var footHtml = '<div class="mini-post-foot">'
+      + '<div class="mini-reactions">'
+        + '<div class="mini-reaction-icon">' + THUMB_SVG + '</div>'
+        + '<div class="mini-reaction-icon">' + HEART_SVG + '</div>'
+        + '<span class="mini-reaction-count">' + fmtNum(eng.likes) + '</span>'
+      + '</div>'
+      + '<div class="mini-comment-wrap">'
+        + '<svg class="mini-comment-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">'
+          + '<path d="M2 2h12v9H9l-3 3V11H2V2z" stroke="#9ca3af" stroke-width="1.5" fill="none"/>'
+        + '</svg>'
+        + '<span class="mini-comment-count">' + eng.comments + '</span>'
+      + '</div>'
+      + '</div>';
+
+    return '<span class="post-day-num">' + day + '</span>'
+      + '<div class="mini-post">'
+        + headHtml
+        + bodyHtml
+        + footHtml
+      + '</div>';
+  }
+
+  // ---- RENDER LEAD CALENDAR (once) ----
+  var leadHookCounter = 0;
+  function renderLeadDays() {
+    var c = document.getElementById('lead-days');
+    var html = '';
+    for (var i = 0; i < JUNE_OFFSET; i++) html += '<div class="cal-day empty"></div>';
+    for (var d = 1; d <= JUNE_TOTAL; d++) {
+      if (LEAD.postDays.indexOf(d) !== -1) {
+        html += '<div class="cal-day has-post" title="Post am ' + d + '. Juni" style="padding-top:8px;">'
+          + miniPostCard(d, LEAD.photo, LEAD.initials, LEAD.color, LEAD.name, LEAD.headline, leadHookCounter, true)
+          + '</div>';
+        leadHookCounter++;
+      } else {
+        html += '<div class="cal-day no-post">' + d + '</div>';
+      }
+    }
+    c.innerHTML = html;
+  }
+
+  // ---- RENDER COMP CALENDAR ----
+  function renderCompDays(comp, animate) {
+    var c = document.getElementById('comp-days');
+    if (animate) {
+      c.style.opacity = '0';
+      c.style.transform = 'scale(0.96)';
+    }
+    function draw() {
+      var html = '';
+      var hookIdx = 0;
+      for (var i = 0; i < JUNE_OFFSET; i++) html += '<div class="cal-day empty"></div>';
+      for (var d = 1; d <= JUNE_TOTAL; d++) {
+        if (comp.postDays.indexOf(d) !== -1) {
+          html += '<div class="cal-day has-post" title="Post am ' + d + '. Juni" style="padding-top:8px;">'
+            + miniPostCard(d, comp.photo, comp.initials, comp.color, comp.name, comp.headlineShort, hookIdx, false)
+            + '</div>';
+          hookIdx++;
+        } else {
+          html += '<div class="cal-day no-post">' + d + '</div>';
+        }
+      }
+      c.innerHTML = html;
+      if (animate) {
+        c.offsetHeight; // force reflow
+        c.style.opacity = '1';
+        c.style.transform = 'scale(1)';
+      }
+    }
+    if (animate) { setTimeout(draw, 200); } else { draw(); }
+  }
+
+  // ---- UPDATE HEADER + STATS ----
+  function updateInfo(comp) {
+    var hdrAvatar = document.getElementById('comp-avatar-hdr');
+    hdrAvatar.style.background = comp.color;
+    var hdrImg = document.getElementById('comp-avatar-hdr-img');
+    if (hdrImg) {
+      hdrImg.src = comp.photo;
+      hdrImg.alt = comp.name;
+      hdrImg.style.display = 'block';
+      hdrImg.onerror = function() {
+        this.style.display = 'none';
+        this.parentNode.textContent = comp.initials;
+      };
+    } else {
+      hdrAvatar.innerHTML = '<img id="comp-avatar-hdr-img" src="' + comp.photo + '" alt="' + comp.name + '" '
+        + 'style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;" '
+        + 'onerror="this.style.display=\'none\';this.parentNode.textContent=\'' + comp.initials + '\';">';
+    }
+
+    document.getElementById('comp-hdr-name').textContent = comp.name;
+    document.getElementById('comp-hdr-company').textContent = comp.companyShort;
+
+    var r = ratio(comp.total);
+    document.getElementById('comp-posts-num').textContent = comp.total;
+    document.getElementById('fomo-comp-name').textContent = comp.name + ': ' + comp.total + ' Posts';
+    document.getElementById('fomo-ratio').textContent = r;
+    document.getElementById('stat-comp-posts').textContent = comp.total;
+    document.getElementById('stat-ratio').textContent = r;
+    document.getElementById('stat-empty-days').textContent = JUNE_TOTAL - LEAD.total;
+  }
+
+  // ---- RENDER TABS ----
+  function renderTabs() {
+    var container = document.getElementById('comp-tabs');
+    var html = '';
+    COMPETITORS.forEach(function(c) {
+      var active = c.id === activeId ? ' active' : '';
+      html += '<button class="comp-tab' + active + '" data-id="' + c.id + '">'
+        + '<div class="comp-tab-avatar" style="background:' + c.color + ';">'
+          + '<img src="' + c.photo + '" alt="' + c.name + '" '
+          + 'style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;" '
+          + 'onerror="this.style.display=\'none\';this.parentNode.textContent=\'' + c.initials + '\';">'
+        + '</div>'
+        + '<div class="comp-tab-info">'
+          + '<div class="comp-tab-name">' + c.name + '</div>'
+          + '<div class="comp-tab-desc">' + c.company + '</div>'
+          + '<div class="comp-tab-desc">' + c.desc + '</div>'
+        + '</div>'
+        + '<div class="comp-tab-count">' + c.total + ' Posts</div>'
+        + '</button>';
+    });
+    container.innerHTML = html;
+    container.querySelectorAll('.comp-tab').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        selectComp(btn.dataset.id);
+      });
+    });
+  }
+
+  // ---- SELECT ----
+  function selectComp(id) {
+    if (id === activeId) return;
+    activeId = id;
+    document.querySelectorAll('.comp-tab').forEach(function(t) {
+      t.classList.toggle('active', t.dataset.id === id);
+    });
+    var comp = COMPETITORS.find(function(c) { return c.id === id; });
+    updateInfo(comp);
+    renderCompDays(comp, true);
+  }
+
+  // ---- INIT ----
+  function init() {
+    renderLeadDays();
+    var defaultComp = COMPETITORS[0];
+    updateInfo(defaultComp);
+    renderCompDays(defaultComp, false);
+    renderTabs();
+  }
+
+  init();
+})();
+</script>
+</body>
+</html>

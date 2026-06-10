@@ -1,0 +1,52 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hero -- WarmedIn (personalisiert)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--y:#ffe01c;--ink:#121212;--mut:#6b6b6b}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:#fbfbf8}
+/* nav */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 40px;background:#121212}
+.nav img{height:25px;display:block}
+.nav .cta{background:var(--y);color:#121212;font-weight:800;font-size:14px;padding:11px 20px;border-radius:9px;text-decoration:none;border:1px solid #e6c700}
+/* hero */
+.hero{position:relative;overflow:hidden;text-align:center;padding:64px 24px 78px}
+.hero::before{content:"";position:absolute;top:-160px;left:50%;transform:translateX(-50%);width:880px;height:520px;background:radial-gradient(closest-side,rgba(255,224,28,.42),transparent 70%);z-index:0}
+.hero>*{position:relative;z-index:1}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;background:#121212;color:#fff;font-weight:700;font-size:13px;padding:7px 15px 7px 8px;border-radius:999px}
+.eyebrow .av{width:26px;height:26px;border-radius:50%;object-fit:cover;display:block;border:1.5px solid var(--y)}
+.eyebrow b{color:var(--y)}
+h1{font-size:60px;line-height:1.04;font-weight:900;letter-spacing:-.03em;margin:24px auto 0;max-width:980px}
+h1 .hl{background:linear-gradient(transparent 60%,var(--y) 60%);padding:0 6px}
+.sub{font-size:20px;line-height:1.55;color:#3f3f3f;max-width:680px;margin:22px auto 0;font-weight:500}
+.sub b{color:#121212;font-weight:700}
+.ctas{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:34px}
+.btn{background:var(--y);color:#121212;font-weight:800;font-size:17px;padding:16px 28px;border-radius:11px;text-decoration:none;border:1px solid #e6c700;box-shadow:0 10px 26px rgba(255,224,28,.4);transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.micro{color:var(--mut);font-size:14px;font-weight:500}
+/* kpi strip */
+.kpis{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:46px}
+.kpi{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #ececec;border-radius:13px;padding:14px 20px;box-shadow:0 6px 18px rgba(0,0,0,.04);min-width:178px}
+.kpi .ic{width:34px;height:34px;border-radius:9px;background:#fff8d6;border:1px solid #ffe98a;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:#a98a00}
+.kpi .tx{text-align:left}
+.kpi .v{font-size:16px;font-weight:800;line-height:1.1}
+.kpi .l{font-size:12px;color:var(--mut);font-weight:600}
+</style></head><body>
+<section class="hero">
+  <!-- {{lead_first_name}} / {{lead_company}} / {{lead_initials}} -- pro Lead befüllt -->
+  <span class="eyebrow"><img class="av" src="../img/jonas.jpg" alt="Jonas">Du hast geantwortet, <b>Jonas</b>. Hier ist dein Plan.</span>
+  <h1>Dein LinkedIn macht gerade Pause, Jonas.<br>Wir machen daraus deine planbarste <span class="hl">Lead-Quelle.</span></h1>
+  <div class="sub">16 Posts im Monat, gezielter Outreach und echte Connections, <b>in deiner Stimme</b>. Du gibst den Input, WarmedIn macht den Rest, dein Gesicht wird zur Marke.</div>
+  <div class="ctas">
+    <a class="btn" href="https://calendly.com/anthony-katzur/warmedin-dein-linkedin-erstgesprach">Erstgespräch mit Anthony buchen &rarr;</a>
+    <span class="micro">30 Min, unverbindlich, kein Pitch-Deck.</span>
+  </div>
+  <div class="kpis">
+    <div class="kpi"><div class="ic">&uarr;</div><div class="tx"><div class="v">Reichweite</div><div class="l">mehr Augen auf dir</div></div></div>
+    <div class="kpi"><div class="ic">&uarr;</div><div class="tx"><div class="v">Connections</div><div class="l">die richtigen Leute</div></div></div>
+    <div class="kpi"><div class="ic">16</div><div class="tx"><div class="v">Posts / Monat</div><div class="l">ohne deinen Aufwand</div></div></div>
+    <div class="kpi"><div class="ic">&uarr;</div><div class="tx"><div class="v">Leads</div><div class="l">planbar im Kalender</div></div></div>
+  </div>
+</section>
+</body></html>
