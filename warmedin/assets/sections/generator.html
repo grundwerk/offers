@@ -107,23 +107,18 @@ textarea:focus{outline:none;border-color:#ffe01c;box-shadow:0 0 0 3px rgba(255,2
       <p>Dein Post ist unterwegs. Und jetzt ehrlich, Jonas: willst du das <b>16x im Monat</b>, ohne selbst eine Zeile zu schreiben?</p>
       <a href="https://calendly.com/anthony-katzur/warmedin-dein-linkedin-erstgesprach">Erstgespräch mit Anthony buchen &rarr;</a>
     </div>
+    <!-- STATE E: error (kein Fake-Post, ehrlicher Retry) -->
+    <div class="done" id="errbox">
+      <div class="e">😕</div>
+      <h3>Hat gerade nicht geklappt</h3>
+      <p>Der Server war kurz beschäftigt. Versuch es einfach nochmal, dein echter Post kommt gleich.</p>
+      <button class="btn" id="retryBtn" style="max-width:280px;margin:14px auto 0">Nochmal versuchen ✨</button>
+    </div>
   </div>
   <div class="mini">Echte KI, kein Template. Dein Thema, dein Stil.</div>
 </div>
 <script>
 var T = document.getElementById('topic');
-var TEMPLATES = [
-  function(t){return "Ehrlich? Über "+t+" spricht kaum jemand, dabei entscheidet es am Ende alles.\n\nVor zwei Jahren hätte ich das Thema noch ignoriert.\n\nHeute weiß ich: wer hier konsequent bleibt, gewinnt, leise, aber stetig.\n\n3 Dinge, die ich gelernt habe:\n→ Es kostet weniger, als die meisten denken.\n→ Die Konkurrenz wartet meistens zu lange.\n→ Der erste Schritt ist der schwerste, danach läuft es.\n\nWie hältst du es mit "+t+"?";},
-  function(t){return "Letzte Woche hat mich jemand gefragt, warum wir so viel Wert auf "+t+" legen.\n\nMeine Antwort hat ihn überrascht.\n\nNicht weil es modern ist. Sondern weil genau das den Unterschied macht zwischen \"läuft irgendwie\" und \"läuft planbar\".\n\nWir haben es getestet. Das Ergebnis war eindeutig.\n\nWürde ich es wieder so machen? Sofort.";},
-  function(t){return t.charAt(0).toUpperCase()+t.slice(1)+".\n\nKlingt unspektakulär. Ist aber der Hebel, den die meisten unterschätzen.\n\nWir haben 6 Monate gebraucht, um es richtig aufzusetzen.\n\nHeute würde ich sagen: das war die beste Entscheidung des Jahres.\n\nDrei Learnings, die ich gern früher gehabt hätte: (Kommentar 👇)";}
-];
-var lastIdx = -1;
-function genPost(){
-  var t = (T.value||'').trim() || 'dein Thema';
-  var i; do { i = Math.floor(Math.random()*TEMPLATES.length); } while (i===lastIdx && TEMPLATES.length>1);
-  lastIdx = i;
-  document.getElementById('postBody').textContent = TEMPLATES[i](t);
-}
 function show(id,on){document.getElementById(id).classList[on?'add':'remove']('on');}
 var MIN_CHARS=100;
 var genBtnEl=document.getElementById('genBtn');
@@ -140,23 +135,30 @@ updateGate();
 var WEBHOOK='https://n8n.grundwerk.digital/webhook/warmedin-post-generator';
 var curThema='';
 function showPostText(txt){document.getElementById('postBody').textContent=txt;show('result',true);show('gate',true);}
+function showError(){show('loader',false);show('result',false);show('gate',false);show('errbox',true);}
+// Echter Post oder ehrlicher Fehler. NIEMALS ein Fake-Template-Post (Tom 2026-06-10). Stille Auto-Retries gegen Box-Wackler.
+function generate(retries){
+  show('errbox',false);show('result',false);show('gate',false);show('loader',true);
+  fetch(WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({thema:curThema})})
+    .then(function(r){return r.json();})
+    .then(function(d){
+      if(d&&d.post&&d.post.length>20){show('loader',false);showPostText(d.post);}
+      else if(retries>0){generate(retries-1);}
+      else{showError();}
+    })
+    .catch(function(){ if(retries>0){generate(retries-1);} else {showError();} });
+}
 document.getElementById('genBtn').addEventListener('click',function(){
   if((T.value||'').trim().length<MIN_CHARS){updateGate();T.focus();return;}
   curThema=(T.value||'').trim();
   document.getElementById('stateA').style.display='none';
-  show('loader',true);
-  fetch(WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({thema:curThema})})
-    .then(function(r){return r.json();})
-    .then(function(d){show('loader',false);if(d&&d.post&&d.post.length>20){showPostText(d.post);}else{genPost();show('result',true);show('gate',true);}})
-    .catch(function(){show('loader',false);genPost();show('result',true);show('gate',true);});
+  generate(2);
 });
 document.getElementById('regen').addEventListener('click',function(){
-  show('result',false);show('gate',false);show('loader',true);
-  fetch(WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({thema:curThema||(T.value||'').trim()})})
-    .then(function(r){return r.json();})
-    .then(function(d){show('loader',false);if(d&&d.post&&d.post.length>20){showPostText(d.post);}else{genPost();show('result',true);show('gate',true);}})
-    .catch(function(){show('loader',false);genPost();show('result',true);show('gate',true);});
+  curThema=curThema||(T.value||'').trim();
+  generate(2);
 });
+document.getElementById('retryBtn').addEventListener('click',function(){ generate(2); });
 document.getElementById('sendBtn').addEventListener('click',function(){
   var e=document.getElementById('email').value;
   if(!/.+@.+\..+/.test(e)){document.getElementById('email').focus();return;}
