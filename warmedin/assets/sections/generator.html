@@ -114,6 +114,13 @@ textarea:focus{outline:none;border-color:#ffe01c;box-shadow:0 0 0 3px rgba(255,2
       <p>Der Server war kurz beschäftigt. Versuch es einfach nochmal, dein echter Post kommt gleich.</p>
       <button class="btn" id="retryBtn" style="max-width:280px;margin:14px auto 0">Nochmal versuchen ✨</button>
     </div>
+    <!-- STATE F: Tageslimit erreicht (Conversion-Gate) -->
+    <div class="done" id="limitbox">
+      <div class="e">🚀</div>
+      <h3>Heute schon richtig produktiv!</h3>
+      <p>Du hast deine <b>10 Gratis-Posts</b> für heute genutzt. Willst du unbegrenzt Posts in deinem Stil, <b>16x im Monat</b>, ohne selbst eine Zeile zu schreiben?</p>
+      <a href="https://calendly.com/anthony-katzur/warmedin-dein-linkedin-erstgesprach">Erstgespräch mit Anthony buchen &rarr;</a>
+    </div>
   </div>
   <div class="mini">Echte KI, kein Template. Dein Thema, dein Stil.</div>
 </div>
@@ -144,29 +151,34 @@ var PAGE_SLUG=pageSlug();
 function track(ev,extra){ try{ var d=Object.assign({page_slug:PAGE_SLUG,event:ev},extra||{}); fetch(TRACK,{method:'POST',headers:{'Content-Type':'application/json'},keepalive:true,body:JSON.stringify(d)}); }catch(e){} }
 function showPostText(txt){document.getElementById('postBody').textContent=txt;show('result',true);show('gate',true);}
 function showError(){show('loader',false);show('result',false);show('gate',false);show('errbox',true);}
-// Echter Post oder ehrlicher Fehler. NIEMALS ein Fake-Template-Post (Tom 2026-06-10). Stille Auto-Retries gegen Box-Wackler.
-function generate(retries){
-  show('errbox',false);show('result',false);show('gate',false);show('loader',true);
-  fetch(WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({thema:curThema,page_slug:PAGE_SLUG})})
+function showLimit(){show('loader',false);show('result',false);show('gate',false);show('errbox',false);show('limitbox',true);}
+// Eine req_id pro Klick (NICHT pro Wobble-Retry) -> der Tages-Counter zaehlt eine Generierung nur einmal.
+function newReqId(){return 'r'+Date.now().toString(36)+Math.random().toString(36).slice(2,8);}
+// Echter Post, Tageslimit-Hinweis oder ehrlicher Fehler. NIEMALS ein Fake-Template-Post (Tom 2026-06-10). Stille Auto-Retries gegen Box-Wackler.
+function generate(retries,reqId){
+  reqId=reqId||newReqId();
+  show('errbox',false);show('limitbox',false);show('result',false);show('gate',false);show('loader',true);
+  fetch(WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({thema:curThema,page_slug:PAGE_SLUG,req_id:reqId})})
     .then(function(r){return r.json();})
     .then(function(d){
+      if(d&&d.limit){show('loader',false);showLimit();return;}
       if(d&&d.post&&d.post.length>20){show('loader',false);showPostText(d.post);track('generate');}
-      else if(retries>0){generate(retries-1);}
+      else if(retries>0){generate(retries-1,reqId);}
       else{showError();}
     })
-    .catch(function(){ if(retries>0){generate(retries-1);} else {showError();} });
+    .catch(function(){ if(retries>0){generate(retries-1,reqId);} else {showError();} });
 }
 document.getElementById('genBtn').addEventListener('click',function(){
   if((T.value||'').trim().length<MIN_CHARS){updateGate();T.focus();return;}
   curThema=(T.value||'').trim();
   document.getElementById('stateA').style.display='none';
-  generate(2);
+  generate(2,newReqId());
 });
 document.getElementById('regen').addEventListener('click',function(){
   curThema=curThema||(T.value||'').trim();
-  generate(2);
+  generate(2,newReqId());
 });
-document.getElementById('retryBtn').addEventListener('click',function(){ generate(2); });
+document.getElementById('retryBtn').addEventListener('click',function(){ generate(2,newReqId()); });
 document.getElementById('sendBtn').addEventListener('click',function(){
   var e=document.getElementById('email').value;
   if(!/.+@.+\..+/.test(e)){document.getElementById('email').focus();return;}
