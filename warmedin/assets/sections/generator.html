@@ -122,19 +122,32 @@ function genPost(){
 }
 function show(id,on){document.getElementById(id).classList[on?'add':'remove']('on');}
 document.querySelectorAll('.chip').forEach(function(c){c.addEventListener('click',function(){T.value=c.textContent;});});
+var WEBHOOK='https://n8n.grundwerk.digital/webhook/warmedin-post-generator';
+var curThema='';
+function showPostText(txt){document.getElementById('postBody').textContent=txt;show('result',true);show('gate',true);}
 document.getElementById('genBtn').addEventListener('click',function(){
+  curThema=(T.value||'').trim()||'B2B auf LinkedIn';
   document.getElementById('stateA').style.display='none';
   show('loader',true);
-  setTimeout(function(){
-    show('loader',false); genPost(); show('result',true); show('gate',true);
-  },1500);
+  fetch(WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({thema:curThema})})
+    .then(function(r){return r.json();})
+    .then(function(d){show('loader',false);if(d&&d.post&&d.post.length>20){showPostText(d.post);}else{genPost();show('result',true);show('gate',true);}})
+    .catch(function(){show('loader',false);genPost();show('result',true);show('gate',true);});
 });
-document.getElementById('regen').addEventListener('click',genPost);
+document.getElementById('regen').addEventListener('click',function(){
+  show('result',false);show('gate',false);show('loader',true);
+  fetch(WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({thema:curThema||(T.value||'').trim()})})
+    .then(function(r){return r.json();})
+    .then(function(d){show('loader',false);if(d&&d.post&&d.post.length>20){showPostText(d.post);}else{genPost();show('result',true);show('gate',true);}})
+    .catch(function(){show('loader',false);genPost();show('result',true);show('gate',true);});
+});
 document.getElementById('sendBtn').addEventListener('click',function(){
   var e=document.getElementById('email').value;
   if(!/.+@.+\..+/.test(e)){document.getElementById('email').focus();return;}
-  show('result',false);
-  show('done',true);
+  var btn=document.getElementById('sendBtn');btn.disabled=true;btn.textContent='Wird gesendet...';
+  fetch(WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({thema:curThema,email:e})})
+    .then(function(){show('result',false);show('done',true);})
+    .catch(function(){show('result',false);show('done',true);});
 });
 </script>
 </body></html>
