@@ -161,7 +161,8 @@ document.getElementById('sendBtn').addEventListener('click',function(){
   var e=document.getElementById('email').value;
   if(!/.+@.+\..+/.test(e)){document.getElementById('email').focus();return;}
   var btn=document.getElementById('sendBtn');btn.disabled=true;btn.textContent='Wird gesendet...';
-  fetch(WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({thema:curThema,email:e})})
+  var shownPost=document.getElementById('postBody').textContent||'';
+  fetch(WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({thema:curThema,email:e,post:shownPost})})
     .then(function(){show('result',false);show('done',true);})
     .catch(function(){show('result',false);show('done',true);});
 });
