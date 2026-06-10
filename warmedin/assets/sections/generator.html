@@ -134,15 +134,23 @@ document.querySelectorAll('.chip').forEach(function(c){c.addEventListener('click
 updateGate();
 var WEBHOOK='https://n8n.grundwerk.digital/webhook/warmedin-post-generator';
 var curThema='';
+var TRACK='https://n8n.grundwerk.digital/webhook/warmedin-track';
+function pageSlug(){
+  try{ var p=window.parent.location.pathname; var s=p.replace(/^\/+|\/+$/g,'').split('/')[0]; if(s) return s; }catch(e){}
+  try{ var u=new URL(document.referrer); var s2=u.pathname.replace(/^\/+|\/+$/g,'').split('/')[0]; if(s2) return s2; }catch(e){}
+  return 'warmedin';
+}
+var PAGE_SLUG=pageSlug();
+function track(ev,extra){ try{ var d=Object.assign({page_slug:PAGE_SLUG,event:ev},extra||{}); fetch(TRACK,{method:'POST',headers:{'Content-Type':'application/json'},keepalive:true,body:JSON.stringify(d)}); }catch(e){} }
 function showPostText(txt){document.getElementById('postBody').textContent=txt;show('result',true);show('gate',true);}
 function showError(){show('loader',false);show('result',false);show('gate',false);show('errbox',true);}
 // Echter Post oder ehrlicher Fehler. NIEMALS ein Fake-Template-Post (Tom 2026-06-10). Stille Auto-Retries gegen Box-Wackler.
 function generate(retries){
   show('errbox',false);show('result',false);show('gate',false);show('loader',true);
-  fetch(WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({thema:curThema})})
+  fetch(WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({thema:curThema,page_slug:PAGE_SLUG})})
     .then(function(r){return r.json();})
     .then(function(d){
-      if(d&&d.post&&d.post.length>20){show('loader',false);showPostText(d.post);}
+      if(d&&d.post&&d.post.length>20){show('loader',false);showPostText(d.post);track('generate');}
       else if(retries>0){generate(retries-1);}
       else{showError();}
     })
@@ -164,7 +172,7 @@ document.getElementById('sendBtn').addEventListener('click',function(){
   if(!/.+@.+\..+/.test(e)){document.getElementById('email').focus();return;}
   var btn=document.getElementById('sendBtn');btn.disabled=true;btn.textContent='Wird gesendet...';
   var shownPost=document.getElementById('postBody').textContent||'';
-  fetch(WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({thema:curThema,email:e,post:shownPost})})
+  fetch(WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({thema:curThema,email:e,post:shownPost,page_slug:PAGE_SLUG})})
     .then(function(){show('result',false);show('done',true);})
     .catch(function(){show('result',false);show('done',true);});
 });
