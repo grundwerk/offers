@@ -103,7 +103,7 @@ iframe.sec{display:block;width:100%;border:0;overflow:hidden}
   <button class="book-toggle" id="booktoggle">📅 Termin buchen</button>
 </div>
 
-<div class="popwrap" id="pop"><iframe src="assets/popups/popup-happy-1.html?v=3" title="Angebot"></iframe></div>
+<div class="popwrap" id="pop"><button class="popclose" id="popclose" aria-label="Schliessen">&times;</button><iframe id="popframe" src="assets/popups/popup-happy-1.html?v=4" title="Angebot"></iframe></div>
 
 <script>
 // auto-height same-origin iframes
@@ -112,17 +112,32 @@ function sizeAll(){document.querySelectorAll('iframe.sec').forEach(size);}
 document.querySelectorAll('iframe.sec').forEach(function(f){f.addEventListener('load',function(){size(f);setTimeout(function(){size(f);},300);setTimeout(function(){size(f);},900);});});
 window.addEventListener('resize',sizeAll);
 var t=0,iv=setInterval(function(){sizeAll();if(++t>8)clearInterval(iv);},400);
-// popup trigger after 7s (once)
+// lead-magnet popup. The overlay ALWAYS has a parent-level escape hatch (close
+// button + Esc) so it can never trap the page, even if the iframe never posts
+// 'wm-close-popup'. On close the iframe is reloaded so a re-open never shows a
+// blank/already-closed state (the iframe hides its own backdrop on close).
+var pop=document.getElementById('pop');
+var popframe=document.getElementById('popframe');
+var popclose=document.getElementById('popclose');
+function openPop(){pop.classList.add('on');popclose.classList.add('on');}
+function closePop(){
+  pop.classList.remove('on');popclose.classList.remove('on');
+  if(popframe){popframe.setAttribute('src',popframe.getAttribute('src'));}
+}
 var shown=false;
-function showPop(){if(shown)return;shown=true;document.getElementById('pop').classList.add('on');}
+function showPop(){if(shown)return;shown=true;openPop();}
 setTimeout(showPop,30000);
-function closePop(){document.getElementById('pop').classList.remove('on');}
-window.addEventListener('message',function(e){if(e.data==='wm-close-popup')closePop();});
+popclose.addEventListener('click',closePop);
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closePop();});
+window.addEventListener('message',function(e){
+  if(e.data==='wm-close-popup')closePop();
+  if(e.data==='wm-goto-generator'){closePop();var g=document.querySelector('iframe[title="Post-Generator"]');if(g)g.scrollIntoView({behavior:'smooth'});}
+});
+// header notepad icon re-opens the popup anytime
+document.getElementById('postpop').addEventListener('click',openPop);
 // bottom-right booking widget
 var bc=document.getElementById('bookcard');
 document.getElementById('booktoggle').addEventListener('click',function(){bc.classList.toggle('on');});
 document.getElementById('bookx').addEventListener('click',function(){bc.classList.remove('on');});
-// header icon re-opens the popup anytime
-document.getElementById('postpop').addEventListener('click',function(){document.getElementById('pop').classList.add('on');});
 </script>
 <script>(function(){var T='https://n8n.grundwerk.digital/webhook/warmedin-track';function sl(){var p=location.pathname.replace(/^\/+|\/+$/g,'').split('/')[0];return p||'warmedin';}setTimeout(function(){if(document.documentElement.style.display==='none')return;try{fetch(T,{method:'POST',headers:{'Content-Type':'application/json'},keepalive:true,body:JSON.stringify({page_slug:sl(),event:'view'})});}catch(e){}},5000);})();</script></body></html>

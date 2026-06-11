@@ -411,7 +411,7 @@
           </div>
         </div>
       </div>
-      <button class="cta-btn" onclick="alert('CTA geklickt')">
+      <button class="cta-btn" id="ctaBtn">
         Kostenlosen LinkedIn-Post sichern
       </button>
     </div>
@@ -428,6 +428,13 @@
   document.getElementById('backdrop').addEventListener('click', function(e) {
     if (e.target === this) wmClose();
   });
+  // CTA: close this popup and send the visitor to the post generator section
+  document.getElementById('ctaBtn').addEventListener('click', function() {
+    try { window.parent.postMessage('wm-goto-generator', '*'); } catch (e) {}
+    wmClose();
+  });
+  // Esc closes too, even when focus is inside the iframe (parent also listens)
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') wmClose(); });
 </script>
 </body>
 </html>
