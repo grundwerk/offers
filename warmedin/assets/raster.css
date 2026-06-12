@@ -1,0 +1,751 @@
+/* =========================================================================
+   WarmedIn Konkurrenz-Posting-Raster — raster.css
+   Self-contained, data-driven renderer. Replicates the visual design of
+   sections/competitor-calendar.html 1:1, scoped under #warmedin-raster so it
+   never collides with the landing page styles. Plus a click-overlay layer.
+   ========================================================================= */
+
+#warmedin-raster {
+  --wr-warmedin-yellow: #ffe01c;
+  --wr-linkedin-blue: #0A66C2;
+  --wr-linkedin-blue-light: #e8f0fb;
+  --wr-gray-100: #f3f4f6;
+  --wr-gray-200: #e5e7eb;
+  --wr-gray-300: #d1d5db;
+  --wr-gray-400: #9ca3af;
+  --wr-gray-500: #6b7280;
+  --wr-gray-600: #4b5563;
+  --wr-gray-700: #374151;
+  --wr-gray-900: #111827;
+  --wr-white: #ffffff;
+  --wr-post-card-bg: #ffffff;
+  --wr-post-card-border: #e2e8f0;
+
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--wr-gray-900);
+  display: block;
+  width: 100%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#warmedin-raster *,
+#warmedin-raster *::before,
+#warmedin-raster *::after {
+  box-sizing: border-box;
+}
+
+/* ---- FOMO HEADER ---- */
+#warmedin-raster .wr-fomo-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+#warmedin-raster .wr-fomo-eyebrow {
+  display: inline-block;
+  background: #111;
+  color: var(--wr-warmedin-yellow);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+#warmedin-raster .wr-fomo-headline {
+  font-size: clamp(22px, 4vw, 38px);
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--wr-gray-900);
+  margin: 0 0 16px;
+}
+
+#warmedin-raster .wr-fomo-headline .wr-name-lead { color: var(--wr-gray-400); }
+#warmedin-raster .wr-fomo-headline .wr-name-comp { color: var(--wr-linkedin-blue); }
+
+#warmedin-raster .wr-fomo-ratio {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff8d6;
+  border: 1.5px solid var(--wr-warmedin-yellow);
+  border-radius: 100px;
+  padding: 8px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--wr-gray-900);
+  margin-top: 8px;
+}
+
+#warmedin-raster .wr-fomo-ratio .wr-ratio-num {
+  font-size: 20px;
+  font-weight: 800;
+  color: #d97706;
+}
+
+/* ---- ADAPTIVE GREEN TONE (lead posts same / more than competitor) ---- */
+#warmedin-raster .wr-fomo-ratio.wr-tone-green {
+  background: #e7f6ec;
+  border-color: #34c46a;
+  color: #0a7d34;
+}
+#warmedin-raster .wr-fomo-ratio.wr-tone-green .wr-ratio-num { color: #0a7d34; }
+
+#warmedin-raster .wr-stat-num.wr-tone-green { color: #0a7d34; }
+#warmedin-raster .wr-stat-item.wr-tone-green { background: #e7f6ec; }
+
+/* ---- COMPETITOR TABS ---- */
+#warmedin-raster .wr-competitor-tabs {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+
+#warmedin-raster .wr-comp-tab {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: 2px solid var(--wr-gray-200);
+  background: var(--wr-white);
+  cursor: pointer;
+  transition: all 0.18s ease;
+  text-align: left;
+  min-width: 210px;
+  font-family: inherit;
+}
+
+#warmedin-raster .wr-comp-tab:hover {
+  border-color: var(--wr-linkedin-blue);
+  background: var(--wr-linkedin-blue-light);
+}
+
+#warmedin-raster .wr-comp-tab.wr-active {
+  border-color: var(--wr-linkedin-blue);
+  background: var(--wr-linkedin-blue-light);
+  box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.12);
+}
+
+#warmedin-raster .wr-comp-tab-avatar {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 700; color: white; flex-shrink: 0;
+}
+
+#warmedin-raster .wr-comp-tab-avatar img {
+  width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block;
+}
+
+#warmedin-raster .wr-comp-tab-info { flex: 1; min-width: 0; }
+
+#warmedin-raster .wr-comp-tab-name {
+  font-size: 13px; font-weight: 700; color: var(--wr-gray-900);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+#warmedin-raster .wr-comp-tab-desc {
+  font-size: 11px; color: var(--wr-gray-500); margin-top: 1px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+#warmedin-raster .wr-comp-tab-count {
+  font-size: 11px; font-weight: 700; color: var(--wr-linkedin-blue);
+  background: var(--wr-linkedin-blue-light); border-radius: 100px; padding: 2px 8px; flex-shrink: 0;
+}
+
+/* ---- CALENDARS ---- */
+#warmedin-raster .wr-calendars-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+@media (max-width: 720px) {
+  #warmedin-raster .wr-calendars-wrap { grid-template-columns: 1fr; }
+}
+
+/* When no competitors: single column (lead only) */
+#warmedin-raster .wr-calendars-wrap.wr-lead-only { grid-template-columns: 1fr; }
+
+/* ---- CALENDAR CARD ---- */
+#warmedin-raster .wr-cal-card {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid var(--wr-gray-200);
+}
+
+#warmedin-raster .wr-cal-card.wr-cal-lead { border-color: var(--wr-gray-300); }
+
+#warmedin-raster .wr-cal-card.wr-cal-comp {
+  border-color: var(--wr-linkedin-blue);
+  box-shadow: 0 8px 32px rgba(10, 102, 194, 0.15);
+}
+
+#warmedin-raster .wr-cal-header {
+  padding: 16px 20px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#warmedin-raster .wr-cal-card.wr-cal-lead .wr-cal-header { background: var(--wr-gray-100); }
+#warmedin-raster .wr-cal-card.wr-cal-comp .wr-cal-header { background: var(--wr-linkedin-blue); }
+
+#warmedin-raster .wr-cal-header-avatar {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 800; color: white; flex-shrink: 0;
+}
+
+#warmedin-raster .wr-cal-header-avatar img {
+  width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block;
+}
+
+#warmedin-raster .wr-cal-card.wr-cal-lead .wr-cal-header-avatar {
+  background: var(--wr-gray-400); border: 2px solid var(--wr-gray-300);
+}
+
+#warmedin-raster .wr-cal-header-avatar.wr-avatar-lead-gray img {
+  filter: grayscale(100%); opacity: 0.7;
+}
+
+#warmedin-raster .wr-cal-header-name { font-size: 15px; font-weight: 700; }
+#warmedin-raster .wr-cal-card.wr-cal-lead .wr-cal-header-name { color: var(--wr-gray-600); }
+#warmedin-raster .wr-cal-card.wr-cal-comp .wr-cal-header-name { color: white; }
+
+#warmedin-raster .wr-cal-header-company { font-size: 12px; margin-top: 2px; }
+#warmedin-raster .wr-cal-card.wr-cal-lead .wr-cal-header-company { color: var(--wr-gray-400); }
+#warmedin-raster .wr-cal-card.wr-cal-comp .wr-cal-header-company { color: rgba(255, 255, 255, 0.75); }
+
+#warmedin-raster .wr-cal-header-posts { margin-left: auto; text-align: right; }
+
+#warmedin-raster .wr-cal-posts-num { font-size: 22px; font-weight: 800; line-height: 1; }
+#warmedin-raster .wr-cal-card.wr-cal-lead .wr-cal-posts-num { color: var(--wr-gray-400); }
+#warmedin-raster .wr-cal-card.wr-cal-comp .wr-cal-posts-num { color: white; }
+
+#warmedin-raster .wr-cal-posts-label {
+  font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 2px;
+}
+#warmedin-raster .wr-cal-card.wr-cal-lead .wr-cal-posts-label { color: var(--wr-gray-400); }
+#warmedin-raster .wr-cal-card.wr-cal-comp .wr-cal-posts-label { color: rgba(255, 255, 255, 0.7); }
+
+/* ---- CALENDAR GRID ---- */
+#warmedin-raster .wr-cal-body { padding: 14px 12px 16px; }
+#warmedin-raster .wr-cal-card.wr-cal-lead .wr-cal-body { background: #fafafa; }
+#warmedin-raster .wr-cal-card.wr-cal-comp .wr-cal-body { background: white; }
+
+#warmedin-raster .wr-cal-month-label {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+#warmedin-raster .wr-cal-card.wr-cal-lead .wr-cal-month-label { color: var(--wr-gray-400); }
+#warmedin-raster .wr-cal-card.wr-cal-comp .wr-cal-month-label { color: var(--wr-linkedin-blue); }
+
+#warmedin-raster .wr-cal-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  margin-bottom: 4px;
+}
+
+#warmedin-raster .wr-cal-wd {
+  text-align: center;
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 0;
+  color: var(--wr-gray-400);
+}
+
+#warmedin-raster .wr-cal-days {
+  display: grid;
+  /* minmax(0, 1fr) is critical: without the 0-min, each 1fr track is sized by
+     the mini-post card's min-content width, blowing the columns wider than
+     their fair share. The grid then overflows .wr-cal-card (overflow:hidden)
+     and the rightmost post-cards get clipped at the calendar's right edge. */
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 3px;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+/* ---- PLAIN (no-post) DAY CELL ---- */
+#warmedin-raster .wr-cal-day {
+  aspect-ratio: 1;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 500;
+  position: relative;
+  cursor: default;
+  min-width: 0; /* let the grid track shrink below the card's min-content width */
+}
+
+#warmedin-raster .wr-cal-day.wr-empty { visibility: hidden; }
+#warmedin-raster .wr-cal-day.wr-no-post { color: var(--wr-gray-300); }
+
+#warmedin-raster .wr-cal-card.wr-cal-lead .wr-cal-day.wr-no-post:hover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 7px;
+  background: rgba(255, 224, 28, 0.2);
+  border: 1.5px dashed #e0c400;
+}
+
+/* ---- MINI LINKEDIN POST CARD CELL ---- */
+#warmedin-raster .wr-cal-day.wr-has-post {
+  aspect-ratio: unset;
+  height: auto;
+  min-height: 0;
+  padding-top: 8px;
+  border-radius: 8px;
+  overflow: visible;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+#warmedin-raster .wr-cal-day.wr-has-post:hover {
+  transform: scale(1.04);
+  z-index: 5;
+}
+
+/* Grow toward the calendar interior so edge-column cards never spill past the
+   card border (which has overflow:hidden) on hover. */
+#warmedin-raster .wr-cal-days > .wr-cal-day.wr-has-post:nth-child(7n + 1):hover { transform-origin: left center; }
+#warmedin-raster .wr-cal-days > .wr-cal-day.wr-has-post:nth-child(7n):hover { transform-origin: right center; }
+
+#warmedin-raster .wr-mini-post {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  background: var(--wr-post-card-bg);
+  border: 1px solid var(--wr-post-card-border);
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.09);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Grayscale / muted version for the lead (left side) */
+#warmedin-raster .wr-cal-card.wr-cal-lead .wr-mini-post {
+  background: #f7f8fa;
+  border-color: #dde1e7;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  filter: saturate(0.1) brightness(0.96);
+}
+
+#warmedin-raster .wr-post-day-num {
+  position: absolute;
+  top: -7px;
+  left: 2px;
+  font-size: 8px;
+  font-weight: 700;
+  color: var(--wr-gray-500);
+  background: white;
+  border-radius: 3px;
+  padding: 1px 3px;
+  z-index: 4;
+  line-height: 1;
+  border: 1px solid var(--wr-gray-200);
+}
+
+#warmedin-raster .wr-cal-card.wr-cal-lead .wr-post-day-num {
+  color: var(--wr-gray-400); background: #f5f5f5;
+}
+
+#warmedin-raster .wr-mini-post-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 5px 5px 3px 5px;
+  position: relative;
+}
+
+#warmedin-raster .wr-mini-avatar {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5px;
+  font-weight: 800;
+  color: white;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+#warmedin-raster .wr-mini-avatar img {
+  width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block;
+}
+
+#warmedin-raster .wr-mini-name-block { flex: 1; min-width: 0; overflow: hidden; }
+
+#warmedin-raster .wr-mini-name {
+  font-size: 7.5px;
+  font-weight: 700;
+  color: var(--wr-gray-900);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+}
+
+#warmedin-raster .wr-mini-subline {
+  font-size: 6px;
+  color: var(--wr-gray-500);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.3;
+  margin-top: 0;
+}
+
+#warmedin-raster .wr-mini-li-badge {
+  width: 11px;
+  height: 11px;
+  border-radius: 2px;
+  background: #0A66C2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+#warmedin-raster .wr-mini-li-badge svg { width: 8px; height: 8px; display: block; }
+
+#warmedin-raster .wr-mini-post-body {
+  padding: 0 5px 3px 5px;
+  font-size: 6.5px;
+  line-height: 1.35;
+  color: var(--wr-gray-700);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+  min-height: 18px;
+}
+
+#warmedin-raster .wr-mini-post-foot {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 5px 4px 5px;
+  border-top: 1px solid #f0f2f5;
+  margin-top: auto;
+}
+
+#warmedin-raster .wr-mini-reactions {
+  display: flex;
+  align-items: center;
+  gap: 1.5px;
+}
+
+#warmedin-raster .wr-mini-reaction-icon {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+#warmedin-raster .wr-mini-reaction-icon svg { width: 6px; height: 6px; display: block; }
+
+#warmedin-raster .wr-mini-reaction-count {
+  font-size: 5.5px;
+  color: var(--wr-gray-500);
+  font-weight: 500;
+  margin-left: 2px;
+}
+
+#warmedin-raster .wr-mini-comment-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1.5px;
+  margin-left: auto;
+}
+
+#warmedin-raster .wr-mini-comment-icon { width: 7px; height: 7px; opacity: 0.4; }
+#warmedin-raster .wr-mini-comment-count { font-size: 5px; color: var(--wr-gray-400); }
+
+/* ---- CTA BELOW LEAD ---- */
+#warmedin-raster .wr-cal-cta {
+  padding: 12px 16px;
+  text-align: center;
+  background: #fffde7;
+  border-top: 1.5px dashed #e6c800;
+  font-size: 12px;
+  font-weight: 600;
+  color: #8a5c06;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+#warmedin-raster .wr-cal-cta-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--wr-warmedin-yellow);
+  flex-shrink: 0;
+  border: 1px solid #e0c400;
+}
+
+/* ---- STATS BAR ---- */
+#warmedin-raster .wr-stats-bar {
+  display: flex;
+  gap: 0;
+  background: var(--wr-gray-100);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-top: 28px;
+  border: 1.5px solid var(--wr-gray-200);
+}
+
+#warmedin-raster .wr-stat-item {
+  flex: 1;
+  padding: 18px 16px;
+  text-align: center;
+  border-right: 1.5px solid var(--wr-gray-200);
+}
+
+#warmedin-raster .wr-stat-item:last-child { border-right: none; }
+
+#warmedin-raster .wr-stat-num {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--wr-linkedin-blue);
+  line-height: 1;
+}
+
+#warmedin-raster .wr-stat-label {
+  font-size: 12px; color: var(--wr-gray-500); margin-top: 4px; font-weight: 500;
+}
+
+/* Like-Vergleich stat: text-based (two names), needs smaller type than the big numbers. */
+#warmedin-raster .wr-stat-likes .wr-stat-num {
+  font-size: 16px;
+  line-height: 1.3;
+  white-space: normal;
+}
+#warmedin-raster .wr-stat-likes .wr-stat-likes-sep { color: var(--wr-gray-400); margin: 0 2px; }
+
+/* ---- FOOTER ---- */
+#warmedin-raster .wr-footer {
+  text-align: center;
+  font-size: 11px;
+  color: var(--wr-gray-400);
+  margin-top: 18px;
+  font-weight: 500;
+}
+
+@media (max-width: 540px) {
+  #warmedin-raster .wr-stats-bar { flex-direction: column; }
+  #warmedin-raster .wr-stat-item {
+    border-right: none; border-bottom: 1.5px solid var(--wr-gray-200);
+  }
+  #warmedin-raster .wr-stat-item:last-child { border-bottom: none; }
+  #warmedin-raster .wr-competitor-tabs { flex-direction: column; align-items: center; }
+  #warmedin-raster .wr-comp-tab { min-width: 260px; width: 100%; max-width: 340px; }
+}
+
+/* =========================================================================
+   CLICK OVERLAY — fixed full-screen modal layer (not scoped to #warmedin-raster
+   because the overlay-root is appended to the container but uses fixed pos)
+   ========================================================================= */
+.wr-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.wr-overlay.wr-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.wr-overlay-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 560px;
+  max-height: 86vh;
+  overflow-y: auto;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35);
+  transform: translateY(12px) scale(0.98);
+  transition: transform 0.18s ease;
+}
+
+.wr-overlay.wr-open .wr-overlay-card {
+  transform: translateY(0) scale(1);
+}
+
+.wr-overlay-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.05);
+  color: #4b5563;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease;
+  z-index: 2;
+}
+
+.wr-overlay-close:hover { background: rgba(0, 0, 0, 0.12); }
+
+.wr-overlay-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 22px 24px 16px;
+  border-bottom: 1px solid #eef0f3;
+}
+
+.wr-overlay-avatar {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; font-weight: 800; color: white; flex-shrink: 0;
+}
+
+.wr-overlay-avatar img {
+  width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block;
+}
+
+.wr-overlay-id { flex: 1; min-width: 0; }
+
+.wr-overlay-name {
+  font-size: 16px; font-weight: 700; color: #111827; line-height: 1.25;
+}
+
+.wr-overlay-company { font-size: 13px; color: #6b7280; margin-top: 2px; }
+
+.wr-overlay-li-badge {
+  width: 22px; height: 22px;
+  border-radius: 4px;
+  background: #0A66C2;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.wr-overlay-li-badge svg { width: 14px; height: 14px; display: block; }
+
+.wr-overlay-date {
+  padding: 12px 24px 4px;
+  font-size: 12px;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+.wr-overlay-body {
+  padding: 8px 24px 16px;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #1f2937;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.wr-overlay-foot {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 14px 24px;
+  border-top: 1px solid #eef0f3;
+  flex-wrap: wrap;
+}
+
+.wr-overlay-metric {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #4b5563;
+  font-weight: 600;
+}
+
+.wr-overlay-metric .wr-overlay-metric-icon {
+  width: 16px; height: 16px;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+
+.wr-overlay-metric .wr-overlay-metric-icon svg { width: 14px; height: 14px; display: block; }
+
+.wr-overlay-link {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #0A66C2;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 9px 16px;
+  border-radius: 100px;
+  transition: background 0.15s ease;
+  white-space: nowrap;
+}
+
+.wr-overlay-link:hover { background: #08539e; }
+
+@media (max-width: 480px) {
+  .wr-overlay-foot { gap: 12px; }
+  .wr-overlay-link { margin-left: 0; width: 100%; justify-content: center; margin-top: 6px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #warmedin-raster .wr-cal-days,
+  #warmedin-raster .wr-comp-tab,
+  #warmedin-raster .wr-cal-day,
+  #warmedin-raster .wr-mini-post,
+  .wr-overlay,
+  .wr-overlay-card {
+    transition: none !important;
+  }
+}
