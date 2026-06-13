@@ -247,28 +247,35 @@ Woher kommen deine Marktdaten, wenn 99% deiner Zielkunden digital unsichtbar sin
       10:"Unterschiedliche CTAs pro Awareness-Stage",
       11:"Wir suchen einen GTM Engineer (m/w/d)"
     };
-    var WM = {
-      3:"Warum ICP-Arbeit vor jedem Tool-Kauf kommt",
-      6:"5 Signale, die warme B2B-Leads verraten",
-      7:"So bauen wir Pipeline, die auch ohne dich läuft",
-      8:"Der wahre Grund, warum Cold Mails in Spam landen",
-      13:"3 KPIs, die jedes Sales-Team tracken sollte",
-      14:"Wie wir Anreicherungskosten um 40% senken",
-      15:"Domain, Warmup, Pilot, Skalierung: die Reihenfolge",
-      16:"Was 14 Monate Tool-Vergleiche uns gelehrt haben",
-      17:"Outbound als Engineering-Problem denken",
-      18:"Warum dein CRM kein Outbound-Tool ist",
-      20:"Provider-Matching: Google-Sender für Google-Empfänger",
-      21:"Stellen-Signale: warme Leads vor deiner Nase",
-      23:"Reply, Termin, Closing: pro Offer getrennt messen",
-      24:"Der ICP-Workshop, der jede Kampagne rettet",
-      27:"Wie aus Rohdaten verkaufsfertige Listen werden",
-      28:"Cashflow zuerst: die wichtigste Founder-Frage"
-    };
+    // WarmedIn-Filler: Wochentage zuerst fuellen, Wochenenden nur wenn unter der Woche kein Platz mehr ist.
+    var WM_HOOKS = [
+      "Warum ICP-Arbeit vor jedem Tool-Kauf kommt",
+      "5 Signale, die warme B2B-Leads verraten",
+      "So bauen wir Pipeline, die auch ohne dich läuft",
+      "Der wahre Grund, warum Cold Mails in Spam landen",
+      "3 KPIs, die jedes Sales-Team tracken sollte",
+      "Wie wir Anreicherungskosten um 40% senken",
+      "Domain, Warmup, Pilot, Skalierung: die Reihenfolge",
+      "Was 14 Monate Tool-Vergleiche uns gelehrt haben",
+      "Outbound als Engineering-Problem denken",
+      "Warum dein CRM kein Outbound-Tool ist",
+      "Provider-Matching: Google-Sender für Google-Empfänger",
+      "Stellen-Signale: warme Leads vor deiner Nase",
+      "Reply, Termin, Closing: pro Offer getrennt messen",
+      "Der ICP-Workshop, der jede Kampagne rettet",
+      "Wie aus Rohdaten verkaufsfertige Listen werden",
+      "Cashflow zuerst: die wichtigste Founder-Frage"
+    ];
     var grid = document.getElementById('wcal-grid');
     if(!grid) return;
-    var lead = (new Date(2026,5,1).getDay()+6)%7;
-    var days = 30, delay = 0;
+    var YEAR = 2026, MONTH = 5, days = 30, delay = 0;
+    var lead = (new Date(YEAR,MONTH,1).getDay()+6)%7;
+    function isWeekend(d){ var g = new Date(YEAR,MONTH,d).getDay(); return g===0 || g===6; }
+    var weekdayGaps = [], weekendGaps = [];
+    for(var gd=1; gd<=days; gd++){ if(GRAY[gd]) continue; (isWeekend(gd) ? weekendGaps : weekdayGaps).push(gd); }
+    var fillOrder = weekdayGaps.concat(weekendGaps);  // Wochentags-Luecken zuerst, dann Wochenenden
+    var WM = {};
+    for(var wi=0; wi<WM_HOOKS.length && wi<fillOrder.length; wi++){ WM[fillOrder[wi]] = WM_HOOKS[wi]; }
     for(var i=0;i<lead;i++){var b=document.createElement('div');b.className='wcal-cell wcal-empty';grid.appendChild(b);}
     function chip(cls,hook,tag){
       var p=document.createElement('div'); p.className='wcal-post '+cls;
