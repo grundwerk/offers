@@ -1,5 +1,5 @@
 /* =========================================================================
-   WarmedIn Konkurrenz-Posting-Raster — raster.js
+   WarmedIn Konkurrenz-Posting-Raster - raster.js
    Vanilla JS, 0 dependencies, IIFE. Reads window.WARMEDIN_RASTER, builds the
    complete widget into #warmedin-raster: lead calendar + competitor calendar
    with tabs + stats bar + FOMO line + click-overlay. Replicates the visual
@@ -10,7 +10,7 @@
 
   var mount = document.getElementById('warmedin-raster');
   var DATA = window.WARMEDIN_RASTER;
-  if (!mount || !DATA) return; // silently bail — no crash
+  if (!mount || !DATA) return; // silently bail - no crash
 
   var lead = DATA.lead;
   if (!lead) return; // no lead -> nothing to show
@@ -98,8 +98,8 @@
     var sM = start.getUTCMonth(), sY = start.getUTCFullYear();
     var eM = end.getUTCMonth(), eY = end.getUTCFullYear();
     if (sM === eM && sY === eY) return MONTHS_DE[sM] + ' ' + sY;
-    if (sY === eY) return MONTHS_DE[sM] + ' – ' + MONTHS_DE[eM] + ' ' + eY;
-    return MONTHS_DE[sM] + ' ' + sY + ' – ' + MONTHS_DE[eM] + ' ' + eY;
+    if (sY === eY) return MONTHS_DE[sM] + ' bis ' + MONTHS_DE[eM] + ' ' + eY;
+    return MONTHS_DE[sM] + ' ' + sY + ' bis ' + MONTHS_DE[eM] + ' ' + eY;
   }
 
   // Group a person's posts by ISO date; per day keep the post with most reactions.
@@ -256,7 +256,7 @@
     return Math.round(sum / posts.length);
   }
 
-  /* Adaptive framing — the "Zwei Gates" logic.
+  /* Adaptive framing - the "Zwei Gates" logic.
      Decides per active competitor whether the comparison is framed negatively
      (competitor posts MORE -> yellow/FOMO) or positively (lead posts
      same/more -> green/positive).
@@ -300,7 +300,7 @@
 
   // Back-compat thin wrapper (still used by the competitor's own ratio display).
   function ratioStr(comp) {
-    return frameFor(comp).ratioNum || '–';
+    return frameFor(comp).ratioNum || '·';
   }
 
   function weekdaysHtml() {
@@ -409,7 +409,7 @@
         + '<div class="wr-stat-label">Posts des Wettbewerbers (' + windowDays + ' Tage)</div>'
       + '</div>'
       + '<div class="wr-stat-item' + (frS.tone === 'green' ? ' wr-tone-green' : '') + '" id="wr-stat-ratio-item">'
-        + '<div class="wr-stat-num' + (frS.tone === 'green' ? ' wr-tone-green' : '') + '" id="wr-stat-ratio">' + (frS.ratioNum || '–') + '</div>'
+        + '<div class="wr-stat-num' + (frS.tone === 'green' ? ' wr-tone-green' : '') + '" id="wr-stat-ratio">' + (frS.ratioNum || '·') + '</div>'
         + '<div class="wr-stat-label" id="wr-stat-ratio-label">' + esc(frS.statLabel) + '</div>'
       + '</div>'
       + '<div class="wr-stat-item">'
@@ -497,7 +497,7 @@
     document.getElementById('wr-comp-company').textContent = comp.company || '';
     document.getElementById('wr-comp-posts-num').textContent = Number(comp.total) || 0;
 
-    // FOMO + stats — recompute adaptive framing (green if lead posts >= comp).
+    // FOMO + stats - recompute adaptive framing (green if lead posts >= comp).
     var fr = frameFor(comp);
     var fName = document.getElementById('wr-fomo-comp-name');
     if (fName) fName.textContent = comp.name + ': ' + (Number(comp.total) || 0) + ' Posts';
@@ -520,13 +520,13 @@
     if (sRatioItem) sRatioItem.classList.toggle('wr-tone-green', fr.tone === 'green');
     var sRatio = document.getElementById('wr-stat-ratio');
     if (sRatio) {
-      sRatio.textContent = fr.ratioNum || '–';
+      sRatio.textContent = fr.ratioNum || '·';
       sRatio.classList.toggle('wr-tone-green', fr.tone === 'green');
     }
     var sRatioLabel = document.getElementById('wr-stat-ratio-label');
     if (sRatioLabel) sRatioLabel.textContent = fr.statLabel;
 
-    // Like-Vergleich — recompute Ø-likes for the newly selected competitor.
+    // Like-Vergleich - recompute Ø-likes for the newly selected competitor.
     var sLikes = document.getElementById('wr-stat-likes');
     if (sLikes) {
       sLikes.innerHTML = esc(firstName(lead.name)) + ': Ø ' + avgLikes(lead)
@@ -583,7 +583,7 @@
     var d = parseDate(post.date);
     ovDate.textContent = d ? prettyDate(d) : (post.date || '');
 
-    // full text — use textContent to preserve newlines + escape
+    // full text - use textContent to preserve newlines + escape
     ovBody.textContent = post.text_full || post.text || '';
 
     // metrics

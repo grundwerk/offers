@@ -173,16 +173,123 @@ Woher kommen deine Marktdaten, wenn 99% deiner Zielkunden digital unsichtbar sin
   <div class="vn-foot">Gleiches Thema. Ein Vielfaches an Resonanz. Das ist der Unterschied zwischen posten und gelesen werden.</div>
 </div></section>
 
-<section class="band" style="background:#f5f6f8"><div class="wrap">
-  <h2>Alles, was deine <span class="hl">Founder-Brand</span> braucht.</h2>
-  <div class="lead">Ein Setup, ein Team, ein Ergebnis. Du gibst den Input, WarmedIn macht den Rest, Monat für Monat.</div>
-  <div class="cards">
-    <div class="card"><div class="n">1</div><h3>Initialer Profil-Setup</h3><p>Profilbild, Banner, Headline und Info, professionell aufgesetzt. Dein Profil wird zur Landingpage, die für dich verkauft.</p></div>
-    <div class="card"><div class="n">2</div><h3>3 Leadmagneten</h3><p>Wir bauen aus deinem Wissen echte Leadmagneten, die nicht nur Likes bringen, sondern Gespräche und Kontaktdaten.</p></div>
-    <div class="card"><div class="n">3</div><h3>16 Posts pro Monat</h3><p>In deiner Stimme, zu deinen Themen. Du gibst kurz Input, wir schreiben, du gibst frei, ohne selbst eine Zeile zu schreiben.</p></div>
-    <div class="card"><div class="n">4</div><h3>Managed Outreach &amp; Connections</h3><p>Wir bauen dein Netzwerk mit den richtigen Leuten auf und starten echte Gespräche, auch warm, aus deinem Content.</p></div>
+<!-- ===================== CONTENT-KALENDER ===================== -->
+<section class="wcal-sec">
+  <style>
+  .wcal-sec{background:#f5f6f8;padding:64px 22px 70px}
+  .wcal-wrap{max-width:1040px;margin:0 auto}
+  .wcal-head{text-align:center;margin-bottom:28px}
+  .wcal-eyebrow{display:inline-block;background:#121212;color:#fff;font-weight:800;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;padding:5px 13px;border-radius:999px}
+  .wcal-head h2{font-size:34px;font-weight:900;letter-spacing:-.02em;margin:15px 0 10px;line-height:1.1;color:#121212}
+  .wcal-head h2 .wcal-y{background:linear-gradient(transparent 60%,#ffe01c 60%);padding:0 5px}
+  .wcal-sub{color:#3d4350;font-size:16px;max-width:600px;margin:0 auto;line-height:1.55}
+  .wcal-bar{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;margin:22px 0 4px}
+  .wcal-lg{display:flex;align-items:center;gap:9px;font-size:13.5px;font-weight:600;color:#333}
+  .wcal-sw{width:15px;height:15px;border-radius:4px}
+  .wcal-sw.wcal-g{background:#d8dbe0;border:1px solid #c4c8cf}
+  .wcal-sw.wcal-yc{background:#ffe01c;border:1px solid #e6c700;animation:wcal-pulse 1.8s ease-in-out infinite}
+  .wcal-delta{margin-left:4px;font-weight:800}
+  .wcal-delta .wcal-a{color:#9aa0aa}.wcal-delta .wcal-b{color:#111}
+  .wcal-cal{background:#fff;border:1px solid #e3e3e3;border-radius:16px;padding:18px 18px 22px;box-shadow:0 10px 30px rgba(0,0,0,.06);margin-top:18px}
+  .wcal-month{font-size:15px;font-weight:800;color:#121212;margin:4px 4px 12px}
+  .wcal-dow{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-bottom:8px}
+  .wcal-dow span{font-size:11px;font-weight:700;letter-spacing:.06em;color:#9aa0aa;text-transform:uppercase;text-align:left;padding-left:4px}
+  .wcal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+  .wcal-cell{aspect-ratio:1/1.08;border:1px solid #edeef1;border-radius:10px;padding:6px;position:relative;background:#fbfbfc;min-height:96px;display:flex;flex-direction:column}
+  .wcal-cell.wcal-empty{background:#fafafa}
+  .wcal-dn{font-size:11px;font-weight:700;color:#b6bac1;align-self:flex-end}
+  .wcal-post{margin-top:auto;border-radius:8px;padding:6px 7px;display:flex;flex-direction:column;gap:4px}
+  .wcal-post .wcal-top{display:flex;align-items:center;gap:5px}
+  .wcal-post .wcal-av{width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:7.5px;font-weight:800;flex-shrink:0}
+  .wcal-post .wcal-in{margin-left:auto;width:14px;height:14px;border-radius:3px;background:#0A66C2;color:#fff;font-size:8px;font-weight:800;display:flex;align-items:center;justify-content:center}
+  .wcal-post .wcal-hook{font-size:10px;line-height:1.25;font-weight:600;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .wcal-post.wcal-pg{background:#eceef1;border:1px solid #dfe2e7}
+  .wcal-post.wcal-pg .wcal-av{background:#c4c8cf;color:#fff}
+  .wcal-post.wcal-pg .wcal-hook{color:#7b818b}
+  .wcal-post.wcal-pg .wcal-in{background:#aeb4bd}
+  .wcal-post.wcal-py{background:#fff7cc;border:1px solid #ffe01c;animation:wcal-pop 2.2s ease-in-out infinite}
+  .wcal-post.wcal-py .wcal-av{background:#121212;color:#ffe01c}
+  .wcal-post.wcal-py .wcal-hook{color:#3a3300}
+  .wcal-post.wcal-py .wcal-tag{font-size:7.5px;font-weight:800;letter-spacing:.04em;color:#9a7d00;text-transform:uppercase}
+  @keyframes wcal-pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,224,28,0)}50%{box-shadow:0 0 0 4px rgba(255,224,28,.4)}}
+  @keyframes wcal-pop{0%,100%{box-shadow:0 0 0 0 rgba(255,224,28,0);transform:translateY(0) scale(1)}50%{box-shadow:0 0 0 4px rgba(255,224,28,.35),0 8px 20px rgba(255,224,28,.28);transform:translateY(-2px) scale(1.03)}}
+  @media(prefers-reduced-motion:reduce){.wcal-post.wcal-py,.wcal-sw.wcal-yc{animation:none}}
+  .wcal-foot{text-align:center;margin-top:24px;font-size:15px;color:#444}
+  .wcal-foot b{color:#111}
+  @media(max-width:680px){.wcal-head h2{font-size:26px}.wcal-cell{min-height:78px}.wcal-post .wcal-hook{-webkit-line-clamp:1}}
+  </style>
+  <div class="wcal-wrap">
+    <div class="wcal-head">
+      <span class="wcal-eyebrow">Dein Content-Kalender</span>
+      <h2>Heute fast leer. Mit WarmedIn <span class="wcal-y">randvoll.</span></h2>
+      <div class="wcal-sub">Deine echten Posts bleiben grau und sichtbar. WarmedIn legt 16 neue Posts pro Monat obendrauf, in Gelb. Du siehst sofort den Unterschied.</div>
+      <div class="wcal-bar">
+        <span class="wcal-lg"><span class="wcal-sw wcal-g"></span> Deine Posts heute (<b>7</b>)</span>
+        <span class="wcal-lg"><span class="wcal-sw wcal-yc"></span> Mit WarmedIn (<b>+16</b>)</span>
+        <span class="wcal-lg wcal-delta"><span class="wcal-a">7</span> &rarr; <span class="wcal-b">23</span> Posts/Monat</span>
+      </div>
+    </div>
+    <div class="wcal-cal">
+      <div class="wcal-month">Juni 2026</div>
+      <div class="wcal-dow"><span>Mo</span><span>Di</span><span>Mi</span><span>Do</span><span>Fr</span><span>Sa</span><span>So</span></div>
+      <div class="wcal-grid" id="wcal-grid"></div>
+    </div>
+    <div class="wcal-foot"><b>6x mehr Sichtbarkeit</b>, ohne dass du selbst eine Zeile schreibst.</div>
   </div>
-</div></section>
+  <script>
+  (function(){
+    var GRAY = {
+      1:"HubSpot ist nicht für Outbound gebaut",
+      2:"Maschinenbau: 500 Mitarbeiter, auf LinkedIn nur 5",
+      4:"3 Fehler, die Cold-Email-Setups Tausende kosten",
+      5:"Mastermind-Zeit in Berlin",
+      9:"10 Milliarden AI-Tokens für Kunden verbrannt",
+      10:"Unterschiedliche CTAs pro Awareness-Stage",
+      11:"Wir suchen einen GTM Engineer (m/w/d)"
+    };
+    var WM = {
+      3:"Warum ICP-Arbeit vor jedem Tool-Kauf kommt",
+      6:"5 Signale, die warme B2B-Leads verraten",
+      7:"So bauen wir Pipeline, die auch ohne dich läuft",
+      8:"Der wahre Grund, warum Cold Mails in Spam landen",
+      13:"3 KPIs, die jedes Sales-Team tracken sollte",
+      14:"Wie wir Anreicherungskosten um 40% senken",
+      15:"Domain, Warmup, Pilot, Skalierung: die Reihenfolge",
+      16:"Was 14 Monate Tool-Vergleiche uns gelehrt haben",
+      17:"Outbound als Engineering-Problem denken",
+      18:"Warum dein CRM kein Outbound-Tool ist",
+      20:"Provider-Matching: Google-Sender für Google-Empfänger",
+      21:"Stellen-Signale: warme Leads vor deiner Nase",
+      23:"Reply, Termin, Closing: pro Offer getrennt messen",
+      24:"Der ICP-Workshop, der jede Kampagne rettet",
+      27:"Wie aus Rohdaten verkaufsfertige Listen werden",
+      28:"Cashflow zuerst: die wichtigste Founder-Frage"
+    };
+    var grid = document.getElementById('wcal-grid');
+    if(!grid) return;
+    var lead = (new Date(2026,5,1).getDay()+6)%7;
+    var days = 30, delay = 0;
+    for(var i=0;i<lead;i++){var b=document.createElement('div');b.className='wcal-cell wcal-empty';grid.appendChild(b);}
+    function chip(cls,hook,tag){
+      var p=document.createElement('div'); p.className='wcal-post '+cls;
+      var top=document.createElement('div'); top.className='wcal-top';
+      var av=document.createElement('div'); av.className='wcal-av'; av.textContent='TS';
+      top.appendChild(av);
+      if(tag){var t=document.createElement('span');t.className='wcal-tag';t.textContent=tag;top.appendChild(t);}
+      var inb=document.createElement('div'); inb.className='wcal-in'; inb.textContent='in'; top.appendChild(inb);
+      var h=document.createElement('div'); h.className='wcal-hook'; h.textContent=hook;
+      p.appendChild(top); p.appendChild(h); return p;
+    }
+    for(var d=1; d<=days; d++){
+      var c=document.createElement('div'); c.className='wcal-cell';
+      var dn=document.createElement('div'); dn.className='wcal-dn'; dn.textContent=d; c.appendChild(dn);
+      if(GRAY[d]) c.appendChild(chip('wcal-pg',GRAY[d],null));
+      else if(WM[d]){ var pp=chip('wcal-py',WM[d],'WarmedIn'); pp.style.animationDelay=(delay).toFixed(2)+'s'; delay+=0.18; c.appendChild(pp); }
+      grid.appendChild(c);
+    }
+  })();
+  </script>
+</section>
 
 <section class="band" style="background:#fff"><div class="wrap">
   <h2 style="text-align:center;margin-bottom:6px">Echte LinkedIn-Aktivität . <span class="hl">du vs. deine Wettbewerber</span></h2>
@@ -194,6 +301,17 @@ Woher kommen deine Marktdaten, wenn 99% deiner Zielkunden digital unsichtbar sin
   <h2>Bereit, <!-- SLOT:LEAD_FIRST START -->Tom<!-- SLOT:LEAD_FIRST END -->? Lass uns deine <span class="y">Founder-Brand</span> bauen.</h2>
   <p>30 Minuten mit Anthony. Wir schauen auf dein Profil, deine Themen und deinen Plan. Kein Pitch-Deck, kein Druck.</p>
   <a class="btn-y" href="https://calendly.com/anthony-katzur/warmedin-dein-linkedin-erstgesprach" target="_blank" rel="noopener">Erstgespräch mit Anthony buchen &rarr;</a>
+</div></section>
+
+<section class="band" style="background:#f5f6f8"><div class="wrap">
+  <h2>Alles, was deine <span class="hl">Founder-Brand</span> braucht.</h2>
+  <div class="lead">Ein Setup, ein Team, ein Ergebnis. Du gibst den Input, WarmedIn macht den Rest, Monat für Monat.</div>
+  <div class="cards">
+    <div class="card"><div class="n">1</div><h3>Initialer Profil-Setup</h3><p>Profilbild, Banner, Headline und Info, professionell aufgesetzt. Dein Profil wird zur Landingpage, die für dich verkauft.</p></div>
+    <div class="card"><div class="n">2</div><h3>3 Leadmagneten</h3><p>Wir bauen aus deinem Wissen echte Leadmagneten, die nicht nur Likes bringen, sondern Gespräche und Kontaktdaten.</p></div>
+    <div class="card"><div class="n">3</div><h3>16 Posts pro Monat</h3><p>In deiner Stimme, zu deinen Themen. Du gibst kurz Input, wir schreiben, du gibst frei, ohne selbst eine Zeile zu schreiben.</p></div>
+    <div class="card"><div class="n">4</div><h3>Managed Outreach &amp; Connections</h3><p>Wir bauen dein Netzwerk mit den richtigen Leuten auf und starten echte Gespräche, auch warm, aus deinem Content.</p></div>
+  </div>
 </div></section>
 
 <section class="book" id="booking"><div class="wrap">
