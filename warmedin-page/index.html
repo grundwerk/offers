@@ -18,6 +18,7 @@
 <meta name="twitter:title" content="WarmedIn für deine LinkedIn-Lead-Quelle">
 <meta name="twitter:image" content="https://start.grundwerk.digital/assets/og/warmedin-page.png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../warmedin/assets/raster.css">
 <script>
 (function(){
 var code='0000000000';
@@ -67,6 +68,9 @@ h1 .hl{background:linear-gradient(transparent 58%,#ffe01c 58%);padding:0 6px}
 .ptag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.06em;padding:2px 7px;border-radius:5px;margin-bottom:8px}
 .ptag.b{background:#f1f2f4;color:#888}.ptag.g{background:#ffe01c;color:#121212}
 .pbody{font-size:13.5px;line-height:1.5;color:#1c2230;white-space:pre-line}
+.preact{display:flex;align-items:center;gap:7px;font-size:11.5px;color:#70757e;margin-top:9px;padding-top:8px;border-top:1px solid #eef0f2}
+.preact .emo span{display:inline-flex;width:16px;height:16px;border-radius:50%;align-items:center;justify-content:center;font-size:9px;border:1.5px solid #fff;margin-left:-3px;color:#fff}
+.preact .emo span:first-child{margin-left:0}.pe1{background:#0a66c2}.pe2{background:#df704d}.pe3{background:#e7a33e}
 .arrow{font-size:22px;color:#c9ccd2;text-align:center}
 .vn-foot{text-align:center;color:#70757e;font-size:13.5px;margin-top:8px}
 .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:880px;margin:0 auto}
@@ -90,14 +94,24 @@ h1 .hl{background:linear-gradient(transparent 58%,#ffe01c 58%);padding:0 6px}
 .site-footer img{height:22px;margin:0 auto 14px}
 .site-footer p{color:#8a8f99;font-size:14px;line-height:1.6;max-width:520px;margin:0 auto 18px}
 .ft-bottom{color:#6b7280;font-size:13px;border-top:1px solid #222;padding-top:18px;margin-top:8px}
+.wfab{position:fixed;right:20px;bottom:20px;z-index:1200}
+.wfab-toggle{background:#ffe01c;color:#121212;font-weight:800;font-size:15px;padding:13px 20px;border-radius:999px;border:1px solid #e6c700;cursor:pointer;box-shadow:0 12px 30px rgba(0,0,0,.2)}
+.wfab-card{position:absolute;right:0;bottom:64px;width:300px;background:#fff;border:1px solid #e6e6e6;border-radius:16px;padding:20px;box-shadow:0 24px 60px rgba(0,0,0,.25);display:none;text-align:center}
+.wfab-card.wfab-on{display:block}
+.wfab-x{position:absolute;top:8px;right:11px;border:none;background:none;font-size:22px;color:#999;cursor:pointer}
+.wfab-av img{width:56px;height:56px;border-radius:50%;object-fit:cover;margin:0 auto 10px}
+.wfab-h{font-size:17px;font-weight:800;margin-bottom:6px}
+.wfab-p{font-size:13px;color:#555;line-height:1.5;margin-bottom:14px}
+.wfab-btn{display:inline-block;background:#ffe01c;color:#121212;font-weight:800;font-size:14px;padding:12px 18px;border-radius:10px;text-decoration:none;border:1px solid #e6c700}
 </style></head><body>
-<header class="topnav"><img src="https://start.grundwerk.digital/assets/og/warmedin-logo-crop.png" alt="WarmedIn"><a class="nav-cta" href="#booking">Erstgespräch buchen</a></header>
+<header class="topnav"><img src="https://start.grundwerk.digital/assets/og/warmedin-logo-crop.png" alt="WarmedIn"><a class="nav-cta" href="https://calendly.com/anthony-katzur/warmedin-dein-linkedin-erstgesprach" target="_blank" rel="noopener">Erstgespräch buchen</a></header>
 
+<!-- =============== HERO =============== -->
 <section class="hero"><div class="wrap">
   <span class="eyebrow"><img src="https://start.grundwerk.digital/assets/og/jonas.jpg" alt=""> Du hast geantwortet, <span class="y"><!-- SLOT:LEAD_FIRST START -->Jonas<!-- SLOT:LEAD_FIRST END --></span> . Hier ist dein Plan.</span>
   <h1>Dein LinkedIn macht gerade Pause, <!-- SLOT:LEAD_FIRST START -->Jonas<!-- SLOT:LEAD_FIRST END -->.<br>Wir machen daraus deine <span class="hl">planbarste Lead-Quelle</span>.</h1>
   <div class="sub">16 Posts im Monat, gezielter Outreach und echte Connections, <b>in deiner Stimme</b>. Du gibst den Input, WarmedIn macht den Rest, dein Gesicht wird zur Marke.</div>
-  <div class="cta-row"><a class="btn-y" href="#booking">Erstgespräch mit Anthony buchen &rarr;</a><span class="mc">30 Min, unverbindlich, kein Pitch-Deck.</span></div>
+  <div class="cta-row"><a class="btn-y" href="https://calendly.com/anthony-katzur/warmedin-dein-linkedin-erstgesprach" target="_blank" rel="noopener">Erstgespräch mit Anthony buchen &rarr;</a><span class="mc">30 Min, unverbindlich, kein Pitch-Deck.</span></div>
   <div class="kpis">
     <div class="kpi"><div class="ic">📣</div><div><b>Reichweite</b><span>mehr Augen auf dir</span></div></div>
     <div class="kpi"><div class="ic">🤝</div><div><b>Connections</b><span>die richtigen Leute</span></div></div>
@@ -106,30 +120,176 @@ h1 .hl{background:linear-gradient(transparent 58%,#ffe01c 58%);padding:0 6px}
   </div>
 </div></section>
 
+<!-- =============== VERGLEICH (1. band) =============== -->
 <section class="band" style="background:#fff"><div class="wrap">
   <h2>So klingt dein LinkedIn heute. <span class="hl">So klingt es mit WarmedIn.</span></h2>
   <div class="lead">Gleiches Thema, anderer Eindruck. Das ist der Unterschied zwischen posten und gelesen werden.</div>
   <div class="vn">
-    <div class="post bad"><div class="ptag b">HEUTE</div><div class="ph"><img class="av" src="https://start.grundwerk.digital/assets/og/jonas.jpg" alt=""><div><div class="nm"><!-- SLOT:LEAD_NAME START -->Jonas Berger<!-- SLOT:LEAD_NAME END --></div><div class="mt"><!-- SLOT:LEAD_ROLE START -->Geschäftsführer @ NordLog · B2B-SaaS Logistik<!-- SLOT:LEAD_ROLE END --></div></div></div><div class="pbody"><!-- SLOT:POST_HEUTE_1 START -->Wir freuen uns, Teil der Messe gewesen zu sein. Tolle Gespräche, danke an alle!<!-- SLOT:POST_HEUTE_1 END --></div></div>
+    <div class="post bad"><div class="ptag b">HEUTE</div><div class="ph"><img class="av" src="https://start.grundwerk.digital/assets/og/jonas.jpg" alt=""><div><div class="nm"><!-- SLOT:LEAD_NAME START -->Jonas Berger<!-- SLOT:LEAD_NAME END --></div><div class="mt"><!-- SLOT:LEAD_ROLE START -->Geschäftsführer @ NordLog · B2B-SaaS Logistik<!-- SLOT:LEAD_ROLE END --></div></div></div><div class="pbody"><!-- SLOT:POST_HEUTE_1 START -->Wir freuen uns, Teil der Messe gewesen zu sein. Tolle Gespräche, danke an alle!<!-- SLOT:POST_HEUTE_1 END --></div><div class="preact"><div class="emo"><span class="pe1">👍</span></div> 3 Reaktionen</div></div>
     <div class="arrow">&rarr;</div>
     <div class="post good"><div class="ptag g">MIT WARMEDIN</div><div class="ph"><img class="av" src="https://start.grundwerk.digital/assets/og/jonas.jpg" alt=""><div><div class="nm"><!-- SLOT:LEAD_NAME START -->Jonas Berger<!-- SLOT:LEAD_NAME END --></div><div class="mt"><!-- SLOT:LEAD_ROLE START -->Geschäftsführer @ NordLog · B2B-SaaS Logistik<!-- SLOT:LEAD_ROLE END --></div></div></div><div class="pbody"><!-- SLOT:POST_NACHHER_1 START -->Vor 2 Jahren hätte ich ein Lager-Update nie öffentlich geteilt.
 
 Heute weiß ich: genau diese ehrlichen Einblicke bringen die Gespräche, aus denen Kunden werden.
 
-Wie offen zeigst du, woran du gerade arbeitest?<!-- SLOT:POST_NACHHER_1 END --></div></div>
+Wie offen zeigst du, woran du gerade arbeitest?<!-- SLOT:POST_NACHHER_1 END --></div><div class="preact"><div class="emo"><span class="pe1">👍</span><span class="pe2">❤</span><span class="pe3">👏</span></div> 142 Reaktionen</div></div>
   </div>
   <div class="vn">
-    <div class="post bad"><div class="ptag b">HEUTE</div><div class="ph"><img class="av" src="https://start.grundwerk.digital/assets/og/jonas.jpg" alt=""><div><div class="nm"><!-- SLOT:LEAD_NAME START -->Jonas Berger<!-- SLOT:LEAD_NAME END --></div><div class="mt">3 Std</div></div></div><div class="pbody"><!-- SLOT:POST_HEUTE_2 START -->Spannendes Thema, Fachkräftemangel. Bei uns auch ein Dauerthema.<!-- SLOT:POST_HEUTE_2 END --></div></div>
+    <div class="post bad"><div class="ptag b">HEUTE</div><div class="ph"><img class="av" src="https://start.grundwerk.digital/assets/og/jonas.jpg" alt=""><div><div class="nm"><!-- SLOT:LEAD_NAME START -->Jonas Berger<!-- SLOT:LEAD_NAME END --></div><div class="mt">3 Std</div></div></div><div class="pbody"><!-- SLOT:POST_HEUTE_2 START -->Spannendes Thema, Fachkräftemangel. Bei uns auch ein Dauerthema.<!-- SLOT:POST_HEUTE_2 END --></div><div class="preact"><div class="emo"><span class="pe1">👍</span></div> 5 Reaktionen</div></div>
     <div class="arrow">&rarr;</div>
     <div class="post good"><div class="ptag g">MIT WARMEDIN</div><div class="ph"><img class="av" src="https://start.grundwerk.digital/assets/og/jonas.jpg" alt=""><div><div class="nm"><!-- SLOT:LEAD_NAME START -->Jonas Berger<!-- SLOT:LEAD_NAME END --></div><div class="mt">3 Std</div></div></div><div class="pbody"><!-- SLOT:POST_NACHHER_2 START -->"Wir finden keine Leute" höre ich ständig.
 
 Was selten jemand sagt: die guten Leute bewerben sich nicht, sie schauen still zu, wem sie folgen wollen.
 
-Genau deshalb ist Sichtbarkeit kein Nice-to-have.<!-- SLOT:POST_NACHHER_2 END --></div></div>
+Genau deshalb ist Sichtbarkeit kein Nice-to-have.<!-- SLOT:POST_NACHHER_2 END --></div><div class="preact"><div class="emo"><span class="pe1">👍</span><span class="pe2">❤</span><span class="pe3">👏</span></div> 208 Reaktionen</div></div>
   </div>
   <div class="vn-foot">Gleiches Thema, 4x mehr Resonanz. Das ist der Unterschied zwischen posten und gelesen werden.</div>
 </div></section>
 
+<!-- =============== Kalender-Sektion (wcal) =============== -->
+<section class="wcal-sec">
+  <style>
+  .wcal-sec{background:#f5f6f8;padding:64px 22px 70px}
+  .wcal-wrap{max-width:1040px;margin:0 auto}
+  .wcal-head{text-align:center;margin-bottom:28px}
+  .wcal-eyebrow{display:inline-block;background:#121212;color:#fff;font-weight:800;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;padding:5px 13px;border-radius:999px}
+  .wcal-head h2{font-size:34px;font-weight:900;letter-spacing:-.02em;margin:15px 0 10px;line-height:1.1;color:#121212}
+  .wcal-head h2 .wcal-y{background:linear-gradient(transparent 60%,#ffe01c 60%);padding:0 5px}
+  .wcal-sub{color:#3d4350;font-size:16px;max-width:600px;margin:0 auto;line-height:1.55}
+  .wcal-bar{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;margin:22px 0 4px}
+  .wcal-lg{display:flex;align-items:center;gap:9px;font-size:13.5px;font-weight:600;color:#333}
+  .wcal-sw{width:15px;height:15px;border-radius:4px}
+  .wcal-sw.wcal-g{background:#d8dbe0;border:1px solid #c4c8cf}
+  .wcal-sw.wcal-yc{background:#ffe01c;border:1px solid #e6c700;animation:wcal-pulse 1.8s ease-in-out infinite}
+  .wcal-delta{margin-left:4px;font-weight:800}
+  .wcal-delta .wcal-a{color:#9aa0aa}.wcal-delta .wcal-b{color:#111}
+  .wcal-cal{background:#fff;border:1px solid #e3e3e3;border-radius:16px;padding:18px 18px 22px;box-shadow:0 10px 30px rgba(0,0,0,.06);margin-top:18px}
+  .wcal-month{font-size:15px;font-weight:800;color:#121212;margin:4px 4px 12px}
+  .wcal-dow{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-bottom:8px}
+  .wcal-dow span{font-size:11px;font-weight:700;letter-spacing:.06em;color:#9aa0aa;text-transform:uppercase;text-align:left;padding-left:4px}
+  .wcal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+  .wcal-cell{aspect-ratio:1/1.08;border:1px solid #edeef1;border-radius:10px;padding:6px;position:relative;background:#fbfbfc;min-height:96px;display:flex;flex-direction:column}
+  .wcal-cell.wcal-empty{background:#fafafa}
+  .wcal-dn{font-size:11px;font-weight:700;color:#b6bac1;align-self:flex-end}
+  .wcal-post{margin-top:auto;border-radius:8px;padding:6px 7px;display:flex;flex-direction:column;gap:4px}
+  .wcal-post .wcal-top{display:flex;align-items:center;gap:5px}
+  .wcal-post .wcal-av{width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:7.5px;font-weight:800;flex-shrink:0}
+  .wcal-post .wcal-in{margin-left:auto;width:14px;height:14px;border-radius:3px;background:#0A66C2;color:#fff;font-size:8px;font-weight:800;display:flex;align-items:center;justify-content:center}
+  .wcal-post .wcal-hook{font-size:10px;line-height:1.25;font-weight:600;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .wcal-post.wcal-pg{background:#eceef1;border:1px solid #dfe2e7}
+  .wcal-post.wcal-pg .wcal-av{background:#c4c8cf;color:#fff}
+  .wcal-post.wcal-pg .wcal-hook{color:#7b818b}
+  .wcal-post.wcal-pg .wcal-in{background:#aeb4bd}
+  .wcal-post.wcal-py{background:#fff7cc;border:1px solid #ffe01c;animation:wcal-pop 2.2s ease-in-out infinite}
+  .wcal-post.wcal-py .wcal-av{background:#121212;color:#ffe01c}
+  .wcal-post.wcal-py .wcal-hook{color:#3a3300}
+  .wcal-post.wcal-py .wcal-tag{font-size:7.5px;font-weight:800;letter-spacing:.04em;color:#9a7d00;text-transform:uppercase}
+  @keyframes wcal-pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,224,28,0)}50%{box-shadow:0 0 0 4px rgba(255,224,28,.4)}}
+  @keyframes wcal-pop{0%,100%{box-shadow:0 0 0 0 rgba(255,224,28,0);transform:translateY(0) scale(1)}50%{box-shadow:0 0 0 4px rgba(255,224,28,.35),0 8px 20px rgba(255,224,28,.28);transform:translateY(-2px) scale(1.03)}}
+  @media(prefers-reduced-motion:reduce){.wcal-post.wcal-py,.wcal-sw.wcal-yc{animation:none}}
+  .wcal-foot{text-align:center;margin-top:24px;font-size:15px;color:#444}
+  .wcal-foot b{color:#111}
+  @media(max-width:680px){.wcal-head h2{font-size:26px}.wcal-cell{min-height:78px}.wcal-post .wcal-hook{-webkit-line-clamp:1}}
+  </style>
+  <div class="wcal-wrap">
+    <div class="wcal-head">
+      <span class="wcal-eyebrow">Dein Content-Kalender</span>
+      <h2>Heute fast leer. Mit WarmedIn <span class="wcal-y">randvoll.</span></h2>
+      <div class="wcal-sub">Deine echten Posts bleiben grau und sichtbar. WarmedIn legt 16 neue Posts pro Monat obendrauf, in Gelb. Du siehst sofort den Unterschied.</div>
+      <div class="wcal-bar">
+        <span class="wcal-lg"><span class="wcal-sw wcal-g"></span> Deine Posts heute (<b>7</b>)</span>
+        <span class="wcal-lg"><span class="wcal-sw wcal-yc"></span> Mit WarmedIn (<b>+16</b>)</span>
+        <span class="wcal-lg wcal-delta"><span class="wcal-a">7</span> &rarr; <span class="wcal-b">23</span> Posts/Monat</span>
+      </div>
+    </div>
+    <div class="wcal-cal">
+      <div class="wcal-month">Juni 2026</div>
+      <div class="wcal-dow"><span>Mo</span><span>Di</span><span>Mi</span><span>Do</span><span>Fr</span><span>Sa</span><span>So</span></div>
+      <div class="wcal-grid" id="wcal-grid"></div>
+    </div>
+    <div class="wcal-foot"><b>6x mehr Sichtbarkeit</b>, ohne dass du selbst eine Zeile schreibst.</div>
+  </div>
+  <!-- Content-Kalender-Daten (Personalizer ersetzt diesen JSON-Block).
+       INITIALS = Lead-Initialen (z.B. "JB"). gray = echte (graue) Lead-Posts {tag:"hook"}.
+       wm = WarmedIn-Posts (gelb) {tag:"hook"}. HTML-Kommentar-Marker liegen AUSSERHALB
+       des JS, damit die Seite nie an einem Marker im JS-Code crasht. -->
+  <!-- SLOT:WCAL_DATA START --><script type="application/json" id="wcal-data">{
+    "initials":"JB",
+    "gray":{
+      "1":"Wir freuen uns, Teil der Messe gewesen zu sein",
+      "5":"Fachkräftemangel ist bei uns ein Dauerthema",
+      "11":"Tolle Gespräche auf der Logistik-Tagung",
+      "18":"Wir stellen ein, schaut auf unsere Karriereseite",
+      "22":"Danke an unser Team für ein starkes Quartal",
+      "26":"Schöner Standort-Besuch bei einem Partner",
+      "29":"Frohe Feiertage wünscht das ganze Team"
+    },
+    "wm":{
+      "2":"Der eine Lagerfehler, der jede Lieferkette kostet",
+      "3":"Warum wir Routen nicht mehr per Bauchgefühl planen",
+      "6":"3 Kennzahlen, die jede Logistik tracken sollte",
+      "7":"So senken wir Leerfahrten um 30 Prozent",
+      "9":"Was 10 Jahre Disposition uns gelehrt haben",
+      "10":"Warum Transparenz die beste Kundenbindung ist",
+      "13":"Die Frage, die jeder Spediteur zu spät stellt",
+      "14":"Wie wir Reklamationen halbiert haben",
+      "16":"Lager, Tour, Abrechnung: die richtige Reihenfolge",
+      "17":"Warum dein TMS kein Vertriebstool ist",
+      "20":"Echtzeit-Tracking: was Kunden wirklich wollen",
+      "21":"Stellen-Signale verraten warme Geschäftspartner",
+      "23":"Pro Auftrag messen, nicht pro Monat",
+      "24":"Der Dispo-Workshop, der jede Tour rettet",
+      "27":"Wie aus Frachtdaten echte Angebote werden",
+      "28":"Cashflow zuerst, das Wichtigste für Geschäftsführer"
+    }
+  }</script><!-- SLOT:WCAL_DATA END -->
+  <script>
+  (function(){
+    var data={initials:'JB',gray:{},wm:{}};
+    try{var el=document.getElementById('wcal-data');if(el)data=JSON.parse(el.textContent);}catch(e){console.error('wcal data parse',e);}
+    var INITIALS=data.initials||'JB';
+    var GRAY=data.gray||{};
+    var WM=data.wm||{};
+    var grid = document.getElementById('wcal-grid');
+    if(!grid) return;
+    var lead = (new Date(2026,5,1).getDay()+6)%7;
+    var days = 30, delay = 0;
+    for(var i=0;i<lead;i++){var b=document.createElement('div');b.className='wcal-cell wcal-empty';grid.appendChild(b);}
+    function chip(cls,hook,tag){
+      var p=document.createElement('div'); p.className='wcal-post '+cls;
+      var top=document.createElement('div'); top.className='wcal-top';
+      var av=document.createElement('div'); av.className='wcal-av'; av.textContent=INITIALS;
+      top.appendChild(av);
+      if(tag){var t=document.createElement('span');t.className='wcal-tag';t.textContent=tag;top.appendChild(t);}
+      var inb=document.createElement('div'); inb.className='wcal-in'; inb.textContent='in'; top.appendChild(inb);
+      var h=document.createElement('div'); h.className='wcal-hook'; h.textContent=hook;
+      p.appendChild(top); p.appendChild(h); return p;
+    }
+    for(var d=1; d<=days; d++){
+      var c=document.createElement('div'); c.className='wcal-cell';
+      var dn=document.createElement('div'); dn.className='wcal-dn'; dn.textContent=d; c.appendChild(dn);
+      if(GRAY[d]) c.appendChild(chip('wcal-pg',GRAY[d],null));
+      else if(WM[d]){ var pp=chip('wcal-py',WM[d],'WarmedIn'); pp.style.animationDelay=(delay).toFixed(2)+'s'; delay+=0.18; c.appendChild(pp); }
+      grid.appendChild(c);
+    }
+  })();
+  </script>
+</section>
+
+<!-- =============== KONKURRENZ-RASTER (band + #warmedin-raster) =============== -->
+<section class="band" style="background:#fff"><div class="wrap">
+  <h2 style="text-align:center;margin-bottom:6px">Echte LinkedIn-Aktivität . <span class="hl">du vs. deine Wettbewerber</span></h2>
+  <p style="text-align:center;color:#5b6573;max-width:640px;margin:0 auto 28px">Live aus LinkedIn . dein Posting-Rhythmus neben dem deiner Wettbewerber der letzten 30 Tage. Klick auf einen Post für den vollen Text.</p>
+  <div id="warmedin-raster"></div>
+</div></section>
+
+<!-- =============== FOUNDER-CTA =============== -->
+<section class="founder"><div class="wrap">
+  <h2>Bereit, <!-- SLOT:LEAD_FIRST START -->Jonas<!-- SLOT:LEAD_FIRST END -->? Lass uns deine <span class="y">Founder-Brand</span> bauen.</h2>
+  <p>30 Minuten mit Anthony. Wir schauen auf dein Profil, deine Themen und deinen Plan. Kein Pitch-Deck, kein Druck.</p>
+  <a class="btn-y" href="https://calendly.com/anthony-katzur/warmedin-dein-linkedin-erstgesprach" target="_blank" rel="noopener">Erstgespräch mit Anthony buchen &rarr;</a>
+</div></section>
+
+<!-- =============== DAS IST DRIN (band NACH founder) =============== -->
 <section class="band" style="background:#f5f6f8"><div class="wrap">
   <h2>Alles, was deine <span class="hl">Founder-Brand</span> braucht.</h2>
   <div class="lead">Ein Setup, ein Team, ein Ergebnis. Du gibst den Input, WarmedIn macht den Rest, Monat für Monat.</div>
@@ -141,12 +301,7 @@ Genau deshalb ist Sichtbarkeit kein Nice-to-have.<!-- SLOT:POST_NACHHER_2 END --
   </div>
 </div></section>
 
-<section class="founder"><div class="wrap">
-  <h2>Bereit, <!-- SLOT:LEAD_FIRST START -->Jonas<!-- SLOT:LEAD_FIRST END -->? Lass uns deine <span class="y">Founder-Brand</span> bauen.</h2>
-  <p>30 Minuten mit Anthony. Wir schauen auf dein Profil, deine Themen und deinen Plan. Kein Pitch-Deck, kein Druck.</p>
-  <a class="btn-y" href="#booking">Erstgespräch mit Anthony buchen &rarr;</a>
-</div></section>
-
+<!-- =============== BOOK (Calendly-Card) =============== -->
 <section class="book" id="booking"><div class="wrap">
   <div class="card2">
     <img class="av2" src="https://start.grundwerk.digital/assets/og/anthony.jpg" alt="Anthony Katzur">
@@ -156,9 +311,211 @@ Genau deshalb ist Sichtbarkeit kein Nice-to-have.<!-- SLOT:POST_NACHHER_2 END --
   </div>
 </div></section>
 
+<!-- =============== LEAD-MAGNET (wg-gen, unten) =============== -->
+<section class="wg-gen">
+  <style>
+  .wg-gen{background:#121212;color:#fff;padding:74px 22px 84px;position:relative;overflow:hidden}
+  .wg-gen::before{content:"";position:absolute;top:-160px;left:50%;transform:translateX(-50%);width:820px;height:480px;background:radial-gradient(closest-side,rgba(255,224,28,.22),transparent 70%);z-index:0}
+  .wg-wrap{max-width:680px;margin:0 auto;position:relative;z-index:1}
+  .wg-head{text-align:center;margin-bottom:30px}
+  .wg-eyebrow{display:inline-block;background:#ffe01c;color:#121212;font-weight:800;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;padding:6px 14px;border-radius:999px}
+  .wg-head h2{font-size:38px;font-weight:900;letter-spacing:-.025em;margin:16px 0 10px;line-height:1.1;color:#fff;max-width:none;text-align:center}
+  .wg-head h2 .wg-y{background:linear-gradient(transparent 60%,rgba(255,224,28,.85) 60%);padding:0 5px;color:#fff}
+  .wg-sub{color:#b8bcc4;font-size:17px;max-width:560px;margin:0 auto;line-height:1.55}
+  .wg-card{background:#fff;color:#121212;border-radius:18px;padding:26px;box-shadow:0 24px 60px rgba(0,0,0,.4)}
+  .wg-lbl{font-size:14px;font-weight:700;margin-bottom:10px}
+  .wg-card textarea{width:100%;min-height:84px;border:1px solid #dfe2e7;border-radius:12px;padding:13px 15px;font-family:inherit;font-size:15px;resize:vertical;color:#121212}
+  .wg-card textarea:focus{outline:none;border-color:#ffe01c;box-shadow:0 0 0 3px rgba(255,224,28,.35)}
+  .wg-chips{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 16px}
+  .wg-chip{background:#f3f4f6;border:1px solid #e6e8ec;border-radius:999px;padding:7px 13px;font-size:12.5px;font-weight:600;color:#444;cursor:pointer;transition:background .12s}
+  .wg-chip:hover{background:#fff7cc;border-color:#ffe01c}
+  .wg-btn{display:block;width:100%;background:#ffe01c;color:#121212;font-weight:800;font-size:16px;padding:15px;border-radius:12px;border:1px solid #e6c700;cursor:pointer;transition:transform .12s}
+  .wg-btn:hover{transform:translateY(-2px)}
+  .wg-btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+  .wg-hint{display:none;margin-top:11px;background:#fffdf0;border:1px solid #ffe98a;border-radius:10px;padding:10px 13px;font-size:13px;color:#8a6d00;text-align:center;line-height:1.45}
+  .wg-hint.wg-show{display:block}
+  .wg-hint b{color:#6a5400}
+  .wg-load{display:none;text-align:center;padding:30px 0;color:#555;font-weight:600}
+  .wg-load.wg-on{display:block}
+  .wg-dots span{display:inline-block;width:8px;height:8px;border-radius:50%;background:#ffe01c;margin:0 3px;animation:wg-b 1s infinite}
+  .wg-dots span:nth-child(2){animation-delay:.15s}.wg-dots span:nth-child(3){animation-delay:.3s}
+  @keyframes wg-b{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(-7px);opacity:1}}
+  .wg-result{display:none;margin-top:6px}
+  .wg-result.wg-on{display:block}
+  .wg-post{border:1px solid #e2e4e8;border-radius:14px;padding:15px 17px 6px;background:#fff}
+  .wg-ph{display:flex;gap:10px;align-items:center;margin-bottom:11px}
+  .wg-av{width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;background:#eee}
+  .wg-nm{font-size:14px;font-weight:700}
+  .wg-mt{font-size:12px;color:#70757e}
+  .wg-body{font-size:14.5px;line-height:1.55;white-space:pre-line;margin-bottom:12px}
+  .wg-react{display:flex;align-items:center;gap:7px;font-size:12.5px;color:#70757e;padding:7px 0;border-top:1px solid #eef0f2;border-bottom:1px solid #eef0f2}
+  .wg-emo span{display:inline-flex;width:18px;height:18px;border-radius:50%;align-items:center;justify-content:center;font-size:10px;border:1.5px solid #fff;margin-left:-4px;color:#fff}
+  .wg-emo span:first-child{margin-left:0}.wg-e1{background:#0a66c2}.wg-e2{background:#df704d}.wg-e3{background:#e7a33e}
+  .wg-bar{display:flex;justify-content:space-around;padding:6px 0;font-size:13px;font-weight:600;color:#70757e}
+  .wg-regen{font-size:13px;color:#0a66c2;font-weight:700;cursor:pointer;margin:12px 0 4px;display:inline-block}
+  .wg-gate{display:none;margin-top:18px;background:#fffdf0;border:1px solid #ffe98a;border-radius:14px;padding:18px}
+  .wg-gate.wg-on{display:block}
+  .wg-gate .wg-gh{font-size:16px;font-weight:800;margin-bottom:5px}
+  .wg-gate .wg-gp{font-size:13.5px;color:#6a5f2a;margin-bottom:13px}
+  .wg-gate .wg-row{display:flex;gap:10px}
+  .wg-gate input{flex:1;border:1px solid #e6c700;border-radius:10px;padding:13px 14px;font-family:inherit;font-size:15px}
+  .wg-gate input:focus{outline:none;box-shadow:0 0 0 3px rgba(255,224,28,.35)}
+  .wg-gate .wg-send{background:#121212;color:#ffe01c;font-weight:800;font-size:14px;padding:0 22px;border-radius:10px;border:none;cursor:pointer;white-space:nowrap}
+  .wg-done{display:none;text-align:center;padding:8px 0}
+  .wg-done.wg-on{display:block}
+  .wg-done .wg-e{font-size:40px}
+  .wg-done h3{font-size:22px;font-weight:800;margin:8px 0 6px}
+  .wg-done p{color:#555;font-size:15px;line-height:1.5;margin-bottom:18px}
+  .wg-done a{display:inline-block;background:#ffe01c;color:#121212;font-weight:800;font-size:16px;padding:15px 28px;border-radius:12px;text-decoration:none;border:1px solid #e6c700}
+  .wg-mini{text-align:center;color:#8a8f99;font-size:12.5px;margin-top:14px}
+  @media(max-width:760px){.wg-head h2{font-size:28px}.wg-gate .wg-row{flex-direction:column}.wg-gate .wg-send{padding:13px}}
+  </style>
+  <div class="wg-wrap">
+    <div class="wg-head">
+      <span class="wg-eyebrow">Kostenlos ausprobieren</span>
+      <h2>Lass dir jetzt einen <span class="wg-y">LinkedIn-Post</span> schreiben.</h2>
+      <div class="wg-sub">Sag uns dein Thema, wir schreiben dir einen fertigen Post. Gratis, in unter 30 Sekunden.</div>
+    </div>
+    <div class="wg-card">
+      <div id="wg-stateA">
+        <div class="wg-lbl">Worum soll dein Post gehen?</div>
+        <textarea id="wg-topic" placeholder="z.B. warum HubSpot nicht für Outbound gebaut ist, wie wir 1 Mio. Pipeline aufgebaut haben, der eine Fehler bei Cold Email..."></textarea>
+        <div class="wg-chips" id="wg-chips">
+          <span class="wg-chip">Warum HubSpot nicht für Outbound gebaut ist</span>
+          <span class="wg-chip">Der eine Fehler bei Cold Email, den fast alle machen</span>
+          <span class="wg-chip">Wie wir 1 Mio. Euro Pipeline aufgebaut haben</span>
+        </div>
+        <button class="wg-btn" id="wg-genBtn" disabled>Post generieren ✨</button>
+        <div class="wg-hint" id="wg-hint">Bitte gib mindestens 100 Zeichen ein, damit dein Post richtig gut wird. <b id="wg-cc">(noch 100 Zeichen)</b></div>
+      </div>
+      <div class="wg-load" id="wg-loader"><div class="wg-dots"><span></span><span></span><span></span></div><div style="margin-top:12px">WarmedIn schreibt deinen Post...</div></div>
+      <div class="wg-result" id="wg-result">
+        <div class="wg-post">
+          <div class="wg-ph"><img class="wg-av" src="https://start.grundwerk.digital/assets/og/jonas.jpg" alt="<!-- SLOT:LEAD_NAME START -->Jonas Berger<!-- SLOT:LEAD_NAME END -->"><div><div class="wg-nm"><!-- SLOT:LEAD_NAME START -->Jonas Berger<!-- SLOT:LEAD_NAME END --></div><div class="wg-mt"><!-- SLOT:LEAD_ROLE START -->Geschäftsführer @ NordLog · B2B-SaaS Logistik<!-- SLOT:LEAD_ROLE END --> · gerade eben</div></div></div>
+          <div class="wg-body" id="wg-postBody"></div>
+          <div class="wg-react"><div class="wg-emo"><span class="wg-e1">👍</span><span class="wg-e2">❤</span><span class="wg-e3">👏</span></div> 0 Reaktionen · sei der Erste</div>
+          <div class="wg-bar"><div>👍 Gefällt mir</div><div>💬 Kommentieren</div><div>🔁 Teilen</div></div>
+        </div>
+        <span class="wg-regen" id="wg-regen">↻ Anderen Post generieren</span>
+        <div class="wg-gate" id="wg-gate">
+          <div class="wg-gh">Gefällt dir? Schick ihn dir zu. 📬</div>
+          <div class="wg-gp">Wir mailen dir diesen Post + 2 weitere Varianten, sofort einsatzbereit.</div>
+          <div class="wg-row"><input id="wg-email" type="email" placeholder="deine@email.de"><button class="wg-send" id="wg-sendBtn">Zuschicken</button></div>
+        </div>
+      </div>
+      <div class="wg-done" id="wg-done">
+        <div class="wg-e">📬</div>
+        <h3>Im Postfach!</h3>
+        <p>Dein Post ist unterwegs. Und jetzt ehrlich, <!-- SLOT:LEAD_FIRST START -->Jonas<!-- SLOT:LEAD_FIRST END -->: willst du das <b>16x im Monat</b>, ohne selbst eine Zeile zu schreiben?</p>
+        <a href="https://calendly.com/anthony-katzur/warmedin-dein-linkedin-erstgesprach" target="_blank" rel="noopener">Erstgespräch mit Anthony buchen &rarr;</a>
+      </div>
+      <div class="wg-done" id="wg-errbox">
+        <div class="wg-e">😕</div>
+        <h3>Hat gerade nicht geklappt</h3>
+        <p>Der Server war kurz beschäftigt. Versuch es einfach nochmal, dein echter Post kommt gleich.</p>
+        <button class="wg-btn" id="wg-retryBtn" style="max-width:280px;margin:14px auto 0">Nochmal versuchen ✨</button>
+      </div>
+      <div class="wg-done" id="wg-limitbox">
+        <div class="wg-e">🚀</div>
+        <h3>Heute schon richtig produktiv!</h3>
+        <p>Du hast deine <b>10 Gratis-Posts</b> für heute genutzt. Willst du unbegrenzt Posts in deinem Stil, <b>16x im Monat</b>, ohne selbst eine Zeile zu schreiben?</p>
+        <a href="https://calendly.com/anthony-katzur/warmedin-dein-linkedin-erstgesprach" target="_blank" rel="noopener">Erstgespräch mit Anthony buchen &rarr;</a>
+      </div>
+    </div>
+    <div class="wg-mini">Echte KI, kein Template. Dein Thema, dein Stil.</div>
+  </div>
+  <script>
+  (function(){
+    var T=document.getElementById('wg-topic');
+    if(!T)return;
+    function show(id,on){var el=document.getElementById(id);if(el)el.classList[on?'add':'remove']('wg-on');}
+    var MIN_CHARS=100;
+    var genBtnEl=document.getElementById('wg-genBtn');
+    var hintEl=document.getElementById('wg-hint');
+    var ccEl=document.getElementById('wg-cc');
+    function updateGate(){
+      var len=(T.value||'').trim().length;
+      if(len>=MIN_CHARS){genBtnEl.disabled=false;hintEl.classList.remove('wg-show');}
+      else{genBtnEl.disabled=true;hintEl.classList.add('wg-show');ccEl.textContent='(noch '+(MIN_CHARS-len)+' Zeichen)';}
+    }
+    T.addEventListener('input',updateGate);
+    document.querySelectorAll('#wg-chips .wg-chip').forEach(function(c){c.addEventListener('click',function(){T.value=c.textContent;updateGate();T.focus();});});
+    updateGate();
+    var WEBHOOK='https://n8n.grundwerk.digital/webhook/warmedin-post-generator';
+    var TRACK='https://n8n.grundwerk.digital/webhook/warmedin-track';
+    var curThema='';
+    function pageSlug(){try{var p=location.pathname.replace(/^\/+|\/+$/g,'').split('/')[0];if(p)return p;}catch(e){}return 'warmedin';}
+    var PAGE_SLUG=pageSlug();
+    function track(ev){try{fetch(TRACK,{method:'POST',headers:{'Content-Type':'application/json'},keepalive:true,body:JSON.stringify({page_slug:PAGE_SLUG,event:ev})});}catch(e){}}
+    function showPostText(txt){var b=document.getElementById('wg-postBody');if(b)b.textContent=txt;show('wg-result',true);show('wg-gate',true);}
+    function showError(){show('wg-loader',false);show('wg-result',false);show('wg-gate',false);show('wg-errbox',true);}
+    function showLimit(){show('wg-loader',false);show('wg-result',false);show('wg-gate',false);show('wg-errbox',false);show('wg-limitbox',true);}
+    function newReqId(){return 'r'+Date.now().toString(36)+Math.random().toString(36).slice(2,8);}
+    function generate(retries,reqId){
+      reqId=reqId||newReqId();
+      show('wg-errbox',false);show('wg-limitbox',false);show('wg-result',false);show('wg-gate',false);show('wg-loader',true);
+      fetch(WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({thema:curThema,page_slug:PAGE_SLUG,req_id:reqId})})
+        .then(function(r){return r.json();})
+        .then(function(d){
+          if(d&&d.limit){show('wg-loader',false);showLimit();return;}
+          if(d&&d.post&&d.post.length>20){show('wg-loader',false);showPostText(d.post);track('generate');}
+          else if(retries>0){generate(retries-1,reqId);}
+          else{showError();}
+        })
+        .catch(function(){if(retries>0){generate(retries-1,reqId);}else{showError();}});
+    }
+    genBtnEl.addEventListener('click',function(){
+      if((T.value||'').trim().length<MIN_CHARS){updateGate();T.focus();return;}
+      curThema=(T.value||'').trim();
+      document.getElementById('wg-stateA').style.display='none';
+      generate(2,newReqId());
+    });
+    document.getElementById('wg-regen').addEventListener('click',function(){curThema=curThema||(T.value||'').trim();generate(2,newReqId());});
+    document.getElementById('wg-retryBtn').addEventListener('click',function(){generate(2,newReqId());});
+    document.getElementById('wg-sendBtn').addEventListener('click',function(){
+      var e=document.getElementById('wg-email').value;
+      if(!/.+@.+\..+/.test(e)){document.getElementById('wg-email').focus();return;}
+      var btn=document.getElementById('wg-sendBtn');btn.disabled=true;btn.textContent='Wird gesendet...';
+      var shownPost=document.getElementById('wg-postBody').textContent||'';
+      fetch(WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({thema:curThema,email:e,post:shownPost,page_slug:PAGE_SLUG})})
+        .then(function(){show('wg-result',false);show('wg-done',true);})
+        .catch(function(){show('wg-result',false);show('wg-done',true);});
+    });
+  })();
+  </script>
+</section>
+
+<!-- =============== FOOTER (kein Grundwerk-Footer-Satz) =============== -->
 <footer class="site-footer">
   <img src="https://start.grundwerk.digital/assets/og/warmedin-logo-crop.png" alt="WarmedIn">
-  <p>WarmedIn macht aus deinem LinkedIn-Profil deine planbarste Lead-Quelle. 16 Posts im Monat, Managed Outreach und echte Connections, in deiner Stimme und komplett für dich gemacht. Ein Service von Grundwerk Digital.</p>
+  <p>WarmedIn macht aus deinem LinkedIn-Profil deine planbarste Lead-Quelle. 16 Posts im Monat, Managed Outreach und echte Connections, in deiner Stimme und komplett für dich gemacht.</p>
   <div class="ft-bottom">WarmedIn, ein Service von Grundwerk Digital GmbH &copy; 2026</div>
 </footer>
+
+<!-- =============== BOOKING-FAB =============== -->
+<div class="wfab">
+  <div class="wfab-card" id="wfab-card">
+    <button class="wfab-x" id="wfab-x" aria-label="Schliessen">&times;</button>
+    <div class="wfab-av"><img src="https://start.grundwerk.digital/assets/og/anthony.jpg" alt="Anthony Katzur"></div>
+    <div class="wfab-h">Erstgespräch mit Anthony</div>
+    <div class="wfab-p">30 Min, unverbindlich. Wir schauen auf dein Profil, deine Themen und deinen Plan. Kein Pitch-Deck.</div>
+    <a class="wfab-btn" href="https://calendly.com/anthony-katzur/warmedin-dein-linkedin-erstgesprach" target="_blank" rel="noopener">Jetzt Termin buchen &rarr;</a>
+  </div>
+  <button class="wfab-toggle" id="wfab-toggle">📅 Termin buchen</button>
+</div>
+<script>
+(function(){
+  var card=document.getElementById('wfab-card');
+  var toggle=document.getElementById('wfab-toggle');
+  var x=document.getElementById('wfab-x');
+  if(!card||!toggle)return;
+  toggle.addEventListener('click',function(){card.classList.toggle('wfab-on');});
+  if(x)x.addEventListener('click',function(){card.classList.remove('wfab-on');});
+})();
+</script>
+
+<!-- =============== RASTER-DATEN-INJECTION (Personalizer ersetzt diesen Block) =============== -->
+<!-- SLOT:RASTER_DATA START --><script type="application/json" id="warmedin-raster-data">{"generated_at":"","lead":{"name":"Jonas Berger","handle":"jonas-berger","posts":[]},"competitors":[],"assets_base":"../warmedin/assets/"}</script><!-- SLOT:RASTER_DATA END -->
+<script>try{window.WARMEDIN_RASTER=JSON.parse(document.getElementById("warmedin-raster-data").textContent);}catch(e){console.error("raster data parse",e);}</script>
+<script src="../warmedin/assets/raster.js" defer></script>
 <script>(function(){var T='https://n8n.grundwerk.digital/webhook/warmedin-track';function sl(){var p=location.pathname.replace(/^\/+|\/+$/g,'').split('/')[0];return p||'warmedin';}setTimeout(function(){if(document.documentElement.style.display==='none')return;try{fetch(T,{method:'POST',headers:{'Content-Type':'application/json'},keepalive:true,body:JSON.stringify({page_slug:sl(),event:'view'})});}catch(e){}},5000);})();</script></body></html>
