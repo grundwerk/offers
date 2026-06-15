@@ -179,10 +179,10 @@ a{color:inherit;text-decoration:none}
 /* references */
 .logos{display:flex;flex-wrap:wrap;gap:14px 30px;justify-content:center;align-items:center;margin-top:34px;opacity:.9}
 .logos span{font-family:var(--ff-d);font-weight:600;font-size:18px;color:var(--mut)}
-.logo-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px 14px;margin-top:30px;align-items:center}
+.logo-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px 14px;margin-top:30px;align-items:center}
 @media(max-width:760px){.logo-grid{grid-template-columns:repeat(3,1fr)}}
-.logo-grid .cell{display:flex;align-items:center;justify-content:center;padding:12px 10px;min-height:132px}
-.logo-grid img{max-width:300px;max-height:110px;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.8;transition:opacity .18s}
+.logo-grid .cell{display:flex;align-items:center;justify-content:center;padding:4px 10px;min-height:76px}
+.logo-grid img{max-width:280px;max-height:86px;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.8;transition:opacity .18s}
 .logo-grid .cell:hover img{opacity:1}
 .quote{font-family:var(--ff-d);font-weight:500;font-size:18px;color:var(--fg);line-height:1.4}
 .quote-who{margin-top:16px;font-size:13.5px;color:var(--mut2)}
@@ -498,8 +498,8 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeVid();}
       <span class="mp mp-gw"><img src="https://start.grundwerk.digital/assets/favicon.png" alt="Grundwerk" decoding="async"></span>
     </div>
     <div class="greet" style="margin:0 auto 20px">Hi <b><!-- SLOT:LEAD_FIRST START -->zusammen<!-- SLOT:LEAD_FIRST END --></b>, unser Ersttermin ist gebucht &#10003;</div>
-    <h1>Unbedingt dieses Video schauen &#8595;</h1>
-    <p class="lead center" style="margin:18px auto 0">Hier findest du alle Infos für unseren Termin mit <b style="color:var(--fg)"><!-- SLOT:COMPANY START -->deinem Unternehmen<!-- SLOT:COMPANY END --></b>, damit wir die gemeinsame Zeit optimal nutzen können - schau dir kurz das Video an und füll den Fragebogen aus.</p>
+    <h1>Mehr Pipeline, <span class="hl">weniger Headcount</span>.</h1>
+    <p class="lead center" style="margin:18px auto 0">Planbar, zuverlässig und automatisiert Leads generieren - genau das bauen wir für <b style="color:var(--fg)"><!-- SLOT:COMPANY START -->dein Unternehmen<!-- SLOT:COMPANY END --></b>. Schau dir kurz das Video an und füll den Fragebogen aus.</p>
     <div class="vid-frame" style="max-width:880px;margin:30px auto 0">
       <wistia-player media-id="tm8si6qq6m" aspect="1.7777777777777777" style="width:100%;display:block"></wistia-player>
     </div>
