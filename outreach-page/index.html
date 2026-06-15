@@ -9,17 +9,19 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://start.grundwerk.digital/outreach-page-demo/">
 <meta property="og:title" content="Dein Unternehmen x Grundwerk - dein Outreach-System">
-<meta property="og:description" content="Wie wir fuer dich planbar Termine generieren: Cold Email, LinkedIn und KI-personalisierte Videos. Sieh es sektion-fuer-sektion - und fuell den 2-Minuten-Fragebogen vor unserem Termin aus.">
+<meta property="og:description" content="Wie wir für dich planbar Termine generieren: Cold Email, LinkedIn und KI-personalisierte Videos. Sieh es sektion-für-sektion - und füll den 2-Minuten-Fragebogen vor unserem Termin aus.">
 <meta property="og:image" content="https://start.grundwerk.digital/assets/og/outreach-page-demo.png">
 <meta property="og:image:secure_url" content="https://start.grundwerk.digital/assets/og/outreach-page-demo.png">
 <meta name="twitter:image" content="https://start.grundwerk.digital/assets/og/outreach-page-demo.png">
-<meta property="og:image:alt" content="Outreach-Seite fuer Dein Unternehmen">
+<meta property="og:image:alt" content="Outreach-Seite für Dein Unternehmen">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Dein Unternehmen x Grundwerk">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230066ff'/%3E%3Ctext x='32' y='45' font-family='Arial,Helvetica,sans-serif' font-size='42' font-weight='700' fill='white' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E">
 <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230066ff'/%3E%3Ctext x='32' y='45' font-family='Arial,Helvetica,sans-serif' font-size='42' font-weight='700' fill='white' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
 <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=inter@400,500,600&display=swap" rel="stylesheet">
+<script src="https://fast.wistia.com/player.js" async></script>
+<script src="https://fast.wistia.com/embed/tm8si6qq6m.js" async type="module"></script>
 <style>
 :root{
   --bg:#0e0e10;            /* canvas, matches grundwerk.digital #121212 family, a touch deeper */
@@ -176,6 +178,11 @@ a{color:inherit;text-decoration:none}
 /* references */
 .logos{display:flex;flex-wrap:wrap;gap:14px 30px;justify-content:center;align-items:center;margin-top:34px;opacity:.9}
 .logos span{font-family:var(--ff-d);font-weight:600;font-size:18px;color:var(--mut)}
+.logo-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:34px}
+@media(max-width:760px){.logo-grid{grid-template-columns:repeat(3,1fr)}}
+.logo-grid .cell{background:var(--bg);display:flex;align-items:center;justify-content:center;padding:26px 16px;min-height:92px}
+.logo-grid img{max-width:128px;max-height:42px;width:auto;height:auto;object-fit:contain;opacity:.85;transition:opacity .15s}
+.logo-grid .cell:hover img{opacity:1}
 .quote{font-family:var(--ff-d);font-weight:500;font-size:18px;color:var(--fg);line-height:1.4}
 .quote-who{margin-top:16px;font-size:13.5px;color:var(--mut2)}
 .quote-who b{color:var(--fg);display:block;font-family:var(--ff-b)}
@@ -211,6 +218,9 @@ a{color:inherit;text-decoration:none}
 .chips{display:flex;flex-wrap:wrap;gap:10px}
 .chip{background:var(--bg3);border:1px solid var(--line);border-radius:10px;padding:11px 16px;cursor:pointer;font-size:14.5px;transition:.16s;color:var(--fg)}
 .chip.sel{border-color:var(--blue);background:var(--blue-soft);color:#fff}
+.brand-logo-img{height:26px;width:auto;display:inline-block;vertical-align:middle}
+.chip-logo{height:18px;width:18px;object-fit:contain;vertical-align:middle;margin-right:8px;display:inline-block}
+.chip{display:inline-flex;align-items:center}
 .qz-nav{display:flex;justify-content:space-between;align-items:center;padding:22px 30px;border-top:1px solid var(--line)}
 .qz-done{text-align:center;padding:20px}
 .qz-done .ok{width:64px;height:64px;border-radius:50%;background:var(--blue-soft);border:1px solid var(--blue-line);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:30px;color:var(--blue)}
@@ -233,7 +243,7 @@ a{color:inherit;text-decoration:none}
 
 <!-- NAV -->
 <header class="nav"><div class="nav-in">
-  <a class="brand" href="https://grundwerk.digital"><img class="brand-logo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%230066ff'/%3E%3Ctext x='32' y='46' font-family='Arial,Helvetica,sans-serif' font-size='44' font-weight='800' fill='white' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E" alt="Grundwerk Digital">Grundwerk<span class="dot">.</span></a>
+  <a class="brand" href="https://grundwerk.digital"><img class="brand-logo-img" src="https://start.grundwerk.digital/assets/grundwerk-logo.png" alt="Grundwerk Digital"></a>
   <div class="nav-links">
     <a href="#system">System</a>
     <a href="#copy">Copy</a>
@@ -241,7 +251,7 @@ a{color:inherit;text-decoration:none}
     <a href="#cases">Cases</a>
     <a href="#fragebogen">Fragebogen</a>
   </div>
-  <a class="btn btn-blue btn-sm nav-cta" href="#fragebogen" onclick="track('cta_nav')">Fragebogen ausfuellen</a>
+  <a class="btn btn-blue btn-sm nav-cta" href="#fragebogen" onclick="track('cta_nav')">Fragebogen ausfüllen</a>
 </div></header>
 
 <!-- LOAD POPUP -->
@@ -249,30 +259,30 @@ a{color:inherit;text-decoration:none}
   <div class="modal" style="position:relative">
     <button class="x" onclick="closePop()">&times;</button>
     <div class="tag" style="margin-bottom:16px">Vor unserem Termin</div>
-    <h3>Fuell kurz den Fragebogen aus</h3>
+    <h3>Füll kurz den Fragebogen aus</h3>
     <p>2 Minuten. So ist unser Termin von der ersten Minute an auf <b style="color:var(--fg)"><!-- SLOT:COMPANY START -->dein Unternehmen<!-- SLOT:COMPANY END --></b> zugeschnitten - statt Standard-Fragen abzuklappern.</p>
-    <a class="btn btn-blue" href="#fragebogen" onclick="closePop();track('cta_popup')" style="width:100%;justify-content:center">Jetzt ausfuellen</a>
+    <a class="btn btn-blue" href="#fragebogen" onclick="closePop();track('cta_popup')" style="width:100%;justify-content:center">Jetzt ausfüllen</a>
     <button class="btn btn-ghost btn-sm" onclick="closePop()" style="margin-top:10px">Erst die Seite ansehen</button>
   </div>
 </div>
 
 <!-- FIXED FAB (bottom-right questionnaire CTA) -->
-<a class="btn btn-blue fab-quest" id="fab" href="#fragebogen" onclick="track('cta_fab')">Fragebogen ausfuellen &rarr;</a>
+<a class="btn btn-blue fab-quest" id="fab" href="#fragebogen" onclick="track('cta_fab')">Fragebogen ausfüllen &rarr;</a>
 
 <!-- SLIDE-IN (back to questionnaire) -->
 <div class="slidein" id="slidein" onclick="goQuiz()">
-  Noch nicht ausgefuellt? Der 2-Minuten-Fragebogen macht unseren Termin doppelt so wertvoll &rarr;
+  Noch nicht ausgefüllt? Der 2-Minuten-Fragebogen macht unseren Termin doppelt so wertvoll &rarr;
   <button class="x" onclick="event.stopPropagation();this.parentElement.classList.remove('on')">&times;</button>
 </div>
 
 <!-- HERO -->
 <section class="hero" id="top"><div class="wrap"><div class="hero-grid">
   <div class="rv in">
-    <div class="greet">Hi <b><!-- SLOT:LEAD_FIRST START -->zusammen<!-- SLOT:LEAD_FIRST END --></b> - schoen, dass wir sprechen</div>
+    <div class="greet">Hi <b><!-- SLOT:LEAD_FIRST START -->zusammen<!-- SLOT:LEAD_FIRST END --></b> - schön, dass wir sprechen</div>
     <h1>Dein planbares <span class="hl">Outreach-System</span>.<br>Termine statt Kaltakquise.</h1>
-    <p class="lead">Wir bauen fuer <!-- SLOT:COMPANY START -->dein Unternehmen<!-- SLOT:COMPANY END --> die Maschine, die planbar qualifizierte Termine generiert: Cold Email, LinkedIn und KI-personalisierte Videos. Hier siehst du genau, wie das aussieht - bevor wir sprechen.</p>
+    <p class="lead">Wir bauen für <!-- SLOT:COMPANY START -->dein Unternehmen<!-- SLOT:COMPANY END --> die Maschine, die planbar qualifizierte Termine generiert: Cold Email, LinkedIn und KI-personalisierte Videos. Hier siehst du genau, wie das aussieht - bevor wir sprechen.</p>
     <div class="hero-cta">
-      <a class="btn btn-blue" href="#fragebogen" onclick="track('cta_hero')">Fragebogen ausfuellen</a>
+      <a class="btn btn-blue" href="#fragebogen" onclick="track('cta_hero')">Fragebogen ausfüllen</a>
       <a class="btn btn-ghost" href="#system">So funktioniert es</a>
     </div>
     <div style="margin-top:16px"><a href="https://calendly.com/anthony-katzur/grundwerk-termin-buchen" onclick="track('cta_reschedule')" style="color:var(--mut);font-size:14px;border-bottom:1px solid var(--line2);padding-bottom:2px">Schon einen Termin gebucht? Hier verschieben</a></div>
@@ -285,10 +295,8 @@ a{color:inherit;text-decoration:none}
   <div class="rv in">
     <div class="vid-frame">
       <div class="vbar"><i></i><i></i><i></i></div>
-      <video autoplay muted loop playsinline poster="">
-        <source src="https://framerusercontent.com/assets/ZECQ9dM7onY99MVF18XCaJKzCNg.mp4" type="video/mp4">
-      </video>
-      <div class="vid-tag">Dein Outreach-System, in 90 Sekunden</div>
+      <wistia-player media-id="tm8si6qq6m" aspect="1.7777777777777777" style="width:100%;display:block"></wistia-player>
+      <div class="vid-tag">&#9654;&nbsp; Vor unserem Termin ansehen</div>
     </div>
   </div>
 </div></div></section>
@@ -299,22 +307,22 @@ a{color:inherit;text-decoration:none}
     <div class="s"><b>15&nbsp;%</b><span>durchschnittliche Antwortrate</span></div>
     <div class="s"><b>&lt;&nbsp;2&nbsp;%</b><span>Bounce-Rate</span></div>
     <div class="s"><b>20-30</b><span>qualifizierte Termine / Monat</span></div>
-    <div class="s"><b>0&nbsp;EUR</b><span>Tool-Kosten fuer dich</span></div>
+    <div class="s"><b>0&nbsp;EUR</b><span>Tool-Kosten für dich</span></div>
   </div>
 </div></section>
 
 <!-- EDGE CASES / PLAYS -->
 <section class="sec" id="system"><div class="wrap">
-  <div class="center rv"><div class="eyebrow">Was wir fuer dich fahren</div>
+  <div class="center rv"><div class="eyebrow">Was wir für dich fahren</div>
   <h2>Nicht eine Taktik. Ein <span class="hl">System aus Szenarien</span>.</h2>
-  <p class="lead center">Je nach Zielgruppe und Signal ziehen wir den passenden Hebel. Das laeuft parallel, getestet und woechentlich optimiert.</p></div>
+  <p class="lead center">Je nach Zielgruppe und Signal ziehen wir den passenden Hebel. Das läuft parallel, getestet und woechentlich optimiert.</p></div>
   <div class="grid g3 stagger rv" style="margin-top:46px">
-    <div class="card"><div class="ec-icon">&#9993;</div><span class="tag">E-Mail</span><h3 style="margin:14px 0 8px">Cold Email mit Research-Opener</h3><p>Jede Mail startet mit einem Satz, der nur fuer diesen Lead stimmt - aus echter Website-Recherche, nicht "Mir ist aufgefallen, dass ihr...".</p></div>
-    <div class="card"><div class="ec-icon">&#128279;</div><span class="tag">LinkedIn</span><h3 style="margin:14px 0 8px">Conversation-First Social Selling</h3><p>Connection, dann Gespraech statt Pitch. Keine Spam-Flags, echte Antworten von Entscheidern.</p></div>
-    <div class="card"><div class="ec-icon">&#127916;</div><span class="tag">Video</span><h3 style="margin:14px 0 8px">KI-personalisierte Videos</h3><p>Ein Video, in dessen Hintergrund die Website oder Stellenanzeige des Leads laeuft. Skaliert auf tausende - jedes wirkt einzeln gedreht.<span class="play">Beispiel ansehen</span></p></div>
+    <div class="card"><div class="ec-icon">&#9993;</div><span class="tag">E-Mail</span><h3 style="margin:14px 0 8px">Cold Email mit Research-Opener</h3><p>Jede Mail startet mit einem Satz, der nur für diesen Lead stimmt - aus echter Website-Recherche, nicht "Mir ist aufgefallen, dass ihr...".</p></div>
+    <div class="card"><div class="ec-icon">&#128279;</div><span class="tag">LinkedIn</span><h3 style="margin:14px 0 8px">Conversation-First Social Selling</h3><p>Connection, dann Gespräch statt Pitch. Keine Spam-Flags, echte Antworten von Entscheidern.</p></div>
+    <div class="card"><div class="ec-icon">&#127916;</div><span class="tag">Video</span><h3 style="margin:14px 0 8px">KI-personalisierte Videos</h3><p>Ein Video, in dessen Hintergrund die Website oder Stellenanzeige des Leads läuft. Skaliert auf tausende - jedes wirkt einzeln gedreht.<span class="play">Beispiel ansehen</span></p></div>
     <div class="card"><div class="ec-icon">&#9889;</div><span class="tag">Signal</span><h3 style="margin:14px 0 8px">Signal-getriggertes Timing</h3><p>Neue Stelle, frische Finanzierung, Tech-Wechsel. Wir schreiben im richtigen Moment, nicht auf Verdacht.</p></div>
     <div class="card"><div class="ec-icon">&#127919;</div><span class="tag">ABM</span><h3 style="margin:14px 0 8px">Account-based, mehrere Entscheider</h3><p>Statt einer Person sprechen wir 3-5 Rollen im selben Account koordiniert an - jede mit ihrer eigenen Botschaft.</p></div>
-    <div class="card"><div class="ec-icon">&#128172;</div><span class="tag">Reply</span><h3 style="margin:14px 0 8px">Reply-Handling, das Termine macht</h3><p>Jede Antwort - auch Einwaende - wird so behandelt, dass aus Interesse ein Kalendereintrag wird.</p></div>
+    <div class="card"><div class="ec-icon">&#128172;</div><span class="tag">Reply</span><h3 style="margin:14px 0 8px">Reply-Handling, das Termine macht</h3><p>Jede Antwort - auch Einwände - wird so behandelt, dass aus Interesse ein Kalendereintrag wird.</p></div>
   </div>
 </div></section>
 
@@ -337,31 +345,31 @@ gerade bin ich auf <span class="v">{Firma}</span> gestossen und mir ist aufgefal
 
 <span class="v">{Problem in einem Satz}</span>.
 
-Wir helfen Teams wie eurem genau dabei: <span class="v">{Loesung in einem Satz}</span>.
+Wir helfen Teams wie eurem genau dabei: <span class="v">{Lösung in einem Satz}</span>.
 
-Haette das Sinn fuer <span class="v">{Firma}</span>?
+Hätte das Sinn für <span class="v">{Firma}</span>?
 
-Beste Gruesse
+Beste Grüße
 <span class="v">{Absender}</span></div>
     </div>
-    <p class="center note" style="max-width:560px;margin:18px auto 0">4 Schritte: Beobachtung, Problem, Insight, No-Brainer-Frage. Max. 2 Saetze pro Block, kein Marketing-Brei, jede Variable echt befuellt.</p>
+    <p class="center note" style="max-width:560px;margin:18px auto 0">4 Schritte: Beobachtung, Problem, Insight, No-Brainer-Frage. Max. 2 Sätze pro Block, kein Marketing-Brei, jede Variable echt befüllt.</p>
   </div>
 
   <div class="chan rv" id="chan-li">
     <div class="li">
-      <div class="bubble step"><span class="badge2">Schritt 1 - Vernetzung</span><div class="who">Connection Request</div>Kurz, ohne Pitch. Oft nur die Vernetzung - der Verkauf kommt spaeter im Gespraech.</div>
-      <div class="bubble step"><span class="badge2">Schritt 2 - DM nach Annahme</span><div class="who">Du an <span class="v">{Vorname}</span></div>Hallo <span class="v">{Nachname}</span>, Glueckwunsch zur neuen Rolle bei <span class="v">{Firma}</span>.
+      <div class="bubble step"><span class="badge2">Schritt 1 - Vernetzung</span><div class="who">Connection Request</div>Kurz, ohne Pitch. Oft nur die Vernetzung - der Verkauf kommt später im Gespräch.</div>
+      <div class="bubble step"><span class="badge2">Schritt 2 - DM nach Annahme</span><div class="who">Du an <span class="v">{Vorname}</span></div>Hallo <span class="v">{Nachname}</span>, Glückwunsch zur neuen Rolle bei <span class="v">{Firma}</span>.
 
 In den ersten 100 Tagen sehen wir oft: <span class="v">{relevante Beobachtung}</span>.
 
-Waere spannend, wie ihr das angeht.
+Wäre spannend, wie ihr das angeht.
 
-Beste Gruesse, <span class="v">{Absender}</span></div>
-      <div class="bubble step"><span class="badge2">Schritt 3 - Follow-up</span><div class="who">Du an <span class="v">{Vorname}</span></div>Ein Use-Case, der bei euch haeufig haengenbleibt: <span class="v">{konkreter Fall}</span>.
+Beste Grüße, <span class="v">{Absender}</span></div>
+      <div class="bubble step"><span class="badge2">Schritt 3 - Follow-up</span><div class="who">Du an <span class="v">{Vorname}</span></div>Ein Use-Case, der bei euch häufig hängenbleibt: <span class="v">{konkreter Fall}</span>.
 
 Klingt das vertraut?</div>
     </div>
-    <p class="center note" style="max-width:560px;margin:18px auto 0">Gespraech statt Pitch. Keine Aufzaehlungen, keine "kurzer Nachfass"-Floskeln - das sind die Muster, die Outreach verbrennen.</p>
+    <p class="center note" style="max-width:560px;margin:18px auto 0">Gespräch statt Pitch. Keine Aufzählungen, keine "kurzer Nachfass"-Floskeln - das sind die Muster, die Outreach verbrennen.</p>
   </div>
 </div></section>
 
@@ -370,8 +378,8 @@ Klingt das vertraut?</div>
   <div class="rv">
     <div class="eyebrow">Personalisierte KI-Videos</div>
     <h2>Ein Video, das <span class="hl">eure Website kennt</span>.</h2>
-    <p class="lead">Stell dir vor, dein Lead oeffnet ein kurzes Video - und im Hintergrund scrollt seine eigene Website oder seine Stellenanzeige. Oben poppt unsere Nachricht auf. Das fuehlt sich an wie einzeln gedreht, laeuft aber automatisiert auf tausende Leads.</p>
-    <p class="lead" style="margin-top:14px">Genau so ein Video bauen wir auch fuer <!-- SLOT:COMPANY START -->dein Unternehmen<!-- SLOT:COMPANY END -->.</p>
+    <p class="lead">Stell dir vor, dein Lead öffnet ein kurzes Video - und im Hintergrund scrollt seine eigene Website oder seine Stellenanzeige. Oben poppt unsere Nachricht auf. Das fühlt sich an wie einzeln gedreht, läuft aber automatisiert auf tausende Leads.</p>
+    <p class="lead" style="margin-top:14px">Genau so ein Video bauen wir auch für <!-- SLOT:COMPANY START -->dein Unternehmen<!-- SLOT:COMPANY END -->.</p>
     <a class="btn btn-ghost" href="#fragebogen" style="margin-top:24px" onclick="track('cta_video')">Im Termin live sehen</a>
   </div>
   <div class="rv">
@@ -380,7 +388,7 @@ Klingt das vertraut?</div>
       <!-- SLOT:LEAD_WEBSITE_SHOT START --><div class="shot"></div><!-- SLOT:LEAD_WEBSITE_SHOT END -->
       <div class="vov">
         <div class="vovt"><img class="vov-face" src="https://grundwerk.digital/favicon.ico" alt="Absender"></div>
-        <div class="vovb">"Hey <!-- SLOT:LEAD_FIRST START -->zusammen<!-- SLOT:LEAD_FIRST END -->, wusstest du, dass wir <b>KI-personalisierte Videos</b> fuer euren Outreach machen?"</div>
+        <div class="vovb">"Hey <!-- SLOT:LEAD_FIRST START -->zusammen<!-- SLOT:LEAD_FIRST END -->, wusstest du, dass wir <b>KI-personalisierte Videos</b> für euren Outreach machen?"</div>
       </div>
     </div>
     <p class="note center" style="margin-top:14px">Mockup - im Termin zeigen wir dir ein echtes, auf euch gerendertes Video.</p>
@@ -394,7 +402,7 @@ Klingt das vertraut?</div>
   <div class="grid g3 stagger rv" style="margin-top:42px">
     <div class="card"><div class="vid-frame" style="margin-bottom:18px"><div class="vbar"><i></i><i></i><i></i></div><div class="shot" style="aspect-ratio:16/10"></div><div class="vid-tag">Case-Video</div></div><span class="tag">SaaS</span><h3 style="margin:12px 0 6px">28 Termine in 74 Tagen</h3><p>240.000 EUR ARR abgeschlossen. - Birdsview</p></div>
     <div class="card"><div class="vid-frame" style="margin-bottom:18px"><div class="vbar"><i></i><i></i><i></i></div><div class="shot" style="aspect-ratio:16/10"></div><div class="vid-tag">Case-Video</div></div><span class="tag">Agentur</span><h3 style="margin:12px 0 6px">20 Opportunities in 13 Tagen</h3><p>Onboarding in 5 Tagen, dann lief die Pipeline. - Peer Studios</p></div>
-    <div class="card"><div class="vid-frame" style="margin-bottom:18px"><div class="vbar"><i></i><i></i><i></i></div><div class="shot" style="aspect-ratio:16/10"></div><div class="vid-tag">Case-Video</div></div><span class="tag">Events</span><h3 style="margin:12px 0 6px">397 Leads ueber 12 Events</h3><p>Zuverlaessig hochwertige Teilnehmer. - Smart Bridges</p></div>
+    <div class="card"><div class="vid-frame" style="margin-bottom:18px"><div class="vbar"><i></i><i></i><i></i></div><div class="shot" style="aspect-ratio:16/10"></div><div class="vid-tag">Case-Video</div></div><span class="tag">Events</span><h3 style="margin:12px 0 6px">397 Leads über 12 Events</h3><p>Zuverlässig hochwertige Teilnehmer. - Smart Bridges</p></div>
   </div>
 </div></section>
 
@@ -416,15 +424,15 @@ Klingt das vertraut?</div>
 <section class="sec" style="background:var(--bg2);border-block:1px solid var(--line)"><div class="wrap">
   <div class="center rv"><div class="eyebrow">Funktioniert in deiner Welt</div>
   <h2>Wie das System pro <span class="hl">Branche</span> spielt.</h2>
-  <p class="lead center">Das Prinzip bleibt, die Hebel aendern sich. Ein Auszug, wie wir Outreach je Zielgruppe fahren:</p></div>
+  <p class="lead center">Das Prinzip bleibt, die Hebel ändern sich. Ein Auszug, wie wir Outreach je Zielgruppe fahren:</p></div>
   <div class="uc rv" style="margin-top:40px">
     <div class="uc-row"><div class="uc-num">01</div><div><h3>Recruiting & Personalberatung</h3><p>Cold Email + KI-Video auf Basis der echten Stellenanzeige. Pro offener Position der passende Kandidaten-Hook - skaliert auf tausende Stellen.</p></div></div>
-    <div class="uc-row"><div class="uc-num">02</div><div><h3>Handwerk, SHK & Energie</h3><p>Regionale Firmen aus Maps, Gelben Seiten und Fachpartner-Listen, angereichert mit Spezialisierung (Waermepumpe, Solar) und Ort - dann Cold Email mit lokalem Opener.</p></div></div>
-    <div class="uc-row"><div class="uc-num">03</div><div><h3>Hotellerie & Hospitality</h3><p>Hoteldirektoren nach Groesse und Region, angeschrieben mit dem konkreten Engpass im Betrieb statt generischem Pitch.</p></div></div>
-    <div class="uc-row"><div class="uc-num">04</div><div><h3>E-Commerce & Shops</h3><p>Shops nach Tech-Stack (Shopify, Klaviyo) gefiltert, Nachricht auf die echte Plattform und Listengroesse zugeschnitten.</p></div></div>
-    <div class="uc-row"><div class="uc-num">05</div><div><h3>Healthcare & Pflege</h3><p>Einrichtungen nach Typ und Spezialisierung, Research-Opener aus der echten Website - compliance-bewusst, persoenlich.</p></div></div>
+    <div class="uc-row"><div class="uc-num">02</div><div><h3>Handwerk, SHK & Energie</h3><p>Regionale Firmen aus Maps, Gelben Seiten und Fachpartner-Listen, angereichert mit Spezialisierung (Wärmepumpe, Solar) und Ort - dann Cold Email mit lokalem Opener.</p></div></div>
+    <div class="uc-row"><div class="uc-num">03</div><div><h3>Hotellerie & Hospitality</h3><p>Hoteldirektoren nach Größe und Region, angeschrieben mit dem konkreten Engpass im Betrieb statt generischem Pitch.</p></div></div>
+    <div class="uc-row"><div class="uc-num">04</div><div><h3>E-Commerce & Shops</h3><p>Shops nach Tech-Stack (Shopify, Klaviyo) gefiltert, Nachricht auf die echte Plattform und Listengröße zugeschnitten.</p></div></div>
+    <div class="uc-row"><div class="uc-num">05</div><div><h3>Healthcare & Pflege</h3><p>Einrichtungen nach Typ und Spezialisierung, Research-Opener aus der echten Website - compliance-bewusst, persönlich.</p></div></div>
     <div class="uc-row"><div class="uc-num">06</div><div><h3>Software & Tech-Startups</h3><p>Signal-basiert: frische Finanzierung, Hiring-Spike, neuer Head-of. Multichannel aus E-Mail, LinkedIn und Video in genau dem Fenster.</p></div></div>
-    <div class="uc-row"><div class="uc-num">07</div><div><h3>Industrie & Fertigung</h3><p>Firmen aus Kammer-Registern nach Groesse und Teilbranche, angeschrieben mit dem typischen Prozess-Schmerz der Geschaeftsfuehrung.</p></div></div>
+    <div class="uc-row"><div class="uc-num">07</div><div><h3>Industrie & Fertigung</h3><p>Firmen aus Kammer-Registern nach Größe und Teilbranche, angeschrieben mit dem typischen Prozess-Schmerz der Geschäftsführung.</p></div></div>
   </div>
 </div></section>
 
@@ -432,13 +440,11 @@ Klingt das vertraut?</div>
 <section class="sec" id="cases"><div class="wrap">
   <div class="center rv"><div class="eyebrow">Vertrauen</div>
   <h2>Marken, die mit uns <span class="hl">wachsen</span>.</h2></div>
-  <div class="logos rv">
-    <span>Birdsview</span><span>Peer Studios</span><span>Smart Bridges</span><span>greenlovers</span><span>cervis</span><span>Hivebuy</span><span>CCV</span><span>pplwise</span><span>Digital Now</span>
-  </div>
+  <div class="logo-grid rv"><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/piabo.png" alt="PIABO" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/smart-bridges.png" alt="Smart Bridges" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/peer-studios.png" alt="Peer Studios" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/birdsview.png" alt="BirdsView" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/hivebuy.png" alt="Hivebuy" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/pplwise.png" alt="pplwise" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/ccv.png" alt="CCV" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/cervis.png" alt="cervis" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/cocomin.png" alt="COCOMIN" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/egroup.png" alt="eGroup" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/stackfuel.png" alt="stackfuel" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/raidboxes.png" alt="raidboxes" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/arrowtec.png" alt="ARROWTEC" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/wachstums-werkstatt.png" alt="Wachstums Werkstatt" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/our-greenery.png" alt="our greenery" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/famedly.png" alt="Famedly" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/automations-de.png" alt="Automations.de" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/salz.png" alt="salz" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/happy-gang.png" alt="Happy Gang" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/unicorn.png" alt="unicorn" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/prevail.png" alt="PREVAIL" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/vertexgo.png" alt="VertexGo" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/xdi.png" alt="XDi" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/digital-now.png" alt="Digital Now" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/ihlenfeldt.png" alt="Ihlenfeldt" loading="lazy"></div></div>
   <div class="grid g3 stagger rv" style="margin-top:48px">
     <div class="card"><div class="quote">"Das Grundwerk-Team lebt KI und treibt unsere Sales-Prozesse mit minimalem internen Aufwand."</div><div class="quote-who"><b>Tim Kuesters</b>CEO, Birdsview</div></div>
     <div class="card"><div class="quote">"Onboarding in 5 Tagen fertig, dann lief die Pipeline planbar. Genau das, was wir brauchten."</div><div class="quote-who"><b>Lasse Petry</b>Co-Founder, Peer Studios</div></div>
-    <div class="card"><div class="quote">"Individuell und professionell betreut. Das System lieferte zuverlaessig hochwertige Teilnehmer."</div><div class="quote-who"><b>Ingo Boldt</b>Geschaeftsfuehrer, Smart Bridges</div></div>
+    <div class="card"><div class="quote">"Individuell und professionell betreut. Das System lieferte zuverlaessig hochwertige Teilnehmer."</div><div class="quote-who"><b>Ingo Boldt</b>Geschäftsführer, Smart Bridges</div></div>
   </div>
 </div></section>
 
@@ -446,7 +452,7 @@ Klingt das vertraut?</div>
 <section class="sec" id="fragebogen" style="background:radial-gradient(700px 360px at 50% 0,rgba(0,102,255,.12),transparent 60%)"><div class="wrap">
   <div class="center rv" style="margin-bottom:34px"><div class="eyebrow">2 Minuten vor unserem Termin</div>
   <h2>Der <span class="hl">Fragebogen</span>.</h2>
-  <p class="lead center">Damit unser Gespraech von der ersten Minute zaehlt: ein paar kurze Fragen zu eurem Setup. Keine Pflichtfelder, kein Verkaufsgespraech - nur Kontext.</p></div>
+  <p class="lead center">Damit unser Gespräch von der ersten Minute zählt: ein paar kurze Fragen zu eurem Setup. Keine Pflichtfelder, kein Verkaufsgespräch - nur Kontext.</p></div>
 
   <div class="qz rv">
     <div class="qz-top"><div class="qz-prog"><i id="prog"></i></div><div class="qz-step" id="stepc">Frage 1</div></div>
@@ -462,8 +468,8 @@ Klingt das vertraut?</div>
       </div>
 
       <div class="qz-q" data-id="channels" data-type="multi" data-when="done_outreach=ja">
-        <h3>Ueber welche Kanaele lief das?</h3>
-        <div class="hint">Mehrfachauswahl moeglich.</div>
+        <h3>Über welche Kanäle lief das?</h3>
+        <div class="hint">Mehrfachauswahl möglich.</div>
         <div class="chips">
           <div class="chip" data-val="email" onclick="pickChip(this)">E-Mail</div>
           <div class="chip" data-val="linkedin" onclick="pickChip(this)">LinkedIn</div>
@@ -473,17 +479,17 @@ Klingt das vertraut?</div>
       </div>
 
       <div class="qz-q" data-id="tools" data-type="multi" data-when="done_outreach=ja">
-        <h3>Welche Tools habt ihr dafuer benutzt?</h3>
+        <h3>Welche Tools habt ihr dafür benutzt?</h3>
         <div class="hint">Tipp einfach an, was passt - oder lass es leer.</div>
         <div class="chips">
-          <div class="chip" data-val="instantly" onclick="pickChip(this)">Instantly</div>
-          <div class="chip" data-val="lemlist" onclick="pickChip(this)">Lemlist</div>
-          <div class="chip" data-val="apollo" onclick="pickChip(this)">Apollo</div>
-          <div class="chip" data-val="clay" onclick="pickChip(this)">Clay</div>
-          <div class="chip" data-val="heyreach" onclick="pickChip(this)">HeyReach</div>
+          <div class="chip" data-val="instantly" onclick="pickChip(this)"><img class="chip-logo" src="https://start.grundwerk.digital/assets/tools/instantly.svg" alt="">Instantly</div>
+          <div class="chip" data-val="lemlist" onclick="pickChip(this)"><img class="chip-logo" src="https://start.grundwerk.digital/assets/tools/lemlist.svg" alt="">Lemlist</div>
+          <div class="chip" data-val="apollo" onclick="pickChip(this)"><img class="chip-logo" src="https://start.grundwerk.digital/assets/tools/apollo.svg" alt="">Apollo</div>
+          <div class="chip" data-val="clay" onclick="pickChip(this)"><img class="chip-logo" src="https://start.grundwerk.digital/assets/tools/clay.svg" alt="">Clay</div>
+          <div class="chip" data-val="heyreach" onclick="pickChip(this)"><img class="chip-logo" src="https://start.grundwerk.digital/assets/tools/heyreach.svg" alt="">HeyReach</div>
           <div class="chip" data-val="lgm" onclick="pickChip(this)">La Growth Machine</div>
-          <div class="chip" data-val="hubspot" onclick="pickChip(this)">HubSpot</div>
-          <div class="chip" data-val="pipedrive" onclick="pickChip(this)">Pipedrive</div>
+          <div class="chip" data-val="hubspot" onclick="pickChip(this)"><img class="chip-logo" src="https://start.grundwerk.digital/assets/tools/hubspot.svg" alt="">HubSpot</div>
+          <div class="chip" data-val="pipedrive" onclick="pickChip(this)"><img class="chip-logo" src="https://start.grundwerk.digital/assets/tools/pipedrive.svg" alt="">Pipedrive</div>
           <div class="chip" data-val="andere" onclick="pickChip(this)">Andere</div>
           <div class="chip" data-val="keine" onclick="pickChip(this)">Keine / unsicher</div>
         </div>
@@ -491,10 +497,10 @@ Klingt das vertraut?</div>
 
       <div class="qz-q" data-id="info_ready" data-type="single" data-when="done_outreach=nein">
         <h3>Wo steht ihr gerade?</h3>
-        <div class="hint">Beides ist voellig ok - hilft uns nur, das Gespraech richtig aufzusetzen.</div>
+        <div class="hint">Beides ist voellig ok - hilft uns nur, das Gespräch richtig aufzusetzen.</div>
         <div class="opts">
           <div class="opt" data-val="ready" onclick="pickOne(this)"><span class="rd"></span>Wir wollen Outreach machen, suchen den richtigen Weg</div>
-          <div class="opt" data-val="info" onclick="pickOne(this)"><span class="rd"></span>Erstmal informieren, ob das fuer uns passt</div>
+          <div class="opt" data-val="info" onclick="pickOne(this)"><span class="rd"></span>Erstmal informieren, ob das für uns passt</div>
         </div>
       </div>
 
@@ -522,7 +528,7 @@ Klingt das vertraut?</div>
         <h3>Habt ihr schon mal mit einer Agentur in dem Bereich gearbeitet?</h3>
         <div class="opts">
           <div class="opt" data-val="ja-gut" onclick="pickOne(this)"><span class="rd"></span>Ja, mit guter Erfahrung</div>
-          <div class="opt" data-val="ja-schlecht" onclick="pickOne(this)"><span class="rd"></span>Ja, war aber enttaeuschend</div>
+          <div class="opt" data-val="ja-schlecht" onclick="pickOne(this)"><span class="rd"></span>Ja, war aber enttäuschend</div>
           <div class="opt" data-val="nein" onclick="pickOne(this)"><span class="rd"></span>Nein, noch nie</div>
         </div>
       </div>
@@ -532,13 +538,13 @@ Klingt das vertraut?</div>
         <div class="opts">
           <div class="opt" data-val="ja-eingerichtet" onclick="pickOne(this)"><span class="rd"></span>Ja, sauber eingerichtet</div>
           <div class="opt" data-val="ja-roh" onclick="pickOne(this)"><span class="rd"></span>Ja, aber nicht richtig eingerichtet</div>
-          <div class="opt" data-val="nein-spannend" onclick="pickOne(this)"><span class="rd"></span>Nein - aber waere spannend</div>
+          <div class="opt" data-val="nein-spannend" onclick="pickOne(this)"><span class="rd"></span>Nein - aber wäre spannend</div>
           <div class="opt" data-val="nein-egal" onclick="pickOne(this)"><span class="rd"></span>Nein, brauchen wir nicht</div>
         </div>
       </div>
 
       <div class="qz-q" data-id="interest" data-type="multi">
-        <h3>Was davon ist fuer euch spannend?</h3>
+        <h3>Was davon ist für euch spannend?</h3>
         <div class="hint">Mehrfachauswahl.</div>
         <div class="chips">
           <div class="chip" data-val="email" onclick="pickChip(this)">E-Mail-Outreach</div>
@@ -550,7 +556,7 @@ Klingt das vertraut?</div>
 
       <div class="qz-q" data-id="contact" data-type="contact">
         <h3>Fast geschafft.</h3>
-        <div class="hint">Damit wir die Antworten eurem Termin zuordnen koennen (optional).</div>
+        <div class="hint">Damit wir die Antworten eurem Termin zuordnen können (optional).</div>
         <input id="q-name" placeholder="Dein Name" value="<!-- SLOT:LEAD_NAME START --><!-- SLOT:LEAD_NAME END -->">
         <input id="q-email" type="email" placeholder="E-Mail (optional)">
       </div>
@@ -561,13 +567,13 @@ Klingt das vertraut?</div>
           <h3>Danke - das hilft enorm.</h3>
           <p style="margin:10px 0 22px">Wir gehen die Antworten vor dem Termin durch. Bis gleich!</p>
           <a class="btn btn-blue" href="https://calendly.com/anthony-katzur/grundwerk-termin-buchen" onclick="track('cta_reschedule')">Termin verschieben</a>
-          <a class="btn btn-ghost" href="#top" style="margin-left:8px">Zurueck nach oben</a>
+          <a class="btn btn-ghost" href="#top" style="margin-left:8px">Zurück nach oben</a>
         </div>
       </div>
 
     </div>
     <div class="qz-nav" id="qznav">
-      <button class="btn btn-ghost btn-sm" id="back" onclick="qBack()" style="visibility:hidden">Zurueck</button>
+      <button class="btn btn-ghost btn-sm" id="back" onclick="qBack()" style="visibility:hidden">Zurück</button>
       <button class="btn btn-blue btn-sm" id="next" onclick="qNext()">Weiter</button>
     </div>
   </div>
@@ -581,9 +587,9 @@ Klingt das vertraut?</div>
       <h2 style="margin-bottom:14px">Hol dir eine erste <span class="hl">Outreach-Strategie</span>.</h2>
       <p class="lead">Sag uns kurz, wer eure Zielkunden sind - unsere KI entwirft daraus eine erste Outreach-Grundstrategie (Zielgruppe, Kanal-Mix, Angle) und schickt sie dir zu.</p>
       <input id="lm-target" placeholder="Wer ist eure Zielgruppe? (z.B. Hotels in DACH ab 50 Zimmern)">
-      <input id="lm-email" type="email" placeholder="Wohin duerfen wir sie schicken?">
+      <input id="lm-email" type="email" placeholder="Wohin dürfen wir sie schicken?">
       <button class="btn btn-blue" onclick="lmSubmit()" style="width:100%;justify-content:center">Strategie kostenlos anfordern</button>
-      <p class="note">Natuerlich entwickeln wir gemeinsam eine deutlich bessere - das hier ist eine solide Grundstrategie als Vorgeschmack.</p>
+      <p class="note">Natürlich entwickeln wir gemeinsam eine deutlich bessere - das hier ist eine solide Grundstrategie als Vorgeschmack.</p>
     </div>
     <div class="lm-flow">
       <div class="node"><b>1</b>&nbsp; 75+ Datenanbieter ziehen passende Firmen</div>
@@ -601,14 +607,14 @@ Klingt das vertraut?</div>
 <footer class="footer"><div class="wrap">
   <div class="footer-grid">
     <div>
-      <a class="brand" href="https://grundwerk.digital" style="margin-bottom:16px"><img class="brand-logo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%230066ff'/%3E%3Ctext x='32' y='46' font-family='Arial,Helvetica,sans-serif' font-size='44' font-weight='800' fill='white' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E" alt="Grundwerk Digital">Grundwerk<span class="dot">.</span></a>
-      <p style="max-width:42ch;font-size:15px">Dein Agentur-Partner fuer effiziente KI-Kaltakquise-Prozesse. Wir automatisieren deine Vertriebsprozesse und uebernehmen die noetige Software, um mit minimalem Zeitaufwand und Kosten maximale Renditen zu erwirtschaften.</p>
+      <a class="brand" href="https://grundwerk.digital" style="margin-bottom:16px"><img class="brand-logo-img" src="https://start.grundwerk.digital/assets/grundwerk-logo.png" alt="Grundwerk Digital"></a>
+      <p style="max-width:42ch;font-size:15px">Dein Agentur-Partner für effiziente KI-Kaltakquise-Prozesse. Wir automatisieren deine Vertriebsprozesse und übernehmen die nötige Software, um mit minimalem Zeitaufwand und Kosten maximale Renditen zu erwirtschaften.</p>
       <p style="margin-top:16px;font-size:15px;color:var(--mut)">Kontakt: <a href="tel:+4915888573752" style="display:inline;color:var(--fg)">+49 15888 573752</a></p>
     </div>
     <div>
       <h4>Sektionen</h4>
       <a href="https://grundwerk.digital">Home</a>
-      <a href="https://grundwerk.digital/ueber-uns">Über uns</a>
+      <a href="https://grundwerk.digital/über-uns">Über uns</a>
       <a href="https://grundwerk.digital/kontakt">Kontakt</a>
       <a href="https://grundwerk.digital/values">Unsere Werte</a>
     </div>
@@ -715,7 +721,7 @@ function qNext(){
     qAns.name=document.getElementById("q-name").value; qAns.email=document.getElementById("q-email").value;
     submitQuiz();
   }
-  if(qi<qOrder.length-1){qi++;showStep();document.getElementById("fragebogen").scrollIntoView({behavior:"smooth"});}
+  if(qi<qOrder.length-1){qi++;showStep();}  /* no scroll jump on advance (Tom 2026-06-15) */
 }
 function qBack(){if(qi>0){qi--;showStep();}}
 function submitQuiz(){
