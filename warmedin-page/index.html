@@ -518,4 +518,30 @@ Genau deshalb ist Sichtbarkeit kein Nice-to-have.<!-- SLOT:POST_NACHHER_2 END --
 <!-- SLOT:RASTER_DATA START --><script type="application/json" id="warmedin-raster-data">{"generated_at":"","lead":{"name":"Jonas Berger","handle":"jonas-berger","posts":[]},"competitors":[],"assets_base":"../warmedin/assets/"}</script><!-- SLOT:RASTER_DATA END -->
 <script>try{window.WARMEDIN_RASTER=JSON.parse(document.getElementById("warmedin-raster-data").textContent);}catch(e){console.error("raster data parse",e);}</script>
 <script src="../warmedin/assets/raster.js" defer></script>
-<script>(function(){var T='https://n8n.grundwerk.digital/webhook/warmedin-track';function sl(){var p=location.pathname.replace(/^\/+|\/+$/g,'').split('/')[0];return p||'warmedin';}setTimeout(function(){if(document.documentElement.style.display==='none')return;try{fetch(T,{method:'POST',headers:{'Content-Type':'application/json'},keepalive:true,body:JSON.stringify({page_slug:sl(),event:'view'})});}catch(e){}},5000);})();</script></body></html>
+<script>(function(){var T='https://n8n.grundwerk.digital/webhook/warmedin-track';function sl(){var p=location.pathname.replace(/^\/+|\/+$/g,'').split('/')[0];return p||'warmedin';}setTimeout(function(){if(document.documentElement.style.display==='none')return;try{fetch(T,{method:'POST',headers:{'Content-Type':'application/json'},keepalive:true,body:JSON.stringify({page_slug:sl(),event:'view'})});}catch(e){}},5000);})();</script>
+<!-- ===================== 30s LINKEDIN-POPUP (lead-agnostic default; per-lead override durch popup-<slug>.html moeglich) ===================== -->
+<style>
+.popwrap{position:fixed;inset:0;z-index:1100;display:none}
+.popwrap.on{display:block}
+.popwrap iframe{width:100%;height:100%;border:0}
+.popclose{position:fixed;top:18px;right:22px;z-index:1101;width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid #ddd;font-size:20px;font-weight:700;cursor:pointer;display:none;box-shadow:0 4px 14px rgba(0,0,0,.2)}
+.popclose.on{display:block}
+</style>
+<div class="popwrap" id="pop"><button class="popclose" id="popclose" aria-label="Schliessen">&times;</button><iframe id="popframe" src="https://start.grundwerk.digital/warmedin/assets/popups/popup-lead.html?v=1" title="Angebot"></iframe></div>
+<script>
+(function(){
+  var pop=document.getElementById('pop'),popframe=document.getElementById('popframe'),popclose=document.getElementById('popclose');
+  if(!pop)return;
+  function openPop(){pop.classList.add('on');popclose.classList.add('on');}
+  function closePop(){pop.classList.remove('on');popclose.classList.remove('on');if(popframe){popframe.setAttribute('src',popframe.getAttribute('src'));}}
+  var shown=false;function showPop(){if(shown)return;shown=true;openPop();}
+  setTimeout(showPop,30000);
+  popclose.addEventListener('click',closePop);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closePop();});
+  window.addEventListener('message',function(e){
+    if(e.data==='wm-close-popup')closePop();
+    if(e.data==='wm-goto-generator'){closePop();var g=document.querySelector('.wg-gen');if(g)g.scrollIntoView({behavior:'smooth'});}
+  });
+})();
+</script>
+</body></html>
