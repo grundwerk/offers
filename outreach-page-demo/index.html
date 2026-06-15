@@ -1,0 +1,729 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Muster GmbH &times; Grundwerk</title>
+<meta name="robots" content="noindex,nofollow">
+<!-- OG / Link-Unfurl (G10) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://start.grundwerk.digital/outreach-page-demo/">
+<meta property="og:title" content="Muster GmbH x Grundwerk - dein Outreach-System">
+<meta property="og:description" content="Wie wir fuer dich planbar Termine generieren: Cold Email, LinkedIn und KI-personalisierte Videos. Sieh es sektion-fuer-sektion - und fuell den 2-Minuten-Fragebogen vor unserem Termin aus.">
+<meta property="og:image" content="https://start.grundwerk.digital/assets/og/outreach-page-demo.png">
+<meta property="og:image:secure_url" content="https://start.grundwerk.digital/assets/og/outreach-page-demo.png">
+<meta name="twitter:image" content="https://start.grundwerk.digital/assets/og/outreach-page-demo.png">
+<meta property="og:image:alt" content="Outreach-Seite fuer Muster GmbH">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Muster GmbH x Grundwerk - dein Outreach-System">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230066ff'/%3E%3Ctext x='32' y='45' font-family='Arial,Helvetica,sans-serif' font-size='42' font-weight='700' fill='white' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230066ff'/%3E%3Ctext x='32' y='45' font-family='Arial,Helvetica,sans-serif' font-size='42' font-weight='700' fill='white' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=inter@400,500,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0e0e10;            /* canvas, matches grundwerk.digital #121212 family, a touch deeper */
+  --bg2:#141417;          /* panel */
+  --bg3:#1a1a1f;          /* raised */
+  --line:rgba(255,255,255,.09);
+  --line2:rgba(255,255,255,.14);
+  --fg:#f4f5f7;
+  --mut:#a0a3ab;
+  --mut2:#73767e;
+  --blue:#0066ff;         /* Grundwerk Blue (SoT) */
+  --blue-soft:rgba(0,102,255,.14);
+  --blue-line:rgba(0,102,255,.40);
+  --ok:#22c55e;
+  --radius:14px;
+  --radius-s:10px;
+  --maxw:1120px;
+  --ff-d:"Clash Display","Clash Display Placeholder",system-ui,sans-serif;
+  --ff-b:"Inter","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--ff-b);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--ff-d);font-weight:600;line-height:1.08;letter-spacing:-.02em}
+h1{font-size:clamp(34px,5.2vw,62px)}
+h2{font-size:clamp(27px,3.6vw,42px)}
+h3{font-size:clamp(19px,2vw,23px)}
+p{color:var(--mut)}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.sec{padding:96px 0;position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--ff-b);font-weight:600;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:18px}
+.eyebrow::before{content:"";width:22px;height:1px;background:var(--blue)}
+.lead{font-size:19px;color:var(--mut);max-width:62ch}
+.hl{color:var(--blue)}
+.center{text-align:center}
+.center .lead{margin-left:auto;margin-right:auto}
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--ff-b);font-weight:600;font-size:15.5px;border-radius:12px;padding:14px 22px;cursor:pointer;border:1px solid transparent;transition:transform .15s ease,background .15s ease,border-color .15s}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-blue:hover{transform:translateY(-2px);background:#1f78ff}
+.btn-ghost{background:transparent;color:var(--fg);border-color:var(--line2)}
+.btn-ghost:hover{border-color:var(--blue-line);color:#fff}
+.btn-sm{padding:10px 16px;font-size:14px;border-radius:10px}
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:60;backdrop-filter:blur(14px);background:rgba(14,14,16,.72);border-bottom:1px solid var(--line)}
+.nav-in{max-width:var(--maxw);margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:22px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--ff-d);font-weight:700;font-size:19px;letter-spacing:-.01em}
+.brand .dot{color:var(--blue)}
+.brand-logo{height:26px;width:26px;border-radius:7px;display:inline-block;vertical-align:middle}
+.nav-links{display:flex;gap:22px;margin-left:14px}
+.nav-links a{font-size:14.5px;color:var(--mut);transition:color .15s}
+.nav-links a:hover{color:var(--fg)}
+.nav-cta{margin-left:auto}
+@media(max-width:820px){.nav-links{display:none}}
+/* fixed questionnaire CTAs (top-right pill already in nav; bottom-right floating) */
+.fab-quest{position:fixed;right:22px;bottom:22px;z-index:55;box-shadow:0 10px 34px rgba(0,102,255,.34)}
+.fab-quest.hide{opacity:0;pointer-events:none;transform:translateY(12px)}
+/* reveal */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+.stagger>*{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}
+.stagger.in>*{opacity:1;transform:none}
+.stagger.in>*:nth-child(2){transition-delay:.06s}
+.stagger.in>*:nth-child(3){transition-delay:.12s}
+.stagger.in>*:nth-child(4){transition-delay:.18s}
+.stagger.in>*:nth-child(5){transition-delay:.24s}
+.stagger.in>*:nth-child(6){transition-delay:.3s}
+@media(prefers-reduced-motion:reduce){.rv,.stagger>*{opacity:1!important;transform:none!important;transition:none!important}html{scroll-behavior:auto}}
+/* cards / grids */
+.grid{display:grid;gap:18px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){.g2,.g3,.g4{grid-template-columns:1fr}}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);padding:26px;transition:border-color .18s,transform .18s,background .18s}
+.card:hover{border-color:var(--blue-line);transform:translateY(-3px)}
+.tag{display:inline-block;font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);border:1px solid var(--blue-line);border-radius:999px;padding:4px 11px}
+/* footer */
+.footer{border-top:1px solid var(--line);background:#0b0b0d;padding:64px 0 40px}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px}
+@media(max-width:820px){.footer-grid{grid-template-columns:1fr}}
+.footer h4{font-family:var(--ff-b);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut2);margin-bottom:16px}
+.footer a{display:block;color:var(--mut);font-size:15px;padding:5px 0;transition:color .15s}
+.footer a:hover{color:var(--fg)}
+.footer .copy{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--mut2);font-size:13.5px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+/* hero */
+.hero{padding:150px 0 70px;position:relative}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 460px at 72% -8%,rgba(0,102,255,.18),transparent 60%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center;position:relative}
+@media(max-width:940px){.hero-grid{grid-template-columns:1fr;gap:34px}}
+.hero .greet{display:inline-flex;align-items:center;gap:8px;background:var(--bg2);border:1px solid var(--line2);border-radius:999px;padding:7px 15px;font-size:13.5px;color:var(--mut);margin-bottom:22px}
+.hero .greet b{color:var(--fg);font-weight:600}
+.hero h1{margin-bottom:20px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.hero-sub{display:flex;gap:22px;margin-top:26px;flex-wrap:wrap}
+.hero-sub div{font-size:13.5px;color:var(--mut2)}
+.hero-sub b{display:block;font-family:var(--ff-d);font-size:24px;color:var(--fg);font-weight:600}
+.vid-frame{position:relative;border:1px solid var(--line2);border-radius:18px;overflow:hidden;background:#000;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.vid-frame video{width:100%;display:block;aspect-ratio:16/10;object-fit:cover}
+.vid-frame .vbar{position:absolute;top:0;left:0;right:0;height:34px;background:rgba(10,10,12,.7);backdrop-filter:blur(6px);display:flex;align-items:center;gap:6px;padding:0 12px;z-index:2}
+.vid-frame .vbar i{width:10px;height:10px;border-radius:50%;background:#3a3a40;display:block}
+.vid-tag{position:absolute;bottom:12px;left:12px;z-index:2;background:rgba(0,0,0,.6);border:1px solid var(--line2);border-radius:999px;padding:6px 13px;font-size:12.5px;color:var(--fg)}
+/* statbar */
+.statbar{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+@media(max-width:760px){.statbar{grid-template-columns:repeat(2,1fr)}}
+.statbar .s{background:var(--bg2);padding:26px 20px;text-align:center}
+.statbar .s b{display:block;font-family:var(--ff-d);font-size:34px;color:var(--fg);font-weight:600}
+.statbar .s span{font-size:13px;color:var(--mut2)}
+/* edge-cases */
+.play{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:var(--blue);margin-top:14px;font-weight:600}
+.play::before{content:"";width:0;height:0;border-left:9px solid var(--blue);border-top:6px solid transparent;border-bottom:6px solid transparent}
+.ec-icon{width:42px;height:42px;border-radius:11px;background:var(--blue-soft);border:1px solid var(--blue-line);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:16px}
+/* copy showcase */
+.toggle{display:inline-flex;background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:5px;margin:0 auto 30px;gap:4px}
+.toggle button{font-family:var(--ff-b);font-weight:600;font-size:14.5px;color:var(--mut);background:transparent;border:0;border-radius:999px;padding:10px 22px;cursor:pointer;transition:.18s}
+.toggle button.on{background:var(--blue);color:#fff}
+.chan{display:none}
+.chan.on{display:block;animation:fade .4s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.mail{max-width:680px;margin:0 auto;background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.mail .mh{padding:16px 22px;border-bottom:1px solid var(--line);font-size:14px;color:var(--mut)}
+.mail .mh b{color:var(--fg)}
+.mail .mb{padding:24px 22px;color:var(--fg);font-size:15.5px;line-height:1.7;white-space:pre-line}
+.mail .mb .v{color:var(--blue);background:var(--blue-soft);border-radius:5px;padding:0 5px}
+.li{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.bubble{background:var(--bg3);border:1px solid var(--line);border-radius:16px;border-top-left-radius:5px;padding:15px 18px;font-size:15px;color:var(--fg);line-height:1.6;white-space:pre-line;max-width:88%}
+.bubble .who{font-size:12px;color:var(--mut2);margin-bottom:6px;font-weight:600}
+.bubble .v{color:var(--blue);background:var(--blue-soft);border-radius:5px;padding:0 5px}
+.bubble.step{position:relative}
+.bubble .badge2{position:absolute;top:-9px;right:14px;font-size:10.5px;background:var(--blue);color:#fff;border-radius:999px;padding:2px 9px;font-weight:600}
+/* ai video mockup */
+.browser{border:1px solid var(--line2);border-radius:14px;overflow:hidden;background:#000;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.browser .bbar{height:38px;background:#202024;display:flex;align-items:center;gap:7px;padding:0 14px}
+.browser .bbar i{width:11px;height:11px;border-radius:50%;background:#3a3a40}
+.browser .burl{margin-left:12px;font-size:12px;color:var(--mut2);background:#161619;border-radius:6px;padding:4px 12px;flex:1;max-width:340px}
+.browser .shot{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:linear-gradient(135deg,#1a1a1f,#101014)}
+.vov{position:absolute;right:18px;bottom:18px;width:230px;background:var(--bg2);border:1px solid var(--blue-line);border-radius:14px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.6)}
+.vov .vovt{aspect-ratio:16/10;background:#000;position:relative;display:flex;align-items:center;justify-content:center}
+.vov .vovt::after{content:"";width:0;height:0;border-left:18px solid #fff;border-top:11px solid transparent;border-bottom:11px solid transparent;opacity:.92}
+.vov .vovb{padding:12px 14px;font-size:13px;color:var(--fg)}
+.vov .vovb b{color:var(--blue)}
+.vov-face{position:absolute;left:10px;bottom:10px;width:54px;height:54px;border-radius:50%;border:2px solid #fff;object-fit:cover;z-index:2}
+/* provider/scraper pills */
+.pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.pill{background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:10px 18px;font-size:14.5px;color:var(--fg);transition:.16s}
+.pill:hover{border-color:var(--blue-line);color:#fff}
+.pill b{color:var(--blue);font-weight:600}
+/* use cases */
+.uc{border-top:1px solid var(--line)}
+.uc-row{display:grid;grid-template-columns:54px 1fr;gap:22px;padding:28px 0;border-bottom:1px solid var(--line);align-items:start}
+.uc-num{font-family:var(--ff-d);font-size:28px;color:var(--blue);font-weight:600}
+.uc-row h3{margin-bottom:8px}
+/* references */
+.logos{display:flex;flex-wrap:wrap;gap:14px 30px;justify-content:center;align-items:center;margin-top:34px;opacity:.9}
+.logos span{font-family:var(--ff-d);font-weight:600;font-size:18px;color:var(--mut)}
+.quote{font-family:var(--ff-d);font-weight:500;font-size:18px;color:var(--fg);line-height:1.4}
+.quote-who{margin-top:16px;font-size:13.5px;color:var(--mut2)}
+.quote-who b{color:var(--fg);display:block;font-family:var(--ff-b)}
+/* popup (load) */
+.ov{position:fixed;inset:0;z-index:90;background:rgba(6,6,8,.7);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s}
+.ov.on{opacity:1;pointer-events:auto}
+.modal{max-width:460px;width:100%;background:var(--bg2);border:1px solid var(--line2);border-radius:18px;padding:34px;text-align:center;transform:translateY(14px);transition:transform .3s}
+.ov.on .modal{transform:none}
+.modal h3{margin-bottom:12px}
+.modal p{margin-bottom:22px}
+.modal .x{position:absolute;top:18px;right:20px;color:var(--mut2);font-size:24px;cursor:pointer;background:none;border:0}
+/* slide-in back-to-questionnaire */
+.slidein{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--blue);color:#fff;padding:16px 24px;display:flex;align-items:center;justify-content:center;gap:16px;transform:translateY(110%);transition:transform .4s ease;cursor:pointer;font-weight:600}
+.slidein.on{transform:none}
+.slidein .x{position:absolute;right:18px;background:none;border:0;color:#fff;font-size:20px;cursor:pointer;opacity:.8}
+/* questionnaire */
+.qz{max-width:720px;margin:0 auto;background:var(--bg2);border:1px solid var(--line2);border-radius:20px;padding:0;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.4)}
+.qz-top{padding:24px 30px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:14px}
+.qz-prog{flex:1;height:6px;background:var(--bg3);border-radius:999px;overflow:hidden}
+.qz-prog i{display:block;height:100%;width:8%;background:var(--blue);border-radius:999px;transition:width .4s ease}
+.qz-step{font-size:13px;color:var(--mut2);white-space:nowrap}
+.qz-body{padding:34px 30px;min-height:280px}
+.qz-q{display:none}
+.qz-q.on{display:block;animation:fade .35s ease}
+.qz-q h3{margin-bottom:8px}
+.qz-q .hint{color:var(--mut2);font-size:14px;margin-bottom:22px}
+.opts{display:grid;gap:12px}
+.opt{display:flex;align-items:center;gap:13px;background:var(--bg3);border:1px solid var(--line);border-radius:12px;padding:16px 18px;cursor:pointer;transition:.16s;font-size:15.5px;color:var(--fg)}
+.opt:hover{border-color:var(--blue-line)}
+.opt.sel{border-color:var(--blue);background:var(--blue-soft)}
+.opt .rd{width:20px;height:20px;border-radius:50%;border:2px solid var(--line2);flex-shrink:0;transition:.16s}
+.opt.sel .rd{border-color:var(--blue);background:var(--blue);box-shadow:inset 0 0 0 4px var(--bg3)}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{background:var(--bg3);border:1px solid var(--line);border-radius:10px;padding:11px 16px;cursor:pointer;font-size:14.5px;transition:.16s;color:var(--fg)}
+.chip.sel{border-color:var(--blue);background:var(--blue-soft);color:#fff}
+.qz-nav{display:flex;justify-content:space-between;align-items:center;padding:22px 30px;border-top:1px solid var(--line)}
+.qz-done{text-align:center;padding:20px}
+.qz-done .ok{width:64px;height:64px;border-radius:50%;background:var(--blue-soft);border:1px solid var(--blue-line);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:30px;color:var(--blue)}
+/* lead magnet */
+.lm{background:linear-gradient(135deg,var(--bg2),#101014);border:1px solid var(--line2);border-radius:20px;padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+@media(max-width:900px){.lm{grid-template-columns:1fr}}
+.lm-flow{display:flex;flex-direction:column;gap:10px}
+.lm-flow .node{display:flex;align-items:center;gap:12px;background:var(--bg3);border:1px solid var(--line);border-radius:12px;padding:13px 16px;font-size:14px}
+.lm-flow .node b{color:var(--blue);font-family:var(--ff-d)}
+.lm-flow .arr{text-align:center;color:var(--mut2);font-size:13px}
+.lm input{width:100%;background:var(--bg3);border:1px solid var(--line2);border-radius:12px;padding:14px 16px;color:var(--fg);font-family:var(--ff-b);font-size:15px;margin-bottom:12px}
+.lm input:focus{outline:none;border-color:var(--blue)}
+.note{font-size:13px;color:var(--mut2);margin-top:12px}
+</style>
+<noscript><style>.rv,.stagger>*{opacity:1!important;transform:none!important}.ov{display:none!important}</style></noscript>
+</head>
+<body>
+<!-- secure gate (G: var code=) -->
+<script>var code='0000000000';</script>
+
+<!-- NAV -->
+<header class="nav"><div class="nav-in">
+  <a class="brand" href="https://grundwerk.digital"><img class="brand-logo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%230066ff'/%3E%3Ctext x='32' y='46' font-family='Arial,Helvetica,sans-serif' font-size='44' font-weight='800' fill='white' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E" alt="Grundwerk Digital">Grundwerk<span class="dot">.</span></a>
+  <div class="nav-links">
+    <a href="#system">System</a>
+    <a href="#copy">Copy</a>
+    <a href="#daten">Daten</a>
+    <a href="#cases">Cases</a>
+    <a href="#fragebogen">Fragebogen</a>
+  </div>
+  <a class="btn btn-blue btn-sm nav-cta" href="#fragebogen" onclick="track('cta_nav')">Fragebogen ausfuellen</a>
+</div></header>
+
+<!-- LOAD POPUP -->
+<div class="ov" id="ov" role="dialog" aria-modal="true">
+  <div class="modal" style="position:relative">
+    <button class="x" onclick="closePop()">&times;</button>
+    <div class="tag" style="margin-bottom:16px">Vor unserem Termin</div>
+    <h3>Fuell kurz den Fragebogen aus</h3>
+    <p>2 Minuten. So ist unser Termin von der ersten Minute an auf <b style="color:var(--fg)"><!-- SLOT:COMPANY START -->Muster GmbH<!-- SLOT:COMPANY END --></b> zugeschnitten - statt Standard-Fragen abzuklappern.</p>
+    <a class="btn btn-blue" href="#fragebogen" onclick="closePop();track('cta_popup')" style="width:100%;justify-content:center">Jetzt ausfuellen</a>
+    <button class="btn btn-ghost btn-sm" onclick="closePop()" style="margin-top:10px">Erst die Seite ansehen</button>
+  </div>
+</div>
+
+<!-- FIXED FAB (bottom-right questionnaire CTA) -->
+<a class="btn btn-blue fab-quest" id="fab" href="#fragebogen" onclick="track('cta_fab')">Fragebogen ausfuellen &rarr;</a>
+
+<!-- SLIDE-IN (back to questionnaire) -->
+<div class="slidein" id="slidein" onclick="goQuiz()">
+  Noch nicht ausgefuellt? Der 2-Minuten-Fragebogen macht unseren Termin doppelt so wertvoll &rarr;
+  <button class="x" onclick="event.stopPropagation();this.parentElement.classList.remove('on')">&times;</button>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top"><div class="wrap"><div class="hero-grid">
+  <div class="rv in">
+    <div class="greet">Hi <b><!-- SLOT:LEAD_FIRST START -->Alex<!-- SLOT:LEAD_FIRST END --></b> - schoen, dass wir sprechen</div>
+    <h1>Dein planbares <span class="hl">Outreach-System</span>.<br>Termine statt Kaltakquise.</h1>
+    <p class="lead">Wir bauen fuer <!-- SLOT:COMPANY START -->Muster GmbH<!-- SLOT:COMPANY END --> die Maschine, die planbar qualifizierte Termine generiert: Cold Email, LinkedIn und KI-personalisierte Videos. Hier siehst du genau, wie das aussieht - bevor wir sprechen.</p>
+    <div class="hero-cta">
+      <a class="btn btn-blue" href="#fragebogen" onclick="track('cta_hero')">Fragebogen ausfuellen</a>
+      <a class="btn btn-ghost" href="#system">So funktioniert es</a>
+    </div>
+    <div class="hero-sub">
+      <div><b>10 Mio.</b>versendete Mails</div>
+      <div><b>50+</b>Erfolgsgeschichten</div>
+      <div><b>14 Tage</b>bis zur ersten Kampagne</div>
+    </div>
+  </div>
+  <div class="rv in">
+    <div class="vid-frame">
+      <div class="vbar"><i></i><i></i><i></i></div>
+      <video autoplay muted loop playsinline poster="">
+        <source src="https://framerusercontent.com/assets/ZECQ9dM7onY99MVF18XCaJKzCNg.mp4" type="video/mp4">
+      </video>
+      <div class="vid-tag">Dein Outreach-System, in 90 Sekunden</div>
+    </div>
+  </div>
+</div></div></section>
+
+<!-- STAT BAR -->
+<section class="sec" style="padding-top:0"><div class="wrap rv">
+  <div class="statbar">
+    <div class="s"><b>15&nbsp;%</b><span>durchschnittliche Antwortrate</span></div>
+    <div class="s"><b>&lt;&nbsp;2&nbsp;%</b><span>Bounce-Rate</span></div>
+    <div class="s"><b>20-30</b><span>qualifizierte Termine / Monat</span></div>
+    <div class="s"><b>0&nbsp;EUR</b><span>Tool-Kosten fuer dich</span></div>
+  </div>
+</div></section>
+
+<!-- EDGE CASES / PLAYS -->
+<section class="sec" id="system"><div class="wrap">
+  <div class="center rv"><div class="eyebrow">Was wir fuer dich fahren</div>
+  <h2>Nicht eine Taktik. Ein <span class="hl">System aus Szenarien</span>.</h2>
+  <p class="lead center">Je nach Zielgruppe und Signal ziehen wir den passenden Hebel. Das laeuft parallel, getestet und woechentlich optimiert.</p></div>
+  <div class="grid g3 stagger rv" style="margin-top:46px">
+    <div class="card"><div class="ec-icon">&#9993;</div><span class="tag">E-Mail</span><h3 style="margin:14px 0 8px">Cold Email mit Research-Opener</h3><p>Jede Mail startet mit einem Satz, der nur fuer diesen Lead stimmt - aus echter Website-Recherche, nicht "Mir ist aufgefallen, dass ihr...".</p></div>
+    <div class="card"><div class="ec-icon">&#128279;</div><span class="tag">LinkedIn</span><h3 style="margin:14px 0 8px">Conversation-First Social Selling</h3><p>Connection, dann Gespraech statt Pitch. Keine Spam-Flags, echte Antworten von Entscheidern.</p></div>
+    <div class="card"><div class="ec-icon">&#127916;</div><span class="tag">Video</span><h3 style="margin:14px 0 8px">KI-personalisierte Videos</h3><p>Ein Video, in dessen Hintergrund die Website oder Stellenanzeige des Leads laeuft. Skaliert auf tausende - jedes wirkt einzeln gedreht.<span class="play">Beispiel ansehen</span></p></div>
+    <div class="card"><div class="ec-icon">&#9889;</div><span class="tag">Signal</span><h3 style="margin:14px 0 8px">Signal-getriggertes Timing</h3><p>Neue Stelle, frische Finanzierung, Tech-Wechsel. Wir schreiben im richtigen Moment, nicht auf Verdacht.</p></div>
+    <div class="card"><div class="ec-icon">&#127919;</div><span class="tag">ABM</span><h3 style="margin:14px 0 8px">Account-based, mehrere Entscheider</h3><p>Statt einer Person sprechen wir 3-5 Rollen im selben Account koordiniert an - jede mit ihrer eigenen Botschaft.</p></div>
+    <div class="card"><div class="ec-icon">&#128172;</div><span class="tag">Reply</span><h3 style="margin:14px 0 8px">Reply-Handling, das Termine macht</h3><p>Jede Antwort - auch Einwaende - wird so behandelt, dass aus Interesse ein Kalendereintrag wird.</p></div>
+  </div>
+</div></section>
+
+<!-- COPY SHOWCASE -->
+<section class="sec" id="copy" style="background:var(--bg2);border-block:1px solid var(--line)"><div class="wrap">
+  <div class="center rv"><div class="eyebrow">Wie es beim Lead ankommt</div>
+  <h2>Die gleiche Idee - <span class="hl">auf jedem Kanal richtig</span>.</h2>
+  <p class="lead center">Cold Email liest sich anders als eine LinkedIn-Unterhaltung. Wir schreiben jede Nachricht so, wie sie auf ihrem Kanal funktioniert. Schau es dir an:</p></div>
+  <div class="center" style="margin-top:34px"><div class="toggle">
+    <button class="on" onclick="chan('mail',this)">E-Mail</button>
+    <button onclick="chan('li',this)">LinkedIn</button>
+  </div></div>
+
+  <div class="chan on rv" id="chan-mail">
+    <div class="mail">
+      <div class="mh"><b>Betreff:</b> Vorschlag</div>
+      <div class="mb">Hallo <span class="v">{Vorname}</span>,
+
+gerade bin ich auf <span class="v">{Firma}</span> gestossen und mir ist aufgefallen, dass <span class="v">{Research-Opener}</span>.
+
+<span class="v">{Problem in einem Satz}</span>.
+
+Wir helfen Teams wie eurem genau dabei: <span class="v">{Loesung in einem Satz}</span>.
+
+Haette das Sinn fuer <span class="v">{Firma}</span>?
+
+Beste Gruesse
+<span class="v">{Absender}</span></div>
+    </div>
+    <p class="center note" style="max-width:560px;margin:18px auto 0">4 Schritte: Beobachtung, Problem, Insight, No-Brainer-Frage. Max. 2 Saetze pro Block, kein Marketing-Brei, jede Variable echt befuellt.</p>
+  </div>
+
+  <div class="chan rv" id="chan-li">
+    <div class="li">
+      <div class="bubble step"><span class="badge2">Schritt 1 - Vernetzung</span><div class="who">Connection Request</div>Kurz, ohne Pitch. Oft nur die Vernetzung - der Verkauf kommt spaeter im Gespraech.</div>
+      <div class="bubble step"><span class="badge2">Schritt 2 - DM nach Annahme</span><div class="who">Du an <span class="v">{Vorname}</span></div>Hallo <span class="v">{Nachname}</span>, Glueckwunsch zur neuen Rolle bei <span class="v">{Firma}</span>.
+
+In den ersten 100 Tagen sehen wir oft: <span class="v">{relevante Beobachtung}</span>.
+
+Waere spannend, wie ihr das angeht.
+
+Beste Gruesse, <span class="v">{Absender}</span></div>
+      <div class="bubble step"><span class="badge2">Schritt 3 - Follow-up</span><div class="who">Du an <span class="v">{Vorname}</span></div>Ein Use-Case, der bei euch haeufig haengenbleibt: <span class="v">{konkreter Fall}</span>.
+
+Klingt das vertraut?</div>
+    </div>
+    <p class="center note" style="max-width:560px;margin:18px auto 0">Gespraech statt Pitch. Keine Aufzaehlungen, keine "kurzer Nachfass"-Floskeln - das sind die Muster, die Outreach verbrennen.</p>
+  </div>
+</div></section>
+
+<!-- AI VIDEO MOCKUP -->
+<section class="sec"><div class="wrap"><div class="hero-grid">
+  <div class="rv">
+    <div class="eyebrow">Personalisierte KI-Videos</div>
+    <h2>Ein Video, das <span class="hl">eure Website kennt</span>.</h2>
+    <p class="lead">Stell dir vor, dein Lead oeffnet ein kurzes Video - und im Hintergrund scrollt seine eigene Website oder seine Stellenanzeige. Oben poppt unsere Nachricht auf. Das fuehlt sich an wie einzeln gedreht, laeuft aber automatisiert auf tausende Leads.</p>
+    <p class="lead" style="margin-top:14px">Genau so ein Video bauen wir auch fuer <!-- SLOT:COMPANY START -->Muster GmbH<!-- SLOT:COMPANY END -->.</p>
+    <a class="btn btn-ghost" href="#fragebogen" style="margin-top:24px" onclick="track('cta_video')">Im Termin live sehen</a>
+  </div>
+  <div class="rv">
+    <div class="browser">
+      <div class="bbar"><i></i><i></i><i></i><div class="burl"><!-- SLOT:LEAD_DOMAIN START -->muster-gmbh.de<!-- SLOT:LEAD_DOMAIN END --></div></div>
+      <!-- SLOT:LEAD_WEBSITE_SHOT START --><div class="shot"></div><!-- SLOT:LEAD_WEBSITE_SHOT END -->
+      <div class="vov">
+        <div class="vovt"><img class="vov-face" src="https://grundwerk.digital/favicon.ico" alt="Absender"></div>
+        <div class="vovb">"Hey <!-- SLOT:LEAD_FIRST START -->Alex<!-- SLOT:LEAD_FIRST END -->, wusstest du, dass wir <b>KI-personalisierte Videos</b> fuer euren Outreach machen?"</div>
+      </div>
+    </div>
+    <p class="note center" style="margin-top:14px">Mockup - im Termin zeigen wir dir ein echtes, auf euch gerendertes Video.</p>
+  </div>
+</div></div></section>
+
+<!-- CASE TAGS AS VIDEO -->
+<section class="sec" style="background:var(--bg2);border-block:1px solid var(--line)"><div class="wrap">
+  <div class="center rv"><div class="eyebrow">Ergebnisse, kein Versprechen</div>
+  <h2>Das ist bei anderen <span class="hl">rausgekommen</span>.</h2></div>
+  <div class="grid g3 stagger rv" style="margin-top:42px">
+    <div class="card"><div class="vid-frame" style="margin-bottom:18px"><div class="vbar"><i></i><i></i><i></i></div><div class="shot" style="aspect-ratio:16/10"></div><div class="vid-tag">Case-Video</div></div><span class="tag">SaaS</span><h3 style="margin:12px 0 6px">28 Termine in 74 Tagen</h3><p>240.000 EUR ARR abgeschlossen. - Birdsview</p></div>
+    <div class="card"><div class="vid-frame" style="margin-bottom:18px"><div class="vbar"><i></i><i></i><i></i></div><div class="shot" style="aspect-ratio:16/10"></div><div class="vid-tag">Case-Video</div></div><span class="tag">Agentur</span><h3 style="margin:12px 0 6px">20 Opportunities in 13 Tagen</h3><p>Onboarding in 5 Tagen, dann lief die Pipeline. - Peer Studios</p></div>
+    <div class="card"><div class="vid-frame" style="margin-bottom:18px"><div class="vbar"><i></i><i></i><i></i></div><div class="shot" style="aspect-ratio:16/10"></div><div class="vid-tag">Case-Video</div></div><span class="tag">Events</span><h3 style="margin:12px 0 6px">397 Leads ueber 12 Events</h3><p>Zuverlaessig hochwertige Teilnehmer. - Smart Bridges</p></div>
+  </div>
+</div></section>
+
+<!-- DATA PROVIDERS + SCRAPERS -->
+<section class="sec" id="daten"><div class="wrap">
+  <div class="center rv"><div class="eyebrow">Woher die Leads kommen</div>
+  <h2>75+ <span class="hl">Datenquellen</span> und eigene Scraper.</h2>
+  <p class="lead center">Wir ziehen Zielfirmen und Entscheider aus jeder relevanten Quelle - und reichern sie mit verifizierten Mails, Signalen und Research an. Du zahlst keine Tool-Lizenzen.</p></div>
+  <div class="pills rv" style="margin-top:38px">
+    <span class="pill">Apollo</span><span class="pill">AI Ark</span><span class="pill">Crunchbase</span><span class="pill">Northdata</span><span class="pill">Clay</span><span class="pill">Clearbit</span><span class="pill">BuiltWith</span><span class="pill">LinkedIn Sales Navigator</span><span class="pill">Storeleads</span><span class="pill">RocketReach</span><span class="pill">ZeroBounce</span><span class="pill">Phantombuster</span><span class="pill">Prospeo</span><span class="pill">Discolike</span>
+  </div>
+  <h3 class="center" style="margin:54px 0 22px;color:var(--mut)">Plus unsere eigenen Scraper</h3>
+  <div class="pills rv">
+    <span class="pill"><b>+</b> Google Maps</span><span class="pill"><b>+</b> Gelbe Seiten</span><span class="pill"><b>+</b> Kununu</span><span class="pill"><b>+</b> Stellenanzeigen</span><span class="pill"><b>+</b> BWP Fachpartner</span><span class="pill"><b>+</b> dena Experten</span><span class="pill"><b>+</b> HWK-Verzeichnis</span><span class="pill"><b>+</b> Opening-Line-Research</span>
+  </div>
+</div></section>
+
+<!-- USE CASES -->
+<section class="sec" style="background:var(--bg2);border-block:1px solid var(--line)"><div class="wrap">
+  <div class="center rv"><div class="eyebrow">Funktioniert in deiner Welt</div>
+  <h2>Wie das System pro <span class="hl">Branche</span> spielt.</h2>
+  <p class="lead center">Das Prinzip bleibt, die Hebel aendern sich. Ein Auszug, wie wir Outreach je Zielgruppe fahren:</p></div>
+  <div class="uc rv" style="margin-top:40px">
+    <div class="uc-row"><div class="uc-num">01</div><div><h3>Recruiting & Personalberatung</h3><p>Cold Email + KI-Video auf Basis der echten Stellenanzeige. Pro offener Position der passende Kandidaten-Hook - skaliert auf tausende Stellen.</p></div></div>
+    <div class="uc-row"><div class="uc-num">02</div><div><h3>Handwerk, SHK & Energie</h3><p>Regionale Firmen aus Maps, Gelben Seiten und Fachpartner-Listen, angereichert mit Spezialisierung (Waermepumpe, Solar) und Ort - dann Cold Email mit lokalem Opener.</p></div></div>
+    <div class="uc-row"><div class="uc-num">03</div><div><h3>Hotellerie & Hospitality</h3><p>Hoteldirektoren nach Groesse und Region, angeschrieben mit dem konkreten Engpass im Betrieb statt generischem Pitch.</p></div></div>
+    <div class="uc-row"><div class="uc-num">04</div><div><h3>E-Commerce & Shops</h3><p>Shops nach Tech-Stack (Shopify, Klaviyo) gefiltert, Nachricht auf die echte Plattform und Listengroesse zugeschnitten.</p></div></div>
+    <div class="uc-row"><div class="uc-num">05</div><div><h3>Healthcare & Pflege</h3><p>Einrichtungen nach Typ und Spezialisierung, Research-Opener aus der echten Website - compliance-bewusst, persoenlich.</p></div></div>
+    <div class="uc-row"><div class="uc-num">06</div><div><h3>Software & Tech-Startups</h3><p>Signal-basiert: frische Finanzierung, Hiring-Spike, neuer Head-of. Multichannel aus E-Mail, LinkedIn und Video in genau dem Fenster.</p></div></div>
+    <div class="uc-row"><div class="uc-num">07</div><div><h3>Industrie & Fertigung</h3><p>Firmen aus Kammer-Registern nach Groesse und Teilbranche, angeschrieben mit dem typischen Prozess-Schmerz der Geschaeftsfuehrung.</p></div></div>
+  </div>
+</div></section>
+
+<!-- REFERENCES -->
+<section class="sec" id="cases"><div class="wrap">
+  <div class="center rv"><div class="eyebrow">Vertrauen</div>
+  <h2>Marken, die mit uns <span class="hl">wachsen</span>.</h2></div>
+  <div class="logos rv">
+    <span>Birdsview</span><span>Peer Studios</span><span>Smart Bridges</span><span>greenlovers</span><span>cervis</span><span>Hivebuy</span><span>CCV</span><span>pplwise</span><span>Digital Now</span>
+  </div>
+  <div class="grid g3 stagger rv" style="margin-top:48px">
+    <div class="card"><div class="quote">"Das Grundwerk-Team lebt KI und treibt unsere Sales-Prozesse mit minimalem internen Aufwand."</div><div class="quote-who"><b>Tim Kuesters</b>CEO, Birdsview</div></div>
+    <div class="card"><div class="quote">"Onboarding in 5 Tagen fertig, dann lief die Pipeline planbar. Genau das, was wir brauchten."</div><div class="quote-who"><b>Lasse Petry</b>Co-Founder, Peer Studios</div></div>
+    <div class="card"><div class="quote">"Individuell und professionell betreut. Das System lieferte zuverlaessig hochwertige Teilnehmer."</div><div class="quote-who"><b>Ingo Boldt</b>Geschaeftsfuehrer, Smart Bridges</div></div>
+  </div>
+</div></section>
+
+<!-- QUESTIONNAIRE -->
+<section class="sec" id="fragebogen" style="background:radial-gradient(700px 360px at 50% 0,rgba(0,102,255,.12),transparent 60%)"><div class="wrap">
+  <div class="center rv" style="margin-bottom:34px"><div class="eyebrow">2 Minuten vor unserem Termin</div>
+  <h2>Der <span class="hl">Fragebogen</span>.</h2>
+  <p class="lead center">Damit unser Gespraech von der ersten Minute zaehlt: ein paar kurze Fragen zu eurem Setup. Keine Pflichtfelder, kein Verkaufsgespraech - nur Kontext.</p></div>
+
+  <div class="qz rv">
+    <div class="qz-top"><div class="qz-prog"><i id="prog"></i></div><div class="qz-step" id="stepc">Frage 1</div></div>
+    <div class="qz-body">
+
+      <div class="qz-q on" data-id="done_outreach" data-type="single" data-branch="1">
+        <h3>Habt ihr schon mal Outreach gemacht?</h3>
+        <div class="hint">Cold Email, LinkedIn oder kalte Akquise allgemein.</div>
+        <div class="opts">
+          <div class="opt" data-val="ja" onclick="pickOne(this)"><span class="rd"></span>Ja, haben wir schon gemacht</div>
+          <div class="opt" data-val="nein" onclick="pickOne(this)"><span class="rd"></span>Nein, noch nicht</div>
+        </div>
+      </div>
+
+      <div class="qz-q" data-id="channels" data-type="multi" data-when="done_outreach=ja">
+        <h3>Ueber welche Kanaele lief das?</h3>
+        <div class="hint">Mehrfachauswahl moeglich.</div>
+        <div class="chips">
+          <div class="chip" data-val="email" onclick="pickChip(this)">E-Mail</div>
+          <div class="chip" data-val="linkedin" onclick="pickChip(this)">LinkedIn</div>
+          <div class="chip" data-val="telefon" onclick="pickChip(this)">Telefon / Cold Call</div>
+          <div class="chip" data-val="video" onclick="pickChip(this)">Video</div>
+        </div>
+      </div>
+
+      <div class="qz-q" data-id="tools" data-type="multi" data-when="done_outreach=ja">
+        <h3>Welche Tools habt ihr dafuer benutzt?</h3>
+        <div class="hint">Tipp einfach an, was passt - oder lass es leer.</div>
+        <div class="chips">
+          <div class="chip" data-val="instantly" onclick="pickChip(this)">Instantly</div>
+          <div class="chip" data-val="lemlist" onclick="pickChip(this)">Lemlist</div>
+          <div class="chip" data-val="apollo" onclick="pickChip(this)">Apollo</div>
+          <div class="chip" data-val="clay" onclick="pickChip(this)">Clay</div>
+          <div class="chip" data-val="heyreach" onclick="pickChip(this)">HeyReach</div>
+          <div class="chip" data-val="lgm" onclick="pickChip(this)">La Growth Machine</div>
+          <div class="chip" data-val="hubspot" onclick="pickChip(this)">HubSpot</div>
+          <div class="chip" data-val="pipedrive" onclick="pickChip(this)">Pipedrive</div>
+          <div class="chip" data-val="andere" onclick="pickChip(this)">Andere</div>
+          <div class="chip" data-val="keine" onclick="pickChip(this)">Keine / unsicher</div>
+        </div>
+      </div>
+
+      <div class="qz-q" data-id="info_ready" data-type="single" data-when="done_outreach=nein">
+        <h3>Wo steht ihr gerade?</h3>
+        <div class="hint">Beides ist voellig ok - hilft uns nur, das Gespraech richtig aufzusetzen.</div>
+        <div class="opts">
+          <div class="opt" data-val="ready" onclick="pickOne(this)"><span class="rd"></span>Wir wollen Outreach machen, suchen den richtigen Weg</div>
+          <div class="opt" data-val="info" onclick="pickOne(this)"><span class="rd"></span>Erstmal informieren, ob das fuer uns passt</div>
+        </div>
+      </div>
+
+      <div class="qz-q" data-id="employees" data-type="single">
+        <h3>Wie gross ist euer Team insgesamt?</h3>
+        <div class="opts">
+          <div class="opt" data-val="1-10" onclick="pickOne(this)"><span class="rd"></span>1 - 10</div>
+          <div class="opt" data-val="11-50" onclick="pickOne(this)"><span class="rd"></span>11 - 50</div>
+          <div class="opt" data-val="51-200" onclick="pickOne(this)"><span class="rd"></span>51 - 200</div>
+          <div class="opt" data-val="200+" onclick="pickOne(this)"><span class="rd"></span>Mehr als 200</div>
+        </div>
+      </div>
+
+      <div class="qz-q" data-id="sales_employees" data-type="single">
+        <h3>Wie viele davon sind im Vertrieb?</h3>
+        <div class="opts">
+          <div class="opt" data-val="0" onclick="pickOne(this)"><span class="rd"></span>Noch niemand dediziert</div>
+          <div class="opt" data-val="1-2" onclick="pickOne(this)"><span class="rd"></span>1 - 2</div>
+          <div class="opt" data-val="3-5" onclick="pickOne(this)"><span class="rd"></span>3 - 5</div>
+          <div class="opt" data-val="6+" onclick="pickOne(this)"><span class="rd"></span>6 oder mehr</div>
+        </div>
+      </div>
+
+      <div class="qz-q" data-id="agency" data-type="single">
+        <h3>Habt ihr schon mal mit einer Agentur in dem Bereich gearbeitet?</h3>
+        <div class="opts">
+          <div class="opt" data-val="ja-gut" onclick="pickOne(this)"><span class="rd"></span>Ja, mit guter Erfahrung</div>
+          <div class="opt" data-val="ja-schlecht" onclick="pickOne(this)"><span class="rd"></span>Ja, war aber enttaeuschend</div>
+          <div class="opt" data-val="nein" onclick="pickOne(this)"><span class="rd"></span>Nein, noch nie</div>
+        </div>
+      </div>
+
+      <div class="qz-q" data-id="crm" data-type="single">
+        <h3>Habt ihr ein CRM?</h3>
+        <div class="opts">
+          <div class="opt" data-val="ja-eingerichtet" onclick="pickOne(this)"><span class="rd"></span>Ja, sauber eingerichtet</div>
+          <div class="opt" data-val="ja-roh" onclick="pickOne(this)"><span class="rd"></span>Ja, aber nicht richtig eingerichtet</div>
+          <div class="opt" data-val="nein-spannend" onclick="pickOne(this)"><span class="rd"></span>Nein - aber waere spannend</div>
+          <div class="opt" data-val="nein-egal" onclick="pickOne(this)"><span class="rd"></span>Nein, brauchen wir nicht</div>
+        </div>
+      </div>
+
+      <div class="qz-q" data-id="interest" data-type="multi">
+        <h3>Was davon ist fuer euch spannend?</h3>
+        <div class="hint">Mehrfachauswahl.</div>
+        <div class="chips">
+          <div class="chip" data-val="email" onclick="pickChip(this)">E-Mail-Outreach</div>
+          <div class="chip" data-val="linkedin" onclick="pickChip(this)">LinkedIn-Outreach</div>
+          <div class="chip" data-val="video" onclick="pickChip(this)">KI-Videos</div>
+          <div class="chip" data-val="crm" onclick="pickChip(this)">CRM-Aufbau</div>
+        </div>
+      </div>
+
+      <div class="qz-q" data-id="contact" data-type="contact">
+        <h3>Fast geschafft.</h3>
+        <div class="hint">Damit wir die Antworten eurem Termin zuordnen koennen (optional).</div>
+        <input id="q-name" placeholder="Dein Name" value="<!-- SLOT:LEAD_NAME START --><!-- SLOT:LEAD_NAME END -->">
+        <input id="q-email" type="email" placeholder="E-Mail (optional)">
+      </div>
+
+      <div class="qz-q" data-id="done" data-type="done">
+        <div class="qz-done">
+          <div class="ok">&#10003;</div>
+          <h3>Danke - das hilft enorm.</h3>
+          <p style="margin:10px 0 22px">Wir gehen die Antworten vor dem Termin durch. Bis gleich!</p>
+          <a class="btn btn-ghost" href="#top">Zurueck nach oben</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="qz-nav" id="qznav">
+      <button class="btn btn-ghost btn-sm" id="back" onclick="qBack()" style="visibility:hidden">Zurueck</button>
+      <button class="btn btn-blue btn-sm" id="next" onclick="qNext()">Weiter</button>
+    </div>
+  </div>
+</div></section>
+
+<!-- LEAD MAGNET (stub) -->
+<section class="sec"><div class="wrap rv">
+  <div class="lm">
+    <div>
+      <div class="eyebrow">Kostenlos, vor dem Termin</div>
+      <h2 style="margin-bottom:14px">Hol dir eine erste <span class="hl">Outreach-Strategie</span>.</h2>
+      <p class="lead">Sag uns kurz, wer eure Zielkunden sind - unsere KI entwirft daraus eine erste Outreach-Grundstrategie (Zielgruppe, Kanal-Mix, Angle) und schickt sie dir zu.</p>
+      <input id="lm-target" placeholder="Wer ist eure Zielgruppe? (z.B. Hotels in DACH ab 50 Zimmern)">
+      <input id="lm-email" type="email" placeholder="Wohin duerfen wir sie schicken?">
+      <button class="btn btn-blue" onclick="lmSubmit()" style="width:100%;justify-content:center">Strategie kostenlos anfordern</button>
+      <p class="note">Natuerlich entwickeln wir gemeinsam eine deutlich bessere - das hier ist eine solide Grundstrategie als Vorgeschmack.</p>
+    </div>
+    <div class="lm-flow">
+      <div class="node"><b>1</b>&nbsp; 75+ Datenanbieter ziehen passende Firmen</div>
+      <div class="arr">&darr;</div>
+      <div class="node"><b>2</b>&nbsp; Eigene Scraper reichern Signale & Kontakte an</div>
+      <div class="arr">&darr;</div>
+      <div class="node"><b>3</b>&nbsp; KI verdichtet das zu Zielgruppe + Angle + Kanal-Mix</div>
+      <div class="arr">&darr;</div>
+      <div class="node" style="border-color:var(--blue-line);background:var(--blue-soft)"><b>4</b>&nbsp; Deine Grundstrategie landet im Postfach</div>
+    </div>
+  </div>
+</div></section>
+
+<!-- FOOTER (1:1 grundwerk.digital) -->
+<footer class="footer"><div class="wrap">
+  <div class="footer-grid">
+    <div>
+      <a class="brand" href="https://grundwerk.digital" style="margin-bottom:16px"><img class="brand-logo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%230066ff'/%3E%3Ctext x='32' y='46' font-family='Arial,Helvetica,sans-serif' font-size='44' font-weight='800' fill='white' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E" alt="Grundwerk Digital">Grundwerk<span class="dot">.</span></a>
+      <p style="max-width:42ch;font-size:15px">Dein Agentur-Partner fuer effiziente KI-Kaltakquise-Prozesse. Wir automatisieren deine Vertriebsprozesse und uebernehmen die noetige Software, um mit minimalem Zeitaufwand und Kosten maximale Renditen zu erwirtschaften.</p>
+      <p style="margin-top:16px;font-size:15px;color:var(--mut)">Kontakt: <a href="tel:+4915888573752" style="display:inline;color:var(--fg)">+49 15888 573752</a></p>
+    </div>
+    <div>
+      <h4>Sektionen</h4>
+      <a href="https://grundwerk.digital">Home</a>
+      <a href="https://grundwerk.digital/ueber-uns">Über uns</a>
+      <a href="https://grundwerk.digital/kontakt">Kontakt</a>
+      <a href="https://grundwerk.digital/values">Unsere Werte</a>
+    </div>
+    <div>
+      <h4>Rechtliches</h4>
+      <a href="https://grundwerk.digital/impressum">Impressum</a>
+      <a href="https://grundwerk.digital/dsgvo">Datenschutzerklärung</a>
+      <a href="https://grundwerk.digital/kontakt">Cookie Einstellungen</a>
+    </div>
+  </div>
+  <div class="copy"><span>Grundwerk Digital GmbH &copy; 2026</span><span>Pappelallee 78/79, 10437 Berlin</span></div>
+</div></footer>
+
+<script>
+/* ---- page identity + Close-CRM + tracking (G13/G16) ---- */
+window.__PAGE_SLUG = "outreach-page-demo";
+window.__CLOSE_LEAD_ID='';
+var TRACK_URL = "https://n8n.grundwerk.digital/webhook/warmedin-track";        /* shared landing view-beacon */
+var QZ_URL    = "https://n8n.grundwerk.digital/webhook/outreach-questionnaire"; /* questionnaire answers */
+function track(ev, extra){
+  try{
+    var body = Object.assign({page_slug:window.__PAGE_SLUG, event:ev, close_lead_id:window.__CLOSE_LEAD_ID||null}, extra||{});
+    navigator.sendBeacon ? navigator.sendBeacon(TRACK_URL, new Blob([JSON.stringify(body)],{type:"text/plain"}))
+                         : fetch(TRACK_URL,{method:"POST",mode:"no-cors",keepalive:true,headers:{"Content-Type":"text/plain"},body:JSON.stringify(body)});
+  }catch(e){}
+}
+setTimeout(function(){try{var vb={page_slug:window.__PAGE_SLUG,event:"view",close_lead_id:window.__CLOSE_LEAD_ID||null};navigator.sendBeacon&&navigator.sendBeacon(TRACK_URL,new Blob([JSON.stringify(vb)],{type:"text/plain"}));}catch(e){}}, 5000); /* slack view-beacon */
+
+/* ---- consent-gated marketing pixels (G16, inert without IDs) ---- */
+window.__META_PIXEL_ID=""; window.__LINKEDIN_PARTNER_ID=""; window.__GTAG_ID="";
+(function(){var ids=[window.__META_PIXEL_ID,window.__LINKEDIN_PARTNER_ID,window.__GTAG_ID].filter(Boolean);
+ if(!ids.length) return; /* no banner, nothing loads */
+ if(localStorage.getItem("gw_marketing_consent")==="yes"){/* load pixels here when IDs set */}})();
+
+/* ---- scroll reveal ---- */
+var rvAll=document.querySelectorAll(".rv,.stagger");
+if("IntersectionObserver" in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{threshold:.08,rootMargin:"0px 0px -8% 0px"});
+  rvAll.forEach(function(el){io.observe(el);});
+  setTimeout(function(){rvAll.forEach(function(el){el.classList.add("in");});},4500);
+}else{ rvAll.forEach(function(el){el.classList.add("in");}); }
+
+/* ---- load popup (canonical timing, once per session) ---- */
+function closePop(){document.getElementById("ov").classList.remove("on");}
+if(!sessionStorage.getItem("gw_pop")){setTimeout(function(){document.getElementById("ov").classList.add("on");sessionStorage.setItem("gw_pop","1");},30000);}
+
+/* ---- channel toggle ---- */
+function chan(which,btn){
+  document.querySelectorAll(".toggle button").forEach(function(b){b.classList.remove("on");});btn.classList.add("on");
+  document.getElementById("chan-mail").classList.toggle("on",which==="mail");
+  document.getElementById("chan-li").classList.toggle("on",which==="li");
+}
+
+/* ---- FAB + slide-in near footer ---- */
+var fab=document.getElementById("fab"), slide=document.getElementById("slidein"), qzDone=false;
+window.addEventListener("scroll",function(){
+  var nearBottom=(window.innerHeight+window.scrollY)>=(document.body.offsetHeight-700);
+  var atQuiz=()=>{var q=document.getElementById("fragebogen").getBoundingClientRect();return q.top<window.innerHeight&&q.bottom>0;};
+  fab.classList.toggle("hide", nearBottom||atQuiz());
+  if(nearBottom && !qzDone && !sessionStorage.getItem("gw_slide")){slide.classList.add("on");}
+},{passive:true});
+function goQuiz(){slide.classList.remove("on");sessionStorage.setItem("gw_slide","1");document.getElementById("fragebogen").scrollIntoView({behavior:"smooth"});track("cta_slidein");}
+
+/* ---- lead magnet stub ---- */
+function lmSubmit(){
+  var t=document.getElementById("lm-target").value, e=document.getElementById("lm-email").value;
+  track("leadmagnet",{target:t,email:e});
+  var btn=event.target; btn.textContent="Angefordert - kommt per Mail"; btn.disabled=true; btn.style.opacity=.7;
+}
+
+/* ---- QUESTIONNAIRE flow (branching on done_outreach) ---- */
+var qAns={}, qOrder=[], qi=0;
+var BASE_AFTER=["employees","sales_employees","agency","crm","interest","contact","done"];
+function buildOrder(){
+  var br = qAns.done_outreach==="ja" ? ["channels","tools"] : (qAns.done_outreach==="nein" ? ["info_ready"] : []);
+  qOrder=["done_outreach"].concat(br).concat(BASE_AFTER);
+}
+buildOrder();
+function showStep(){
+  document.querySelectorAll(".qz-q").forEach(function(q){q.classList.remove("on");});
+  var id=qOrder[qi]; var el=document.querySelector('.qz-q[data-id="'+id+'"]'); el.classList.add("on");
+  var total=qOrder.length-1; /* exclude done from count */
+  document.getElementById("prog").style.width=Math.round((qi/(total))*100)+"%";
+  var nav=document.getElementById("qznav"), nextBtn=document.getElementById("next"), backBtn=document.getElementById("back");
+  document.getElementById("stepc").textContent = id==="done" ? "Fertig" : ("Frage "+(qi+1)+" / "+total);
+  backBtn.style.visibility = (qi>0 && id!=="done") ? "visible":"hidden";
+  nav.style.display = id==="done" ? "none":"flex";
+  nextBtn.textContent = (id==="contact") ? "Absenden" : "Weiter";
+}
+function pickOne(el){
+  var q=el.closest(".qz-q"); q.querySelectorAll(".opt").forEach(function(o){o.classList.remove("sel");}); el.classList.add("sel");
+  qAns[q.dataset.id]=el.dataset.val;
+  if(q.dataset.branch){buildOrder();}
+}
+function pickChip(el){
+  el.classList.toggle("sel"); var q=el.closest(".qz-q");
+  qAns[q.dataset.id]=[].slice.call(q.querySelectorAll(".chip.sel")).map(function(c){return c.dataset.val;});
+}
+function qNext(){
+  var id=qOrder[qi];
+  var el=document.querySelector('.qz-q[data-id="'+id+'"]');
+  if(el.dataset.type==="single" && !qAns[id]){el.querySelector(".opts").animate([{transform:"translateX(-6px)"},{transform:"translateX(6px)"},{transform:"none"}],{duration:200});return;}
+  if(id==="contact"){
+    qAns.name=document.getElementById("q-name").value; qAns.email=document.getElementById("q-email").value;
+    submitQuiz();
+  }
+  if(qi<qOrder.length-1){qi++;showStep();document.getElementById("fragebogen").scrollIntoView({behavior:"smooth"});}
+}
+function qBack(){if(qi>0){qi--;showStep();}}
+function submitQuiz(){
+  qzDone=true;
+  try{
+    var body={page_slug:window.__PAGE_SLUG, event:"questionnaire", close_lead_id:window.__CLOSE_LEAD_ID||null, answers:qAns};
+    fetch(QZ_URL,{method:"POST",mode:"no-cors",keepalive:true,headers:{"Content-Type":"text/plain"},body:JSON.stringify(body)});
+  }catch(e){}
+}
+showStep();
+</script>
+</body>
+</html>
