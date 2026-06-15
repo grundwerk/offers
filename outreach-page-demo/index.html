@@ -16,8 +16,8 @@
 <meta property="og:image:alt" content="Outreach-Seite für Muster GmbH">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Muster GmbH x Grundwerk - dein Outreach-System">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230066ff'/%3E%3Ctext x='32' y='45' font-family='Arial,Helvetica,sans-serif' font-size='42' font-weight='700' fill='white' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E">
-<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230066ff'/%3E%3Ctext x='32' y='45' font-family='Arial,Helvetica,sans-serif' font-size='42' font-weight='700' fill='white' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="https://start.grundwerk.digital/assets/favicon.png">
+<link rel="apple-touch-icon" href="https://start.grundwerk.digital/assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
 <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=inter@400,500,600&display=swap" rel="stylesheet">
 <script src="https://fast.wistia.com/player.js" async></script>
@@ -126,7 +126,7 @@ a{color:inherit;text-decoration:none}
 .vid-frame .vbar i{width:10px;height:10px;border-radius:50%;background:#3a3a40;display:block}
 .vid-tag{position:absolute;bottom:12px;left:12px;z-index:2;background:rgba(0,0,0,.6);border:1px solid var(--line2);border-radius:999px;padding:6px 13px;font-size:12.5px;color:var(--fg)}
 /* statbar */
-.statbar{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.statbar{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
 @media(max-width:760px){.statbar{grid-template-columns:repeat(2,1fr)}}
 .statbar .s{background:var(--bg2);padding:26px 20px;text-align:center}
 .statbar .s b{display:block;font-family:var(--ff-d);font-size:34px;color:var(--fg);font-weight:600}
@@ -178,10 +178,10 @@ a{color:inherit;text-decoration:none}
 /* references */
 .logos{display:flex;flex-wrap:wrap;gap:14px 30px;justify-content:center;align-items:center;margin-top:34px;opacity:.9}
 .logos span{font-family:var(--ff-d);font-weight:600;font-size:18px;color:var(--mut)}
-.logo-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:34px}
+.logo-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:22px 30px;margin-top:34px;align-items:center}
 @media(max-width:760px){.logo-grid{grid-template-columns:repeat(3,1fr)}}
-.logo-grid .cell{background:var(--bg);display:flex;align-items:center;justify-content:center;padding:26px 16px;min-height:92px}
-.logo-grid img{max-width:128px;max-height:42px;width:auto;height:auto;object-fit:contain;opacity:.85;transition:opacity .15s}
+.logo-grid .cell{display:flex;align-items:center;justify-content:center;padding:8px;min-height:60px}
+.logo-grid img{max-width:130px;max-height:44px;width:auto;height:auto;object-fit:contain;opacity:.92;transition:opacity .15s}
 .logo-grid .cell:hover img{opacity:1}
 .quote{font-family:var(--ff-d);font-weight:500;font-size:18px;color:var(--fg);line-height:1.4}
 .quote-who{margin-top:16px;font-size:13.5px;color:var(--mut2)}
@@ -245,11 +245,11 @@ a{color:inherit;text-decoration:none}
 <header class="nav"><div class="nav-in">
   <a class="brand" href="https://grundwerk.digital"><img class="brand-logo-img" src="https://start.grundwerk.digital/assets/grundwerk-logo.png" alt="Grundwerk Digital"></a>
   <div class="nav-links">
-    <a href="#system">System</a>
-    <a href="#copy">Copy</a>
-    <a href="#daten">Daten</a>
-    <a href="#cases">Cases</a>
+    <a href="#fallstudien">Fallstudien</a>
     <a href="#fragebogen">Fragebogen</a>
+    <a href="#referenzen">Referenzen</a>
+    <a href="#system">System</a>
+    <a href="#daten">Daten</a>
   </div>
   <a class="btn btn-blue btn-sm nav-cta" href="#fragebogen" onclick="track('cta_nav')">Fragebogen ausfüllen</a>
 </div></header>
@@ -293,147 +293,20 @@ a{color:inherit;text-decoration:none}
 <!-- STAT BAR -->
 <section class="sec" style="padding-top:0"><div class="wrap rv">
   <div class="statbar">
-    <div class="s"><b>15&nbsp;%</b><span>durchschnittliche Antwortrate</span></div>
-    <div class="s"><b>&lt;&nbsp;2&nbsp;%</b><span>Bounce-Rate</span></div>
-    <div class="s"><b>20-30</b><span>qualifizierte Termine / Monat</span></div>
-    <div class="s"><b>0&nbsp;EUR</b><span>Tool-Kosten für dich</span></div>
+    <div class="s"><b>10 Mio.</b><span>versendete Mails</span></div>
+    <div class="s"><b>50+</b><span>Erfolgsgeschichten</span></div>
+    <div class="s"><b>14 Tage</b><span>bis zur ersten Kampagne</span></div>
   </div>
 </div></section>
-
-<!-- EDGE CASES / PLAYS -->
-<section class="sec" id="system"><div class="wrap">
-  <div class="center rv"><div class="eyebrow">Was wir für dich fahren</div>
-  <h2>Nicht eine Taktik. Ein <span class="hl">System aus Szenarien</span>.</h2>
-  <p class="lead center">Je nach Zielgruppe und Signal ziehen wir den passenden Hebel. Das läuft parallel, getestet und woechentlich optimiert.</p></div>
-  <div class="grid g3 stagger rv" style="margin-top:46px">
-    <div class="card"><div class="ec-icon">&#9993;</div><span class="tag">E-Mail</span><h3 style="margin:14px 0 8px">Cold Email mit Research-Opener</h3><p>Jede Mail startet mit einem Satz, der nur für diesen Lead stimmt - aus echter Website-Recherche, nicht "Mir ist aufgefallen, dass ihr...".</p></div>
-    <div class="card"><div class="ec-icon">&#128279;</div><span class="tag">LinkedIn</span><h3 style="margin:14px 0 8px">Conversation-First Social Selling</h3><p>Connection, dann Gespräch statt Pitch. Keine Spam-Flags, echte Antworten von Entscheidern.</p></div>
-    <div class="card"><div class="ec-icon">&#127916;</div><span class="tag">Video</span><h3 style="margin:14px 0 8px">KI-personalisierte Videos</h3><p>Ein Video, in dessen Hintergrund die Website oder Stellenanzeige des Leads läuft. Skaliert auf tausende - jedes wirkt einzeln gedreht.<span class="play">Beispiel ansehen</span></p></div>
-    <div class="card"><div class="ec-icon">&#9889;</div><span class="tag">Signal</span><h3 style="margin:14px 0 8px">Signal-getriggertes Timing</h3><p>Neue Stelle, frische Finanzierung, Tech-Wechsel. Wir schreiben im richtigen Moment, nicht auf Verdacht.</p></div>
-    <div class="card"><div class="ec-icon">&#127919;</div><span class="tag">ABM</span><h3 style="margin:14px 0 8px">Account-based, mehrere Entscheider</h3><p>Statt einer Person sprechen wir 3-5 Rollen im selben Account koordiniert an - jede mit ihrer eigenen Botschaft.</p></div>
-    <div class="card"><div class="ec-icon">&#128172;</div><span class="tag">Reply</span><h3 style="margin:14px 0 8px">Reply-Handling, das Termine macht</h3><p>Jede Antwort - auch Einwände - wird so behandelt, dass aus Interesse ein Kalendereintrag wird.</p></div>
-  </div>
-</div></section>
-
-<!-- COPY SHOWCASE -->
-<section class="sec" id="copy" style="background:var(--bg2);border-block:1px solid var(--line)"><div class="wrap">
-  <div class="center rv"><div class="eyebrow">Wie es beim Lead ankommt</div>
-  <h2>Die gleiche Idee - <span class="hl">auf jedem Kanal richtig</span>.</h2>
-  <p class="lead center">Cold Email liest sich anders als eine LinkedIn-Unterhaltung. Wir schreiben jede Nachricht so, wie sie auf ihrem Kanal funktioniert. Schau es dir an:</p></div>
-  <div class="center" style="margin-top:34px"><div class="toggle">
-    <button class="on" onclick="chan('mail',this)">E-Mail</button>
-    <button onclick="chan('li',this)">LinkedIn</button>
-  </div></div>
-
-  <div class="chan on rv" id="chan-mail">
-    <div class="mail">
-      <div class="mh"><b>Betreff:</b> Vorschlag</div>
-      <div class="mb">Hallo <span class="v">{Vorname}</span>,
-
-gerade bin ich auf <span class="v">{Firma}</span> gestossen und mir ist aufgefallen, dass <span class="v">{Research-Opener}</span>.
-
-<span class="v">{Problem in einem Satz}</span>.
-
-Wir helfen Teams wie eurem genau dabei: <span class="v">{Lösung in einem Satz}</span>.
-
-Hätte das Sinn für <span class="v">{Firma}</span>?
-
-Beste Grüße
-<span class="v">{Absender}</span></div>
-    </div>
-    <p class="center note" style="max-width:560px;margin:18px auto 0">4 Schritte: Beobachtung, Problem, Insight, No-Brainer-Frage. Max. 2 Sätze pro Block, kein Marketing-Brei, jede Variable echt befüllt.</p>
-  </div>
-
-  <div class="chan rv" id="chan-li">
-    <div class="li">
-      <div class="bubble step"><span class="badge2">Schritt 1 - Vernetzung</span><div class="who">Connection Request</div>Kurz, ohne Pitch. Oft nur die Vernetzung - der Verkauf kommt später im Gespräch.</div>
-      <div class="bubble step"><span class="badge2">Schritt 2 - DM nach Annahme</span><div class="who">Du an <span class="v">{Vorname}</span></div>Hallo <span class="v">{Nachname}</span>, Glückwunsch zur neuen Rolle bei <span class="v">{Firma}</span>.
-
-In den ersten 100 Tagen sehen wir oft: <span class="v">{relevante Beobachtung}</span>.
-
-Wäre spannend, wie ihr das angeht.
-
-Beste Grüße, <span class="v">{Absender}</span></div>
-      <div class="bubble step"><span class="badge2">Schritt 3 - Follow-up</span><div class="who">Du an <span class="v">{Vorname}</span></div>Ein Use-Case, der bei euch häufig hängenbleibt: <span class="v">{konkreter Fall}</span>.
-
-Klingt das vertraut?</div>
-    </div>
-    <p class="center note" style="max-width:560px;margin:18px auto 0">Gespräch statt Pitch. Keine Aufzählungen, keine "kurzer Nachfass"-Floskeln - das sind die Muster, die Outreach verbrennen.</p>
-  </div>
-</div></section>
-
-<!-- AI VIDEO MOCKUP -->
-<section class="sec"><div class="wrap"><div class="hero-grid">
-  <div class="rv">
-    <div class="eyebrow">Personalisierte KI-Videos</div>
-    <h2>Ein Video, das <span class="hl">eure Website kennt</span>.</h2>
-    <p class="lead">Stell dir vor, dein Lead öffnet ein kurzes Video - und im Hintergrund scrollt seine eigene Website oder seine Stellenanzeige. Oben poppt unsere Nachricht auf. Das fühlt sich an wie einzeln gedreht, läuft aber automatisiert auf tausende Leads.</p>
-    <p class="lead" style="margin-top:14px">Genau so ein Video bauen wir auch für <!-- SLOT:COMPANY START -->Muster GmbH<!-- SLOT:COMPANY END -->.</p>
-    <a class="btn btn-ghost" href="#fragebogen" style="margin-top:24px" onclick="track('cta_video')">Im Termin live sehen</a>
-  </div>
-  <div class="rv">
-    <div class="browser">
-      <div class="bbar"><i></i><i></i><i></i><div class="burl"><!-- SLOT:LEAD_DOMAIN START -->muster-gmbh.de<!-- SLOT:LEAD_DOMAIN END --></div></div>
-      <!-- SLOT:LEAD_WEBSITE_SHOT START --><div class="shot"></div><!-- SLOT:LEAD_WEBSITE_SHOT END -->
-      <div class="vov">
-        <div class="vovt"><img class="vov-face" src="https://grundwerk.digital/favicon.ico" alt="Absender"></div>
-        <div class="vovb">"Hey <!-- SLOT:LEAD_FIRST START -->Alex<!-- SLOT:LEAD_FIRST END -->, wusstest du, dass wir <b>KI-personalisierte Videos</b> für euren Outreach machen?"</div>
-      </div>
-    </div>
-    <p class="note center" style="margin-top:14px">Mockup - im Termin zeigen wir dir ein echtes, auf euch gerendertes Video.</p>
-  </div>
-</div></div></section>
 
 <!-- CASE TAGS AS VIDEO -->
-<section class="sec" style="background:var(--bg2);border-block:1px solid var(--line)"><div class="wrap">
+<section class="sec" id="fallstudien" style="background:var(--bg2);border-block:1px solid var(--line)"><div class="wrap">
   <div class="center rv"><div class="eyebrow">Ergebnisse, kein Versprechen</div>
   <h2>Das ist bei anderen <span class="hl">rausgekommen</span>.</h2></div>
   <div class="grid g3 stagger rv" style="margin-top:42px">
     <div class="card"><div class="vid-frame" style="margin-bottom:18px"><div class="vbar"><i></i><i></i><i></i></div><div class="shot" style="aspect-ratio:16/10"></div><div class="vid-tag">Case-Video</div></div><span class="tag">SaaS</span><h3 style="margin:12px 0 6px">28 Termine in 74 Tagen</h3><p>240.000 EUR ARR abgeschlossen. - Birdsview</p></div>
     <div class="card"><div class="vid-frame" style="margin-bottom:18px"><div class="vbar"><i></i><i></i><i></i></div><div class="shot" style="aspect-ratio:16/10"></div><div class="vid-tag">Case-Video</div></div><span class="tag">Agentur</span><h3 style="margin:12px 0 6px">20 Opportunities in 13 Tagen</h3><p>Onboarding in 5 Tagen, dann lief die Pipeline. - Peer Studios</p></div>
     <div class="card"><div class="vid-frame" style="margin-bottom:18px"><div class="vbar"><i></i><i></i><i></i></div><div class="shot" style="aspect-ratio:16/10"></div><div class="vid-tag">Case-Video</div></div><span class="tag">Events</span><h3 style="margin:12px 0 6px">397 Leads über 12 Events</h3><p>Zuverlässig hochwertige Teilnehmer. - Smart Bridges</p></div>
-  </div>
-</div></section>
-
-<!-- DATA PROVIDERS + SCRAPERS -->
-<section class="sec" id="daten"><div class="wrap">
-  <div class="center rv"><div class="eyebrow">Woher die Leads kommen</div>
-  <h2>75+ <span class="hl">Datenquellen</span> und eigene Scraper.</h2>
-  <p class="lead center">Wir ziehen Zielfirmen und Entscheider aus jeder relevanten Quelle - und reichern sie mit verifizierten Mails, Signalen und Research an. Du zahlst keine Tool-Lizenzen.</p></div>
-  <div class="pills rv" style="margin-top:38px">
-    <span class="pill">Apollo</span><span class="pill">AI Ark</span><span class="pill">Crunchbase</span><span class="pill">Northdata</span><span class="pill">Clay</span><span class="pill">Clearbit</span><span class="pill">BuiltWith</span><span class="pill">LinkedIn Sales Navigator</span><span class="pill">Storeleads</span><span class="pill">RocketReach</span><span class="pill">ZeroBounce</span><span class="pill">Phantombuster</span><span class="pill">Prospeo</span><span class="pill">Discolike</span>
-  </div>
-  <h3 class="center" style="margin:54px 0 22px;color:var(--mut)">Plus unsere eigenen Scraper</h3>
-  <div class="pills rv">
-    <span class="pill"><b>+</b> Google Maps</span><span class="pill"><b>+</b> Gelbe Seiten</span><span class="pill"><b>+</b> Kununu</span><span class="pill"><b>+</b> Stellenanzeigen</span><span class="pill"><b>+</b> BWP Fachpartner</span><span class="pill"><b>+</b> dena Experten</span><span class="pill"><b>+</b> HWK-Verzeichnis</span><span class="pill"><b>+</b> Opening-Line-Research</span>
-  </div>
-</div></section>
-
-<!-- USE CASES -->
-<section class="sec" style="background:var(--bg2);border-block:1px solid var(--line)"><div class="wrap">
-  <div class="center rv"><div class="eyebrow">Funktioniert in deiner Welt</div>
-  <h2>Wie das System pro <span class="hl">Branche</span> spielt.</h2>
-  <p class="lead center">Das Prinzip bleibt, die Hebel ändern sich. Ein Auszug, wie wir Outreach je Zielgruppe fahren:</p></div>
-  <div class="uc rv" style="margin-top:40px">
-    <div class="uc-row"><div class="uc-num">01</div><div><h3>Recruiting & Personalberatung</h3><p>Cold Email + KI-Video auf Basis der echten Stellenanzeige. Pro offener Position der passende Kandidaten-Hook - skaliert auf tausende Stellen.</p></div></div>
-    <div class="uc-row"><div class="uc-num">02</div><div><h3>Handwerk, SHK & Energie</h3><p>Regionale Firmen aus Maps, Gelben Seiten und Fachpartner-Listen, angereichert mit Spezialisierung (Wärmepumpe, Solar) und Ort - dann Cold Email mit lokalem Opener.</p></div></div>
-    <div class="uc-row"><div class="uc-num">03</div><div><h3>Hotellerie & Hospitality</h3><p>Hoteldirektoren nach Größe und Region, angeschrieben mit dem konkreten Engpass im Betrieb statt generischem Pitch.</p></div></div>
-    <div class="uc-row"><div class="uc-num">04</div><div><h3>E-Commerce & Shops</h3><p>Shops nach Tech-Stack (Shopify, Klaviyo) gefiltert, Nachricht auf die echte Plattform und Listengröße zugeschnitten.</p></div></div>
-    <div class="uc-row"><div class="uc-num">05</div><div><h3>Healthcare & Pflege</h3><p>Einrichtungen nach Typ und Spezialisierung, Research-Opener aus der echten Website - compliance-bewusst, persönlich.</p></div></div>
-    <div class="uc-row"><div class="uc-num">06</div><div><h3>Software & Tech-Startups</h3><p>Signal-basiert: frische Finanzierung, Hiring-Spike, neuer Head-of. Multichannel aus E-Mail, LinkedIn und Video in genau dem Fenster.</p></div></div>
-    <div class="uc-row"><div class="uc-num">07</div><div><h3>Industrie & Fertigung</h3><p>Firmen aus Kammer-Registern nach Größe und Teilbranche, angeschrieben mit dem typischen Prozess-Schmerz der Geschäftsführung.</p></div></div>
-  </div>
-</div></section>
-
-<!-- REFERENCES -->
-<section class="sec" id="cases"><div class="wrap">
-  <div class="center rv"><div class="eyebrow">Vertrauen</div>
-  <h2>Marken, die mit uns <span class="hl">wachsen</span>.</h2></div>
-  <div class="logo-grid rv"><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/piabo.png" alt="PIABO" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/smart-bridges.png" alt="Smart Bridges" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/peer-studios.png" alt="Peer Studios" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/birdsview.png" alt="BirdsView" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/hivebuy.png" alt="Hivebuy" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/pplwise.png" alt="pplwise" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/ccv.png" alt="CCV" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/cervis.png" alt="cervis" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/cocomin.png" alt="COCOMIN" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/egroup.png" alt="eGroup" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/stackfuel.png" alt="stackfuel" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/raidboxes.png" alt="raidboxes" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/arrowtec.png" alt="ARROWTEC" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/wachstums-werkstatt.png" alt="Wachstums Werkstatt" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/our-greenery.png" alt="our greenery" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/famedly.png" alt="Famedly" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/automations-de.png" alt="Automations.de" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/salz.png" alt="salz" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/happy-gang.png" alt="Happy Gang" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/unicorn.png" alt="unicorn" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/prevail.png" alt="PREVAIL" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/vertexgo.png" alt="VertexGo" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/xdi.png" alt="XDi" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/digital-now.png" alt="Digital Now" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/ihlenfeldt.png" alt="Ihlenfeldt" loading="lazy"></div></div>
-  <div class="grid g3 stagger rv" style="margin-top:48px">
-    <div class="card"><div class="quote">"Das Grundwerk-Team lebt KI und treibt unsere Sales-Prozesse mit minimalem internen Aufwand."</div><div class="quote-who"><b>Tim Kuesters</b>CEO, Birdsview</div></div>
-    <div class="card"><div class="quote">"Onboarding in 5 Tagen fertig, dann lief die Pipeline planbar. Genau das, was wir brauchten."</div><div class="quote-who"><b>Lasse Petry</b>Co-Founder, Peer Studios</div></div>
-    <div class="card"><div class="quote">"Individuell und professionell betreut. Das System lieferte zuverlaessig hochwertige Teilnehmer."</div><div class="quote-who"><b>Ingo Boldt</b>Geschäftsführer, Smart Bridges</div></div>
   </div>
 </div></section>
 
@@ -564,6 +437,132 @@ Klingt das vertraut?</div>
       <button class="btn btn-ghost btn-sm" id="back" onclick="qBack()" style="visibility:hidden">Zurück</button>
       <button class="btn btn-blue btn-sm" id="next" onclick="qNext()">Weiter</button>
     </div>
+  </div>
+</div></section>
+
+<!-- REFERENCES -->
+<section class="sec" id="referenzen"><div class="wrap">
+  <div class="center rv"><div class="eyebrow">Vertrauen</div>
+  <h2>Marken, die mit uns <span class="hl">wachsen</span>.</h2></div>
+  <div class="logo-grid rv"><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/piabo.png" alt="PIABO" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/smart-bridges.png" alt="Smart Bridges" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/peer-studios.png" alt="Peer Studios" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/birdsview.png" alt="BirdsView" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/hivebuy.png" alt="Hivebuy" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/pplwise.png" alt="pplwise" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/ccv.png" alt="CCV" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/cervis.png" alt="cervis" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/cocomin.png" alt="COCOMIN" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/egroup.png" alt="eGroup" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/stackfuel.png" alt="stackfuel" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/raidboxes.png" alt="raidboxes" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/arrowtec.png" alt="ARROWTEC" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/wachstums-werkstatt.png" alt="Wachstums Werkstatt" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/our-greenery.png" alt="our greenery" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/famedly.png" alt="Famedly" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/automations-de.png" alt="Automations.de" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/salz.png" alt="salz" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/happy-gang.png" alt="Happy Gang" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/unicorn.png" alt="unicorn" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/prevail.png" alt="PREVAIL" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/vertexgo.png" alt="VertexGo" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/xdi.png" alt="XDi" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/digital-now.png" alt="Digital Now" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/ihlenfeldt.png" alt="Ihlenfeldt" loading="lazy"></div></div>
+  <div class="grid g3 stagger rv" style="margin-top:48px">
+    <div class="card"><div class="quote">"Das Grundwerk-Team lebt KI und treibt unsere Sales-Prozesse mit minimalem internen Aufwand."</div><div class="quote-who"><b>Tim Kuesters</b>CEO, Birdsview</div></div>
+    <div class="card"><div class="quote">"Onboarding in 5 Tagen fertig, dann lief die Pipeline planbar. Genau das, was wir brauchten."</div><div class="quote-who"><b>Lasse Petry</b>Co-Founder, Peer Studios</div></div>
+    <div class="card"><div class="quote">"Individuell und professionell betreut. Das System lieferte zuverlaessig hochwertige Teilnehmer."</div><div class="quote-who"><b>Ingo Boldt</b>Geschäftsführer, Smart Bridges</div></div>
+  </div>
+</div></section>
+
+<!-- EDGE CASES / PLAYS -->
+<section class="sec" id="system" style="background:var(--bg2);border-block:1px solid var(--line)"><div class="wrap">
+  <div class="center rv"><div class="eyebrow">Was wir für dich fahren</div>
+  <h2>Nicht eine Taktik. Ein <span class="hl">System aus Szenarien</span>.</h2>
+  <p class="lead center">Je nach Zielgruppe und Signal ziehen wir den passenden Hebel. Das läuft parallel, getestet und woechentlich optimiert.</p></div>
+  <div class="grid g3 stagger rv" style="margin-top:46px">
+    <div class="card"><div class="ec-icon">&#9993;</div><span class="tag">E-Mail</span><h3 style="margin:14px 0 8px">Cold Email mit Research-Opener</h3><p>Jede Mail startet mit einem Satz, der nur für diesen Lead stimmt - aus echter Website-Recherche, nicht "Mir ist aufgefallen, dass ihr...".</p></div>
+    <div class="card"><div class="ec-icon">&#128279;</div><span class="tag">LinkedIn</span><h3 style="margin:14px 0 8px">Conversation-First Social Selling</h3><p>Connection, dann Gespräch statt Pitch. Keine Spam-Flags, echte Antworten von Entscheidern.</p></div>
+    <div class="card"><div class="ec-icon">&#127916;</div><span class="tag">Video</span><h3 style="margin:14px 0 8px">KI-personalisierte Videos</h3><p>Ein Video, in dessen Hintergrund die Website oder Stellenanzeige des Leads läuft. Skaliert auf tausende - jedes wirkt einzeln gedreht.<span class="play">Beispiel ansehen</span></p></div>
+    <div class="card"><div class="ec-icon">&#9889;</div><span class="tag">Signal</span><h3 style="margin:14px 0 8px">Signal-getriggertes Timing</h3><p>Neue Stelle, frische Finanzierung, Tech-Wechsel. Wir schreiben im richtigen Moment, nicht auf Verdacht.</p></div>
+    <div class="card"><div class="ec-icon">&#127919;</div><span class="tag">ABM</span><h3 style="margin:14px 0 8px">Account-based, mehrere Entscheider</h3><p>Statt einer Person sprechen wir 3-5 Rollen im selben Account koordiniert an - jede mit ihrer eigenen Botschaft.</p></div>
+    <div class="card"><div class="ec-icon">&#128172;</div><span class="tag">Reply</span><h3 style="margin:14px 0 8px">Reply-Handling, das Termine macht</h3><p>Jede Antwort - auch Einwände - wird so behandelt, dass aus Interesse ein Kalendereintrag wird.</p></div>
+  </div>
+</div></section>
+
+<!-- COPY SHOWCASE -->
+<section class="sec" id="copy"><div class="wrap">
+  <div class="center rv"><div class="eyebrow">Wie es beim Lead ankommt</div>
+  <h2>Die gleiche Idee - <span class="hl">auf jedem Kanal richtig</span>.</h2>
+  <p class="lead center">Cold Email liest sich anders als eine LinkedIn-Unterhaltung. Wir schreiben jede Nachricht so, wie sie auf ihrem Kanal funktioniert. Schau es dir an:</p></div>
+  <div class="center" style="margin-top:34px"><div class="toggle">
+    <button class="on" onclick="chan('mail',this)">E-Mail</button>
+    <button onclick="chan('li',this)">LinkedIn</button>
+  </div></div>
+
+  <div class="chan on rv" id="chan-mail">
+    <div class="mail">
+      <div class="mh"><b>Betreff:</b> Vorschlag</div>
+      <div class="mb">Hallo <span class="v">{Vorname}</span>,
+
+gerade bin ich auf <span class="v">{Firma}</span> gestossen und mir ist aufgefallen, dass <span class="v">{Research-Opener}</span>.
+
+<span class="v">{Problem in einem Satz}</span>.
+
+Wir helfen Teams wie eurem genau dabei: <span class="v">{Lösung in einem Satz}</span>.
+
+Hätte das Sinn für <span class="v">{Firma}</span>?
+
+Beste Grüße
+<span class="v">{Absender}</span></div>
+    </div>
+    <p class="center note" style="max-width:560px;margin:18px auto 0">4 Schritte: Beobachtung, Problem, Insight, No-Brainer-Frage. Max. 2 Sätze pro Block, kein Marketing-Brei, jede Variable echt befüllt.</p>
+  </div>
+
+  <div class="chan rv" id="chan-li">
+    <div class="li">
+      <div class="bubble step"><span class="badge2">Schritt 1 - Vernetzung</span><div class="who">Connection Request</div>Kurz, ohne Pitch. Oft nur die Vernetzung - der Verkauf kommt später im Gespräch.</div>
+      <div class="bubble step"><span class="badge2">Schritt 2 - DM nach Annahme</span><div class="who">Du an <span class="v">{Vorname}</span></div>Hallo <span class="v">{Nachname}</span>, Glückwunsch zur neuen Rolle bei <span class="v">{Firma}</span>.
+
+In den ersten 100 Tagen sehen wir oft: <span class="v">{relevante Beobachtung}</span>.
+
+Wäre spannend, wie ihr das angeht.
+
+Beste Grüße, <span class="v">{Absender}</span></div>
+      <div class="bubble step"><span class="badge2">Schritt 3 - Follow-up</span><div class="who">Du an <span class="v">{Vorname}</span></div>Ein Use-Case, der bei euch häufig hängenbleibt: <span class="v">{konkreter Fall}</span>.
+
+Klingt das vertraut?</div>
+    </div>
+    <p class="center note" style="max-width:560px;margin:18px auto 0">Gespräch statt Pitch. Keine Aufzählungen, keine "kurzer Nachfass"-Floskeln - das sind die Muster, die Outreach verbrennen.</p>
+  </div>
+</div></section>
+
+<!-- AI VIDEO MOCKUP -->
+<section class="sec" style="background:var(--bg2);border-block:1px solid var(--line)"><div class="wrap"><div class="hero-grid">
+  <div class="rv">
+    <div class="eyebrow">Personalisierte KI-Videos</div>
+    <h2>Ein Video, das <span class="hl">eure Website kennt</span>.</h2>
+    <p class="lead">Stell dir vor, dein Lead öffnet ein kurzes Video - und im Hintergrund scrollt seine eigene Website oder seine Stellenanzeige. Oben poppt unsere Nachricht auf. Das fühlt sich an wie einzeln gedreht, läuft aber automatisiert auf tausende Leads.</p>
+    <p class="lead" style="margin-top:14px">Genau so ein Video bauen wir auch für <!-- SLOT:COMPANY START -->Muster GmbH<!-- SLOT:COMPANY END -->.</p>
+    <a class="btn btn-ghost" href="#fragebogen" style="margin-top:24px" onclick="track('cta_video')">Im Termin live sehen</a>
+  </div>
+  <div class="rv">
+    <div class="browser">
+      <div class="bbar"><i></i><i></i><i></i><div class="burl"><!-- SLOT:LEAD_DOMAIN START -->muster-gmbh.de<!-- SLOT:LEAD_DOMAIN END --></div></div>
+      <!-- SLOT:LEAD_WEBSITE_SHOT START --><div class="shot"></div><!-- SLOT:LEAD_WEBSITE_SHOT END -->
+      <div class="vov">
+        <div class="vovt"><img class="vov-face" src="https://start.grundwerk.digital/assets/favicon.png" alt="Grundwerk"></div>
+        <div class="vovb">"Hey <!-- SLOT:LEAD_FIRST START -->Alex<!-- SLOT:LEAD_FIRST END -->, wusstest du, dass wir <b>KI-personalisierte Videos</b> für euren Outreach machen?"</div>
+      </div>
+    </div>
+    <p class="note center" style="margin-top:14px">Mockup - im Termin zeigen wir dir ein echtes, auf euch gerendertes Video.</p>
+  </div>
+</div></div></section>
+
+<!-- DATA PROVIDERS + SCRAPERS -->
+<section class="sec" id="daten"><div class="wrap">
+  <div class="center rv"><div class="eyebrow">Woher die Leads kommen</div>
+  <h2>75+ <span class="hl">Datenquellen</span> und eigene Scraper.</h2>
+  <p class="lead center">Wir ziehen Zielfirmen und Entscheider aus jeder relevanten Quelle - und reichern sie mit verifizierten Mails, Signalen und Research an. Du zahlst keine Tool-Lizenzen.</p></div>
+  <div class="pills rv" style="margin-top:38px">
+    <span class="pill">Apollo</span><span class="pill">AI Ark</span><span class="pill">Crunchbase</span><span class="pill">Northdata</span><span class="pill">Clay</span><span class="pill">Clearbit</span><span class="pill">BuiltWith</span><span class="pill">LinkedIn Sales Navigator</span><span class="pill">Storeleads</span><span class="pill">RocketReach</span><span class="pill">ZeroBounce</span><span class="pill">Phantombuster</span><span class="pill">Prospeo</span><span class="pill">Discolike</span>
+  </div>
+  <h3 class="center" style="margin:54px 0 22px;color:var(--mut)">Plus unsere eigenen Scraper</h3>
+  <div class="pills rv">
+    <span class="pill"><b>+</b> Google Maps</span><span class="pill"><b>+</b> Gelbe Seiten</span><span class="pill"><b>+</b> Kununu</span><span class="pill"><b>+</b> Stellenanzeigen</span><span class="pill"><b>+</b> BWP Fachpartner</span><span class="pill"><b>+</b> dena Experten</span><span class="pill"><b>+</b> HWK-Verzeichnis</span><span class="pill"><b>+</b> Opening-Line-Research</span>
+  </div>
+</div></section>
+
+<!-- USE CASES -->
+<section class="sec" style="background:var(--bg2);border-block:1px solid var(--line)"><div class="wrap">
+  <div class="center rv"><div class="eyebrow">Funktioniert in deiner Welt</div>
+  <h2>Wie das System pro <span class="hl">Branche</span> spielt.</h2>
+  <p class="lead center">Das Prinzip bleibt, die Hebel ändern sich. Ein Auszug, wie wir Outreach je Zielgruppe fahren:</p></div>
+  <div class="uc rv" style="margin-top:40px">
+    <div class="uc-row"><div class="uc-num">01</div><div><h3>Recruiting & Personalberatung</h3><p>Cold Email + KI-Video auf Basis der echten Stellenanzeige. Pro offener Position der passende Kandidaten-Hook - skaliert auf tausende Stellen.</p></div></div>
+    <div class="uc-row"><div class="uc-num">02</div><div><h3>Handwerk, SHK & Energie</h3><p>Regionale Firmen aus Maps, Gelben Seiten und Fachpartner-Listen, angereichert mit Spezialisierung (Wärmepumpe, Solar) und Ort - dann Cold Email mit lokalem Opener.</p></div></div>
+    <div class="uc-row"><div class="uc-num">03</div><div><h3>Hotellerie & Hospitality</h3><p>Hoteldirektoren nach Größe und Region, angeschrieben mit dem konkreten Engpass im Betrieb statt generischem Pitch.</p></div></div>
+    <div class="uc-row"><div class="uc-num">04</div><div><h3>E-Commerce & Shops</h3><p>Shops nach Tech-Stack (Shopify, Klaviyo) gefiltert, Nachricht auf die echte Plattform und Listengröße zugeschnitten.</p></div></div>
+    <div class="uc-row"><div class="uc-num">05</div><div><h3>Healthcare & Pflege</h3><p>Einrichtungen nach Typ und Spezialisierung, Research-Opener aus der echten Website - compliance-bewusst, persönlich.</p></div></div>
+    <div class="uc-row"><div class="uc-num">06</div><div><h3>Software & Tech-Startups</h3><p>Signal-basiert: frische Finanzierung, Hiring-Spike, neuer Head-of. Multichannel aus E-Mail, LinkedIn und Video in genau dem Fenster.</p></div></div>
+    <div class="uc-row"><div class="uc-num">07</div><div><h3>Industrie & Fertigung</h3><p>Firmen aus Kammer-Registern nach Größe und Teilbranche, angeschrieben mit dem typischen Prozess-Schmerz der Geschäftsführung.</p></div></div>
   </div>
 </div></section>
 
