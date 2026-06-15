@@ -255,6 +255,148 @@ a{color:inherit;text-decoration:none}
 .vidov.on{display:flex}
 .vidov-box{position:relative;width:min(94vw,820px)}
 .vidov-x{position:absolute;top:-44px;right:0;background:none;border:0;color:#fff;font-size:32px;line-height:1;cursor:pointer}
+
+/* ===== FEATURE SWITCHER ===== */
+#system{background-color:var(--bg2);background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:46px 46px;border-block:1px solid var(--line)}
+.ftabs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:38px auto 0;max-width:780px}
+.ftabs button{font-family:var(--ff-b);font-weight:600;font-size:14px;color:var(--mut);background:var(--bg3);border:1px solid var(--line);border-radius:999px;padding:11px 20px;cursor:pointer;transition:.18s;display:inline-flex;align-items:center;gap:8px}
+.ftabs button:hover{color:var(--fg);border-color:var(--blue-line)}
+.ftabs button.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+.ftabs .fdot{width:7px;height:7px;border-radius:50%;background:currentColor;opacity:.45}
+.ftabs button.on .fdot{opacity:1;background:#fff}
+.fpanel{display:none;margin-top:42px}
+.fpanel.on{display:block;animation:fade .4s ease}
+.fp-head{max-width:700px;margin:0 auto 30px;text-align:center}
+.fp-head .eyebrow{justify-content:center}
+.fp-head h3{font-family:var(--ff-d);font-size:clamp(23px,3vw,33px);font-weight:600;line-height:1.16;letter-spacing:-.02em;margin:12px 0 0}
+.fp-head p{color:var(--mut);font-size:15.5px;line-height:1.6;margin:13px auto 0;max-width:560px}
+.fp-two{display:grid;grid-template-columns:1fr 1.22fr;gap:42px;align-items:center}
+@media(max-width:940px){.fp-two{grid-template-columns:1fr;gap:30px}}
+.fp-two .eyebrow{margin-bottom:14px}
+.fp-two h3{margin:0 0 14px}
+.fp-mini{display:flex;gap:24px;margin-top:24px;flex-wrap:wrap}
+.fp-mini .v{font-family:var(--ff-d);font-size:23px;font-weight:600;color:var(--fg);letter-spacing:-.02em;line-height:1}
+.fp-mini .l{font-size:11px;color:var(--mut2);text-transform:uppercase;letter-spacing:.06em;margin-top:6px}
+
+/* KI-Video mockup */
+.vid-stage{position:relative;background:#000;aspect-ratio:16/10;overflow:hidden}
+.vid-bg-fallback{position:absolute;inset:0;background:linear-gradient(135deg,#16263f,#0a1422)}
+.vid-skel{position:absolute;inset:0;opacity:.5;display:flex;flex-direction:column}
+.vid-skel .vs-nav{height:34px;background:#fff;display:flex;align-items:center;gap:14px;padding:0 18px}
+.vid-skel .vs-logo{width:64px;height:10px;background:#16263f;border-radius:2px}
+.vid-skel .vs-links{display:flex;gap:10px;margin-left:auto}
+.vid-skel .vs-links i{width:26px;height:6px;background:#9aa7b2;border-radius:1px}
+.vid-skel .vs-hero{flex:1;background:linear-gradient(135deg,#16335f,#0a1422);padding:22px 24px;display:flex;flex-direction:column;gap:9px}
+.vid-skel .vs-h{width:52%;height:15px;background:rgba(255,255,255,.85);border-radius:2px}
+.vid-skel .vs-s{width:36%;height:8px;background:rgba(255,255,255,.4);border-radius:1px}
+.vid-skel .vs-cta{width:88px;height:24px;background:var(--blue);border-radius:5px;margin-top:6px}
+.vid-grad{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.74),transparent 56%)}
+.vid-person{position:absolute;left:5%;bottom:0;height:97%;width:auto;z-index:3;filter:drop-shadow(0 8px 22px rgba(0,0,0,.5))}
+.vid-persona{position:absolute;top:14px;left:14px;z-index:4;display:flex;align-items:center;gap:9px;background:rgba(14,14,16,.82);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:6px 13px 6px 7px}
+.vid-persona img{width:30px;height:30px;border-radius:50%;object-fit:cover;border:2px solid var(--blue)}
+.vid-persona .n{font-size:12px;font-weight:700;color:#fff;line-height:1.1}
+.vid-persona .r{font-size:10px;color:#a9adb6}
+.vid-rec{position:absolute;top:16px;right:14px;z-index:4;display:flex;align-items:center;gap:6px;background:rgba(200,40,40,.88);border-radius:999px;padding:4px 10px;font-size:10px;font-weight:700;color:#fff;letter-spacing:.06em}
+.vid-rec i{width:6px;height:6px;background:#fff;border-radius:50%;animation:blink 1.1s step-end infinite}
+@keyframes blink{50%{opacity:0}}
+.vid-play{position:absolute;inset:0;z-index:4;display:flex;align-items:center;justify-content:center;pointer-events:none}
+.vid-play span{width:58px;height:58px;border-radius:50%;background:rgba(0,102,255,.9);box-shadow:0 0 0 11px rgba(0,102,255,.16);display:flex;align-items:center;justify-content:center}
+.vid-play span::after{content:"";width:0;height:0;border-left:19px solid #fff;border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px}
+.vid-ctrl{position:absolute;left:0;right:0;bottom:0;z-index:4;padding:12px 16px 14px;background:linear-gradient(to top,rgba(0,0,0,.7),transparent)}
+.vid-ctrl .bar{height:3px;background:rgba(255,255,255,.25);border-radius:99px;overflow:hidden}
+.vid-ctrl .bar i{display:block;height:100%;width:38%;background:var(--blue);border-radius:99px}
+.vid-ctrl .row{display:flex;align-items:center;gap:10px;margin-top:8px;font-size:11px;color:rgba(255,255,255,.7)}
+.vid-ctrl .row .mid{flex:1;text-align:center;font-style:italic;color:rgba(255,255,255,.55);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vid-tags{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:11px 16px;background:var(--bg2);border-top:1px solid var(--line)}
+.vid-tags .lbl{font-size:10.5px;color:var(--mut2);text-transform:uppercase;letter-spacing:.05em;font-weight:600}
+.vid-tag{font-size:10.5px;font-weight:600;color:var(--blue);background:var(--blue-soft);border:1px solid var(--blue-line);border-radius:6px;padding:3px 9px}
+.vid-gen{display:flex;align-items:center;gap:12px;padding:11px 16px;background:var(--bg3);border-top:1px solid var(--line)}
+.vid-gen .lbl{font-size:11.5px;color:var(--mut2);white-space:nowrap}
+.vid-gen .track{flex:1;height:4px;background:rgba(255,255,255,.08);border-radius:99px;overflow:hidden}
+.vid-gen .track i{display:block;height:100%;width:78%;background:linear-gradient(90deg,#0044cc,var(--blue));border-radius:99px}
+.vid-gen .c{font-size:11.5px;font-weight:700;color:var(--fg);white-space:nowrap}
+.vid-flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:stretch;gap:14px;margin:46px auto 0;max-width:940px}
+@media(max-width:780px){.vid-flow{grid-template-columns:1fr}.vid-flow .farr{transform:rotate(90deg);justify-self:center}}
+.vflow-card{background:var(--bg3);border:1px solid var(--line);border-radius:14px;padding:22px 18px;text-align:center}
+.vflow-card .ic{width:44px;height:44px;border-radius:12px;background:var(--blue-soft);border:1px solid var(--blue-line);display:flex;align-items:center;justify-content:center;font-size:21px;margin:0 auto 13px}
+.vflow-card h4{font-family:var(--ff-d);font-size:15px;font-weight:600;margin:0 0 7px}
+.vflow-card p{font-size:12.5px;color:var(--mut);line-height:1.5;margin:0}
+.farr{color:var(--blue);font-size:24px;display:flex;align-items:center;justify-content:center}
+
+/* Cold Email */
+.ce-mail{max-width:600px;margin:0 auto;background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.4)}
+.ce-top{display:flex;align-items:center;gap:10px;padding:13px 18px;border-bottom:1px solid var(--line);background:var(--bg3)}
+.ce-ava{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--blue),#003ec7);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0}
+.ce-from{font-size:13px;font-weight:700;color:var(--fg)}
+.ce-from span{display:block;font-size:11px;color:var(--mut2);font-weight:400}
+.ce-time{margin-left:auto;font-size:11px;color:var(--mut2);white-space:nowrap}
+.ce-subj{padding:15px 18px 0;font-family:var(--ff-d);font-size:16px;font-weight:600}
+.ce-body{padding:12px 18px 20px;font-size:14px;line-height:1.7;color:var(--fg);white-space:pre-line}
+.ce-body .op{color:var(--blue);background:var(--blue-soft);border-radius:5px;padding:1px 5px;font-weight:600}
+.ce-steps{display:flex;flex-direction:column;gap:16px}
+.ce-step{display:flex;gap:13px;align-items:flex-start}
+.ce-step .num{width:27px;height:27px;border-radius:8px;background:var(--blue-soft);border:1px solid var(--blue-line);color:var(--blue);font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ce-step h4{font-family:var(--ff-d);font-size:14px;font-weight:600;margin:3px 0 3px}
+.ce-step p{font-size:13px;color:var(--mut);line-height:1.5;margin:0}
+
+/* LinkedIn (light UI) */
+.li-win{max-width:560px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,.5);color:#1d2226}
+.li-bar{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid #e6e6e6;background:#fff}
+.li-logo{width:26px;height:26px;border-radius:5px;background:#0a66c2;color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;font-family:var(--ff-d)}
+.li-bar .t{font-size:14px;font-weight:700;color:#1d2226}
+.li-conn{display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid #ededed;background:#f3f6f8}
+.li-ava{width:44px;height:44px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,#0a66c2,#004182);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;font-family:var(--ff-d)}
+.li-conn .meta{flex:1;min-width:0}
+.li-conn .meta .n{font-size:14px;font-weight:700;color:#1d2226}
+.li-conn .meta .n b{font-weight:600;color:#56687a;font-size:12px}
+.li-conn .meta .h{font-size:12px;color:#56687a;margin-top:1px}
+.li-accepted{font-size:11px;font-weight:700;color:#057642;background:#dff0e4;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.li-thread{padding:18px 16px;display:flex;flex-direction:column;gap:18px;background:#fff}
+.li-msg{display:flex;gap:11px}
+.li-msg .av{width:34px;height:34px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;color:#fff;font-family:var(--ff-d)}
+.li-msg .av.gw{background:linear-gradient(135deg,#0a66c2,#004182)}
+.li-msg .av.ld{background:#9aa7b2}
+.li-msg .c{flex:1;min-width:0}
+.li-msg .c .top{display:flex;align-items:baseline;gap:7px}
+.li-msg .c .nm{font-size:13.5px;font-weight:700;color:#1d2226}
+.li-msg .c .tm{font-size:11px;color:#8a96a3}
+.li-msg .c .tx{font-size:13.5px;line-height:1.6;color:#1d2226;margin-top:3px;white-space:pre-line}
+.li-note{display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#0a66c2;background:#e8f1fb;border-radius:5px;padding:2px 8px;margin-bottom:6px}
+
+/* Signal switcher */
+.sig-stage{display:grid;grid-template-columns:272px 1fr;background:var(--bg2);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.45);max-width:1000px;margin:0 auto}
+@media(max-width:780px){.sig-stage{grid-template-columns:1fr}}
+.sig-side{border-right:1px solid var(--line);display:flex;flex-direction:column}
+@media(max-width:780px){.sig-side{border-right:none;border-bottom:1px solid var(--line)}}
+.sig-side .hd{padding:15px 18px;border-bottom:1px solid var(--line);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mut2)}
+.sig-list{padding:10px;display:flex;flex-direction:column;gap:5px}
+.sig-item{display:flex;align-items:flex-start;gap:10px;padding:10px 11px;border-radius:10px;cursor:pointer;border:1px solid transparent;background:var(--bg3);transition:.15s;text-align:left;font-family:var(--ff-b);width:100%}
+.sig-item:hover{border-color:var(--blue-line)}
+.sig-item.on{background:var(--blue-soft);border-color:var(--blue-line)}
+.sig-item .ic{width:30px;height:30px;border-radius:8px;background:var(--blue-soft);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.sig-item .b{flex:1;min-width:0}
+.sig-item .lb{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--blue);margin-bottom:2px}
+.sig-item .dt{font-size:12px;color:var(--fg);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sig-item .sr{font-size:10px;color:var(--mut2);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sig-main{min-height:440px}
+.sig-pane{display:none;flex-direction:column;height:100%}
+.sig-pane.on{display:flex}
+.sig-mailbar{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--line);background:var(--bg3)}
+.sig-mailbar .l{font-size:12px;font-weight:600;color:var(--mut)}
+.sig-mailbar .badge{display:inline-flex;align-items:center;gap:5px;background:var(--blue-soft);border:1px solid var(--blue-line);border-radius:999px;padding:3px 10px;font-size:10px;font-weight:700;color:var(--blue);white-space:nowrap}
+.sig-body{padding:22px 24px}
+.sig-annot{display:flex;gap:10px;align-items:center;background:var(--blue-soft);border:1px solid var(--blue-line);border-radius:10px;padding:10px 13px;margin-bottom:18px}
+.sig-annot .ic{font-size:17px;flex-shrink:0}
+.sig-annot p{font-size:12px;color:var(--mut);line-height:1.45;margin:0}
+.sig-annot p b{color:var(--blue)}
+.sig-email .sj{font-family:var(--ff-d);font-size:16px;font-weight:600;margin:0 0 14px}
+.sig-mb .who{display:flex;align-items:center;gap:9px;margin-bottom:7px}
+.sig-mb .who .av{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--blue),#003ec7);color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sig-mb .who .nm{font-size:12px;font-weight:700;color:var(--fg)}
+.sig-mb .who .tm{font-size:11px;color:var(--mut2);margin-left:auto}
+.sig-mb .txt{font-size:13px;line-height:1.6;color:var(--fg);margin-left:35px;background:var(--blue-soft);border:1px solid var(--blue-line);border-radius:4px 12px 12px 12px;padding:13px 15px;white-space:pre-line}
+.sig-mb .txt .pill{display:inline-flex;align-items:center;gap:4px;background:var(--blue);color:#fff;border-radius:5px;padding:1px 7px;font-size:10.5px;font-weight:700;letter-spacing:.03em}
+
 </style>
 <noscript><style>.rv,.stagger>*{opacity:1!important;transform:none!important}.ov{display:none!important}</style></noscript>
 </head>
@@ -486,89 +628,194 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeVid();}
   </div>
 </div></section>
 
-<!-- EDGE CASES / PLAYS -->
-<section class="sec" id="system" style="background:var(--bg2);border-block:1px solid var(--line)"><div class="wrap">
+<!-- FEATURE SWITCHER (Szenarien als Switcher, ersetzt Grid + Copy-Showcase + Video-Mockup) -->
+<section class="sec" id="system"><div class="wrap">
   <div class="center rv"><div class="eyebrow">Was wir für dich fahren</div>
   <h2>Nicht eine Taktik. Ein <span class="hl">System aus Szenarien</span>.</h2>
-  <p class="lead center">Je nach Zielgruppe und Signal ziehen wir den passenden Hebel. Das läuft parallel, getestet und woechentlich optimiert.</p></div>
-  <div class="grid g3 stagger rv" style="margin-top:46px">
-    <div class="card"><div class="ec-icon">&#9993;</div><span class="tag">E-Mail</span><h3 style="margin:14px 0 8px">Cold Email mit Research-Opener</h3><p>Jede Mail startet mit einem Satz, der nur für diesen Lead stimmt - aus echter Website-Recherche, nicht "Mir ist aufgefallen, dass ihr...".</p></div>
-    <div class="card"><div class="ec-icon">&#128279;</div><span class="tag">LinkedIn</span><h3 style="margin:14px 0 8px">Conversation-First Social Selling</h3><p>Connection, dann Gespräch statt Pitch. Keine Spam-Flags, echte Antworten von Entscheidern.</p></div>
-    <div class="card"><div class="ec-icon">&#127916;</div><span class="tag">Video</span><h3 style="margin:14px 0 8px">KI-personalisierte Videos</h3><p>Ein Video, in dessen Hintergrund die Website oder Stellenanzeige des Leads läuft. Skaliert auf tausende - jedes wirkt einzeln gedreht.<span class="play">Beispiel ansehen</span></p></div>
-    <div class="card"><div class="ec-icon">&#9889;</div><span class="tag">Signal</span><h3 style="margin:14px 0 8px">Signal-getriggertes Timing</h3><p>Neue Stelle, frische Finanzierung, Tech-Wechsel. Wir schreiben im richtigen Moment, nicht auf Verdacht.</p></div>
-    <div class="card"><div class="ec-icon">&#127919;</div><span class="tag">ABM</span><h3 style="margin:14px 0 8px">Account-based, mehrere Entscheider</h3><p>Statt einer Person sprechen wir 3-5 Rollen im selben Account koordiniert an - jede mit ihrer eigenen Botschaft.</p></div>
-    <div class="card"><div class="ec-icon">&#128172;</div><span class="tag">Reply</span><h3 style="margin:14px 0 8px">Reply-Handling, das Termine macht</h3><p>Jede Antwort - auch Einwände - wird so behandelt, dass aus Interesse ein Kalendereintrag wird.</p></div>
-  </div>
-</div></section>
+  <p class="lead center">Je nach Zielgruppe und Signal ziehen wir den passenden Hebel. Klick dich durch - jeder Hebel ist ein eigenes, durchdachtes System.</p></div>
 
-<!-- COPY SHOWCASE -->
-<section class="sec" id="copy"><div class="wrap">
-  <div class="center rv"><div class="eyebrow">Wie es beim Lead ankommt</div>
-  <h2>Die gleiche Idee - <span class="hl">auf jedem Kanal richtig</span>.</h2>
-  <p class="lead center">Cold Email liest sich anders als eine LinkedIn-Unterhaltung. Wir schreiben jede Nachricht so, wie sie auf ihrem Kanal funktioniert. Schau es dir an:</p></div>
-  <div class="center" style="margin-top:34px"><div class="toggle">
-    <button class="on" onclick="chan('mail',this)">E-Mail</button>
-    <button onclick="chan('li',this)">LinkedIn</button>
-  </div></div>
-
-  <div class="chan on rv" id="chan-mail">
-    <div class="mail">
-      <div class="mh"><b>Betreff:</b> Vorschlag</div>
-      <div class="mb">Hallo <span class="v">{Vorname}</span>,
-
-gerade bin ich auf <span class="v">{Firma}</span> gestossen und mir ist aufgefallen, dass <span class="v">{Research-Opener}</span>.
-
-<span class="v">{Problem in einem Satz}</span>.
-
-Wir helfen Teams wie eurem genau dabei: <span class="v">{Lösung in einem Satz}</span>.
-
-Hätte das Sinn für <span class="v">{Firma}</span>?
-
-Beste Grüße
-<span class="v">{Absender}</span></div>
-    </div>
-    <p class="center note" style="max-width:560px;margin:18px auto 0">4 Schritte: Beobachtung, Problem, Insight, No-Brainer-Frage. Max. 2 Sätze pro Block, kein Marketing-Brei, jede Variable echt befüllt.</p>
+  <div class="ftabs rv">
+    <button class="on" data-ft="video" onclick="switchFeat('video',this)"><span class="fdot"></span>KI-Video Outreach</button>
+    <button data-ft="email" onclick="switchFeat('email',this)"><span class="fdot"></span>Cold Email</button>
+    <button data-ft="linkedin" onclick="switchFeat('linkedin',this)"><span class="fdot"></span>LinkedIn</button>
+    <button data-ft="signal" onclick="switchFeat('signal',this)"><span class="fdot"></span>Signal-Timing</button>
   </div>
 
-  <div class="chan rv" id="chan-li">
-    <div class="li">
-      <div class="bubble step"><span class="badge2">Schritt 1 - Vernetzung</span><div class="who">Connection Request</div>Kurz, ohne Pitch. Oft nur die Vernetzung - der Verkauf kommt später im Gespräch.</div>
-      <div class="bubble step"><span class="badge2">Schritt 2 - DM nach Annahme</span><div class="who">Du an <span class="v">{Vorname}</span></div>Hallo <span class="v">{Nachname}</span>, Glückwunsch zur neuen Rolle bei <span class="v">{Firma}</span>.
-
-In den ersten 100 Tagen sehen wir oft: <span class="v">{relevante Beobachtung}</span>.
-
-Wäre spannend, wie ihr das angeht.
-
-Beste Grüße, <span class="v">{Absender}</span></div>
-      <div class="bubble step"><span class="badge2">Schritt 3 - Follow-up</span><div class="who">Du an <span class="v">{Vorname}</span></div>Ein Use-Case, der bei euch häufig hängenbleibt: <span class="v">{konkreter Fall}</span>.
-
-Klingt das vertraut?</div>
-    </div>
-    <p class="center note" style="max-width:560px;margin:18px auto 0">Gespräch statt Pitch. Keine Aufzählungen, keine "kurzer Nachfass"-Floskeln - das sind die Muster, die Outreach verbrennen.</p>
-  </div>
-</div></section>
-
-<!-- AI VIDEO MOCKUP -->
-<section class="sec" style="background:var(--bg2);border-block:1px solid var(--line)"><div class="wrap"><div class="hero-grid">
-  <div class="rv">
-    <div class="eyebrow">Personalisierte KI-Videos</div>
-    <h2>Ein Video, das <span class="hl">eure Website kennt</span>.</h2>
-    <p class="lead">Stell dir vor, dein Lead öffnet ein kurzes Video - und im Hintergrund scrollt seine eigene Website oder seine Stellenanzeige. Oben poppt unsere Nachricht auf. Das fühlt sich an wie einzeln gedreht, läuft aber automatisiert auf tausende Leads.</p>
-    <p class="lead" style="margin-top:14px">Genau so ein Video bauen wir auch für <!-- SLOT:COMPANY START -->Muster GmbH<!-- SLOT:COMPANY END -->.</p>
-    <a class="btn btn-ghost" href="#fragebogen" style="margin-top:24px" onclick="track('cta_video')">Im Termin live sehen</a>
-  </div>
-  <div class="rv">
-    <div class="browser">
-      <div class="bbar"><i></i><i></i><i></i><div class="burl"><!-- SLOT:LEAD_DOMAIN START -->muster-gmbh.de<!-- SLOT:LEAD_DOMAIN END --></div></div>
-      <!-- SLOT:LEAD_WEBSITE_SHOT START --><div class="shot"></div><!-- SLOT:LEAD_WEBSITE_SHOT END -->
-      <div class="vov">
-        <div class="vovt"><img decoding="async" loading="lazy" class="vov-face" src="https://start.grundwerk.digital/assets/favicon.png" alt="Grundwerk"></div>
-        <div class="vovb">"Hey <!-- SLOT:LEAD_FIRST START -->Alex<!-- SLOT:LEAD_FIRST END -->, wusstest du, dass wir <b>KI-personalisierte Videos</b> für euren Outreach machen?"</div>
+  <!-- PANEL: KI-VIDEO -->
+  <div class="fpanel on" id="fp-video">
+    <div class="fp-two">
+      <div class="rv">
+        <div class="eyebrow">KI-Video Outreach</div>
+        <h3>Jedes Video sieht <span class="hl">einzeln gedreht</span> aus.</h3>
+        <p>Im Hintergrund läuft die echte Website von <!-- SLOT:COMPANY START -->Muster GmbH<!-- SLOT:COMPANY END -->, im Vordergrund spricht ein Mensch direkt zu <!-- SLOT:LEAD_FIRST START -->Alex<!-- SLOT:LEAD_FIRST END -->. Skaliert auf tausende Kontakte - jedes Video wirkt persönlich aufgenommen.</p>
+        <div class="fp-mini">
+          <div><div class="v">1.847</div><div class="l">Videos / Tag</div></div>
+          <div><div class="v">38 %</div><div class="l">Öffnungsrate</div></div>
+          <div><div class="v">&lt; 90 s</div><div class="l">Pro Video</div></div>
+        </div>
+      </div>
+      <div class="rv">
+        <div class="browser">
+          <div class="bbar"><i></i><i></i><i></i><div class="burl">videos.grundwerk.digital/v/<!-- SLOT:LEAD_DOMAIN START -->muster-gmbh.de<!-- SLOT:LEAD_DOMAIN END --></div></div>
+          <div class="vid-stage">
+            <div class="vid-bg-fallback"></div>
+            <!-- SLOT:LEAD_WEBSITE_SHOT START --><div class="vid-skel" aria-hidden="true"><div class="vs-nav"><div class="vs-logo"></div><div class="vs-links"><i></i><i></i><i></i></div></div><div class="vs-hero"><div class="vs-h"></div><div class="vs-s"></div><div class="vs-cta"></div></div></div><!-- SLOT:LEAD_WEBSITE_SHOT END -->
+            <div class="vid-grad"></div>
+            <img class="vid-person" src="https://start.grundwerk.digital/assets/team/tom-cutout.png" alt="Grundwerk-Gründer spricht im personalisierten KI-Video" decoding="async" loading="lazy">
+            <div class="vid-persona"><img src="https://start.grundwerk.digital/assets/team/tom-soto-schiller.jpeg" alt="Tom Soto Schiller" decoding="async" loading="lazy"><div><div class="n">Tom Soto Schiller</div><div class="r">Grundwerk Digital</div></div></div>
+            <div class="vid-rec"><i></i>REC</div>
+            <div class="vid-play"><span></span></div>
+            <div class="vid-ctrl"><div class="bar"><i></i></div><div class="row"><span>0:32 / 1:24</span><span class="mid"><!-- SLOT:LEAD_DOMAIN START -->muster-gmbh.de<!-- SLOT:LEAD_DOMAIN END --> - individuell aufgenommen</span><span>HD</span></div></div>
+          </div>
+          <div class="vid-tags"><span class="lbl">Personalisiert:</span><span class="vid-tag">Website</span><span class="vid-tag">Vorname</span><span class="vid-tag">Branche</span><span class="vid-tag">Stellenanzeige</span></div>
+          <div class="vid-gen"><span class="lbl">Heute generiert</span><div class="track"><i></i></div><span class="c">1.441 / 1.847</span></div>
+        </div>
+        <p class="center" style="margin-top:12px;font-size:12px;color:var(--mut2)">Mockup - im Termin zeigen wir dir ein echtes, auf <!-- SLOT:COMPANY START -->Muster GmbH<!-- SLOT:COMPANY END --> gerendertes Video.</p>
       </div>
     </div>
-    <p class="note center" style="margin-top:14px">Mockup - im Termin zeigen wir dir ein echtes, auf euch gerendertes Video.</p>
+
+    <div class="vid-flow rv">
+      <div class="vflow-card"><div class="ic">&#128194;</div><h4>Daten + Research</h4><p>Website, Stellenanzeige und Signale jedes Leads werden automatisch gezogen.</p></div>
+      <div class="farr">&#8594;</div>
+      <div class="vflow-card"><div class="ic">&#129302;</div><h4>KI-Render-Engine</h4><p>Hintergrund, Anrede und Kontext werden pro Kontakt in das Video gerendert.</p></div>
+      <div class="farr">&#8594;</div>
+      <div class="vflow-card"><div class="ic">&#127909;</div><h4>1.000+ Videos</h4><p>Jeder Lead bekommt sein eigenes Video, automatisch verschickt, einzeln wirkend.</p></div>
+    </div>
   </div>
-</div></div></section>
+
+  <!-- PANEL: COLD EMAIL -->
+  <div class="fpanel" id="fp-email">
+    <div class="fp-head">
+      <div class="eyebrow">Cold Email</div>
+      <h3>Der erste Satz stimmt <span class="hl">nur für diesen einen Lead</span>.</h3>
+      <p>Kein "Mir ist aufgefallen, dass ihr...". Jede Mail startet mit echter Recherche und führt in vier Schritten zur No-Brainer-Frage.</p>
+    </div>
+    <div class="fp-two">
+      <div class="rv">
+        <div class="ce-mail">
+          <div class="ce-top"><div class="ce-ava">TS</div><div class="ce-from">Tom Soto Schiller<span>tom@grundwerk.digital</span></div><div class="ce-time">heute, 08:14</div></div>
+          <div class="ce-subj">Kurze Frage zu <!-- SLOT:COMPANY START -->Muster GmbH<!-- SLOT:COMPANY END --></div>
+          <div class="ce-body">Hallo <!-- SLOT:LEAD_FIRST START -->Alex<!-- SLOT:LEAD_FIRST END -->,
+
+<span class="op">gerade gesehen, dass ihr auf eurer Website drei neue Vertriebsrollen ausgeschrieben habt</span> - das Team wächst also spürbar.
+
+Genau dann fällt oft auf, dass der Outbound-Kanal noch nicht systematisch läuft.
+
+Wir bauen B2B-Teams in 6 Wochen einen reproduzierbaren Kanal, der qualifizierte Termine liefert.
+
+Hätte das Sinn für <!-- SLOT:COMPANY START -->Muster GmbH<!-- SLOT:COMPANY END -->?
+
+Beste Grüße
+Tom</div>
+        </div>
+      </div>
+      <div class="rv">
+        <div class="ce-steps">
+          <div class="ce-step"><div class="num">1</div><div><h4>Beobachtung</h4><p>Ein Satz aus echter Recherche: Website, Stellenanzeige, News. Nie generisch.</p></div></div>
+          <div class="ce-step"><div class="num">2</div><div><h4>Problem</h4><p>Das eine Problem, das in genau dieser Situation typisch ist.</p></div></div>
+          <div class="ce-step"><div class="num">3</div><div><h4>Insight</h4><p>Wie wir es lösen, in einem Satz, ohne Marketing-Brei.</p></div></div>
+          <div class="ce-step"><div class="num">4</div><div><h4>No-Brainer-Frage</h4><p>Eine leichte Ja/Nein-Frage statt eines harten Pitches.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PANEL: LINKEDIN -->
+  <div class="fpanel" id="fp-linkedin">
+    <div class="fp-head">
+      <div class="eyebrow">LinkedIn</div>
+      <h3>Auf LinkedIn startet man Konversation und wer nach Terminen fragt, <span class="hl">verliert</span>.</h3>
+      <p>Erst vernetzen, dann ein echtes Gespräch. Kein Pitch, keine Spam-Flags, so antworten Entscheider wirklich.</p>
+    </div>
+    <div class="li-win rv">
+      <div class="li-bar"><div class="li-logo">in</div><span class="t">Nachrichten</span></div>
+      <div class="li-conn">
+        <div class="li-ava">AK</div>
+        <div class="meta"><div class="n">Alex Krause <b>&#183; 1. Grades</b></div><div class="h">Geschäftsführer bei <!-- SLOT:COMPANY START -->Muster GmbH<!-- SLOT:COMPANY END --></div></div>
+        <span class="li-accepted">Vernetzt</span>
+      </div>
+      <div class="li-thread">
+        <div class="li-msg"><div class="av gw">TS</div><div class="c"><div class="top"><span class="nm">Tom Soto Schiller</span><span class="tm">Mo. 09:40</span></div><div class="tx"><span class="li-note">Schritt 1 &#183; Vernetzung</span>Hi Alex, eure Arbeit bei <!-- SLOT:COMPANY START -->Muster GmbH<!-- SLOT:COMPANY END --> verfolge ich schon eine Weile, gerne vernetzt.</div></div></div>
+        <div class="li-msg"><div class="av ld">AK</div><div class="c"><div class="top"><span class="nm">Alex Krause</span><span class="tm">Mo. 11:02</span></div><div class="tx">Danke, gerne. Worum geht es denn?</div></div></div>
+        <div class="li-msg"><div class="av gw">TS</div><div class="c"><div class="top"><span class="nm">Tom Soto Schiller</span><span class="tm">Mo. 11:15</span></div><div class="tx"><span class="li-note">Schritt 2 &#183; Gespräch</span>Ehrlich gesagt kein konkretes Angebot. Mir ist nur aufgefallen, dass ihr gerade im Vertrieb wachst. Bei dem Tempo wird der Outbound-Kanal schnell zum Flaschenhals. Wie löst ihr das aktuell?</div></div></div>
+        <div class="li-msg"><div class="av ld">AK</div><div class="c"><div class="top"><span class="nm">Alex Krause</span><span class="tm">Mo. 14:20</span></div><div class="tx">Gute Frage, genau da hakt es bei uns gerade. Erzähl mal, wie ihr das angeht.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PANEL: SIGNAL-TIMING -->
+  <div class="fpanel" id="fp-signal">
+    <div class="fp-head">
+      <div class="eyebrow">Signal-getriggertes Timing</div>
+      <h3>Im exakt <span class="hl">richtigen Moment</span>.</h3>
+      <p>Sechs Signale, die wir live beobachten. Klick ein Signal an und sieh, wie die passende Nachricht aussieht.</p>
+    </div>
+    <div class="sig-stage rv">
+      <div class="sig-side">
+        <div class="hd">Signale erkannt</div>
+        <div class="sig-list">
+          <button class="sig-item on" onclick="switchSignal(0,this)"><span class="ic">&#128203;</span><span class="b"><span class="lb">Stellenausschreibung</span><span class="dt">Head of Marketing gesucht</span><span class="sr">Meliora GmbH, LinkedIn</span></span></button>
+          <button class="sig-item" onclick="switchSignal(1,this)"><span class="ic">&#128176;</span><span class="b"><span class="lb">Finanzierungsrunde</span><span class="dt">Series A: 8 Mio. Euro</span><span class="sr">Nexfield AG, Crunchbase</span></span></button>
+          <button class="sig-item" onclick="switchSignal(2,this)"><span class="ic">&#128295;</span><span class="b"><span class="lb">Tech-Wechsel</span><span class="dt">Salesforce abgelöst</span><span class="sr">Orbis Solutions, Web</span></span></button>
+          <button class="sig-item" onclick="switchSignal(3,this)"><span class="ic">&#128100;</span><span class="b"><span class="lb">Neue Führungskraft</span><span class="dt">VP Sales seit 12 Tagen</span><span class="sr">Talvio AG, LinkedIn</span></span></button>
+          <button class="sig-item" onclick="switchSignal(4,this)"><span class="ic">&#128205;</span><span class="b"><span class="lb">Expansion</span><span class="dt">Neuer Standort München</span><span class="sr">Brunner Group, Presse</span></span></button>
+          <button class="sig-item" onclick="switchSignal(5,this)"><span class="ic">&#127942;</span><span class="b"><span class="lb">Auszeichnung</span><span class="dt">Top-Arbeitgeber 2026</span><span class="sr">Kessler &amp; Co, Web</span></span></button>
+        </div>
+      </div>
+      <div class="sig-main">
+        <div class="sig-pane on" data-sig="0">
+          <div class="sig-mailbar"><span class="l">E-Mail an Meliora GmbH</span><span class="badge">2h nach Signal</span></div>
+          <div class="sig-body"><div class="sig-annot"><span class="ic">&#9889;</span><p><b>Signal erkannt 09:12</b>: Meliora GmbH sucht einen Head of Marketing. E-Mail ausgelöst um 11:04, also rund 2 Stunden später.</p></div>
+            <div class="sig-email"><div class="sj">Wachstum im Marketing-Team: kurze Frage</div>
+              <div class="sig-mb"><div class="who"><span class="av">TS</span><span class="nm">Tom, Grundwerk</span><span class="tm">11:04</span></div><div class="txt">Hallo Jana, ich habe gesehen, dass ihr gerade einen <span class="pill">Head of Marketing</span> sucht. Genau in dieser Wachstumsphase merken viele Teams, dass der Outbound-Kanal noch nicht systematisch läuft. Wir bauen genau das in 6 Wochen auf. Hättest du diese Woche 20 Minuten?</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="sig-pane" data-sig="1">
+          <div class="sig-mailbar"><span class="l">E-Mail an Nexfield AG</span><span class="badge">1 Tag nach Signal</span></div>
+          <div class="sig-body"><div class="sig-annot"><span class="ic">&#128176;</span><p><b>Signal erkannt</b>: Nexfield AG hat eine Series A über 8 Mio. Euro abgeschlossen. Wachstumskapital trifft auf Pipeline-Druck.</p></div>
+            <div class="sig-email"><div class="sj">Glückwunsch zur Series A</div>
+              <div class="sig-mb"><div class="who"><span class="av">TS</span><span class="nm">Tom, Grundwerk</span><span class="tm">09:30</span></div><div class="txt">Hallo Mark, glückwunsch zur <span class="pill">Series A</span>. Nach einer Runde steht meist dieselbe Frage an: das Wachstum vorhersehbar machen. Wir bauen B2B-Teams einen Outbound-Kanal, der planbar Termine liefert, statt auf Empfehlungen zu warten. Magst du dir das ansehen?</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="sig-pane" data-sig="2">
+          <div class="sig-mailbar"><span class="l">E-Mail an Orbis Solutions</span><span class="badge">am Tag des Signals</span></div>
+          <div class="sig-body"><div class="sig-annot"><span class="ic">&#128295;</span><p><b>Signal erkannt</b>: Orbis Solutions hat Salesforce abgelöst. Ein Tool-Wechsel ist der Moment, in dem Prozesse neu gedacht werden.</p></div>
+            <div class="sig-email"><div class="sj">Neues CRM, neuer Outbound?</div>
+              <div class="sig-mb"><div class="who"><span class="av">TS</span><span class="nm">Tom, Grundwerk</span><span class="tm">14:10</span></div><div class="txt">Hallo Sarah, ich habe gesehen, dass ihr gerade euer <span class="pill">CRM gewechselt</span> habt. Wenn ohnehin alles neu aufgesetzt wird, ist es der ideale Moment, den Outbound-Kanal sauber mitzudenken. Wollen wir kurz sprechen, bevor die Prozesse fest sind?</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="sig-pane" data-sig="3">
+          <div class="sig-mailbar"><span class="l">E-Mail an Talvio AG</span><span class="badge">in den ersten 100 Tagen</span></div>
+          <div class="sig-body"><div class="sig-annot"><span class="ic">&#128100;</span><p><b>Signal erkannt</b>: Talvio AG hat seit 12 Tagen einen neuen VP Sales. Neue Führungskräfte wollen früh Wirkung zeigen.</p></div>
+            <div class="sig-email"><div class="sj">Die ersten 100 Tage als VP Sales</div>
+              <div class="sig-mb"><div class="who"><span class="av">TS</span><span class="nm">Tom, Grundwerk</span><span class="tm">10:20</span></div><div class="txt">Hallo Daniel, glückwunsch zur neuen Rolle als <span class="pill">VP Sales</span>. In den ersten 100 Tagen zählt vor allem ein planbarer Pipeline-Zuwachs. Genau das bauen wir auf, ohne dass dein Team mehr manuell prospekten muss. Spannend für dich?</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="sig-pane" data-sig="4">
+          <div class="sig-mailbar"><span class="l">E-Mail an Brunner Group</span><span class="badge">zur Markt-Eröffnung</span></div>
+          <div class="sig-body"><div class="sig-annot"><span class="ic">&#128205;</span><p><b>Signal erkannt</b>: Brunner Group eröffnet einen Standort in München. Ein neuer Markt braucht schnell die ersten Kunden.</p></div>
+            <div class="sig-email"><div class="sj">Neuer Standort München: schon Kunden vor Ort?</div>
+              <div class="sig-mb"><div class="who"><span class="av">TS</span><span class="nm">Tom, Grundwerk</span><span class="tm">08:50</span></div><div class="txt">Hallo Lena, ich habe gelesen, dass ihr einen <span class="pill">Standort in München</span> eröffnet. Ein neuer Markt lebt von den ersten Terminen. Wir können gezielt Entscheider in der Region ansprechen, damit der Standort nicht bei null startet. Magst du dir das ansehen?</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="sig-pane" data-sig="5">
+          <div class="sig-mailbar"><span class="l">E-Mail an Kessler &amp; Co</span><span class="badge">im Moment der Aufmerksamkeit</span></div>
+          <div class="sig-body"><div class="sig-annot"><span class="ic">&#127942;</span><p><b>Signal erkannt</b>: Kessler &amp; Co wurde als Top-Arbeitgeber 2026 ausgezeichnet. Auszeichnungen erzeugen Sichtbarkeit, die man nutzen kann.</p></div>
+            <div class="sig-email"><div class="sj">Glückwunsch zur Auszeichnung</div>
+              <div class="sig-mb"><div class="who"><span class="av">TS</span><span class="nm">Tom, Grundwerk</span><span class="tm">12:05</span></div><div class="txt">Hallo Peter, glückwunsch zur Auszeichnung als <span class="pill">Top-Arbeitgeber 2026</span>. Solche Momente erzeugen genau die Aufmerksamkeit, die im Outbound Gold wert ist. Wir helfen, daraus konkrete Termine zu machen, solange das Thema frisch ist. Lass uns kurz sprechen?</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div></section>
 
 <!-- DATA PROVIDERS + SCRAPERS -->
 <section class="sec" id="daten"><div class="wrap">
@@ -757,6 +1004,24 @@ function submitQuiz(){
   }catch(e){}
 }
 showStep();
+
+function switchFeat(f, btn){
+  var tabs=document.querySelectorAll('.ftabs button');
+  for(var i=0;i<tabs.length;i++){ tabs[i].classList.toggle('on', tabs[i]===btn); }
+  var panels=document.querySelectorAll('.fpanel');
+  for(var j=0;j<panels.length;j++){ panels[j].classList.toggle('on', panels[j].id==='fp-'+f); }
+  var rvs=document.querySelectorAll('#fp-'+f+' .rv');
+  for(var k=0;k<rvs.length;k++){ rvs[k].classList.add('in'); }
+  if(typeof track==='function'){ track('feat_'+f); }
+}
+function switchSignal(i, el){
+  var box=el.closest('.sig-stage');
+  var items=box.querySelectorAll('.sig-item');
+  for(var a=0;a<items.length;a++){ items[a].classList.toggle('on', items[a]===el); }
+  var panes=box.querySelectorAll('.sig-pane');
+  for(var b=0;b<panes.length;b++){ panes[b].classList.toggle('on', panes[b].getAttribute('data-sig')===String(i)); }
+}
+
 </script>
 </body>
 </html>
