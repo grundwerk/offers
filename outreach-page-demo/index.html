@@ -403,14 +403,15 @@ a{color:inherit;text-decoration:none}
 
 
 /* hero meet-pair (wobble) */
-.meetpair{display:flex;align-items:center;justify-content:center;gap:14px;margin:0 auto 20px}
-.mp{width:54px;height:54px;border-radius:14px;background:var(--bg2);border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 26px rgba(0,0,0,.4)}
-.mp img{width:34px;height:34px;border-radius:8px;object-fit:contain}
-.mp-client{color:var(--blue);animation:wobble 2.6s ease-in-out infinite}
-.mp-client svg{width:28px;height:28px}
-.mp-gw{animation:wobble 2.6s ease-in-out infinite .5s}
-.mp-x{color:var(--mut2);font-size:17px;font-weight:600}
-@keyframes wobble{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(6deg)}}
+.meetpair{display:flex;align-items:center;justify-content:center;gap:22px;margin:0 auto 24px;perspective:700px}
+.mp{display:flex;align-items:center;justify-content:center;background:none;border:0;transform-style:preserve-3d}
+.mp img{width:62px;height:62px;border-radius:15px;object-fit:contain;filter:drop-shadow(0 16px 22px rgba(0,0,0,.6))}
+.mp-client{color:var(--blue)}
+.mp-client svg{width:62px;height:62px;filter:drop-shadow(0 14px 20px rgba(0,102,255,.4))}
+.mp-client{animation:wob3d 3.6s ease-in-out infinite}
+.mp-gw{animation:wob3d 3.6s ease-in-out infinite .55s}
+.mp-x{color:var(--mut2);font-size:18px;font-weight:600;opacity:.7}
+@keyframes wob3d{0%,100%{transform:rotateY(-17deg) rotateX(7deg)}50%{transform:rotateY(17deg) rotateX(-7deg)}}
 @media(prefers-reduced-motion:reduce){.mp-client,.mp-gw{animation:none}}
 /* reply-agent feature panel */
 .ra-inbox{background:var(--bg2);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.45);max-width:520px;margin:0 auto}
@@ -492,7 +493,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeVid();}
 <section class="hero" id="top"><div class="wrap center">
   <div class="rv in" style="max-width:900px;margin:0 auto">
     <div class="meetpair">
-      <span class="mp mp-client"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 21V7l8-4 8 4v14" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9.5 21v-4.5h5V21" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8 10h.01M12 10h.01M16 10h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      <span class="mp mp-client"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.2 21V8.2L12 3l8.8 5.2V21h-5.6v-4.6H8.8V21H3.2z" fill="currentColor"/><path d="M12 3l8.8 5.2V21h-2.2V9.4L12 5.4V3z" fill="#0044cc"/><rect x="6.2" y="10.4" width="2.1" height="2.1" rx=".4" fill="#0e0e10"/><rect x="10.95" y="10.4" width="2.1" height="2.1" rx=".4" fill="#0e0e10"/><rect x="15.7" y="10.4" width="1.7" height="2.1" rx=".4" fill="#0a1e52"/></svg></span>
       <span class="mp-x">&times;</span>
       <span class="mp mp-gw"><img src="https://start.grundwerk.digital/assets/favicon.png" alt="Grundwerk" decoding="async"></span>
     </div>
