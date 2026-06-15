@@ -1,18 +1,42 @@
-<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Outreach Feature-Ideen (Switcher-Preview)</title>
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Outreach Feature-Ideen - 5 Vorschlaege je Feature</title>
 <link rel="icon" type="image/svg+xml" href="https://start.grundwerk.digital/assets/grundwerk-icon.svg">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&f[]=inter@400,500,600&display=swap" rel="stylesheet">
 <style>
-body{margin:0;background:#0e0e10;color:#f4f5f7;font-family:'Inter',Helvetica,Arial,sans-serif}
-.bar{padding:12px 18px 0;font-size:13px;color:#73767e}
-.tabs{display:flex;gap:8px;padding:12px 18px 14px;position:sticky;top:0;background:rgba(14,14,16,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.09);flex-wrap:wrap;z-index:10}
-.tab{padding:9px 16px;border:1px solid rgba(255,255,255,.09);border-radius:999px;cursor:pointer;color:#a0a3ab;background:#141417;font-size:14px;font-weight:600;transition:.15s}
-.tab:hover{border-color:rgba(0,102,255,.40)}
-.tab.on{background:#0066ff;color:#fff;border-color:#0066ff}
-iframe{width:100%;height:calc(100vh - 70px);border:0;display:block;background:#0e0e10}
+:root{--bg:#0e0e10;--bg2:#141417;--line:rgba(255,255,255,.09);--fg:#f4f5f7;--mut:#a0a3ab;--blue:#0066ff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:'Inter',Helvetica,Arial,sans-serif}
+.top{position:sticky;top:0;z-index:10;background:rgba(14,14,16,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.row{display:flex;gap:8px;padding:12px 18px;flex-wrap:wrap;align-items:center}
+.row.r2{padding-top:0}
+.lbl{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#73767e;margin-right:8px;font-weight:700}
+.tab{padding:8px 15px;border:1px solid var(--line);border-radius:999px;cursor:pointer;color:var(--mut);background:var(--bg2);font-size:13.5px;font-weight:600;transition:.15s;white-space:nowrap}
+.tab:hover{border-color:rgba(0,102,255,.4)}
+.tab.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+.tab.v{font-family:'Clash Display',sans-serif}
+iframe{width:100%;height:calc(100vh - 104px);border:0;display:block;background:var(--bg)}
+.idea{padding:9px 20px;font-size:13px;color:var(--mut);background:var(--bg2);border-bottom:1px solid var(--line)}
+.idea b{color:var(--fg)}
 </style></head><body>
-<div class="tabs" id="tabs"></div>
-<iframe id="fr" src="assets/cold-email.html" title="Feature-Panel"></iframe>
+<div class="top">
+  <div class="row r1"><span class="lbl">Feature</span><span id="ftabs" style="display:flex;gap:8px;flex-wrap:wrap"></span></div>
+  <div class="row r2"><span class="lbl">Variante</span><span id="vtabs" style="display:flex;gap:8px;flex-wrap:wrap"></span></div>
+</div>
+<div class="idea" id="idea"></div>
+<iframe id="fr" title="Feature-Panel"></iframe>
 <script>
-var F=[['cold-email','Cold Email'],['linkedin','LinkedIn'],['ki-video','KI-Video'],['signal-timing','Signal-Timing'],['abm','Account-Based'],['reply-handling','Reply-Handling']];
-var t=document.getElementById('tabs'),fr=document.getElementById('fr');
-F.forEach(function(f,i){var b=document.createElement('div');b.className='tab'+(i===0?' on':'');b.textContent=f[1];b.onclick=function(){document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('on')});b.classList.add('on');fr.src='assets/'+f[0]+'.html';};t.appendChild(b);});
+var FEAT=[['cold-email','Cold Email'],['linkedin','LinkedIn'],['ki-video','KI-Video'],['signal-timing','Signal-Timing'],['abm','Account-Based'],['reply-handling','Reply-Handling']];
+var VAR=[[1,'Diagramm'],[2,'Mockup'],[3,'Zahlen'],[4,'Story'],[5,'Editorial']];
+var cf='cold-email', cv=1;
+var ft=document.getElementById('ftabs'),vt=document.getElementById('vtabs'),fr=document.getElementById('fr'),idea=document.getElementById('idea');
+FEAT.forEach(function(f){var b=document.createElement('span');b.className='tab';b.textContent=f[1];b.dataset.k=f[0];b.onclick=function(){cf=f[0];render();};ft.appendChild(b);});
+VAR.forEach(function(v){var b=document.createElement('span');b.className='tab v';b.textContent=v[0]+' '+v[1];b.dataset.k=v[0];b.onclick=function(){cv=v[0];render();};vt.appendChild(b);});
+function render(){
+  fr.src='assets/'+cf+'-v'+cv+'.html';
+  [].forEach.call(ft.children,function(b){b.classList.toggle('on',b.dataset.k===cf);});
+  [].forEach.call(vt.children,function(b){b.classList.toggle('on',String(b.dataset.k)===String(cv));});
+  var fn=(FEAT.filter(function(x){return x[0]===cf})[0]||['',''])[1];
+  var vn=(VAR.filter(function(x){return String(x[0])===String(cv)})[0]||['',''])[1];
+  idea.innerHTML='<b>'+fn+' - Variante '+cv+': '+vn+'</b>  (von 5 Vorschlaegen je Feature - oben Feature + Variante switchen)';
+}
+render();
 </script></body></html>

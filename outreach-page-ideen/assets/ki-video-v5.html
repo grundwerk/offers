@@ -1,0 +1,449 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://api.fontshare.com" crossorigin><link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=inter@400,500,600&display=swap" rel="stylesheet"><style>html,body{margin:0;background:#0e0e10}</style></head><body>
+<section class="fp">
+<style>
+  .fp {
+    position: relative;
+    min-height: 88vh;
+    background-color: #141417;
+    background-image:
+      linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 42px 42px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: clamp(48px, 8vw, 96px) clamp(32px, 8vw, 96px);
+    overflow: hidden;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+  }
+
+  .fp * {
+    box-sizing: border-box;
+  }
+
+  /* Faint radial glow top-left */
+  .fp::before {
+    content: '';
+    position: absolute;
+    top: -120px;
+    left: -80px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(ellipse at center, rgba(0,102,255,.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* Decorative oversized numeral behind everything */
+  .fp__bg-numeral {
+    position: absolute;
+    right: -0.05em;
+    top: 50%;
+    transform: translateY(-54%);
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: clamp(280px, 38vw, 560px);
+    font-weight: 700;
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255,255,255,.04);
+    user-select: none;
+    pointer-events: none;
+    letter-spacing: -0.04em;
+  }
+
+  .fp__content {
+    position: relative;
+    z-index: 2;
+    max-width: 820px;
+  }
+
+  /* Eyebrow label */
+  .fp__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #0066ff;
+    margin-bottom: 36px;
+  }
+
+  .fp__label-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #0066ff;
+    animation: fp-pulse 2.4s ease-in-out infinite;
+  }
+
+  @keyframes fp-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.7); }
+  }
+
+  /* Main headline */
+  .fp__headline {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: clamp(52px, 9vw, 128px);
+    font-weight: 700;
+    line-height: 0.94;
+    letter-spacing: -0.03em;
+    color: #f4f5f7;
+    margin: 0 0 0 0;
+  }
+
+  .fp__headline em {
+    font-style: normal;
+    color: #0066ff;
+  }
+
+  /* The blue divider line */
+  .fp__rule {
+    display: block;
+    width: clamp(48px, 8vw, 96px);
+    height: 2px;
+    background: #0066ff;
+    margin: 36px 0 34px 0;
+    border: none;
+    opacity: 0.9;
+  }
+
+  /* Sub-statement */
+  .fp__sub {
+    font-size: clamp(15px, 1.5vw, 18px);
+    line-height: 1.6;
+    color: #a0a3ab;
+    max-width: 480px;
+    margin: 0;
+  }
+
+  .fp__sub strong {
+    color: #f4f5f7;
+    font-weight: 500;
+  }
+
+  /* The precise detail: mini video mockup */
+  .fp__video-detail {
+    position: absolute;
+    right: clamp(32px, 6vw, 80px);
+    bottom: clamp(40px, 6vh, 72px);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+  }
+
+  .fp__video-frame {
+    width: clamp(220px, 26vw, 340px);
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,.10);
+    background: #0e0e10;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 24px 64px rgba(0,0,0,.55), 0 0 0 1px rgba(0,102,255,.18);
+  }
+
+  /* Simulated website screenshot inside the frame */
+  .fp__site-bg {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Fake browser chrome */
+  .fp__browser-bar {
+    height: 22px;
+    background: #1a1a1f;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    gap: 4px;
+    flex-shrink: 0;
+  }
+
+  .fp__browser-dots {
+    display: flex;
+    gap: 4px;
+  }
+
+  .fp__browser-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+
+  .fp__browser-dot:nth-child(1) { background: rgba(255,255,255,.15); }
+  .fp__browser-dot:nth-child(2) { background: rgba(255,255,255,.10); }
+  .fp__browser-dot:nth-child(3) { background: rgba(255,255,255,.07); }
+
+  .fp__browser-url {
+    flex: 1;
+    margin-left: 6px;
+    height: 11px;
+    background: rgba(255,255,255,.06);
+    border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .fp__browser-url-text {
+    position: absolute;
+    left: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 6.5px;
+    color: rgba(160,163,171,.6);
+    white-space: nowrap;
+    font-family: 'Inter', monospace;
+    letter-spacing: 0.01em;
+  }
+
+  /* Fake website content inside frame */
+  .fp__site-content {
+    flex: 1;
+    background: linear-gradient(160deg, #111114 0%, #0e0e10 100%);
+    padding: 8px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    overflow: hidden;
+  }
+
+  .fp__site-header-line {
+    height: 10px;
+    border-radius: 2px;
+    background: rgba(255,255,255,.14);
+    width: 60%;
+  }
+
+  .fp__site-sub-line {
+    height: 6px;
+    border-radius: 2px;
+    background: rgba(255,255,255,.06);
+  }
+
+  .fp__site-sub-line.w80 { width: 80%; }
+  .fp__site-sub-line.w65 { width: 65%; }
+  .fp__site-sub-line.w50 { width: 50%; }
+
+  .fp__site-badge {
+    display: inline-block;
+    height: 13px;
+    width: 90px;
+    border-radius: 3px;
+    background: rgba(0,102,255,.22);
+    margin-top: 4px;
+  }
+
+  /* Company logo mark in corner of video frame */
+  .fp__site-logo {
+    position: absolute;
+    top: 30px;
+    right: 10px;
+    width: 22px;
+    height: 22px;
+    border-radius: 4px;
+    background: rgba(255,255,255,.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Play button overlay */
+  .fp__play-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,102,255,.06);
+  }
+
+  .fp__play-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(0,102,255,.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0 8px rgba(0,102,255,.15);
+  }
+
+  .fp__play-triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 0 6px 11px;
+    border-color: transparent transparent transparent #ffffff;
+    margin-left: 2px;
+  }
+
+  /* Recording indicator */
+  .fp__rec {
+    position: absolute;
+    top: 28px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(14,14,16,.8);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 4px;
+    padding: 2px 6px;
+  }
+
+  .fp__rec-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #ff3b30;
+    animation: fp-rec-blink 1.2s ease-in-out infinite;
+  }
+
+  @keyframes fp-rec-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.25; }
+  }
+
+  .fp__rec-text {
+    font-size: 6px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #f4f5f7;
+    text-transform: uppercase;
+  }
+
+  /* Counter badge below the frame */
+  .fp__counter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 14px;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 8px;
+    background: rgba(26,26,31,.9);
+    backdrop-filter: blur(12px);
+  }
+
+  .fp__counter-num {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #0066ff;
+    letter-spacing: -0.02em;
+  }
+
+  .fp__counter-divider {
+    width: 1px;
+    height: 16px;
+    background: rgba(255,255,255,.08);
+  }
+
+  .fp__counter-label {
+    font-size: 10px;
+    color: #73767e;
+    line-height: 1.35;
+  }
+
+  .fp__counter-label strong {
+    display: block;
+    color: #a0a3ab;
+    font-weight: 500;
+  }
+</style>
+
+<!-- Oversized background numeral -->
+<div class="fp__bg-numeral" aria-hidden="true">∞</div>
+
+<div class="fp__content">
+  <div class="fp__label">
+    <span class="fp__label-dot"></span>
+    KI-personalisierte Videos
+  </div>
+
+  <h2 class="fp__headline">
+    1.000&nbsp;Videos.<br>
+    <em>Einer</em>&nbsp;dreht.
+  </h2>
+
+  <hr class="fp__rule" aria-hidden="true">
+
+  <p class="fp__sub">
+    Jedes Video zeigt die <strong>echte Website oder Stellenanzeige</strong> des Leads
+    im Hintergrund. Automatisch generiert. Persönlich wirkend.
+    Skaliert auf tausende Empfänger.
+  </p>
+</div>
+
+<!-- The precise detail element: mini video mockup -->
+<div class="fp__video-detail">
+  <div class="fp__video-frame">
+    <!-- Simulated website background in the video -->
+    <div class="fp__site-bg" aria-label="Lead-Website im Videohintergrund">
+      <div class="fp__browser-bar">
+        <div class="fp__browser-dots">
+          <div class="fp__browser-dot"></div>
+          <div class="fp__browser-dot"></div>
+          <div class="fp__browser-dot"></div>
+        </div>
+        <div class="fp__browser-url">
+          <span class="fp__browser-url-text">careers.muster-gmbh.de/product-manager</span>
+        </div>
+      </div>
+      <div class="fp__site-content">
+        <div class="fp__site-header-line"></div>
+        <div class="fp__site-sub-line w80"></div>
+        <div class="fp__site-sub-line w65"></div>
+        <div class="fp__site-badge"></div>
+        <div style="margin-top:4px;">
+          <div class="fp__site-sub-line w50"></div>
+          <div class="fp__site-sub-line w80" style="margin-top:3px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Company logo mark -->
+    <div class="fp__site-logo" aria-hidden="true">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+        <rect width="5" height="5" rx="1" fill="rgba(255,255,255,.25)"/>
+        <rect x="7" width="5" height="5" rx="1" fill="rgba(255,255,255,.15)"/>
+        <rect y="7" width="5" height="5" rx="1" fill="rgba(255,255,255,.15)"/>
+        <rect x="7" y="7" width="5" height="5" rx="1" fill="rgba(255,255,255,.10)"/>
+      </svg>
+    </div>
+
+    <!-- REC indicator -->
+    <div class="fp__rec" aria-label="Aufnahme läuft">
+      <div class="fp__rec-dot"></div>
+      <span class="fp__rec-text">Rec</span>
+    </div>
+
+    <!-- Play overlay -->
+    <div class="fp__play-overlay">
+      <div class="fp__play-btn" role="img" aria-label="Video abspielen">
+        <div class="fp__play-triangle"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Counter badge -->
+  <div class="fp__counter" aria-label="2.847 Videos heute generiert">
+    <span class="fp__counter-num">2.847</span>
+    <div class="fp__counter-divider"></div>
+    <div class="fp__counter-label">
+      <strong>Videos heute</strong>
+      generiert
+    </div>
+  </div>
+</div>
+
+</section>
+</body></html>

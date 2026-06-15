@@ -1,0 +1,552 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://api.fontshare.com" crossorigin><link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=inter@400,500,600&display=swap" rel="stylesheet"><style>html,body{margin:0;background:#0e0e10}</style></head><body>
+<section class="fp">
+<style>
+  .fp {
+    position: relative;
+    min-height: 88vh;
+    background-color: #0e0e10;
+    background-image:
+      linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+    background-size: 42px 42px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 56px 64px;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    color: #f4f5f7;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .fp * { box-sizing: border-box; }
+
+  /* Ambient glow */
+  .fp-glow {
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 400px;
+    background: radial-gradient(ellipse at center, rgba(0,102,255,.13) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* Top label */
+  .fp-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #0066ff;
+    margin-bottom: 36px;
+  }
+  .fp-label-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #0066ff;
+    animation: fp-pulse 2s ease-in-out infinite;
+  }
+  @keyframes fp-pulse {
+    0%,100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .4; transform: scale(.7); }
+  }
+
+  /* Hero metric row */
+  .fp-hero {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    margin-bottom: 12px;
+  }
+  .fp-hero-num {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: clamp(80px, 12vw, 120px);
+    font-weight: 700;
+    line-height: 1;
+    color: #0066ff;
+    letter-spacing: -.03em;
+  }
+  .fp-hero-suffix {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 600;
+    color: #0066ff;
+    margin-bottom: 14px;
+    opacity: .8;
+  }
+  .fp-hero-desc {
+    font-size: 14px;
+    color: #a0a3ab;
+    line-height: 1.5;
+    max-width: 220px;
+    margin-bottom: 14px;
+  }
+
+  /* Main compare block */
+  .fp-compare {
+    display: grid;
+    grid-template-columns: 1fr 2px 1fr;
+    gap: 0;
+    margin-bottom: 40px;
+    background: #141417;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  .fp-col {
+    padding: 28px 32px;
+  }
+  .fp-col-bad {
+    background: #141417;
+  }
+  .fp-col-good {
+    background: linear-gradient(135deg, rgba(0,102,255,.07) 0%, #141417 100%);
+  }
+
+  .fp-divider {
+    width: 2px;
+    background: linear-gradient(180deg, transparent 0%, rgba(0,102,255,.7) 40%, rgba(0,102,255,.7) 60%, transparent 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .fp-divider-icon {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background: #0066ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+
+  .fp-col-heading {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .fp-col-bad .fp-col-heading { color: #73767e; }
+  .fp-col-good .fp-col-heading { color: #0066ff; }
+
+  .fp-col-heading-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+  .fp-col-bad .fp-col-heading-dot { background: #73767e; }
+  .fp-col-good .fp-col-heading-dot { background: #0066ff; }
+
+  .fp-stat-row {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+  .fp-stat-val {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .fp-stat-val-big { font-size: 40px; }
+  .fp-stat-val-sm { font-size: 32px; }
+  .fp-col-bad .fp-stat-val { color: #73767e; }
+  .fp-col-good .fp-stat-val { color: #f4f5f7; }
+  .fp-col-good .fp-stat-val-accent { color: #0066ff; }
+
+  .fp-stat-unit {
+    font-size: 14px;
+    color: #73767e;
+  }
+  .fp-col-good .fp-stat-unit { color: #a0a3ab; }
+
+  .fp-stat-label {
+    font-size: 12px;
+    color: #73767e;
+    margin-bottom: 20px;
+    line-height: 1.4;
+  }
+  .fp-col-good .fp-stat-label { color: #a0a3ab; }
+
+  .fp-bar-wrap {
+    margin-bottom: 18px;
+  }
+  .fp-bar-label-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #73767e;
+    margin-bottom: 6px;
+  }
+  .fp-col-good .fp-bar-label-row { color: #a0a3ab; }
+  .fp-bar-track {
+    height: 6px;
+    background: rgba(255,255,255,.07);
+    border-radius: 100px;
+    overflow: hidden;
+  }
+  .fp-bar-fill {
+    height: 100%;
+    border-radius: 100px;
+  }
+  .fp-col-bad .fp-bar-fill { background: #2a2a30; }
+  .fp-col-good .fp-bar-fill { background: linear-gradient(90deg, rgba(0,102,255,.6), #0066ff); }
+
+  /* Signal indicators bottom */
+  .fp-signals {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+
+  .fp-signal-card {
+    background: #1a1a1f;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 14px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .fp-signal-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(0,102,255,.6), transparent);
+  }
+
+  .fp-signal-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+  }
+  .fp-signal-icon {
+    width: 36px;
+    height: 36px;
+    background: rgba(0,102,255,.14);
+    border: 1px solid rgba(0,102,255,.3);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .fp-signal-badge {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .06em;
+    padding: 3px 8px;
+    border-radius: 100px;
+    background: rgba(0,102,255,.14);
+    color: #0066ff;
+    border: 1px solid rgba(0,102,255,.3);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .fp-signal-badge-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #0066ff;
+  }
+  .fp-signal-badge:nth-child(1) .fp-signal-badge-dot { animation: fp-pulse 1.8s ease-in-out infinite; }
+  .fp-signal-badge:nth-child(2) .fp-signal-badge-dot { animation: fp-pulse 2.2s ease-in-out infinite .4s; }
+  .fp-signal-badge:nth-child(3) .fp-signal-badge-dot { animation: fp-pulse 2.0s ease-in-out infinite .8s; }
+
+  .fp-signal-name {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #f4f5f7;
+    margin-bottom: 6px;
+  }
+  .fp-signal-desc {
+    font-size: 12px;
+    color: #73767e;
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+  .fp-signal-timing {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: #a0a3ab;
+  }
+  .fp-signal-timing-val {
+    color: #0066ff;
+    font-weight: 600;
+  }
+
+  /* Headline section */
+  .fp-headline-wrap {
+    margin-bottom: 32px;
+  }
+  .fp-headline {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: clamp(22px, 3vw, 34px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #f4f5f7;
+    max-width: 680px;
+    margin-bottom: 10px;
+  }
+  .fp-headline em {
+    font-style: normal;
+    color: #0066ff;
+  }
+  .fp-subline {
+    font-size: 14px;
+    color: #a0a3ab;
+    max-width: 560px;
+    line-height: 1.6;
+  }
+
+  /* Layout wrapper */
+  .fp-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .fp-top-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 36px;
+  }
+
+  .fp-proof-pill {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #1a1a1f;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 100px;
+    padding: 10px 18px;
+    font-size: 12px;
+    color: #a0a3ab;
+    white-space: nowrap;
+    flex-shrink: 0;
+    align-self: flex-start;
+    margin-top: 8px;
+  }
+  .fp-proof-pill strong { color: #f4f5f7; font-weight: 600; }
+
+  /* Decorative big number background */
+  .fp-bg-num {
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: 320px;
+    font-weight: 700;
+    color: rgba(0,102,255,.04);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+    letter-spacing: -.05em;
+  }
+</style>
+
+<div class="fp-glow"></div>
+<div class="fp-bg-num">3,7x</div>
+
+<div class="fp-inner">
+
+  <!-- Top: label + hero + proof pill -->
+  <div class="fp-top-row">
+    <div>
+      <div class="fp-label">
+        <span class="fp-label-dot"></span>
+        Beweis-Daten
+      </div>
+      <div class="fp-hero">
+        <div class="fp-hero-num">3,7x</div>
+        <div class="fp-hero-suffix">mehr<br>Antworten</div>
+        <div class="fp-hero-desc">bei signal-getrieerten Nachrichten vs. klassischem Massen-Outreach</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;align-self:flex-end;margin-bottom:6px;">
+      <div class="fp-proof-pill">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="6" stroke="#0066ff" stroke-width="1.5"/><path d="M4.5 7l2 2 3-3" stroke="#0066ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Basis: <strong>4.800 Kampagnen</strong>, 12 Monate</span>
+      </div>
+      <div class="fp-proof-pill">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="6" stroke="#0066ff" stroke-width="1.5"/><path d="M4.5 7l2 2 3-3" stroke="#0066ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Branche: <strong>B2B SaaS, IT, HR-Tech</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Headline -->
+  <div class="fp-headline-wrap">
+    <div class="fp-headline">Vor/Nachher: Was passiert, wenn das <em>Timing stimmt</em>?</div>
+    <div class="fp-subline">Dieselbe Botschaft, dieselbe Zielgruppe - der einzige Unterschied ist der Moment. Signal-getriggertes Outreach schreibt im Fenster, wo der Empfänger wirklich offen ist.</div>
+  </div>
+
+  <!-- Compare block -->
+  <div class="fp-compare">
+
+    <!-- Bad column -->
+    <div class="fp-col fp-col-bad">
+      <div class="fp-col-heading">
+        <span class="fp-col-heading-dot"></span>
+        Ohne Signal-Timing
+      </div>
+
+      <div class="fp-stat-row">
+        <div class="fp-stat-val fp-stat-val-big">2,1</div>
+        <div class="fp-stat-unit">%</div>
+      </div>
+      <div class="fp-stat-label">Antwortrate (Durchschnitt Branche)</div>
+
+      <div class="fp-bar-wrap">
+        <div class="fp-bar-label-row"><span>Antwortrate</span><span>2,1%</span></div>
+        <div class="fp-bar-track"><div class="fp-bar-fill" style="width:14%"></div></div>
+      </div>
+      <div class="fp-bar-wrap">
+        <div class="fp-bar-label-row"><span>Positiv-Quote</span><span>0,8%</span></div>
+        <div class="fp-bar-track"><div class="fp-bar-fill" style="width:6%"></div></div>
+      </div>
+      <div class="fp-bar-wrap">
+        <div class="fp-bar-label-row"><span>Meeting-Rate</span><span>0,4%</span></div>
+        <div class="fp-bar-track"><div class="fp-bar-fill" style="width:3%"></div></div>
+      </div>
+
+      <div class="fp-stat-label" style="margin-top:6px;">Nachricht landet im falschen Moment: Entscheider nicht im Kaufmodus, kein Druck, kein Anlass.</div>
+    </div>
+
+    <!-- Divider -->
+    <div class="fp-divider">
+      <div class="fp-divider-icon">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-label="versus">
+          <path d="M4 8h8M10 5l3 3-3 3" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Good column -->
+    <div class="fp-col fp-col-good">
+      <div class="fp-col-heading">
+        <span class="fp-col-heading-dot"></span>
+        Mit Signal-getriegetem Timing
+      </div>
+
+      <div class="fp-stat-row">
+        <div class="fp-stat-val fp-stat-val-big fp-stat-val-accent">7,8</div>
+        <div class="fp-stat-unit" style="color:#a0a3ab;">%</div>
+      </div>
+      <div class="fp-stat-label">Antwortrate bei Signal-getriegetem Outreach</div>
+
+      <div class="fp-bar-wrap">
+        <div class="fp-bar-label-row"><span>Antwortrate</span><span style="color:#0066ff;font-weight:600;">7,8%</span></div>
+        <div class="fp-bar-track"><div class="fp-bar-fill" style="width:52%"></div></div>
+      </div>
+      <div class="fp-bar-wrap">
+        <div class="fp-bar-label-row"><span>Positiv-Quote</span><span style="color:#0066ff;font-weight:600;">3,4%</span></div>
+        <div class="fp-bar-track"><div class="fp-bar-fill" style="width:24%"></div></div>
+      </div>
+      <div class="fp-bar-wrap">
+        <div class="fp-bar-label-row"><span>Meeting-Rate</span><span style="color:#0066ff;font-weight:600;">1,9%</span></div>
+        <div class="fp-bar-track"><div class="fp-bar-fill" style="width:13%"></div></div>
+      </div>
+
+      <div class="fp-stat-label" style="margin-top:6px;color:#a0a3ab;">Nachricht trifft Entscheider im konkreten Veränderungs-Moment: neuer Bedarf, offenes Budget, aktiver Handlungsdruck.</div>
+    </div>
+  </div>
+
+  <!-- Signal cards -->
+  <div class="fp-signals">
+
+    <div class="fp-signal-card">
+      <div class="fp-signal-top">
+        <div class="fp-signal-icon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="7" r="3.5" stroke="#0066ff" stroke-width="1.5"/>
+            <path d="M2.5 16c0-3.314 2.91-6 6.5-6s6.5 2.686 6.5 6" stroke="#0066ff" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="fp-signal-badge">
+          <span class="fp-signal-badge-dot"></span>
+          Live-Signal
+        </div>
+      </div>
+      <div class="fp-signal-name">Neue Stelle</div>
+      <div class="fp-signal-desc">Neuer VP oder Head of X bei der Ziel-Firma - fresher Entscheider, offenes Budget, Handlungsdruck.</div>
+      <div class="fp-signal-timing">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><circle cx="6" cy="6" r="5" stroke="#a0a3ab" stroke-width="1.2"/><path d="M6 3v3l2 1.5" stroke="#a0a3ab" stroke-width="1.2" stroke-linecap="round"/></svg>
+        Kontakt innerhalb
+        <span class="fp-signal-timing-val">48 Std.</span>
+        nach Posting
+      </div>
+    </div>
+
+    <div class="fp-signal-card">
+      <div class="fp-signal-top">
+        <div class="fp-signal-icon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <path d="M9 2l1.8 3.6 4 .6-2.9 2.8.7 4L9 11l-3.6 1.9.7-4L3.2 6.2l4-.6L9 2z" stroke="#0066ff" stroke-width="1.5" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="fp-signal-badge">
+          <span class="fp-signal-badge-dot"></span>
+          Live-Signal
+        </div>
+      </div>
+      <div class="fp-signal-name">Finanzierungs-Runde</div>
+      <div class="fp-signal-desc">Series A/B abgeschlossen - Wachstumsphase aktiv, Hiring-Boom, jetzt ist Budget vorhanden.</div>
+      <div class="fp-signal-timing">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><circle cx="6" cy="6" r="5" stroke="#a0a3ab" stroke-width="1.2"/><path d="M6 3v3l2 1.5" stroke="#a0a3ab" stroke-width="1.2" stroke-linecap="round"/></svg>
+        Optimal in
+        <span class="fp-signal-timing-val">Woche 1-3</span>
+        nach Closing
+      </div>
+    </div>
+
+    <div class="fp-signal-card">
+      <div class="fp-signal-top">
+        <div class="fp-signal-icon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <rect x="2" y="4" width="14" height="10" rx="2" stroke="#0066ff" stroke-width="1.5"/>
+            <path d="M6 9h6M9 7v4" stroke="#0066ff" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="fp-signal-badge">
+          <span class="fp-signal-badge-dot"></span>
+          Live-Signal
+        </div>
+      </div>
+      <div class="fp-signal-name">Tech-Wechsel</div>
+      <div class="fp-signal-desc">Stack-Migration oder Tool-Ablösung erkannt - Evaluierungs-Fenster offen, Entscheider aktiv auf der Suche.</div>
+      <div class="fp-signal-timing">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><circle cx="6" cy="6" r="5" stroke="#a0a3ab" stroke-width="1.2"/><path d="M6 3v3l2 1.5" stroke="#a0a3ab" stroke-width="1.2" stroke-linecap="round"/></svg>
+        Fenster offen ca.
+        <span class="fp-signal-timing-val">4-8 Wochen</span>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</section>
+</body></html>

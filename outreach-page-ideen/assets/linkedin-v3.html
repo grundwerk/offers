@@ -1,0 +1,739 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://api.fontshare.com" crossorigin><link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=inter@400,500,600&display=swap" rel="stylesheet"><style>html,body{margin:0;background:#0e0e10}</style></head><body>
+<section class="fp">
+<style>
+  .fp {
+    position: relative;
+    width: 100%;
+    min-height: 88vh;
+    background-color: #141417;
+    background-image:
+      linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 42px 42px;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    color: #f4f5f7;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+
+  .fp *, .fp *::before, .fp *::after {
+    box-sizing: border-box;
+  }
+
+  /* Top label */
+  .fp__label {
+    position: absolute;
+    top: 28px;
+    left: 36px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 10;
+  }
+
+  .fp__label-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #0066ff;
+    box-shadow: 0 0 8px rgba(0,102,255,.7);
+    animation: fp-pulse-dot 2s ease-in-out infinite;
+  }
+
+  @keyframes fp-pulse-dot {
+    0%, 100% { opacity: 1; box-shadow: 0 0 8px rgba(0,102,255,.7); }
+    50% { opacity: .6; box-shadow: 0 0 14px rgba(0,102,255,1); }
+  }
+
+  .fp__label-text {
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #0066ff;
+  }
+
+  /* Channel badge top right */
+  .fp__channel {
+    position: absolute;
+    top: 24px;
+    right: 36px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(0,102,255,.14);
+    border: 1px solid rgba(0,102,255,.40);
+    border-radius: 20px;
+    padding: 5px 14px 5px 10px;
+    z-index: 10;
+  }
+
+  .fp__channel svg {
+    flex-shrink: 0;
+  }
+
+  .fp__channel-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: #0066ff;
+    letter-spacing: .04em;
+  }
+
+  /* ---- MAIN LAYOUT ---- */
+  .fp__body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 80px 36px 36px;
+    gap: 0;
+  }
+
+  /* Headline row */
+  .fp__headline {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    gap: 20px;
+  }
+
+  .fp__title {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 700;
+    line-height: 1.1;
+    color: #f4f5f7;
+    max-width: 540px;
+    letter-spacing: -.02em;
+  }
+
+  .fp__title span {
+    color: #0066ff;
+  }
+
+  .fp__subtitle {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #a0a3ab;
+    max-width: 280px;
+    text-align: right;
+    padding-top: 6px;
+  }
+
+  /* ---- SPLIT COMPARISON ---- */
+  .fp__split {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.09);
+    flex: 1;
+    min-height: 320px;
+    margin-bottom: 28px;
+  }
+
+  /* Diagonal divider */
+  .fp__split::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent 0%, rgba(255,255,255,.15) 30%, rgba(255,255,255,.15) 70%, transparent 100%);
+    transform: translateX(-50%) skewX(-3deg);
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  /* Before panel */
+  .fp__before {
+    background: #0e0e10;
+    padding: 28px 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+  }
+
+  .fp__before::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ff4444, #cc2222);
+    border-radius: 0;
+  }
+
+  .fp__after {
+    background: #111115;
+    padding: 28px 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+  }
+
+  .fp__after::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #0066ff, #3388ff);
+    border-radius: 0;
+  }
+
+  .fp__panel-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+  }
+
+  .fp__panel-label--bad { color: #ff6666; }
+  .fp__panel-label--good { color: #0066ff; }
+
+  .fp__panel-label-icon {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    flex-shrink: 0;
+  }
+
+  .fp__panel-label-icon--bad {
+    background: rgba(255,80,80,.18);
+    border: 1px solid rgba(255,80,80,.3);
+  }
+
+  .fp__panel-label-icon--good {
+    background: rgba(0,102,255,.18);
+    border: 1px solid rgba(0,102,255,.3);
+  }
+
+  /* Fake message bubbles */
+  .fp__messages {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+  }
+
+  .fp__msg {
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 12px;
+    line-height: 1.5;
+    max-width: 90%;
+  }
+
+  .fp__msg--sent {
+    background: #1f1f26;
+    border: 1px solid rgba(255,255,255,.07);
+    color: #a0a3ab;
+    align-self: flex-end;
+    text-align: right;
+  }
+
+  .fp__msg--sent-blue {
+    background: rgba(0,102,255,.14);
+    border: 1px solid rgba(0,102,255,.25);
+    color: #c0ceff;
+    align-self: flex-end;
+    text-align: right;
+  }
+
+  .fp__msg--received {
+    background: #1a1a22;
+    border: 1px solid rgba(255,255,255,.09);
+    color: #f4f5f7;
+    align-self: flex-start;
+  }
+
+  .fp__msg-status {
+    font-size: 10px;
+    color: #73767e;
+    margin-top: 3px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .fp__msg-status--bad { color: #ff6666; }
+  .fp__msg-status--good { color: #4aab6e; }
+
+  /* Ignored indicator */
+  .fp__ignored {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,60,60,.07);
+    border: 1px solid rgba(255,60,60,.2);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 11px;
+    color: #ff8888;
+  }
+
+  /* Reply thread */
+  .fp__thread {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .fp__thread-msg {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .fp__avatar {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1a2a4a, #0044aa);
+    border: 1.5px solid rgba(0,102,255,.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    font-weight: 700;
+    color: #8ab0ff;
+    flex-shrink: 0;
+  }
+
+  .fp__avatar--large {
+    width: 32px;
+    height: 32px;
+    font-size: 11px;
+  }
+
+  .fp__thread-bubble {
+    background: rgba(0,102,255,.08);
+    border: 1px solid rgba(0,102,255,.2);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 11.5px;
+    line-height: 1.5;
+    color: #d0d8ff;
+    flex: 1;
+  }
+
+  .fp__thread-name {
+    font-size: 10px;
+    color: #0066ff;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+
+  /* Panel stat */
+  .fp__panel-stat {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.07);
+    border-radius: 8px;
+    padding: 10px 14px;
+  }
+
+  .fp__panel-stat-val {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .fp__panel-stat-val--bad { color: #ff6666; }
+  .fp__panel-stat-val--good { color: #0066ff; }
+
+  .fp__panel-stat-meta {
+    font-size: 11px;
+    color: #73767e;
+    line-height: 1.3;
+  }
+
+  /* ---- BOTTOM METRICS ROW ---- */
+  .fp__metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+
+  .fp__metric {
+    background: #1a1a1f;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 14px;
+    padding: 20px 22px 18px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .fp__metric::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 40%;
+    background: linear-gradient(180deg, transparent, rgba(0,102,255,.05));
+    pointer-events: none;
+  }
+
+  .fp__metric-val {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 700;
+    line-height: 1;
+    color: #0066ff;
+    letter-spacing: -.03em;
+    position: relative;
+    z-index: 1;
+  }
+
+  .fp__metric-val sup {
+    font-size: 45%;
+    vertical-align: super;
+    margin-left: 1px;
+  }
+
+  .fp__metric-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: #f4f5f7;
+    margin-top: 4px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .fp__metric-desc {
+    font-size: 11px;
+    color: #73767e;
+    line-height: 1.4;
+    position: relative;
+    z-index: 1;
+  }
+
+  .fp__metric-delta {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(74,171,110,.12);
+    border: 1px solid rgba(74,171,110,.25);
+    border-radius: 6px;
+    padding: 3px 8px;
+    font-size: 10px;
+    font-weight: 700;
+    color: #4aab6e;
+    margin-top: 6px;
+    width: fit-content;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Bar sparkline */
+  .fp__bars {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    padding: 0 14px 0 0;
+    height: 40px;
+    opacity: .22;
+  }
+
+  .fp__bar {
+    width: 5px;
+    border-radius: 3px 3px 0 0;
+    background: #0066ff;
+  }
+
+  /* Live pulse indicator */
+  .fp__live {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10px;
+    color: #4aab6e;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    margin-top: 6px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .fp__live-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #4aab6e;
+    animation: fp-pulse-green 1.8s ease-in-out infinite;
+  }
+
+  @keyframes fp-pulse-green {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(74,171,110,.5); }
+    50% { opacity: .7; box-shadow: 0 0 0 4px rgba(74,171,110,0); }
+  }
+
+  /* Vertical label */
+  .fp__vert-label {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    pointer-events: none;
+  }
+
+  .fp__vs-badge {
+    background: #141417;
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: #a0a3ab;
+    letter-spacing: .06em;
+    white-space: nowrap;
+  }
+
+  /* Responsive tweaks */
+  @media (max-width: 700px) {
+    .fp__split { grid-template-columns: 1fr; min-height: auto; }
+    .fp__metrics { grid-template-columns: 1fr; }
+    .fp__headline { flex-direction: column; }
+    .fp__subtitle { text-align: left; max-width: 100%; }
+  }
+</style>
+
+<!-- Top label -->
+<div class="fp__label">
+  <div class="fp__label-dot"></div>
+  <span class="fp__label-text">Outreach-Kanal</span>
+</div>
+
+<!-- Channel badge -->
+<div class="fp__channel">
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+    <rect width="16" height="16" rx="3" fill="#0066ff"/>
+    <path d="M3 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-5z" fill="white"/>
+    <circle cx="4.5" cy="4" r="1.1" fill="white"/>
+    <path d="M7.5 7.2c0-.4.3-.7.7-.7h.5c1.3 0 2.3 1 2.3 2.3v1.7a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1c0-.4-.3-.7-.5-.5z" fill="white"/>
+  </svg>
+  <span class="fp__channel-name">LinkedIn</span>
+</div>
+
+<div class="fp__body">
+
+  <!-- Headline -->
+  <div class="fp__headline">
+    <h2 class="fp__title">
+      Erst Vertrauen,<br>
+      dann <span>Gespraech</span>.<br>
+      Nicht Pitch.
+    </h2>
+    <p class="fp__subtitle">
+      Entscheider antworten nicht auf Templates. Sie antworten, wenn jemand zuerst Interesse zeigt, statt sofort zu verkaufen.
+    </p>
+  </div>
+
+  <!-- Split comparison -->
+  <div class="fp__split">
+
+    <!-- BEFORE -->
+    <div class="fp__before">
+      <div class="fp__panel-label fp__panel-label--bad">
+        <div class="fp__panel-label-icon fp__panel-label-icon--bad">✕</div>
+        Pitch-First-Ansatz
+      </div>
+
+      <div class="fp__messages">
+        <div style="align-self:flex-end;">
+          <div class="fp__msg fp__msg--sent">
+            Hallo Markus, ich helfe B2B-Unternehmen dabei, ihren Umsatz um 30% zu steigern. Haben Sie kurz Zeit fuer ein Gespraech?
+          </div>
+          <div class="fp__msg-status" style="justify-content:flex-end;">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6l3 3 5-5" stroke="#4aab6e" stroke-width="1.5" stroke-linecap="round"/><path d="M6 6l3 3 -1-1" stroke="#4aab6e" stroke-width="1.5" stroke-linecap="round" opacity=".4"/></svg>
+            Gelesen, 14:32
+          </div>
+        </div>
+
+        <div class="fp__ignored">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <circle cx="7" cy="7" r="6" stroke="#ff6666" stroke-width="1.3"/>
+            <path d="M4.5 4.5l5 5M9.5 4.5l-5 5" stroke="#ff6666" stroke-width="1.3" stroke-linecap="round"/>
+          </svg>
+          <span>Keine Antwort. Ignoriert.</span>
+        </div>
+
+        <div style="align-self:flex-end; margin-top:4px;">
+          <div class="fp__msg fp__msg--sent">
+            Nur ein kurzes Follow-up zu meiner Nachricht...</div>
+          <div class="fp__msg-status" style="justify-content:flex-end; color:#ff8888;">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><circle cx="6" cy="6" r="5" stroke="#ff6666" stroke-width="1.2"/><path d="M6 3.5v3l1.5 1.5" stroke="#ff6666" stroke-width="1.2" stroke-linecap="round"/></svg>
+            Blockiert
+          </div>
+        </div>
+      </div>
+
+      <div class="fp__panel-stat">
+        <div>
+          <div class="fp__panel-stat-val fp__panel-stat-val--bad">3,1%</div>
+          <div class="fp__panel-stat-meta">Antwortrate<br>Pitch-First-DMs</div>
+        </div>
+        <svg width="36" height="28" viewBox="0 0 36 28" fill="none" aria-label="Fallender Trend">
+          <polyline points="2,4 10,6 18,10 26,18 34,24" stroke="#ff6666" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="34" cy="24" r="2.5" fill="#ff6666" opacity=".8"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- VS badge -->
+    <div class="fp__vert-label">
+      <div class="fp__vs-badge">vs.</div>
+    </div>
+
+    <!-- AFTER -->
+    <div class="fp__after">
+      <div class="fp__panel-label fp__panel-label--good">
+        <div class="fp__panel-label-icon fp__panel-label-icon--good">✓</div>
+        Conversation-First
+      </div>
+
+      <div class="fp__thread">
+        <div class="fp__thread-msg">
+          <div class="fp__avatar">GW</div>
+          <div style="flex:1;">
+            <div class="fp__thread-bubble">
+              <div class="fp__thread-name">Grundwerk (vernetzt)</div>
+              Ihr Artikel ueber KI im Vertrieb hat mich neugierig gemacht. Wie loest Ihr Team gerade das Thema Skalierung?
+            </div>
+          </div>
+        </div>
+
+        <div class="fp__thread-msg" style="padding-left:34px;">
+          <div class="fp__avatar fp__avatar--large" style="background:linear-gradient(135deg,#1a3322,#0a6640);">MK</div>
+          <div style="flex:1;">
+            <div class="fp__thread-bubble" style="background:rgba(74,171,110,.08);border-color:rgba(74,171,110,.2);color:#c0ffda;">
+              <div class="fp__thread-name" style="color:#4aab6e;">Markus K., VP Sales</div>
+              Ehrlich gesagt ist genau das unser groesstes Problem gerade. Was machen Sie konkret?
+            </div>
+          </div>
+        </div>
+
+        <div class="fp__thread-msg">
+          <div class="fp__avatar">GW</div>
+          <div style="flex:1;">
+            <div class="fp__thread-bubble">
+              Ich zeige Ihnen gerne in 20 Minuten, was bei aehnlichen Teams funktioniert hat...
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fp__panel-stat" style="background:rgba(0,102,255,.07);border-color:rgba(0,102,255,.2);">
+        <div>
+          <div class="fp__panel-stat-val fp__panel-stat-val--good">38%</div>
+          <div class="fp__panel-stat-meta">Antwortrate<br>Conversation-First</div>
+        </div>
+        <svg width="36" height="28" viewBox="0 0 36 28" fill="none" aria-label="Steigender Trend">
+          <polyline points="2,24 10,20 18,14 26,8 34,3" stroke="#0066ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="34" cy="3" r="2.5" fill="#0066ff" opacity=".9"/>
+        </svg>
+        <div class="fp__live" style="margin-left:auto;">
+          <div class="fp__live-dot"></div>
+          Live
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom big metrics -->
+  <div class="fp__metrics">
+
+    <div class="fp__metric">
+      <div class="fp__bars" aria-hidden="true">
+        <div class="fp__bar" style="height:18px;"></div>
+        <div class="fp__bar" style="height:24px;"></div>
+        <div class="fp__bar" style="height:16px;"></div>
+        <div class="fp__bar" style="height:30px;"></div>
+        <div class="fp__bar" style="height:22px;"></div>
+        <div class="fp__bar" style="height:38px;"></div>
+        <div class="fp__bar" style="height:28px;"></div>
+        <div class="fp__bar" style="height:40px;"></div>
+      </div>
+      <div class="fp__metric-val">38<sup>%</sup></div>
+      <div class="fp__metric-name">Antwortrate</div>
+      <div class="fp__metric-desc">Entscheider reagieren auf echtes Interesse, nicht auf Verkaufsfloskeln.</div>
+      <div class="fp__metric-delta">
+        <svg width="9" height="9" viewBox="0 0 9 9" fill="none" aria-hidden="true"><path d="M4.5 1v7M1 4l3.5-3L8 4" stroke="#4aab6e" stroke-width="1.4" stroke-linecap="round"/></svg>
+        +12x vs. Branchenschnitt
+      </div>
+    </div>
+
+    <div class="fp__metric">
+      <div class="fp__bars" aria-hidden="true">
+        <div class="fp__bar" style="height:12px;"></div>
+        <div class="fp__bar" style="height:20px;"></div>
+        <div class="fp__bar" style="height:28px;"></div>
+        <div class="fp__bar" style="height:22px;"></div>
+        <div class="fp__bar" style="height:34px;"></div>
+        <div class="fp__bar" style="height:40px;"></div>
+        <div class="fp__bar" style="height:36px;"></div>
+        <div class="fp__bar" style="height:40px;"></div>
+      </div>
+      <div class="fp__metric-val">71<sup>%</sup></div>
+      <div class="fp__metric-name">C-Level-Replies</div>
+      <div class="fp__metric-desc">Ueber 7 von 10 Antworten kommen direkt von Entscheidern, nicht vom Assistenten.</div>
+      <div class="fp__metric-delta">
+        <svg width="9" height="9" viewBox="0 0 9 9" fill="none" aria-hidden="true"><path d="M4.5 1v7M1 4l3.5-3L8 4" stroke="#4aab6e" stroke-width="1.4" stroke-linecap="round"/></svg>
+        Entscheider-Direktkontakt
+      </div>
+    </div>
+
+    <div class="fp__metric">
+      <div class="fp__bars" aria-hidden="true">
+        <div class="fp__bar" style="height:40px;"></div>
+        <div class="fp__bar" style="height:32px;"></div>
+        <div class="fp__bar" style="height:36px;"></div>
+        <div class="fp__bar" style="height:24px;"></div>
+        <div class="fp__bar" style="height:30px;"></div>
+        <div class="fp__bar" style="height:20px;"></div>
+        <div class="fp__bar" style="height:14px;"></div>
+        <div class="fp__bar" style="height:10px;"></div>
+      </div>
+      <div class="fp__metric-val">6<sup>d</sup></div>
+      <div class="fp__metric-name">Bis zum ersten Gespraech</div>
+      <div class="fp__metric-desc">Durchschnittlich 6 Tage von Vernetzung bis Termin. Kein langer Nurturing-Funnel.</div>
+      <div class="fp__metric-delta">
+        <svg width="9" height="9" viewBox="0 0 9 9" fill="none" aria-hidden="true"><path d="M4.5 1v7M1 4l3.5-3L8 4" stroke="#4aab6e" stroke-width="1.4" stroke-linecap="round"/></svg>
+        Ø 6 Wochen schneller
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</section>
+</body></html>

@@ -1,0 +1,690 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://api.fontshare.com" crossorigin><link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=inter@400,500,600&display=swap" rel="stylesheet"><style>html,body{margin:0;background:#0e0e10}</style></head><body>
+<section class="fp">
+<style>
+  .fp {
+    position: relative;
+    min-height: 88vh;
+    background-color: #0e0e10;
+    background-image:
+      linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 42px 42px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 56px 48px;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    color: #f4f5f7;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .fp * {
+    box-sizing: border-box;
+  }
+
+  .fp__bg-orb {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .fp__bg-orb--left {
+    width: 480px;
+    height: 480px;
+    top: -80px;
+    left: -120px;
+    background: radial-gradient(circle, rgba(0,102,255,.08) 0%, transparent 70%);
+  }
+
+  .fp__bg-orb--right {
+    width: 320px;
+    height: 320px;
+    bottom: -60px;
+    right: -60px;
+    background: radial-gradient(circle, rgba(0,102,255,.06) 0%, transparent 70%);
+  }
+
+  .fp__inner {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 980px;
+  }
+
+  .fp__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #0066ff;
+    margin-bottom: 10px;
+  }
+
+  .fp__label-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #0066ff;
+    box-shadow: 0 0 8px rgba(0,102,255,.7);
+    animation: fp-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes fp-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .5; transform: scale(.7); }
+  }
+
+  .fp__heading {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: clamp(26px, 3.5vw, 42px);
+    font-weight: 700;
+    line-height: 1.18;
+    color: #f4f5f7;
+    margin: 0 0 8px;
+    letter-spacing: -.02em;
+  }
+
+  .fp__heading em {
+    font-style: normal;
+    color: #0066ff;
+  }
+
+  .fp__subtext {
+    font-size: 15px;
+    color: #a0a3ab;
+    margin: 0 0 40px;
+    max-width: 500px;
+    line-height: 1.55;
+  }
+
+  .fp__timeline {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 28px;
+  }
+
+  .fp__timeline-step {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    color: #73767e;
+    font-weight: 500;
+    letter-spacing: .04em;
+  }
+
+  .fp__timeline-step--active {
+    color: #f4f5f7;
+  }
+
+  .fp__timeline-step--done {
+    color: #0066ff;
+  }
+
+  .fp__timeline-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255,255,255,.09);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .fp__timeline-step--done .fp__timeline-icon {
+    border-color: rgba(0,102,255,.4);
+    background: rgba(0,102,255,.14);
+  }
+
+  .fp__timeline-step--active .fp__timeline-icon {
+    border-color: rgba(0,102,255,.6);
+    background: rgba(0,102,255,.22);
+    box-shadow: 0 0 12px rgba(0,102,255,.3);
+  }
+
+  .fp__timeline-connector {
+    width: 52px;
+    height: 1px;
+    background: rgba(255,255,255,.09);
+    margin: 0 4px;
+  }
+
+  .fp__timeline-connector--done {
+    background: linear-gradient(90deg, rgba(0,102,255,.4), rgba(0,102,255,.2));
+  }
+
+  .fp__dialog-wrap {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 0;
+    align-items: start;
+  }
+
+  .fp__email-card {
+    background: #141417;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .fp__email-card--outgoing {
+    border-color: rgba(0,102,255,.3);
+    box-shadow: 0 0 0 1px rgba(0,102,255,.12), 0 8px 40px rgba(0,0,0,.4);
+  }
+
+  .fp__email-card--incoming {
+    box-shadow: 0 8px 40px rgba(0,0,0,.4);
+  }
+
+  .fp__email-chrome {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    background: #1a1a1f;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+  }
+
+  .fp__chrome-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+
+  .fp__chrome-dot:nth-child(1) { background: #ff5f57; }
+  .fp__chrome-dot:nth-child(2) { background: #ffbd2e; }
+  .fp__chrome-dot:nth-child(3) { background: #28ca41; }
+
+  .fp__email-meta {
+    padding: 16px 18px 0;
+    border-bottom: 1px solid rgba(255,255,255,.05);
+    padding-bottom: 12px;
+  }
+
+  .fp__email-direction {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .fp__email-direction--out { color: #0066ff; }
+  .fp__email-direction--in { color: #34d399; }
+
+  .fp__email-field {
+    display: flex;
+    gap: 8px;
+    font-size: 11.5px;
+    color: #73767e;
+    line-height: 1.7;
+  }
+
+  .fp__email-field-label {
+    min-width: 42px;
+    color: #73767e;
+  }
+
+  .fp__email-field-value {
+    color: #a0a3ab;
+  }
+
+  .fp__email-subject {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #f4f5f7;
+    margin-top: 4px;
+    padding-top: 6px;
+    border-top: 1px solid rgba(255,255,255,.05);
+  }
+
+  .fp__email-body {
+    padding: 16px 18px 18px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: #a0a3ab;
+  }
+
+  .fp__opener-block {
+    position: relative;
+    background: rgba(0,102,255,.08);
+    border: 1px solid rgba(0,102,255,.28);
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+  }
+
+  .fp__opener-block::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #0066ff;
+    border-radius: 3px 0 0 3px;
+  }
+
+  .fp__opener-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #0066ff;
+    margin-bottom: 5px;
+  }
+
+  .fp__opener-text {
+    font-size: 12.5px;
+    color: #f4f5f7;
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  .fp__opener-text em {
+    font-style: normal;
+    color: #0066ff;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: rgba(0,102,255,.4);
+    text-underline-offset: 2px;
+  }
+
+  .fp__research-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(0,102,255,.14);
+    border: 1px solid rgba(0,102,255,.3);
+    border-radius: 4px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #0066ff;
+    padding: 2px 7px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  .fp__email-signature {
+    padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,.05);
+    margin-top: 8px;
+    font-size: 12px;
+    color: #73767e;
+  }
+
+  .fp__connector-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 140px;
+    width: 80px;
+    position: relative;
+    height: 100%;
+    min-height: 400px;
+  }
+
+  .fp__connector-line {
+    width: 2px;
+    height: 130px;
+    background: linear-gradient(180deg, rgba(0,102,255,.35) 0%, rgba(0,102,255,.08) 100%);
+    position: relative;
+    overflow: visible;
+  }
+
+  .fp__connector-arrow {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #141417;
+    border: 1.5px solid rgba(0,102,255,.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 8px 0;
+    position: relative;
+    z-index: 2;
+  }
+
+  .fp__connector-time {
+    font-size: 10px;
+    color: #73767e;
+    text-align: center;
+    margin-top: 6px;
+    line-height: 1.4;
+  }
+
+  .fp__connector-time strong {
+    display: block;
+    color: #34d399;
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  .fp__reply-highlight {
+    background: rgba(52,211,153,.06);
+    border: 1px solid rgba(52,211,153,.2);
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+    position: relative;
+  }
+
+  .fp__reply-highlight::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #34d399;
+    border-radius: 3px 0 0 3px;
+  }
+
+  .fp__reply-text {
+    font-size: 12.5px;
+    color: #f4f5f7;
+    line-height: 1.6;
+  }
+
+  .fp__reply-text em {
+    font-style: normal;
+    color: #34d399;
+    font-weight: 600;
+  }
+
+  .fp__timestamp {
+    font-size: 10px;
+    color: #73767e;
+    margin-top: 2px;
+  }
+
+  .fp__stats-row {
+    display: flex;
+    gap: 16px;
+    margin-top: 32px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(255,255,255,.06);
+  }
+
+  .fp__stat {
+    flex: 1;
+    text-align: center;
+    padding: 16px;
+    background: #141417;
+    border: 1px solid rgba(255,255,255,.07);
+    border-radius: 10px;
+  }
+
+  .fp__stat-value {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #f4f5f7;
+    letter-spacing: -.02em;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .fp__stat-value span {
+    color: #0066ff;
+  }
+
+  .fp__stat-label {
+    font-size: 11px;
+    color: #73767e;
+    letter-spacing: .03em;
+  }
+
+  .fp__avatar {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+    flex-shrink: 0;
+    vertical-align: middle;
+    margin-right: 6px;
+  }
+
+  .fp__avatar--sender {
+    background: rgba(0,102,255,.2);
+    border: 1px solid rgba(0,102,255,.4);
+    color: #0066ff;
+  }
+
+  .fp__avatar--recipient {
+    background: rgba(52,211,153,.15);
+    border: 1px solid rgba(52,211,153,.35);
+    color: #34d399;
+  }
+</style>
+
+<div class="fp__bg-orb fp__bg-orb--left"></div>
+<div class="fp__bg-orb fp__bg-orb--right"></div>
+
+<div class="fp__inner">
+
+  <div class="fp__label">
+    <span class="fp__label-dot"></span>
+    Cold Email Outreach
+  </div>
+
+  <h2 class="fp__heading">Jede Mail klingt wie<br><em>persönliche Post.</em></h2>
+  <p class="fp__subtext">Kein Template-Muster. Echter Website-Kontext, echter erster Satz, echte Antwort.</p>
+
+  <!-- Timeline -->
+  <div class="fp__timeline">
+    <div class="fp__timeline-step fp__timeline-step--done">
+      <div class="fp__timeline-icon">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+          <path d="M2 5L4.2 7.2L8 3" stroke="#0066ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      Website-Analyse
+    </div>
+    <div class="fp__timeline-connector fp__timeline-connector--done"></div>
+    <div class="fp__timeline-step fp__timeline-step--done">
+      <div class="fp__timeline-icon">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+          <path d="M2 5L4.2 7.2L8 3" stroke="#0066ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      Opener generiert
+    </div>
+    <div class="fp__timeline-connector fp__timeline-connector--done"></div>
+    <div class="fp__timeline-step fp__timeline-step--active">
+      <div class="fp__timeline-icon">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+          <rect x="2" y="2" width="6" height="6" rx="1" fill="#0066ff"/>
+        </svg>
+      </div>
+      Mail versendet
+    </div>
+    <div class="fp__timeline-connector"></div>
+    <div class="fp__timeline-step">
+      <div class="fp__timeline-icon">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+          <circle cx="5" cy="5" r="3" fill="rgba(255,255,255,.15)"/>
+        </svg>
+      </div>
+      Antwort erhalten
+    </div>
+  </div>
+
+  <!-- Dialog -->
+  <div class="fp__dialog-wrap">
+
+    <!-- Outgoing email -->
+    <div class="fp__email-card fp__email-card--outgoing">
+      <div class="fp__email-chrome">
+        <div class="fp__chrome-dot"></div>
+        <div class="fp__chrome-dot"></div>
+        <div class="fp__chrome-dot"></div>
+      </div>
+      <div class="fp__email-meta">
+        <div class="fp__email-direction fp__email-direction--out">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" style="display:inline;margin-right:4px;vertical-align:middle;">
+            <path d="M2 8L8 2M8 2H4M8 2V6" stroke="#0066ff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Ausgehend - 09:14 Uhr
+        </div>
+        <div class="fp__email-field">
+          <span class="fp__email-field-label">Von:</span>
+          <span class="fp__email-field-value">
+            <span class="fp__avatar fp__avatar--sender">TS</span>
+            tom@grundwerk.digital
+          </span>
+        </div>
+        <div class="fp__email-field">
+          <span class="fp__email-field-label">An:</span>
+          <span class="fp__email-field-value">
+            <span class="fp__avatar fp__avatar--recipient">MK</span>
+            m.kirchner@nexaflow.de
+          </span>
+        </div>
+        <div class="fp__email-subject">Ihre neue KI-Positionierung - kurze Frage</div>
+      </div>
+      <div class="fp__email-body">
+
+        <div class="fp__opener-block">
+          <div class="fp__opener-tag">
+            <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
+              <circle cx="4" cy="4" r="3" fill="#0066ff"/>
+            </svg>
+            Research-Opener
+            <span class="fp__research-badge">KI-generiert</span>
+          </div>
+          <p class="fp__opener-text">
+            "Ihr aktueller Blog-Artikel über <em>prädiktive Wartung in der Fertigungsindustrie</em> war ungewöhnlich präzise - vor allem die Passage zu <em>Edge-Deployment ohne Cloud-Anbindung</em>."
+          </p>
+        </div>
+
+        <p style="margin:0 0 10px;font-size:13px;color:#a0a3ab;line-height:1.65;">
+          Das ist genau der Bereich, in dem wir für vergleichbare Unternehmen messbar Ergebnisse erzielt haben: mehr qualifizierte Gespräche durch gezielten Outbound.
+        </p>
+
+        <p style="margin:0 0 10px;font-size:13px;color:#a0a3ab;line-height:1.65;">
+          Hätten Sie 20 Minuten, um kurz zu sprechen? Ich zeige Ihnen konkrete Zahlen aus ähnlichen Projekten.
+        </p>
+
+        <div class="fp__email-signature">
+          Viele Grüße<br>
+          <span style="color:#f4f5f7;font-weight:600;">Tom Schiller</span><br>
+          <span style="font-size:11px;">Grundwerk Digital</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Connector -->
+    <div class="fp__connector-col">
+      <div class="fp__connector-line"></div>
+      <div class="fp__connector-arrow" aria-label="Nachrichtenfluss-Pfeil">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M7 2L7 12M7 12L4 9M7 12L10 9" stroke="#0066ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="fp__connector-time">
+        <strong>2h 17min</strong>
+        bis Antwort
+      </div>
+      <div class="fp__connector-line" style="height:60px;margin-top:8px;background:linear-gradient(180deg,rgba(52,211,153,.2) 0%,rgba(52,211,153,.05) 100%);"></div>
+    </div>
+
+    <!-- Incoming reply -->
+    <div class="fp__email-card fp__email-card--incoming">
+      <div class="fp__email-chrome">
+        <div class="fp__chrome-dot"></div>
+        <div class="fp__chrome-dot"></div>
+        <div class="fp__chrome-dot"></div>
+      </div>
+      <div class="fp__email-meta">
+        <div class="fp__email-direction fp__email-direction--in">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" style="display:inline;margin-right:4px;vertical-align:middle;">
+            <path d="M8 2L2 8M2 8H6M2 8V4" stroke="#34d399" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Eingehend - 11:31 Uhr
+        </div>
+        <div class="fp__email-field">
+          <span class="fp__email-field-label">Von:</span>
+          <span class="fp__email-field-value">
+            <span class="fp__avatar fp__avatar--recipient">MK</span>
+            m.kirchner@nexaflow.de
+          </span>
+        </div>
+        <div class="fp__email-field">
+          <span class="fp__email-field-label">An:</span>
+          <span class="fp__email-field-value">
+            <span class="fp__avatar fp__avatar--sender">TS</span>
+            tom@grundwerk.digital
+          </span>
+        </div>
+        <div class="fp__email-subject">Re: Ihre neue KI-Positionierung - kurze Frage</div>
+      </div>
+      <div class="fp__email-body">
+
+        <div class="fp__reply-highlight">
+          <p class="fp__reply-text">
+            "Hallo Tom, das hat mich wirklich überrascht - <em>die meisten Mails die ich bekomme könnten an jeden gehen</em>. Dass Sie unseren Artikel gelesen haben, merkt man."
+          </p>
+        </div>
+
+        <p style="margin:0 0 10px;font-size:13px;color:#a0a3ab;line-height:1.65;">
+          Ich bin ehrlich gesagt gerade mitten in der Planung unserer Outbound-Strategie für Q3. Das Timing passt gut.
+        </p>
+
+        <p style="margin:0 0 10px;font-size:13px;color:#a0a3ab;line-height:1.65;">
+          Wie wäre es mit nächstem Dienstag, 14 Uhr? Einfach den Link aus meiner Signatur nehmen.
+        </p>
+
+        <div class="fp__email-signature">
+          Beste Grüße<br>
+          <span style="color:#f4f5f7;font-weight:600;">Max Kirchner</span><br>
+          <span style="font-size:11px;">Head of Growth, NexaFlow GmbH</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Stats row -->
+  <div class="fp__stats-row">
+    <div class="fp__stat">
+      <div class="fp__stat-value"><span>3,4</span>x</div>
+      <div class="fp__stat-label">mehr Antworten vs. Template</div>
+    </div>
+    <div class="fp__stat">
+      <div class="fp__stat-value"><span><90</span>s</div>
+      <div class="fp__stat-label">Opener-Recherche pro Lead</div>
+    </div>
+    <div class="fp__stat">
+      <div class="fp__stat-value"><span>100</span>%</div>
+      <div class="fp__stat-label">individuell, kein Duplikat</div>
+    </div>
+    <div class="fp__stat">
+      <div class="fp__stat-value" style="font-size:20px;">Echtzeit</div>
+      <div class="fp__stat-label">Website-Analyse vor Versand</div>
+    </div>
+  </div>
+
+</div>
+</section>
+</body></html>

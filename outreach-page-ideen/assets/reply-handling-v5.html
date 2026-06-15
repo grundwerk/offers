@@ -1,0 +1,355 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://api.fontshare.com" crossorigin><link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=inter@400,500,600&display=swap" rel="stylesheet"><style>html,body{margin:0;background:#0e0e10}</style></head><body>
+<section class="fp">
+<style>
+  .fp {
+    position: relative;
+    min-height: 88vh;
+    background-color: #141417;
+    background-image:
+      linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 42px 42px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    color: #f4f5f7;
+    padding: 0;
+  }
+
+  .fp__noise {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .fp__glow {
+    position: absolute;
+    top: -20%;
+    left: -10%;
+    width: 60%;
+    height: 80%;
+    background: radial-gradient(ellipse at center, rgba(0,102,255,.07) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .fp__inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 72px 80px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .fp__left {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .fp__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 32px;
+  }
+
+  .fp__pulse-wrap {
+    position: relative;
+    width: 10px;
+    height: 10px;
+  }
+
+  .fp__pulse-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #0066ff;
+    position: relative;
+    z-index: 1;
+  }
+
+  .fp__pulse-ring {
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(0,102,255,.5);
+    animation: fp-pulse 2.2s ease-out infinite;
+  }
+
+  .fp__pulse-ring2 {
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,102,255,.25);
+    animation: fp-pulse 2.2s ease-out infinite 0.55s;
+  }
+
+  @keyframes fp-pulse {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(2.4); }
+  }
+
+  .fp__label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #0066ff;
+  }
+
+  .fp__headline {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: clamp(56px, 8.5vw, 110px);
+    font-weight: 700;
+    line-height: 0.93;
+    letter-spacing: -0.03em;
+    color: #f4f5f7;
+    margin: 0 0 0 0;
+  }
+
+  .fp__headline-muted {
+    color: #a0a3ab;
+  }
+
+  .fp__divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(0,102,255,.60) 0%, rgba(0,102,255,.15) 60%, transparent 100%);
+    margin: 36px 0 32px 0;
+  }
+
+  .fp__sub {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #a0a3ab;
+    max-width: 560px;
+    margin: 0;
+  }
+
+  .fp__sub strong {
+    color: #f4f5f7;
+    font-weight: 500;
+  }
+
+  .fp__stat-row {
+    display: flex;
+    gap: 48px;
+    margin-top: 48px;
+  }
+
+  .fp__stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .fp__stat-num {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #f4f5f7;
+    letter-spacing: -0.02em;
+  }
+
+  .fp__stat-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #73767e;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .fp__stat-divider {
+    width: 1px;
+    background: rgba(255,255,255,.09);
+    align-self: stretch;
+  }
+
+  .fp__right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-shrink: 0;
+  }
+
+  .fp__icon-pair {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .fp__icon-box {
+    width: 72px;
+    height: 72px;
+    background: #1a1a1f;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .fp__icon-box--active {
+    border-color: rgba(0,102,255,.40);
+    background: rgba(0,102,255,.08);
+  }
+
+  .fp__icon-connector {
+    width: 1px;
+    height: 32px;
+    background: linear-gradient(180deg, rgba(0,102,255,.40) 0%, rgba(0,102,255,.40) 100%);
+    position: relative;
+  }
+
+  .fp__icon-connector::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #0066ff;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: fp-travel 2.4s ease-in-out infinite;
+  }
+
+  @keyframes fp-travel {
+    0% { top: 0%; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+  }
+
+  .fp__icon-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #73767e;
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  .fp__icon-label--active {
+    color: #0066ff;
+  }
+
+  .fp__corner-tag {
+    position: absolute;
+    bottom: 40px;
+    right: 80px;
+    font-size: 11px;
+    font-weight: 500;
+    color: #73767e;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .fp__corner-tag::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: #73767e;
+  }
+</style>
+
+<div class="fp__noise" aria-hidden="true"></div>
+<div class="fp__glow" aria-hidden="true"></div>
+
+<div class="fp__inner">
+  <div class="fp__left">
+
+    <div class="fp__eyebrow">
+      <div class="fp__pulse-wrap" aria-hidden="true">
+        <div class="fp__pulse-dot"></div>
+        <div class="fp__pulse-ring"></div>
+        <div class="fp__pulse-ring2"></div>
+      </div>
+      <span class="fp__label">Reply-Handling</span>
+    </div>
+
+    <h2 class="fp__headline">
+      Kein Einwand.<br>
+      <span class="fp__headline-muted">Kein Problem.</span>
+    </h2>
+
+    <div class="fp__divider" aria-hidden="true"></div>
+
+    <p class="fp__sub">
+      Jede Antwort wird gelesen, eingeordnet und beantwortet, ob Interesse, Skepsis oder Frage. Das System dreht <strong>jeden Dialog in einen Termin</strong>.
+    </p>
+
+    <div class="fp__stat-row">
+      <div class="fp__stat">
+        <span class="fp__stat-num">73%</span>
+        <span class="fp__stat-label">Einwände konvertiert</span>
+      </div>
+      <div class="fp__stat-divider" aria-hidden="true"></div>
+      <div class="fp__stat">
+        <span class="fp__stat-num">< 4 min</span>
+        <span class="fp__stat-label">Reaktionszeit</span>
+      </div>
+      <div class="fp__stat-divider" aria-hidden="true"></div>
+      <div class="fp__stat">
+        <span class="fp__stat-num">24/7</span>
+        <span class="fp__stat-label">Immer aktiv</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="fp__right" aria-label="Antwort wird zu Termin">
+    <div class="fp__icon-pair">
+
+      <div class="fp__icon-box">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="4" y="7" width="24" height="18" rx="3" stroke="#a0a3ab" stroke-width="1.5"/>
+          <path d="M4 12h24" stroke="#a0a3ab" stroke-width="1.5"/>
+          <path d="M9 7V5M23 7V5" stroke="#a0a3ab" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="11" cy="19" r="1.5" fill="#a0a3ab"/>
+          <circle cx="16" cy="19" r="1.5" fill="#a0a3ab"/>
+          <circle cx="21" cy="19" r="1.5" fill="#a0a3ab"/>
+        </svg>
+      </div>
+      <span class="fp__icon-label">Eingang</span>
+
+      <div class="fp__icon-connector" aria-hidden="true"></div>
+
+      <div class="fp__icon-box fp__icon-box--active">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="4" y="5" width="24" height="22" rx="3" stroke="#0066ff" stroke-width="1.5"/>
+          <path d="M4 11h24" stroke="#0066ff" stroke-width="1.5"/>
+          <path d="M10 5V3M22 5V3" stroke="#0066ff" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="16" cy="20" r="4" fill="rgba(0,102,255,.18)" stroke="#0066ff" stroke-width="1.5"/>
+          <path d="M14 20l1.5 1.5 2.5-2.5" stroke="#0066ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <span class="fp__icon-label fp__icon-label--active">Termin</span>
+
+    </div>
+  </div>
+</div>
+
+<span class="fp__corner-tag">Grundwerk Reply Engine</span>
+
+</section>
+</body></html>

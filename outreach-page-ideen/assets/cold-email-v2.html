@@ -1,0 +1,712 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://api.fontshare.com" crossorigin><link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=inter@400,500,600&display=swap" rel="stylesheet"><style>html,body{margin:0;background:#0e0e10}</style></head><body>
+<section class="fp">
+<style>
+  .fp {
+    position: relative;
+    width: 100%;
+    min-height: 88vh;
+    background-color: #0e0e10;
+    background-image:
+      linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 42px 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    overflow: hidden;
+    color: #f4f5f7;
+    box-sizing: border-box;
+    padding: 48px 40px;
+  }
+
+  .fp *, .fp *::before, .fp *::after {
+    box-sizing: border-box;
+  }
+
+  /* ambient glow */
+  .fp__glow {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,102,255,.13) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .fp__inner {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  /* top label */
+  .fp__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0,102,255,.14);
+    border: 1px solid rgba(0,102,255,.40);
+    border-radius: 100px;
+    padding: 5px 14px 5px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #0066ff;
+    width: fit-content;
+  }
+
+  .fp__label-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #0066ff;
+    box-shadow: 0 0 8px rgba(0,102,255,.9);
+    animation: fp-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes fp-pulse {
+    0%, 100% { opacity: 1; box-shadow: 0 0 8px rgba(0,102,255,.9); }
+    50% { opacity: .5; box-shadow: 0 0 4px rgba(0,102,255,.4); }
+  }
+
+  .fp__headline {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: clamp(28px, 4vw, 50px);
+    font-weight: 700;
+    line-height: 1.1;
+    color: #f4f5f7;
+    margin: 0;
+    max-width: 620px;
+  }
+
+  .fp__headline em {
+    font-style: normal;
+    color: #0066ff;
+  }
+
+  .fp__sub {
+    font-size: 15px;
+    color: #a0a3ab;
+    line-height: 1.6;
+    max-width: 420px;
+    margin: 0;
+  }
+
+  /* MOCKUP WRAPPER */
+  .fp__mockup-row {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+    max-width: 1100px;
+    position: relative;
+  }
+
+  /* ---- RESEARCH STRIP (left) ---- */
+  .fp__research {
+    width: 280px;
+    flex-shrink: 0;
+    background: #141417;
+    border: 1px solid rgba(255,255,255,.09);
+    border-right: none;
+    border-radius: 14px 0 0 14px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .fp__research-bar {
+    background: #1a1a1f;
+    border-bottom: 1px solid rgba(255,255,255,.09);
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .fp__browser-dots {
+    display: flex;
+    gap: 5px;
+  }
+
+  .fp__browser-dots span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.15);
+  }
+
+  .fp__url-bar {
+    flex: 1;
+    background: rgba(255,255,255,.06);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 10px;
+    color: #73767e;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 1px solid rgba(255,255,255,.07);
+  }
+
+  .fp__research-body {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+  }
+
+  .fp__site-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .fp__site-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #1e3a5f, #0a1929);
+    border: 1px solid rgba(0,102,255,.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .fp__site-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .fp__site-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .fp__site-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: #f4f5f7;
+  }
+
+  .fp__site-url {
+    font-size: 10px;
+    color: #73767e;
+  }
+
+  .fp__scan-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: #73767e;
+    margin-top: 4px;
+  }
+
+  .fp__scan-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .fp__scan-line {
+    height: 8px;
+    border-radius: 4px;
+    background: rgba(255,255,255,.07);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .fp__scan-line::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(0,102,255,.5), transparent);
+    transform: translateX(-100%);
+    animation: fp-scan 2.5s ease-in-out infinite;
+  }
+
+  .fp__scan-line:nth-child(2)::after { animation-delay: .3s; }
+  .fp__scan-line:nth-child(3)::after { animation-delay: .6s; }
+  .fp__scan-line:nth-child(4)::after { animation-delay: .9s; }
+
+  .fp__scan-line--short { width: 60%; }
+  .fp__scan-line--medium { width: 80%; }
+  .fp__scan-line--full { width: 100%; }
+
+  @keyframes fp-scan {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(300%); }
+  }
+
+  /* highlighted finding */
+  .fp__finding {
+    background: rgba(0,102,255,.1);
+    border: 1px solid rgba(0,102,255,.3);
+    border-radius: 8px;
+    padding: 10px 12px;
+    position: relative;
+  }
+
+  .fp__finding-tag {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #0066ff;
+    margin-bottom: 5px;
+  }
+
+  .fp__finding-text {
+    font-size: 11px;
+    color: #a0a3ab;
+    line-height: 1.5;
+  }
+
+  .fp__finding-text strong {
+    color: #f4f5f7;
+    font-weight: 600;
+  }
+
+  /* connector line SVG */
+  .fp__connector {
+    position: absolute;
+    left: 278px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  /* ---- EMAIL COMPOSE (right) ---- */
+  .fp__compose {
+    flex: 1;
+    background: #141417;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 0 14px 14px 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-width: 0;
+  }
+
+  .fp__compose-bar {
+    background: #1a1a1f;
+    border-bottom: 1px solid rgba(255,255,255,.09);
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .fp__compose-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: #a0a3ab;
+    flex: 1;
+  }
+
+  .fp__compose-actions {
+    display: flex;
+    gap: 6px;
+  }
+
+  .fp__compose-btn {
+    font-size: 10px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,.12);
+    background: rgba(255,255,255,.05);
+    color: #a0a3ab;
+    cursor: default;
+  }
+
+  .fp__compose-btn--send {
+    background: #0066ff;
+    border-color: transparent;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .fp__compose-fields {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+  }
+
+  .fp__field {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    border-bottom: 1px solid rgba(255,255,255,.05);
+  }
+
+  .fp__field:last-child {
+    border-bottom: none;
+  }
+
+  .fp__field-label {
+    font-size: 11px;
+    color: #73767e;
+    width: 52px;
+    flex-shrink: 0;
+    font-weight: 500;
+  }
+
+  .fp__field-value {
+    font-size: 12px;
+    color: #f4f5f7;
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .fp__field-value--muted {
+    color: #a0a3ab;
+  }
+
+  .fp__recipient-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(0,102,255,.14);
+    border: 1px solid rgba(0,102,255,.3);
+    border-radius: 100px;
+    padding: 2px 10px 2px 5px;
+    font-size: 11px;
+    color: #f4f5f7;
+    font-weight: 500;
+  }
+
+  .fp__recipient-avatar {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0066ff, #0040cc);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    font-weight: 700;
+    color: #fff;
+    flex-shrink: 0;
+  }
+
+  .fp__compose-body {
+    padding: 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* the opener highlight */
+  .fp__opener-block {
+    position: relative;
+    background: rgba(0,102,255,.08);
+    border: 1px solid rgba(0,102,255,.35);
+    border-radius: 8px;
+    padding: 12px 14px;
+  }
+
+  .fp__opener-badge {
+    position: absolute;
+    top: -1px;
+    right: 12px;
+    transform: translateY(-50%);
+    background: #0066ff;
+    border-radius: 100px;
+    padding: 2px 9px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    color: #fff;
+    white-space: nowrap;
+  }
+
+  .fp__opener-text {
+    font-size: 13px;
+    color: #f4f5f7;
+    line-height: 1.6;
+  }
+
+  .fp__opener-text .fp__highlight {
+    color: #6eb4ff;
+    font-weight: 500;
+  }
+
+  .fp__cursor {
+    display: inline-block;
+    width: 2px;
+    height: 14px;
+    background: #0066ff;
+    margin-left: 1px;
+    vertical-align: text-bottom;
+    animation: fp-blink .9s step-end infinite;
+  }
+
+  @keyframes fp-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  .fp__body-text {
+    font-size: 13px;
+    color: #a0a3ab;
+    line-height: 1.7;
+  }
+
+  .fp__body-text .fp__placeholder {
+    display: inline-block;
+    height: 10px;
+    border-radius: 3px;
+    background: rgba(255,255,255,.08);
+    vertical-align: middle;
+  }
+
+  .fp__signature {
+    margin-top: 8px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,.07);
+  }
+
+  .fp__sig-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: #f4f5f7;
+  }
+
+  .fp__sig-meta {
+    font-size: 11px;
+    color: #73767e;
+    margin-top: 2px;
+  }
+
+  /* source tag inside compose */
+  .fp__source-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(0,102,255,.1);
+    border: 1px solid rgba(0,102,255,.25);
+    border-radius: 6px;
+    padding: 3px 8px;
+    font-size: 10px;
+    color: #6eb4ff;
+    font-weight: 500;
+    width: fit-content;
+    margin-top: 4px;
+  }
+
+  /* footer stats row */
+  .fp__stats {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .fp__stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .fp__stat-value {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #f4f5f7;
+    line-height: 1;
+  }
+
+  .fp__stat-value em {
+    font-style: normal;
+    color: #0066ff;
+  }
+
+  .fp__stat-label {
+    font-size: 12px;
+    color: #73767e;
+  }
+
+  .fp__stat-divider {
+    width: 1px;
+    height: 36px;
+    background: rgba(255,255,255,.09);
+  }
+
+  /* top text area */
+  .fp__text-area {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+</style>
+
+<div class="fp__glow"></div>
+
+<div class="fp__inner">
+
+  <!-- top text -->
+  <div class="fp__text-area">
+    <div class="fp__label">
+      <span class="fp__label-dot"></span>
+      Cold Email
+    </div>
+    <h2 class="fp__headline">Jede Mail öffnet mit einem Satz, den<br><em>nur dieser eine Lead</em> je lesen wird.</h2>
+    <p class="fp__sub">Grundwerk scannt die Website deines Empfängers in Echtzeit und schreibt einen Opener, der so präzise ist, dass er sich liest wie eine Empfehlung von einem gemeinsamen Bekannten.</p>
+  </div>
+
+  <!-- mockup -->
+  <div class="fp__mockup-row">
+
+    <!-- research panel -->
+    <div class="fp__research">
+      <div class="fp__research-bar">
+        <div class="fp__browser-dots">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="fp__url-bar">muellerlogistik.de</div>
+      </div>
+      <div class="fp__research-body">
+        <div class="fp__site-header">
+          <div class="fp__site-icon">
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="2" y="6" width="12" height="8" rx="1.5" fill="rgba(0,102,255,.5)"/>
+              <path d="M5 6V4.5a3 3 0 016 0V6" stroke="rgba(0,102,255,.9)" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="8" cy="10.5" r="1.2" fill="rgba(0,102,255,.9)"/>
+            </svg>
+          </div>
+          <div class="fp__site-meta">
+            <span class="fp__site-name">Muller Logistik GmbH</span>
+            <span class="fp__site-url">muellerlogistik.de</span>
+          </div>
+        </div>
+
+        <div class="fp__scan-label">KI-Analyse lauft</div>
+        <div class="fp__scan-lines">
+          <div class="fp__scan-line fp__scan-line--full"></div>
+          <div class="fp__scan-line fp__scan-line--medium"></div>
+          <div class="fp__scan-line fp__scan-line--full"></div>
+          <div class="fp__scan-line fp__scan-line--short"></div>
+        </div>
+
+        <div class="fp__finding">
+          <div class="fp__finding-tag">Treffer gefunden</div>
+          <div class="fp__finding-text">Euer <strong>neues Warenlager in Dortmund</strong> soll Q3 in Betrieb gehen, Teamaufbau läuft.</div>
+        </div>
+
+        <div class="fp__source-tag">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+            <circle cx="5" cy="5" r="4" stroke="#0066ff" stroke-width="1.2"/>
+            <path d="M5 3v2.5l1.5 1" stroke="#0066ff" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+          Quelle: Pressemitteilung, 14. Mai 2026
+        </div>
+      </div>
+    </div>
+
+    <!-- SVG connector arrow -->
+    <svg class="fp__connector" width="32" height="48" viewBox="0 0 32 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M2 24 L30 24" stroke="rgba(0,102,255,.6)" stroke-width="2" stroke-dasharray="4 3"/>
+      <path d="M22 18 L30 24 L22 30" stroke="rgba(0,102,255,.8)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <circle cx="2" cy="24" r="3" fill="#0066ff" opacity=".7"/>
+    </svg>
+
+    <!-- compose panel -->
+    <div class="fp__compose">
+      <div class="fp__compose-bar">
+        <div class="fp__compose-title">Neue Nachricht</div>
+        <div class="fp__compose-actions">
+          <div class="fp__compose-btn">Entwurf</div>
+          <div class="fp__compose-btn fp__compose-btn--send">Senden</div>
+        </div>
+      </div>
+
+      <div class="fp__compose-fields">
+        <div class="fp__field">
+          <span class="fp__field-label">An</span>
+          <span class="fp__field-value">
+            <span class="fp__recipient-chip">
+              <span class="fp__recipient-avatar">KM</span>
+              Klaus Muller
+            </span>
+          </span>
+        </div>
+        <div class="fp__field">
+          <span class="fp__field-label">Von</span>
+          <span class="fp__field-value fp__field-value--muted">julia@beispiel.de</span>
+        </div>
+        <div class="fp__field">
+          <span class="fp__field-label">Betreff</span>
+          <span class="fp__field-value">Fur den Start in Dortmund</span>
+        </div>
+      </div>
+
+      <div class="fp__compose-body">
+        <!-- highlighted AI opener -->
+        <div class="fp__opener-block">
+          <span class="fp__opener-badge">KI-Opener</span>
+          <div class="fp__opener-text">
+            Herzlichen Glückwunsch zum neuen Standort in Dortmund, <span class="fp__highlight">euer Q3-Zeitplan für das Warenlager ist ambitioniert</span>, und genau dabei kann ich helfen<span class="fp__cursor"></span>
+          </div>
+        </div>
+
+        <!-- rest of the email body -->
+        <div class="fp__body-text">
+          Wir unterstützen Logistikteams dabei, in der Aufbauphase schnell die richtigen Entscheider zu erreichen, ohne monatelange Kaltakquise.
+          <br><br>
+          <span class="fp__placeholder" style="width:180px;"></span>&nbsp;
+          <span class="fp__placeholder" style="width:90px;"></span>
+          <br>
+          <span class="fp__placeholder" style="width:140px;"></span>&nbsp;
+          <span class="fp__placeholder" style="width:60px;"></span>
+        </div>
+
+        <div class="fp__signature">
+          <div class="fp__sig-name">Julia Hoffmann</div>
+          <div class="fp__sig-meta">Grundwerk Digital &middot; 0151 234 567 89</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /.fp__mockup-row -->
+
+  <!-- stats -->
+  <div class="fp__stats">
+    <div class="fp__stat">
+      <span class="fp__stat-value"><em>3,4x</em></span>
+      <span class="fp__stat-label">höhere Antwortrate vs. Massen-Mail</span>
+    </div>
+    <div class="fp__stat-divider"></div>
+    <div class="fp__stat">
+      <span class="fp__stat-value">~<em>8 s</em></span>
+      <span class="fp__stat-label">bis zum fertigen Opener</span>
+    </div>
+    <div class="fp__stat-divider"></div>
+    <div class="fp__stat">
+      <span class="fp__stat-value"><em>100 %</em></span>
+      <span class="fp__stat-label">einzigartiger Erstsatz pro Lead</span>
+    </div>
+  </div>
+
+</div><!-- /.fp__inner -->
+</section>
+</body></html>

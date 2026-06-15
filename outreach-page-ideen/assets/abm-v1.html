@@ -1,0 +1,386 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://api.fontshare.com" crossorigin><link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=inter@400,500,600&display=swap" rel="stylesheet"><style>html,body{margin:0;background:#0e0e10}</style></head><body>
+<section class="fp">
+<style>
+.fp {
+  position: relative;
+  min-height: 88vh;
+  background-color: #0e0e10;
+  background-image:
+    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size: 42px 42px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', Helvetica, Arial, sans-serif;
+  color: #f4f5f7;
+  overflow: hidden;
+  padding: 60px 40px;
+  box-sizing: border-box;
+}
+
+.fp-inner {
+  width: 100%;
+  max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  position: relative;
+  z-index: 2;
+}
+
+.fp-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.fp-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #0066ff;
+  background: rgba(0,102,255,.14);
+  border: 1px solid rgba(0,102,255,.40);
+  border-radius: 100px;
+  padding: 5px 14px;
+}
+
+.fp-label-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #0066ff;
+  animation: fp-pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes fp-pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .5; transform: scale(.7); }
+}
+
+.fp-headline {
+  font-family: 'Clash Display', system-ui, sans-serif;
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 700;
+  line-height: 1.1;
+  color: #f4f5f7;
+  margin: 0;
+  letter-spacing: -.02em;
+}
+
+.fp-headline em {
+  font-style: normal;
+  color: #0066ff;
+}
+
+.fp-sub {
+  font-size: 15px;
+  color: #a0a3ab;
+  max-width: 480px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.fp-diagram-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.fp-diagram-wrap svg {
+  width: 100%;
+  max-width: 820px;
+  height: auto;
+  overflow: visible;
+}
+
+.fp-flow-line-1 { animation: fp-flow 2.4s ease-in-out infinite; }
+.fp-flow-line-2 { animation: fp-flow 2.4s ease-in-out infinite .3s; }
+.fp-flow-line-3 { animation: fp-flow 2.4s ease-in-out infinite .6s; }
+.fp-flow-line-4 { animation: fp-flow 2.4s ease-in-out infinite .9s; }
+.fp-flow-line-5 { animation: fp-flow 2.4s ease-in-out infinite 1.2s; }
+
+@keyframes fp-flow {
+  0% { stroke-dashoffset: 160; opacity: .35; }
+  40% { opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: .55; }
+}
+
+.fp-center-pulse {
+  animation: fp-center-glow 3s ease-in-out infinite;
+}
+
+@keyframes fp-center-glow {
+  0%, 100% { opacity: .6; r: 36; }
+  50% { opacity: 1; r: 40; }
+}
+
+.fp-node-pop-1 { animation: fp-node-appear 2.4s ease-out infinite; }
+.fp-node-pop-2 { animation: fp-node-appear 2.4s ease-out infinite .3s; }
+.fp-node-pop-3 { animation: fp-node-appear 2.4s ease-out infinite .6s; }
+.fp-node-pop-4 { animation: fp-node-appear 2.4s ease-out infinite .9s; }
+.fp-node-pop-5 { animation: fp-node-appear 2.4s ease-out infinite 1.2s; }
+
+@keyframes fp-node-appear {
+  0% { opacity: .3; }
+  60% { opacity: 1; }
+  100% { opacity: .7; }
+}
+
+.fp-stats {
+  display: flex;
+  gap: 32px;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.fp-stat {
+  background: #141417;
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: 14px;
+  padding: 20px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 130px;
+}
+
+.fp-stat-num {
+  font-family: 'Clash Display', system-ui, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #f4f5f7;
+  line-height: 1;
+  letter-spacing: -.03em;
+}
+
+.fp-stat-num span {
+  color: #0066ff;
+}
+
+.fp-stat-desc {
+  font-size: 11px;
+  color: #73767e;
+  text-align: center;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.fp-bg-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(ellipse at center, rgba(0,102,255,.07) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+</style>
+
+<div class="fp-bg-glow"></div>
+
+<div class="fp-inner">
+
+  <div class="fp-header">
+    <div class="fp-label">
+      <span class="fp-label-dot"></span>
+      Account-Based Outreach
+    </div>
+    <h2 class="fp-headline">Jeden Entscheider<br>mit <em>seiner</em> Botschaft.</h2>
+    <p class="fp-sub">Wir sprechen 3 bis 5 Rollen im selben Unternehmen koordiniert an, jede mit eigenem Winkel und eigenem Timing.</p>
+  </div>
+
+  <div class="fp-diagram-wrap">
+    <svg viewBox="0 0 820 420" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Ablauf-Diagramm: koordinierte Ansprache mehrerer Entscheider im selben Account">
+      <defs>
+        <linearGradient id="fp-lg-1" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#0066ff" stop-opacity=".8"/>
+          <stop offset="100%" stop-color="#0066ff" stop-opacity=".2"/>
+        </linearGradient>
+        <linearGradient id="fp-lg-2" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#0066ff" stop-opacity=".7"/>
+          <stop offset="100%" stop-color="#0066ff" stop-opacity=".15"/>
+        </linearGradient>
+        <linearGradient id="fp-lg-center" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#1a1a2e"/>
+          <stop offset="100%" stop-color="#141417"/>
+        </linearGradient>
+        <filter id="fp-glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="3" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="fp-glow-strong" x="-80%" y="-80%" width="260%" height="260%">
+          <feGaussianBlur stdDeviation="8" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <marker id="fp-arrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#0066ff" opacity=".7"/>
+        </marker>
+        <marker id="fp-arrow-dim" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#0066ff" opacity=".3"/>
+        </marker>
+      </defs>
+
+      <!-- Central account node -->
+      <circle cx="260" cy="210" r="52" fill="#0e0e10" stroke="rgba(0,102,255,.5)" stroke-width="1.5"/>
+      <circle class="fp-center-pulse" cx="260" cy="210" r="36" fill="rgba(0,102,255,.18)" stroke="#0066ff" stroke-width="1.5" filter="url(#fp-glow-strong)"/>
+      <circle cx="260" cy="210" r="26" fill="#141417" stroke="rgba(0,102,255,.6)" stroke-width="1"/>
+
+      <!-- Building icon inside center -->
+      <g transform="translate(247,197)">
+        <rect x="2" y="8" width="22" height="17" rx="1" fill="none" stroke="#0066ff" stroke-width="1.5"/>
+        <rect x="8" y="4" width="10" height="6" rx="1" fill="none" stroke="#0066ff" stroke-width="1.2"/>
+        <rect x="5" y="13" width="4" height="4" rx=".5" fill="#0066ff" opacity=".6"/>
+        <rect x="11" y="13" width="4" height="4" rx=".5" fill="#0066ff" opacity=".6"/>
+        <rect x="17" y="13" width="4" height="4" rx=".5" fill="#0066ff" opacity=".6"/>
+        <line x1="0" y1="25" x2="26" y2="25" stroke="#0066ff" stroke-width="1.2" opacity=".5"/>
+      </g>
+
+      <!-- Center label -->
+      <text x="260" y="282" text-anchor="middle" font-family="Clash Display, system-ui, sans-serif" font-size="12" font-weight="700" fill="#f4f5f7" letter-spacing=".04em">TARGET ACCOUNT</text>
+      <text x="260" y="297" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="10" fill="#73767e">Koordiniert angesprochen</text>
+
+      <!-- Role 1: CEO - top left -->
+      <!-- Line -->
+      <line x1="215" y1="172" x2="128" y2="100" stroke="#0066ff" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#fp-arrow)" class="fp-flow-line-1" stroke-dashoffset="160" opacity=".55"/>
+      <!-- Node -->
+      <g class="fp-node-pop-1">
+        <rect x="52" y="56" width="130" height="72" rx="12" fill="#141417" stroke="rgba(0,102,255,.5)" stroke-width="1.2"/>
+        <rect x="52" y="56" width="130" height="4" rx="2" fill="#0066ff" opacity=".7"/>
+        <!-- Person icon -->
+        <circle cx="78" cy="84" r="9" fill="rgba(0,102,255,.2)" stroke="#0066ff" stroke-width="1.2"/>
+        <text x="78" y="88" text-anchor="middle" font-size="9" fill="#0066ff" font-family="Inter">CEO</text>
+        <text x="100" y="80" font-family="Clash Display, system-ui, sans-serif" font-size="11" font-weight="700" fill="#f4f5f7">Geschaftsfuhrung</text>
+        <text x="100" y="94" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#a0a3ab">ROI und Wachstum</text>
+        <rect x="100" y="104" width="66" height="15" rx="6" fill="rgba(0,102,255,.18)" stroke="rgba(0,102,255,.4)" stroke-width=".8"/>
+        <text x="133" y="115" text-anchor="middle" font-family="Inter" font-size="8.5" fill="#0066ff" font-weight="600">Strategie-Botschaft</text>
+      </g>
+
+      <!-- Role 2: Sales - upper right area -->
+      <!-- Line -->
+      <line x1="308" y1="176" x2="490" y2="98" stroke="#0066ff" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#fp-arrow)" class="fp-flow-line-2" stroke-dashoffset="160" opacity=".55"/>
+      <!-- Node -->
+      <g class="fp-node-pop-2">
+        <rect x="488" y="54" width="136" height="72" rx="12" fill="#141417" stroke="rgba(0,102,255,.45)" stroke-width="1.2"/>
+        <rect x="488" y="54" width="136" height="4" rx="2" fill="#0066ff" opacity=".6"/>
+        <circle cx="514" cy="82" r="9" fill="rgba(0,102,255,.15)" stroke="#0066ff" stroke-width="1.2"/>
+        <text x="514" y="86" text-anchor="middle" font-size="8" fill="#0066ff" font-family="Inter">VP</text>
+        <text x="536" y="78" font-family="Clash Display, system-ui, sans-serif" font-size="11" font-weight="700" fill="#f4f5f7">Sales-Leitung</text>
+        <text x="536" y="92" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#a0a3ab">Pipeline und Quoten</text>
+        <rect x="536" y="102" width="72" height="15" rx="6" fill="rgba(0,102,255,.18)" stroke="rgba(0,102,255,.4)" stroke-width=".8"/>
+        <text x="572" y="113" text-anchor="middle" font-family="Inter" font-size="8.5" fill="#0066ff" font-weight="600">Revenue-Botschaft</text>
+      </g>
+
+      <!-- Role 3: Marketing - right middle -->
+      <!-- Line -->
+      <line x1="312" y1="210" x2="500" y2="210" stroke="#0066ff" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#fp-arrow)" class="fp-flow-line-3" stroke-dashoffset="160" opacity=".55"/>
+      <!-- Node -->
+      <g class="fp-node-pop-3">
+        <rect x="496" y="174" width="136" height="72" rx="12" fill="#141417" stroke="rgba(0,102,255,.4)" stroke-width="1.2"/>
+        <rect x="496" y="174" width="136" height="4" rx="2" fill="#0066ff" opacity=".5"/>
+        <circle cx="522" cy="202" r="9" fill="rgba(0,102,255,.12)" stroke="#0066ff" stroke-width="1.2"/>
+        <text x="522" y="206" text-anchor="middle" font-size="7" fill="#0066ff" font-family="Inter">CMO</text>
+        <text x="544" y="198" font-family="Clash Display, system-ui, sans-serif" font-size="11" font-weight="700" fill="#f4f5f7">Marketing</text>
+        <text x="544" y="212" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#a0a3ab">Leads und Sichtbarkeit</text>
+        <rect x="544" y="222" width="72" height="15" rx="6" fill="rgba(0,102,255,.18)" stroke="rgba(0,102,255,.4)" stroke-width=".8"/>
+        <text x="580" y="233" text-anchor="middle" font-family="Inter" font-size="8.5" fill="#0066ff" font-weight="600">Kanal-Botschaft</text>
+      </g>
+
+      <!-- Role 4: IT/Tech - lower right -->
+      <!-- Line -->
+      <line x1="302" y1="246" x2="488" y2="324" stroke="#0066ff" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#fp-arrow)" class="fp-flow-line-4" stroke-dashoffset="160" opacity=".55"/>
+      <!-- Node -->
+      <g class="fp-node-pop-4">
+        <rect x="486" y="298" width="136" height="72" rx="12" fill="#141417" stroke="rgba(0,102,255,.35)" stroke-width="1.2"/>
+        <rect x="486" y="298" width="136" height="4" rx="2" fill="#0066ff" opacity=".4"/>
+        <circle cx="512" cy="326" r="9" fill="rgba(0,102,255,.1)" stroke="#0066ff" stroke-width="1.2"/>
+        <text x="512" y="330" text-anchor="middle" font-size="8" fill="#0066ff" font-family="Inter">CTO</text>
+        <text x="534" y="322" font-family="Clash Display, system-ui, sans-serif" font-size="11" font-weight="700" fill="#f4f5f7">IT und Technik</text>
+        <text x="534" y="336" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#a0a3ab">Systeme, Sicherheit</text>
+        <rect x="534" y="346" width="72" height="15" rx="6" fill="rgba(0,102,255,.18)" stroke="rgba(0,102,255,.4)" stroke-width=".8"/>
+        <text x="570" y="357" text-anchor="middle" font-family="Inter" font-size="8.5" fill="#0066ff" font-weight="600">Tech-Botschaft</text>
+      </g>
+
+      <!-- Role 5: Operations - bottom left -->
+      <!-- Line -->
+      <line x1="224" y1="256" x2="140" y2="322" stroke="#0066ff" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#fp-arrow)" class="fp-flow-line-5" stroke-dashoffset="160" opacity=".55"/>
+      <!-- Node -->
+      <g class="fp-node-pop-5">
+        <rect x="52" y="298" width="132" height="72" rx="12" fill="#141417" stroke="rgba(0,102,255,.3)" stroke-width="1.2"/>
+        <rect x="52" y="298" width="132" height="4" rx="2" fill="#0066ff" opacity=".35"/>
+        <circle cx="78" cy="326" r="9" fill="rgba(0,102,255,.08)" stroke="#0066ff" stroke-width="1.2"/>
+        <text x="78" y="330" text-anchor="middle" font-size="7.5" fill="#0066ff" font-family="Inter">Ops</text>
+        <text x="100" y="322" font-family="Clash Display, system-ui, sans-serif" font-size="11" font-weight="700" fill="#f4f5f7">Operations</text>
+        <text x="100" y="336" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#a0a3ab">Prozesse, Effizienz</text>
+        <rect x="100" y="346" width="68" height="15" rx="6" fill="rgba(0,102,255,.18)" stroke="rgba(0,102,255,.4)" stroke-width=".8"/>
+        <text x="134" y="357" text-anchor="middle" font-family="Inter" font-size="8.5" fill="#0066ff" font-weight="600">Ops-Botschaft</text>
+      </g>
+
+      <!-- Timing / coordination bar on the right -->
+      <rect x="654" y="110" width="140" height="200" rx="12" fill="#1a1a1f" stroke="rgba(255,255,255,.09)" stroke-width="1"/>
+      <text x="724" y="136" text-anchor="middle" font-family="Clash Display, system-ui, sans-serif" font-size="10" font-weight="700" fill="#f4f5f7" letter-spacing=".06em">TIMING</text>
+
+      <!-- Timeline dots -->
+      <circle cx="674" cy="158" r="5" fill="#0066ff"/>
+      <line x1="674" y1="163" x2="674" y2="183" stroke="rgba(0,102,255,.3)" stroke-width="1.5" stroke-dasharray="2 2"/>
+      <circle cx="674" cy="188" r="4" fill="#0066ff" opacity=".65"/>
+      <line x1="674" y1="192" x2="674" y2="212" stroke="rgba(0,102,255,.25)" stroke-width="1.5" stroke-dasharray="2 2"/>
+      <circle cx="674" cy="217" r="3.5" fill="#0066ff" opacity=".5"/>
+      <line x1="674" y1="221" x2="674" y2="241" stroke="rgba(0,102,255,.2)" stroke-width="1.5" stroke-dasharray="2 2"/>
+      <circle cx="674" cy="246" r="3" fill="#0066ff" opacity=".35"/>
+      <line x1="674" y1="249" x2="674" y2="269" stroke="rgba(0,102,255,.15)" stroke-width="1.5" stroke-dasharray="2 2"/>
+      <circle cx="674" cy="274" r="2.5" fill="#0066ff" opacity=".25"/>
+
+      <text x="684" y="162" font-family="Inter" font-size="9" fill="#f4f5f7" font-weight="600">Tag 1</text>
+      <text x="684" y="174" font-family="Inter" font-size="8.5" fill="#73767e">CEO angesprochen</text>
+      <text x="684" y="192" font-family="Inter" font-size="9" fill="#f4f5f7" font-weight="600">Tag 2</text>
+      <text x="684" y="204" font-family="Inter" font-size="8.5" fill="#73767e">Sales-VP kontaktiert</text>
+      <text x="684" y="221" font-family="Inter" font-size="9" fill="#f4f5f7" font-weight="600">Tag 3</text>
+      <text x="684" y="233" font-family="Inter" font-size="8.5" fill="#73767e">CMO erreicht</text>
+      <text x="684" y="250" font-family="Inter" font-size="9" fill="#f4f5f7" font-weight="600">Tag 5</text>
+      <text x="684" y="262" font-family="Inter" font-size="8.5" fill="#73767e">CTO und Ops folgen</text>
+      <text x="684" y="286" font-family="Inter" font-size="8" fill="#73767e" font-style="italic">Koordiniert, kein Chaos</text>
+
+      <!-- Coordination arc at top of timing box -->
+      <path d="M670 144 Q724 118 778 144" stroke="rgba(0,102,255,.4)" stroke-width="1" fill="none" stroke-dasharray="3 3"/>
+    </svg>
+  </div>
+
+  <div class="fp-stats">
+    <div class="fp-stat">
+      <div class="fp-stat-num">3<span>-</span>5</div>
+      <div class="fp-stat-desc">Rollen pro Account</div>
+    </div>
+    <div class="fp-stat">
+      <div class="fp-stat-num"><span>1</span> Botschaft</div>
+      <div class="fp-stat-desc">je Entscheider-Rolle</div>
+    </div>
+    <div class="fp-stat">
+      <div class="fp-stat-num"><span>+</span>38<span>%</span></div>
+      <div class="fp-stat-desc">Antwortrate vs. Single-Thread</div>
+    </div>
+    <div class="fp-stat">
+      <div class="fp-stat-num">0</div>
+      <div class="fp-stat-desc">Doppelte Nachrichten</div>
+    </div>
+  </div>
+
+</div>
+</section>
+</body></html>

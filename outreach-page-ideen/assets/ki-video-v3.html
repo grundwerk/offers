@@ -1,0 +1,801 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://api.fontshare.com" crossorigin><link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=inter@400,500,600&display=swap" rel="stylesheet"><style>html,body{margin:0;background:#0e0e10}</style></head><body>
+<section class="fp">
+<style>
+  .fp {
+    box-sizing: border-box;
+    background-color: #141417;
+    background-image:
+      linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 42px 42px;
+    min-height: 88vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 56px 64px 48px;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    color: #f4f5f7;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .fp::before {
+    content: '';
+    position: absolute;
+    top: -180px;
+    right: -120px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0,102,255,.10) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .fp::after {
+    content: '';
+    position: absolute;
+    bottom: -200px;
+    left: -100px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(0,102,255,.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .fp-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0,102,255,.14);
+    border: 1px solid rgba(0,102,255,.40);
+    border-radius: 100px;
+    padding: 5px 14px 5px 10px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #0066ff;
+    margin-bottom: 32px;
+    width: fit-content;
+  }
+
+  .fp-eyebrow-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #0066ff;
+    animation: fp-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes fp-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .5; transform: scale(.7); }
+  }
+
+  .fp-headline {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: clamp(28px, 3.8vw, 52px);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -.02em;
+    margin: 0 0 8px;
+    max-width: 640px;
+  }
+
+  .fp-headline em {
+    font-style: normal;
+    color: #0066ff;
+  }
+
+  .fp-sub {
+    font-size: 16px;
+    color: #a0a3ab;
+    margin: 0 0 44px;
+    max-width: 480px;
+    line-height: 1.6;
+  }
+
+  .fp-body {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 40px;
+    align-items: start;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* LEFT: Metrics */
+  .fp-metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .fp-metric-card {
+    background: #1a1a1f;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 14px;
+    padding: 24px 28px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .fp-metric-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: #0066ff;
+    border-radius: 14px 0 0 14px;
+  }
+
+  .fp-metric-card.fp-mc-big {
+    padding: 28px 32px;
+  }
+
+  .fp-metric-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #73767e;
+    margin-bottom: 6px;
+  }
+
+  .fp-metric-value {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: clamp(36px, 5vw, 68px);
+    font-weight: 700;
+    color: #f4f5f7;
+    line-height: 1;
+    letter-spacing: -.03em;
+  }
+
+  .fp-metric-value span {
+    color: #0066ff;
+  }
+
+  .fp-metric-desc {
+    font-size: 13px;
+    color: #a0a3ab;
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+
+  .fp-metric-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .fp-metric-sm {
+    background: #1a1a1f;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 14px;
+    padding: 20px 22px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .fp-metric-sm::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: #0066ff;
+    border-radius: 14px 0 0 14px;
+  }
+
+  .fp-metric-sm .fp-metric-value {
+    font-size: clamp(26px, 3vw, 40px);
+  }
+
+  /* RIGHT: Before/After */
+  .fp-compare {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .fp-compare-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #73767e;
+    margin-bottom: 4px;
+  }
+
+  .fp-compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .fp-thumb {
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 16/10;
+    border: 1px solid rgba(255,255,255,.09);
+  }
+
+  .fp-thumb-before {
+    background: #1a1a1f;
+  }
+
+  .fp-thumb-after {
+    border-color: rgba(0,102,255,.40);
+    background: #0e0e10;
+  }
+
+  .fp-thumb-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 100px;
+    z-index: 2;
+  }
+
+  .fp-thumb-before .fp-thumb-tag {
+    background: rgba(115,118,126,.20);
+    color: #73767e;
+  }
+
+  .fp-thumb-after .fp-thumb-tag {
+    background: rgba(0,102,255,.20);
+    color: #0066ff;
+  }
+
+  /* Before thumb content - generic email preview */
+  .fp-before-content {
+    padding: 32px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 100%;
+  }
+
+  .fp-generic-line {
+    height: 7px;
+    border-radius: 4px;
+    background: rgba(255,255,255,.08);
+  }
+
+  .fp-generic-line.fp-l-short { width: 60%; }
+  .fp-generic-line.fp-l-med { width: 80%; }
+  .fp-generic-line.fp-l-full { width: 100%; }
+  .fp-generic-line.fp-l-xs { width: 40%; }
+
+  .fp-generic-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.10);
+    margin-bottom: 4px;
+  }
+
+  .fp-generic-cross {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* After thumb content - website in background */
+  .fp-after-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  .fp-site-mock {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #0e1420 0%, #0a1628 100%);
+  }
+
+  .fp-site-nav {
+    height: 24px;
+    background: rgba(255,255,255,.06);
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    gap: 6px;
+  }
+
+  .fp-site-nav-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.15);
+  }
+
+  .fp-site-nav-bar {
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(255,255,255,.10);
+    flex: 1;
+  }
+
+  .fp-site-hero {
+    padding: 10px;
+  }
+
+  .fp-site-hero-line {
+    height: 8px;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    background: rgba(255,255,255,.18);
+  }
+
+  .fp-site-hero-line.fp-sh-w70 { width: 70%; }
+  .fp-site-hero-line.fp-sh-w50 { width: 50%; background: rgba(0,102,255,.5); }
+  .fp-site-hero-line.fp-sh-w85 { width: 85%; }
+
+  .fp-site-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4px;
+    padding: 0 10px;
+  }
+
+  .fp-site-card {
+    height: 20px;
+    border-radius: 3px;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.08);
+  }
+
+  /* Video overlay elements */
+  .fp-video-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 50%, rgba(0,102,255,.08) 100%);
+    z-index: 1;
+  }
+
+  .fp-play-btn {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #0066ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+
+  .fp-recording-dot {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ff3b30;
+    z-index: 3;
+    animation: fp-rec 1.4s ease-in-out infinite;
+  }
+
+  @keyframes fp-rec {
+    0%, 100% { opacity: 1; }
+    50% { opacity: .2; }
+  }
+
+  .fp-avatar-chip {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(10,10,16,.85);
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 100px;
+    padding: 4px 10px 4px 4px;
+    z-index: 2;
+  }
+
+  .fp-avatar-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0066ff, #0044cc);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    font-weight: 700;
+    color: #fff;
+    flex-shrink: 0;
+  }
+
+  .fp-avatar-name {
+    font-size: 10px;
+    font-weight: 600;
+    color: #f4f5f7;
+  }
+
+  /* Delta badge */
+  .fp-delta {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    background: rgba(0,102,255,.08);
+    border: 1px solid rgba(0,102,255,.22);
+    border-radius: 12px;
+    padding: 14px 20px;
+  }
+
+  .fp-delta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+  }
+
+  .fp-delta-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    color: #73767e;
+  }
+
+  .fp-delta-val {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #f4f5f7;
+  }
+
+  .fp-delta-val.fp-dv-blue { color: #0066ff; }
+
+  .fp-delta-divider {
+    width: 1px;
+    height: 36px;
+    background: rgba(255,255,255,.09);
+  }
+
+  .fp-arrow-right {
+    color: #0066ff;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  /* Proof bar */
+  .fp-proof-bar {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .fp-proof-item {
+    background: #1a1a1f;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+
+  .fp-proof-quote {
+    font-size: 12px;
+    color: #a0a3ab;
+    line-height: 1.55;
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+
+  .fp-proof-author {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .fp-proof-avatar {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .fp-proof-name {
+    font-size: 11px;
+    font-weight: 600;
+    color: #f4f5f7;
+  }
+
+  .fp-proof-role {
+    font-size: 10px;
+    color: #73767e;
+  }
+
+  .fp-stars {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 8px;
+  }
+
+  .fp-star {
+    width: 9px;
+    height: 9px;
+    fill: #0066ff;
+  }
+
+  /* Volume badge */
+  .fp-volume-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #1a1a1f;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 12px;
+    color: #a0a3ab;
+    margin-bottom: 14px;
+  }
+
+  .fp-volume-badge strong {
+    color: #f4f5f7;
+    font-weight: 600;
+  }
+
+  .fp-dot-sep {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #73767e;
+  }
+
+  @media (max-width: 900px) {
+    .fp { padding: 40px 28px 36px; }
+    .fp-body { grid-template-columns: 1fr; gap: 28px; }
+    .fp-proof-bar { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="fp-eyebrow">
+  <div class="fp-eyebrow-dot"></div>
+  KI-Video-Outreach
+</div>
+
+<h2 class="fp-headline">Zahlen luegen nicht.<br>Deine Konkurrenz schickt <em>Texte.</em></h2>
+<p class="fp-sub">Echte Metriken aus laufenden Kampagnen. Jedes Video individuell, jeder Lead merkt es, niemand weiss wie du skalierst.</p>
+
+<div class="fp-body">
+
+  <!-- LEFT: Metrics -->
+  <div class="fp-metrics">
+
+    <div class="fp-metric-card fp-mc-big">
+      <div class="fp-metric-label">Durchschnittliche Reply-Rate</div>
+      <div class="fp-metric-value"><span>38</span>%</div>
+      <div class="fp-metric-desc">Gegenueber 4-6% bei Standard-Cold-Email. Messbar in den ersten 72 Stunden nach Versand.</div>
+    </div>
+
+    <div class="fp-metric-row">
+      <div class="fp-metric-sm">
+        <div class="fp-metric-label">Videos/Tag</div>
+        <div class="fp-metric-value"><span>1.200</span></div>
+        <div class="fp-metric-desc" style="font-size:12px">vollautomatisch</div>
+      </div>
+      <div class="fp-metric-sm">
+        <div class="fp-metric-label">Zeit pro Video</div>
+        <div class="fp-metric-value"><span>0</span>s</div>
+        <div class="fp-metric-desc" style="font-size:12px">kein manueller Aufwand</div>
+      </div>
+    </div>
+
+    <div class="fp-delta">
+      <div class="fp-delta-item">
+        <div class="fp-delta-label">Vorher</div>
+        <div class="fp-delta-val">3,8%</div>
+        <div style="font-size:11px;color:#73767e">E-Mail-Text</div>
+      </div>
+      <div class="fp-delta-divider"></div>
+      <div class="fp-arrow-right">→</div>
+      <div class="fp-delta-divider"></div>
+      <div class="fp-delta-item">
+        <div class="fp-delta-label">Nachher</div>
+        <div class="fp-delta-val fp-dv-blue">38%</div>
+        <div style="font-size:11px;color:#0066ff">KI-Video</div>
+      </div>
+      <div class="fp-delta-divider"></div>
+      <div class="fp-delta-item">
+        <div class="fp-delta-label">Uplift</div>
+        <div class="fp-delta-val fp-dv-blue">10x</div>
+        <div style="font-size:11px;color:#73767e">mehr Antworten</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RIGHT: Before/After Visual -->
+  <div class="fp-compare">
+
+    <div class="fp-volume-badge">
+      <strong>12.400+</strong> Videos ausgeliefert
+      <div class="fp-dot-sep"></div>
+      letzte 30 Tage
+      <div class="fp-dot-sep"></div>
+      Kundendaten 2025/26
+    </div>
+
+    <div class="fp-compare-label">Vorher vs. Nachher</div>
+
+    <div class="fp-compare-grid">
+
+      <!-- Before: generic email -->
+      <div class="fp-thumb fp-thumb-before">
+        <div class="fp-thumb-tag">Vorher</div>
+        <div class="fp-before-content">
+          <div class="fp-generic-avatar"></div>
+          <div class="fp-generic-line fp-l-short"></div>
+          <div class="fp-generic-line fp-l-full"></div>
+          <div class="fp-generic-line fp-l-med"></div>
+          <div class="fp-generic-line fp-l-full"></div>
+          <div class="fp-generic-line fp-l-xs"></div>
+          <div class="fp-generic-line fp-l-med" style="margin-top:4px"></div>
+          <div class="fp-generic-line fp-l-short"></div>
+        </div>
+        <!-- Cross overlay -->
+        <div class="fp-generic-cross">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-label="Durchgestrichen">
+            <circle cx="24" cy="24" r="23" stroke="rgba(115,118,126,.25)" stroke-width="1.5"/>
+            <line x1="14" y1="14" x2="34" y2="34" stroke="rgba(115,118,126,.40)" stroke-width="2" stroke-linecap="round"/>
+            <line x1="34" y1="14" x2="14" y2="34" stroke="rgba(115,118,126,.40)" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- After: personalized video -->
+      <div class="fp-thumb fp-thumb-after">
+        <div class="fp-thumb-tag">Nachher</div>
+
+        <!-- Website mock in background -->
+        <div class="fp-after-bg" aria-label="Video-Hintergrund: Website des Leads">
+          <div class="fp-site-mock">
+            <div class="fp-site-nav">
+              <div class="fp-site-nav-dot"></div>
+              <div class="fp-site-nav-dot"></div>
+              <div class="fp-site-nav-dot"></div>
+              <div class="fp-site-nav-bar"></div>
+            </div>
+            <div class="fp-site-hero">
+              <div class="fp-site-hero-line fp-sh-w85"></div>
+              <div class="fp-site-hero-line fp-sh-w70"></div>
+              <div class="fp-site-hero-line fp-sh-w50"></div>
+              <div style="height:6px;"></div>
+              <div class="fp-site-hero-line" style="width:100%;height:30px;border-radius:3px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);"></div>
+            </div>
+            <div class="fp-site-grid">
+              <div class="fp-site-card"></div>
+              <div class="fp-site-card"></div>
+              <div class="fp-site-card"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video overlay -->
+        <div class="fp-video-overlay"></div>
+
+        <!-- Recording indicator -->
+        <div class="fp-recording-dot" title="Aufnahme aktiv"></div>
+
+        <!-- Play button -->
+        <div class="fp-play-btn" aria-label="Video abspielen">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M3 2l7 4-7 4V2z" fill="#fff"/>
+          </svg>
+        </div>
+
+        <!-- Sender chip -->
+        <div class="fp-avatar-chip">
+          <div class="fp-avatar-circle" aria-label="Absender-Avatar">J</div>
+          <div>
+            <div class="fp-avatar-name">Jonas W.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Stat row under compare -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:4px;">
+      <div style="background:#1a1a1f;border:1px solid rgba(255,255,255,.09);border-radius:10px;padding:12px 14px;text-align:center;">
+        <div style="font-family:'Clash Display',system-ui,sans-serif;font-size:22px;font-weight:700;color:#0066ff;letter-spacing:-.02em;">91%</div>
+        <div style="font-size:11px;color:#73767e;margin-top:3px;">Oeffnungsrate</div>
+      </div>
+      <div style="background:#1a1a1f;border:1px solid rgba(255,255,255,.09);border-radius:10px;padding:12px 14px;text-align:center;">
+        <div style="font-family:'Clash Display',system-ui,sans-serif;font-size:22px;font-weight:700;color:#0066ff;letter-spacing:-.02em;">2,1s</div>
+        <div style="font-size:11px;color:#73767e;margin-top:3px;">bis erste Antwort</div>
+      </div>
+      <div style="background:#1a1a1f;border:1px solid rgba(255,255,255,.09);border-radius:10px;padding:12px 14px;text-align:center;">
+        <div style="font-family:'Clash Display',system-ui,sans-serif;font-size:22px;font-weight:700;color:#0066ff;letter-spacing:-.02em;">0%</div>
+        <div style="font-size:11px;color:#73767e;margin-top:3px;">Mehraufwand</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Proof bar -->
+<div class="fp-proof-bar">
+
+  <div class="fp-proof-item">
+    <div class="fp-stars" aria-label="5 Sterne">
+      <svg class="fp-star" viewBox="0 0 10 10"><path d="M5 0l1.2 3.6H10L7 5.8l1.1 3.6L5 7.4l-3.1 2L3 5.8.5 3.6h3.3z"/></svg>
+      <svg class="fp-star" viewBox="0 0 10 10"><path d="M5 0l1.2 3.6H10L7 5.8l1.1 3.6L5 7.4l-3.1 2L3 5.8.5 3.6h3.3z"/></svg>
+      <svg class="fp-star" viewBox="0 0 10 10"><path d="M5 0l1.2 3.6H10L7 5.8l1.1 3.6L5 7.4l-3.1 2L3 5.8.5 3.6h3.3z"/></svg>
+      <svg class="fp-star" viewBox="0 0 10 10"><path d="M5 0l1.2 3.6H10L7 5.8l1.1 3.6L5 7.4l-3.1 2L3 5.8.5 3.6h3.3z"/></svg>
+      <svg class="fp-star" viewBox="0 0 10 10"><path d="M5 0l1.2 3.6H10L7 5.8l1.1 3.6L5 7.4l-3.1 2L3 5.8.5 3.6h3.3z"/></svg>
+    </div>
+    <div class="fp-proof-quote">"Dachte zuerst jemand hätte das von Hand aufgenommen. Erst nach drei Wochen haben wir gecheckt, dass es KI war."</div>
+    <div class="fp-proof-author">
+      <div class="fp-proof-avatar" style="background:linear-gradient(135deg,#0066ff,#0044cc);">M</div>
+      <div>
+        <div class="fp-proof-name">Markus H.</div>
+        <div class="fp-proof-role">Head of Sales, SaaS</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fp-proof-item">
+    <div class="fp-stars" aria-label="5 Sterne">
+      <svg class="fp-star" viewBox="0 0 10 10"><path d="M5 0l1.2 3.6H10L7 5.8l1.1 3.6L5 7.4l-3.1 2L3 5.8.5 3.6h3.3z"/></svg>
+      <svg class="fp-star" viewBox="0 0 10 10"><path d="M5 0l1.2 3.6H10L7 5.8l1.1 3.6L5 7.4l-3.1 2L3 5.8.5 3.6h3.3z"/></svg>
+      <svg class="fp-star" viewBox="0 0 10 10"><path d="M5 0l1.2 3.6H10L7 5.8l1.1 3.6L5 7.4l-3.1 2L3 5.8.5 3.6h3.3z"/></svg>
+      <svg class="fp-star" viewBox="0 0 10 10"><path d="M5 0l1.2 3.6H10L7 5.8l1.1 3.6L5 7.4l-3.1 2L3 5.8.5 3.6h3.3z"/></svg>
+      <svg class="fp-star" viewBox="0 0 10 10"><path d="M5 0l1.2 3.6H10L7 5.8l1.1 3.6L5 7.4l-3.1 2L3 5.8.5 3.6h3.3z"/></svg>
+    </div>
+    <div class="fp-proof-quote">"Woche 1 haben wir mehr gebuchte Termine gehabt als im gesamten Vorquartal mit unserem alten Team."</div>
+    <div class="fp-proof-author">
+      <div class="fp-proof-avatar" style="background:linear-gradient(135deg,#1a3a5c,#0a2040);">S</div>
+      <div>
+        <div class="fp-proof-name">Sandra L.</div>
+        <div class="fp-proof-role">CEO, Logistik-Software</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fp-proof-item">
+    <div class="fp-stars" aria-label="5 Sterne">
+      <svg class="fp-star" viewBox="0 0 10 10"><path d="M5 0l1.2 3.6H10L7 5.8l1.1 3.6L5 7.4l-3.1 2L3 5.8.5 3.6h3.3z"/></svg>
+      <svg class="fp-star" viewBox="0 0 10 10"><path d="M5 0l1.2 3.6H10L7 5.8l1.1 3.6L5 7.4l-3.1 2L3 5.8.5 3.6h3.3z"/></svg>
+      <svg class="fp-star" viewBox="0 0 10 10"><path d="M5 0l1.2 3.6H10L7 5.8l1.1 3.6L5 7.4l-3.1 2L3 5.8.5 3.6h3.3z"/></svg>
+      <svg class="fp-star" viewBox="0 0 10 10"><path d="M5 0l1.2 3.6H10L7 5.8l1.1 3.6L5 7.4l-3.1 2L3 5.8.5 3.6h3.3z"/></svg>
+      <svg class="fp-star" viewBox="0 0 10 10"><path d="M5 0l1.2 3.6H10L7 5.8l1.1 3.6L5 7.4l-3.1 2L3 5.8.5 3.6h3.3z"/></svg>
+    </div>
+    <div class="fp-proof-quote">"42% Reply-Rate in Woche 2. Haette ich das nicht selbst gesehen, haette ich es nicht geglaubt."</div>
+    <div class="fp-proof-author">
+      <div class="fp-proof-avatar" style="background:linear-gradient(135deg,#1a1f3a,#0e1228);">T</div>
+      <div>
+        <div class="fp-proof-name">Thomas K.</div>
+        <div class="fp-proof-role">Vertriebsleiter, IT-Dienstleister</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</section>
+</body></html>

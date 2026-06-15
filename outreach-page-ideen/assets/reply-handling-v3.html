@@ -1,0 +1,816 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://api.fontshare.com" crossorigin><link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=inter@400,500,600&display=swap" rel="stylesheet"><style>html,body{margin:0;background:#0e0e10}</style></head><body>
+<section class="fp">
+<style>
+  .fp {
+    position: relative;
+    min-height: 88vh;
+    background-color: #141417;
+    background-image:
+      linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 42px 42px;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    color: #f4f5f7;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .fp__glow-left {
+    position: absolute;
+    top: -120px;
+    left: -180px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0,102,255,.13) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .fp__glow-right {
+    position: absolute;
+    bottom: -80px;
+    right: -100px;
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, rgba(0,102,255,.08) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .fp__inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 0;
+    min-height: 88vh;
+  }
+
+  /* Header bar */
+  .fp__header {
+    grid-column: 1 / -1;
+    padding: 36px 48px 28px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,.09);
+  }
+
+  .fp__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(0,102,255,.14);
+    border: 1px solid rgba(0,102,255,.40);
+    border-radius: 20px;
+    padding: 5px 13px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .06em;
+    color: #0066ff;
+    text-transform: uppercase;
+  }
+
+  .fp__badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #0066ff;
+    animation: fp-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes fp-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: .35; }
+  }
+
+  .fp__header-meta {
+    text-align: right;
+  }
+
+  .fp__header-meta-label {
+    font-size: 11px;
+    color: #73767e;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+
+  .fp__header-meta-value {
+    font-size: 13px;
+    color: #a0a3ab;
+    font-weight: 500;
+  }
+
+  /* Left column */
+  .fp__left {
+    padding: 44px 40px 44px 48px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid rgba(255,255,255,.09);
+  }
+
+  .fp__heading {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #73767e;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .fp__hero-metric {
+    margin-bottom: 8px;
+  }
+
+  .fp__hero-number {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: clamp(80px, 10vw, 120px);
+    font-weight: 700;
+    line-height: .9;
+    color: #f4f5f7;
+    letter-spacing: -.04em;
+    position: relative;
+    display: inline-block;
+  }
+
+  .fp__hero-number span {
+    font-size: .55em;
+    color: #0066ff;
+    letter-spacing: -.01em;
+    vertical-align: top;
+    margin-top: 12px;
+    display: inline-block;
+  }
+
+  .fp__hero-label {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #a0a3ab;
+    margin-bottom: 28px;
+    line-height: 1.3;
+  }
+
+  .fp__hero-label strong {
+    color: #f4f5f7;
+  }
+
+  /* Before / After split */
+  .fp__split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .fp__split-card {
+    background: #1a1a1f;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 14px;
+    padding: 18px 18px 16px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .fp__split-card--after {
+    border-color: rgba(0,102,255,.40);
+    background: rgba(0,102,255,.06);
+  }
+
+  .fp__split-card--after::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #0066ff, rgba(0,102,255,.3));
+    border-radius: 14px 14px 0 0;
+  }
+
+  .fp__split-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #73767e;
+    margin-bottom: 10px;
+  }
+
+  .fp__split-card--after .fp__split-label {
+    color: #0066ff;
+  }
+
+  .fp__split-scenario {
+    font-size: 12.5px;
+    color: #a0a3ab;
+    line-height: 1.5;
+    font-style: italic;
+    margin-bottom: 12px;
+    min-height: 54px;
+  }
+
+  .fp__split-outcome {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+  }
+
+  .fp__split-outcome--bad {
+    background: rgba(239,68,68,.12);
+    color: #f87171;
+    border: 1px solid rgba(239,68,68,.25);
+  }
+
+  .fp__split-outcome--good {
+    background: rgba(34,197,94,.12);
+    color: #4ade80;
+    border: 1px solid rgba(34,197,94,.25);
+  }
+
+  /* Sub-metrics row */
+  .fp__sub-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: auto;
+  }
+
+  .fp__sub-metric {
+    background: #1a1a1f;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 10px;
+    padding: 14px 14px 12px;
+  }
+
+  .fp__sub-metric-value {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #f4f5f7;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .fp__sub-metric-value--blue {
+    color: #0066ff;
+  }
+
+  .fp__sub-metric-label {
+    font-size: 10.5px;
+    color: #73767e;
+    line-height: 1.4;
+  }
+
+  /* Right column */
+  .fp__right {
+    padding: 44px 48px 44px 40px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fp__right-heading {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #73767e;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  /* Reply feed */
+  .fp__feed {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 32px;
+    flex: 1;
+  }
+
+  .fp__feed-row {
+    display: grid;
+    grid-template-columns: 28px 1fr 32px 80px;
+    align-items: center;
+    gap: 10px;
+    background: #1a1a1f;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 10px;
+    padding: 12px 14px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .fp__feed-row--converted {
+    border-color: rgba(0,102,255,.28);
+  }
+
+  .fp__feed-row--converted::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #0066ff;
+    border-radius: 10px 0 0 10px;
+  }
+
+  .fp__feed-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 14px;
+  }
+
+  .fp__feed-icon--objection {
+    background: rgba(251,191,36,.1);
+    border: 1px solid rgba(251,191,36,.2);
+  }
+
+  .fp__feed-icon--interest {
+    background: rgba(34,197,94,.1);
+    border: 1px solid rgba(34,197,94,.2);
+  }
+
+  .fp__feed-icon--question {
+    background: rgba(168,85,247,.1);
+    border: 1px solid rgba(168,85,247,.2);
+  }
+
+  .fp__feed-icon--cold {
+    background: rgba(239,68,68,.1);
+    border: 1px solid rgba(239,68,68,.2);
+  }
+
+  .fp__feed-content {
+    min-width: 0;
+  }
+
+  .fp__feed-type {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    color: #73767e;
+    margin-bottom: 2px;
+  }
+
+  .fp__feed-text {
+    font-size: 12px;
+    color: #a0a3ab;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-style: italic;
+  }
+
+  .fp__feed-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0066ff;
+    opacity: .7;
+  }
+
+  .fp__feed-result {
+    text-align: right;
+  }
+
+  .fp__feed-result-status {
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: .05em;
+  }
+
+  .fp__feed-result-status--booked {
+    color: #4ade80;
+  }
+
+  .fp__feed-result-status--pending {
+    color: #fbbf24;
+  }
+
+  .fp__feed-result-status--lost {
+    color: #73767e;
+  }
+
+  .fp__feed-result-time {
+    font-size: 10px;
+    color: #73767e;
+    margin-top: 1px;
+  }
+
+  /* Funnel */
+  .fp__funnel {
+    background: #1a1a1f;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 14px;
+    padding: 20px 22px 18px;
+  }
+
+  .fp__funnel-title {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #73767e;
+    margin-bottom: 16px;
+  }
+
+  .fp__funnel-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .fp__funnel-step {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+  }
+
+  .fp__funnel-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 18px;
+    top: 30px;
+    width: 1px;
+    height: 14px;
+    background: rgba(255,255,255,.09);
+  }
+
+  .fp__funnel-step + .fp__funnel-step {
+    margin-top: 12px;
+  }
+
+  .fp__funnel-dot {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .fp__funnel-dot--1 {
+    background: rgba(255,255,255,.06);
+    color: #a0a3ab;
+    border: 1px solid rgba(255,255,255,.09);
+  }
+
+  .fp__funnel-dot--2 {
+    background: rgba(0,102,255,.1);
+    color: #6699ff;
+    border: 1px solid rgba(0,102,255,.25);
+  }
+
+  .fp__funnel-dot--3 {
+    background: rgba(0,102,255,.18);
+    color: #4d88ff;
+    border: 1px solid rgba(0,102,255,.35);
+  }
+
+  .fp__funnel-dot--4 {
+    background: #0066ff;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,.2);
+  }
+
+  .fp__funnel-info {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .fp__funnel-step-label {
+    font-size: 12.5px;
+    color: #a0a3ab;
+  }
+
+  .fp__funnel-step-label strong {
+    display: block;
+    font-size: 13px;
+    color: #f4f5f7;
+    font-weight: 600;
+    margin-bottom: 1px;
+  }
+
+  .fp__funnel-bar-wrap {
+    width: 80px;
+    position: relative;
+  }
+
+  .fp__funnel-bar-track {
+    height: 4px;
+    border-radius: 4px;
+    background: rgba(255,255,255,.07);
+    margin-bottom: 3px;
+  }
+
+  .fp__funnel-bar-fill {
+    height: 4px;
+    border-radius: 4px;
+    background: #0066ff;
+  }
+
+  .fp__funnel-bar-label {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #0066ff;
+    text-align: right;
+  }
+
+  /* Bottom bar */
+  .fp__footer {
+    grid-column: 1 / -1;
+    border-top: 1px solid rgba(255,255,255,.09);
+    padding: 18px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255,255,255,.01);
+  }
+
+  .fp__footer-claim {
+    font-size: 13px;
+    color: #a0a3ab;
+    line-height: 1.5;
+  }
+
+  .fp__footer-claim strong {
+    color: #f4f5f7;
+  }
+
+  .fp__footer-pills {
+    display: flex;
+    gap: 8px;
+  }
+
+  .fp__footer-pill {
+    font-size: 11px;
+    font-weight: 600;
+    color: #73767e;
+    background: #1a1a1f;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 20px;
+    padding: 4px 12px;
+  }
+
+  .fp__footer-pill--blue {
+    color: #0066ff;
+    background: rgba(0,102,255,.1);
+    border-color: rgba(0,102,255,.30);
+  }
+</style>
+
+<!-- Background glows -->
+<div class="fp__glow-left"></div>
+<div class="fp__glow-right"></div>
+
+<div class="fp__inner">
+
+  <!-- Header -->
+  <header class="fp__header">
+    <div>
+      <div class="fp__badge">
+        <div class="fp__badge-dot"></div>
+        Reply-Handling
+      </div>
+    </div>
+    <div class="fp__header-meta">
+      <div class="fp__header-meta-label">Datenbasis</div>
+      <div class="fp__header-meta-value">1.847 analysierte Antworten, Q4 2025</div>
+    </div>
+  </header>
+
+  <!-- Left column -->
+  <div class="fp__left">
+    <div class="fp__heading">Conversion-Beweis</div>
+
+    <div class="fp__hero-metric">
+      <div class="fp__hero-number">73<span>%</span></div>
+    </div>
+    <div class="fp__hero-label">
+      <strong>der Einwaende</strong> werden in<br>Kalenderbuchungen umgewandelt.
+    </div>
+
+    <!-- Before / After -->
+    <div class="fp__split">
+      <div class="fp__split-card">
+        <div class="fp__split-label">Vorher</div>
+        <div class="fp__split-scenario">"Kein Interesse gerade, vielleicht spaeter."</div>
+        <span class="fp__split-outcome fp__split-outcome--bad">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 2l6 6M8 2l-6 6" stroke="#f87171" stroke-width="1.5" stroke-linecap="round"/></svg>
+          Lead verloren
+        </span>
+      </div>
+      <div class="fp__split-card fp__split-card--after">
+        <div class="fp__split-label">Nachher</div>
+        <div class="fp__split-scenario">"Kein Interesse gerade, vielleicht spaeter."</div>
+        <span class="fp__split-outcome fp__split-outcome--good">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 5.5l2.5 2.5 3.5-4" stroke="#4ade80" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Termin in 3 Tagen
+        </span>
+      </div>
+    </div>
+
+    <!-- Sub-metrics -->
+    <div class="fp__sub-metrics">
+      <div class="fp__sub-metric">
+        <div class="fp__sub-metric-value">4.2x</div>
+        <div class="fp__sub-metric-label">mehr Termine pro<br>100 Antworten</div>
+      </div>
+      <div class="fp__sub-metric">
+        <div class="fp__sub-metric-value fp__sub-metric-value--blue">18 Min</div>
+        <div class="fp__sub-metric-label">durchschn. Zeit bis<br>zur Buchung</div>
+      </div>
+      <div class="fp__sub-metric">
+        <div class="fp__sub-metric-value">91%</div>
+        <div class="fp__sub-metric-label">Einwaende<br>beantwortet</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right column -->
+  <div class="fp__right">
+    <div class="fp__right-heading">Live-Transformation: Antworten zu Terminen</div>
+
+    <div class="fp__feed">
+
+      <div class="fp__feed-row fp__feed-row--converted">
+        <div class="fp__feed-icon fp__feed-icon--objection">⚡</div>
+        <div class="fp__feed-content">
+          <div class="fp__feed-type">Einwand</div>
+          <div class="fp__feed-text">"Wir haben das intern schon geloest..."</div>
+        </div>
+        <div class="fp__feed-arrow">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="#0066ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="fp__feed-result">
+          <div class="fp__feed-result-status fp__feed-result-status--booked">Gebucht</div>
+          <div class="fp__feed-result-time">14 Min</div>
+        </div>
+      </div>
+
+      <div class="fp__feed-row fp__feed-row--converted">
+        <div class="fp__feed-icon fp__feed-icon--interest">✦</div>
+        <div class="fp__feed-content">
+          <div class="fp__feed-type">Interesse</div>
+          <div class="fp__feed-text">"Klingt interessant, schickt mal Infos..."</div>
+        </div>
+        <div class="fp__feed-arrow">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="#0066ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="fp__feed-result">
+          <div class="fp__feed-result-status fp__feed-result-status--booked">Gebucht</div>
+          <div class="fp__feed-result-time">9 Min</div>
+        </div>
+      </div>
+
+      <div class="fp__feed-row fp__feed-row--converted">
+        <div class="fp__feed-icon fp__feed-icon--question">?</div>
+        <div class="fp__feed-content">
+          <div class="fp__feed-type">Rueckfrage</div>
+          <div class="fp__feed-text">"Was kostet das genau und wie laeuft das ab?"</div>
+        </div>
+        <div class="fp__feed-arrow">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="#0066ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="fp__feed-result">
+          <div class="fp__feed-result-status fp__feed-result-status--booked">Gebucht</div>
+          <div class="fp__feed-result-time">22 Min</div>
+        </div>
+      </div>
+
+      <div class="fp__feed-row fp__feed-row--converted">
+        <div class="fp__feed-icon fp__feed-icon--objection">⚡</div>
+        <div class="fp__feed-content">
+          <div class="fp__feed-type">Einwand</div>
+          <div class="fp__feed-text">"Kein Budget im Q1, sprechen wir im Fruehjahr..."</div>
+        </div>
+        <div class="fp__feed-arrow">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="#0066ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="fp__feed-result">
+          <div class="fp__feed-result-status fp__feed-result-status--pending">Gepinnt</div>
+          <div class="fp__feed-result-time">Feb 3</div>
+        </div>
+      </div>
+
+      <div class="fp__feed-row">
+        <div class="fp__feed-icon fp__feed-icon--cold">—</div>
+        <div class="fp__feed-content">
+          <div class="fp__feed-type">Ablehnung</div>
+          <div class="fp__feed-text">"Bitte keine weiteren E-Mails, danke."</div>
+        </div>
+        <div class="fp__feed-arrow">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="#73767e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="fp__feed-result">
+          <div class="fp__feed-result-status fp__feed-result-status--lost">Respektiert</div>
+          <div class="fp__feed-result-time">0 Min</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Funnel -->
+    <div class="fp__funnel">
+      <div class="fp__funnel-title">Trichter: 1.000 Antworten</div>
+      <div class="fp__funnel-steps">
+
+        <div class="fp__funnel-step">
+          <div class="fp__funnel-dot fp__funnel-dot--1">1K</div>
+          <div class="fp__funnel-info">
+            <div class="fp__funnel-step-label">
+              <strong>1.000 Antworten</strong>
+              Eingang gesamt
+            </div>
+            <div class="fp__funnel-bar-wrap">
+              <div class="fp__funnel-bar-track"><div class="fp__funnel-bar-fill" style="width:100%"></div></div>
+              <div class="fp__funnel-bar-label">100%</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp__funnel-step">
+          <div class="fp__funnel-dot fp__funnel-dot--2">812</div>
+          <div class="fp__funnel-info">
+            <div class="fp__funnel-step-label">
+              <strong>812 qualifiziert</strong>
+              Einwaende + Interesse
+            </div>
+            <div class="fp__funnel-bar-wrap">
+              <div class="fp__funnel-bar-track"><div class="fp__funnel-bar-fill" style="width:81%"></div></div>
+              <div class="fp__funnel-bar-label">81%</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp__funnel-step">
+          <div class="fp__funnel-dot fp__funnel-dot--3">593</div>
+          <div class="fp__funnel-info">
+            <div class="fp__funnel-step-label">
+              <strong>593 aktiv verhandelt</strong>
+              KI-Antwort gesendet
+            </div>
+            <div class="fp__funnel-bar-wrap">
+              <div class="fp__funnel-bar-track"><div class="fp__funnel-bar-fill" style="width:59%"></div></div>
+              <div class="fp__funnel-bar-label">59%</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp__funnel-step">
+          <div class="fp__funnel-dot fp__funnel-dot--4">433</div>
+          <div class="fp__funnel-info">
+            <div class="fp__funnel-step-label">
+              <strong>433 Termine gebucht</strong>
+              Kalendereintrag erstellt
+            </div>
+            <div class="fp__funnel-bar-wrap">
+              <div class="fp__funnel-bar-track"><div class="fp__funnel-bar-fill" style="width:43%"></div></div>
+              <div class="fp__funnel-bar-label" style="color:#4ade80">43%</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="fp__footer">
+    <div class="fp__footer-claim">
+      <strong>Kein Lead bleibt unbehandelt.</strong> Jede Antwort - ob Einwand, Frage oder Absage - durchlaeuft ein strukturiertes Protokoll.
+    </div>
+    <div class="fp__footer-pills">
+      <span class="fp__footer-pill">DSGVO-konform</span>
+      <span class="fp__footer-pill">Kein manueller Aufwand</span>
+      <span class="fp__footer-pill fp__footer-pill--blue">73% Conversion</span>
+    </div>
+  </footer>
+
+</div>
+</section>
+</body></html>

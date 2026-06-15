@@ -1,0 +1,806 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://api.fontshare.com" crossorigin><link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=inter@400,500,600&display=swap" rel="stylesheet"><style>html,body{margin:0;background:#0e0e10}</style></head><body>
+<section class="fp">
+<style>
+  .fp {
+    background-color: #0e0e10;
+    background-image: linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+    background-size: 42px 42px;
+    min-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 56px 48px;
+    box-sizing: border-box;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .fp::before {
+    content: '';
+    position: absolute;
+    top: -120px;
+    right: -80px;
+    width: 520px;
+    height: 520px;
+    background: radial-gradient(circle, rgba(0,102,255,.13) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .fp::after {
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    left: 10%;
+    width: 340px;
+    height: 340px;
+    background: radial-gradient(circle, rgba(0,102,255,.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .fp-inner {
+    width: 100%;
+    max-width: 980px;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .fp-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .fp-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #0066ff;
+    background: rgba(0,102,255,.14);
+    border: 1px solid rgba(0,102,255,.40);
+    border-radius: 20px;
+    padding: 5px 13px;
+    margin-bottom: 14px;
+  }
+
+  .fp-label-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #0066ff;
+    animation: fp-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes fp-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .5; transform: scale(.8); }
+  }
+
+  .fp-title {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: clamp(28px, 3.8vw, 46px);
+    font-weight: 700;
+    color: #f4f5f7;
+    line-height: 1.12;
+    margin: 0 0 12px 0;
+    letter-spacing: -.02em;
+  }
+
+  .fp-title span {
+    color: #0066ff;
+  }
+
+  .fp-desc {
+    font-size: 15px;
+    color: #a0a3ab;
+    line-height: 1.6;
+    max-width: 420px;
+    margin: 0;
+  }
+
+  .fp-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-end;
+    flex-shrink: 0;
+  }
+
+  .fp-stat {
+    background: #141417;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 12px;
+    padding: 12px 18px;
+    text-align: right;
+  }
+
+  .fp-stat-val {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #f4f5f7;
+    line-height: 1;
+  }
+
+  .fp-stat-lbl {
+    font-size: 11px;
+    color: #73767e;
+    margin-top: 3px;
+  }
+
+  .fp-mockup {
+    background: #141417;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 32px 80px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.04);
+  }
+
+  .fp-browser-bar {
+    background: #1a1a1f;
+    border-bottom: 1px solid rgba(255,255,255,.09);
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .fp-dots {
+    display: flex;
+    gap: 6px;
+  }
+
+  .fp-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  .fp-dot-r { background: #ff5f56; }
+  .fp-dot-y { background: #ffbd2e; }
+  .fp-dot-g { background: #27c93f; }
+
+  .fp-url-bar {
+    flex: 1;
+    background: #0e0e10;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 6px;
+    padding: 5px 12px;
+    font-size: 11px;
+    color: #73767e;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .fp-url-icon {
+    opacity: .5;
+  }
+
+  .fp-inbox-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    min-height: 420px;
+  }
+
+  .fp-inbox-sidebar {
+    background: #0e0e10;
+    border-right: 1px solid rgba(255,255,255,.09);
+    padding: 16px 0;
+  }
+
+  .fp-inbox-sidebar-head {
+    padding: 0 16px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #f4f5f7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .fp-inbox-count {
+    background: #0066ff;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    border-radius: 10px;
+    padding: 2px 7px;
+  }
+
+  .fp-inbox-item {
+    padding: 12px 16px;
+    border-left: 2px solid transparent;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .fp-inbox-item.active {
+    background: rgba(0,102,255,.10);
+    border-left-color: #0066ff;
+  }
+
+  .fp-inbox-item-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3px;
+  }
+
+  .fp-inbox-sender {
+    font-size: 12px;
+    font-weight: 600;
+    color: #f4f5f7;
+  }
+
+  .fp-inbox-time {
+    font-size: 10px;
+    color: #73767e;
+  }
+
+  .fp-inbox-preview {
+    font-size: 11px;
+    color: #73767e;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .fp-inbox-item.active .fp-inbox-preview {
+    color: #a0a3ab;
+  }
+
+  .fp-unread-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #0066ff;
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .fp-thread {
+    display: flex;
+    flex-direction: column;
+    padding: 24px 28px;
+    gap: 20px;
+    overflow: hidden;
+  }
+
+  .fp-thread-header {
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+  }
+
+  .fp-thread-subject {
+    font-size: 15px;
+    font-weight: 600;
+    color: #f4f5f7;
+    margin-bottom: 6px;
+  }
+
+  .fp-thread-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    color: #73767e;
+  }
+
+  .fp-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 10px;
+    font-weight: 600;
+    border-radius: 6px;
+    padding: 3px 8px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+
+  .fp-tag-einwand {
+    background: rgba(255, 87, 87, .12);
+    border: 1px solid rgba(255, 87, 87, .30);
+    color: #ff7070;
+  }
+
+  .fp-tag-ai {
+    background: rgba(0,102,255,.14);
+    border: 1px solid rgba(0,102,255,.40);
+    color: #4d8fff;
+  }
+
+  .fp-tag-success {
+    background: rgba(39, 201, 63, .12);
+    border: 1px solid rgba(39, 201, 63, .30);
+    color: #5ee676;
+  }
+
+  .fp-msg {
+    background: #1a1a1f;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 12px;
+    padding: 16px 20px;
+    position: relative;
+  }
+
+  .fp-msg.outbound {
+    background: rgba(0,102,255,.10);
+    border-color: rgba(0,102,255,.22);
+    margin-left: 32px;
+  }
+
+  .fp-msg-avatar {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-right: 8px;
+  }
+
+  .fp-msg-head {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .fp-msg-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: #f4f5f7;
+  }
+
+  .fp-msg-ts {
+    font-size: 10px;
+    color: #73767e;
+    margin-left: auto;
+  }
+
+  .fp-msg-body {
+    font-size: 12.5px;
+    color: #a0a3ab;
+    line-height: 1.65;
+  }
+
+  .fp-msg-body strong {
+    color: #f4f5f7;
+  }
+
+  .fp-ai-badge {
+    position: absolute;
+    top: -10px;
+    right: 14px;
+    background: #141417;
+    border: 1px solid rgba(0,102,255,.40);
+    border-radius: 20px;
+    padding: 3px 10px;
+    font-size: 10px;
+    font-weight: 600;
+    color: #4d8fff;
+    letter-spacing: .05em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .fp-ai-spark {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+  }
+
+  .fp-process-strip {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    padding: 10px 4px 0;
+  }
+
+  .fp-process-step {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+  }
+
+  .fp-process-step:not(:last-child)::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(0,102,255,.5), rgba(0,102,255,.15));
+    margin: 0 6px;
+  }
+
+  .fp-step-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 13px;
+  }
+
+  .fp-step-icon.done {
+    background: rgba(0,102,255,.20);
+    border: 1px solid rgba(0,102,255,.50);
+    color: #4d8fff;
+  }
+
+  .fp-step-icon.active {
+    background: #0066ff;
+    border: 1px solid #0066ff;
+    color: #fff;
+    box-shadow: 0 0 14px rgba(0,102,255,.55);
+  }
+
+  .fp-step-text {
+    font-size: 10px;
+    color: #73767e;
+    white-space: nowrap;
+  }
+
+  .fp-step-text.lit {
+    color: #a0a3ab;
+  }
+
+  .fp-cal-card {
+    background: #141417;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 12px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 4px;
+    box-shadow: 0 8px 32px rgba(0,0,0,.4);
+    animation: fp-slideup .5s ease forwards;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .fp-cal-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: #0066ff;
+    border-radius: 3px 0 0 3px;
+  }
+
+  @keyframes fp-slideup {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .fp-cal-date {
+    width: 48px;
+    height: 52px;
+    background: rgba(0,102,255,.14);
+    border: 1px solid rgba(0,102,255,.30);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .fp-cal-day {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #0066ff;
+    line-height: 1;
+  }
+
+  .fp-cal-mon {
+    font-size: 10px;
+    color: #4d8fff;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+  }
+
+  .fp-cal-info {
+    flex: 1;
+  }
+
+  .fp-cal-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #f4f5f7;
+    margin-bottom: 3px;
+  }
+
+  .fp-cal-sub {
+    font-size: 11px;
+    color: #73767e;
+  }
+
+  .fp-cal-check {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(39, 201, 63, .15);
+    border: 1px solid rgba(39, 201, 63, .40);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5ee676;
+    font-size: 14px;
+  }
+
+  .fp-footer-row {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding-top: 4px;
+  }
+
+  .fp-kpi {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .fp-kpi-val {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #f4f5f7;
+  }
+
+  .fp-kpi-lbl {
+    font-size: 11px;
+    color: #73767e;
+  }
+
+  .fp-kpi-sep {
+    width: 1px;
+    height: 28px;
+    background: rgba(255,255,255,.09);
+  }
+
+  @media (max-width: 700px) {
+    .fp-inbox-layout { grid-template-columns: 1fr; }
+    .fp-inbox-sidebar { display: none; }
+    .fp-header { flex-direction: column; }
+    .fp-stats { flex-direction: row; align-items: flex-start; }
+  }
+</style>
+
+<div class="fp-inner">
+
+  <!-- Header -->
+  <div class="fp-header">
+    <div>
+      <div class="fp-label">
+        <span class="fp-label-dot"></span>
+        Reply-Handling
+      </div>
+      <h2 class="fp-title">Einwand erkannt.<br><span>Termin gebucht.</span></h2>
+      <p class="fp-desc">Jede Antwort wird analysiert, klassifiziert und mit einer Reaktion beantwortet, die aus Skepsis echtes Interesse macht - bis der Kalender voll ist.</p>
+    </div>
+    <div class="fp-stats">
+      <div class="fp-stat">
+        <div class="fp-stat-val">94%</div>
+        <div class="fp-stat-lbl">Einwand-Erkennungsrate</div>
+      </div>
+      <div class="fp-stat">
+        <div class="fp-stat-val">3,2x</div>
+        <div class="fp-stat-lbl">mehr Termine vs. manuelle Pflege</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mockup -->
+  <div class="fp-mockup">
+    <!-- Browser chrome -->
+    <div class="fp-browser-bar">
+      <div class="fp-dots">
+        <div class="fp-dot fp-dot-r"></div>
+        <div class="fp-dot fp-dot-y"></div>
+        <div class="fp-dot fp-dot-g"></div>
+      </div>
+      <div class="fp-url-bar">
+        <svg class="fp-url-icon" width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+          <rect x="1" y="4" width="8" height="5.5" rx="1" stroke="#73767e" stroke-width="1"/>
+          <path d="M3 4V3a2 2 0 014 0v1" stroke="#73767e" stroke-width="1"/>
+        </svg>
+        app.grundwerk.digital / master-inbox
+      </div>
+    </div>
+
+    <!-- Inbox layout -->
+    <div class="fp-inbox-layout">
+
+      <!-- Sidebar -->
+      <div class="fp-inbox-sidebar">
+        <div class="fp-inbox-sidebar-head">
+          Eingang
+          <span class="fp-inbox-count">4</span>
+        </div>
+
+        <!-- Items -->
+        <div class="fp-inbox-item active">
+          <div class="fp-inbox-item-top">
+            <span class="fp-inbox-sender">M. Hoffmann</span>
+            <span class="fp-inbox-time">09:41</span>
+          </div>
+          <div class="fp-inbox-preview">Kein Interesse momentan, wir...</div>
+        </div>
+
+        <div class="fp-inbox-item">
+          <div class="fp-inbox-item-top">
+            <span class="fp-inbox-sender">T. Berger</span>
+            <span class="fp-inbox-time">08:17</span>
+          </div>
+          <div class="fp-inbox-preview">Haben das intern schon, aber...</div>
+          <div class="fp-unread-dot"></div>
+        </div>
+
+        <div class="fp-inbox-item">
+          <div class="fp-inbox-item-top">
+            <span class="fp-inbox-sender">K. Schäfer</span>
+            <span class="fp-inbox-time">Ges.</span>
+          </div>
+          <div class="fp-inbox-preview">Danke, schicken Sie uns gern...</div>
+        </div>
+
+        <div class="fp-inbox-item">
+          <div class="fp-inbox-item-top">
+            <span class="fp-inbox-sender">L. Brandt</span>
+            <span class="fp-inbox-time">Ges.</span>
+          </div>
+          <div class="fp-inbox-preview">Wann hätten Sie Zeit für ein...</div>
+          <div class="fp-unread-dot"></div>
+        </div>
+      </div>
+
+      <!-- Thread -->
+      <div class="fp-thread">
+
+        <div class="fp-thread-header">
+          <div class="fp-thread-subject">Re: Mehr qualifizierte Leads für Hoffmann GmbH</div>
+          <div class="fp-thread-meta">
+            <span>M. Hoffmann an mich</span>
+            <span style="color:rgba(255,255,255,.12)">|</span>
+            <span class="fp-tag fp-tag-einwand">
+              <svg width="8" height="8" viewBox="0 0 8 8" fill="none" aria-hidden="true"><circle cx="4" cy="4" r="3" stroke="#ff7070" stroke-width="1.2"/><path d="M4 2.5v2" stroke="#ff7070" stroke-width="1.2" stroke-linecap="round"/><circle cx="4" cy="5.8" r=".4" fill="#ff7070"/></svg>
+              Einwand erkannt
+            </span>
+          </div>
+        </div>
+
+        <!-- Inbound message -->
+        <div class="fp-msg">
+          <div class="fp-msg-head">
+            <div class="fp-msg-avatar" style="background:rgba(255,255,255,.08); color:#a0a3ab; border:1px solid rgba(255,255,255,.12);">MH</div>
+            <span class="fp-msg-name">M. Hoffmann</span>
+            <span class="fp-msg-ts">09:41</span>
+          </div>
+          <div class="fp-msg-body">
+            Hallo,<br><br>
+            danke für Ihre Nachricht. Ehrlich gesagt haben wir <strong>momentan keinen Bedarf</strong> - unser Vertriebsteam ist ausgelastet und wir sehen keinen Mehrwert in zusätzlichen Systemen.<br><br>
+            Mit freundlichen Grüßen<br>
+            Marcus Hoffmann
+          </div>
+        </div>
+
+        <!-- Process strip -->
+        <div class="fp-process-strip">
+          <div class="fp-process-step">
+            <div class="fp-step-icon done">
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><circle cx="6.5" cy="6.5" r="6" stroke="#4d8fff" stroke-width="1"/><path d="M4 6.5l2 2 3-3" stroke="#4d8fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span class="fp-step-text lit">Antwort klassifiziert</span>
+          </div>
+          <div class="fp-process-step">
+            <div class="fp-step-icon done">
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><circle cx="6.5" cy="6.5" r="6" stroke="#4d8fff" stroke-width="1"/><path d="M4 6.5l2 2 3-3" stroke="#4d8fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span class="fp-step-text lit">Einwand-Typ: Kein Bedarf</span>
+          </div>
+          <div class="fp-process-step">
+            <div class="fp-step-icon active">
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 2v1.5M6.5 9.5V11M11 6.5H9.5M3.5 6.5H2M9.6 3.4l-1.1 1.1M4.5 8.5l-1.1 1.1M9.6 9.6L8.5 8.5M4.5 4.5L3.4 3.4" stroke="#fff" stroke-width="1.1" stroke-linecap="round"/></svg>
+            </div>
+            <span class="fp-step-text lit">Antwort generiert</span>
+          </div>
+          <div class="fp-process-step">
+            <div class="fp-step-icon done" style="background:rgba(39,201,63,.15); border-color:rgba(39,201,63,.40); color:#5ee676;">
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><rect x="2" y="3" width="9" height="7.5" rx="1.2" stroke="#5ee676" stroke-width="1"/><path d="M4.5 6l1.5 1.5 2.5-2.5" stroke="#5ee676" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span class="fp-step-text lit">Termin vorgeschlagen</span>
+          </div>
+        </div>
+
+        <!-- Outbound AI reply -->
+        <div class="fp-msg outbound">
+          <div class="fp-ai-badge">
+            <svg class="fp-ai-spark" viewBox="0 0 8 8" fill="none" aria-hidden="true"><path d="M4 1l.7 2.3L7 4l-2.3.7L4 7l-.7-2.3L1 4l2.3-.7L4 1z" fill="#4d8fff"/></svg>
+            KI-Antwort
+          </div>
+          <div class="fp-msg-head">
+            <div class="fp-msg-avatar" style="background:rgba(0,102,255,.25); color:#4d8fff; border:1px solid rgba(0,102,255,.40);">GW</div>
+            <span class="fp-msg-name">Grundwerk (via Postfach)</span>
+            <span class="fp-msg-ts" style="color:#4d8fff80;">jetzt</span>
+          </div>
+          <div class="fp-msg-body">
+            Hallo Herr Hoffmann,<br><br>
+            das ist völlig verständlich - und genau das höre ich oft von Vertriebsteams, die bereits gut ausgelastet sind. Unser Ansatz richtet sich nicht an Teams, die mehr Arbeit brauchen, sondern an solche, die <strong>dieselbe Pipeline mit weniger Aufwand</strong> füllen wollen.<br><br>
+            Wäre ein <strong>15-minütiger Austausch</strong> diese oder nächste Woche möglich? Ich zeige Ihnen konkret, wo in Ihrem aktuellen Prozess die größten Hebel liegen - ganz ohne Commitment.
+          </div>
+        </div>
+
+        <!-- Calendar card -->
+        <div class="fp-cal-card">
+          <div class="fp-cal-date">
+            <div class="fp-cal-day">19</div>
+            <div class="fp-cal-mon">Jun</div>
+          </div>
+          <div class="fp-cal-info">
+            <div class="fp-cal-title">Discovery-Call: Hoffmann GmbH</div>
+            <div class="fp-cal-sub">Di, 19. Juni - 14:00 Uhr - 15 Min. - Google Meet</div>
+          </div>
+          <div class="fp-cal-check">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7l3 3 5-5" stroke="#5ee676" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer KPIs -->
+  <div class="fp-footer-row">
+    <div class="fp-kpi">
+      <div>
+        <div class="fp-kpi-val">48 Min.</div>
+        <div class="fp-kpi-lbl">Ø Zeit vom Einwand zum Termin</div>
+      </div>
+    </div>
+    <div class="fp-kpi-sep"></div>
+    <div class="fp-kpi">
+      <div>
+        <div class="fp-kpi-val">27%</div>
+        <div class="fp-kpi-lbl">Einwand-Replies werden zu Terminen</div>
+      </div>
+    </div>
+    <div class="fp-kpi-sep"></div>
+    <div class="fp-kpi">
+      <div>
+        <div class="fp-kpi-val">8 Typen</div>
+        <div class="fp-kpi-lbl">Einwand-Klassen, automatisch erkannt</div>
+      </div>
+    </div>
+    <div class="fp-kpi-sep"></div>
+    <div style="margin-left: auto;">
+      <div class="fp-tag fp-tag-ai" style="font-size:11px; padding: 5px 13px;">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true" style="flex-shrink:0"><path d="M5 1l.88 2.87L8.5 5l-2.62.87L5 9l-.88-2.87L1.5 5l2.62-.87L5 1z" fill="#4d8fff"/></svg>
+        KI-gestützte Antwort-Logik
+      </div>
+    </div>
+  </div>
+
+</div>
+</section>
+</body></html>

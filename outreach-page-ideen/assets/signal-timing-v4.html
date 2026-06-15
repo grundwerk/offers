@@ -1,0 +1,690 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://api.fontshare.com" crossorigin><link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=inter@400,500,600&display=swap" rel="stylesheet"><style>html,body{margin:0;background:#0e0e10}</style></head><body>
+<section class="fp">
+<style>
+  .fp {
+    position: relative;
+    min-height: 88vh;
+    background-color: #0e0e10;
+    background-image:
+      linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 42px 42px;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    color: #f4f5f7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 64px 48px;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .fp-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,102,255,.10) 0%, transparent 70%);
+    top: -120px;
+    right: -80px;
+    pointer-events: none;
+  }
+
+  .fp-glow2 {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,102,255,.06) 0%, transparent 70%);
+    bottom: -80px;
+    left: -60px;
+    pointer-events: none;
+  }
+
+  .fp-header {
+    text-align: center;
+    margin-bottom: 52px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .fp-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0,102,255,.14);
+    border: 1px solid rgba(0,102,255,.40);
+    border-radius: 100px;
+    padding: 5px 14px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #0066ff;
+    margin-bottom: 18px;
+  }
+
+  .fp-eyebrow-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #0066ff;
+    animation: fp-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes fp-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .4; transform: scale(.7); }
+  }
+
+  .fp-title {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 700;
+    color: #f4f5f7;
+    margin: 0 0 12px;
+    line-height: 1.15;
+    letter-spacing: -.02em;
+  }
+
+  .fp-subtitle {
+    font-size: 15px;
+    color: #a0a3ab;
+    max-width: 460px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .fp-stage {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 0;
+    width: 100%;
+    max-width: 980px;
+    background: #141417;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 40px 80px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.04);
+  }
+
+  /* --- Signal sidebar --- */
+  .fp-sidebar {
+    background: #141417;
+    border-right: 1px solid rgba(255,255,255,.09);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fp-sidebar-header {
+    padding: 18px 20px 14px;
+    border-bottom: 1px solid rgba(255,255,255,.09);
+  }
+
+  .fp-sidebar-title {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #73767e;
+    margin: 0;
+  }
+
+  .fp-signal-list {
+    padding: 12px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .fp-signal-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background .15s;
+    border: 1px solid transparent;
+  }
+
+  .fp-signal-item.fp-active {
+    background: rgba(0,102,255,.10);
+    border-color: rgba(0,102,255,.30);
+  }
+
+  .fp-signal-item:not(.fp-active) {
+    background: rgba(255,255,255,.03);
+  }
+
+  .fp-signal-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .fp-signal-icon.blue { background: rgba(0,102,255,.18); }
+  .fp-signal-icon.green { background: rgba(34,197,94,.12); }
+  .fp-signal-icon.amber { background: rgba(251,191,36,.10); }
+
+  .fp-signal-body { flex: 1; min-width: 0; }
+
+  .fp-signal-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    margin-bottom: 2px;
+  }
+
+  .fp-signal-label.blue { color: #0066ff; }
+  .fp-signal-label.green { color: #22c55e; }
+  .fp-signal-label.amber { color: #fbbf24; }
+
+  .fp-signal-detail {
+    font-size: 12px;
+    color: #a0a3ab;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .fp-signal-time {
+    font-size: 10px;
+    color: #73767e;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .fp-sidebar-footer {
+    margin-top: auto;
+    padding: 14px 16px;
+    border-top: 1px solid rgba(255,255,255,.09);
+  }
+
+  .fp-stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+  }
+
+  .fp-stat-label { font-size: 11px; color: #73767e; }
+  .fp-stat-value { font-size: 11px; font-weight: 700; color: #f4f5f7; }
+
+  .fp-stat-bar-bg {
+    height: 3px;
+    background: rgba(255,255,255,.08);
+    border-radius: 2px;
+    margin-top: 6px;
+    overflow: hidden;
+  }
+
+  .fp-stat-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #0066ff, rgba(0,102,255,.5));
+    border-radius: 2px;
+    width: 73%;
+  }
+
+  /* --- Email main pane --- */
+  .fp-main {
+    display: flex;
+    flex-direction: column;
+    background: #0e0e10;
+    min-height: 520px;
+  }
+
+  .fp-mailbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    border-bottom: 1px solid rgba(255,255,255,.09);
+    background: #141417;
+  }
+
+  .fp-mailbar-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .fp-mailbar-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 7px;
+    background: rgba(0,102,255,.14);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .fp-mailbar-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #a0a3ab;
+  }
+
+  .fp-timing-badge {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(0,102,255,.12);
+    border: 1px solid rgba(0,102,255,.35);
+    border-radius: 100px;
+    padding: 3px 10px;
+    font-size: 10px;
+    font-weight: 700;
+    color: #0066ff;
+    letter-spacing: .06em;
+  }
+
+  /* Thread */
+  .fp-thread {
+    flex: 1;
+    padding: 24px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    overflow: hidden;
+  }
+
+  .fp-thread-header {
+    margin-bottom: 20px;
+  }
+
+  .fp-subject {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: #f4f5f7;
+    margin: 0 0 4px;
+    letter-spacing: -.01em;
+  }
+
+  .fp-thread-meta {
+    font-size: 11px;
+    color: #73767e;
+  }
+
+  .fp-thread-meta span {
+    color: #a0a3ab;
+  }
+
+  /* Messages */
+  .fp-messages {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .fp-msg {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .fp-msg-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .fp-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 800;
+    flex-shrink: 0;
+    letter-spacing: .01em;
+  }
+
+  .fp-avatar.gw {
+    background: linear-gradient(135deg, #0066ff, #003ec7);
+    color: #fff;
+  }
+
+  .fp-avatar.client {
+    background: rgba(255,255,255,.10);
+    color: #a0a3ab;
+    border: 1px solid rgba(255,255,255,.12);
+  }
+
+  .fp-msg-sender {
+    font-size: 12px;
+    font-weight: 700;
+    color: #f4f5f7;
+  }
+
+  .fp-msg-time {
+    font-size: 11px;
+    color: #73767e;
+    margin-left: auto;
+  }
+
+  .fp-msg-bubble {
+    background: #1a1a1f;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 4px 12px 12px 12px;
+    padding: 14px 16px;
+    font-size: 13px;
+    line-height: 1.65;
+    color: #f4f5f7;
+    margin-left: 38px;
+  }
+
+  .fp-msg-bubble.gw-bubble {
+    border-color: rgba(0,102,255,.25);
+    background: rgba(0,102,255,.07);
+  }
+
+  .fp-msg-bubble.reply-bubble {
+    background: #1a1a1f;
+    border-color: rgba(255,255,255,.09);
+  }
+
+  .fp-msg-highlight {
+    color: #0066ff;
+    font-weight: 600;
+  }
+
+  .fp-trigger-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(0,102,255,.15);
+    border: 1px solid rgba(0,102,255,.35);
+    border-radius: 6px;
+    padding: 2px 8px;
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #0066ff;
+    vertical-align: middle;
+    margin: 0 2px;
+    letter-spacing: .04em;
+  }
+
+  .fp-divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 4px 0;
+    margin-left: 38px;
+  }
+
+  .fp-divider-line {
+    flex: 1;
+    height: 1px;
+    background: rgba(255,255,255,.06);
+  }
+
+  .fp-divider-label {
+    font-size: 10px;
+    color: #73767e;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .fp-reply-tag {
+    display: inline-block;
+    background: rgba(34,197,94,.12);
+    border: 1px solid rgba(34,197,94,.25);
+    border-radius: 6px;
+    padding: 1px 7px;
+    font-size: 10px;
+    font-weight: 700;
+    color: #22c55e;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    margin-bottom: 6px;
+  }
+
+  /* Signal annotation line */
+  .fp-annotation {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(0,102,255,.07);
+    border: 1px solid rgba(0,102,255,.20);
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin-bottom: 20px;
+  }
+
+  .fp-annotation-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    background: rgba(0,102,255,.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .fp-annotation-text {
+    font-size: 12px;
+    color: #a0a3ab;
+    line-height: 1.4;
+  }
+
+  .fp-annotation-text strong {
+    color: #0066ff;
+    font-weight: 700;
+  }
+
+  /* Bottom label */
+  .fp-bottom-label {
+    text-align: center;
+    margin-top: 32px;
+    font-size: 12px;
+    color: #73767e;
+    position: relative;
+    z-index: 2;
+    letter-spacing: .02em;
+  }
+
+  .fp-bottom-label strong {
+    color: #a0a3ab;
+    font-weight: 600;
+  }
+
+  /* responsive */
+  @media (max-width: 720px) {
+    .fp-stage { grid-template-columns: 1fr; }
+    .fp-sidebar { border-right: none; border-bottom: 1px solid rgba(255,255,255,.09); }
+  }
+</style>
+
+<div class="fp-glow"></div>
+<div class="fp-glow2"></div>
+
+<div class="fp-header">
+  <div class="fp-eyebrow">
+    <span class="fp-eyebrow-dot"></span>
+    Signal-getriggertes Timing
+  </div>
+  <h2 class="fp-title">Im exakt richtigen Moment.</h2>
+  <p class="fp-subtitle">Neue Stelle, frische Finanzierung, Tech-Wechsel. Wir schreiben, wenn der Kontext stimmt, nicht wenn es uns gerade passt.</p>
+</div>
+
+<div class="fp-stage">
+
+  <!-- Sidebar: Signal feed -->
+  <div class="fp-sidebar">
+    <div class="fp-sidebar-header">
+      <p class="fp-sidebar-title">Signale erkannt</p>
+    </div>
+
+    <div class="fp-signal-list">
+
+      <div class="fp-signal-item fp-active">
+        <div class="fp-signal-icon blue">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <rect x="2" y="7" width="12" height="2" rx="1" fill="#0066ff"/>
+            <rect x="7" y="2" width="2" height="12" rx="1" fill="#0066ff"/>
+          </svg>
+        </div>
+        <div class="fp-signal-body">
+          <div class="fp-signal-label blue">Stellenausschreibung</div>
+          <div class="fp-signal-detail">Head of Marketing gesucht</div>
+          <div class="fp-signal-detail" style="font-size:10px;color:#73767e;margin-top:2px;">Meliora GmbH, LinkedIn</div>
+        </div>
+        <div class="fp-signal-time">09:12</div>
+      </div>
+
+      <div class="fp-signal-item">
+        <div class="fp-signal-icon green">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <circle cx="8" cy="8" r="5" stroke="#22c55e" stroke-width="2"/>
+            <path d="M8 5v3l2 2" stroke="#22c55e" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="fp-signal-body">
+          <div class="fp-signal-label green">Finanzierungsrunde</div>
+          <div class="fp-signal-detail">Series A: 8 Mio. Euro</div>
+          <div class="fp-signal-detail" style="font-size:10px;color:#73767e;margin-top:2px;">Nexfield AG, Crunchbase</div>
+        </div>
+        <div class="fp-signal-time">gestern</div>
+      </div>
+
+      <div class="fp-signal-item">
+        <div class="fp-signal-icon amber">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M8 2L9.5 6h4.5l-3.5 2.5 1.3 4L8 10l-3.8 2.5 1.3-4L2 6h4.5z" fill="#fbbf24" opacity=".8"/>
+          </svg>
+        </div>
+        <div class="fp-signal-body">
+          <div class="fp-signal-label amber">Tech-Wechsel</div>
+          <div class="fp-signal-detail">Salesforce CRM abgelöst</div>
+          <div class="fp-signal-detail" style="font-size:10px;color:#73767e;margin-top:2px;">Orbis Solutions, Web</div>
+        </div>
+        <div class="fp-signal-time">Mo.</div>
+      </div>
+
+    </div>
+
+    <div class="fp-sidebar-footer">
+      <div class="fp-stat-row">
+        <span class="fp-stat-label">Ø Antwortrate (Signal-Timing)</span>
+        <span class="fp-stat-value">73%</span>
+      </div>
+      <div class="fp-stat-bar-bg">
+        <div class="fp-stat-bar-fill"></div>
+      </div>
+      <div class="fp-stat-row" style="margin-top:8px;">
+        <span class="fp-stat-label">vs. Kaltansprache ohne Signal</span>
+        <span class="fp-stat-value" style="color:#a0a3ab;">19%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main: Email thread -->
+  <div class="fp-main">
+    <div class="fp-mailbar">
+      <div class="fp-mailbar-left">
+        <div class="fp-mailbar-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <rect x="2" y="3" width="12" height="10" rx="2" stroke="#0066ff" stroke-width="1.5"/>
+            <path d="M2 5.5l6 4 6-4" stroke="#0066ff" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="fp-mailbar-label">E-Mail-Thread, Meliora GmbH</span>
+      </div>
+      <div class="fp-timing-badge">
+        <svg width="8" height="8" viewBox="0 0 8 8" fill="none" aria-hidden="true">
+          <circle cx="4" cy="4" r="3" stroke="#0066ff" stroke-width="1.4"/>
+          <path d="M4 2.3v1.7l1 1" stroke="#0066ff" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+        2h nach Signal
+      </div>
+    </div>
+
+    <div class="fp-thread">
+      <div class="fp-thread-header">
+        <h3 class="fp-subject">Wachstum im Marketing-Team: kurze Frage</h3>
+        <p class="fp-thread-meta">3 Nachrichten, Heute &nbsp;|&nbsp; Trigger: <span>Neue Stelle ausgeschrieben (LinkedIn, 09:12 Uhr)</span></p>
+      </div>
+
+      <div class="fp-annotation">
+        <div class="fp-annotation-icon">
+          <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M7 1l1.5 4h4.5l-3.5 2.5 1.3 4L7 9 3.2 11.5l1.3-4L1 5h4.5z" fill="#0066ff"/>
+          </svg>
+        </div>
+        <p class="fp-annotation-text"><strong>Signal erkannt um 09:12</strong>: Meliora GmbH sucht Head of Marketing. E-Mail ausgeloest um 11:04 (2h Bearbeitungszeit). Kein Zufall, sondern System.</p>
+      </div>
+
+      <div class="fp-messages">
+
+        <!-- Our email -->
+        <div class="fp-msg">
+          <div class="fp-msg-meta">
+            <div class="fp-avatar gw" aria-label="Grundwerk">GW</div>
+            <span class="fp-msg-sender">Felix Brandt, Grundwerk Digital</span>
+            <span class="fp-msg-time">11:04 Uhr</span>
+          </div>
+          <div class="fp-msg-bubble gw-bubble">
+            Hallo Jana,<br><br>
+            ich habe gerade gesehen, dass Sie
+            <span class="fp-trigger-pill">
+              <svg width="8" height="8" viewBox="0 0 8 8" fill="none" aria-hidden="true"><circle cx="4" cy="4" r="3" stroke="#0066ff" stroke-width="1.3"/><path d="M4 2.5v1.5l.8.8" stroke="#0066ff" stroke-width="1" stroke-linecap="round"/></svg>
+              Signal
+            </span>
+            einen Head of Marketing suchen. Genau in dieser Wachstumsphase merken viele Teams, dass der Outbound-Kanal noch nicht systematisch laeuft.
+            <br><br>
+            Wir helfen <span class="fp-msg-highlight">B2B-Unternehmen in genau diesem Stadium</span>, innerhalb von 6 Wochen einen reproduzierbaren E-Mail-Kanal aufzubauen, der qualifizierte Meetings liefert.
+            <br><br>
+            Haetten Sie diese Woche 20 Minuten?
+          </div>
+        </div>
+
+        <div class="fp-divider">
+          <div class="fp-divider-line"></div>
+          <span class="fp-divider-label">3 Stunden spaeter</span>
+          <div class="fp-divider-line"></div>
+        </div>
+
+        <!-- Reply -->
+        <div class="fp-msg">
+          <div class="fp-msg-meta">
+            <div class="fp-avatar client" aria-label="Jana Kraft">JK</div>
+            <span class="fp-msg-sender">Jana Kraft, Meliora GmbH</span>
+            <span class="fp-msg-time">14:22 Uhr</span>
+          </div>
+          <div class="fp-msg-bubble reply-bubble">
+            <div class="fp-reply-tag">Antwort</div>
+            Hallo Felix,<br><br>
+            das ist interessant getimed, ehrlich gesagt. Wir diskutieren intern genau dieses Thema gerade.<br><br>
+            Donnerstag 10 Uhr wuerde passen. Schicken Sie mir einen Terminlink?
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<p class="fp-bottom-label">
+  <strong>73% Antwortrate</strong> bei signal-getriegetem Timing. Branchenschnitt: 19%.
+</p>
+
+</section>
+</body></html>

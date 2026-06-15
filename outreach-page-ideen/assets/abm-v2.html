@@ -1,0 +1,716 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://api.fontshare.com" crossorigin><link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=inter@400,500,600&display=swap" rel="stylesheet"><style>html,body{margin:0;background:#0e0e10}</style></head><body>
+<section class="fp">
+<style>
+  .fp {
+    position: relative;
+    min-height: 88vh;
+    background-color: #0e0e10;
+    background-image:
+      linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 42px 42px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 40px 60px;
+    overflow: hidden;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    color: #f4f5f7;
+    box-sizing: border-box;
+  }
+
+  .fp * { box-sizing: border-box; }
+
+  /* Ambient glow behind mockup */
+  .fp-glow {
+    position: absolute;
+    width: 700px;
+    height: 340px;
+    background: radial-gradient(ellipse at center, rgba(0,102,255,.22) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -42%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .fp-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 960px;
+    gap: 48px;
+  }
+
+  /* Top label */
+  .fp-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0,102,255,.14);
+    border: 1px solid rgba(0,102,255,.40);
+    border-radius: 100px;
+    padding: 5px 14px;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #5b96ff;
+  }
+  .fp-label-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #0066ff;
+    animation: fp-pulse 2s ease-in-out infinite;
+  }
+  @keyframes fp-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .5; transform: scale(.7); }
+  }
+
+  /* Heading */
+  .fp-heading {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: clamp(32px, 4.5vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    text-align: center;
+    color: #f4f5f7;
+    letter-spacing: -.02em;
+    max-width: 680px;
+  }
+  .fp-heading em {
+    font-style: normal;
+    color: #0066ff;
+  }
+
+  .fp-sub {
+    font-size: 16px;
+    color: #a0a3ab;
+    text-align: center;
+    max-width: 540px;
+    line-height: 1.6;
+    margin-top: -20px;
+  }
+
+  /* ===== BROWSER MOCKUP ===== */
+  .fp-browser {
+    width: 100%;
+    max-width: 880px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,.09);
+    background: #141417;
+    box-shadow:
+      0 0 0 1px rgba(0,102,255,.18),
+      0 32px 80px rgba(0,0,0,.7),
+      0 8px 24px rgba(0,102,255,.10);
+    overflow: hidden;
+    transform: perspective(1200px) rotateX(3deg) rotateY(-1deg);
+    transform-origin: center top;
+  }
+
+  /* Browser chrome bar */
+  .fp-chrome {
+    background: #1a1a1f;
+    border-bottom: 1px solid rgba(255,255,255,.09);
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .fp-dots {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+  .fp-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  .fp-dot:nth-child(1) { background: #ff5f57; }
+  .fp-dot:nth-child(2) { background: #ffbd2e; }
+  .fp-dot:nth-child(3) { background: #28ca42; }
+
+  .fp-url-bar {
+    flex: 1;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 7px;
+    padding: 5px 12px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+  .fp-lock-icon {
+    flex-shrink: 0;
+    opacity: .5;
+  }
+  .fp-url-text {
+    font-size: 12px;
+    color: #a0a3ab;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .fp-url-text span {
+    color: #f4f5f7;
+  }
+
+  /* App layout inside browser */
+  .fp-app {
+    display: flex;
+    height: 420px;
+    min-height: 0;
+  }
+
+  /* Left sidebar */
+  .fp-sidebar {
+    width: 220px;
+    flex-shrink: 0;
+    background: #111113;
+    border-right: 1px solid rgba(255,255,255,.07);
+    padding: 16px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .fp-sidebar-title {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #73767e;
+    padding: 0 16px 10px;
+  }
+  .fp-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    font-size: 13px;
+    color: #73767e;
+    cursor: pointer;
+    border-radius: 0;
+    transition: background .15s;
+  }
+  .fp-nav-item.active {
+    background: rgba(0,102,255,.14);
+    color: #f4f5f7;
+    border-right: 2px solid #0066ff;
+  }
+  .fp-nav-icon {
+    width: 16px;
+    height: 16px;
+    opacity: .7;
+    flex-shrink: 0;
+  }
+  .fp-nav-item.active .fp-nav-icon { opacity: 1; }
+
+  .fp-account-chip {
+    margin: 12px 12px 0;
+    background: rgba(0,102,255,.10);
+    border: 1px solid rgba(0,102,255,.30);
+    border-radius: 8px;
+    padding: 8px 10px;
+  }
+  .fp-account-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: #5b96ff;
+  }
+  .fp-account-meta {
+    font-size: 10.5px;
+    color: #73767e;
+    margin-top: 2px;
+  }
+
+  /* Main area with 3 threads */
+  .fp-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    background: #141417;
+  }
+
+  .fp-main-header {
+    padding: 14px 20px 12px;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .fp-main-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #f4f5f7;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .fp-company-badge {
+    background: rgba(0,102,255,.14);
+    border: 1px solid rgba(0,102,255,.40);
+    border-radius: 6px;
+    padding: 2px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #5b96ff;
+  }
+  .fp-thread-count {
+    font-size: 12px;
+    color: #73767e;
+  }
+
+  .fp-threads {
+    display: flex;
+    flex: 1;
+    gap: 0;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  /* Individual thread column */
+  .fp-thread {
+    flex: 1;
+    border-right: 1px solid rgba(255,255,255,.07);
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    position: relative;
+  }
+  .fp-thread:last-child { border-right: none; }
+
+  .fp-thread-header {
+    padding: 12px 14px 10px;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+    background: #161619;
+  }
+  .fp-person-row {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+  .fp-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+  }
+  .fp-avatar-a { background: linear-gradient(135deg, #0066ff, #0044cc); }
+  .fp-avatar-b { background: linear-gradient(135deg, #7c3aed, #5b21b6); }
+  .fp-avatar-c { background: linear-gradient(135deg, #059669, #047857); }
+
+  .fp-person-info { flex: 1; min-width: 0; }
+  .fp-person-name {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #f4f5f7;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .fp-person-role {
+    font-size: 10.5px;
+    color: #73767e;
+    margin-top: 1px;
+  }
+
+  .fp-role-badge {
+    font-size: 9.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    border-radius: 4px;
+    padding: 2px 6px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .fp-role-badge.ceo { background: rgba(0,102,255,.18); color: #5b96ff; border: 1px solid rgba(0,102,255,.35); }
+  .fp-role-badge.sales { background: rgba(124,58,237,.18); color: #a78bfa; border: 1px solid rgba(124,58,237,.35); }
+  .fp-role-badge.cfo { background: rgba(5,150,105,.18); color: #34d399; border: 1px solid rgba(5,150,105,.35); }
+
+  .fp-thread-body {
+    flex: 1;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: hidden;
+  }
+
+  /* Message bubbles */
+  .fp-msg {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .fp-msg-bubble {
+    padding: 8px 10px;
+    border-radius: 9px;
+    font-size: 11.5px;
+    line-height: 1.5;
+    color: #a0a3ab;
+    position: relative;
+  }
+  .fp-msg-bubble.sent {
+    background: rgba(0,102,255,.12);
+    border: 1px solid rgba(0,102,255,.25);
+    color: #c8d8ff;
+    border-radius: 9px 9px 3px 9px;
+    align-self: flex-end;
+  }
+  .fp-msg-bubble.received {
+    background: #1a1a1f;
+    border: 1px solid rgba(255,255,255,.07);
+    border-radius: 9px 9px 9px 3px;
+    align-self: flex-start;
+  }
+  .fp-msg-meta {
+    font-size: 9.5px;
+    color: #73767e;
+    padding: 0 2px;
+  }
+  .fp-msg-meta.right { text-align: right; }
+
+  /* Typing indicator */
+  .fp-typing {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 7px 10px;
+    background: #1a1a1f;
+    border: 1px solid rgba(255,255,255,.07);
+    border-radius: 9px 9px 9px 3px;
+    align-self: flex-start;
+    width: 48px;
+  }
+  .fp-typing-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #a0a3ab;
+  }
+  .fp-typing-dot:nth-child(1) { animation: fp-bounce .9s .0s infinite; }
+  .fp-typing-dot:nth-child(2) { animation: fp-bounce .9s .2s infinite; }
+  .fp-typing-dot:nth-child(3) { animation: fp-bounce .9s .4s infinite; }
+  @keyframes fp-bounce {
+    0%, 60%, 100% { transform: translateY(0); opacity: .5; }
+    30% { transform: translateY(-3px); opacity: 1; }
+  }
+
+  /* Status bar at bottom of thread */
+  .fp-thread-status {
+    padding: 6px 14px 10px;
+    font-size: 10px;
+    color: #73767e;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .fp-status-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+  }
+  .fp-status-dot.green { background: #34d399; }
+  .fp-status-dot.blue { background: #0066ff; }
+  .fp-status-dot.yellow { background: #f59e0b; }
+
+  /* Sequence tag */
+  .fp-seq-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(0,102,255,.10);
+    border: 1px solid rgba(0,102,255,.25);
+    border-radius: 5px;
+    padding: 1px 6px;
+    font-size: 9px;
+    font-weight: 600;
+    color: #5b96ff;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+  }
+
+  /* Stats row below browser */
+  .fp-stats {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .fp-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .fp-stat-value {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #f4f5f7;
+    line-height: 1;
+    letter-spacing: -.02em;
+  }
+  .fp-stat-value span { color: #0066ff; }
+  .fp-stat-label {
+    font-size: 12px;
+    color: #73767e;
+    text-align: center;
+  }
+
+  .fp-stat-divider {
+    width: 1px;
+    height: 36px;
+    background: rgba(255,255,255,.09);
+    align-self: center;
+  }
+</style>
+
+<div class="fp-glow"></div>
+
+<div class="fp-content">
+  <!-- Label -->
+  <div>
+    <div class="fp-label">
+      <div class="fp-label-dot"></div>
+      Account-Based Outreach
+    </div>
+  </div>
+
+  <!-- Heading -->
+  <div style="display:flex;flex-direction:column;align-items:center;gap:16px;">
+    <h2 class="fp-heading">
+      <em>Drei Rollen,</em> ein Account.<br>Koordiniert angesprochen.
+    </h2>
+    <p class="fp-sub">
+      CEO, Head of Sales und CFO derselben Firma erhalten gleichzeitig eine auf ihre Prioritäten zugeschnittene Botschaft. Kein Spam, sondern strategisches Multi-Threading.
+    </p>
+  </div>
+
+  <!-- Browser Mockup -->
+  <div class="fp-browser">
+    <!-- Chrome bar -->
+    <div class="fp-chrome">
+      <div class="fp-dots">
+        <div class="fp-dot"></div>
+        <div class="fp-dot"></div>
+        <div class="fp-dot"></div>
+      </div>
+      <div class="fp-url-bar">
+        <svg class="fp-lock-icon" width="11" height="13" viewBox="0 0 11 13" fill="none" aria-hidden="true">
+          <rect x="1.5" y="5.5" width="8" height="7" rx="1.5" stroke="#a0a3ab" stroke-width="1.2"/>
+          <path d="M3.5 5.5V3.5a2 2 0 0 1 4 0v2" stroke="#a0a3ab" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+        <span class="fp-url-text">app.grundwerk.digital/<span>accounts/hoffmann-gmbh</span></span>
+      </div>
+    </div>
+
+    <!-- App layout -->
+    <div class="fp-app">
+      <!-- Sidebar -->
+      <div class="fp-sidebar">
+        <div class="fp-sidebar-title">Kampagnen</div>
+        <div class="fp-nav-item">
+          <svg class="fp-nav-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M2 4h12M2 8h8M2 12h5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+          Alle Accounts
+        </div>
+        <div class="fp-nav-item active">
+          <svg class="fp-nav-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <circle cx="8" cy="6" r="3" stroke="currentColor" stroke-width="1.3"/>
+            <path d="M2 14c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+          </svg>
+          Multi-Stakeholder
+        </div>
+        <div class="fp-nav-item">
+          <svg class="fp-nav-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <rect x="2" y="2" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/>
+            <rect x="9" y="2" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/>
+            <rect x="2" y="9" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/>
+            <rect x="9" y="9" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/>
+          </svg>
+          Übersicht
+        </div>
+        <div class="fp-nav-item">
+          <svg class="fp-nav-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M8 2v4l2.5 2.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+            <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.3"/>
+          </svg>
+          Sequenzen
+        </div>
+
+        <div class="fp-account-chip">
+          <div class="fp-account-name">Hoffmann GmbH</div>
+          <div class="fp-account-meta">3 Kontakte aktiv</div>
+        </div>
+      </div>
+
+      <!-- Main area -->
+      <div class="fp-main">
+        <div class="fp-main-header">
+          <div class="fp-main-title">
+            Hoffmann GmbH
+            <div class="fp-company-badge">Account-View</div>
+          </div>
+          <div class="fp-thread-count">3 parallele Threads</div>
+        </div>
+
+        <div class="fp-threads">
+          <!-- Thread 1: CEO -->
+          <div class="fp-thread">
+            <div class="fp-thread-header">
+              <div class="fp-person-row">
+                <div class="fp-avatar fp-avatar-a" aria-label="Avatar M.H.">M.H.</div>
+                <div class="fp-person-info">
+                  <div class="fp-person-name">Markus Hoffmann</div>
+                  <div class="fp-person-role">CEO</div>
+                </div>
+                <div class="fp-role-badge ceo">CEO</div>
+              </div>
+            </div>
+            <div class="fp-thread-body">
+              <div class="fp-msg">
+                <div class="fp-msg-bubble sent">
+                  Herr Hoffmann, wir helfen B2B-Unternehmen wie Ihrem, die Vertriebspipeline um 40% zu skalieren, ohne das Team zu vergrößern.
+                </div>
+                <div class="fp-msg-meta right">Gesendet: Mo. 10:14</div>
+              </div>
+              <div class="fp-msg">
+                <div class="fp-msg-bubble received">
+                  Klingt interessant. Haben Sie konkrete Zahlen aus ähnlichen Branchen?
+                </div>
+                <div class="fp-msg-meta">Di. 09:03</div>
+              </div>
+              <div class="fp-msg">
+                <div class="fp-msg-bubble sent">
+                  Gerne, schicke Ihnen drei Fallstudien direkt.
+                </div>
+                <div class="fp-msg-meta right">Di. 09:41</div>
+              </div>
+            </div>
+            <div class="fp-thread-status">
+              <div class="fp-status-dot green"></div>
+              Antwort erhalten
+              <span class="fp-seq-tag" style="margin-left:4px;">STEP 3/5</span>
+            </div>
+          </div>
+
+          <!-- Thread 2: Head of Sales -->
+          <div class="fp-thread">
+            <div class="fp-thread-header">
+              <div class="fp-person-row">
+                <div class="fp-avatar fp-avatar-b" aria-label="Avatar S.K.">S.K.</div>
+                <div class="fp-person-info">
+                  <div class="fp-person-name">Sarah Klein</div>
+                  <div class="fp-person-role">Head of Sales</div>
+                </div>
+                <div class="fp-role-badge sales">Sales</div>
+              </div>
+            </div>
+            <div class="fp-thread-body">
+              <div class="fp-msg">
+                <div class="fp-msg-bubble sent">
+                  Frau Klein, viele Vertriebsleiter berichten, dass ihr Team zu viel Zeit mit manueller Lead-Qualifizierung verbringt. Wir automatisieren das.
+                </div>
+                <div class="fp-msg-meta right">Mo. 10:14</div>
+              </div>
+              <div class="fp-msg">
+                <div class="fp-msg-bubble received">
+                  Das ist tatsächlich unser größtes Problem gerade.
+                </div>
+                <div class="fp-msg-meta">Di. 11:22</div>
+              </div>
+              <div class="fp-typing" aria-label="Tipp-Indikator">
+                <div class="fp-typing-dot"></div>
+                <div class="fp-typing-dot"></div>
+                <div class="fp-typing-dot"></div>
+              </div>
+            </div>
+            <div class="fp-thread-status">
+              <div class="fp-status-dot blue"></div>
+              Antwortet gerade
+              <span class="fp-seq-tag" style="margin-left:4px;">STEP 2/5</span>
+            </div>
+          </div>
+
+          <!-- Thread 3: CFO -->
+          <div class="fp-thread">
+            <div class="fp-thread-header">
+              <div class="fp-person-row">
+                <div class="fp-avatar fp-avatar-c" aria-label="Avatar T.B.">T.B.</div>
+                <div class="fp-person-info">
+                  <div class="fp-person-name">Thomas Bauer</div>
+                  <div class="fp-person-role">CFO</div>
+                </div>
+                <div class="fp-role-badge cfo">CFO</div>
+              </div>
+            </div>
+            <div class="fp-thread-body">
+              <div class="fp-msg">
+                <div class="fp-msg-bubble sent">
+                  Herr Bauer, mit einem typischen ROI von 8x in 90 Tagen rechnen sich unsere Outbound-Systeme für Unternehmen Ihrer Größe schnell.
+                </div>
+                <div class="fp-msg-meta right">Mo. 10:15</div>
+              </div>
+              <div class="fp-msg">
+                <div class="fp-msg-bubble sent">
+                  Keine Bindungskosten, volle Transparenz über den Mitteleinsatz.
+                </div>
+                <div class="fp-msg-meta right">Mi. 08:30</div>
+              </div>
+            </div>
+            <div class="fp-thread-status">
+              <div class="fp-status-dot yellow"></div>
+              Follow-up ausstehend
+              <span class="fp-seq-tag" style="margin-left:4px;">STEP 2/5</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats row -->
+  <div class="fp-stats">
+    <div class="fp-stat">
+      <div class="fp-stat-value"><span>3</span>-5</div>
+      <div class="fp-stat-label">Entscheider<br>pro Account</div>
+    </div>
+    <div class="fp-stat-divider"></div>
+    <div class="fp-stat">
+      <div class="fp-stat-value"><span>100</span>%</div>
+      <div class="fp-stat-label">individuelle<br>Botschaft</div>
+    </div>
+    <div class="fp-stat-divider"></div>
+    <div class="fp-stat">
+      <div class="fp-stat-value">+<span>62</span>%</div>
+      <div class="fp-stat-label">Meeting-Rate<br>vs. Single-Touch</div>
+    </div>
+    <div class="fp-stat-divider"></div>
+    <div class="fp-stat">
+      <div class="fp-stat-value"><span>1</span></div>
+      <div class="fp-stat-label">koordiniertes<br>Vorgehen</div>
+    </div>
+  </div>
+</div>
+
+</section>
+</body></html>

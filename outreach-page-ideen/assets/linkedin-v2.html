@@ -1,0 +1,900 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://api.fontshare.com" crossorigin><link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=inter@400,500,600&display=swap" rel="stylesheet"><style>html,body{margin:0;background:#0e0e10}</style></head><body>
+<section class="fp">
+<style>
+  .fp {
+    position: relative;
+    width: 100%;
+    min-height: 88vh;
+    background-color: #0e0e10;
+    background-image:
+      linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 42px 42px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 48px 40px;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    color: #f4f5f7;
+  }
+
+  .fp__glow {
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 400px;
+    background: radial-gradient(ellipse at center, rgba(0,102,255,.18) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .fp__glow-bottom {
+    position: absolute;
+    bottom: -80px;
+    right: 10%;
+    width: 400px;
+    height: 300px;
+    background: radial-gradient(ellipse at center, rgba(0,102,255,.10) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .fp__header {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 36px;
+  }
+
+  .fp__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #0066ff;
+    background: rgba(0,102,255,.14);
+    border: 1px solid rgba(0,102,255,.40);
+    border-radius: 100px;
+    padding: 4px 14px;
+    margin-bottom: 18px;
+  }
+
+  .fp__label-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #0066ff;
+    animation: fp-pulse 2s infinite;
+  }
+
+  @keyframes fp-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .5; transform: scale(.8); }
+  }
+
+  .fp__title {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: clamp(28px, 3.5vw, 46px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -.02em;
+    color: #f4f5f7;
+    margin: 0 0 12px;
+  }
+
+  .fp__title em {
+    font-style: normal;
+    color: #0066ff;
+  }
+
+  .fp__sub {
+    font-size: 15px;
+    color: #a0a3ab;
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* ---- Mockup wrapper ---- */
+  .fp__mockup-wrap {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 860px;
+  }
+
+  /* Floating badges */
+  .fp__badge {
+    position: absolute;
+    background: rgba(20,20,23,.92);
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 12px;
+    padding: 10px 16px;
+    backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 10;
+    white-space: nowrap;
+  }
+
+  .fp__badge--tl {
+    top: -22px;
+    left: -20px;
+  }
+
+  .fp__badge--tr {
+    top: -18px;
+    right: -16px;
+  }
+
+  .fp__badge--br {
+    bottom: -20px;
+    right: 20px;
+  }
+
+  .fp__badge-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: rgba(0,102,255,.14);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .fp__badge-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .fp__badge-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  .fp__badge-num {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #f4f5f7;
+    line-height: 1;
+  }
+
+  .fp__badge-desc {
+    font-size: 10px;
+    color: #73767e;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+  }
+
+  /* ---- LinkedIn Inbox Mockup ---- */
+  .fp__inbox {
+    display: flex;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,.09);
+    overflow: hidden;
+    background: #141417;
+    box-shadow:
+      0 32px 80px rgba(0,0,0,.6),
+      0 0 0 1px rgba(255,255,255,.05) inset;
+    min-height: 440px;
+  }
+
+  /* --- Window chrome bar --- */
+  .fp__chrome {
+    background: #1a1a1f;
+    border-bottom: 1px solid rgba(255,255,255,.09);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    flex-shrink: 0;
+  }
+
+  .fp__chrome-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+  }
+
+  .fp__chrome-dot--r { background: #ff5f57; }
+  .fp__chrome-dot--y { background: #febc2e; }
+  .fp__chrome-dot--g { background: #28c840; }
+
+  .fp__chrome-url {
+    flex: 1;
+    background: rgba(255,255,255,.06);
+    border-radius: 6px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    gap: 6px;
+    margin-left: 8px;
+  }
+
+  .fp__chrome-url-text {
+    font-size: 11px;
+    color: #73767e;
+  }
+
+  .fp__inbox-shell {
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.09);
+    box-shadow: 0 32px 80px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.05) inset;
+  }
+
+  .fp__inbox-inner {
+    display: flex;
+    min-height: 400px;
+  }
+
+  /* ---- Sidebar ---- */
+  .fp__sidebar {
+    width: 220px;
+    flex-shrink: 0;
+    background: #141417;
+    border-right: 1px solid rgba(255,255,255,.09);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fp__sidebar-header {
+    padding: 16px 14px 10px;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+  }
+
+  .fp__sidebar-title {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #f4f5f7;
+    margin: 0 0 10px;
+  }
+
+  .fp__search {
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 8px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    gap: 6px;
+  }
+
+  .fp__search-text {
+    font-size: 11px;
+    color: #73767e;
+  }
+
+  .fp__contacts {
+    flex: 1;
+    overflow: hidden;
+    padding: 6px 0;
+  }
+
+  .fp__contact {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 14px;
+    cursor: pointer;
+    transition: background .15s;
+    position: relative;
+  }
+
+  .fp__contact--active {
+    background: rgba(0,102,255,.10);
+  }
+
+  .fp__contact--active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 6px;
+    bottom: 6px;
+    width: 3px;
+    background: #0066ff;
+    border-radius: 0 2px 2px 0;
+  }
+
+  .fp__avatar {
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .fp__avatar-img {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: #f4f5f7;
+  }
+
+  .fp__avatar-online {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #22c55e;
+    border: 2px solid #141417;
+  }
+
+  .fp__contact-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .fp__contact-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: #f4f5f7;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .fp__contact-preview {
+    font-size: 10px;
+    color: #73767e;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 1px;
+  }
+
+  .fp__contact-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    flex-shrink: 0;
+  }
+
+  .fp__contact-time {
+    font-size: 10px;
+    color: #73767e;
+  }
+
+  .fp__unread-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #0066ff;
+  }
+
+  /* ---- Chat area ---- */
+  .fp__chat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #141417;
+    min-width: 0;
+  }
+
+  .fp__chat-header {
+    padding: 14px 20px;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .fp__chat-avatar-wrap {
+    position: relative;
+  }
+
+  .fp__chat-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: #f4f5f7;
+  }
+
+  .fp__chat-header-info {
+    flex: 1;
+  }
+
+  .fp__chat-header-name {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #f4f5f7;
+  }
+
+  .fp__chat-header-role {
+    font-size: 11px;
+    color: #73767e;
+    margin-top: 1px;
+  }
+
+  .fp__chat-header-badge {
+    font-size: 10px;
+    background: rgba(34,197,94,.12);
+    color: #22c55e;
+    border: 1px solid rgba(34,197,94,.25);
+    border-radius: 100px;
+    padding: 3px 10px;
+    font-weight: 600;
+  }
+
+  .fp__messages {
+    flex: 1;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    overflow: hidden;
+  }
+
+  .fp__msg {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .fp__msg--out {
+    align-items: flex-end;
+  }
+
+  .fp__msg--in {
+    align-items: flex-start;
+  }
+
+  .fp__msg-label {
+    font-size: 10px;
+    color: #73767e;
+    padding: 0 4px;
+  }
+
+  .fp__msg-bubble {
+    max-width: 78%;
+    padding: 9px 13px;
+    border-radius: 12px;
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  .fp__msg--out .fp__msg-bubble {
+    background: rgba(0,102,255,.22);
+    border: 1px solid rgba(0,102,255,.35);
+    color: #d6e4ff;
+    border-bottom-right-radius: 3px;
+  }
+
+  .fp__msg--in .fp__msg-bubble {
+    background: #1a1a1f;
+    border: 1px solid rgba(255,255,255,.09);
+    color: #f4f5f7;
+    border-bottom-left-radius: 3px;
+  }
+
+  .fp__msg-time {
+    font-size: 10px;
+    color: #73767e;
+    padding: 0 4px;
+  }
+
+  /* System event */
+  .fp__event {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 0;
+  }
+
+  .fp__event-line {
+    flex: 1;
+    height: 1px;
+    background: rgba(255,255,255,.07);
+  }
+
+  .fp__event-text {
+    font-size: 10px;
+    color: #73767e;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+  }
+
+  .fp__event-icon {
+    width: 14px;
+    height: 14px;
+    background: rgba(0,102,255,.14);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  /* Typing indicator */
+  .fp__typing {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 0;
+  }
+
+  .fp__typing-avatar {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #2d6fa3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    font-weight: 700;
+    color: #fff;
+    flex-shrink: 0;
+  }
+
+  .fp__typing-bubble {
+    background: #1a1a1f;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 12px;
+    border-bottom-left-radius: 3px;
+    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .fp__typing-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #73767e;
+  }
+
+  .fp__typing-dot:nth-child(1) { animation: fp-bounce 1.2s infinite; }
+  .fp__typing-dot:nth-child(2) { animation: fp-bounce 1.2s .2s infinite; }
+  .fp__typing-dot:nth-child(3) { animation: fp-bounce 1.2s .4s infinite; }
+
+  @keyframes fp-bounce {
+    0%, 60%, 100% { transform: translateY(0); opacity: .5; }
+    30% { transform: translateY(-4px); opacity: 1; }
+  }
+
+  .fp__chat-input {
+    border-top: 1px solid rgba(255,255,255,.07);
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .fp__input-field {
+    flex: 1;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 8px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+  }
+
+  .fp__input-placeholder {
+    font-size: 11px;
+    color: #73767e;
+  }
+
+  .fp__send-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: #0066ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  /* ---- Footer pills ---- */
+  .fp__pills {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: 10px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .fp__pill {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: #1a1a1f;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 100px;
+    padding: 6px 14px;
+    font-size: 12px;
+    color: #a0a3ab;
+    font-weight: 500;
+  }
+
+  .fp__pill-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #0066ff;
+    flex-shrink: 0;
+  }
+</style>
+
+<div class="fp__glow"></div>
+<div class="fp__glow-bottom"></div>
+
+<div class="fp__header">
+  <div class="fp__label">
+    <div class="fp__label-dot"></div>
+    LinkedIn Outreach
+  </div>
+  <h2 class="fp__title">Erst vernetzen.<br><em>Dann sprechen.</em></h2>
+  <p class="fp__sub">Kein Pitch im ersten Atemzug. Echte Gespräche mit Entscheidern, die wirklich antworten.</p>
+</div>
+
+<div class="fp__mockup-wrap">
+
+  <!-- Badge TL -->
+  <div class="fp__badge fp__badge--tl">
+    <div class="fp__badge-icon">
+      <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 1.5C4.41 1.5 1.5 4.41 1.5 8s2.91 6.5 6.5 6.5 6.5-2.91 6.5-6.5S11.59 1.5 8 1.5zm0 2a1 1 0 110 2 1 1 0 010-2zm1.5 8h-3a.5.5 0 010-1H8V8h-.5a.5.5 0 010-1H8.5a.5.5 0 01.5.5v3h.5a.5.5 0 010 1z" fill="#0066ff"/>
+      </svg>
+    </div>
+    <div class="fp__badge-text">
+      <div class="fp__badge-num">38%</div>
+      <div class="fp__badge-desc">Antwortrate</div>
+    </div>
+  </div>
+
+  <!-- Badge TR -->
+  <div class="fp__badge fp__badge--tr">
+    <div class="fp__badge-icon">
+      <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13 2H3a1 1 0 00-1 1v8a1 1 0 001 1h3l2 2 2-2h3a1 1 0 001-1V3a1 1 0 00-1-1z" stroke="#0066ff" stroke-width="1.3" stroke-linejoin="round"/>
+        <path d="M5 6h6M5 9h4" stroke="#0066ff" stroke-width="1.3" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="fp__badge-text">
+      <div class="fp__badge-num">4.2</div>
+      <div class="fp__badge-desc">Nachrichten bis Termin</div>
+    </div>
+  </div>
+
+  <!-- Badge BR -->
+  <div class="fp__badge fp__badge--br">
+    <div class="fp__badge-icon">
+      <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2.5 8.5l3.5 3.5 7-7" stroke="#22c55e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="fp__badge-text">
+      <div class="fp__badge-num" style="color:#22c55e;">Aktiv</div>
+      <div class="fp__badge-desc">3 Gespräche laufen gerade</div>
+    </div>
+  </div>
+
+  <!-- Inbox Shell -->
+  <div class="fp__inbox-shell">
+
+    <!-- Browser chrome -->
+    <div class="fp__chrome">
+      <div class="fp__chrome-dot fp__chrome-dot--r"></div>
+      <div class="fp__chrome-dot fp__chrome-dot--y"></div>
+      <div class="fp__chrome-dot fp__chrome-dot--g"></div>
+      <div class="fp__chrome-url">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1a4 4 0 100 8A4 4 0 005 1zm0 1.2a2.8 2.8 0 110 5.6 2.8 2.8 0 010-5.6z" fill="#73767e"/></svg>
+        <span class="fp__chrome-url-text">linkedin.com / messaging</span>
+      </div>
+    </div>
+
+    <div class="fp__inbox-inner">
+
+      <!-- Sidebar contacts -->
+      <div class="fp__sidebar">
+        <div class="fp__sidebar-header">
+          <div class="fp__sidebar-title">Nachrichten</div>
+          <div class="fp__search">
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><circle cx="4.5" cy="4.5" r="3.5" stroke="#73767e" stroke-width="1.2"/><path d="M7.5 7.5l2 2" stroke="#73767e" stroke-width="1.2" stroke-linecap="round"/></svg>
+            <span class="fp__search-text">Suchen</span>
+          </div>
+        </div>
+
+        <div class="fp__contacts">
+
+          <div class="fp__contact fp__contact--active">
+            <div class="fp__avatar">
+              <div class="fp__avatar-img" style="background: linear-gradient(135deg,#2d6fa3,#1a4a7a);">MK</div>
+              <div class="fp__avatar-online"></div>
+            </div>
+            <div class="fp__contact-info">
+              <div class="fp__contact-name">Markus Kühn</div>
+              <div class="fp__contact-preview">Ja, sehr gerne!</div>
+            </div>
+            <div class="fp__contact-meta">
+              <div class="fp__contact-time">Jetzt</div>
+              <div class="fp__unread-dot"></div>
+            </div>
+          </div>
+
+          <div class="fp__contact">
+            <div class="fp__avatar">
+              <div class="fp__avatar-img" style="background: linear-gradient(135deg,#5b3fa3,#3d2a7a);">SL</div>
+              <div class="fp__avatar-online"></div>
+            </div>
+            <div class="fp__contact-info">
+              <div class="fp__contact-name">Sandra Löhr</div>
+              <div class="fp__contact-preview">Schick mir gerne die...</div>
+            </div>
+            <div class="fp__contact-meta">
+              <div class="fp__contact-time">2 Min</div>
+            </div>
+          </div>
+
+          <div class="fp__contact">
+            <div class="fp__avatar">
+              <div class="fp__avatar-img" style="background: linear-gradient(135deg,#a35f3f,#7a3f1a);">TR</div>
+            </div>
+            <div class="fp__contact-info">
+              <div class="fp__contact-name">Thomas Rösch</div>
+              <div class="fp__contact-preview">Danke für die Verbind...</div>
+            </div>
+            <div class="fp__contact-meta">
+              <div class="fp__contact-time">14 Min</div>
+            </div>
+          </div>
+
+          <div class="fp__contact">
+            <div class="fp__avatar">
+              <div class="fp__avatar-img" style="background: linear-gradient(135deg,#3fa37a,#1a7a4a);">AB</div>
+            </div>
+            <div class="fp__contact-info">
+              <div class="fp__contact-name">Anna Böhm</div>
+              <div class="fp__contact-preview">Wann hätten Sie Zeit?</div>
+            </div>
+            <div class="fp__contact-meta">
+              <div class="fp__contact-time">1 Std</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Chat messages -->
+      <div class="fp__chat">
+
+        <div class="fp__chat-header">
+          <div class="fp__chat-avatar-wrap">
+            <div class="fp__chat-avatar" style="background: linear-gradient(135deg,#2d6fa3,#1a4a7a);">MK</div>
+            <div class="fp__avatar-online" style="border-color: #141417;"></div>
+          </div>
+          <div class="fp__chat-header-info">
+            <div class="fp__chat-header-name">Markus Kühn</div>
+            <div class="fp__chat-header-role">VP Sales - B2B Solutions GmbH</div>
+          </div>
+          <div class="fp__chat-header-badge">Online</div>
+        </div>
+
+        <div class="fp__messages">
+
+          <!-- Event: connected -->
+          <div class="fp__event">
+            <div class="fp__event-line"></div>
+            <div class="fp__event-text">
+              <div class="fp__event-icon">
+                <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4h5M4 1.5v5" stroke="#0066ff" stroke-width="1.3" stroke-linecap="round"/></svg>
+              </div>
+              Vernetzung angenommen - Montag, 9:12 Uhr
+            </div>
+            <div class="fp__event-line"></div>
+          </div>
+
+          <div class="fp__msg fp__msg--out">
+            <div class="fp__msg-label">Du</div>
+            <div class="fp__msg-bubble">Hallo Markus, ich sehe wir teilen beide den Fokus auf B2B-Sales. Ich hätte eine kurze Frage zu eurem aktuellen Outbound-Setup, falls es passt?</div>
+            <div class="fp__msg-time">Mo. 09:14</div>
+          </div>
+
+          <div class="fp__msg fp__msg--in">
+            <div class="fp__msg-label">Markus Kühn</div>
+            <div class="fp__msg-bubble">Klar, was möchten Sie wissen? Wir kämpfen gerade selbst mit der Qualität unserer Pipeline.</div>
+            <div class="fp__msg-time">Mo. 11:32</div>
+          </div>
+
+          <div class="fp__msg fp__msg--out">
+            <div class="fp__msg-bubble">Interessant, das höre ich öfter. Meistens liegt es am Timing oder an der Personalisierung. Darf ich fragen, wie ihr aktuell qualifiziert?</div>
+            <div class="fp__msg-time">Mo. 11:45</div>
+          </div>
+
+          <div class="fp__msg fp__msg--in">
+            <div class="fp__msg-bubble">Hauptsächlich über Empfehlungen und ein paar LinkedIn-Kampagnen, aber die konvertieren schlecht.</div>
+            <div class="fp__msg-time">Di. 08:21</div>
+          </div>
+
+          <div class="fp__msg fp__msg--out">
+            <div class="fp__msg-bubble">Das kenne ich genau. Wir haben da einen Ansatz der genau das löst. 15 Minuten diese Woche?</div>
+            <div class="fp__msg-time">Di. 09:05</div>
+          </div>
+
+          <!-- Active typing -->
+          <div class="fp__typing">
+            <div class="fp__typing-avatar">MK</div>
+            <div class="fp__typing-bubble">
+              <div class="fp__typing-dot"></div>
+              <div class="fp__typing-dot"></div>
+              <div class="fp__typing-dot"></div>
+            </div>
+          </div>
+
+          <div class="fp__msg fp__msg--in" style="opacity:.55;">
+            <div class="fp__msg-bubble" style="border-style:dashed;">Ja, sehr gerne! Donnerstag 10 Uhr wäre perfekt...</div>
+            <div class="fp__msg-time" style="font-style:italic;">schreibt gerade</div>
+          </div>
+
+        </div>
+
+        <div class="fp__chat-input">
+          <div class="fp__input-field">
+            <span class="fp__input-placeholder">Nachricht schreiben...</span>
+          </div>
+          <div class="fp__send-btn">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M12.5 7L1.5 1.5l2.5 5.5-2.5 5.5L12.5 7z" fill="white"/></svg>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="fp__pills">
+  <div class="fp__pill">
+    <div class="fp__pill-dot"></div>
+    Kein Pitch im ersten Atemzug
+  </div>
+  <div class="fp__pill">
+    <div class="fp__pill-dot"></div>
+    KI-personalisierte Eröffnung
+  </div>
+  <div class="fp__pill">
+    <div class="fp__pill-dot"></div>
+    Echte Entscheider, echte Antworten
+  </div>
+  <div class="fp__pill">
+    <div class="fp__pill-dot"></div>
+    Gespräch statt Massennachricht
+  </div>
+</div>
+
+</section>
+</body></html>

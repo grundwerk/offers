@@ -1,0 +1,532 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://api.fontshare.com" crossorigin><link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=inter@400,500,600&display=swap" rel="stylesheet"><style>html,body{margin:0;background:#0e0e10}</style></head><body>
+<section class="fp">
+<style>
+  .fp {
+    position: relative;
+    min-height: 88vh;
+    width: 100%;
+    background-color: #141417;
+    background-image:
+      linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 42px 42px;
+    display: flex;
+    align-items: stretch;
+    overflow: hidden;
+    box-sizing: border-box;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+  }
+
+  .fp *, .fp *::before, .fp *::after {
+    box-sizing: border-box;
+  }
+
+  .fp__inner {
+    display: flex;
+    width: 100%;
+    min-height: 88vh;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Left column: editorial typography */
+  .fp__left {
+    flex: 0 0 58%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 72px 64px 64px 72px;
+    position: relative;
+  }
+
+  .fp__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0;
+  }
+
+  .fp__eyebrow-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #0066ff;
+    flex-shrink: 0;
+  }
+
+  .fp__eyebrow-text {
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #0066ff;
+  }
+
+  .fp__headline-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+    margin-top: -24px;
+  }
+
+  .fp__headline {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-weight: 700;
+    line-height: 0.92;
+    color: #f4f5f7;
+    margin: 0;
+    padding: 0;
+  }
+
+  .fp__headline-line1 {
+    font-size: clamp(80px, 10.5vw, 148px);
+    display: block;
+    letter-spacing: -0.03em;
+  }
+
+  .fp__headline-line2 {
+    font-size: clamp(80px, 10.5vw, 148px);
+    display: block;
+    letter-spacing: -0.03em;
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(244,245,247,0.28);
+  }
+
+  .fp__headline-line3 {
+    font-size: clamp(80px, 10.5vw, 148px);
+    display: block;
+    letter-spacing: -0.03em;
+  }
+
+  .fp__bottom-row {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .fp__divider-line {
+    width: 40px;
+    height: 1px;
+    background: rgba(0,102,255,.40);
+  }
+
+  .fp__body {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #a0a3ab;
+    max-width: 380px;
+    margin: 0;
+  }
+
+  .fp__body strong {
+    color: #f4f5f7;
+    font-weight: 500;
+  }
+
+  /* Right column: precision diagram */
+  .fp__right {
+    flex: 0 0 42%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 72px 72px 72px 32px;
+    position: relative;
+  }
+
+  /* Vertical separator */
+  .fp__separator {
+    position: absolute;
+    left: 0;
+    top: 15%;
+    height: 70%;
+    width: 1px;
+    background: rgba(255,255,255,.09);
+  }
+
+  .fp__diagram {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+  }
+
+  /* The convergence spine */
+  .fp__spine {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(180deg, rgba(0,102,255,0) 0%, rgba(0,102,255,.55) 30%, rgba(0,102,255,.55) 70%, rgba(0,102,255,0) 100%);
+  }
+
+  .fp__spine-glow {
+    position: absolute;
+    right: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 13px;
+    height: 60px;
+    background: radial-gradient(ellipse at center, rgba(0,102,255,.35) 0%, transparent 70%);
+    filter: blur(4px);
+  }
+
+  .fp__role-row {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    position: relative;
+    height: 64px;
+  }
+
+  .fp__role-row:not(:last-child) {
+    border-bottom: 1px solid rgba(255,255,255,.05);
+  }
+
+  .fp__role-label {
+    width: 130px;
+    flex-shrink: 0;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #73767e;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+  }
+
+  .fp__role-row.fp__role-row--active .fp__role-label {
+    color: #a0a3ab;
+  }
+
+  /* The horizontal track line */
+  .fp__track {
+    flex: 1;
+    height: 1px;
+    position: relative;
+    margin-right: 0;
+  }
+
+  .fp__track-base {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgba(255,255,255,.08);
+  }
+
+  .fp__track-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(0,102,255,.35) 60%, rgba(0,102,255,.7) 100%);
+  }
+
+  /* Signal dot on the track */
+  .fp__signal {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .fp__signal-outer {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(0,102,255,.12);
+    border: 1px solid rgba(0,102,255,.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .fp__signal-inner {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #0066ff;
+  }
+
+  /* Subtle pulse ring */
+  .fp__signal-pulse {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,102,255,.2);
+    animation: fp-pulse 2.4s ease-out infinite;
+  }
+
+  @keyframes fp-pulse {
+    0% { transform: scale(0.7); opacity: 0.8; }
+    100% { transform: scale(1.4); opacity: 0; }
+  }
+
+  /* Second smaller dot - message sent indicator */
+  .fp__msg-dot {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: rgba(0,102,255,.5);
+  }
+
+  /* Convergence bracket on right edge */
+  .fp__bracket {
+    position: absolute;
+    right: -24px;
+    top: 0;
+    bottom: 0;
+    width: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .fp__account-label {
+    position: absolute;
+    right: -88px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .fp__account-tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #0066ff;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    white-space: nowrap;
+  }
+
+  .fp__account-sub {
+    font-size: 10px;
+    color: #73767e;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    white-space: nowrap;
+    letter-spacing: 0.04em;
+  }
+
+  /* Number badge top-right */
+  .fp__count-badge {
+    position: absolute;
+    top: 56px;
+    right: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+  }
+
+  .fp__count-num {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(0,102,255,.30);
+    letter-spacing: -0.03em;
+  }
+
+  .fp__count-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #73767e;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    text-align: right;
+  }
+
+  /* Ambient glow behind diagram */
+  .fp__glow {
+    position: absolute;
+    right: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 200px;
+    height: 320px;
+    background: radial-gradient(ellipse at center, rgba(0,102,255,.07) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Large background number */
+  .fp__bg-number {
+    position: absolute;
+    bottom: -40px;
+    left: 48px;
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: 320px;
+    font-weight: 700;
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255,255,255,.03);
+    letter-spacing: -0.05em;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+  }
+</style>
+
+<!-- Background ghost number -->
+<div class="fp__bg-number" aria-hidden="true">5</div>
+
+<div class="fp__inner">
+
+  <!-- LEFT: editorial typography -->
+  <div class="fp__left">
+    <div class="fp__eyebrow">
+      <div class="fp__eyebrow-dot"></div>
+      <span class="fp__eyebrow-text">Account-based Outreach</span>
+    </div>
+
+    <div class="fp__headline-block">
+      <h2 class="fp__headline">
+        <span class="fp__headline-line1">Jede</span>
+        <span class="fp__headline-line2">Rolle.</span>
+        <span class="fp__headline-line3">Eigene</span>
+      </h2>
+      <!-- Fourth line in blue accent -->
+      <div style="font-family:'Clash Display',system-ui,sans-serif;font-weight:700;font-size:clamp(80px,10.5vw,148px);line-height:0.92;letter-spacing:-0.03em;color:#0066ff;margin:0;padding:0;">
+        Botschaft.
+      </div>
+    </div>
+
+    <div class="fp__bottom-row">
+      <div class="fp__divider-line"></div>
+      <p class="fp__body">
+        Wir sprechen <strong>3 bis 5 Entscheider</strong> im selben Account koordiniert an. CFO, CTO, CMO - jede Funktion erhält eine Botschaft, die exakt auf ihre Prioritaeten zugeschnitten ist.
+      </p>
+    </div>
+  </div>
+
+  <!-- RIGHT: precision diagram -->
+  <div class="fp__right">
+    <div class="fp__glow" aria-hidden="true"></div>
+    <div class="fp__separator" aria-hidden="true"></div>
+
+    <!-- Count badge -->
+    <div class="fp__count-badge" aria-hidden="true">
+      <div class="fp__count-num">5</div>
+      <div class="fp__count-label">Entscheider</div>
+    </div>
+
+    <div class="fp__diagram" role="img" aria-label="Diagramm: fuenf Rollen konvergieren auf einen Account">
+      <!-- Convergence spine -->
+      <div class="fp__spine" aria-hidden="true"></div>
+      <div class="fp__spine-glow" aria-hidden="true"></div>
+
+      <!-- Role rows -->
+      <!-- Row 1: CEO -->
+      <div class="fp__role-row fp__role-row--active">
+        <div class="fp__role-label">CEO</div>
+        <div class="fp__track">
+          <div class="fp__track-base"></div>
+          <div class="fp__track-fill" style="width:78%;"></div>
+          <div class="fp__msg-dot" style="left:22%;"></div>
+          <div class="fp__msg-dot" style="left:48%;"></div>
+          <div class="fp__signal" style="left:78%;">
+            <div class="fp__signal-pulse"></div>
+            <div class="fp__signal-outer">
+              <div class="fp__signal-inner"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2: CFO -->
+      <div class="fp__role-row fp__role-row--active">
+        <div class="fp__role-label">CFO</div>
+        <div class="fp__track">
+          <div class="fp__track-base"></div>
+          <div class="fp__track-fill" style="width:65%;"></div>
+          <div class="fp__msg-dot" style="left:31%;"></div>
+          <div class="fp__signal" style="left:65%;">
+            <div class="fp__signal-outer" style="animation-delay:0.4s;">
+              <div class="fp__signal-inner"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 3: CTO (active, with pulse) -->
+      <div class="fp__role-row fp__role-row--active">
+        <div class="fp__role-label">CTO</div>
+        <div class="fp__track">
+          <div class="fp__track-base"></div>
+          <div class="fp__track-fill" style="width:88%;background:linear-gradient(90deg,transparent 0%,rgba(0,102,255,.55) 50%,rgba(0,102,255,1) 100%);"></div>
+          <div class="fp__msg-dot" style="left:18%;"></div>
+          <div class="fp__msg-dot" style="left:52%;"></div>
+          <div class="fp__msg-dot" style="left:71%;"></div>
+          <div class="fp__signal" style="left:88%;">
+            <div class="fp__signal-pulse" style="animation-duration:1.8s;border-color:rgba(0,102,255,.4);"></div>
+            <div class="fp__signal-outer" style="background:rgba(0,102,255,.22);border-color:rgba(0,102,255,.7);">
+              <div class="fp__signal-inner" style="background:#0066ff;box-shadow:0 0 8px rgba(0,102,255,.8);"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 4: CMO -->
+      <div class="fp__role-row">
+        <div class="fp__role-label">CMO</div>
+        <div class="fp__track">
+          <div class="fp__track-base"></div>
+          <div class="fp__track-fill" style="width:54%;"></div>
+          <div class="fp__msg-dot" style="left:26%;"></div>
+          <div class="fp__signal" style="left:54%;">
+            <div class="fp__signal-outer" style="opacity:.75;">
+              <div class="fp__signal-inner"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 5: COO -->
+      <div class="fp__role-row">
+        <div class="fp__role-label">COO</div>
+        <div class="fp__track">
+          <div class="fp__track-base"></div>
+          <div class="fp__track-fill" style="width:42%;"></div>
+          <div class="fp__signal" style="left:42%;">
+            <div class="fp__signal-outer" style="opacity:.55;">
+              <div class="fp__signal-inner"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Account label anchored right of spine -->
+      <div class="fp__account-label" aria-hidden="true">
+        <span class="fp__account-tag">Account</span>
+        <span class="fp__account-sub">koordiniert</span>
+      </div>
+    </div>
+
+    <!-- Bottom annotation -->
+    <div style="margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);width:100%;display:flex;align-items:center;gap:12px;">
+      <div style="width:8px;height:8px;border-radius:50%;background:#0066ff;flex-shrink:0;box-shadow:0 0 10px rgba(0,102,255,.6);"></div>
+      <span style="font-size:11px;color:#73767e;font-family:'Inter',Helvetica,Arial,sans-serif;letter-spacing:0.04em;">Jede Botschaft unabhaengig optimiert. Alle Kontakte koordiniert getrackt.</span>
+    </div>
+  </div>
+
+</div>
+</section>
+</body></html>

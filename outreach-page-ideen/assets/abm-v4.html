@@ -1,0 +1,632 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://api.fontshare.com" crossorigin><link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=inter@400,500,600&display=swap" rel="stylesheet"><style>html,body{margin:0;background:#0e0e10}</style></head><body>
+<section class="fp">
+<style>
+  .fp {
+    box-sizing: border-box;
+    background-color: #0e0e10;
+    background-image:
+      linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 42px 42px;
+    min-height: 88vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 64px 48px;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    color: #f4f5f7;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .fp * {
+    box-sizing: border-box;
+  }
+
+  /* Atmospheric blue glow */
+  .fp-glow {
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 520px;
+    height: 520px;
+    background: radial-gradient(ellipse at center, rgba(0,102,255,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .fp-glow-bottom {
+    position: absolute;
+    bottom: -120px;
+    left: 10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(ellipse at center, rgba(0,102,255,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* Layout */
+  .fp-inner {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  /* LEFT: Copy */
+  .fp-left {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .fp-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0,102,255,.14);
+    border: 1px solid rgba(0,102,255,.40);
+    border-radius: 100px;
+    padding: 5px 14px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #6699ff;
+    width: fit-content;
+  }
+
+  .fp-eyebrow-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #0066ff;
+    animation: fp-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes fp-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.75); }
+  }
+
+  .fp-heading {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -.02em;
+    color: #f4f5f7;
+    margin: 0;
+  }
+
+  .fp-heading em {
+    font-style: normal;
+    color: #0066ff;
+  }
+
+  .fp-subtext {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #a0a3ab;
+    max-width: 420px;
+  }
+
+  /* Timeline connector */
+  .fp-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 8px;
+  }
+
+  .fp-tl-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .fp-tl-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    width: 32px;
+  }
+
+  .fp-tl-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+
+  .fp-tl-dot.blue { border-color: #0066ff; background: #0066ff; }
+  .fp-tl-dot.mid  { border-color: rgba(0,102,255,.5); background: transparent; }
+  .fp-tl-dot.soft { border-color: rgba(0,102,255,.25); background: transparent; }
+
+  .fp-tl-line {
+    width: 1px;
+    flex: 1;
+    min-height: 32px;
+    background: linear-gradient(to bottom, rgba(0,102,255,.4), rgba(0,102,255,.1));
+    margin: 4px 0;
+  }
+
+  .fp-tl-content {
+    padding-bottom: 28px;
+    flex: 1;
+  }
+
+  .fp-tl-role {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: #a0a3ab;
+    margin-bottom: 2px;
+  }
+
+  .fp-tl-text {
+    font-size: 14px;
+    color: #73767e;
+    line-height: 1.5;
+  }
+
+  .fp-tl-text strong {
+    color: #f4f5f7;
+    font-weight: 500;
+  }
+
+  /* RIGHT: Message stream */
+  .fp-right {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+  }
+
+  /* Account header */
+  .fp-account-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    background: #141417;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 14px;
+    margin-bottom: 4px;
+  }
+
+  .fp-company-logo {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #1a2040, #0d1530);
+    border: 1px solid rgba(0,102,255,.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .fp-company-info {
+    flex: 1;
+  }
+
+  .fp-company-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #f4f5f7;
+    line-height: 1.2;
+  }
+
+  .fp-company-meta {
+    font-size: 11px;
+    color: #73767e;
+    margin-top: 1px;
+  }
+
+  .fp-account-badge {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: #0066ff;
+    background: rgba(0,102,255,.14);
+    border: 1px solid rgba(0,102,255,.3);
+    border-radius: 6px;
+    padding: 3px 8px;
+  }
+
+  /* Message cards */
+  .fp-msg {
+    background: #141417;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 14px;
+    padding: 16px 18px;
+    position: relative;
+    transition: border-color 0.3s;
+    animation: fp-slide-in 0.5s ease-out both;
+  }
+
+  .fp-msg:hover {
+    border-color: rgba(0,102,255,.35);
+  }
+
+  .fp-msg.active {
+    border-color: rgba(0,102,255,.40);
+    background: #141417;
+  }
+
+  .fp-msg.active::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0,102,255,.6), transparent);
+    border-radius: 14px 14px 0 0;
+  }
+
+  @keyframes fp-slide-in {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .fp-msg:nth-child(2) { animation-delay: 0.1s; }
+  .fp-msg:nth-child(3) { animation-delay: 0.25s; }
+  .fp-msg:nth-child(4) { animation-delay: 0.4s; }
+
+  .fp-msg-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .fp-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: #f4f5f7;
+    letter-spacing: .02em;
+  }
+
+  .fp-avatar.ceo  { background: linear-gradient(135deg, #003d99, #0066ff); }
+  .fp-avatar.cto  { background: linear-gradient(135deg, #1a1a4d, #3355cc); }
+  .fp-avatar.cpo  { background: linear-gradient(135deg, #002266, #0044cc); }
+
+  .fp-msg-meta {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .fp-msg-recipient {
+    font-size: 13px;
+    font-weight: 600;
+    color: #f4f5f7;
+    line-height: 1.2;
+  }
+
+  .fp-msg-role-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 5px;
+    margin-top: 3px;
+  }
+
+  .fp-msg-role-tag.ceo { color: #6699ff; background: rgba(0,102,255,.15); }
+  .fp-msg-role-tag.cto { color: #99aaff; background: rgba(51,85,204,.15); }
+  .fp-msg-role-tag.cpo { color: #7788ee; background: rgba(0,68,204,.15); }
+
+  .fp-msg-time {
+    font-size: 11px;
+    color: #73767e;
+    white-space: nowrap;
+  }
+
+  .fp-msg-subject {
+    font-size: 12px;
+    font-weight: 600;
+    color: #a0a3ab;
+    margin-bottom: 5px;
+    letter-spacing: .01em;
+  }
+
+  .fp-msg-body {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #73767e;
+  }
+
+  .fp-msg-body strong {
+    color: #a0a3ab;
+    font-weight: 500;
+  }
+
+  .fp-msg-body .fp-highlight {
+    color: #f4f5f7;
+    font-weight: 500;
+  }
+
+  /* Sent indicator */
+  .fp-sent-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+    margin-top: 8px;
+  }
+
+  .fp-sent-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #0066ff;
+  }
+
+  .fp-sent-label {
+    font-size: 10px;
+    color: #0066ff;
+    font-weight: 600;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+
+  /* Coordination indicator below cards */
+  .fp-coord-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    background: rgba(0,102,255,.06);
+    border: 1px solid rgba(0,102,255,.2);
+    border-radius: 10px;
+    margin-top: 4px;
+  }
+
+  .fp-coord-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  .fp-coord-text {
+    font-size: 12px;
+    color: #a0a3ab;
+    line-height: 1.4;
+  }
+
+  .fp-coord-text strong {
+    color: #6699ff;
+  }
+
+  /* Stats row */
+  .fp-stats {
+    display: flex;
+    gap: 24px;
+    margin-top: 4px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,.06);
+  }
+
+  .fp-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .fp-stat-num {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #f4f5f7;
+    letter-spacing: -.03em;
+    line-height: 1;
+  }
+
+  .fp-stat-num span {
+    color: #0066ff;
+  }
+
+  .fp-stat-label {
+    font-size: 12px;
+    color: #73767e;
+    line-height: 1.3;
+  }
+</style>
+
+<!-- Glows -->
+<div class="fp-glow"></div>
+<div class="fp-glow-bottom"></div>
+
+<div class="fp-inner">
+
+  <!-- LEFT COLUMN -->
+  <div class="fp-left">
+
+    <div class="fp-eyebrow">
+      <span class="fp-eyebrow-dot"></span>
+      Account-based Outreach
+    </div>
+
+    <h2 class="fp-heading">
+      Jede Rolle<br>
+      erhält <em>ihre</em><br>
+      Botschaft.
+    </h2>
+
+    <p class="fp-subtext">
+      Wir sprechen 3 bis 5 Entscheider im selben Account gleichzeitig an. Koordiniert, zeitgestaffelt und mit je einer Nachricht, die zu ihrer Perspektive passt.
+    </p>
+
+    <div class="fp-timeline">
+
+      <div class="fp-tl-item">
+        <div class="fp-tl-left">
+          <div class="fp-tl-dot blue"></div>
+          <div class="fp-tl-line"></div>
+        </div>
+        <div class="fp-tl-content">
+          <div class="fp-tl-role">Tag 1 - CEO</div>
+          <div class="fp-tl-text">Strategische Vision: <strong>Wachstum und Marktposition.</strong> Kein technisches Detail.</div>
+        </div>
+      </div>
+
+      <div class="fp-tl-item">
+        <div class="fp-tl-left">
+          <div class="fp-tl-dot mid"></div>
+          <div class="fp-tl-line"></div>
+        </div>
+        <div class="fp-tl-content">
+          <div class="fp-tl-role">Tag 2 - CTO</div>
+          <div class="fp-tl-text">Technische Tiefe: <strong>Integration, Skalierbarkeit, Stack.</strong> Keine Buzzwords.</div>
+        </div>
+      </div>
+
+      <div class="fp-tl-item">
+        <div class="fp-tl-left">
+          <div class="fp-tl-dot soft"></div>
+        </div>
+        <div class="fp-tl-content" style="padding-bottom: 0;">
+          <div class="fp-tl-role">Tag 3 - CPO</div>
+          <div class="fp-tl-text">Produktfokus: <strong>Nutzererlebnis, Roadmap, KPIs.</strong> Zahlen statt Versprechen.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="fp-stats">
+      <div class="fp-stat">
+        <div class="fp-stat-num">3<span>-</span>5</div>
+        <div class="fp-stat-label">Rollen pro<br>Account</div>
+      </div>
+      <div class="fp-stat">
+        <div class="fp-stat-num"><span>+</span>61<span>%</span></div>
+        <div class="fp-stat-label">höhere Antwort-<br>wahrscheinlichkeit</div>
+      </div>
+      <div class="fp-stat">
+        <div class="fp-stat-num">1</div>
+        <div class="fp-stat-label">koordinierter<br>Ansatz</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RIGHT COLUMN: Message stream -->
+  <div class="fp-right">
+
+    <!-- Account badge -->
+    <div class="fp-account-header">
+      <div class="fp-company-logo">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <rect x="3" y="3" width="6" height="6" rx="1.5" fill="#0066ff" opacity=".9"/>
+          <rect x="11" y="3" width="6" height="6" rx="1.5" fill="#0066ff" opacity=".5"/>
+          <rect x="3" y="11" width="6" height="6" rx="1.5" fill="#0066ff" opacity=".5"/>
+          <rect x="11" y="11" width="6" height="6" rx="1.5" fill="#0066ff" opacity=".25"/>
+        </svg>
+      </div>
+      <div class="fp-company-info">
+        <div class="fp-company-name">Nexvara GmbH</div>
+        <div class="fp-company-meta">B2B-SaaS, 120-250 Mitarbeiter, Hamburg</div>
+      </div>
+      <div class="fp-account-badge">Ziel-Account</div>
+    </div>
+
+    <!-- Message 1: CEO -->
+    <div class="fp-msg active">
+      <div class="fp-msg-header">
+        <div class="fp-avatar ceo">MK</div>
+        <div class="fp-msg-meta">
+          <div class="fp-msg-recipient">Markus Kirchner</div>
+          <span class="fp-msg-role-tag ceo">CEO</span>
+        </div>
+        <div class="fp-msg-time">Di. 09:14</div>
+      </div>
+      <div class="fp-msg-subject">Betreff: Nexvaras Expansion nach DACH</div>
+      <div class="fp-msg-body">
+        Markus, in Q1 habt ihr <span class="fp-highlight">drei neue Enterprise-Kunden</span> gewonnen. Der nächste Schritt braucht mehr Pipeline, schneller. Wir haben das für ähnliche SaaS-Unternehmen in 6 Wochen aufgebaut.
+      </div>
+      <div class="fp-sent-row">
+        <div class="fp-sent-dot"></div>
+        <div class="fp-sent-label">Gesendet</div>
+      </div>
+    </div>
+
+    <!-- Message 2: CTO -->
+    <div class="fp-msg">
+      <div class="fp-msg-header">
+        <div class="fp-avatar cto">SA</div>
+        <div class="fp-msg-meta">
+          <div class="fp-msg-recipient">Sandra Albrecht</div>
+          <span class="fp-msg-role-tag cto">CTO</span>
+        </div>
+        <div class="fp-msg-time">Mi. 10:02</div>
+      </div>
+      <div class="fp-msg-subject">Betreff: Outreach-Infrastruktur ohne internen Aufwand</div>
+      <div class="fp-msg-body">
+        Sandra, keine API-Integration, kein Datensilo. Unsere Systeme laufen <span class="fp-highlight">vollständig extern</span>, euer Stack bleibt unberührt. Deployment in 48 Stunden.
+      </div>
+      <div class="fp-sent-row">
+        <div class="fp-sent-dot"></div>
+        <div class="fp-sent-label">Gesendet</div>
+      </div>
+    </div>
+
+    <!-- Message 3: CPO -->
+    <div class="fp-msg">
+      <div class="fp-msg-header">
+        <div class="fp-avatar cpo">TW</div>
+        <div class="fp-msg-meta">
+          <div class="fp-msg-recipient">Tim Wendland</div>
+          <span class="fp-msg-role-tag cpo">CPO</span>
+        </div>
+        <div class="fp-msg-time">Do. 11:30</div>
+      </div>
+      <div class="fp-msg-subject">Betreff: Pipeline-Qualität statt Volumen</div>
+      <div class="fp-msg-body">
+        Tim, wir schicken euch nur Leads, die <span class="fp-highlight">eurem ICP entsprechen</span>, qualifiziert bevor der erste Kontakt entsteht. Durchschnittlich 4,2 qualifizierte Meetings pro Woche in Woche 3.
+      </div>
+      <div class="fp-sent-row">
+        <div class="fp-sent-dot"></div>
+        <div class="fp-sent-label">Gesendet</div>
+      </div>
+    </div>
+
+    <!-- Coordination note -->
+    <div class="fp-coord-bar">
+      <svg class="fp-coord-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+        <circle cx="5" cy="10" r="2.5" stroke="#0066ff" stroke-width="1.5"/>
+        <circle cx="15" cy="5" r="2.5" stroke="#0066ff" stroke-width="1.5" opacity=".7"/>
+        <circle cx="15" cy="15" r="2.5" stroke="#0066ff" stroke-width="1.5" opacity=".5"/>
+        <line x1="7.2" y1="8.8" x2="12.8" y2="6.2" stroke="rgba(0,102,255,.5)" stroke-width="1" stroke-dasharray="2 2"/>
+        <line x1="7.2" y1="11.2" x2="12.8" y2="13.8" stroke="rgba(0,102,255,.35)" stroke-width="1" stroke-dasharray="2 2"/>
+      </svg>
+      <div class="fp-coord-text">
+        <strong>Koordiniert gesteuert:</strong> Alle drei Nachrichten stammen aus einer Kampagne. Antwortet eine Person, pausiert der Rest automatisch.
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</section>
+</body></html>

@@ -1,0 +1,759 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://api.fontshare.com" crossorigin><link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=inter@400,500,600&display=swap" rel="stylesheet"><style>html,body{margin:0;background:#0e0e10}</style></head><body>
+<section class="fp">
+<style>
+  .fp {
+    background-color: #0e0e10;
+    background-image:
+      linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 42px 42px;
+    min-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 64px 40px;
+    box-sizing: border-box;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .fp-glow {
+    position: absolute;
+    bottom: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 340px;
+    background: radial-gradient(ellipse at center, rgba(0,102,255,.22) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .fp-glow-top {
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(ellipse at center, rgba(0,102,255,.08) 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .fp-header {
+    text-align: center;
+    margin-bottom: 44px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .fp-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(0,102,255,.14);
+    border: 1px solid rgba(0,102,255,.40);
+    border-radius: 100px;
+    padding: 5px 14px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #0066ff;
+    margin-bottom: 20px;
+  }
+
+  .fp-eyebrow-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #0066ff;
+    animation: fp-pulse 1.6s ease-in-out infinite;
+  }
+
+  @keyframes fp-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .45; transform: scale(.75); }
+  }
+
+  .fp-title {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: clamp(30px, 4vw, 50px);
+    font-weight: 700;
+    color: #f4f5f7;
+    line-height: 1.1;
+    margin: 0 0 14px;
+    letter-spacing: -.02em;
+  }
+
+  .fp-subtitle {
+    font-size: 16px;
+    color: #a0a3ab;
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* Browser mockup */
+  .fp-browser {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 860px;
+    background: #141417;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow:
+      0 0 0 1px rgba(0,102,255,.12),
+      0 24px 80px rgba(0,0,0,.7),
+      0 8px 24px rgba(0,0,0,.5);
+  }
+
+  .fp-browser-bar {
+    background: #1a1a1f;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .fp-browser-dots {
+    display: flex;
+    gap: 6px;
+  }
+
+  .fp-browser-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  .fp-browser-dot-r { background: #ff5f57; }
+  .fp-browser-dot-y { background: #febc2e; }
+  .fp-browser-dot-g { background: #28c840; }
+
+  .fp-browser-url {
+    flex: 1;
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.07);
+    border-radius: 6px;
+    padding: 5px 12px;
+    font-size: 12px;
+    color: #73767e;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .fp-url-lock {
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
+  }
+
+  /* App layout */
+  .fp-app {
+    display: flex;
+    height: 480px;
+  }
+
+  /* Sidebar */
+  .fp-sidebar {
+    width: 220px;
+    flex-shrink: 0;
+    background: #111114;
+    border-right: 1px solid rgba(255,255,255,.06);
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fp-sidebar-logo {
+    padding: 0 20px 20px;
+    border-bottom: 1px solid rgba(255,255,255,.05);
+    margin-bottom: 16px;
+  }
+
+  .fp-logo-mark {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #f4f5f7;
+  }
+
+  .fp-logo-icon {
+    width: 26px;
+    height: 26px;
+    background: #0066ff;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .fp-nav-item {
+    padding: 9px 20px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #73767e;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    cursor: pointer;
+    border-radius: 0;
+  }
+
+  .fp-nav-item.active {
+    color: #f4f5f7;
+    background: rgba(0,102,255,.10);
+    border-left: 2px solid #0066ff;
+  }
+
+  .fp-nav-icon {
+    width: 14px;
+    height: 14px;
+    opacity: .7;
+  }
+
+  .fp-sidebar-section {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .10em;
+    text-transform: uppercase;
+    color: #73767e;
+    padding: 16px 20px 8px;
+  }
+
+  .fp-queue-item {
+    padding: 8px 20px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 11px;
+    color: #a0a3ab;
+  }
+
+  .fp-queue-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .fp-queue-dot-green { background: #22c55e; }
+  .fp-queue-dot-blue { background: #0066ff; animation: fp-pulse 1.6s ease-in-out infinite; }
+  .fp-queue-dot-gray { background: #73767e; }
+
+  .fp-queue-count {
+    margin-left: auto;
+    font-size: 10px;
+    color: #73767e;
+    background: rgba(255,255,255,.06);
+    border-radius: 100px;
+    padding: 1px 7px;
+  }
+
+  /* Main content */
+  .fp-main {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fp-main-header {
+    padding: 18px 24px;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .fp-main-title {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #f4f5f7;
+  }
+
+  .fp-main-sub {
+    font-size: 11px;
+    color: #73767e;
+    margin-top: 2px;
+  }
+
+  .fp-live-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(34,197,94,.12);
+    border: 1px solid rgba(34,197,94,.25);
+    border-radius: 100px;
+    padding: 4px 11px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: #22c55e;
+  }
+
+  .fp-live-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #22c55e;
+    animation: fp-pulse 1.2s ease-in-out infinite;
+  }
+
+  /* Signal feed */
+  .fp-feed {
+    flex: 1;
+    overflow: hidden;
+    padding: 16px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .fp-signal-card {
+    background: #1a1a1f;
+    border: 1px solid rgba(255,255,255,.07);
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    transition: border-color .2s;
+    position: relative;
+  }
+
+  .fp-signal-card.active {
+    border-color: rgba(0,102,255,.40);
+    background: rgba(0,102,255,.05);
+  }
+
+  .fp-signal-card.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #0066ff;
+    border-radius: 10px 0 0 10px;
+  }
+
+  .fp-company-logo {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 800;
+    font-family: 'Clash Display', system-ui, sans-serif;
+    color: #fff;
+  }
+
+  .fp-company-logo-a { background: linear-gradient(135deg, #6366f1, #8b5cf6); }
+  .fp-company-logo-b { background: linear-gradient(135deg, #f59e0b, #ef4444); }
+  .fp-company-logo-c { background: linear-gradient(135deg, #10b981, #0891b2); }
+
+  .fp-signal-body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .fp-signal-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4px;
+  }
+
+  .fp-signal-company {
+    font-size: 13px;
+    font-weight: 600;
+    color: #f4f5f7;
+  }
+
+  .fp-signal-time {
+    font-size: 10px;
+    color: #73767e;
+  }
+
+  .fp-signal-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    border-radius: 5px;
+    padding: 2px 8px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .04em;
+    margin-bottom: 5px;
+  }
+
+  .fp-tag-job {
+    background: rgba(139,92,246,.14);
+    color: #a78bfa;
+  }
+
+  .fp-tag-funding {
+    background: rgba(245,158,11,.12);
+    color: #fbbf24;
+  }
+
+  .fp-tag-tech {
+    background: rgba(16,185,129,.12);
+    color: #34d399;
+  }
+
+  .fp-signal-desc {
+    font-size: 11.5px;
+    color: #a0a3ab;
+    line-height: 1.5;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .fp-signal-action {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    gap: 8px;
+  }
+
+  .fp-action-btn {
+    background: #0066ff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 5px 12px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .fp-action-queued {
+    font-size: 10px;
+    color: #73767e;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  /* Bottom stat bar */
+  .fp-stat-bar {
+    padding: 12px 24px;
+    border-top: 1px solid rgba(255,255,255,.06);
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    background: #111114;
+  }
+
+  .fp-stat {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: #73767e;
+  }
+
+  .fp-stat-val {
+    color: #f4f5f7;
+    font-weight: 700;
+  }
+
+  .fp-stat-div {
+    width: 1px;
+    height: 14px;
+    background: rgba(255,255,255,.08);
+  }
+
+  /* Caption */
+  .fp-caption {
+    margin-top: 36px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .fp-caption-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 13px;
+    color: #a0a3ab;
+  }
+
+  .fp-caption-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .fp-caption-div {
+    width: 1px;
+    height: 28px;
+    background: rgba(255,255,255,.07);
+  }
+</style>
+
+<div class="fp-glow" aria-hidden="true"></div>
+<div class="fp-glow-top" aria-hidden="true"></div>
+
+<div class="fp-header">
+  <div class="fp-eyebrow">
+    <div class="fp-eyebrow-dot"></div>
+    Signal-Monitoring
+  </div>
+  <h2 class="fp-title">Wir schreiben im exakt<br>richtigen Moment.</h2>
+  <p class="fp-subtitle">Neue Stelle, frische Finanzierung, Tech-Wechsel. Sobald ein Signal feuert, startet die Outreach-Sequenz automatisch.</p>
+</div>
+
+<div class="fp-browser" role="img" aria-label="Signal Monitor App Mockup">
+  <div class="fp-browser-bar">
+    <div class="fp-browser-dots">
+      <div class="fp-browser-dot fp-browser-dot-r"></div>
+      <div class="fp-browser-dot fp-browser-dot-y"></div>
+      <div class="fp-browser-dot fp-browser-dot-g"></div>
+    </div>
+    <div class="fp-browser-url">
+      <svg class="fp-url-lock" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+        <rect x="1" y="4.5" width="8" height="5" rx="1.2" fill="#73767e"/>
+        <path d="M2.5 4.5V3a2.5 2.5 0 015 0v1.5" stroke="#73767e" stroke-width="1.2" fill="none"/>
+      </svg>
+      app.grundwerk.digital/signals
+    </div>
+  </div>
+
+  <div class="fp-app">
+    <!-- Sidebar -->
+    <div class="fp-sidebar">
+      <div class="fp-sidebar-logo">
+        <div class="fp-logo-mark">
+          <div class="fp-logo-icon">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M2 7h10M7 2v10" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          Grundwerk
+        </div>
+      </div>
+
+      <div class="fp-nav-item active">
+        <svg class="fp-nav-icon" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.4"/>
+          <path d="M7 4v3.5l2 1.2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+        Signal-Feed
+      </div>
+      <div class="fp-nav-item">
+        <svg class="fp-nav-icon" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <rect x="1.5" y="2.5" width="11" height="9" rx="1.5" stroke="currentColor" stroke-width="1.3"/>
+          <path d="M1.5 5.5h11" stroke="currentColor" stroke-width="1.3"/>
+        </svg>
+        Kampagnen
+      </div>
+      <div class="fp-nav-item">
+        <svg class="fp-nav-icon" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <circle cx="5" cy="4.5" r="2" stroke="currentColor" stroke-width="1.3"/>
+          <circle cx="9.5" cy="9" r="2" stroke="currentColor" stroke-width="1.3"/>
+          <path d="M7 4.5h3.5M3 9H7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+        Segmente
+      </div>
+
+      <div class="fp-sidebar-section">Outreach-Queue</div>
+      <div class="fp-queue-item">
+        <div class="fp-queue-dot fp-queue-dot-green"></div>
+        Sofort senden
+        <span class="fp-queue-count">12</span>
+      </div>
+      <div class="fp-queue-item">
+        <div class="fp-queue-dot fp-queue-dot-blue"></div>
+        In Bearbeitung
+        <span class="fp-queue-count">4</span>
+      </div>
+      <div class="fp-queue-item">
+        <div class="fp-queue-dot fp-queue-dot-gray"></div>
+        Wartet auf Signal
+        <span class="fp-queue-count">83</span>
+      </div>
+    </div>
+
+    <!-- Main -->
+    <div class="fp-main">
+      <div class="fp-main-header">
+        <div>
+          <div class="fp-main-title">Aktive Signale</div>
+          <div class="fp-main-sub">Letzte Aktualisierung: vor 38 Sekunden</div>
+        </div>
+        <div class="fp-live-badge">
+          <div class="fp-live-dot"></div>
+          Live
+        </div>
+      </div>
+
+      <div class="fp-feed">
+
+        <!-- Signal 1 - Active -->
+        <div class="fp-signal-card active">
+          <div class="fp-company-logo fp-company-logo-a" aria-label="Firma NL Logo">NL</div>
+          <div class="fp-signal-body">
+            <div class="fp-signal-top">
+              <span class="fp-signal-company">Nordata Logistics GmbH</span>
+              <span class="fp-signal-time">vor 4 Min.</span>
+            </div>
+            <div class="fp-signal-tag fp-tag-job">
+              <svg width="9" height="9" viewBox="0 0 9 9" fill="none" aria-hidden="true">
+                <circle cx="4.5" cy="4.5" r="3.5" stroke="currentColor" stroke-width="1.2"/>
+                <path d="M3 4.5h3M4.5 3v3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+              Neue Stelle: Head of Sales Operations
+            </div>
+            <div class="fp-signal-desc">Stellenausschreibung auf LinkedIn erkannt - Wachstum im Vertriebsbereich signalisiert Budgetfreigabe</div>
+            <div class="fp-signal-action">
+              <button class="fp-action-btn" type="button">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                  <path d="M1.5 5h7M5 1.5l3.5 3.5L5 8.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/>
+                </svg>
+                Outreach starten
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Signal 2 -->
+        <div class="fp-signal-card">
+          <div class="fp-company-logo fp-company-logo-b" aria-label="Firma VX Logo">VX</div>
+          <div class="fp-signal-body">
+            <div class="fp-signal-top">
+              <span class="fp-signal-company">Vertexio AG</span>
+              <span class="fp-signal-time">vor 17 Min.</span>
+            </div>
+            <div class="fp-signal-tag fp-tag-funding">
+              <svg width="9" height="9" viewBox="0 0 9 9" fill="none" aria-hidden="true">
+                <path d="M4.5 1v7M2 3.5l2.5-2.5 2.5 2.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+              Serie B: 24 Mio. EUR Finanzierung
+            </div>
+            <div class="fp-signal-desc">Frische Liquiditat fur Wachstumsinvestitionen - optimaler Zeitpunkt fur Outreach-Losung</div>
+            <div class="fp-action-queued">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                <circle cx="5" cy="5" r="4" stroke="#22c55e" stroke-width="1.3"/>
+                <path d="M3 5.2l1.5 1.5 3-3" stroke="#22c55e" stroke-width="1.3" stroke-linecap="round"/>
+              </svg>
+              In Queue - Sequenz gestartet
+            </div>
+          </div>
+        </div>
+
+        <!-- Signal 3 -->
+        <div class="fp-signal-card">
+          <div class="fp-company-logo fp-company-logo-c" aria-label="Firma KS Logo">KS</div>
+          <div class="fp-signal-body">
+            <div class="fp-signal-top">
+              <span class="fp-signal-company">Kessler &amp; Söhne GmbH</span>
+              <span class="fp-signal-time">vor 41 Min.</span>
+            </div>
+            <div class="fp-signal-tag fp-tag-tech">
+              <svg width="9" height="9" viewBox="0 0 9 9" fill="none" aria-hidden="true">
+                <rect x="1" y="3" width="7" height="5" rx="1" stroke="currentColor" stroke-width="1.2"/>
+                <path d="M3 3V2a2 2 0 014 0v1" stroke="currentColor" stroke-width="1.2" fill="none"/>
+              </svg>
+              Tech-Wechsel: Salesforce abgelost
+            </div>
+            <div class="fp-signal-desc">CRM-Migration erkennt Pain-Moment - neues System bedeutet offene Prozesslucken</div>
+            <div class="fp-action-queued">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                <circle cx="5" cy="5" r="4" stroke="#22c55e" stroke-width="1.3"/>
+                <path d="M3 5.2l1.5 1.5 3-3" stroke="#22c55e" stroke-width="1.3" stroke-linecap="round"/>
+              </svg>
+              Gesendet um 09:14 Uhr
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="fp-stat-bar">
+        <div class="fp-stat">
+          <span class="fp-stat-val">247</span>
+          Signale heute
+        </div>
+        <div class="fp-stat-div"></div>
+        <div class="fp-stat">
+          <span class="fp-stat-val">38</span>
+          Outreaches gestartet
+        </div>
+        <div class="fp-stat-div"></div>
+        <div class="fp-stat">
+          <span class="fp-stat-val">4,8x</span>
+          höhere Antwortrate
+        </div>
+        <div class="fp-stat-div"></div>
+        <div class="fp-stat">
+          <span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#22c55e;margin-right:4px;animation:fp-pulse 1.6s ease-in-out infinite"></span>
+          Monitoring aktiv
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="fp-caption">
+  <div class="fp-caption-item">
+    <div class="fp-caption-icon">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <circle cx="8" cy="8" r="6.5" stroke="#0066ff" stroke-width="1.4"/>
+        <path d="M8 5v3.5l2.2 1.3" stroke="#0066ff" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+    </div>
+    Echtzeit-Signalerfassung
+  </div>
+  <div class="fp-caption-div"></div>
+  <div class="fp-caption-item">
+    <div class="fp-caption-icon">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <path d="M3 8c0-2.76 2.24-5 5-5s5 2.24 5 5-2.24 5-5 5" stroke="#0066ff" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M8 11l-2.5-3H11L8.5 11" stroke="#0066ff" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    Automatische Sequenz-Auslösung
+  </div>
+  <div class="fp-caption-div"></div>
+  <div class="fp-caption-item">
+    <div class="fp-caption-icon">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <path d="M4 8.5l3 3 5-5.5" stroke="#0066ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    Höhere Antwortrate durch Timing
+  </div>
+</div>
+
+</section>
+</body></html>

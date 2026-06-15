@@ -1,0 +1,661 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://api.fontshare.com" crossorigin><link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=inter@400,500,600&display=swap" rel="stylesheet"><style>html,body{margin:0;background:#0e0e10}</style></head><body>
+<section class="fp">
+<style>
+  .fp {
+    position: relative;
+    min-height: 88vh;
+    background-color: #141417;
+    background-image:
+      linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 42px 42px;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    color: #f4f5f7;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .fp * { box-sizing: border-box; }
+
+  /* Ambient glow */
+  .fp-glow {
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 400px;
+    background: radial-gradient(ellipse at center, rgba(0,102,255,.13) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .fp-glow-bottom {
+    position: absolute;
+    bottom: -80px;
+    right: 10%;
+    width: 400px;
+    height: 300px;
+    background: radial-gradient(ellipse at center, rgba(0,102,255,.07) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Layout */
+  .fp-inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1.6fr 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 0;
+    min-height: 88vh;
+  }
+
+  /* Header bar */
+  .fp-header {
+    grid-column: 1 / -1;
+    padding: 40px 52px 28px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+  }
+
+  .fp-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #0066ff;
+    margin-bottom: 12px;
+  }
+
+  .fp-eyebrow-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #0066ff;
+    box-shadow: 0 0 8px rgba(0,102,255,.8);
+    animation: fp-pulse-dot 2s ease-in-out infinite;
+  }
+
+  @keyframes fp-pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .5; transform: scale(.7); }
+  }
+
+  .fp-title {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: clamp(28px, 3.2vw, 44px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -.02em;
+    color: #f4f5f7;
+    max-width: 480px;
+  }
+
+  .fp-title em {
+    font-style: normal;
+    color: #0066ff;
+  }
+
+  .fp-subtitle {
+    margin-top: 10px;
+    font-size: 15px;
+    color: #a0a3ab;
+    line-height: 1.5;
+    max-width: 360px;
+  }
+
+  .fp-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(0,102,255,.14);
+    border: 1px solid rgba(0,102,255,.40);
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #6699ff;
+    white-space: nowrap;
+  }
+
+  /* Left column: conversation mock */
+  .fp-col-left {
+    padding: 36px 28px 36px 52px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    border-right: 1px solid rgba(255,255,255,.07);
+  }
+
+  .fp-col-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: #73767e;
+    margin-bottom: 8px;
+  }
+
+  .fp-chat-bubble {
+    background: #1a1a1f;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #f4f5f7;
+    position: relative;
+  }
+
+  .fp-chat-bubble.fp-outgoing {
+    background: rgba(0,102,255,.14);
+    border-color: rgba(0,102,255,.30);
+    margin-left: 24px;
+    color: #c8d8ff;
+  }
+
+  .fp-chat-bubble.fp-incoming {
+    margin-right: 24px;
+  }
+
+  .fp-chat-sender {
+    font-size: 10px;
+    font-weight: 600;
+    color: #73767e;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+  }
+
+  .fp-chat-sender.fp-blue { color: #0066ff; }
+
+  .fp-chat-timestamp {
+    font-size: 10px;
+    color: #73767e;
+    margin-top: 4px;
+    text-align: right;
+  }
+
+  .fp-chat-result {
+    margin-top: 8px;
+    padding: 10px 14px;
+    background: rgba(0,200,100,.08);
+    border: 1px solid rgba(0,200,100,.25);
+    border-radius: 10px;
+    font-size: 12px;
+    color: #5be09a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Center column: flow diagram */
+  .fp-col-center {
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .fp-diagram-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #73767e;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .fp-diagram-wrap {
+    width: 100%;
+    max-width: 480px;
+    position: relative;
+  }
+
+  /* Animated pulse along SVG path */
+  @keyframes fp-travel {
+    0% { offset-distance: 0%; opacity: 0; }
+    5% { opacity: 1; }
+    95% { opacity: 1; }
+    100% { offset-distance: 100%; opacity: 0; }
+  }
+
+  .fp-traveler {
+    width: 8px;
+    height: 8px;
+    background: #0066ff;
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(0,102,255,1);
+    position: absolute;
+    offset-path: path('M 240 50 L 240 115');
+    animation: fp-travel 2.8s ease-in-out infinite;
+    animation-delay: 0s;
+  }
+
+  .fp-traveler-2 {
+    width: 8px;
+    height: 8px;
+    background: #0066ff;
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(0,102,255,1);
+    position: absolute;
+    offset-path: path('M 240 135 L 240 200');
+    animation: fp-travel 2.8s ease-in-out infinite;
+    animation-delay: .9s;
+  }
+
+  .fp-traveler-3 {
+    width: 8px;
+    height: 8px;
+    background: #0066ff;
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(0,102,255,1);
+    position: absolute;
+    offset-path: path('M 240 220 L 240 285');
+    animation: fp-travel 2.8s ease-in-out infinite;
+    animation-delay: 1.8s;
+  }
+
+  .fp-traveler-4 {
+    width: 8px;
+    height: 8px;
+    background: #0066ff;
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(0,102,255,1);
+    position: absolute;
+    offset-path: path('M 240 305 L 240 370');
+    animation: fp-travel 2.8s ease-in-out infinite;
+    animation-delay: 2.7s;
+  }
+
+  /* Right column: metrics */
+  .fp-col-right {
+    padding: 36px 52px 36px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    border-left: 1px solid rgba(255,255,255,.07);
+  }
+
+  .fp-metric-card {
+    background: #1a1a1f;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 14px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .fp-metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #0066ff, transparent);
+    opacity: .6;
+  }
+
+  .fp-metric-value {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1;
+    color: #f4f5f7;
+    letter-spacing: -.03em;
+  }
+
+  .fp-metric-value span {
+    font-size: 20px;
+    color: #0066ff;
+  }
+
+  .fp-metric-desc {
+    margin-top: 6px;
+    font-size: 13px;
+    color: #a0a3ab;
+    line-height: 1.4;
+  }
+
+  .fp-metric-delta {
+    margin-top: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #5be09a;
+    background: rgba(0,200,100,.10);
+    border-radius: 999px;
+    padding: 3px 10px;
+  }
+
+  .fp-metric-bar {
+    margin-top: 12px;
+    height: 3px;
+    background: rgba(255,255,255,.08);
+    border-radius: 99px;
+    overflow: hidden;
+  }
+
+  .fp-metric-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #0066ff, #4d99ff);
+    border-radius: 99px;
+    animation: fp-bar-grow 1.6s ease-out forwards;
+    width: 0%;
+  }
+
+  @keyframes fp-bar-grow {
+    to { width: var(--target-width, 60%); }
+  }
+
+  .fp-vs-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    color: #73767e;
+    text-transform: uppercase;
+    background: rgba(255,255,255,.05);
+    border-radius: 4px;
+    padding: 2px 7px;
+    margin-right: 4px;
+  }
+
+  /* Footer strip */
+  .fp-footer {
+    grid-column: 1 / -1;
+    border-top: 1px solid rgba(255,255,255,.07);
+    padding: 16px 52px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .fp-footer-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #73767e;
+  }
+
+  .fp-footer-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #0066ff;
+    opacity: .7;
+  }
+
+  /* Dead path styling */
+  .fp-dead-label {
+    fill: #ff4455;
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  .fp-live-label {
+    fill: #0066ff;
+    font-size: 11px;
+    font-weight: 600;
+  }
+</style>
+
+<!-- Ambient glows -->
+<div class="fp-glow"></div>
+<div class="fp-glow-bottom"></div>
+
+<div class="fp-inner">
+
+  <!-- HEADER -->
+  <div class="fp-header">
+    <div>
+      <div class="fp-eyebrow">
+        <span class="fp-eyebrow-dot"></span>
+        LinkedIn Outreach
+      </div>
+      <div class="fp-title">
+        Erst vernetzen.<br>Dann <em>Gespräch</em>.
+      </div>
+      <div class="fp-subtitle">
+        Echte Antworten von Entscheidern, kein Pitch ins Nichts.
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; align-items:flex-end; gap:10px; padding-top:6px;">
+      <div class="fp-badge">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" fill="#6699ff"/><circle cx="4" cy="4" r="2" fill="#6699ff"/></svg>
+        Conversation-First
+      </div>
+      <div style="font-size:12px; color:#73767e; text-align:right; line-height:1.5;">
+        Kein Cold-Pitch<br>Kein Spam
+      </div>
+    </div>
+  </div>
+
+  <!-- LEFT: Chat mockup -->
+  <div class="fp-col-left">
+    <div class="fp-col-label">Echter Gesprächsverlauf</div>
+
+    <div class="fp-chat-bubble fp-incoming">
+      <div class="fp-chat-sender">Markus B. , VP Sales</div>
+      Danke für die Vernetzung! Wie kann ich helfen?
+    </div>
+
+    <div class="fp-chat-bubble fp-outgoing">
+      <div class="fp-chat-sender fp-blue">Du</div>
+      Ich habe gesehen, dass ihr gerade skaliert. Bin neugierig: Wie löst ihr aktuell die Erstansprache bei Zielkunden?
+    </div>
+
+    <div class="fp-chat-bubble fp-incoming">
+      <div class="fp-chat-sender">Markus B. , VP Sales</div>
+      Gute Frage, das ist tatsächlich unser größter Engpass gerade. Erzähl mal mehr.
+      <div class="fp-chat-timestamp">Antwortzeit: 47 Min.</div>
+    </div>
+
+    <div class="fp-chat-result">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="#5be09a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Demo-Termin vereinbart
+    </div>
+  </div>
+
+  <!-- CENTER: Flow diagram -->
+  <div class="fp-col-center">
+    <div class="fp-diagram-label">Der Grundwerk-Prozess vs. klassischer Pitch</div>
+
+    <div class="fp-diagram-wrap">
+      <!-- Animated travelers (CSS offset-path on the blue path) -->
+      <div class="fp-traveler" aria-hidden="true"></div>
+      <div class="fp-traveler-2" aria-hidden="true"></div>
+      <div class="fp-traveler-3" aria-hidden="true"></div>
+      <div class="fp-traveler-4" aria-hidden="true"></div>
+
+      <svg viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Ablaufdiagramm: Conversation-First LinkedIn-Prozess" style="width:100%; height:auto; display:block;">
+
+        <!-- Grid background subtle lines already handled by panel CSS -->
+
+        <!-- ===== START NODE ===== -->
+        <rect x="170" y="18" width="140" height="44" rx="22" fill="#1a1a1f" stroke="rgba(255,255,255,.18)" stroke-width="1.2"/>
+        <text x="240" y="37" text-anchor="middle" fill="#f4f5f7" font-family="Inter,sans-serif" font-size="11" font-weight="600">LinkedIn-Kontakt</text>
+        <text x="240" y="53" text-anchor="middle" fill="#a0a3ab" font-family="Inter,sans-serif" font-size="10">Entscheider identifiziert</text>
+
+        <!-- Arrow down to decision -->
+        <line x1="240" y1="62" x2="240" y2="102" stroke="#0066ff" stroke-width="1.8" stroke-dasharray="4 3" opacity=".7"/>
+        <polygon points="240,106 235,97 245,97" fill="#0066ff" opacity=".7"/>
+
+        <!-- ===== DECISION DIAMOND ===== -->
+        <polygon points="240,110 295,142 240,174 185,142" fill="#141417" stroke="rgba(0,102,255,.50)" stroke-width="1.5"/>
+        <text x="240" y="138" text-anchor="middle" fill="#f4f5f7" font-family="Inter,sans-serif" font-size="10" font-weight="700">Strategie</text>
+        <text x="240" y="153" text-anchor="middle" fill="#a0a3ab" font-family="Inter,sans-serif" font-size="9">wählen</text>
+
+        <!-- ===== LEFT BRANCH: Old / Dead path ===== -->
+        <!-- Arrow left -->
+        <path d="M 185 142 L 80 142" stroke="#ff4455" stroke-width="1.5" stroke-dasharray="5 3" opacity=".6"/>
+        <polygon points="76,142 85,137 85,147" fill="#ff4455" opacity=".6"/>
+
+        <text x="130" y="132" text-anchor="middle" class="fp-dead-label" font-family="Inter,sans-serif">Klassisch</text>
+
+        <!-- Dead path node 1 -->
+        <rect x="20" y="158" width="112" height="38" rx="8" fill="#1a1a1f" stroke="rgba(255,68,85,.30)" stroke-width="1.2"/>
+        <text x="76" y="175" text-anchor="middle" fill="#ff7788" font-family="Inter,sans-serif" font-size="10" font-weight="600">Sofort-Pitch</text>
+        <text x="76" y="189" text-anchor="middle" fill="#73767e" font-family="Inter,sans-serif" font-size="9">Produkt erklären</text>
+
+        <!-- Arrow down dead -->
+        <line x1="76" y1="196" x2="76" y2="228" stroke="#ff4455" stroke-width="1.2" opacity=".5" stroke-dasharray="4 3"/>
+        <polygon points="76,232 71,223 81,223" fill="#ff4455" opacity=".5"/>
+
+        <!-- Dead path node 2 -->
+        <rect x="20" y="233" width="112" height="38" rx="8" fill="#1a1a1f" stroke="rgba(255,68,85,.22)" stroke-width="1.2"/>
+        <text x="76" y="250" text-anchor="middle" fill="#ff7788" font-family="Inter,sans-serif" font-size="10" font-weight="600">Kein Reply</text>
+        <text x="76" y="264" text-anchor="middle" fill="#73767e" font-family="Inter,sans-serif" font-size="9">Ignoriert / geblockt</text>
+
+        <!-- X mark -->
+        <circle cx="76" cy="305" r="18" fill="rgba(255,68,85,.12)" stroke="rgba(255,68,85,.35)" stroke-width="1.2"/>
+        <line x1="68" y1="297" x2="84" y2="313" stroke="#ff4455" stroke-width="2" stroke-linecap="round"/>
+        <line x1="84" y1="297" x2="68" y2="313" stroke="#ff4455" stroke-width="2" stroke-linecap="round"/>
+
+        <text x="76" y="338" text-anchor="middle" fill="#ff4455" font-family="Inter,sans-serif" font-size="10" font-weight="600" opacity=".8">Pipeline leer</text>
+
+        <!-- ===== RIGHT / BLUE BRANCH: Grundwerk path ===== -->
+        <!-- Arrow right -->
+        <path d="M 295 142 L 400 142" stroke="#0066ff" stroke-width="1.8"/>
+        <polygon points="404,142 395,137 395,147" fill="#0066ff"/>
+        <text x="350" y="132" text-anchor="middle" class="fp-live-label" font-family="Inter,sans-serif">Grundwerk</text>
+
+        <!-- Step 1 -->
+        <rect x="348" y="120" width="124" height="44" rx="10" fill="rgba(0,102,255,.14)" stroke="rgba(0,102,255,.40)" stroke-width="1.4"/>
+        <text x="410" y="139" text-anchor="middle" fill="#c8d8ff" font-family="Inter,sans-serif" font-size="10" font-weight="700">Vernetzung</text>
+        <text x="410" y="154" text-anchor="middle" fill="#7da8ff" font-family="Inter,sans-serif" font-size="9">Kein Pitch, nur Connect</text>
+
+        <!-- Arrow down blue -->
+        <line x1="410" y1="164" x2="410" y2="196" stroke="#0066ff" stroke-width="1.8"/>
+        <polygon points="410,200 405,191 415,191" fill="#0066ff"/>
+
+        <!-- Step 2 -->
+        <rect x="348" y="200" width="124" height="44" rx="10" fill="rgba(0,102,255,.14)" stroke="rgba(0,102,255,.40)" stroke-width="1.4"/>
+        <text x="410" y="219" text-anchor="middle" fill="#c8d8ff" font-family="Inter,sans-serif" font-size="10" font-weight="700">Opener-Nachricht</text>
+        <text x="410" y="234" text-anchor="middle" fill="#7da8ff" font-family="Inter,sans-serif" font-size="9">Neugier wecken, fragen</text>
+
+        <!-- Arrow down blue -->
+        <line x1="410" y1="244" x2="410" y2="276" stroke="#0066ff" stroke-width="1.8"/>
+        <polygon points="410,280 405,271 415,271" fill="#0066ff"/>
+
+        <!-- Step 3 -->
+        <rect x="348" y="280" width="124" height="44" rx="10" fill="rgba(0,102,255,.14)" stroke="rgba(0,102,255,.40)" stroke-width="1.4"/>
+        <text x="410" y="299" text-anchor="middle" fill="#c8d8ff" font-family="Inter,sans-serif" font-size="10" font-weight="700">Echte Antwort</text>
+        <text x="410" y="314" text-anchor="middle" fill="#7da8ff" font-family="Inter,sans-serif" font-size="9">Entscheider antwortet</text>
+
+        <!-- Arrow down blue -->
+        <line x1="410" y1="324" x2="410" y2="356" stroke="#0066ff" stroke-width="1.8"/>
+        <polygon points="410,360 405,351 415,351" fill="#0066ff"/>
+
+        <!-- SUCCESS node -->
+        <rect x="340" y="360" width="140" height="48" rx="12" fill="rgba(0,200,100,.10)" stroke="rgba(0,200,100,.40)" stroke-width="1.5"/>
+        <text x="410" y="381" text-anchor="middle" fill="#5be09a" font-family="Inter,sans-serif" font-size="11" font-weight="700">Demo-Termin</text>
+        <text x="410" y="397" text-anchor="middle" fill="#5be09a" font-family="Inter,sans-serif" font-size="9" opacity=".8">Qualifiziertes Gespräch</text>
+
+        <!-- Checkmark in success -->
+        <circle cx="358" cy="384" r="9" fill="rgba(0,200,100,.20)" stroke="rgba(0,200,100,.50)" stroke-width="1"/>
+        <path d="M354 384 l3 3 5-6" stroke="#5be09a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <!-- Conversion rate label between paths -->
+        <text x="240" y="430" text-anchor="middle" fill="#73767e" font-family="Inter,sans-serif" font-size="10">vs.</text>
+        <text x="120" y="450" text-anchor="middle" fill="#ff7788" font-family="Inter,sans-serif" font-size="12" font-weight="700"><1%</text>
+        <text x="120" y="465" text-anchor="middle" fill="#73767e" font-family="Inter,sans-serif" font-size="9">Antwortrate klassisch</text>
+        <text x="360" y="450" text-anchor="middle" fill="#5be09a" font-family="Inter,sans-serif" font-size="12" font-weight="700">18-35%</text>
+        <text x="360" y="465" text-anchor="middle" fill="#73767e" font-family="Inter,sans-serif" font-size="9">Antwortrate Grundwerk</text>
+
+        <!-- Divider line between paths bottom -->
+        <line x1="200" y1="420" x2="200" y2="470" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
+        <line x1="240" y1="420" x2="240" y2="470" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
+        <line x1="280" y1="420" x2="280" y2="470" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
+
+        <!-- Source line arrow from decision left to dead node -->
+        <line x1="76" y1="271" x2="76" y2="287" stroke="#ff4455" stroke-width="1.2" opacity=".5" stroke-dasharray="4 3"/>
+
+      </svg>
+    </div>
+  </div>
+
+  <!-- RIGHT: Metrics -->
+  <div class="fp-col-right">
+    <div class="fp-col-label">Performance-Kennzahlen</div>
+
+    <div class="fp-metric-card">
+      <div style="font-size:11px; color:#73767e; margin-bottom:8px; text-transform:uppercase; letter-spacing:.1em; font-weight:600;">Antwortrate</div>
+      <div class="fp-metric-value">28<span>%</span></div>
+      <div class="fp-metric-desc">Durchschnitt über alle LinkedIn-Kampagnen</div>
+      <div class="fp-metric-delta">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7" stroke="#5be09a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        +24pp vs. Cold-Pitch
+      </div>
+      <div class="fp-metric-bar">
+        <div class="fp-metric-bar-fill" style="--target-width:78%;" aria-hidden="true"></div>
+      </div>
+    </div>
+
+    <div class="fp-metric-card">
+      <div style="font-size:11px; color:#73767e; margin-bottom:8px; text-transform:uppercase; letter-spacing:.1em; font-weight:600;">Zeit bis Termin</div>
+      <div class="fp-metric-value">4<span>d</span></div>
+      <div class="fp-metric-desc">Median vom ersten Connect bis zum gebuchten Call</div>
+      <div class="fp-metric-delta">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7" stroke="#5be09a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        3x schneller als E-Mail
+      </div>
+      <div class="fp-metric-bar">
+        <div class="fp-metric-bar-fill" style="--target-width:55%;" aria-hidden="true"></div>
+      </div>
+    </div>
+
+    <div class="fp-metric-card">
+      <div style="font-size:11px; color:#73767e; margin-bottom:8px; text-transform:uppercase; letter-spacing:.1em; font-weight:600;">Akzeptanzrate</div>
+      <div class="fp-metric-value">62<span>%</span></div>
+      <div class="fp-metric-desc">Vernetzte Entscheider die auf Opener antworten</div>
+      <div class="fp-metric-bar" style="margin-top:16px;">
+        <div class="fp-metric-bar-fill" style="--target-width:62%;" aria-hidden="true"></div>
+      </div>
+      <div style="margin-top:8px; font-size:11px; color:#73767e;">
+        <span class="fp-vs-tag">vs.</span>klassisch <10%
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="fp-footer">
+    <div class="fp-footer-item">
+      <div class="fp-footer-dot"></div>
+      Kein Automation-Spam
+    </div>
+    <div class="fp-footer-item">
+      <div class="fp-footer-dot"></div>
+      Personalisiert auf Entscheider-Ebene
+    </div>
+    <div class="fp-footer-item">
+      <div class="fp-footer-dot"></div>
+      ICP-geprüfte Kontaktlisten
+    </div>
+    <div class="fp-footer-item">
+      <div class="fp-footer-dot"></div>
+      DSGVO-konform
+    </div>
+    <div style="margin-left:auto; font-size:11px; color:#73767e;">
+      Grundwerk Digital / LinkedIn
+    </div>
+  </div>
+
+</div>
+</section>
+</body></html>

@@ -1,0 +1,428 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://api.fontshare.com" crossorigin><link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=inter@400,500,600&display=swap" rel="stylesheet"><style>html,body{margin:0;background:#0e0e10}</style></head><body>
+<section class="fp">
+<style>
+  .fp {
+    position: relative;
+    min-height: 88vh;
+    background-color: #0e0e10;
+    background-image:
+      linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 42px 42px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    color: #f4f5f7;
+    overflow: hidden;
+    padding: 64px 48px;
+    box-sizing: border-box;
+  }
+
+  .fp__glow-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(0,102,255,.07) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .fp__eyebrow {
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: #0066ff;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .fp__eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 1px;
+    background: #0066ff;
+  }
+
+  .fp__headline {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 700;
+    line-height: 1.08;
+    color: #f4f5f7;
+    text-align: center;
+    max-width: 640px;
+    margin: 0 0 16px 0;
+    position: relative;
+    z-index: 2;
+    letter-spacing: -.02em;
+  }
+
+  .fp__headline span {
+    color: #0066ff;
+  }
+
+  .fp__subline {
+    font-size: 15px;
+    color: #a0a3ab;
+    text-align: center;
+    max-width: 480px;
+    line-height: 1.6;
+    margin: 0 0 56px 0;
+    position: relative;
+    z-index: 2;
+  }
+
+  .fp__diagram-wrap {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 820px;
+  }
+
+  .fp__diagram-wrap svg {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+
+  /* Pulse animation for signal nodes */
+  @keyframes fp-pulse {
+    0%   { opacity: .7; r: 18; }
+    50%  { opacity: .15; r: 30; }
+    100% { opacity: .7; r: 18; }
+  }
+
+  @keyframes fp-pulse2 {
+    0%   { opacity: .4; r: 24; }
+    50%  { opacity: .05; r: 40; }
+    100% { opacity: .4; r: 24; }
+  }
+
+  @keyframes fp-dash {
+    to { stroke-dashoffset: 0; }
+  }
+
+  @keyframes fp-dot-travel {
+    0%   { offset-distance: 0%; opacity: 0; }
+    10%  { opacity: 1; }
+    90%  { opacity: 1; }
+    100% { offset-distance: 100%; opacity: 0; }
+  }
+
+  @keyframes fp-core-glow {
+    0%, 100% { filter: drop-shadow(0 0 12px rgba(0,102,255,.5)); }
+    50%       { filter: drop-shadow(0 0 28px rgba(0,102,255,.9)); }
+  }
+
+  @keyframes fp-output-pulse {
+    0%   { stroke-dashoffset: 120; opacity: 0; }
+    20%  { opacity: 1; }
+    100% { stroke-dashoffset: 0; opacity: 1; }
+  }
+
+  .fp__pulse-ring-1 { animation: fp-pulse 2.4s ease-in-out infinite; }
+  .fp__pulse-ring-2 { animation: fp-pulse2 2.4s ease-in-out infinite 0.4s; }
+  .fp__pulse-ring-1b { animation: fp-pulse 2.8s ease-in-out infinite .6s; }
+  .fp__pulse-ring-2b { animation: fp-pulse2 2.8s ease-in-out infinite 1s; }
+  .fp__pulse-ring-1c { animation: fp-pulse 3.2s ease-in-out infinite 1.2s; }
+  .fp__pulse-ring-2c { animation: fp-pulse2 3.2s ease-in-out infinite 1.6s; }
+
+  .fp__core-group { animation: fp-core-glow 3s ease-in-out infinite; }
+
+  .fp__path-a {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    animation: fp-dash 1.4s ease-out 0.3s forwards;
+  }
+  .fp__path-b {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    animation: fp-dash 1.4s ease-out 0.6s forwards;
+  }
+  .fp__path-c {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    animation: fp-dash 1.4s ease-out 0.9s forwards;
+  }
+  .fp__path-out {
+    stroke-dasharray: 120;
+    stroke-dashoffset: 120;
+    animation: fp-output-pulse 1.2s ease-out 2s forwards;
+  }
+
+  .fp__stats-row {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: 0;
+    margin-top: 52px;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 14px;
+    overflow: hidden;
+    background: #141417;
+    width: 100%;
+    max-width: 820px;
+  }
+
+  .fp__stat {
+    flex: 1;
+    padding: 24px 28px;
+    border-right: 1px solid rgba(255,255,255,.09);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .fp__stat:last-child {
+    border-right: none;
+  }
+
+  .fp__stat-num {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #f4f5f7;
+    letter-spacing: -.02em;
+  }
+
+  .fp__stat-num span {
+    color: #0066ff;
+  }
+
+  .fp__stat-label {
+    font-size: 12px;
+    color: #73767e;
+    line-height: 1.4;
+  }
+</style>
+
+<!-- Background glow -->
+<div class="fp__glow-bg"></div>
+
+<!-- Header copy -->
+<p class="fp__eyebrow">Signal-Intelligence</p>
+
+<h2 class="fp__headline">Im <span>exakt richtigen</span> Moment schreiben</h2>
+
+<p class="fp__subline">Neue Stelle, frische Finanzierung, Tech-Wechsel. Wir detektieren relevante Signale und starten Outreach genau dann, wenn die Kaufbereitschaft am höchsten ist.</p>
+
+<!-- Main diagram -->
+<div class="fp__diagram-wrap">
+  <svg viewBox="0 0 820 420" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Flow-Diagramm: Signale laufen in den Timing-Core und erzeugen zielgenauen Outreach">
+
+    <!-- === SIGNAL NODE A: Neue Stelle === -->
+    <!-- Pulse rings -->
+    <circle class="fp__pulse-ring-2" cx="110" cy="100" fill="rgba(0,102,255,.08)" stroke="none"/>
+    <circle class="fp__pulse-ring-1" cx="110" cy="100" fill="rgba(0,102,255,.13)" stroke="none"/>
+    <!-- Node background -->
+    <circle cx="110" cy="100" r="44" fill="#1a1a1f" stroke="rgba(255,255,255,.09)" stroke-width="1"/>
+    <!-- Icon: person + plus (neue Stelle) -->
+    <circle cx="110" cy="88" r="9" fill="#0066ff" opacity=".9"/>
+    <rect x="93" y="100" width="34" height="20" rx="10" fill="#0066ff" opacity=".7"/>
+    <rect x="118" y="86" width="2" height="10" rx="1" fill="#f4f5f7"/>
+    <rect x="114" y="90" width="10" height="2" rx="1" fill="#f4f5f7"/>
+    <!-- Label -->
+    <text x="110" y="158" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#f4f5f7">Neue Stelle</text>
+    <text x="110" y="174" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#73767e">Entscheider wechselt</text>
+
+    <!-- Signal dot badge A -->
+    <circle cx="143" cy="68" r="8" fill="#0e0e10" stroke="rgba(0,102,255,.5)" stroke-width="1"/>
+    <circle cx="143" cy="68" r="4" fill="#0066ff"/>
+
+    <!-- === SIGNAL NODE B: Finanzierung === -->
+    <circle class="fp__pulse-ring-2b" cx="110" cy="310" fill="rgba(0,102,255,.08)" stroke="none"/>
+    <circle class="fp__pulse-ring-1b" cx="110" cy="310" fill="rgba(0,102,255,.13)" stroke="none"/>
+    <circle cx="110" cy="310" r="44" fill="#1a1a1f" stroke="rgba(255,255,255,.09)" stroke-width="1"/>
+    <!-- Icon: coin/money -->
+    <circle cx="110" cy="305" r="14" fill="none" stroke="#0066ff" stroke-width="2" opacity=".9"/>
+    <text x="110" y="310" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#0066ff">$</text>
+    <path d="M98 322 Q110 330 122 322" stroke="#0066ff" stroke-width="1.5" fill="none" opacity=".6"/>
+    <text x="110" y="368" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#f4f5f7">Finanzierung</text>
+    <text x="110" y="384" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#73767e">Series A / Seed</text>
+
+    <circle cx="143" cy="282" r="8" fill="#0e0e10" stroke="rgba(0,102,255,.5)" stroke-width="1"/>
+    <circle cx="143" cy="282" r="4" fill="#0066ff"/>
+
+    <!-- === SIGNAL NODE C: Tech-Wechsel === -->
+    <circle class="fp__pulse-ring-2c" cx="110" cy="210" fill="rgba(0,102,255,.06)" stroke="none"/>
+    <circle class="fp__pulse-ring-1c" cx="110" cy="210" fill="rgba(0,102,255,.11)" stroke="none"/>
+    <circle cx="110" cy="210" r="44" fill="#1a1a1f" stroke="rgba(255,255,255,.09)" stroke-width="1"/>
+    <!-- Icon: chip/tech -->
+    <rect x="97" y="197" width="26" height="26" rx="4" fill="none" stroke="#0066ff" stroke-width="2" opacity=".9"/>
+    <rect x="103" y="203" width="14" height="14" rx="2" fill="#0066ff" opacity=".35"/>
+    <line x1="97" y1="204" x2="91" y2="204" stroke="#0066ff" stroke-width="1.5" opacity=".7"/>
+    <line x1="97" y1="210" x2="91" y2="210" stroke="#0066ff" stroke-width="1.5" opacity=".7"/>
+    <line x1="97" y1="216" x2="91" y2="216" stroke="#0066ff" stroke-width="1.5" opacity=".7"/>
+    <line x1="123" y1="204" x2="129" y2="204" stroke="#0066ff" stroke-width="1.5" opacity=".7"/>
+    <line x1="123" y1="210" x2="129" y2="210" stroke="#0066ff" stroke-width="1.5" opacity=".7"/>
+    <line x1="123" y1="216" x2="129" y2="216" stroke="#0066ff" stroke-width="1.5" opacity=".7"/>
+    <text x="110" y="268" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#f4f5f7">Tech-Wechsel</text>
+    <text x="110" y="284" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#73767e">Stack-Shift erkannt</text>
+
+    <circle cx="143" cy="182" r="8" fill="#0e0e10" stroke="rgba(0,102,255,.5)" stroke-width="1"/>
+    <circle cx="143" cy="182" r="4" fill="#0066ff"/>
+
+    <!-- === PATHS from signals to core === -->
+    <!-- Path A: top node to core -->
+    <path class="fp__path-a"
+      d="M154 100 C220 100 260 200 350 210"
+      stroke="rgba(0,102,255,.40)" stroke-width="1.5" stroke-dasharray="5 3"
+      fill="none"/>
+
+    <!-- Path B: bottom node to core -->
+    <path class="fp__path-b"
+      d="M154 310 C220 310 260 220 350 210"
+      stroke="rgba(0,102,255,.40)" stroke-width="1.5" stroke-dasharray="5 3"
+      fill="none"/>
+
+    <!-- Path C: middle node to core -->
+    <path class="fp__path-c"
+      d="M154 210 L350 210"
+      stroke="rgba(0,102,255,.40)" stroke-width="1.5" stroke-dasharray="5 3"
+      fill="none"/>
+
+    <!-- Animated traveling dots on paths -->
+    <!-- Dot A -->
+    <circle r="4" fill="#0066ff" opacity=".9">
+      <animateMotion dur="2.8s" repeatCount="indefinite" begin="0.3s">
+        <mpath href="#pathA"/>
+      </animateMotion>
+    </circle>
+    <path id="pathA" d="M154 100 C220 100 260 200 350 210" fill="none"/>
+
+    <!-- Dot B -->
+    <circle r="4" fill="#0066ff" opacity=".9">
+      <animateMotion dur="2.8s" repeatCount="indefinite" begin="1.2s">
+        <mpath href="#pathB"/>
+      </animateMotion>
+    </circle>
+    <path id="pathB" d="M154 310 C220 310 260 220 350 210" fill="none"/>
+
+    <!-- Dot C -->
+    <circle r="4" fill="#0066ff" opacity=".9">
+      <animateMotion dur="2s" repeatCount="indefinite" begin="0.8s">
+        <mpath href="#pathC"/>
+      </animateMotion>
+    </circle>
+    <path id="pathC" d="M154 210 L350 210" fill="none"/>
+
+    <!-- === TIMING CORE === -->
+    <g class="fp__core-group">
+      <!-- Outer ring -->
+      <circle cx="410" cy="210" r="80" fill="#141417" stroke="rgba(0,102,255,.40)" stroke-width="1.5"/>
+      <!-- Mid ring -->
+      <circle cx="410" cy="210" r="62" fill="#1a1a1f" stroke="rgba(0,102,255,.20)" stroke-width="1"/>
+      <!-- Inner fill -->
+      <circle cx="410" cy="210" r="48" fill="#0e0e10" stroke="none"/>
+      <!-- Blue accent ring segment -->
+      <circle cx="410" cy="210" r="80" fill="none" stroke="#0066ff" stroke-width="2"
+        stroke-dasharray="80 422" stroke-dashoffset="-80"
+        transform="rotate(-90 410 210)">
+        <animateTransform attributeName="transform" type="rotate"
+          from="-90 410 210" to="270 410 210"
+          dur="8s" repeatCount="indefinite"/>
+      </circle>
+      <!-- Core label -->
+      <text x="410" y="202" text-anchor="middle" font-family="Clash Display,system-ui,sans-serif" font-size="13" font-weight="700" fill="#f4f5f7" letter-spacing=".06em">TIMING</text>
+      <text x="410" y="220" text-anchor="middle" font-family="Clash Display,system-ui,sans-serif" font-size="13" font-weight="700" fill="#0066ff" letter-spacing=".06em">CORE</text>
+      <!-- Small pulse dots around outer ring -->
+      <circle cx="410" cy="130" r="4" fill="#0066ff" opacity=".7"/>
+      <circle cx="490" cy="210" r="4" fill="#0066ff" opacity=".4"/>
+      <circle cx="410" cy="290" r="4" fill="#0066ff" opacity=".6"/>
+    </g>
+
+    <!-- === DECISION GATE === -->
+    <!-- connecting line from core to gate -->
+    <line x1="490" y1="210" x2="570" y2="210" stroke="rgba(0,102,255,.40)" stroke-width="1.5" stroke-dasharray="5 3"/>
+    <!-- Animated dot from core to gate -->
+    <circle r="3.5" fill="#0066ff" opacity=".9">
+      <animateMotion dur="1.6s" repeatCount="indefinite" begin="1.4s">
+        <mpath href="#pathGate"/>
+      </animateMotion>
+    </circle>
+    <path id="pathGate" d="M490 210 L570 210" fill="none"/>
+
+    <!-- Diamond gate shape -->
+    <polygon points="600,185 640,210 600,235 560,210" fill="#1a1a1f" stroke="rgba(0,102,255,.5)" stroke-width="1.5"/>
+    <text x="600" y="207" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" font-weight="600" fill="#a0a3ab">SIGNAL</text>
+    <text x="600" y="219" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" font-weight="600" fill="#a0a3ab">SCORE</text>
+
+    <!-- Score badge -->
+    <circle cx="600" cy="160" r="16" fill="#0066ff" opacity=".15" stroke="rgba(0,102,255,.5)" stroke-width="1"/>
+    <text x="600" y="156" text-anchor="middle" font-family="Clash Display,system-ui,sans-serif" font-size="10" font-weight="700" fill="#0066ff">9.4</text>
+    <text x="600" y="167" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#73767e">/10</text>
+    <line x1="600" y1="176" x2="600" y2="185" stroke="rgba(0,102,255,.5)" stroke-width="1" stroke-dasharray="3 2"/>
+
+    <!-- === OUTPUT PATH === -->
+    <line x1="640" y1="210" x2="720" y2="210" stroke="#0066ff" stroke-width="2"
+      stroke-dasharray="120" stroke-dashoffset="120">
+      <animate attributeName="stroke-dashoffset" from="120" to="0" dur="1s" begin="2s" fill="freeze"/>
+    </line>
+
+    <!-- Animated dot along output -->
+    <circle r="5" fill="#0066ff">
+      <animateMotion dur="1.4s" repeatCount="indefinite" begin="2.2s">
+        <mpath href="#pathOut"/>
+      </animateMotion>
+    </circle>
+    <path id="pathOut" d="M640 210 L715 210" fill="none"/>
+
+    <!-- === OUTPUT NODE: Outreach === -->
+    <g opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur=".5s" begin="2.2s" fill="freeze"/>
+      <circle cx="755" cy="210" r="44" fill="#0066ff" opacity=".12" stroke="rgba(0,102,255,.6)" stroke-width="1.5"/>
+      <circle cx="755" cy="210" r="30" fill="#0066ff" opacity=".18"/>
+      <!-- Send icon -->
+      <path d="M742 210 L768 210 M760 202 L768 210 L760 218" stroke="#0066ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <text x="755" y="268" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#f4f5f7">Outreach</text>
+      <text x="755" y="284" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#0066ff">jetzt gesendet</text>
+    </g>
+
+    <!-- Arrow head on output line -->
+    <polygon points="720,205 730,210 720,215" fill="#0066ff" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur=".3s" begin="2.8s" fill="freeze"/>
+    </polygon>
+
+    <!-- === TIMING LABELS on paths === -->
+    <rect x="218" y="118" width="68" height="20" rx="6" fill="#141417" stroke="rgba(255,255,255,.09)" stroke-width="1"/>
+    <text x="252" y="132" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#73767e">+2h Reaktion</text>
+
+    <rect x="218" y="278" width="72" height="20" rx="6" fill="#141417" stroke="rgba(255,255,255,.09)" stroke-width="1"/>
+    <text x="254" y="292" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#73767e">+4h Reaktion</text>
+
+    <rect x="218" y="196" width="72" height="20" rx="6" fill="#141417" stroke="rgba(255,255,255,.09)" stroke-width="1"/>
+    <text x="254" y="210" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#73767e">Echtzeit</text>
+
+  </svg>
+</div>
+
+<!-- Stats row -->
+<div class="fp__stats-row">
+  <div class="fp__stat">
+    <div class="fp__stat-num"><span>3</span>x</div>
+    <div class="fp__stat-label">höhere Reply-Rate bei Signal-getriggertem Outreach vs. klassischem Timing</div>
+  </div>
+  <div class="fp__stat">
+    <div class="fp__stat-num"><<span>6</span>h</div>
+    <div class="fp__stat-label">Reaktionszeit vom Signal-Eingang bis zum ersten personalisierten Kontakt</div>
+  </div>
+  <div class="fp__stat">
+    <div class="fp__stat-num"><span>40</span>+</div>
+    <div class="fp__stat-label">unterschiedliche Signal-Typen werden kontinuierlich überwacht und bewertet</div>
+  </div>
+</div>
+
+</section>
+</body></html>

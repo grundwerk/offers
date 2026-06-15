@@ -1,0 +1,442 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://api.fontshare.com" crossorigin><link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=inter@400,500,600&display=swap" rel="stylesheet"><style>html,body{margin:0;background:#0e0e10}</style></head><body>
+<section class="fp">
+<style>
+  .fp {
+    position: relative;
+    min-height: 88vh;
+    background-color: #141417;
+    background-image:
+      linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 42px 42px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 56px 48px 64px;
+    box-sizing: border-box;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    color: #f4f5f7;
+    overflow: hidden;
+  }
+
+  .fp::before {
+    content: '';
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 400px;
+    background: radial-gradient(ellipse at center, rgba(0,102,255,.13) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .fp__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #0066ff;
+    background: rgba(0,102,255,.14);
+    border: 1px solid rgba(0,102,255,.40);
+    border-radius: 40px;
+    padding: 5px 14px;
+    margin-bottom: 22px;
+  }
+
+  .fp__eyebrow-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #0066ff;
+    animation: fp-pulse-dot 1.8s ease-in-out infinite;
+  }
+
+  @keyframes fp-pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .4; transform: scale(.7); }
+  }
+
+  .fp__header {
+    text-align: center;
+    margin-bottom: 48px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .fp__title {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -.02em;
+    color: #f4f5f7;
+    margin: 0 0 14px;
+  }
+
+  .fp__title em {
+    font-style: normal;
+    color: #0066ff;
+  }
+
+  .fp__subtitle {
+    font-size: 15px;
+    color: #a0a3ab;
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+
+  .fp__diagram-wrap {
+    width: 100%;
+    max-width: 860px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .fp__diagram-wrap svg {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+
+  /* Animated flow dots */
+  @keyframes fp-flow-1 {
+    0% { offset-distance: 0%; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { offset-distance: 100%; opacity: 0; }
+  }
+  @keyframes fp-flow-2 {
+    0% { offset-distance: 0%; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { offset-distance: 100%; opacity: 0; }
+  }
+
+  .fp__stat-row {
+    display: flex;
+    gap: 32px;
+    margin-top: 44px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .fp__stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 18px 28px;
+    background: #1a1a1f;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 14px;
+    min-width: 130px;
+  }
+
+  .fp__stat-num {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #f4f5f7;
+    letter-spacing: -.02em;
+  }
+
+  .fp__stat-num span {
+    color: #0066ff;
+  }
+
+  .fp__stat-label {
+    font-size: 11px;
+    color: #73767e;
+    text-transform: uppercase;
+    letter-spacing: .09em;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  /* SVG animations */
+  @keyframes fp-travel {
+    0%   { stroke-dashoffset: 1000; opacity: 0; }
+    5%   { opacity: 1; }
+    95%  { opacity: 1; }
+    100% { stroke-dashoffset: 0; opacity: 0; }
+  }
+
+  .fp-dot-travel {
+    animation: fp-dot-move var(--dur, 3s) var(--delay, 0s) linear infinite;
+  }
+
+  @keyframes fp-dot-move {
+    0%   { opacity: 0; }
+    5%   { opacity: 1; }
+    95%  { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
+  @keyframes fp-glow-pulse {
+    0%, 100% { opacity: .6; }
+    50%       { opacity: 1; }
+  }
+
+  .fp__corner-label {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    font-size: 10px;
+    color: #73767e;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+</style>
+
+<div class="fp__header">
+  <div class="fp__eyebrow">
+    <span class="fp__eyebrow-dot"></span>
+    Reply-Handling
+  </div>
+  <h2 class="fp__title">Jede Antwort wird zum <em>Termin</em></h2>
+  <p class="fp__subtitle">Einwand, Frage oder echtes Interesse, das System klassifiziert in Echtzeit und navigiert den Kontakt direkt in den Kalender.</p>
+</div>
+
+<div class="fp__diagram-wrap">
+  <svg viewBox="0 0 860 480" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flussdiagramm: Reply zu Termin">
+
+    <!-- Defs -->
+    <defs>
+      <marker id="fp-arrow-blue" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+        <path d="M0,0 L0,6 L8,3 z" fill="#0066ff" opacity=".7"/>
+      </marker>
+      <marker id="fp-arrow-green" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+        <path d="M0,0 L0,6 L8,3 z" fill="#22c55e" opacity=".8"/>
+      </marker>
+      <marker id="fp-arrow-muted" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+        <path d="M0,0 L0,6 L8,3 z" fill="#a0a3ab" opacity=".5"/>
+      </marker>
+      <filter id="fp-glow">
+        <feGaussianBlur stdDeviation="3" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <filter id="fp-glow-sm">
+        <feGaussianBlur stdDeviation="2" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <radialGradient id="fp-bg-glow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#0066ff" stop-opacity=".08"/>
+        <stop offset="100%" stop-color="#0066ff" stop-opacity="0"/>
+      </radialGradient>
+      <!-- animated dot paths -->
+      <path id="fp-path-main" d="M190,120 L300,120"/>
+      <path id="fp-path-a" d="M420,85 L540,60"/>
+      <path id="fp-path-b" d="M420,120 L540,120"/>
+      <path id="fp-path-c" d="M420,180 L540,180"/>
+      <path id="fp-path-d1" d="M640,60 L720,240"/>
+      <path id="fp-path-d2" d="M640,120 L720,240"/>
+      <path id="fp-path-d3" d="M640,180 L720,240"/>
+    </defs>
+
+    <!-- Background glow center -->
+    <ellipse cx="430" cy="240" rx="340" ry="200" fill="url(#fp-bg-glow)"/>
+
+    <!-- ═══ NODE 1: EINGEHENDE ANTWORT ═══ -->
+    <rect x="20" y="86" width="160" height="68" rx="12" fill="#1a1a1f" stroke="rgba(255,255,255,.12)" stroke-width="1"/>
+    <!-- envelope icon -->
+    <rect x="38" y="102" width="28" height="20" rx="4" fill="none" stroke="#a0a3ab" stroke-width="1.4"/>
+    <path d="M38,104 L52,114 L66,104" stroke="#a0a3ab" stroke-width="1.4" fill="none"/>
+    <!-- unread dot -->
+    <circle cx="66" cy="102" r="5" fill="#0066ff" filter="url(#fp-glow-sm)"/>
+    <text x="76" y="110" font-family="Inter,sans-serif" font-size="10" font-weight="600" fill="#f4f5f7">Eingehende</text>
+    <text x="76" y="124" font-family="Inter,sans-serif" font-size="10" font-weight="600" fill="#f4f5f7">Antwort</text>
+    <text x="76" y="140" font-family="Inter,sans-serif" font-size="9" fill="#73767e">Lead schreibt zurück</text>
+
+    <!-- arrow main -->
+    <line x1="182" y1="120" x2="298" y2="120" stroke="#0066ff" stroke-width="1.5" stroke-opacity=".6" marker-end="url(#fp-arrow-blue)"/>
+    <!-- animated pulse on main line -->
+    <circle r="4" fill="#0066ff" filter="url(#fp-glow-sm)" opacity="0">
+      <animateMotion dur="2.2s" repeatCount="indefinite" begin="0s">
+        <mpath href="#fp-path-main"/>
+      </animateMotion>
+      <animate attributeName="opacity" values="0;1;1;0" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- ═══ NODE 2: KI-KLASSIFIKATION ═══ -->
+    <!-- Hexagonal diamond shape -->
+    <path d="M300,80 L370,120 L300,160 L230,120 Z" fill="#0066ff" fill-opacity=".10" stroke="#0066ff" stroke-opacity=".5" stroke-width="1.5" filter="url(#fp-glow)"/>
+    <path d="M300,80 L370,120 L300,160 L230,120 Z" fill="none" stroke="#0066ff" stroke-opacity=".3" stroke-width="6"/>
+    <!-- KI icon: circuit node -->
+    <circle cx="300" cy="120" r="18" fill="#0066ff" fill-opacity=".15" stroke="#0066ff" stroke-opacity=".6" stroke-width="1.2"/>
+    <path d="M293,120 L307,120 M300,113 L300,127" stroke="#0066ff" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="300" cy="120" r="4" fill="#0066ff" opacity=".9"/>
+    <circle cx="286" cy="120" r="2" fill="#0066ff" opacity=".6"/>
+    <circle cx="314" cy="120" r="2" fill="#0066ff" opacity=".6"/>
+    <circle cx="300" cy="106" r="2" fill="#0066ff" opacity=".6"/>
+    <text x="300" y="172" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" font-weight="600" fill="#0066ff" letter-spacing=".06em">KI-KLASSIFIKATION</text>
+
+    <!-- ═══ BRANCHES: 3 Typen ═══ -->
+    <!-- Branch A: Interesse -->
+    <line x1="370" y1="100" x2="536" y2="60" stroke="rgba(255,255,255,.15)" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#fp-arrow-muted)"/>
+    <circle r="3.5" fill="#f4f5f7" opacity="0">
+      <animateMotion dur="2.8s" repeatCount="indefinite" begin="0.3s">
+        <mpath href="#fp-path-a"/>
+      </animateMotion>
+      <animate attributeName="opacity" values="0;.9;.9;0" dur="2.8s" repeatCount="indefinite" begin="0.3s"/>
+    </circle>
+
+    <!-- Branch B: Einwand -->
+    <line x1="370" y1="120" x2="536" y2="120" stroke="rgba(255,255,255,.15)" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#fp-arrow-muted)"/>
+    <circle r="3.5" fill="#f4f5f7" opacity="0">
+      <animateMotion dur="2.8s" repeatCount="indefinite" begin="1.2s">
+        <mpath href="#fp-path-b"/>
+      </animateMotion>
+      <animate attributeName="opacity" values="0;.9;.9;0" dur="2.8s" repeatCount="indefinite" begin="1.2s"/>
+    </circle>
+
+    <!-- Branch C: Frage -->
+    <line x1="370" y1="140" x2="536" y2="180" stroke="rgba(255,255,255,.15)" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#fp-arrow-muted)"/>
+    <circle r="3.5" fill="#f4f5f7" opacity="0">
+      <animateMotion dur="2.8s" repeatCount="indefinite" begin="2s">
+        <mpath href="#fp-path-c"/>
+      </animateMotion>
+      <animate attributeName="opacity" values="0;.9;.9;0" dur="2.8s" repeatCount="indefinite" begin="2s"/>
+    </circle>
+
+    <!-- ═══ TYPE NODES ═══ -->
+    <!-- A: Interesse -->
+    <rect x="540" y="30" width="140" height="54" rx="10" fill="#1a1a1f" stroke="rgba(255,255,255,.11)" stroke-width="1"/>
+    <rect x="540" y="30" width="4" height="54" rx="2" fill="#22c55e"/>
+    <text x="556" y="51" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#22c55e">Direktes Interesse</text>
+    <text x="556" y="65" font-family="Inter,sans-serif" font-size="9" fill="#73767e">"Klingt spannend, mehr?"</text>
+    <text x="556" y="76" font-family="Inter,sans-serif" font-size="9" fill="#73767e">Terminsuggest sofort</text>
+
+    <!-- B: Einwand -->
+    <rect x="540" y="93" width="140" height="54" rx="10" fill="#1a1a1f" stroke="rgba(255,255,255,.11)" stroke-width="1"/>
+    <rect x="540" y="93" width="4" height="54" rx="2" fill="#f59e0b"/>
+    <text x="556" y="114" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#f59e0b">Einwand</text>
+    <text x="556" y="128" font-family="Inter,sans-serif" font-size="9" fill="#73767e">"Kein Budget / kein Zeit"</text>
+    <text x="556" y="139" font-family="Inter,sans-serif" font-size="9" fill="#73767e">Reframe + Termin</text>
+
+    <!-- C: Frage -->
+    <rect x="540" y="153" width="140" height="54" rx="10" fill="#1a1a1f" stroke="rgba(255,255,255,.11)" stroke-width="1"/>
+    <rect x="540" y="153" width="4" height="54" rx="2" fill="#a78bfa"/>
+    <text x="556" y="174" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#a78bfa">Verstaendnisfrage</text>
+    <text x="556" y="188" font-family="Inter,sans-serif" font-size="9" fill="#73767e">"Was genau macht ihr?"</text>
+    <text x="556" y="199" font-family="Inter,sans-serif" font-size="9" fill="#73767e">Antwort + Termin</text>
+
+    <!-- ═══ CONVERGING LINES TO OUTCOME ═══ -->
+    <!-- From A to calendar -->
+    <path d="M680,57 Q720,57 720,240" stroke="#22c55e" stroke-width="1.4" stroke-opacity=".5" fill="none" marker-end="url(#fp-arrow-green)"/>
+    <!-- animated dot A-->
+    <circle r="3.5" fill="#22c55e" filter="url(#fp-glow-sm)" opacity="0">
+      <animateMotion dur="3s" repeatCount="indefinite" begin="0.5s" path="M680,57 Q720,57 720,240"/>
+      <animate attributeName="opacity" values="0;.9;.9;0" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+    </circle>
+
+    <!-- From B to calendar -->
+    <path d="M680,120 L720,120 L720,240" stroke="#f59e0b" stroke-width="1.4" stroke-opacity=".5" fill="none" marker-end="url(#fp-arrow-green)"/>
+    <!-- animated dot B-->
+    <circle r="3.5" fill="#f59e0b" filter="url(#fp-glow-sm)" opacity="0">
+      <animateMotion dur="3s" repeatCount="indefinite" begin="1.5s" path="M680,120 L720,120 L720,240"/>
+      <animate attributeName="opacity" values="0;.9;.9;0" dur="3s" repeatCount="indefinite" begin="1.5s"/>
+    </circle>
+
+    <!-- From C to calendar -->
+    <path d="M680,180 Q720,180 720,240" stroke="#a78bfa" stroke-width="1.4" stroke-opacity=".5" fill="none" marker-end="url(#fp-arrow-green)"/>
+    <!-- animated dot C-->
+    <circle r="3.5" fill="#a78bfa" filter="url(#fp-glow-sm)" opacity="0">
+      <animateMotion dur="3s" repeatCount="indefinite" begin="2.5s" path="M680,180 Q720,180 720,240"/>
+      <animate attributeName="opacity" values="0;.9;.9;0" dur="3s" repeatCount="indefinite" begin="2.5s"/>
+    </circle>
+
+    <!-- ═══ OUTCOME NODE: KALENDER ═══ -->
+    <!-- Glow halo -->
+    <circle cx="720" cy="300" r="68" fill="#22c55e" fill-opacity=".06"/>
+    <circle cx="720" cy="300" r="52" fill="#22c55e" fill-opacity=".08"/>
+    <!-- Calendar box -->
+    <rect x="678" y="256" width="84" height="84" rx="14" fill="#1a1a1f" stroke="#22c55e" stroke-opacity=".55" stroke-width="1.8" filter="url(#fp-glow)"/>
+    <!-- Calendar header -->
+    <rect x="678" y="256" width="84" height="24" rx="14" fill="#22c55e" fill-opacity=".18"/>
+    <rect x="678" y="268" width="84" height="12" fill="#22c55e" fill-opacity=".18"/>
+    <!-- Calendar hooks -->
+    <line x1="700" y1="252" x2="700" y2="262" stroke="#22c55e" stroke-width="2" stroke-linecap="round" opacity=".7"/>
+    <line x1="740" y1="252" x2="740" y2="262" stroke="#22c55e" stroke-width="2" stroke-linecap="round" opacity=".7"/>
+    <!-- Calendar grid dots -->
+    <circle cx="697" cy="294" r="2.5" fill="#22c55e" opacity=".5"/>
+    <circle cx="710" cy="294" r="2.5" fill="#22c55e" opacity=".5"/>
+    <circle cx="723" cy="294" r="2.5" fill="#22c55e" opacity=".9" filter="url(#fp-glow-sm)"/>
+    <circle cx="736" cy="294" r="2.5" fill="#22c55e" opacity=".5"/>
+    <circle cx="749" cy="294" r="2.5" fill="#22c55e" opacity=".5"/>
+    <circle cx="697" cy="308" r="2.5" fill="#22c55e" opacity=".5"/>
+    <circle cx="710" cy="308" r="2.5" fill="#22c55e" opacity=".5"/>
+    <!-- checkmark on highlighted day -->
+    <circle cx="723" cy="308" r="7" fill="#22c55e" opacity=".25"/>
+    <path d="M719,308 L722,311 L727,305" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="736" cy="308" r="2.5" fill="#22c55e" opacity=".5"/>
+    <circle cx="749" cy="308" r="2.5" fill="#22c55e" opacity=".5"/>
+    <!-- Outcome label -->
+    <text x="720" y="360" text-anchor="middle" font-family="Clash Display,system-ui,sans-serif" font-size="13" font-weight="700" fill="#22c55e" filter="url(#fp-glow-sm)">Termin gebucht</text>
+    <text x="720" y="376" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#73767e">Automatisch, ohne Umwege</text>
+
+    <!-- ═══ RESPONSE EXAMPLES (bottom area) ═══ -->
+    <!-- Chat bubble 1: Einwand -->
+    <rect x="20" y="290" width="220" height="56" rx="10" fill="#1a1a1f" stroke="rgba(255,255,255,.09)" stroke-width="1"/>
+    <circle cx="38" cy="306" r="8" fill="#0066ff" fill-opacity=".2" stroke="#0066ff" stroke-opacity=".4" stroke-width="1"/>
+    <text x="38" y="310" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" font-weight="700" fill="#0066ff">AI</text>
+    <text x="54" y="306" font-family="Inter,sans-serif" font-size="9" fill="#a0a3ab">Auf Einwand "kein Budget":</text>
+    <text x="54" y="320" font-family="Inter,sans-serif" font-size="9.5" font-weight="500" fill="#f4f5f7">"Genau deshalb lohnt ein kurzes</text>
+    <text x="54" y="334" font-family="Inter,sans-serif" font-size="9.5" font-weight="500" fill="#f4f5f7">Gesprach, um das zu prüfen."</text>
+
+    <!-- Chat bubble 2: Terminvorschlag -->
+    <rect x="20" y="360" width="220" height="56" rx="10" fill="#1a1a1f" stroke="rgba(255,255,255,.09)" stroke-width="1"/>
+    <circle cx="38" cy="376" r="8" fill="#0066ff" fill-opacity=".2" stroke="#0066ff" stroke-opacity=".4" stroke-width="1"/>
+    <text x="38" y="380" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" font-weight="700" fill="#0066ff">AI</text>
+    <text x="54" y="376" font-family="Inter,sans-serif" font-size="9" fill="#a0a3ab">Terminvorschlag automatisch:</text>
+    <text x="54" y="390" font-family="Inter,sans-serif" font-size="9.5" font-weight="500" fill="#f4f5f7">"Passt Di 10h oder Mi 14h?</text>
+    <text x="54" y="404" font-family="Inter,sans-serif" font-size="9.5" font-weight="500" fill="#f4f5f7">Hier der Link: cal.ly/..."</text>
+
+    <!-- Conversion arrow bubble -> calendar -->
+    <path d="M240,318 Q430,318 640,300" stroke="rgba(0,102,255,.2)" stroke-width="1" stroke-dasharray="5 4" fill="none"/>
+
+    <!-- ═══ LABEL ANNOTATIONS ═══ -->
+    <text x="195" y="108" font-family="Inter,sans-serif" font-size="9" fill="#73767e" letter-spacing=".05em">analysiert in</text>
+    <text x="195" y="120" font-family="Inter,sans-serif" font-size="9" fill="#0066ff" font-weight="600">< 2 Sek.</text>
+
+    <!-- Convergence label -->
+    <text x="690" y="228" font-family="Inter,sans-serif" font-size="9" fill="#73767e" text-anchor="middle">alle Wege</text>
+    <text x="690" y="240" font-family="Inter,sans-serif" font-size="9" fill="#22c55e" font-weight="600" text-anchor="middle">enden hier</text>
+
+    <!-- Decorative: corner dots -->
+    <circle cx="840" cy="20" r="2" fill="rgba(255,255,255,.1)"/>
+    <circle cx="20" cy="460" r="2" fill="rgba(255,255,255,.1)"/>
+    <circle cx="840" cy="460" r="2" fill="rgba(255,255,255,.1)"/>
+
+    <!-- Subtle step numbers -->
+    <text x="100" y="168" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#73767e" letter-spacing=".08em" opacity=".5">01 ANTWORT</text>
+    <text x="300" y="200" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#73767e" letter-spacing=".08em" opacity=".5">02 KLASSIFIKATION</text>
+    <text x="610" y="22" font-family="Inter,sans-serif" font-size="9" fill="#73767e" letter-spacing=".08em" opacity=".5">03 BEHANDLUNG</text>
+    <text x="720" y="442" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#73767e" letter-spacing=".08em" opacity=".5">04 ERGEBNIS</text>
+
+  </svg>
+</div>
+
+<div class="fp__stat-row">
+  <div class="fp__stat">
+    <span class="fp__stat-num">3<span>x</span></span>
+    <span class="fp__stat-label">mehr Termine<br>aus Replies</span>
+  </div>
+  <div class="fp__stat">
+    <span class="fp__stat-num"><<span>2</span>s</span>
+    <span class="fp__stat-label">Reaktionszeit<br>je Antwort</span>
+  </div>
+  <div class="fp__stat">
+    <span class="fp__stat-num">100<span>%</span></span>
+    <span class="fp__stat-label">Einwande<br>behandelt</span>
+  </div>
+</div>
+
+</section>
+</body></html>
