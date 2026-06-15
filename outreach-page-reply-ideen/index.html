@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reply-Agent - Ideen | Grundwerk Digital</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=inter@400,500,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0e0e10;--bg2:#141417;--bg3:#1a1a1f;
+  --line:rgba(255,255,255,.09);--line2:rgba(255,255,255,.14);
+  --fg:#f4f5f7;--mut:#a0a3ab;--mut2:#73767e;
+  --blue:#0066ff;--blue-soft:rgba(0,102,255,.14);--blue-line:rgba(0,102,255,.40);
+  --green:#22c55e;--green-soft:rgba(34,197,94,.12);--green-line:rgba(34,197,94,.34);
+  --amber:#fbbf24;--red:#ef4444;
+  --ff-d:"Clash Display",system-ui,sans-serif;--ff-b:"Inter","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --radius:14px;--maxw:1120px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--ff-b);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--ff-d);font-weight:600;line-height:1.1;letter-spacing:-.02em}
+h1{font-size:clamp(32px,5vw,56px)}
+h2{font-size:clamp(25px,3.4vw,38px)}
+h3{font-size:clamp(18px,2vw,22px)}
+p{color:var(--mut)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.sec{padding:84px 0;position:relative}
+.raster{background-color:var(--bg);background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:46px 46px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:18px}
+.eyebrow::before{content:"";width:22px;height:1px;background:var(--blue)}
+.hl{color:var(--blue)}
+.lead{font-size:18px;color:var(--mut);max-width:60ch}
+.center{text-align:center}
+.center .lead{margin:14px auto 0}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(14,14,16,.72);border-bottom:1px solid var(--line)}
+.nav-in{max-width:var(--maxw);margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:14px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--ff-d);font-weight:700;font-size:18px}
+.brand img{height:24px;width:24px;border-radius:6px}
+.nav .tagpill{margin-left:auto;font-size:11.5px;font-weight:600;color:var(--blue);background:var(--blue-soft);border:1px solid var(--blue-line);border-radius:999px;padding:5px 12px}
+
+/* hero */
+.hero{padding:74px 0 30px;text-align:center}
+.hero h1{margin:14px auto 0;max-width:18ch}
+.hero .lead{margin:18px auto 0;text-align:center}
+.hero-badges{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:26px}
+.hbadge{font-size:12.5px;color:var(--mut);background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:7px 14px}
+.hbadge b{color:var(--fg)}
+
+/* FLOW / org chart */
+.flow{margin-top:48px}
+.tcol{display:flex;flex-direction:column;align-items:center}
+.tnode{background:var(--bg2);border:1px solid var(--line2);border-radius:14px;padding:16px 22px;text-align:center;box-shadow:0 18px 50px rgba(0,0,0,.4)}
+.tnode .t{font-family:var(--ff-d);font-size:16px;font-weight:600}
+.tnode .s{font-size:12.5px;color:var(--mut);margin-top:3px}
+.tnode.agent{border-color:var(--blue-line);background:linear-gradient(180deg,rgba(0,102,255,.10),var(--bg2))}
+.tnode.agent .ic{font-size:24px;margin-bottom:6px}
+.tline{width:2px;height:26px;background:var(--line2)}
+.groups{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;position:relative;padding-top:34px;align-items:start}
+.groups::before{content:"";position:absolute;top:0;left:calc(10% + 0px);right:calc(10% + 0px);height:2px;background:var(--line2)}
+.group{position:relative;background:var(--bg2);border:1px solid var(--line);border-radius:13px;padding:15px 14px}
+.group::before{content:"";position:absolute;top:-34px;left:50%;width:2px;height:34px;background:var(--line2)}
+.group .gh{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mut2);margin-bottom:11px;display:flex;align-items:center;gap:7px}
+.group .gh .dot{width:8px;height:8px;border-radius:50%;background:var(--mut2)}
+.group.interested{border-color:var(--blue-line);background:linear-gradient(180deg,rgba(0,102,255,.08),var(--bg2));box-shadow:0 0 0 1px var(--blue-line),0 18px 50px rgba(0,102,255,.10)}
+.group.interested::before{background:var(--blue-line);width:3px}
+.group.interested .gh{color:var(--blue)} .group.interested .gh .dot{background:var(--blue)}
+.group.warn .gh .dot{background:var(--amber)}
+.group.block .gh .dot{background:var(--red)}
+/* sub-label connected list */
+.subtree{position:relative;padding-left:13px;display:flex;flex-direction:column;gap:7px}
+.subtree::before{content:"";position:absolute;left:3px;top:9px;bottom:9px;width:2px;background:var(--blue-line)}
+.group:not(.interested) .subtree::before{background:var(--line2)}
+.chip{position:relative;font-size:11.5px;font-weight:600;color:var(--fg);background:var(--bg3);border:1px solid var(--line);border-radius:7px;padding:5px 9px}
+.chip::before{content:"";position:absolute;left:-10px;top:50%;width:9px;height:2px;background:var(--line2)}
+.group.interested .chip{border-color:var(--blue-line);background:var(--blue-soft);color:#cfe0ff}
+.group.interested .chip::before{background:var(--blue-line)}
+.flow-note{text-align:center;margin-top:30px;font-size:13px;color:var(--mut2)}
+@media(max-width:880px){
+  .groups{grid-template-columns:1fr 1fr;gap:12px;padding-top:18px}
+  .groups::before{display:none}.group::before{display:none}
+}
+@media(max-width:560px){.groups{grid-template-columns:1fr}}
+
+/* DRAFT mockup */
+.draft{display:grid;grid-template-columns:1fr 1.1fr;gap:38px;align-items:center;margin-top:14px}
+@media(max-width:880px){.draft{grid-template-columns:1fr;gap:26px}}
+.inbox{background:var(--bg2);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.inbox .ih{padding:13px 16px;border-bottom:1px solid var(--line);background:var(--bg3);font-size:12px;font-weight:600;color:var(--mut);display:flex;align-items:center;gap:8px}
+.inbox .ih .lbl-tag{margin-left:auto;font-size:10.5px;font-weight:700;color:var(--blue);background:var(--blue-soft);border:1px solid var(--blue-line);border-radius:6px;padding:2px 8px}
+.reply-in{padding:16px;border-bottom:1px solid var(--line)}
+.reply-in .who{display:flex;align-items:center;gap:9px;margin-bottom:8px}
+.reply-in .av{width:28px;height:28px;border-radius:50%;background:#9aa7b2;color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.reply-in .nm{font-size:12.5px;font-weight:700;color:var(--fg)}
+.reply-in .tm{font-size:11px;color:var(--mut2);margin-left:auto}
+.reply-in .body{font-size:13.5px;color:var(--fg);line-height:1.6}
+.draftbox{padding:16px;background:rgba(0,102,255,.05)}
+.draftbox .dhead{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+.draftbox .dhead .spark{font-size:14px}
+.draftbox .dbody{font-size:13.5px;color:var(--fg);line-height:1.65;background:var(--bg2);border:1px solid var(--blue-line);border-radius:10px;padding:13px 15px;white-space:pre-line}
+.draftbox .dbody .v{color:var(--blue);background:var(--blue-soft);border-radius:4px;padding:0 4px}
+.draftbox .actions{display:flex;gap:9px;margin-top:12px}
+.dbtn{font-family:var(--ff-b);font-weight:600;font-size:13px;border-radius:9px;padding:9px 16px;border:1px solid transparent;cursor:default}
+.dbtn.send{background:var(--blue);color:#fff}
+.dbtn.edit{background:transparent;color:var(--fg);border-color:var(--line2)}
+
+/* IDEAS grid */
+.ideas{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:46px}
+@media(max-width:900px){.ideas{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.ideas{grid-template-columns:1fr}}
+.idea{background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);padding:24px;transition:border-color .18s,transform .18s}
+.idea:hover{border-color:var(--blue-line);transform:translateY(-3px)}
+.idea .num{font-size:12px;font-weight:700;color:var(--blue);letter-spacing:.08em}
+.idea .ic{width:46px;height:46px;border-radius:12px;background:var(--blue-soft);border:1px solid var(--blue-line);display:flex;align-items:center;justify-content:center;font-size:22px;margin:12px 0 14px}
+.idea h3{font-size:18px;margin:0 0 8px}
+.idea p{font-size:14px;color:var(--mut);line-height:1.6}
+.idea .mini{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px}
+.idea .mini span{font-size:11px;font-weight:600;color:var(--mut);background:var(--bg3);border:1px solid var(--line);border-radius:6px;padding:3px 8px}
+.idea .mini span.on{color:var(--blue);background:var(--blue-soft);border-color:var(--blue-line)}
+
+.foot{border-top:1px solid var(--line);padding:34px 0;text-align:center;color:var(--mut2);font-size:13px}
+.foot b{color:var(--mut)}
+</style>
+</head>
+<body>
+
+<div class="nav"><div class="nav-in">
+  <span class="brand"><img src="https://start.grundwerk.digital/assets/favicon.png" alt="Grundwerk">Grundwerk<span style="color:var(--blue)">.</span></span>
+  <span class="tagpill">Reply-Agent &middot; Ideen-Konzept</span>
+</div></div>
+
+<!-- HERO -->
+<header class="sec hero raster">
+  <div class="wrap">
+    <div class="eyebrow" style="justify-content:center">Reply-Handling, neu gedacht</div>
+    <h1>Jede Antwort wird sortiert, beantwortet und <span class="hl">zum Termin gemacht</span>.</h1>
+    <p class="lead">Der Reply-Agent liest jede eingehende Antwort, vergibt automatisch das richtige Label, leitet sie an die richtige Stelle und schreibt direkt einen passenden Antwort-Entwurf vor. Dein Team klickt nur noch "Senden".</p>
+    <div class="hero-badges">
+      <div class="hbadge"><b>18</b> echte Labels</div>
+      <div class="hbadge"><b>&lt; 1 s</b> pro Klassifikation</div>
+      <div class="hbadge"><b>6</b> Interested-Stufen</div>
+      <div class="hbadge">Vorgeschriebene Antworten</div>
+    </div>
+  </div>
+</header>
+
+<!-- FLOW -->
+<section class="sec raster" style="border-block:1px solid var(--line);background-color:var(--bg2)">
+  <div class="wrap">
+    <div class="center"><div class="eyebrow" style="justify-content:center">So sortiert der Agent</div>
+    <h2>Vom Posteingang in den <span class="hl">richtigen Strang</span>.</h2>
+    <p class="lead center">Der Agent klassifiziert jede Antwort in eines unserer echten Labels. Der Interested-Strang hat sechs Stufen, danach kommen die anderen Gruppen.</p></div>
+
+    <div class="flow">
+      <div class="tcol">
+        <div class="tnode"><div class="t">Eingehende Antwort</div><div class="s">E-Mail oder LinkedIn-Nachricht</div></div>
+        <div class="tline"></div>
+        <div class="tnode agent"><div class="ic">&#129302;</div><div class="t">Reply-Agent klassifiziert</div><div class="s">Liest Inhalt, Ton und Kontext, vergibt in unter 1 Sekunde ein Label</div></div>
+      </div>
+
+      <div class="groups">
+        <div class="group interested">
+          <div class="gh"><span class="dot"></span>Interested</div>
+          <div class="subtree">
+            <span class="chip">Interested</span>
+            <span class="chip">Video Request</span>
+            <span class="chip">Pricing Request</span>
+            <span class="chip">Meeting Request</span>
+            <span class="chip">Technical Question</span>
+            <span class="chip">Information Request</span>
+          </div>
+        </div>
+        <div class="group">
+          <div class="gh"><span class="dot"></span>Not Interested</div>
+          <div class="subtree">
+            <span class="chip">Not Interested</span>
+            <span class="chip">Competition</span>
+            <span class="chip">Changed Jobs</span>
+            <span class="chip">Wrong Person</span>
+            <span class="chip">Sales Pitch To Us</span>
+            <span class="chip">Negative Response</span>
+            <span class="chip">Not Right Now</span>
+          </div>
+        </div>
+        <div class="group block">
+          <div class="gh"><span class="dot"></span>Blocklist</div>
+          <div class="subtree">
+            <span class="chip">Blocklist</span>
+            <span class="chip">DSGVO</span>
+            <span class="chip">Abmahnung</span>
+          </div>
+        </div>
+        <div class="group warn">
+          <div class="gh"><span class="dot"></span>Out Of Office</div>
+          <div class="subtree">
+            <span class="chip">Out Of Office</span>
+          </div>
+        </div>
+        <div class="group warn">
+          <div class="gh"><span class="dot"></span>Bounced</div>
+          <div class="subtree">
+            <span class="chip">Bounced</span>
+          </div>
+        </div>
+      </div>
+      <p class="flow-note">Interested-Labels werden sofort an den Vertrieb geroutet. Blocklist, DSGVO und Abmahnung werden automatisch unterdrückt und compliance-sicher protokolliert.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DRAFT mockup -->
+<section class="sec raster">
+  <div class="wrap">
+    <div class="center"><div class="eyebrow" style="justify-content:center">Der Agent schreibt vor</div>
+    <h2>Antwort-Entwurf inklusive, <span class="hl">in deinem Ton</span>.</h2>
+    <p class="lead center">Sobald das Label steht, schreibt der Agent direkt einen passenden Antwort-Entwurf. Dein Team prüft kurz und sendet, statt jede Nachricht von null zu tippen.</p></div>
+
+    <div class="draft">
+      <div class="inbox">
+        <div class="ih">Posteingang <span class="lbl-tag">Meeting Request</span></div>
+        <div class="reply-in">
+          <div class="who"><span class="av">JK</span><span class="nm">Jana Kraft, Meliora GmbH</span><span class="tm">14:22</span></div>
+          <div class="body">Hallo, klingt spannend. Donnerstag oder Freitag würde bei mir passen, schicken Sie mir gerne einen Terminvorschlag.</div>
+        </div>
+        <div class="draftbox">
+          <div class="dhead"><span class="spark">&#9889;</span>Vorgeschriebener Entwurf</div>
+          <div class="dbody">Hallo Jana,
+
+freut mich. <span class="v">Donnerstag um 11:00 Uhr</span> passt bei uns gut, hier ist der Link zum Bestätigen: <span class="v">cal.grundwerk.digital/jana</span>
+
+Falls es zeitlich nicht passt, schlag mir gerne einen anderen Slot vor.
+
+Beste Grüße
+Tom</div>
+          <div class="actions"><span class="dbtn send">Senden</span><span class="dbtn edit">Anpassen</span></div>
+        </div>
+      </div>
+      <div>
+        <h3 style="margin-bottom:14px">Was der Agent dabei automatisch macht</h3>
+        <div class="idea" style="padding:18px;margin-bottom:12px"><p style="margin:0"><b style="color:var(--fg)">Label lesen</b> und die passende Antwort-Vorlage wählen, je nach Meeting Request, Pricing Request oder Einwand.</p></div>
+        <div class="idea" style="padding:18px;margin-bottom:12px"><p style="margin:0"><b style="color:var(--fg)">Kontext einsetzen</b>: Name, Firma, freier Termin-Slot und der richtige Buchungslink werden automatisch eingefügt.</p></div>
+        <div class="idea" style="padding:18px"><p style="margin:0"><b style="color:var(--fg)">Mensch entscheidet</b>: Senden mit einem Klick oder vorher anpassen. Nichts geht ungeprüft raus.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IDEAS -->
+<section class="sec raster" style="border-block:1px solid var(--line);background-color:var(--bg2)">
+  <div class="wrap">
+    <div class="center"><div class="eyebrow" style="justify-content:center">Fünf Ideen</div>
+    <h2>Was der Reply-Agent <span class="hl">können soll</span>.</h2>
+    <p class="lead center">Fünf Bausteine, von denen wir gerne mit dir die spannendsten zuerst bauen.</p></div>
+
+    <div class="ideas">
+      <div class="idea">
+        <div class="num">IDEE 01</div>
+        <div class="ic">&#129516;</div>
+        <h3>Auto-Klassifikation in Echtzeit</h3>
+        <p>Jede Antwort bekommt in unter einer Sekunde eines der 18 echten Labels. Kein manuelles Sortieren mehr, keine Antwort bleibt liegen.</p>
+        <div class="mini"><span class="on">18 Labels</span><span>6 Interested-Stufen</span></div>
+      </div>
+      <div class="idea">
+        <div class="num">IDEE 02</div>
+        <div class="ic">&#9997;</div>
+        <h3>Vorgeschriebene Antwort pro Label</h3>
+        <p>Der Agent schreibt direkt einen passenden Entwurf, im richtigen Ton und mit eingesetztem Kontext. Dein Team klickt nur noch Senden oder Anpassen.</p>
+        <div class="mini"><span class="on">Draft je Label</span><span>1-Klick-Senden</span></div>
+      </div>
+      <div class="idea">
+        <div class="num">IDEE 03</div>
+        <div class="ic">&#128737;</div>
+        <h3>Einwand-Konter aus Bibliothek</h3>
+        <p>Bei Not Interested, Not Right Now oder Competition zieht der Agent den passenden, getesteten Reframe, statt aufzugeben. Aus einem Nein wird oft ein Später.</p>
+        <div class="mini"><span>Reframe-Library</span><span class="on">A/B-getestet</span></div>
+      </div>
+      <div class="idea">
+        <div class="num">IDEE 04</div>
+        <div class="ic">&#128640;</div>
+        <h3>Hot-Lead-Routing und CRM-Sync</h3>
+        <p>Meeting Request und Interested gehen sofort als Slack-Ping an den richtigen Menschen, der Close-Status wird gesetzt. Blocklist, DSGVO und Abmahnung werden automatisch unterdrückt.</p>
+        <div class="mini"><span class="on">Slack + Close</span><span>Compliance-Log</span></div>
+      </div>
+      <div class="idea">
+        <div class="num">IDEE 05</div>
+        <div class="ic">&#128202;</div>
+        <h3>Konfidenz und Lern-Loop</h3>
+        <p>Der Agent zeigt pro Antwort einen Sicherheits-Score. Unsichere Fälle landen in einer kurzen Human-Queue, jede Korrektur macht das Modell besser.</p>
+        <div class="mini"><span class="on">Konfidenz-Score</span><span>lernt mit</span></div>
+      </div>
+      <div class="idea" style="background:linear-gradient(180deg,rgba(0,102,255,.10),var(--bg2));border-color:var(--blue-line)">
+        <div class="num">NÄCHSTER SCHRITT</div>
+        <div class="ic">&#128172;</div>
+        <h3>Welche zuerst?</h3>
+        <p>Sag uns im Termin, welche zwei Ideen dir am meisten bringen. Auto-Klassifikation und vorgeschriebene Antworten sind die schnellsten Hebel.</p>
+        <div class="mini"><span class="on">Empfehlung: 01 + 02</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="foot"><div class="wrap">
+  Reply-Agent Ideen-Konzept &middot; <b>Grundwerk Digital</b> &middot; Stand 06/2026 &middot; alle Labels aus dem echten Reply-System
+</div></div>
+
+</body>
+</html>
