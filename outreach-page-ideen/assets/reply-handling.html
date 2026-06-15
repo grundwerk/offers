@@ -1,0 +1,745 @@
+<section class="fp">
+<style>
+  .fp {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #141417;
+    background-image:
+      linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 42px 42px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 60px;
+    box-sizing: border-box;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    overflow: hidden;
+    color: #f4f5f7;
+  }
+
+  .fp::before {
+    content: '';
+    position: absolute;
+    top: -180px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    height: 500px;
+    background: radial-gradient(ellipse at center, rgba(0,102,255,.13) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .fp::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    right: -100px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(ellipse at center, rgba(0,102,255,.07) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .fp__inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    gap: 52px;
+  }
+
+  /* --- TOP HEADER --- */
+  .fp__header {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-width: 680px;
+  }
+
+  .fp__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #0066ff;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+  }
+
+  .fp__eyebrow-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #0066ff;
+    box-shadow: 0 0 8px rgba(0,102,255,.8);
+    flex-shrink: 0;
+    animation: fp-pulse 2.4s ease-in-out infinite;
+  }
+
+  @keyframes fp-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .5; transform: scale(.7); }
+  }
+
+  .fp__headline {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: clamp(38px, 5vw, 62px);
+    font-weight: 700;
+    line-height: 1.05;
+    color: #f4f5f7;
+    letter-spacing: -.02em;
+    margin: 0;
+  }
+
+  .fp__headline em {
+    font-style: normal;
+    color: #0066ff;
+  }
+
+  .fp__subline {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #a0a3ab;
+    max-width: 520px;
+    margin: 0;
+  }
+
+  /* --- PIPELINE DIAGRAM --- */
+  .fp__pipeline {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+  }
+
+  /* INBOX COLUMN */
+  .fp__inbox {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 230px;
+    flex-shrink: 0;
+  }
+
+  .fp__inbox-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .10em;
+    text-transform: uppercase;
+    color: #73767e;
+    margin-bottom: 4px;
+    padding-left: 4px;
+  }
+
+  .fp__msg {
+    background: #1a1a1f;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 10px;
+    padding: 11px 14px;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+  }
+
+  .fp__msg::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    border-radius: 3px 0 0 3px;
+  }
+
+  .fp__msg--interest::before { background: #22c55e; }
+  .fp__msg--question::before { background: #f59e0b; }
+  .fp__msg--hesitation::before { background: #a0a3ab; }
+  .fp__msg--objection::before { background: #ef4444; }
+
+  .fp__msg-type {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    opacity: .7;
+  }
+
+  .fp__msg--interest .fp__msg-type { color: #22c55e; }
+  .fp__msg--question .fp__msg-type { color: #f59e0b; }
+  .fp__msg--hesitation .fp__msg-type { color: #a0a3ab; }
+  .fp__msg--objection .fp__msg-type { color: #ef4444; }
+
+  .fp__msg-text {
+    font-size: 12px;
+    color: #f4f5f7;
+    line-height: 1.45;
+    font-style: italic;
+  }
+
+  /* FLOW ARROWS */
+  .fp__flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 72px;
+    position: relative;
+  }
+
+  .fp__flow-svg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  /* ENGINE COLUMN */
+  .fp__engine {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 240px;
+    flex-shrink: 0;
+  }
+
+  .fp__engine-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .10em;
+    text-transform: uppercase;
+    color: #73767e;
+    margin-bottom: 14px;
+    padding-left: 4px;
+  }
+
+  .fp__engine-box {
+    background: #1a1a1f;
+    border: 1px solid rgba(0,102,255,.40);
+    border-radius: 14px;
+    padding: 20px 18px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .fp__engine-box::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(0,102,255,.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .fp__engine-title {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #f4f5f7;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .fp__engine-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: rgba(0,102,255,.14);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .fp__engine-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .fp__engine-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    font-size: 11.5px;
+    color: #a0a3ab;
+    line-height: 1.4;
+  }
+
+  .fp__engine-step-num {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: rgba(0,102,255,.14);
+    border: 1px solid rgba(0,102,255,.40);
+    font-size: 9px;
+    font-weight: 700;
+    color: #0066ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+  }
+
+  .fp__engine-step strong {
+    color: #f4f5f7;
+    font-weight: 600;
+  }
+
+  /* OUTPUT COLUMN */
+  .fp__output {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .fp__output-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .10em;
+    text-transform: uppercase;
+    color: #73767e;
+    margin-bottom: 14px;
+    padding-left: 4px;
+  }
+
+  .fp__calendar {
+    background: #1a1a1f;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 14px;
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fp__cal-header {
+    padding: 14px 18px;
+    border-bottom: 1px solid rgba(255,255,255,.09);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,.02);
+  }
+
+  .fp__cal-dots {
+    display: flex;
+    gap: 5px;
+  }
+
+  .fp__cal-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+  }
+
+  .fp__cal-title {
+    font-size: 12px;
+    font-weight: 500;
+    color: #a0a3ab;
+    margin-left: 2px;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+  }
+
+  .fp__cal-body {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+  }
+
+  .fp__cal-week {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+    margin-bottom: 4px;
+  }
+
+  .fp__cal-day-label {
+    font-size: 9px;
+    color: #73767e;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+  }
+
+  .fp__cal-slots {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+    flex: 1;
+  }
+
+  .fp__cal-slot {
+    border-radius: 7px;
+    height: 48px;
+    border: 1px solid rgba(255,255,255,.06);
+    background: rgba(255,255,255,.02);
+  }
+
+  .fp__cal-slot--booked {
+    background: rgba(0,102,255,.14);
+    border-color: rgba(0,102,255,.40);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 7px 8px;
+    gap: 3px;
+    position: relative;
+    overflow: hidden;
+    animation: fp-slot-in .5s ease both;
+  }
+
+  .fp__cal-slot--booked::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(0,102,255,.22) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  @keyframes fp-slot-in {
+    from { opacity: 0; transform: scale(.92); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  .fp__cal-slot-time {
+    font-size: 9px;
+    font-weight: 700;
+    color: #0066ff;
+    letter-spacing: .04em;
+  }
+
+  .fp__cal-slot-name {
+    font-size: 10px;
+    color: #f4f5f7;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+
+  .fp__cal-cta-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 0 2px;
+  }
+
+  .fp__cal-cta-line {
+    height: 1px;
+    flex: 1;
+    background: rgba(255,255,255,.06);
+  }
+
+  .fp__cal-cta-text {
+    font-size: 10.5px;
+    color: #73767e;
+    white-space: nowrap;
+  }
+
+  .fp__cal-cta-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(0,102,255,.14);
+    border: 1px solid rgba(0,102,255,.40);
+    border-radius: 20px;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #0066ff;
+  }
+
+  .fp__cal-cta-badge-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #0066ff;
+    flex-shrink: 0;
+  }
+
+  /* BOTTOM STRIP */
+  .fp__stats {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    border-top: 1px solid rgba(255,255,255,.09);
+    padding-top: 28px;
+  }
+
+  .fp__stat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0 28px;
+    border-right: 1px solid rgba(255,255,255,.09);
+  }
+
+  .fp__stat:first-child { padding-left: 0; }
+  .fp__stat:last-child { border-right: none; }
+
+  .fp__stat-value {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #f4f5f7;
+    letter-spacing: -.02em;
+    line-height: 1;
+  }
+
+  .fp__stat-value span {
+    color: #0066ff;
+  }
+
+  .fp__stat-label {
+    font-size: 12px;
+    color: #73767e;
+    line-height: 1.4;
+  }
+
+  .fp__stat-meta {
+    font-size: 10px;
+    color: #73767e;
+    opacity: .6;
+    margin-top: 2px;
+  }
+
+  /* CONNECTOR ARROWS - FULL PIPELINE SVG */
+  .fp__connector-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    flex-shrink: 0;
+    align-self: stretch;
+    margin-top: 30px;
+  }
+
+  .fp__connector-svg {
+    width: 64px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
+</style>
+
+<!-- Background glow orb for blue accent -->
+<div style="position:absolute;top:30%;left:40%;width:600px;height:320px;background:radial-gradient(ellipse,rgba(0,102,255,.09) 0%,transparent 70%);transform:translate(-50%,-50%);pointer-events:none;z-index:1;"></div>
+
+<div class="fp__inner">
+
+  <!-- HEADER -->
+  <div class="fp__header">
+    <div class="fp__eyebrow">
+      <span class="fp__eyebrow-dot"></span>
+      KI-gestütztes Reply-Handling
+    </div>
+    <h2 class="fp__headline">Jede Antwort ist<br>ein <em>Kalendereintrag</em>.</h2>
+    <p class="fp__subline">Interesse, Einwände, Rückfragen: unser System erkennt die Absicht hinter jeder Antwort und führt das Gespräch so weiter, dass ein Termin entsteht, nicht eine Konversation ins Leere läuft.</p>
+  </div>
+
+  <!-- PIPELINE VISUAL -->
+  <div class="fp__pipeline">
+
+    <!-- INBOX: Reply-Typen -->
+    <div class="fp__inbox">
+      <div class="fp__inbox-label">Eingehende Antworten</div>
+
+      <div class="fp__msg fp__msg--interest">
+        <div class="fp__msg-type">Interesse</div>
+        <div class="fp__msg-text">„Klingt spannend, erzähl mir mehr."</div>
+      </div>
+
+      <div class="fp__msg fp__msg--question">
+        <div class="fp__msg-type">Rückfrage</div>
+        <div class="fp__msg-text">„Funktioniert das auch bei uns in der Branche?"</div>
+      </div>
+
+      <div class="fp__msg fp__msg--hesitation">
+        <div class="fp__msg-type">Zögern</div>
+        <div class="fp__msg-text">„Gerade schlechter Zeitpunkt, vielleicht Q4."</div>
+      </div>
+
+      <div class="fp__msg fp__msg--objection">
+        <div class="fp__msg-type">Einwand</div>
+        <div class="fp__msg-text">„Wir machen das intern selbst."</div>
+      </div>
+    </div>
+
+    <!-- CONNECTOR 1 -->
+    <div class="fp__connector-wrap">
+      <svg class="fp__connector-svg" viewBox="0 0 64 240" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="none">
+        <!-- 4 input lines converging to center -->
+        <line x1="0" y1="30" x2="32" y2="120" stroke="rgba(0,102,255,.30)" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <line x1="0" y1="80" x2="32" y2="120" stroke="rgba(161,163,171,.20)" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <line x1="0" y1="155" x2="32" y2="120" stroke="rgba(161,163,171,.15)" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <line x1="0" y1="208" x2="32" y2="120" stroke="rgba(239,68,68,.22)" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <!-- Junction dot -->
+        <circle cx="32" cy="120" r="5" fill="#0066ff" fill-opacity=".8"/>
+        <!-- Output line -->
+        <line x1="32" y1="120" x2="64" y2="120" stroke="rgba(0,102,255,.60)" stroke-width="2"/>
+        <polygon points="60,116 64,120 60,124" fill="#0066ff" fill-opacity=".8"/>
+      </svg>
+    </div>
+
+    <!-- ENGINE -->
+    <div class="fp__engine">
+      <div class="fp__engine-label">Antwort-Engine</div>
+      <div class="fp__engine-box">
+        <div class="fp__engine-title">
+          <div class="fp__engine-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M8 1.5A6.5 6.5 0 1 0 14.5 8 6.5 6.5 0 0 0 8 1.5zm0 11.5a5 5 0 1 1 5-5 5 5 0 0 1-5 5z" fill="#0066ff" opacity=".4"/>
+              <path d="M8 4v4l2.5 2.5" stroke="#0066ff" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          Absicht erkennen
+        </div>
+        <div class="fp__engine-steps">
+          <div class="fp__engine-step">
+            <span class="fp__engine-step-num">1</span>
+            <span><strong>Klassifikation:</strong> Typ der Antwort in ms bestimmen</span>
+          </div>
+          <div class="fp__engine-step">
+            <span class="fp__engine-step-num">2</span>
+            <span><strong>Antwort-Logik:</strong> passende Reaktion je Typ auswählen</span>
+          </div>
+          <div class="fp__engine-step">
+            <span class="fp__engine-step-num">3</span>
+            <span><strong>Terminangebot:</strong> Calendly-Link oder direkte Frage einbetten</span>
+          </div>
+          <div class="fp__engine-step">
+            <span class="fp__engine-step-num">4</span>
+            <span><strong>Follow-up:</strong> kein offenes Gespräch bleibt unbeantwortet</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONNECTOR 2 -->
+    <div class="fp__connector-wrap">
+      <svg class="fp__connector-svg" viewBox="0 0 64 240" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="none">
+        <line x1="0" y1="120" x2="52" y2="120" stroke="rgba(0,102,255,.60)" stroke-width="2"/>
+        <polygon points="48,116 64,120 48,124" fill="#0066ff" fill-opacity=".85"/>
+        <!-- pulse ring -->
+        <circle cx="20" cy="120" r="9" stroke="rgba(0,102,255,.25)" stroke-width="1.5" stroke-dasharray="3 4"/>
+        <circle cx="20" cy="120" r="4" fill="rgba(0,102,255,.30)"/>
+      </svg>
+    </div>
+
+    <!-- OUTPUT: CALENDAR -->
+    <div class="fp__output">
+      <div class="fp__output-label">Ergebnis: Kalender gebucht</div>
+      <div class="fp__calendar">
+        <div class="fp__cal-header">
+          <div class="fp__cal-dots">
+            <div class="fp__cal-dot" style="background:#ff5f57;"></div>
+            <div class="fp__cal-dot" style="background:#febc2e;"></div>
+            <div class="fp__cal-dot" style="background:#28c840;"></div>
+          </div>
+          <div class="fp__cal-title">Kalender: KW 26, 2026</div>
+        </div>
+        <div class="fp__cal-body">
+          <div class="fp__cal-week">
+            <div class="fp__cal-day-label">Mo</div>
+            <div class="fp__cal-day-label">Di</div>
+            <div class="fp__cal-day-label">Mi</div>
+            <div class="fp__cal-day-label">Do</div>
+            <div class="fp__cal-day-label">Fr</div>
+          </div>
+          <div class="fp__cal-slots">
+            <!-- Mo -->
+            <div class="fp__cal-slot fp__cal-slot--booked" style="animation-delay:.1s">
+              <div class="fp__cal-slot-time">10:00</div>
+              <div class="fp__cal-slot-name">K. Fischer</div>
+            </div>
+            <!-- Di -->
+            <div class="fp__cal-slot"></div>
+            <!-- Mi -->
+            <div class="fp__cal-slot fp__cal-slot--booked" style="animation-delay:.35s">
+              <div class="fp__cal-slot-time">14:30</div>
+              <div class="fp__cal-slot-name">M. Bärtsch</div>
+            </div>
+            <!-- Do -->
+            <div class="fp__cal-slot fp__cal-slot--booked" style="animation-delay:.6s">
+              <div class="fp__cal-slot-time">11:00</div>
+              <div class="fp__cal-slot-name">P. Schütz</div>
+            </div>
+            <!-- Fr -->
+            <div class="fp__cal-slot"></div>
+
+            <!-- Row 2 -->
+            <div class="fp__cal-slot"></div>
+            <div class="fp__cal-slot fp__cal-slot--booked" style="animation-delay:.85s">
+              <div class="fp__cal-slot-time">09:00</div>
+              <div class="fp__cal-slot-name">A. Müller</div>
+            </div>
+            <div class="fp__cal-slot"></div>
+            <div class="fp__cal-slot"></div>
+            <div class="fp__cal-slot fp__cal-slot--booked" style="animation-delay:1.1s">
+              <div class="fp__cal-slot-time">15:00</div>
+              <div class="fp__cal-slot-name">F. Özdemir</div>
+            </div>
+          </div>
+          <div class="fp__cal-cta-row">
+            <div class="fp__cal-cta-line"></div>
+            <div class="fp__cal-cta-text">Alle Termine aus Antworten generiert</div>
+            <div class="fp__cal-cta-badge">
+              <div class="fp__cal-cta-badge-dot"></div>
+              5 neue Termine diese Woche
+            </div>
+            <div class="fp__cal-cta-line"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS STRIP -->
+  <div class="fp__stats">
+    <div class="fp__stat">
+      <div class="fp__stat-value"><span>87</span>%</div>
+      <div class="fp__stat-label">aller Antworten führen zu einem Follow-up</div>
+      <div class="fp__stat-meta">inkl. Einwände und Rückfragen</div>
+    </div>
+    <div class="fp__stat">
+      <div class="fp__stat-value"><span>3,2</span>x</div>
+      <div class="fp__stat-label">mehr Termine aus gleichem Leads-Volumen</div>
+      <div class="fp__stat-meta">vs. manuelles Reply-Handling</div>
+    </div>
+    <div class="fp__stat">
+      <div class="fp__stat-value"><span><4</span>h</div>
+      <div class="fp__stat-label">Reaktionszeit auf jede Antwort, auch nachts</div>
+      <div class="fp__stat-meta">vollautomatisch, keine manuelle Warteschlange</div>
+    </div>
+    <div class="fp__stat">
+      <div class="fp__stat-value"><span>0</span></div>
+      <div class="fp__stat-label">Antworten gehen ohne Reaktion verloren</div>
+      <div class="fp__stat-meta">jede Konversation wird zu Ende gefuhrt</div>
+    </div>
+  </div>
+
+</div>
+</section>

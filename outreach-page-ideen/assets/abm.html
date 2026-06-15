@@ -1,0 +1,448 @@
+<section class="fp">
+<style>
+.fp {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #141417;
+  background-image:
+    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size: 42px 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-family: 'Inter', Helvetica, Arial, sans-serif;
+  color: #f4f5f7;
+  padding: 60px 40px;
+  box-sizing: border-box;
+}
+
+.fp * { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* Ambient glow */
+.fp-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(ellipse at center, rgba(0,102,255,.10) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.fp-inner {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* LEFT: copy */
+.fp-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  z-index: 2;
+}
+
+.fp-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #0066ff;
+}
+
+.fp-label-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #0066ff;
+  box-shadow: 0 0 8px rgba(0,102,255,.8);
+}
+
+.fp-headline {
+  font-family: 'Clash Display', system-ui, sans-serif;
+  font-size: clamp(38px, 5vw, 62px);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -.02em;
+  color: #f4f5f7;
+}
+
+.fp-headline em {
+  font-style: normal;
+  color: #0066ff;
+}
+
+.fp-body {
+  font-size: 17px;
+  line-height: 1.65;
+  color: #a0a3ab;
+  max-width: 440px;
+}
+
+.fp-body strong {
+  color: #f4f5f7;
+  font-weight: 500;
+}
+
+/* Stat row */
+.fp-stats {
+  display: flex;
+  gap: 32px;
+  padding-top: 4px;
+}
+
+.fp-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fp-stat-num {
+  font-family: 'Clash Display', system-ui, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #f4f5f7;
+  letter-spacing: -.02em;
+  line-height: 1;
+}
+
+.fp-stat-num span {
+  color: #0066ff;
+}
+
+.fp-stat-label {
+  font-size: 12px;
+  color: #73767e;
+  letter-spacing: .04em;
+}
+
+.fp-divider {
+  width: 1px;
+  height: 44px;
+  background: rgba(255,255,255,.09);
+  align-self: center;
+}
+
+/* Benefit pill */
+.fp-benefit {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background: rgba(0,102,255,.14);
+  border: 1px solid rgba(0,102,255,.40);
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #f4f5f7;
+  width: fit-content;
+}
+
+.fp-benefit svg {
+  flex-shrink: 0;
+}
+
+/* RIGHT: visual */
+.fp-visual {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  max-width: 520px;
+  justify-self: center;
+  z-index: 2;
+}
+
+/* SVG constellation */
+.fp-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* Node pulse animation */
+@keyframes fp-pulse {
+  0%, 100% { opacity: .5; r: 4; }
+  50% { opacity: 1; r: 6; }
+}
+
+@keyframes fp-dash {
+  to { stroke-dashoffset: -80; }
+}
+
+@keyframes fp-orbit-glow {
+  0%, 100% { opacity: .3; }
+  50% { opacity: .7; }
+}
+
+@keyframes fp-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.fp-visual-wrap {
+  animation: fp-float 6s ease-in-out infinite;
+}
+
+.fp-line-animated {
+  animation: fp-dash 2s linear infinite;
+}
+
+.fp-line-animated-2 {
+  animation: fp-dash 2.4s linear infinite;
+  animation-delay: .3s;
+}
+
+.fp-line-animated-3 {
+  animation: fp-dash 1.9s linear infinite;
+  animation-delay: .7s;
+}
+
+.fp-line-animated-4 {
+  animation: fp-dash 2.2s linear infinite;
+  animation-delay: .15s;
+}
+
+.fp-line-animated-5 {
+  animation: fp-dash 2.6s linear infinite;
+  animation-delay: .5s;
+}
+
+@keyframes fp-center-pulse {
+  0%, 100% { opacity: .2; transform: scale(1); }
+  50% { opacity: .5; transform: scale(1.15); }
+}
+
+.fp-center-ring {
+  transform-origin: 260px 260px;
+  animation: fp-center-pulse 3s ease-in-out infinite;
+}
+</style>
+
+<div class="fp-glow"></div>
+
+<div class="fp-inner">
+  <!-- LEFT COPY -->
+  <div class="fp-copy">
+    <div class="fp-label">
+      <div class="fp-label-dot"></div>
+      Account-Based Outreach
+    </div>
+
+    <h2 class="fp-headline">
+      Jeden&shy;Entscheider<br>
+      mit seiner<br>
+      <em>eigenen</em> Botschaft.
+    </h2>
+
+    <p class="fp-body">
+      Kaufentscheidungen fallen selten allein. Wir sprechen
+      <strong>3 bis 5 Rollen</strong> im selben Account koordiniert an,
+      jede mit einer Nachricht, die auf ihr Budget, ihre Sprache
+      und ihren Schmerz zugeschnitten ist.
+      <strong>Kein generischer Blast.</strong> Ein abgestimmtes Ensemble.
+    </p>
+
+    <div class="fp-stats">
+      <div class="fp-stat">
+        <div class="fp-stat-num">3<span>-5</span></div>
+        <div class="fp-stat-label">Rollen pro Account</div>
+      </div>
+      <div class="fp-divider"></div>
+      <div class="fp-stat">
+        <div class="fp-stat-num"><span>+</span>41<span>%</span></div>
+        <div class="fp-stat-label">höhere Reply-Rate</div>
+      </div>
+      <div class="fp-divider"></div>
+      <div class="fp-stat">
+        <div class="fp-stat-num">1</div>
+        <div class="fp-stat-label">koordinierter Ansatz</div>
+      </div>
+    </div>
+
+    <div class="fp-benefit">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <circle cx="8" cy="8" r="7" stroke="#0066ff" stroke-width="1.5"/>
+        <path d="M5 8.5l2 2 4-4" stroke="#0066ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Kein Entscheider bleibt ungesehen
+    </div>
+  </div>
+
+  <!-- RIGHT VISUAL: Constellation diagram -->
+  <div class="fp-visual">
+    <div class="fp-visual-wrap">
+      <svg class="fp-svg" viewBox="0 0 520 520" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Netzwerk aus Entscheider-Rollen um einen zentralen Account">
+
+        <!-- Orbit ring (decorative) -->
+        <circle class="fp-center-ring" cx="260" cy="260" r="148" stroke="rgba(0,102,255,.18)" stroke-width="1" stroke-dasharray="4 8"/>
+
+        <!-- Outer faint ring -->
+        <circle cx="260" cy="260" r="220" stroke="rgba(255,255,255,.04)" stroke-width="1"/>
+
+        <!-- CONNECTION LINES (dashed, animated) -->
+        <!-- Center to CEO (top) -->
+        <line x1="260" y1="260" x2="260" y2="80"
+          stroke="rgba(0,102,255,.40)" stroke-width="1.5"
+          stroke-dasharray="6 6"
+          class="fp-line-animated"/>
+
+        <!-- Center to CFO (top-right) -->
+        <line x1="260" y1="260" x2="430" y2="165"
+          stroke="rgba(0,102,255,.40)" stroke-width="1.5"
+          stroke-dasharray="6 6"
+          class="fp-line-animated-2"/>
+
+        <!-- Center to IT Lead (bottom-right) -->
+        <line x1="260" y1="260" x2="415" y2="375"
+          stroke="rgba(0,102,255,.40)" stroke-width="1.5"
+          stroke-dasharray="6 6"
+          class="fp-line-animated-3"/>
+
+        <!-- Center to Procurement (bottom-left) -->
+        <line x1="260" y1="260" x2="105" y2="375"
+          stroke="rgba(0,102,255,.40)" stroke-width="1.5"
+          stroke-dasharray="6 6"
+          class="fp-line-animated-4"/>
+
+        <!-- Center to CMO (top-left) -->
+        <line x1="260" y1="260" x2="90" y2="165"
+          stroke="rgba(0,102,255,.40)" stroke-width="1.5"
+          stroke-dasharray="6 6"
+          class="fp-line-animated-5"/>
+
+        <!-- ===== CENTER NODE: Company ===== -->
+        <!-- Outer glow -->
+        <circle cx="260" cy="260" r="52" fill="rgba(0,102,255,.08)" stroke="rgba(0,102,255,.30)" stroke-width="1"/>
+        <!-- Main circle -->
+        <circle cx="260" cy="260" r="40" fill="#1a1a1f" stroke="rgba(0,102,255,.50)" stroke-width="1.5"/>
+        <!-- Company icon (building) -->
+        <rect x="247" y="246" width="26" height="22" rx="2" fill="rgba(0,102,255,.20)" stroke="#0066ff" stroke-width="1.2"/>
+        <rect x="253" y="252" width="5" height="5" rx="1" fill="#0066ff"/>
+        <rect x="262" y="252" width="5" height="5" rx="1" fill="#0066ff"/>
+        <rect x="253" y="261" width="5" height="7" rx="1" fill="rgba(0,102,255,.6)"/>
+        <rect x="262" y="261" width="5" height="7" rx="1" fill="rgba(0,102,255,.6)"/>
+        <!-- Label -->
+        <text x="260" y="218" text-anchor="middle" font-family="'Inter',sans-serif" font-size="10" font-weight="600" fill="#73767e" letter-spacing=".08em">ACCOUNT</text>
+
+        <!-- ===== NODE 1: CEO / Geschäftsführer (top, 12 o'clock) ===== -->
+        <!-- Halo -->
+        <circle cx="260" cy="78" r="36" fill="rgba(0,102,255,.06)" stroke="rgba(0,102,255,.25)" stroke-width="1"/>
+        <!-- Main -->
+        <circle cx="260" cy="78" r="26" fill="#1a1a1f" stroke="rgba(0,102,255,.60)" stroke-width="1.5"/>
+        <!-- Avatar placeholder -->
+        <circle cx="260" cy="72" r="9" fill="rgba(0,102,255,.25)"/>
+        <ellipse cx="260" cy="90" rx="13" ry="7" fill="rgba(0,102,255,.15)"/>
+        <!-- Pulse dot -->
+        <circle cx="282" cy="58" r="5" fill="#0066ff"/>
+        <circle cx="282" cy="58" r="5" fill="#0066ff" opacity=".4">
+          <animate attributeName="r" values="5;10;5" dur="2s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values=".4;0;.4" dur="2s" repeatCount="indefinite"/>
+        </circle>
+        <!-- Labels -->
+        <text x="260" y="123" text-anchor="middle" font-family="'Clash Display',system-ui,sans-serif" font-size="11" font-weight="700" fill="#f4f5f7">Geschäftsführer</text>
+        <text x="260" y="137" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" fill="#73767e">"ROI in 90 Tagen"</text>
+
+        <!-- ===== NODE 2: CFO (top-right, ~2 o'clock) ===== -->
+        <circle cx="432" cy="163" r="36" fill="rgba(0,102,255,.06)" stroke="rgba(0,102,255,.20)" stroke-width="1"/>
+        <circle cx="432" cy="163" r="26" fill="#1a1a1f" stroke="rgba(255,255,255,.18)" stroke-width="1.5"/>
+        <circle cx="432" cy="157" r="9" fill="rgba(255,255,255,.10)"/>
+        <ellipse cx="432" cy="175" rx="13" ry="7" fill="rgba(255,255,255,.06)"/>
+        <circle cx="454" cy="143" r="5" fill="#0066ff"/>
+        <circle cx="454" cy="143" r="5" fill="#0066ff" opacity=".4">
+          <animate attributeName="r" values="5;10;5" dur="2.5s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values=".4;0;.4" dur="2.5s" repeatCount="indefinite"/>
+        </circle>
+        <text x="432" y="208" text-anchor="middle" font-family="'Clash Display',system-ui,sans-serif" font-size="11" font-weight="700" fill="#f4f5f7">CFO / Finanzen</text>
+        <text x="432" y="222" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" fill="#73767e">"Kosten vs. Ergebnis"</text>
+
+        <!-- ===== NODE 3: IT Lead (bottom-right, ~4-5 o'clock) ===== -->
+        <circle cx="417" cy="375" r="36" fill="rgba(0,102,255,.06)" stroke="rgba(0,102,255,.20)" stroke-width="1"/>
+        <circle cx="417" cy="375" r="26" fill="#1a1a1f" stroke="rgba(255,255,255,.18)" stroke-width="1.5"/>
+        <circle cx="417" cy="369" r="9" fill="rgba(255,255,255,.10)"/>
+        <ellipse cx="417" cy="387" rx="13" ry="7" fill="rgba(255,255,255,.06)"/>
+        <circle cx="439" cy="355" r="5" fill="#0066ff"/>
+        <circle cx="439" cy="355" r="5" fill="#0066ff" opacity=".4">
+          <animate attributeName="r" values="5;10;5" dur="1.9s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values=".4;0;.4" dur="1.9s" repeatCount="indefinite"/>
+        </circle>
+        <text x="417" y="420" text-anchor="middle" font-family="'Clash Display',system-ui,sans-serif" font-size="11" font-weight="700" fill="#f4f5f7">IT-Leiter</text>
+        <text x="417" y="434" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" fill="#73767e">"Integration, Sicherheit"</text>
+
+        <!-- ===== NODE 4: Einkauf (bottom-left, ~7-8 o'clock) ===== -->
+        <circle cx="103" cy="375" r="36" fill="rgba(0,102,255,.06)" stroke="rgba(0,102,255,.20)" stroke-width="1"/>
+        <circle cx="103" cy="375" r="26" fill="#1a1a1f" stroke="rgba(255,255,255,.18)" stroke-width="1.5"/>
+        <circle cx="103" cy="369" r="9" fill="rgba(255,255,255,.10)"/>
+        <ellipse cx="103" cy="387" rx="13" ry="7" fill="rgba(255,255,255,.06)"/>
+        <circle cx="125" cy="355" r="5" fill="#0066ff"/>
+        <circle cx="125" cy="355" r="5" fill="#0066ff" opacity=".4">
+          <animate attributeName="r" values="5;10;5" dur="2.2s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values=".4;0;.4" dur="2.2s" repeatCount="indefinite"/>
+        </circle>
+        <text x="103" y="420" text-anchor="middle" font-family="'Clash Display',system-ui,sans-serif" font-size="11" font-weight="700" fill="#f4f5f7">Einkauf</text>
+        <text x="103" y="434" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" fill="#73767e">"Konditionen, Timing"</text>
+
+        <!-- ===== NODE 5: CMO (top-left, ~10 o'clock) ===== -->
+        <circle cx="88" cy="163" r="36" fill="rgba(0,102,255,.06)" stroke="rgba(0,102,255,.20)" stroke-width="1"/>
+        <circle cx="88" cy="163" r="26" fill="#1a1a1f" stroke="rgba(255,255,255,.18)" stroke-width="1.5"/>
+        <circle cx="88" cy="157" r="9" fill="rgba(255,255,255,.10)"/>
+        <ellipse cx="88" cy="175" rx="13" ry="7" fill="rgba(255,255,255,.06)"/>
+        <circle cx="110" cy="143" r="5" fill="#0066ff"/>
+        <circle cx="110" cy="143" r="5" fill="#0066ff" opacity=".4">
+          <animate attributeName="r" values="5;10;5" dur="2.8s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values=".4;0;.4" dur="2.8s" repeatCount="indefinite"/>
+        </circle>
+        <text x="88" y="208" text-anchor="middle" font-family="'Clash Display',system-ui,sans-serif" font-size="11" font-weight="700" fill="#f4f5f7">CMO / Marketing</text>
+        <text x="88" y="222" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" fill="#73767e">"Pipeline, Leads"</text>
+
+        <!-- Message preview tags floating near nodes -->
+        <!-- Near CEO -->
+        <g transform="translate(285, 55)">
+          <rect x="0" y="0" width="80" height="20" rx="4" fill="rgba(0,102,255,.18)" stroke="rgba(0,102,255,.40)" stroke-width=".8"/>
+          <text x="8" y="13" font-family="'Inter',sans-serif" font-size="8" fill="#a0a3ab">Wachstum skalieren</text>
+        </g>
+
+        <!-- Near CFO -->
+        <g transform="translate(350, 105)">
+          <rect x="0" y="0" width="72" height="20" rx="4" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.09)" stroke-width=".8"/>
+          <text x="8" y="13" font-family="'Inter',sans-serif" font-size="8" fill="#73767e">Budget: klares ROI</text>
+        </g>
+
+        <!-- Near IT -->
+        <g transform="translate(320, 420)">
+          <rect x="0" y="0" width="80" height="20" rx="4" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.09)" stroke-width=".8"/>
+          <text x="8" y="13" font-family="'Inter',sans-serif" font-size="8" fill="#73767e">API-ready, DSGVO</text>
+        </g>
+
+        <!-- Near Einkauf -->
+        <g transform="translate(10, 420)">
+          <rect x="0" y="0" width="76" height="20" rx="4" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.09)" stroke-width=".8"/>
+          <text x="8" y="13" font-family="'Inter',sans-serif" font-size="8" fill="#73767e">Pilotphase 30 Tage</text>
+        </g>
+
+        <!-- Near CMO -->
+        <g transform="translate(0, 105)">
+          <rect x="0" y="0" width="80" height="20" rx="4" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.09)" stroke-width=".8"/>
+          <text x="8" y="13" font-family="'Inter',sans-serif" font-size="8" fill="#73767e">Mehr qualif. Leads</text>
+        </g>
+
+        <!-- Koordiniert label in center below icon -->
+        <text x="260" y="310" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" font-weight="600" fill="#0066ff" letter-spacing=".10em">KOORDINIERT</text>
+
+      </svg>
+    </div>
+  </div>
+</div>
+
+</section>

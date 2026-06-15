@@ -1,0 +1,523 @@
+<section class="fp">
+<style>
+  .fp {
+    position: relative;
+    width: 100%;
+    min-height: 560px;
+    background-color: #141417;
+    background-image:
+      linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 42px 42px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,.09);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 52px 56px 48px 56px;
+    box-sizing: border-box;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    color: #f4f5f7;
+  }
+
+  .fp__top {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-width: 580px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .fp__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #0066ff;
+    background: rgba(0,102,255,.14);
+    border: 1px solid rgba(0,102,255,.40);
+    border-radius: 999px;
+    padding: 5px 14px 5px 10px;
+    width: fit-content;
+  }
+
+  .fp__label-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #0066ff;
+    animation: fp-pulse-dot 2s ease-in-out infinite;
+  }
+
+  @keyframes fp-pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .5; transform: scale(.7); }
+  }
+
+  .fp__headline {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: clamp(34px, 4.2vw, 54px);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -.025em;
+    color: #f4f5f7;
+    margin: 0;
+  }
+
+  .fp__headline span {
+    color: #0066ff;
+  }
+
+  .fp__sub {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #a0a3ab;
+    max-width: 460px;
+    margin: 0;
+  }
+
+  /* === VISUAL: Signal Radar Timeline === */
+  .fp__visual {
+    position: relative;
+    width: 100%;
+    z-index: 2;
+    margin-top: 8px;
+  }
+
+  .fp__timeline-wrap {
+    position: relative;
+    width: 100%;
+    height: 200px;
+  }
+
+  /* the axis line */
+  .fp__axis {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 96px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,.12) 8%, rgba(255,255,255,.18) 50%, rgba(0,102,255,.5) 78%, #0066ff 92%, transparent 100%);
+  }
+
+  /* tick marks */
+  .fp__tick {
+    position: absolute;
+    top: 89px;
+    width: 1px;
+    height: 14px;
+    background: rgba(255,255,255,.15);
+  }
+
+  /* signal node generic */
+  .fp__node {
+    position: absolute;
+    top: 96px;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fp__node-ring {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .fp__node-ring::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,.14);
+    background: #1a1a1f;
+  }
+
+  .fp__node-ring--active::before {
+    border-color: rgba(0,102,255,.60);
+    background: rgba(0,102,255,.10);
+  }
+
+  .fp__node-ripple {
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,102,255,.30);
+    animation: fp-ripple 2.8s ease-out infinite;
+  }
+
+  .fp__node-ripple2 {
+    position: absolute;
+    inset: -13px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,102,255,.14);
+    animation: fp-ripple 2.8s ease-out infinite .6s;
+  }
+
+  @keyframes fp-ripple {
+    0% { opacity: 1; transform: scale(.85); }
+    100% { opacity: 0; transform: scale(1.4); }
+  }
+
+  .fp__node-icon {
+    position: relative;
+    z-index: 1;
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  .fp__node-label {
+    margin-top: 10px;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    color: #73767e;
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  .fp__node-label--active {
+    color: #a0a3ab;
+  }
+
+  .fp__node-date {
+    font-size: 9.5px;
+    color: #73767e;
+    margin-top: 2px;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  /* top callout above node */
+  .fp__callout {
+    position: absolute;
+    top: 12px;
+    transform: translateX(-50%);
+    background: #1a1a1f;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: 11px;
+    color: #a0a3ab;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  .fp__callout::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 5px;
+    background: rgba(255,255,255,.12);
+  }
+
+  /* the "sent" marker */
+  .fp__sent-marker {
+    position: absolute;
+    top: 0;
+    left: 82%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fp__sent-line {
+    width: 1px;
+    height: 96px;
+    background: linear-gradient(180deg, transparent 0%, rgba(0,102,255,.50) 30%, #0066ff 100%);
+  }
+
+  .fp__sent-badge {
+    background: #0066ff;
+    color: #fff;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    padding: 5px 11px;
+    border-radius: 999px;
+    white-space: nowrap;
+    box-shadow: 0 0 18px rgba(0,102,255,.45);
+    margin-bottom: 6px;
+    animation: fp-badge-glow 3s ease-in-out infinite;
+  }
+
+  @keyframes fp-badge-glow {
+    0%, 100% { box-shadow: 0 0 16px rgba(0,102,255,.40); }
+    50% { box-shadow: 0 0 28px rgba(0,102,255,.70); }
+  }
+
+  .fp__sent-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #0066ff;
+    border: 2px solid #141417;
+    box-shadow: 0 0 10px rgba(0,102,255,.8);
+  }
+
+  /* bottom row: three signal chips */
+  .fp__signals {
+    display: flex;
+    gap: 12px;
+    margin-top: 4px;
+    flex-wrap: wrap;
+  }
+
+  .fp__signal-chip {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #1a1a1f;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 999px;
+    padding: 7px 14px 7px 10px;
+    font-size: 12px;
+    color: #a0a3ab;
+  }
+
+  .fp__signal-chip-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(0,102,255,.14);
+    flex-shrink: 0;
+  }
+
+  .fp__signal-chip-icon svg {
+    width: 11px;
+    height: 11px;
+  }
+
+  /* glow halo in top-right corner */
+  .fp__glow {
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,102,255,.12) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* bottom stat strip */
+  .fp__stat-strip {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    border-top: 1px solid rgba(255,255,255,.07);
+    padding-top: 20px;
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .fp__stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .fp__stat-val {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #f4f5f7;
+    letter-spacing: -.02em;
+  }
+
+  .fp__stat-val span {
+    color: #0066ff;
+  }
+
+  .fp__stat-lbl {
+    font-size: 11px;
+    color: #73767e;
+    letter-spacing: .04em;
+  }
+
+  .fp__stat-divider {
+    width: 1px;
+    height: 32px;
+    background: rgba(255,255,255,.08);
+  }
+
+  .fp__stat-note {
+    font-size: 12px;
+    color: #73767e;
+    line-height: 1.5;
+    max-width: 260px;
+    margin-left: auto;
+  }
+</style>
+
+<!-- Ambient glow -->
+<div class="fp__glow"></div>
+
+<!-- Top copy -->
+<div class="fp__top">
+  <div class="fp__label">
+    <span class="fp__label-dot"></span>
+    Signal-getriggertes Timing
+  </div>
+  <h2 class="fp__headline">
+    Wir schreiben im<br><span>exakt richtigen</span> Moment.
+  </h2>
+  <p class="fp__sub">
+    Neue Stelle, frische Finanzierung, Tech-Wechsel: jeder Wandel erzeugt ein kurzes Fenster hoher Empfangsbereitschaft. Wir erkennen es automatisch und kontaktieren genau dann, nicht auf Verdacht.
+  </p>
+</div>
+
+<!-- Visual: Signal Timeline -->
+<div class="fp__visual">
+  <div class="fp__timeline-wrap">
+
+    <!-- Axis -->
+    <div class="fp__axis"></div>
+
+    <!-- Tick marks at roughly even intervals -->
+    <div class="fp__tick" style="left:11%"></div>
+    <div class="fp__tick" style="left:22%"></div>
+    <div class="fp__tick" style="left:33%"></div>
+    <div class="fp__tick" style="left:44%"></div>
+    <div class="fp__tick" style="left:55%"></div>
+    <div class="fp__tick" style="left:66%"></div>
+    <div class="fp__tick" style="left:77%"></div>
+    <div class="fp__tick" style="left:88%"></div>
+
+    <!-- Node 1: Neue Stelle ~18% -->
+    <div class="fp__node" style="left:18%">
+      <div class="fp__callout" style="left:50%">Neue Führungskraft</div>
+      <div class="fp__node-ring fp__node-ring--active">
+        <div class="fp__node-ripple"></div>
+        <div class="fp__node-ripple2"></div>
+        <span class="fp__node-icon">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="7" cy="4.5" r="2.5" stroke="#0066ff" stroke-width="1.3"/>
+            <path d="M2 12c0-2.761 2.239-5 5-5s5 2.239 5 5" stroke="#0066ff" stroke-width="1.3" stroke-linecap="round"/>
+          </svg>
+        </span>
+      </div>
+      <div class="fp__node-label fp__node-label--active">Neue Stelle</div>
+      <div class="fp__node-date">vor 4 Tagen</div>
+    </div>
+
+    <!-- Node 2: Finanzierung ~42% (dimmer, past) -->
+    <div class="fp__node" style="left:42%">
+      <div class="fp__node-ring">
+        <span class="fp__node-icon">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="1.5" y="3.5" width="11" height="7" rx="1.5" stroke="rgba(255,255,255,.28)" stroke-width="1.3"/>
+            <path d="M7 5.5v3m-1.5-1.5h3" stroke="rgba(255,255,255,.28)" stroke-width="1.3" stroke-linecap="round"/>
+          </svg>
+        </span>
+      </div>
+      <div class="fp__node-label">Finanzierung</div>
+      <div class="fp__node-date">vor 11 Tagen</div>
+    </div>
+
+    <!-- Node 3: Tech-Wechsel ~63% -->
+    <div class="fp__node" style="left:63%">
+      <div class="fp__callout" style="left:50%">HubSpot abgelöst</div>
+      <div class="fp__node-ring fp__node-ring--active">
+        <div class="fp__node-ripple"></div>
+        <span class="fp__node-icon">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M2 7h10M8 3l4 4-4 4" stroke="#0066ff" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </div>
+      <div class="fp__node-label fp__node-label--active">Tech-Wechsel</div>
+      <div class="fp__node-date">gestern</div>
+    </div>
+
+    <!-- "Kontakt gesendet" marker at 82% -->
+    <div class="fp__sent-marker" style="left:82%">
+      <div class="fp__sent-badge">Kontakt gesendet</div>
+      <div class="fp__sent-line"></div>
+      <div class="fp__sent-dot"></div>
+    </div>
+
+  </div>
+
+  <!-- Signal type chips -->
+  <div class="fp__signals">
+    <div class="fp__signal-chip">
+      <span class="fp__signal-chip-icon">
+        <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="6" cy="3.5" r="2" stroke="#0066ff" stroke-width="1.2"/>
+          <path d="M1.5 10.5c0-2.485 2.015-4.5 4.5-4.5s4.5 2.015 4.5 4.5" stroke="#0066ff" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </span>
+      Jobwechsel auf C-Level
+    </div>
+    <div class="fp__signal-chip">
+      <span class="fp__signal-chip-icon">
+        <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M6 1v2M6 9v2M1 6h2M9 6h2M2.9 2.9l1.41 1.41M7.69 7.69l1.41 1.41M2.9 9.1l1.41-1.41M7.69 4.31l1.41-1.41" stroke="#0066ff" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </span>
+      Frische Finanzierungsrunde
+    </div>
+    <div class="fp__signal-chip">
+      <span class="fp__signal-chip-icon">
+        <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="1" y="2.5" width="10" height="7" rx="1.5" stroke="#0066ff" stroke-width="1.2"/>
+          <path d="M4 6h4M6 4v4" stroke="#0066ff" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </span>
+      Tech-Stack-Wechsel
+    </div>
+    <div class="fp__signal-chip">
+      <span class="fp__signal-chip-icon">
+        <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M2 9.5 L6 2.5 L10 9.5" stroke="#0066ff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M3.5 7h5" stroke="#0066ff" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </span>
+      Stellenausschreibungen
+    </div>
+  </div>
+
+  <!-- Bottom stat strip -->
+  <div class="fp__stat-strip">
+    <div class="fp__stat">
+      <div class="fp__stat-val"><span>3x</span></div>
+      <div class="fp__stat-lbl">hoehere Antwortrate</div>
+    </div>
+    <div class="fp__stat-divider"></div>
+    <div class="fp__stat">
+      <div class="fp__stat-val"><span>48h</span></div>
+      <div class="fp__stat-lbl">Signal-zu-Kontakt</div>
+    </div>
+    <div class="fp__stat-divider"></div>
+    <div class="fp__stat">
+      <div class="fp__stat-val">100<span>%</span></div>
+      <div class="fp__stat-lbl">automatisch erkannt</div>
+    </div>
+    <div class="fp__stat-note">
+      Kein manuelles Monitoring. Wir ueberwachen taeglich Tausende Signale und kontaktieren nur dann, wenn die Kaufbereitschaft nachweislich hoeher ist.
+    </div>
+  </div>
+</div>
+
+</section>

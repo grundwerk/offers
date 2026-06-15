@@ -1,0 +1,534 @@
+<section class="fp">
+<style>
+  .fp {
+    position: relative;
+    width: 100%;
+    min-height: 520px;
+    background-color: #141417;
+    background-image:
+      linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 42px 42px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,.09);
+    overflow: hidden;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    color: #f4f5f7;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    box-sizing: border-box;
+  }
+
+  /* LEFT COLUMN - copy */
+  .fp__copy {
+    flex: 0 0 44%;
+    padding: 52px 44px 52px 52px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .fp__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #0066ff;
+    margin-bottom: 22px;
+  }
+
+  .fp__eyebrow-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #0066ff;
+    box-shadow: 0 0 8px rgba(0,102,255,.7);
+    animation: fp-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes fp-pulse {
+    0%, 100% { box-shadow: 0 0 8px rgba(0,102,255,.7); }
+    50% { box-shadow: 0 0 16px rgba(0,102,255,1), 0 0 32px rgba(0,102,255,.4); }
+  }
+
+  .fp__headline {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: clamp(30px, 3.4vw, 42px);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -.02em;
+    color: #f4f5f7;
+    margin: 0 0 10px 0;
+  }
+
+  .fp__headline em {
+    font-style: normal;
+    color: #0066ff;
+  }
+
+  .fp__sub {
+    font-size: 15px;
+    line-height: 1.65;
+    color: #a0a3ab;
+    margin: 0 0 34px 0;
+    max-width: 340px;
+  }
+
+  .fp__benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    margin-bottom: 16px;
+  }
+
+  .fp__benefit-icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: rgba(0,102,255,.14);
+    border: 1px solid rgba(0,102,255,.40);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+  }
+
+  .fp__benefit-text {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #f4f5f7;
+  }
+
+  .fp__benefit-text strong {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 1px;
+  }
+
+  .fp__benefit-text span {
+    color: #a0a3ab;
+    font-size: 13px;
+  }
+
+  .fp__divider {
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, #0066ff 0%, transparent 100%);
+    border-radius: 2px;
+    margin: 28px 0;
+  }
+
+  .fp__stat-row {
+    display: flex;
+    gap: 28px;
+  }
+
+  .fp__stat {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fp__stat-num {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #f4f5f7;
+    letter-spacing: -.02em;
+    line-height: 1;
+  }
+
+  .fp__stat-num span {
+    color: #0066ff;
+  }
+
+  .fp__stat-label {
+    font-size: 11px;
+    color: #73767e;
+    margin-top: 4px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+
+  /* RIGHT COLUMN - visual */
+  .fp__visual {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 40px 40px 20px;
+    overflow: hidden;
+  }
+
+  /* Subtle gradient separator */
+  .fp__visual::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 20%;
+    width: 1px;
+    height: 60%;
+    background: linear-gradient(180deg, transparent, rgba(255,255,255,.09) 50%, transparent);
+  }
+
+  /* Background glow */
+  .fp__glow {
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,102,255,.09) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  /* NETWORK GRAPH SVG WRAPPER */
+  .fp__graph {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 420px;
+  }
+
+  /* CONVERSATION THREAD */
+  .fp__thread {
+    position: absolute;
+    right: 38px;
+    bottom: 38px;
+    width: 200px;
+    z-index: 3;
+  }
+
+  .fp__thread-label {
+    font-size: 10px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #73767e;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  .fp__msg {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .fp__msg-bubble {
+    padding: 8px 11px;
+    border-radius: 10px;
+    font-size: 11px;
+    line-height: 1.45;
+    max-width: 160px;
+    position: relative;
+  }
+
+  .fp__msg-bubble--out {
+    background: rgba(0,102,255,.14);
+    border: 1px solid rgba(0,102,255,.30);
+    color: #a0a3ab;
+    align-self: flex-start;
+    border-bottom-left-radius: 3px;
+  }
+
+  .fp__msg-bubble--in {
+    background: #1a1a1f;
+    border: 1px solid rgba(255,255,255,.09);
+    color: #f4f5f7;
+    align-self: flex-end;
+    border-bottom-right-radius: 3px;
+    font-weight: 500;
+  }
+
+  .fp__msg-bubble--in::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #0066ff;
+    box-shadow: 0 0 6px rgba(0,102,255,.8);
+  }
+
+  .fp__msg-time {
+    font-size: 9px;
+    color: #73767e;
+    align-self: flex-end;
+    margin-top: 2px;
+  }
+
+  /* Node pulse animation */
+  @keyframes fp-node-pulse {
+    0%, 100% { r: 14; opacity: 1; }
+    50% { r: 16; opacity: .85; }
+  }
+
+  @keyframes fp-ring-expand {
+    0% { r: 18; opacity: .6; }
+    100% { r: 28; opacity: 0; }
+  }
+
+  @keyframes fp-dash {
+    to { stroke-dashoffset: -24; }
+  }
+
+  @keyframes fp-dot-travel {
+    0% { offset-distance: 0%; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { offset-distance: 100%; opacity: 0; }
+  }
+
+  .fp__tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #0066ff;
+    background: rgba(0,102,255,.10);
+    border: 1px solid rgba(0,102,255,.25);
+    border-radius: 5px;
+    padding: 3px 8px;
+    margin-bottom: 20px;
+  }
+</style>
+
+<!-- LEFT COPY COLUMN -->
+<div class="fp__copy">
+  <div class="fp__eyebrow">
+    <span class="fp__eyebrow-dot"></span>
+    LinkedIn Outreach
+  </div>
+
+  <h2 class="fp__headline">Erst Verbindung.<br>Dann <em>Gespräch.</em></h2>
+
+  <p class="fp__sub">
+    Kein Pitch im ersten Atemzug. Wir vernetzen, hören zu, starten echte Dialoge mit den richtigen Entscheidern genau dann, wenn der Moment stimmt.
+  </p>
+
+  <div class="fp__benefit">
+    <div class="fp__benefit-icon">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <path d="M8 2L9.6 6.4H14.4L10.4 9.2L12 13.6L8 10.8L4 13.6L5.6 9.2L1.6 6.4H6.4L8 2Z" fill="#0066ff"/>
+      </svg>
+    </div>
+    <div class="fp__benefit-text">
+      <strong>Signalbasierte Kontaktaufnahme</strong>
+      <span>Wir kommentieren, reagieren und vernetzen nur dann, wenn echtes Interesse sichtbar ist.</span>
+    </div>
+  </div>
+
+  <div class="fp__benefit">
+    <div class="fp__benefit-icon">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <circle cx="8" cy="8" r="2.5" fill="#0066ff"/>
+        <path d="M8 2v2M8 12v2M2 8h2M12 8h2" stroke="#0066ff" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M4 4l1.5 1.5M10.5 10.5L12 12M4 12l1.5-1.5M10.5 5.5L12 4" stroke="rgba(0,102,255,.5)" stroke-width="1.2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="fp__benefit-text">
+      <strong>Kein Spam, keine Flags</strong>
+      <span>Menschlich klingende Nachrichten, die LinkedIn-Limits respektieren und Reputation schützen.</span>
+    </div>
+  </div>
+
+  <div class="fp__divider"></div>
+
+  <div class="fp__stat-row">
+    <div class="fp__stat">
+      <div class="fp__stat-num">38<span>%</span></div>
+      <div class="fp__stat-label">Antwortrate</div>
+    </div>
+    <div class="fp__stat">
+      <div class="fp__stat-num">4<span>x</span></div>
+      <div class="fp__stat-label">vs. Kalt-Pitch</div>
+    </div>
+    <div class="fp__stat">
+      <div class="fp__stat-num">72<span>h</span></div>
+      <div class="fp__stat-label">Bis zur Antwort</div>
+    </div>
+  </div>
+</div>
+
+<!-- RIGHT VISUAL COLUMN -->
+<div class="fp__visual" role="img" aria-label="Netzwerkgraph mit Entscheider-Verbindungen und Gesprächsverlauf">
+
+  <div class="fp__glow"></div>
+
+  <!-- NETWORK GRAPH SVG -->
+  <div class="fp__graph">
+    <svg viewBox="0 0 420 340" fill="none" xmlns="http://www.w3.org/2000/svg" width="100%" aria-hidden="true">
+      <!-- Dashed grid helper lines (very faint) -->
+
+      <!-- CONNECTION LINES - inactive / satellite -->
+      <!-- Line: center -> top-left node -->
+      <line x1="210" y1="170" x2="98" y2="80" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+      <!-- Line: center -> top-right node -->
+      <line x1="210" y1="170" x2="322" y2="88" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+      <!-- Line: center -> bottom-left node -->
+      <line x1="210" y1="170" x2="80" y2="268" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+      <!-- Line: center -> bottom-right node -->
+      <line x1="210" y1="170" x2="340" y2="262" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+      <!-- Line: center -> mid-left node -->
+      <line x1="210" y1="170" x2="52" y2="168" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+      <!-- Line: center -> mid-right node (decision maker) -->
+      <line x1="210" y1="170" x2="368" y2="172" stroke="rgba(0,102,255,.40)" stroke-width="1.5"
+            stroke-dasharray="6 4"
+            style="animation: fp-dash 1.2s linear infinite;"/>
+
+      <!-- ACTIVE path lines (blue) -->
+      <!-- center -> top-center connected node -->
+      <line x1="210" y1="170" x2="210" y2="52" stroke="rgba(0,102,255,.35)" stroke-width="1.5"
+            stroke-dasharray="6 4"
+            style="animation: fp-dash 1.5s linear infinite;"/>
+
+      <!-- SATELLITE NODES -->
+      <!-- Top-left (cold) -->
+      <circle cx="98" cy="80" r="18" fill="#1a1a1f" stroke="rgba(255,255,255,.09)" stroke-width="1"/>
+      <circle cx="98" cy="80" r="11" fill="#141417" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
+      <!-- Person icon -->
+      <circle cx="98" cy="76" r="4" fill="#73767e"/>
+      <path d="M90 90 Q98 84 106 90" stroke="#73767e" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+      <!-- Top-right (cold) -->
+      <circle cx="322" cy="88" r="18" fill="#1a1a1f" stroke="rgba(255,255,255,.09)" stroke-width="1"/>
+      <circle cx="322" cy="88" r="11" fill="#141417" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
+      <circle cx="322" cy="84" r="4" fill="#73767e"/>
+      <path d="M314 98 Q322 92 330 98" stroke="#73767e" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+      <!-- Bottom-left (cold) -->
+      <circle cx="80" cy="268" r="18" fill="#1a1a1f" stroke="rgba(255,255,255,.09)" stroke-width="1"/>
+      <circle cx="80" cy="268" r="11" fill="#141417" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
+      <circle cx="80" cy="264" r="4" fill="#73767e"/>
+      <path d="M72 278 Q80 272 88 278" stroke="#73767e" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+      <!-- Bottom-right (cold) -->
+      <circle cx="340" cy="262" r="18" fill="#1a1a1f" stroke="rgba(255,255,255,.09)" stroke-width="1"/>
+      <circle cx="340" cy="262" r="11" fill="#141417" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
+      <circle cx="340" cy="258" r="4" fill="#73767e"/>
+      <path d="M332 272 Q340 266 348 272" stroke="#73767e" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+      <!-- Mid-left (cold) -->
+      <circle cx="52" cy="168" r="14" fill="#1a1a1f" stroke="rgba(255,255,255,.09)" stroke-width="1"/>
+      <circle cx="52" cy="165" r="3.5" fill="#73767e"/>
+      <path d="M46 174 Q52 170 58 174" stroke="#73767e" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+
+      <!-- TOP CENTER - CONNECTED (warm, lighter blue) -->
+      <circle cx="210" cy="52" r="22" fill="rgba(0,102,255,.06)" stroke="rgba(0,102,255,.30)" stroke-width="1.5"/>
+      <circle cx="210" cy="52" r="13" fill="rgba(0,102,255,.12)" stroke="rgba(0,102,255,.40)" stroke-width="1"/>
+      <circle cx="210" cy="48" r="5" fill="#0066ff" opacity=".8"/>
+      <path d="M200 62 Q210 55 220 62" stroke="#0066ff" stroke-width="1.5" fill="none" stroke-linecap="round" opacity=".8"/>
+      <!-- "Connected" badge -->
+      <rect x="187" y="26" width="46" height="15" rx="7" fill="rgba(0,102,255,.20)" stroke="rgba(0,102,255,.40)" stroke-width="1"/>
+      <text x="210" y="37" fill="#0066ff" font-size="8" font-family="Inter, Helvetica, Arial, sans-serif" font-weight="600" text-anchor="middle" letter-spacing=".06em">VERNETZT</text>
+
+      <!-- RIGHT DECISION-MAKER NODE (pulsing, highlighted) -->
+      <!-- Outer ring animation -->
+      <circle cx="368" cy="172" r="14" fill="rgba(0,102,255,.0)" stroke="rgba(0,102,255,.20)" stroke-width="1">
+        <animate attributeName="r" values="22;36;22" dur="2.4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values=".5;0;.5" dur="2.4s" repeatCount="indefinite"/>
+      </circle>
+      <!-- Mid ring -->
+      <circle cx="368" cy="172" r="26" fill="rgba(0,102,255,.06)" stroke="rgba(0,102,255,.25)" stroke-width="1.2"/>
+      <!-- Main node -->
+      <circle cx="368" cy="172" r="18" fill="rgba(0,102,255,.18)" stroke="#0066ff" stroke-width="1.8"/>
+      <!-- Person icon (decision maker) -->
+      <circle cx="368" cy="168" r="5.5" fill="#0066ff"/>
+      <path d="M357 182 Q368 174 379 182" stroke="#0066ff" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <!-- "Antwortet" label -->
+      <rect x="343" y="148" width="50" height="15" rx="7" fill="#0066ff" opacity=".15"/>
+      <rect x="343" y="148" width="50" height="15" rx="7" fill="none" stroke="#0066ff" stroke-width="1"/>
+      <text x="368" y="159" fill="#0066ff" font-size="8" font-family="Inter, Helvetica, Arial, sans-serif" font-weight="700" text-anchor="middle" letter-spacing=".06em">ANTWORTET</text>
+
+      <!-- TRAVELING DOT along line center -> right decision maker -->
+      <circle cx="210" cy="170" r="3.5" fill="#0066ff" opacity="0">
+        <animateMotion dur="1.8s" repeatCount="indefinite" begin="0s">
+          <mpath href="#path-to-dm"/>
+        </animateMotion>
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.1;.85;1" dur="1.8s" repeatCount="indefinite"/>
+      </circle>
+
+      <!-- TRAVELING DOT along line center -> top -->
+      <circle cx="210" cy="170" r="3" fill="#0066ff" opacity="0">
+        <animateMotion dur="2.2s" repeatCount="indefinite" begin="0.6s">
+          <mpath href="#path-to-top"/>
+        </animateMotion>
+        <animate attributeName="opacity" values="0;.8;.8;0" keyTimes="0;.1;.85;1" dur="2.2s" repeatCount="indefinite"/>
+      </circle>
+
+      <!-- Hidden motion paths -->
+      <defs>
+        <path id="path-to-dm" d="M210,170 L368,172"/>
+        <path id="path-to-top" d="M210,170 L210,52"/>
+      </defs>
+
+      <!-- CENTER NODE (Grundwerk / sender) -->
+      <!-- Outer glow ring -->
+      <circle cx="210" cy="170" r="34" fill="rgba(0,102,255,.04)" stroke="rgba(0,102,255,.12)" stroke-width="1" stroke-dasharray="3 3"/>
+      <!-- Main circle -->
+      <circle cx="210" cy="170" r="24" fill="#1a1a1f" stroke="rgba(0,102,255,.40)" stroke-width="1.8"/>
+      <!-- Inner circle -->
+      <circle cx="210" cy="170" r="15" fill="rgba(0,102,255,.10)" stroke="rgba(0,102,255,.30)" stroke-width="1"/>
+      <!-- "G" logo mark -->
+      <text x="210" y="175" fill="#0066ff" font-size="14" font-family="'Clash Display', system-ui, sans-serif" font-weight="700" text-anchor="middle">GW</text>
+      <!-- Label -->
+      <rect x="186" y="200" width="48" height="14" rx="6" fill="#1a1a1f" stroke="rgba(255,255,255,.09)" stroke-width="1"/>
+      <text x="210" y="211" fill="#a0a3ab" font-size="8.5" font-family="Inter, Helvetica, Arial, sans-serif" font-weight="500" text-anchor="middle">Sie</text>
+
+      <!-- Small message icon on active line midpoint -->
+      <g transform="translate(285,124)">
+        <rect x="-12" y="-9" width="24" height="18" rx="5" fill="#0e0e10" stroke="rgba(0,102,255,.40)" stroke-width="1"/>
+        <path d="M-6,-2 L0,-2 L6,-2M-4,3 L2,3" stroke="#0066ff" stroke-width="1.2" stroke-linecap="round"/>
+        <circle cx="8" cy="-5" r="4" fill="#0066ff"/>
+        <text x="8" y="-2" fill="white" font-size="6" font-family="Inter,Helvetica,Arial,sans-serif" font-weight="700" text-anchor="middle">1</text>
+      </g>
+
+      <!-- Stage labels at bottom -->
+      <rect x="50" y="302" width="72" height="22" rx="6" fill="#1a1a1f" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+      <text x="86" y="317" fill="#73767e" font-size="9" font-family="Inter,Helvetica,Arial,sans-serif" font-weight="500" text-anchor="middle">01. Vernetzen</text>
+
+      <rect x="170" y="302" width="80" height="22" rx="6" fill="rgba(0,102,255,.08)" stroke="rgba(0,102,255,.25)" stroke-width="1"/>
+      <text x="210" y="317" fill="#0066ff" font-size="9" font-family="Inter,Helvetica,Arial,sans-serif" font-weight="600" text-anchor="middle">02. Gespräch</text>
+
+      <rect x="298" y="302" width="74" height="22" rx="6" fill="rgba(0,102,255,.14)" stroke="rgba(0,102,255,.40)" stroke-width="1"/>
+      <text x="335" y="317" fill="#0066ff" font-size="9" font-family="Inter,Helvetica,Arial,sans-serif" font-weight="700" text-anchor="middle">03. Termin</text>
+
+      <!-- Arrow between stages -->
+      <path d="M124 313 L166 313" stroke="rgba(255,255,255,.15)" stroke-width="1" stroke-dasharray="3 2"/>
+      <polygon points="166,310 170,313 166,316" fill="rgba(255,255,255,.15)"/>
+      <path d="M252 313 L294 313" stroke="rgba(0,102,255,.4)" stroke-width="1" stroke-dasharray="3 2"/>
+      <polygon points="294,310 298,313 294,316" fill="rgba(0,102,255,.4)"/>
+    </svg>
+  </div>
+
+  <!-- CONVERSATION THREAD OVERLAY -->
+  <div class="fp__thread" aria-hidden="true">
+    <div class="fp__thread-label">Echte Antwort</div>
+    <div class="fp__msg">
+      <div class="fp__msg-bubble fp__msg-bubble--out">
+        Interessanter Beitrag über Ihr Thema. Darf ich mich vernetzen?
+      </div>
+      <div class="fp__msg-bubble fp__msg-bubble--in">
+        Gerne! Was machen Sie genau?
+      </div>
+      <div class="fp__msg-time">Antwort in 18 Stunden</div>
+    </div>
+  </div>
+
+</div>
+
+</section>

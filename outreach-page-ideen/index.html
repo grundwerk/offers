@@ -1,0 +1,18 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Outreach Feature-Ideen (Switcher-Preview)</title>
+<link rel="icon" type="image/svg+xml" href="https://start.grundwerk.digital/assets/grundwerk-icon.svg">
+<style>
+body{margin:0;background:#0e0e10;color:#f4f5f7;font-family:'Inter',Helvetica,Arial,sans-serif}
+.bar{padding:12px 18px 0;font-size:13px;color:#73767e}
+.tabs{display:flex;gap:8px;padding:12px 18px 14px;position:sticky;top:0;background:rgba(14,14,16,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.09);flex-wrap:wrap;z-index:10}
+.tab{padding:9px 16px;border:1px solid rgba(255,255,255,.09);border-radius:999px;cursor:pointer;color:#a0a3ab;background:#141417;font-size:14px;font-weight:600;transition:.15s}
+.tab:hover{border-color:rgba(0,102,255,.40)}
+.tab.on{background:#0066ff;color:#fff;border-color:#0066ff}
+iframe{width:100%;height:calc(100vh - 70px);border:0;display:block;background:#0e0e10}
+</style></head><body>
+<div class="tabs" id="tabs"></div>
+<iframe id="fr" src="assets/cold-email.html" title="Feature-Panel"></iframe>
+<script>
+var F=[['cold-email','Cold Email'],['linkedin','LinkedIn'],['ki-video','KI-Video'],['signal-timing','Signal-Timing'],['abm','Account-Based'],['reply-handling','Reply-Handling']];
+var t=document.getElementById('tabs'),fr=document.getElementById('fr');
+F.forEach(function(f,i){var b=document.createElement('div');b.className='tab'+(i===0?' on':'');b.textContent=f[1];b.onclick=function(){document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('on')});b.classList.add('on');fr.src='assets/'+f[0]+'.html';};t.appendChild(b);});
+</script></body></html>

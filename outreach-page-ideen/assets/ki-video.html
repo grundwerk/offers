@@ -1,0 +1,689 @@
+<section class="fp">
+<style>
+  .fp {
+    position: relative;
+    width: 100%;
+    min-height: 560px;
+    background-color: #141417;
+    background-image:
+      linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 42px 42px;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    padding: 52px 56px 48px;
+    box-sizing: border-box;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    color: #f4f5f7;
+  }
+
+  .fp * { box-sizing: border-box; }
+
+  /* Ambient blue glow */
+  .fp::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    right: -60px;
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(ellipse at center, rgba(0,102,255,.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .fp-inner {
+    position: relative;
+    display: flex;
+    gap: 52px;
+    align-items: center;
+    z-index: 1;
+  }
+
+  /* LEFT: copy */
+  .fp-copy {
+    flex: 0 0 340px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .fp-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #0066ff;
+    margin-bottom: 4px;
+  }
+
+  .fp-label-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #0066ff;
+    animation: fp-pulse 2.4s ease-in-out infinite;
+  }
+
+  @keyframes fp-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .45; transform: scale(.7); }
+  }
+
+  .fp-headline {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -.02em;
+    color: #f4f5f7;
+    margin: 0;
+  }
+
+  .fp-headline em {
+    font-style: normal;
+    color: #0066ff;
+  }
+
+  .fp-benefit {
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: #a0a3ab;
+    margin: 0;
+  }
+
+  .fp-benefit strong {
+    color: #f4f5f7;
+    font-weight: 500;
+  }
+
+  .fp-stats {
+    display: flex;
+    gap: 24px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255,255,255,.09);
+  }
+
+  .fp-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .fp-stat-num {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #f4f5f7;
+    letter-spacing: -.02em;
+  }
+
+  .fp-stat-label {
+    font-size: 11px;
+    color: #73767e;
+    letter-spacing: .04em;
+  }
+
+  .fp-micro {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11.5px;
+    color: #73767e;
+  }
+
+  .fp-micro svg {
+    flex-shrink: 0;
+  }
+
+  /* RIGHT: visual */
+  .fp-visual {
+    flex: 1;
+    position: relative;
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Browser mockup (lead's site) */
+  .fp-browser {
+    position: relative;
+    width: 340px;
+    background: #1a1a1f;
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow:
+      0 0 0 1px rgba(0,102,255,.15),
+      0 24px 64px rgba(0,0,0,.55),
+      0 4px 16px rgba(0,0,0,.4);
+  }
+
+  .fp-browser-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background: #0e0e10;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+  }
+
+  .fp-browser-dots {
+    display: flex;
+    gap: 5px;
+  }
+
+  .fp-browser-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+
+  .fp-browser-url {
+    flex: 1;
+    height: 22px;
+    background: #1a1a1f;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    gap: 5px;
+    font-size: 10px;
+    color: #73767e;
+    font-family: 'Inter', monospace;
+  }
+
+  .fp-browser-content {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+    background: #111113;
+  }
+
+  /* Simulated website content */
+  .fp-site-header {
+    padding: 14px 16px;
+    background: #16161a;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .fp-site-logo {
+    width: 22px;
+    height: 22px;
+    background: linear-gradient(135deg, #0066ff 0%, #0044cc 100%);
+    border-radius: 5px;
+  }
+
+  .fp-site-logo-text {
+    font-size: 12px;
+    font-weight: 600;
+    color: #f4f5f7;
+    letter-spacing: .01em;
+  }
+
+  .fp-site-nav {
+    margin-left: auto;
+    display: flex;
+    gap: 14px;
+  }
+
+  .fp-site-nav-item {
+    font-size: 10px;
+    color: #73767e;
+  }
+
+  .fp-site-body {
+    padding: 18px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .fp-site-hero {
+    height: 14px;
+    background: rgba(255,255,255,.12);
+    border-radius: 3px;
+    width: 70%;
+  }
+
+  .fp-site-sub {
+    height: 9px;
+    background: rgba(255,255,255,.06);
+    border-radius: 3px;
+    width: 90%;
+  }
+
+  .fp-site-sub2 {
+    height: 9px;
+    background: rgba(255,255,255,.06);
+    border-radius: 3px;
+    width: 60%;
+  }
+
+  .fp-site-cta {
+    width: 80px;
+    height: 26px;
+    background: rgba(0,102,255,.6);
+    border-radius: 5px;
+    margin-top: 4px;
+  }
+
+  /* Job card overlay */
+  .fp-job-overlay {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    background: rgba(26,26,31,.92);
+    border: 1px solid rgba(0,102,255,.3);
+    border-radius: 7px;
+    padding: 10px 12px;
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .fp-job-icon {
+    width: 28px;
+    height: 28px;
+    background: rgba(0,102,255,.2);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .fp-job-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .fp-job-title {
+    font-size: 10.5px;
+    font-weight: 600;
+    color: #f4f5f7;
+  }
+
+  .fp-job-sub {
+    font-size: 9.5px;
+    color: #73767e;
+  }
+
+  .fp-job-badge {
+    margin-left: auto;
+    font-size: 8.5px;
+    font-weight: 600;
+    color: #0066ff;
+    background: rgba(0,102,255,.15);
+    border: 1px solid rgba(0,102,255,.25);
+    border-radius: 4px;
+    padding: 2px 6px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+
+  /* VIDEO BUBBLE */
+  .fp-video-bubble {
+    position: absolute;
+    bottom: -18px;
+    right: -28px;
+    width: 118px;
+    height: 118px;
+    border-radius: 50%;
+    background: #1a1a1f;
+    border: 3px solid #0066ff;
+    box-shadow:
+      0 0 0 6px rgba(0,102,255,.18),
+      0 16px 40px rgba(0,0,0,.6);
+    overflow: hidden;
+    z-index: 10;
+  }
+
+  /* Person silhouette inside bubble */
+  .fp-video-person {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #1e2030 0%, #0e1020 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .fp-video-rec {
+    position: absolute;
+    top: 9px;
+    left: 9px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 8px;
+    font-weight: 700;
+    color: #ff4444;
+    letter-spacing: .08em;
+  }
+
+  .fp-video-rec-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #ff4444;
+    animation: fp-pulse 1.2s ease-in-out infinite;
+  }
+
+  /* Pipeline arrows on the right side */
+  .fp-pipeline {
+    position: absolute;
+    top: 50%;
+    right: -56px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start;
+  }
+
+  .fp-pipe-step {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #1a1a1f;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 7px;
+    padding: 7px 10px;
+    font-size: 10px;
+    color: #a0a3ab;
+    white-space: nowrap;
+    width: 148px;
+  }
+
+  .fp-pipe-step.active {
+    border-color: rgba(0,102,255,.4);
+    background: rgba(0,102,255,.08);
+    color: #f4f5f7;
+  }
+
+  .fp-pipe-icon {
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .fp-pipe-connector {
+    width: 1px;
+    height: 10px;
+    background: rgba(0,102,255,.35);
+    margin-left: 19px;
+  }
+
+  /* Scale indicator */
+  .fp-scale-bar {
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .fp-scale-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .fp-scale-thumb {
+    width: 36px;
+    height: 28px;
+    border-radius: 5px;
+    border: 1px solid rgba(0,102,255,.35);
+    background: #1a1a1f;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .fp-scale-thumb-inner {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,102,255,.12) 0%, transparent 100%);
+  }
+
+  .fp-scale-arrow {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    color: #0066ff;
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+  .fp-scale-n {
+    font-size: 9px;
+    color: #73767e;
+  }
+
+  /* Floating count badge */
+  .fp-count-badge {
+    position: absolute;
+    top: 12px;
+    right: -18px;
+    background: #0066ff;
+    color: #fff;
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 5px 11px;
+    border-radius: 20px;
+    box-shadow: 0 4px 16px rgba(0,102,255,.5);
+    letter-spacing: .01em;
+    z-index: 20;
+    white-space: nowrap;
+  }
+</style>
+
+<div class="fp-inner">
+
+  <!-- LEFT COPY -->
+  <div class="fp-copy">
+    <div class="fp-label">
+      <span class="fp-label-dot"></span>
+      Personalisierung auf Knopfdruck
+    </div>
+
+    <h2 class="fp-headline">
+      Ihr Gesicht.<br>
+      Ihre <em>Website.</em><br>
+      Ihr Eindruck.
+    </h2>
+
+    <p class="fp-benefit">
+      Ein kurzes Video, in dessen Hintergrund die <strong>echte Website oder Stellenanzeige</strong> des Leads laeuft. Jede Aufnahme wirkt einzeln gedreht, tatsaechlich werden <strong>tausende davon</strong> vollautomatisch produziert.
+    </p>
+
+    <div class="fp-stats">
+      <div class="fp-stat">
+        <span class="fp-stat-num">8x</span>
+        <span class="fp-stat-label">hoehere Antwortrate</span>
+      </div>
+      <div class="fp-stat">
+        <span class="fp-stat-num"><60 s</span>
+        <span class="fp-stat-label">pro generiertem Video</span>
+      </div>
+      <div class="fp-stat">
+        <span class="fp-stat-num">1:1</span>
+        <span class="fp-stat-label">Wirkung, 1:N Aufwand</span>
+      </div>
+    </div>
+
+    <div class="fp-micro">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <circle cx="7" cy="7" r="6" stroke="rgba(0,102,255,.6)" stroke-width="1.2"/>
+        <path d="M4.5 7l2 2 3-3" stroke="#0066ff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Kompatibel mit LinkedIn, E-Mail und WhatsApp-Outreach
+    </div>
+  </div>
+
+  <!-- RIGHT VISUAL -->
+  <div class="fp-visual">
+
+    <!-- Count badge -->
+    <div class="fp-count-badge">x 2.847 Leads</div>
+
+    <!-- Browser mockup -->
+    <div class="fp-browser" role="img" aria-label="Beispiel: Lead-Website im Videohintergrund">
+
+      <div class="fp-browser-bar">
+        <div class="fp-browser-dots">
+          <div class="fp-browser-dot" style="background:#ff5f57"></div>
+          <div class="fp-browser-dot" style="background:#ffbd2e"></div>
+          <div class="fp-browser-dot" style="background:#28ca41"></div>
+        </div>
+        <div class="fp-browser-url">
+          <svg width="9" height="9" viewBox="0 0 9 9" fill="none" aria-hidden="true">
+            <rect x=".5" y=".5" width="8" height="8" rx="2" stroke="rgba(0,102,255,.5)" stroke-width=".8"/>
+            <path d="M2.5 4.5h4M4.5 2.5v4" stroke="rgba(0,102,255,.6)" stroke-width=".8" stroke-linecap="round"/>
+          </svg>
+          muster-gmbh.de/karriere/senior-entwickler
+        </div>
+      </div>
+
+      <div class="fp-browser-content">
+        <!-- Simulated site -->
+        <div class="fp-site-header">
+          <div class="fp-site-logo"></div>
+          <span class="fp-site-logo-text">Muster GmbH</span>
+          <div class="fp-site-nav">
+            <span class="fp-site-nav-item">Produkte</span>
+            <span class="fp-site-nav-item">Karriere</span>
+            <span class="fp-site-nav-item">Kontakt</span>
+          </div>
+        </div>
+        <div class="fp-site-body">
+          <div class="fp-site-hero"></div>
+          <div class="fp-site-sub"></div>
+          <div class="fp-site-sub2"></div>
+          <div class="fp-site-cta"></div>
+        </div>
+
+        <!-- Job card -->
+        <div class="fp-job-overlay">
+          <div class="fp-job-icon">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <rect x="1" y="4" width="12" height="9" rx="2" stroke="#0066ff" stroke-width="1.1"/>
+              <path d="M4.5 4V3a1 1 0 011-1h3a1 1 0 011 1v1" stroke="#0066ff" stroke-width="1.1"/>
+            </svg>
+          </div>
+          <div class="fp-job-text">
+            <span class="fp-job-title">Senior Entwickler gesucht</span>
+            <span class="fp-job-sub">Berlin, hybrid, ab sofort</span>
+          </div>
+          <span class="fp-job-badge">Live</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Video bubble (sender face) -->
+    <div class="fp-video-bubble" role="img" aria-label="Videoaufnahme des Absenders">
+      <div class="fp-video-person">
+        <div class="fp-video-rec">
+          <div class="fp-video-rec-dot"></div>
+          REC
+        </div>
+        <!-- Stylized person silhouette -->
+        <svg width="112" height="112" viewBox="0 0 112 112" fill="none" aria-hidden="true" style="position:absolute;inset:0;">
+          <!-- Body -->
+          <ellipse cx="56" cy="88" rx="28" ry="18" fill="rgba(0,102,255,.25)"/>
+          <!-- Torso fade -->
+          <rect x="34" y="66" width="44" height="30" rx="8" fill="rgba(30,32,48,.9)"/>
+          <!-- Shirt/jacket lines -->
+          <path d="M56 66v20" stroke="rgba(255,255,255,.12)" stroke-width="1"/>
+          <path d="M42 72 Q56 68 70 72" stroke="rgba(255,255,255,.09)" stroke-width="1.2" stroke-linecap="round"/>
+          <!-- Head -->
+          <ellipse cx="56" cy="52" rx="17" ry="19" fill="rgba(0,102,255,.3)"/>
+          <ellipse cx="56" cy="50" rx="15" ry="17" fill="#1e2840"/>
+          <!-- Eyes hint -->
+          <ellipse cx="50" cy="48" rx="3" ry="3.5" fill="rgba(255,255,255,.2)"/>
+          <ellipse cx="62" cy="48" rx="3" ry="3.5" fill="rgba(255,255,255,.2)"/>
+          <!-- Subtle smile -->
+          <path d="M50 56 Q56 60 62 56" stroke="rgba(255,255,255,.2)" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+          <!-- Hair -->
+          <ellipse cx="56" cy="34" rx="16" ry="8" fill="#1a1a2a"/>
+          <path d="M40 36 Q44 28 56 27 Q68 28 72 36" fill="#1a1a2a"/>
+          <!-- Blue glow rim -->
+          <ellipse cx="56" cy="56" rx="54" ry="54" stroke="rgba(0,102,255,.2)" stroke-width="1" fill="none"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Pipeline steps -->
+    <div class="fp-pipeline" aria-label="Produktionspipeline: Rohvideo, Hintergrund-Rendering, Personalisierung, Versand">
+      <div class="fp-pipe-step">
+        <div class="fp-pipe-icon">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <circle cx="7" cy="7" r="5.5" stroke="#73767e" stroke-width="1.1"/>
+            <path d="M5.5 4.5l4 2.5-4 2.5V4.5z" fill="#73767e"/>
+          </svg>
+        </div>
+        Rohvideo aufnehmen
+      </div>
+      <div class="fp-pipe-connector"></div>
+      <div class="fp-pipe-step active">
+        <div class="fp-pipe-icon">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <rect x="1" y="2" width="12" height="8" rx="2" stroke="#0066ff" stroke-width="1.1"/>
+            <path d="M4 10l-1.5 2M10 10l1.5 2M4.5 12h5" stroke="#0066ff" stroke-width="1" stroke-linecap="round"/>
+          </svg>
+        </div>
+        Lead-Site einblenden
+      </div>
+      <div class="fp-pipe-connector"></div>
+      <div class="fp-pipe-step active">
+        <div class="fp-pipe-icon">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M7 2L1.5 5.5v5L7 14l5.5-3.5v-5L7 2z" stroke="#0066ff" stroke-width="1.1" fill="none" stroke-linejoin="round"/>
+            <circle cx="7" cy="8" r="1.8" fill="#0066ff"/>
+          </svg>
+        </div>
+        KI personalisiert
+      </div>
+      <div class="fp-pipe-connector"></div>
+      <div class="fp-pipe-step">
+        <div class="fp-pipe-icon">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M2 4l5 3.5L12 4" stroke="#73767e" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="1" y="3" width="12" height="8.5" rx="2" stroke="#73767e" stroke-width="1.1"/>
+          </svg>
+        </div>
+        Automatisch versendet
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</section>
