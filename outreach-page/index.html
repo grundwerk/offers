@@ -23,9 +23,6 @@
 <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=inter@400,500,600&display=swap" rel="stylesheet">
 <script src="https://fast.wistia.com/player.js" async></script>
 <script src="https://fast.wistia.com/embed/tm8si6qq6m.js" async type="module"></script>
-<script src="https://fast.wistia.com/embed/lljpc64g5z.js" async type="module"></script>
-<script src="https://fast.wistia.com/embed/8um6o166gg.js" async type="module"></script>
-<script src="https://fast.wistia.com/embed/ohjo6np2cx.js" async type="module"></script>
 <style>
 :root{
   --bg:#0e0e10;            /* canvas, matches grundwerk.digital #121212 family, a touch deeper */
@@ -238,6 +235,27 @@ a{color:inherit;text-decoration:none}
 .lm input{width:100%;background:var(--bg3);border:1px solid var(--line2);border-radius:12px;padding:14px 16px;color:var(--fg);font-family:var(--ff-b);font-size:15px;margin-bottom:12px}
 .lm input:focus{outline:none;border-color:var(--blue)}
 .note{font-size:13px;color:var(--mut2);margin-top:12px}
+.case-wrap{position:relative;margin-top:42px}
+.case-slider{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 22px;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+.case-slider::-webkit-scrollbar{height:8px}
+.case-slider::-webkit-scrollbar-thumb{background:var(--line);border-radius:8px}
+.case-card{flex:0 0 320px;scroll-snap-align:start;background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:16px;cursor:pointer;transition:border-color .15s,transform .15s}
+.case-card:hover{border-color:var(--blue-line);transform:translateY(-3px)}
+.case-thumb{position:relative;aspect-ratio:16/10;border-radius:12px;overflow:hidden;background:#000;border:1px solid var(--line)}
+.case-thumb img{width:100%;height:100%;object-fit:cover;object-position:center 22%;display:block}
+.case-thumb .pl{position:absolute;inset:0;margin:auto;width:56px;height:56px;border-radius:50%;background:rgba(0,102,255,.92);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.55)}
+.case-thumb .pl::after{content:"";border-left:17px solid #fff;border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:4px}
+.case-fmt{position:absolute;top:10px;left:10px;font-size:11px;font-weight:600;letter-spacing:.04em;background:rgba(0,0,0,.6);color:#fff;padding:3px 9px;border-radius:999px;backdrop-filter:blur(4px)}
+.case-card h3{margin:13px 0 6px;font-size:19px}
+.case-card .tag{margin-top:14px;display:inline-block}
+.case-arr{position:absolute;top:34%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:var(--bg2);border:1px solid var(--line);color:var(--fg);font-size:22px;cursor:pointer;z-index:5;display:flex;align-items:center;justify-content:center;transition:border-color .15s}
+.case-arr.left{left:-12px}.case-arr.right{right:-12px}
+.case-arr:hover{border-color:var(--blue-line)}
+@media(max-width:760px){.case-arr{display:none}.case-card{flex:0 0 80vw}}
+.vidov{position:fixed;inset:0;background:rgba(0,0,0,.86);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;z-index:200;padding:30px}
+.vidov.on{display:flex}
+.vidov-box{position:relative;width:min(94vw,820px)}
+.vidov-x{position:absolute;top:-44px;right:0;background:none;border:0;color:#fff;font-size:32px;line-height:1;cursor:pointer}
 </style>
 <noscript><style>.rv,.stagger>*{opacity:1!important;transform:none!important}.ov{display:none!important}</style></noscript>
 </head>
@@ -279,6 +297,18 @@ a{color:inherit;text-decoration:none}
   <button class="x" onclick="event.stopPropagation();this.parentElement.classList.remove('on')">&times;</button>
 </div>
 
+<!-- VIDEO LIGHTBOX -->
+<div class="vidov" id="vidov" onclick="closeVid(event)">
+  <div class="vidov-box" id="vidovbox"><button class="vidov-x" onclick="closeVid()" aria-label="Schließen">&times;</button><div id="vidplayer"></div></div>
+</div>
+<script>
+function loadW(id){if(!document.querySelector('script[data-w="'+id+'"]')){var s=document.createElement('script');s.src='https://fast.wistia.com/embed/'+id+'.js';s.async=true;s.type='module';s.setAttribute('data-w',id);document.head.appendChild(s);}}
+function openVid(id,ar){ar=ar||1.7778;var b=document.getElementById('vidovbox');b.style.width='min(94vw, calc(84vh * '+ar+'))';document.getElementById('vidplayer').innerHTML='<wistia-player media-id="'+id+'" aspect="'+ar+'" style="width:100%;display:block;border-radius:14px;overflow:hidden"></wistia-player>';loadW(id);document.getElementById('vidov').classList.add('on');document.body.style.overflow='hidden';if(window.track)track('case_'+id);}
+function closeVid(e){var ov=document.getElementById('vidov');if(e&&e.target!==ov&&!(e.target.classList&&e.target.classList.contains('vidov-x')))return;ov.classList.remove('on');document.getElementById('vidplayer').innerHTML='';document.body.style.overflow='';}
+function slideCases(d){var el=document.getElementById('caseslider');if(el)el.scrollBy({left:d*350,behavior:'smooth'});}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeVid();});
+</script>
+
 <!-- HERO -->
 <section class="hero" id="top"><div class="wrap center">
   <div class="rv in" style="max-width:900px;margin:0 auto">
@@ -295,19 +325,13 @@ a{color:inherit;text-decoration:none}
 </section>
 
 <!-- STAT BAR -->
-<section class="sec" style="padding-top:0"><div class="wrap rv">
+<section class="sec" id="referenzen" style="padding-top:0"><div class="wrap rv">
   <div class="statbar">
     <div class="s"><b>10 Mio.</b><span>versendete Mails</span></div>
     <div class="s"><b>50+</b><span>Erfolgsgeschichten</span></div>
     <div class="s"><b>15&nbsp;%</b><span>durchschnittliche Antwortrate</span></div>
   </div>
-</div></section>
-
-<!-- REFERENCES -->
-<section class="sec" id="referenzen"><div class="wrap">
-  <div class="center rv"><div class="eyebrow">Vertrauen</div>
-  <h2>Marken, die mit uns <span class="hl">wachsen</span>.</h2></div>
-  <div class="logo-grid rv"><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/piabo.png" alt="PIABO" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/smart-bridges.png" alt="Smart Bridges" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/peer-studios.png" alt="Peer Studios" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/birdsview.png" alt="BirdsView" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/hivebuy.png" alt="Hivebuy" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/pplwise.png" alt="pplwise" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/ccv.png" alt="CCV" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/cervis.png" alt="cervis" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/cocomin.png" alt="COCOMIN" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/egroup.png" alt="eGroup" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/stackfuel.png" alt="stackfuel" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/raidboxes.png" alt="raidboxes" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/arrowtec.png" alt="ARROWTEC" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/wachstums-werkstatt.png" alt="Wachstums Werkstatt" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/our-greenery.png" alt="our greenery" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/famedly.png" alt="Famedly" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/automations-de.png" alt="Automations.de" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/salz.png" alt="salz" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/happy-gang.png" alt="Happy Gang" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/unicorn.png" alt="unicorn" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/prevail.png" alt="PREVAIL" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/vertexgo.png" alt="VertexGo" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/xdi.png" alt="XDi" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/digital-now.png" alt="Digital Now" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/ihlenfeldt.png" alt="Ihlenfeldt" loading="lazy"></div></div>
+  <div class="logo-grid rv" style="margin-top:12px"><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/piabo.png" alt="PIABO" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/smart-bridges.png" alt="Smart Bridges" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/peer-studios.png" alt="Peer Studios" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/birdsview.png" alt="BirdsView" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/hivebuy.png" alt="Hivebuy" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/pplwise.png" alt="pplwise" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/ccv.png" alt="CCV" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/cervis.png" alt="cervis" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/cocomin.png" alt="COCOMIN" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/egroup.png" alt="eGroup" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/stackfuel.png" alt="stackfuel" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/raidboxes.png" alt="raidboxes" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/arrowtec.png" alt="ARROWTEC" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/wachstums-werkstatt.png" alt="Wachstums Werkstatt" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/our-greenery.png" alt="our greenery" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/famedly.png" alt="Famedly" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/automations-de.png" alt="Automations.de" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/salz.png" alt="salz" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/happy-gang.png" alt="Happy Gang" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/unicorn.png" alt="unicorn" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/prevail.png" alt="PREVAIL" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/vertexgo.png" alt="VertexGo" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/xdi.png" alt="XDi" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/digital-now.png" alt="Digital Now" loading="lazy"></div><div class="cell"><img src="https://start.grundwerk.digital/assets/logos/outreach/ihlenfeldt.png" alt="Ihlenfeldt" loading="lazy"></div></div>
   <div class="grid g3 stagger rv" style="margin-top:48px">
     <div class="card"><div class="quote">"Das Grundwerk-Team lebt KI und treibt unsere Sales-Prozesse mit minimalem internen Aufwand."</div><div class="quote-who"><b>Tim Kuesters</b>CEO, Birdsview</div></div>
     <div class="card"><div class="quote">"Onboarding in 5 Tagen fertig, dann lief die Pipeline planbar. Genau das, was wir brauchten."</div><div class="quote-who"><b>Lasse Petry</b>Co-Founder, Peer Studios</div></div>
@@ -319,11 +343,18 @@ a{color:inherit;text-decoration:none}
 <section class="sec" id="fallstudien" style="background:var(--bg2);border-block:1px solid var(--line)"><div class="wrap">
   <div class="center rv"><div class="eyebrow">Ergebnisse, kein Versprechen</div>
   <h2>Das ist bei anderen <span class="hl">rausgekommen</span>.</h2></div>
-  <div class="grid g3 stagger rv" style="margin-top:42px">
-    <div class="card"><div class="vid-frame" style="margin-bottom:18px"><wistia-player media-id="lljpc64g5z" aspect="1.7777777777777777" style="width:100%;display:block"></wistia-player></div><span class="tag">SaaS</span><h3 style="margin:12px 0 6px">28 Termine in 74 Tagen</h3><p>240.000 EUR ARR abgeschlossen. - Birdsview</p></div>
-    <div class="card"><div class="vid-frame" style="margin-bottom:18px"><wistia-player media-id="8um6o166gg" aspect="1.7777777777777777" style="width:100%;display:block"></wistia-player></div><span class="tag">Agentur</span><h3 style="margin:12px 0 6px">20 Opportunities in 13 Tagen</h3><p>Onboarding in 5 Tagen, dann lief die Pipeline. - Peer Studios</p></div>
-    <div class="card"><div class="vid-frame" style="margin-bottom:18px"><wistia-player media-id="ohjo6np2cx" aspect="1.7777777777777777" style="width:100%;display:block"></wistia-player></div><span class="tag">Events</span><h3 style="margin:12px 0 6px">397 Leads über 12 Events</h3><p>Zuverlässig hochwertige Teilnehmer. - Smart Bridges</p></div>
-  </div>
+  <div class="case-wrap rv">
+      <button class="case-arr left" onclick="slideCases(-1)" aria-label="Zurück">&#8249;</button>
+      <div class="case-slider" id="caseslider">
+      <div class="case-card" onclick="openVid('lljpc64g5z',1.7877)"><div class="case-thumb"><img src="https://embed-ssl.wistia.com/deliveries/1458e7d09c0a4042e756815939d88ef10666b20e.jpg?image_crop_resized=640x358" alt="Birdsview Referenzvideo" loading="lazy"><span class="case-fmt">Quer</span><span class="pl"></span></div><span class="tag">SaaS</span><h3>28 Termine in 74 Tagen</h3><p>240.000 EUR ARR abgeschlossen. - Birdsview</p></div>
+      <div class="case-card" onclick="openVid('8um6o166gg',1.7778)"><div class="case-thumb"><img src="https://embed-ssl.wistia.com/deliveries/bdd9ac56757951c00b31bbad478d083b731db6b7.jpg?image_crop_resized=960x540" alt="Peer Studios Referenzvideo" loading="lazy"><span class="case-fmt">Quer</span><span class="pl"></span></div><span class="tag">Agentur</span><h3>20 Opportunities in 13 Tagen</h3><p>Onboarding in 5 Tagen, dann lief die Pipeline. - Peer Studios</p></div>
+      <div class="case-card" onclick="openVid('ohjo6np2cx',1.7778)"><div class="case-thumb"><img src="https://embed-ssl.wistia.com/deliveries/40141e0c35cf5f5cd9e846c686877d872d8c1528.jpg?image_crop_resized=960x540" alt="Smart Bridges Referenzvideo" loading="lazy"><span class="case-fmt">Quer</span><span class="pl"></span></div><span class="tag">Events</span><h3>397 Leads über 12 Events</h3><p>Zuverlässig hochwertige Teilnehmer. - Smart Bridges</p></div>
+      <div class="case-card" onclick="openVid('c97klwzjh4',0.5625)"><div class="case-thumb"><img src="https://embed-ssl.wistia.com/deliveries/58794938b2148cdaa389eedf33635a203c931209.jpg?image_crop_resized=720x1280" alt="COCOMIN Referenzvideo" loading="lazy"><span class="case-fmt">Hochkant</span><span class="pl"></span></div><span class="tag">Referenz</span><h3>COCOMIN</h3><p>Über die Zusammenarbeit mit Grundwerk.</p></div>
+      <div class="case-card" onclick="openVid('pvxw94fv46',0.5625)"><div class="case-thumb"><img src="https://embed-ssl.wistia.com/deliveries/340b9d5355d1b86222f79b01713fa686192bfbd8.jpg?image_crop_resized=720x1280" alt="Wachstumswerkstatt Referenzvideo" loading="lazy"><span class="case-fmt">Hochkant</span><span class="pl"></span></div><span class="tag">Referenz</span><h3>Wachstumswerkstatt</h3><p>Über die Zusammenarbeit mit Grundwerk.</p></div>
+      <div class="case-card" onclick="openVid('xrshk3je41',0.5625)"><div class="case-thumb"><img src="https://embed-ssl.wistia.com/deliveries/c7f094f04a829412ff913e9da07bd7e8205a4e85.jpg?image_crop_resized=720x1280" alt="Valentin Eiber Referenzvideo" loading="lazy"><span class="case-fmt">Hochkant</span><span class="pl"></span></div><span class="tag">Referenz</span><h3>Valentin Eiber</h3><p>Über die Zusammenarbeit mit Grundwerk.</p></div>
+      </div>
+      <button class="case-arr right" onclick="slideCases(1)" aria-label="Weiter">&#8250;</button>
+    </div>
 </div></section>
 
 <!-- QUESTIONNAIRE -->
