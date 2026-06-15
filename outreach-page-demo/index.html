@@ -181,8 +181,8 @@ a{color:inherit;text-decoration:none}
 .logos span{font-family:var(--ff-d);font-weight:600;font-size:18px;color:var(--mut)}
 .logo-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px 14px;margin-top:30px;align-items:center}
 @media(max-width:760px){.logo-grid{grid-template-columns:repeat(3,1fr)}}
-.logo-grid .cell{display:flex;align-items:center;justify-content:center;padding:6px;min-height:90px}
-.logo-grid img{max-width:215px;max-height:78px;width:auto;height:auto;object-fit:contain;opacity:1;transition:opacity .15s}
+.logo-grid .cell{display:flex;align-items:center;justify-content:center;padding:12px 10px;min-height:132px}
+.logo-grid img{max-width:300px;max-height:110px;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.8;transition:opacity .18s}
 .logo-grid .cell:hover img{opacity:1}
 .quote{font-family:var(--ff-d);font-weight:500;font-size:18px;color:var(--fg);line-height:1.4}
 .quote-who{margin-top:16px;font-size:13.5px;color:var(--mut2)}
@@ -221,6 +221,8 @@ a{color:inherit;text-decoration:none}
 .chip.sel{border-color:var(--blue);background:var(--blue-soft);color:#fff}
 .brand-logo-img{height:26px;width:auto;display:inline-block;vertical-align:middle}
 .chip-logo{height:18px;width:18px;object-fit:contain;vertical-align:middle;margin-right:8px;display:inline-block}
+.chip .ci{width:16px;height:16px;margin-right:8px;flex-shrink:0;color:var(--blue)}
+.chip.sel .ci{color:#fff}
 .chip{display:inline-flex;align-items:center}
 .qz-nav{display:flex;justify-content:space-between;align-items:center;padding:22px 30px;border-top:1px solid var(--line)}
 .qz-done{text-align:center;padding:20px}
@@ -257,7 +259,9 @@ a{color:inherit;text-decoration:none}
 .vidov-x{position:absolute;top:-44px;right:0;background:none;border:0;color:#fff;font-size:32px;line-height:1;cursor:pointer}
 
 /* ===== FEATURE SWITCHER ===== */
-#system{background-color:var(--bg2);background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:46px 46px;border-block:1px solid var(--line)}
+#system{background-color:var(--bg2);border-block:1px solid var(--line);position:relative;overflow:hidden}
+#system::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:46px 46px;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 17%,#000 83%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 17%,#000 83%,transparent 100%);pointer-events:none;z-index:0}
+#system>.wrap{position:relative;z-index:1}
 .ftabs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:38px auto 0;max-width:780px}
 .ftabs button{font-family:var(--ff-b);font-weight:600;font-size:14px;color:var(--mut);background:var(--bg3);border:1px solid var(--line);border-radius:999px;padding:11px 20px;cursor:pointer;transition:.18s;display:inline-flex;align-items:center;gap:8px}
 .ftabs button:hover{color:var(--fg);border-color:var(--blue-line)}
@@ -397,6 +401,40 @@ a{color:inherit;text-decoration:none}
 .sig-mb .txt{font-size:13px;line-height:1.6;color:var(--fg);margin-left:35px;background:var(--blue-soft);border:1px solid var(--blue-line);border-radius:4px 12px 12px 12px;padding:13px 15px;white-space:pre-line}
 .sig-mb .txt .pill{display:inline-flex;align-items:center;gap:4px;background:var(--blue);color:#fff;border-radius:5px;padding:1px 7px;font-size:10.5px;font-weight:700;letter-spacing:.03em}
 
+
+/* hero meet-pair (wobble) */
+.meetpair{display:flex;align-items:center;justify-content:center;gap:14px;margin:0 auto 20px}
+.mp{width:54px;height:54px;border-radius:14px;background:var(--bg2);border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 26px rgba(0,0,0,.4)}
+.mp img{width:34px;height:34px;border-radius:8px;object-fit:contain}
+.mp-client{color:var(--blue);animation:wobble 2.6s ease-in-out infinite}
+.mp-client svg{width:28px;height:28px}
+.mp-gw{animation:wobble 2.6s ease-in-out infinite .5s}
+.mp-x{color:var(--mut2);font-size:17px;font-weight:600}
+@keyframes wobble{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(6deg)}}
+@media(prefers-reduced-motion:reduce){.mp-client,.mp-gw{animation:none}}
+/* reply-agent feature panel */
+.ra-inbox{background:var(--bg2);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.45);max-width:520px;margin:0 auto}
+.ra-ih{display:flex;align-items:center;padding:13px 16px;border-bottom:1px solid var(--line);background:var(--bg3);font-size:12px;font-weight:600;color:var(--mut)}
+.ra-tag{margin-left:auto;font-size:10.5px;font-weight:700;color:var(--blue);background:var(--blue-soft);border:1px solid var(--blue-line);border-radius:6px;padding:2px 8px}
+.ra-in{padding:16px;border-bottom:1px solid var(--line)}
+.ra-who{display:flex;align-items:center;gap:9px;margin-bottom:8px}
+.ra-av{width:28px;height:28px;border-radius:50%;background:#9aa7b2;color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ra-nm{font-size:12.5px;font-weight:700;color:var(--fg)}
+.ra-tm{font-size:11px;color:var(--mut2);margin-left:auto}
+.ra-body{font-size:13.5px;color:var(--fg);line-height:1.6}
+.ra-draft{padding:16px;background:rgba(0,102,255,.05)}
+.ra-dh{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+.ra-db{font-size:13.5px;color:var(--fg);line-height:1.65;background:var(--bg2);border:1px solid var(--blue-line);border-radius:10px;padding:13px 15px;white-space:pre-line}
+.ra-db .v{color:var(--blue);background:var(--blue-soft);border-radius:4px;padding:0 4px}
+.ra-act{display:flex;gap:9px;margin-top:12px}
+.ra-btn{font-weight:600;font-size:13px;border-radius:9px;padding:9px 16px;cursor:default}
+.ra-btn.send{background:var(--blue);color:#fff}
+.ra-btn.edit{background:transparent;color:var(--fg);border:1px solid var(--line2)}
+.ra-step{display:flex;gap:13px;align-items:flex-start;margin-bottom:14px}
+.ra-n{width:26px;height:26px;border-radius:8px;background:var(--blue-soft);border:1px solid var(--blue-line);color:var(--blue);font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ra-step p{font-size:13.5px;color:var(--mut);line-height:1.55;margin:0}
+.ra-step p b{color:var(--fg)}
+
 </style>
 <noscript><style>.rv,.stagger>*{opacity:1!important;transform:none!important}.ov{display:none!important}</style></noscript>
 </head>
@@ -444,7 +482,7 @@ a{color:inherit;text-decoration:none}
 </div>
 <script>
 function loadW(id){if(!document.querySelector('script[data-w="'+id+'"]')){var s=document.createElement('script');s.src='https://fast.wistia.com/embed/'+id+'.js';s.async=true;s.type='module';s.setAttribute('data-w',id);document.head.appendChild(s);}}
-function openVid(id,ar){ar=ar||1.7778;var b=document.getElementById('vidovbox');b.style.width='min(94vw, calc(84vh * '+ar+'))';document.getElementById('vidplayer').innerHTML='<wistia-player media-id="'+id+'" aspect="'+ar+'" style="width:100%;display:block;border-radius:14px;overflow:hidden"></wistia-player>';loadW(id);document.getElementById('vidov').classList.add('on');document.body.style.overflow='hidden';if(window.track)track('case_'+id);}
+function openVid(id,ar){ar=ar||1.7778;var b=document.getElementById('vidovbox');b.style.width='min(94vw, calc(84vh * '+ar+'))';document.getElementById('vidplayer').innerHTML='<wistia-player media-id="'+id+'" aspect="'+ar+'" autoplay style="width:100%;display:block;border-radius:14px;overflow:hidden"></wistia-player>';loadW(id);document.getElementById('vidov').classList.add('on');document.body.style.overflow='hidden';if(window.track)track('case_'+id);}
 function closeVid(e){var ov=document.getElementById('vidov');if(e&&e.target!==ov&&!(e.target.classList&&e.target.classList.contains('vidov-x')))return;ov.classList.remove('on');document.getElementById('vidplayer').innerHTML='';document.body.style.overflow='';}
 function slideCases(d){var el=document.getElementById('caseslider');if(el)el.scrollBy({left:d*350,behavior:'smooth'});}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeVid();});
@@ -453,9 +491,14 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeVid();}
 <!-- HERO -->
 <section class="hero" id="top"><div class="wrap center">
   <div class="rv in" style="max-width:900px;margin:0 auto">
+    <div class="meetpair">
+      <span class="mp mp-client"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 21V7l8-4 8 4v14" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9.5 21v-4.5h5V21" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8 10h.01M12 10h.01M16 10h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      <span class="mp-x">&times;</span>
+      <span class="mp mp-gw"><img src="https://start.grundwerk.digital/assets/favicon.png" alt="Grundwerk" decoding="async"></span>
+    </div>
     <div class="greet" style="margin:0 auto 20px">Hi <b><!-- SLOT:LEAD_FIRST START -->Alex<!-- SLOT:LEAD_FIRST END --></b>, unser Ersttermin ist gebucht &#10003;</div>
     <h1>Unbedingt dieses Video schauen &#8595;</h1>
-    <p class="lead center" style="margin:18px auto 0">Unser Ersttermin ist gebucht. Hier findest du alle Infos, damit wir die gemeinsame Zeit optimal nutzen können - schau dir kurz das Video an und füll den Fragebogen aus.</p>
+    <p class="lead center" style="margin:18px auto 0">Hier findest du alle Infos für unseren Termin mit <b style="color:var(--fg)"><!-- SLOT:COMPANY START -->Muster GmbH<!-- SLOT:COMPANY END --></b>, damit wir die gemeinsame Zeit optimal nutzen können - schau dir kurz das Video an und füll den Fragebogen aus.</p>
     <div class="vid-frame" style="max-width:880px;margin:30px auto 0">
       <wistia-player media-id="tm8si6qq6m" aspect="1.7777777777777777" style="width:100%;display:block"></wistia-player>
     </div>
@@ -535,10 +578,10 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeVid();}
           <div class="chip" data-val="instantly" onclick="pickChip(this)"><img decoding="async" loading="lazy" class="chip-logo" src="https://start.grundwerk.digital/assets/tools/instantly.svg" alt="">Instantly</div>
           <div class="chip" data-val="lemlist" onclick="pickChip(this)"><img decoding="async" loading="lazy" class="chip-logo" src="https://start.grundwerk.digital/assets/tools/lemlist.svg" alt="">Lemlist</div>
           <div class="chip" data-val="apollo" onclick="pickChip(this)"><img decoding="async" loading="lazy" class="chip-logo" src="https://start.grundwerk.digital/assets/tools/apollo.svg" alt="">Apollo</div>
-          <div class="chip" data-val="clay" onclick="pickChip(this)"><img decoding="async" loading="lazy" class="chip-logo" src="https://start.grundwerk.digital/assets/tools/clay.svg" alt="">Clay</div>
-          <div class="chip" data-val="heyreach" onclick="pickChip(this)"><img decoding="async" loading="lazy" class="chip-logo" src="https://start.grundwerk.digital/assets/tools/heyreach.svg" alt="">HeyReach</div>
+          <div class="chip" data-val="clay" onclick="pickChip(this)"><img decoding="async" loading="lazy" class="chip-logo" src="https://start.grundwerk.digital/assets/tools/clay-sm.png" alt="">Clay</div>
+          <div class="chip" data-val="heyreach" onclick="pickChip(this)"><img decoding="async" loading="lazy" class="chip-logo" src="https://start.grundwerk.digital/assets/tools/heyreach-sm.png" alt="">HeyReach</div>
           <div class="chip" data-val="lgm" onclick="pickChip(this)">La Growth Machine</div>
-          <div class="chip" data-val="hubspot" onclick="pickChip(this)"><img decoding="async" loading="lazy" class="chip-logo" src="https://start.grundwerk.digital/assets/tools/hubspot.svg" alt="">HubSpot</div>
+          <div class="chip" data-val="hubspot" onclick="pickChip(this)"><img decoding="async" loading="lazy" class="chip-logo" src="https://start.grundwerk.digital/assets/tools/hubspot-sm.png" alt="">HubSpot</div>
           <div class="chip" data-val="pipedrive" onclick="pickChip(this)"><img decoding="async" loading="lazy" class="chip-logo" src="https://start.grundwerk.digital/assets/tools/pipedrive.svg" alt="">Pipedrive</div>
           <div class="chip" data-val="andere" onclick="pickChip(this)">Andere</div>
           <div class="chip" data-val="keine" onclick="pickChip(this)">Keine / unsicher</div>
@@ -555,7 +598,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeVid();}
       </div>
 
       <div class="qz-q" data-id="employees" data-type="single">
-        <h3>Wie gross ist euer Team insgesamt?</h3>
+        <h3>Wie groß ist euer Team insgesamt?</h3>
         <div class="opts">
           <div class="opt" data-val="1-10" onclick="pickOne(this)"><span class="rd"></span>1 - 10</div>
           <div class="opt" data-val="11-50" onclick="pickOne(this)"><span class="rd"></span>11 - 50</div>
@@ -597,10 +640,13 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeVid();}
         <h3>Was davon ist für euch spannend?</h3>
         <div class="hint">Mehrfachauswahl.</div>
         <div class="chips">
-          <div class="chip" data-val="email" onclick="pickChip(this)">E-Mail-Outreach</div>
-          <div class="chip" data-val="linkedin" onclick="pickChip(this)">LinkedIn-Outreach</div>
-          <div class="chip" data-val="video" onclick="pickChip(this)">KI-Videos</div>
-          <div class="chip" data-val="crm" onclick="pickChip(this)">CRM-Aufbau</div>
+          <div class="chip" data-val="crm" onclick="pickChip(this)"><svg class="ci" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="1.6" y="3" width="12.8" height="10" rx="2" stroke="currentColor" stroke-width="1.3"/><circle cx="5.2" cy="7" r="1.4" stroke="currentColor" stroke-width="1.2"/><path d="M3.3 11c.3-1 1-1.6 1.9-1.6S6.8 10 7.1 11" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/><path d="M9.4 6.6h3M9.4 8.4h3M9.4 10.2h2" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg>CRM-Aufbau</div>
+          <div class="chip" data-val="video" onclick="pickChip(this)"><svg class="ci" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="1.5" y="3" width="13" height="10" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M6.6 6.1l3.3 1.9-3.3 1.9V6.1z" fill="currentColor"/></svg>KI-Videos</div>
+          <div class="chip" data-val="email" onclick="pickChip(this)"><svg class="ci" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="1.6" y="3.5" width="12.8" height="9" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M2.2 4.6l5.8 4 5.8-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>E-Mail-Outreach</div>
+          <div class="chip" data-val="linkedin" onclick="pickChip(this)"><svg class="ci" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M3.2 6.3H5v6.4H3.2V6.3zM4.1 3.2a1.06 1.06 0 1 1 0 2.12 1.06 1.06 0 0 1 0-2.12zM6.4 6.3h1.72v.88h.03c.24-.44.83-.9 1.7-.9 1.82 0 2.15 1.16 2.15 2.68v3.74H10.2V9.36c0-.64-.01-1.46-.9-1.46-.9 0-1.04.69-1.04 1.41v3.39H6.4V6.3z"/></svg>LinkedIn-Outreach</div>
+          <div class="chip" data-val="datenlisten" onclick="pickChip(this)"><svg class="ci" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5.2 4.5h8M5.2 8h8M5.2 11.5h8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="2.6" cy="4.5" r="1" fill="currentColor"/><circle cx="2.6" cy="8" r="1" fill="currentColor"/><circle cx="2.6" cy="11.5" r="1" fill="currentColor"/></svg>Datenlisten</div>
+          <div class="chip" data-val="telefon" onclick="pickChip(this)"><svg class="ci" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 2.6h2.1l1 3-1.45 1.05a7.2 7.2 0 0 0 3.7 3.7L11.4 9.9l3 1V13c0 .6-.5 1.05-1.1 1.03C8 13.7 2.3 8 2 3.7 2 3.1 2.4 2.6 3 2.6z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>Direkte Telefonnummer</div>
+          <div class="chip" data-val="ki-sales-workshop" onclick="pickChip(this)"><svg class="ci" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M7.8 2.2l1.05 2.75 2.75 1.05-2.75 1.05L7.8 9.8 6.75 7.05 4 6l2.75-1.05L7.8 2.2z" fill="currentColor"/><circle cx="12.4" cy="11.6" r="1.15" fill="currentColor"/></svg>KI-Sales-Workshop</div>
         </div>
       </div>
 
@@ -639,6 +685,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeVid();}
     <button data-ft="email" onclick="switchFeat('email',this)"><span class="fdot"></span>Cold Email</button>
     <button data-ft="linkedin" onclick="switchFeat('linkedin',this)"><span class="fdot"></span>LinkedIn</button>
     <button data-ft="signal" onclick="switchFeat('signal',this)"><span class="fdot"></span>Signal-Timing</button>
+    <button data-ft="reply" onclick="switchFeat('reply',this)"><span class="fdot"></span>Reply-Agent</button>
   </div>
 
   <!-- PANEL: KI-VIDEO -->
@@ -811,6 +858,43 @@ Tom</div>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- PANEL: REPLY-AGENT -->
+  <div class="fpanel" id="fp-reply">
+    <div class="fp-head">
+      <div class="eyebrow">Reply-Agent</div>
+      <h3>Aus jeder Antwort wird ein <span class="hl">Termin</span>.</h3>
+      <p>Der Agent schreibt dir auf jede eingehende Antwort direkt einen passenden Entwurf in deinem Ton. Du prüfst kurz und sendest.</p>
+    </div>
+    <div class="fp-two">
+      <div class="rv">
+        <div class="ra-inbox">
+          <div class="ra-ih">Posteingang <span class="ra-tag">Meeting Request</span></div>
+          <div class="ra-in">
+            <div class="ra-who"><span class="ra-av">JK</span><span class="ra-nm">Jana Kraft, Meliora GmbH</span><span class="ra-tm">14:22</span></div>
+            <div class="ra-body">Hallo, klingt spannend. Donnerstag oder Freitag würde bei mir passen, schicken Sie mir gerne einen Terminvorschlag.</div>
+          </div>
+          <div class="ra-draft">
+            <div class="ra-dh"><span>&#9889;</span>Vorgeschriebener Entwurf</div>
+            <div class="ra-db">Hallo Jana,
+
+freut mich. <span class="v">Donnerstag um 11:00 Uhr</span> passt gut, hier der Link zum Bestätigen: <span class="v">cal.grundwerk.digital/jana</span>
+
+Beste Grüße
+Tom</div>
+            <div class="ra-act"><span class="ra-btn send">Senden</span><span class="ra-btn edit">Anpassen</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="rv">
+        <h4 style="font-family:var(--ff-d);font-weight:600;font-size:18px;margin:0 0 16px">Was der Agent automatisch macht</h4>
+        <div class="ra-step"><span class="ra-n">1</span><p><b>Antwort verstehen</b> und die passende Vorlage wählen, je nach Termin-Wunsch, Preisfrage oder Einwand.</p></div>
+        <div class="ra-step"><span class="ra-n">2</span><p><b>Kontext einsetzen</b>: Name, Firma, freier Slot und der richtige Buchungslink landen automatisch im Entwurf.</p></div>
+        <div class="ra-step"><span class="ra-n">3</span><p><b>Du entscheidest</b>: mit einem Klick senden oder vorher anpassen. Nichts geht ungeprüft raus.</p></div>
       </div>
     </div>
   </div>

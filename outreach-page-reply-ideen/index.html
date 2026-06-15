@@ -60,7 +60,7 @@ p{color:var(--mut)}
 .tnode.agent{border-color:var(--blue-line);background:linear-gradient(180deg,rgba(0,102,255,.10),var(--bg2))}
 .tnode.agent .ic{font-size:24px;margin-bottom:6px}
 .tline{width:2px;height:26px;background:var(--line2)}
-.groups{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;position:relative;padding-top:34px;align-items:start}
+.groups{display:grid;grid-template-columns:repeat(3,1fr);max-width:980px;margin-left:auto;margin-right:auto;gap:14px;position:relative;padding-top:34px;align-items:start}
 .groups::before{content:"";position:absolute;top:0;left:calc(10% + 0px);right:calc(10% + 0px);height:2px;background:var(--line2)}
 .group{position:relative;background:var(--bg2);border:1px solid var(--line);border-radius:13px;padding:15px 14px}
 .group::before{content:"";position:absolute;top:-34px;left:50%;width:2px;height:34px;background:var(--line2)}
@@ -181,33 +181,24 @@ p{color:var(--mut)}
             <span class="chip">Competition</span>
             <span class="chip">Changed Jobs</span>
             <span class="chip">Wrong Person</span>
-            <span class="chip">Sales Pitch To Us</span>
             <span class="chip">Negative Response</span>
             <span class="chip">Not Right Now</span>
-          </div>
-        </div>
-        <div class="group block">
-          <div class="gh"><span class="dot"></span>Blocklist</div>
-          <div class="subtree">
             <span class="chip">Blocklist</span>
-            <span class="chip">DSGVO</span>
-            <span class="chip">Abmahnung</span>
           </div>
         </div>
         <div class="group warn">
-          <div class="gh"><span class="dot"></span>Out Of Office</div>
+          <div class="gh"><span class="dot"></span>Ignore</div>
           <div class="subtree">
             <span class="chip">Out Of Office</span>
-          </div>
-        </div>
-        <div class="group warn">
-          <div class="gh"><span class="dot"></span>Bounced</div>
-          <div class="subtree">
             <span class="chip">Bounced</span>
+            <span class="chip">Marketing</span>
+            <span class="chip">Sales Pitch To Us</span>
+            <span class="chip">Unable To Categorize</span>
+            <span class="chip">Active Client</span>
           </div>
         </div>
       </div>
-      <p class="flow-note">Interested-Labels werden sofort an den Vertrieb geroutet. Blocklist, DSGVO und Abmahnung werden automatisch unterdrückt und compliance-sicher protokolliert.</p>
+      <p class="flow-note">Interested-Labels werden sofort an den Vertrieb geroutet. Not-Interested und Ignore-Labels werden automatisch ausgesteuert und protokolliert.</p>
     </div>
   </div>
 </section>
@@ -282,7 +273,7 @@ Tom</div>
         <div class="num">IDEE 04</div>
         <div class="ic">&#128640;</div>
         <h3>Hot-Lead-Routing und CRM-Sync</h3>
-        <p>Meeting Request und Interested gehen sofort als Slack-Ping an den richtigen Menschen, der Close-Status wird gesetzt. Blocklist, DSGVO und Abmahnung werden automatisch unterdrückt.</p>
+        <p>Meeting Request und Interested gehen sofort als Slack-Ping an den richtigen Menschen, der Close-Status wird gesetzt. Not-Interested- und Ignore-Fälle werden automatisch ausgesteuert.</p>
         <div class="mini"><span class="on">Slack + Close</span><span>Compliance-Log</span></div>
       </div>
       <div class="idea">
