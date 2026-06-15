@@ -725,10 +725,14 @@ function showStep(){
   nav.style.display = id==="done" ? "none":"flex";
   nextBtn.textContent = (id==="contact") ? "Absenden" : "Weiter";
 }
+var advT;
 function pickOne(el){
   var q=el.closest(".qz-q"); q.querySelectorAll(".opt").forEach(function(o){o.classList.remove("sel");}); el.classList.add("sel");
   qAns[q.dataset.id]=el.dataset.val;
   if(q.dataset.branch){buildOrder();}
+  /* auto-advance single-choice on select (Tom 2026-06-15), debounced against fast re-selects */
+  clearTimeout(advT);
+  advT=setTimeout(function(){ if(qOrder[qi]===q.dataset.id) qNext(); }, 280);
 }
 function pickChip(el){
   el.classList.toggle("sel"); var q=el.closest(".qz-q");
