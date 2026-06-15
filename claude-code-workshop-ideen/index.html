@@ -100,6 +100,7 @@ a{color:inherit;text-decoration:none;}
 .center-col{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;padding:14px;}
 @media(max-width:560px){.grid{grid-template-columns:1fr;}.lab-head{padding:48px 6vw 26px;}}
 </style>
+<script>window.__LP_CHANNEL='C0BAE7VKG01';window.__CLOSE_LEAD_ID='';</script>
 </head>
 <body>
 <header class="lab-head">
@@ -599,5 +600,22 @@ function add(c,html){var d=document.createElement('div');d.className='ccmsg '+c;
 function go(){var v=i2.value;if(!v.trim())return;add('u',v.replace(/</g,'&lt;'));i2.value='';var th=add('a','<div class="ci">&#10033; Claude</div>...');setTimeout(function(){th.remove();add('a','<div class="ci">&#10033; Claude</div>Spannend, &bdquo;'+v.trim().replace(/</g,'&lt;')+'&ldquo; l&auml;sst sich bei euch fast sicher automatisieren. Am besten schauen wir uns das gemeinsam an, bucht euch ein kurzes Erstgespr&auml;ch.<a href="'+CAL+'" target="_blank" rel="noopener">Termin buchen &rarr;</a>');},650);}
 s2.addEventListener('click',go);i2.addEventListener('keydown',function(e){if(e.key==='Enter')go();});})();
 </script>
+<!-- ====================================================================
+     Grundwerk landing-page-tracking beacon (REUSABLE - inject before </body>)
+     Fires a "view" event 5s after load, ONLY if the page is actually visible
+     (secure-gate passed). page_slug = first path segment of the URL.
+     Optional CRM-enrichment: set window.__CLOSE_LEAD_ID = '<close-lead-id>'
+     somewhere in the page <head> and it is sent along so #landingpages can
+     show the lead's name, phone and Close-CRM link.
+     ==================================================================== -->
+<script>(function(){
+  var T='https://n8n.grundwerk.digital/webhook/warmedin-track'; // shared landing-page tracking endpoint
+  function sl(){var p=location.pathname.replace(/^\/+|\/+$/g,'').split('/')[0];return p||'page';}
+  setTimeout(function(){
+    if(document.documentElement.style.display==='none')return; // secure-gate not passed -> do not count
+    try{ fetch(T,{method:'POST',headers:{'Content-Type':'application/json'},keepalive:true,
+      body:JSON.stringify({page_slug:sl(),event:'view',close_lead_id:(window.__CLOSE_LEAD_ID||'')})}); }catch(e){}
+  },5000);
+})();</script>
 </body>
 </html>

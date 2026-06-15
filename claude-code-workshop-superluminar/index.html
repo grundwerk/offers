@@ -432,6 +432,7 @@ footer a{color:var(--dim);}
 .tmcp{text-align:left;color:var(--light-muted);font-size:0.85rem;line-height:1.5;max-width:none;margin:20px 0 0;}
 </style>
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script>window.__LP_CHANNEL='C0BAE7VKG01';window.__CLOSE_LEAD_ID='lead_gQwWiPW6Po4B8KQr1uZAUEmh69veavPnqkkV2NU5mUc';</script>
 </head>
 <body>
 
@@ -872,5 +873,22 @@ s2.addEventListener('click',go);i2.addEventListener('keydown',function(e){if(e.k
    for clean initials-monograms before they fetch, so no broken image and no 404.
    If real client photos are added later (different URL), update this guard too. */
 (function(){function ini(n){return (n||'?').trim().split(/\s+/).map(function(w){return w.charAt(0);}).slice(0,2).join('').toUpperCase();}function swap(img){var d=document.createElement('div');d.className='tav-mono';d.textContent=ini(img.getAttribute('alt'));if(img.parentNode)img.parentNode.replaceChild(d,img);}function run(){document.querySelectorAll('.tcard .who img').forEach(function(img){var s=img.getAttribute('src')||'';if(/\/gwd\/people\//.test(s)||(img.complete&&img.naturalWidth===0)){swap(img);return;}img.addEventListener('error',function(){swap(img);});});}if(document.readyState!=='loading')run();else document.addEventListener('DOMContentLoaded',run);})();</script>
+<!-- ====================================================================
+     Grundwerk landing-page-tracking beacon (REUSABLE - inject before </body>)
+     Fires a "view" event 5s after load, ONLY if the page is actually visible
+     (secure-gate passed). page_slug = first path segment of the URL.
+     Optional CRM-enrichment: set window.__CLOSE_LEAD_ID = '<close-lead-id>'
+     somewhere in the page <head> and it is sent along so #landingpages can
+     show the lead's name, phone and Close-CRM link.
+     ==================================================================== -->
+<script>(function(){
+  var T='https://n8n.grundwerk.digital/webhook/warmedin-track'; // shared landing-page tracking endpoint
+  function sl(){var p=location.pathname.replace(/^\/+|\/+$/g,'').split('/')[0];return p||'page';}
+  setTimeout(function(){
+    if(document.documentElement.style.display==='none')return; // secure-gate not passed -> do not count
+    try{ fetch(T,{method:'POST',headers:{'Content-Type':'application/json'},keepalive:true,
+      body:JSON.stringify({page_slug:sl(),event:'view',close_lead_id:(window.__CLOSE_LEAD_ID||'')})}); }catch(e){}
+  },5000);
+})();</script>
 </body>
 </html>
