@@ -458,6 +458,9 @@ a{color:inherit;text-decoration:none}
 .tcard p{color:#55606f;font-size:14.5px;line-height:1.5}
 @media(max-width:860px){.toolwrap{grid-template-columns:1fr;gap:38px}.orbit{max-width:400px}}
 @media(max-width:520px){.orbit .tool{width:42px;height:42px}.orbit .tool img{width:22px;height:22px}.orbit .tool.sm{width:36px;height:36px}.orbit .core{width:100px;height:100px}.orbit .core b{font-size:26px}}
+/* ===== FEATURE-TAB EMOJIS ===== */
+.ftabs .femoji{display:inline-flex;align-items:center;font-size:15px;line-height:1}
+.ftabs .femoji img{height:16px;width:16px;object-fit:contain;display:block}
 /* ===== TOOL-ORBIT (rotierend, 3 Ringe, /methode 1:1) ===== */
 .orbit2{position:relative;width:100%;max-width:520px;aspect-ratio:1/1;margin:0 auto}
 .ohalo{position:absolute;inset:8%;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(0,74,173,.10),rgba(0,153,255,.06) 35%,transparent 70%);filter:blur(22px)}
@@ -758,11 +761,11 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeVid();}
   <p class="lead center">Je nach Zielgruppe und Signal ziehen wir den passenden Hebel. Klick dich durch - jeder Hebel ist ein eigenes, durchdachtes System.</p></div>
 
   <div class="ftabs rv">
-    <button class="on" data-ft="video" onclick="switchFeat('video',this)"><span class="fdot"></span>KI-Video Outreach</button>
-    <button data-ft="email" onclick="switchFeat('email',this)"><span class="fdot"></span>Cold Email</button>
-    <button data-ft="linkedin" onclick="switchFeat('linkedin',this)"><span class="fdot"></span>LinkedIn</button>
-    <button data-ft="signal" onclick="switchFeat('signal',this)"><span class="fdot"></span>Signal-Timing</button>
-    <button data-ft="reply" onclick="switchFeat('reply',this)"><span class="fdot"></span>Reply-Agent</button>
+    <button class="on" data-ft="video" onclick="switchFeat('video',this)"><span class="femoji">🎥</span>KI-Video Outreach</button>
+    <button data-ft="email" onclick="switchFeat('email',this)"><span class="femoji">📧</span>Cold Email</button>
+    <button data-ft="linkedin" onclick="switchFeat('linkedin',this)"><span class="femoji"><img src="https://res.cloudinary.com/dlaepqex5/image/upload/v1/gwd/tools/linkedin.svg" alt=""></span>LinkedIn</button>
+    <button data-ft="signal" onclick="switchFeat('signal',this)"><span class="femoji">📡</span>Signal-Timing</button>
+    <button data-ft="reply" onclick="switchFeat('reply',this)"><span class="femoji">🤖</span>Reply-Agent</button>
   </div>
 
   <!-- PANEL: KI-VIDEO -->
