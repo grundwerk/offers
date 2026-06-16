@@ -507,19 +507,26 @@ a{color:inherit;text-decoration:none}
 /* ===== ANIM-GATING (Perf: schwere Animationen erst laufen wenn sichtbar) ===== */
 #tools:not(.viz) .oring,#tools:not(.viz) .ob .orot{animation-play-state:paused}
 #integrationen:not(.viz) .inttrack{animation-play-state:paused}
-/* ===== KUNDENSTIMMEN-WALL ===== */
-.tw{columns:3;column-gap:20px;margin-top:46px}
-.tw-card{break-inside:avoid;-webkit-column-break-inside:avoid;display:inline-block;width:100%;background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:22px 22px 20px;margin-bottom:20px}
-.tw .badge{display:inline-flex;align-items:center;gap:9px;background:var(--blue-soft);border:1px solid var(--blue-line);border-radius:10px;padding:8px 13px;margin-bottom:14px}
-.tw .badge b{font-family:var(--ff-d);font-weight:700;font-size:18px;color:#fff;line-height:1}
-.tw .badge span{font-size:12.5px;color:var(--mut)}
-.tw-q{color:var(--fg);font-size:14.5px;line-height:1.55;margin-bottom:16px}
-.tw-who{display:flex;align-items:center;gap:11px}
-.tw-who img{width:38px;height:38px;border-radius:50%;object-fit:cover;background:var(--bg3);flex-shrink:0}
-.tw-who b{display:block;font-size:14px;color:var(--fg);font-weight:600}
-.tw-who span{font-size:12.5px;color:var(--mut)}
-@media(max-width:860px){.tw{columns:2}}
-@media(max-width:560px){.tw{columns:1}}
+/* ===== KUNDENSTIMMEN-WALL (3-col auto-scroll) ===== */
+.kw-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;height:680px;margin-top:48px;position:relative;overflow:hidden;-webkit-mask:linear-gradient(180deg,transparent,#000 12%,#000 88%,transparent);mask:linear-gradient(180deg,transparent,#000 12%,#000 88%,transparent)}
+.kw-col{overflow:hidden}
+.kw-track{display:flex;flex-direction:column;will-change:transform;animation:kwscroll 60s linear infinite}
+@keyframes kwscroll{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+#kundenstimmen:not(.viz) .kw-track{animation-play-state:paused}
+.kw-col:hover .kw-track{animation-play-state:paused}
+.kw-card{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:24px 22px 20px;margin-bottom:20px;transition:transform .25s,border-color .25s,box-shadow .25s}
+.kw-card:hover{transform:translateY(-4px);border-color:var(--blue-line);box-shadow:0 24px 50px -18px rgba(0,0,0,.45)}
+.kw-metric{display:inline-flex;align-items:center;gap:11px;background:var(--blue-soft);border:1px solid var(--blue-line);border-radius:12px;padding:9px 14px;margin-bottom:16px}
+.kw-num{font-family:var(--ff-d);font-weight:700;font-size:26px;color:var(--blue);line-height:1;letter-spacing:-.02em}
+.kw-ml{font-size:12.5px;color:var(--mut);line-height:1.3}
+.kw-q{color:var(--fg);font-size:14.5px;line-height:1.6;margin:0}
+.kw-who{display:flex;align-items:center;gap:11px;margin-top:18px}
+.kw-who img{width:40px;height:40px;border-radius:50%;object-fit:cover;background:var(--bg3);flex-shrink:0;border:1px solid var(--line2)}
+.kw-nm{font-size:14px;color:var(--fg);font-weight:600}
+.kw-rl{font-size:12.5px;color:var(--mut)}
+@media(max-width:1024px){.kw-grid{grid-template-columns:1fr 1fr}#kw3{display:none}}
+@media(max-width:768px){.kw-grid{grid-template-columns:1fr;height:600px}#kw2{display:none}}
+@media(prefers-reduced-motion:reduce){.kw-track{animation:none}.kw-col{overflow:auto}.kw-grid{height:auto;-webkit-mask:none;mask:none}}
 </style>
 <noscript><style>.rv,.stagger>*{opacity:1!important;transform:none!important}.ov{display:none!important}</style></noscript>
 </head>
@@ -1173,26 +1180,50 @@ Tom</div>
 })();
 </script>
 
-<!-- KUNDENSTIMMEN (reiche Testimonial-Wall aus /methode) -->
+<!-- KUNDENSTIMMEN (3-spaltige Auto-Scroll-Wall, Framer-Design als Vanilla) -->
 <section class="sec" id="kundenstimmen" style="background:var(--bg2);border-block:1px solid var(--line)"><div class="wrap">
   <div class="center rv"><div class="eyebrow">Kundenstimmen</div>
   <h2>Was unsere Kunden <span class="hl" style="font-style:italic">sagen</span>.</h2>
   <p class="lead center">20-30 Termine pro Monat. Echte Pipelines, echte Stimmen.</p></div>
-  <div class="tw rv">
-    <div class="tw-card"><div class="badge"><b>20</b><span>Opportunities in 13 Tagen</span></div><p class="tw-q">"Das Team von Grundwerk Digital hat das komplette Onboarding innerhalb von 5 Tagen abgeschlossen. Nach 13 Tagen hatten wir bereits 20 neue Opportunities in unserer Pipeline."</p><div class="tw-who"><img src="https://res.cloudinary.com/dlaepqex5/image/upload/gwd/people/lasse-petry.svg" alt="Lasse Petry" loading="lazy"><div><b>Lasse Petry</b><span>Co-Founder, Peer Studios</span></div></div></div>
-    <div class="tw-card"><div class="badge"><b>240k</b><span>ARR in 74 Tagen</span></div><p class="tw-q">"28 Termine, davon mehr als 240k Dealsize closed, in nur 74 Tagen. Das Team von Grundwerk lebt AI und pusht unsere Sales-Prozesse mit minimalem internem Aufwand."</p><div class="tw-who"><img src="https://res.cloudinary.com/dlaepqex5/image/upload/gwd/people/tim-kuesters.svg" alt="Tim Kuesters" loading="lazy"><div><b>Tim Kuesters</b><span>Geschäftsführer, Birdsview</span></div></div></div>
-    <div class="tw-card"><div class="badge"><b>172</b><span>Leads in 3 Monaten</span></div><p class="tw-q">"Mit Grundwerk konnten wir 172 Leads in 3 Monaten generieren und davon 14 Aufträge bzw. Neukunden gewinnen."</p><div class="tw-who"><img src="https://res.cloudinary.com/dlaepqex5/image/upload/gwd/people/stephan-meinecke.svg" alt="Stephan Meinecke" loading="lazy"><div><b>Stephan Meinecke</b><span>Geschäftsführer, greenlovers</span></div></div></div>
-    <div class="tw-card"><div class="badge"><b>2,7x</b><span>ROI in 3 Monaten</span></div><p class="tw-q">"Mit Grundwerk Digital konnten wir innerhalb von 3 Monaten den ersten Abschluss mit einem ROI von 2,7 für uns gewinnen."</p><div class="tw-who"><img src="https://res.cloudinary.com/dlaepqex5/image/upload/gwd/people/philipp-koehnlein.svg" alt="Philipp Köhnlein" loading="lazy"><div><b>Philipp Köhnlein</b><span>Geschäftsführer, cervis</span></div></div></div>
-    <div class="tw-card"><div class="badge"><b>12</b><span>Events betreut</span></div><p class="tw-q">"Mit Grundwerk Digital konnten wir neue Business Opportunities in kürzester Zeit abschließen und werden individuell und professionell betreut. 12 Events, 397 generierte Leads."</p><div class="tw-who"><img src="https://res.cloudinary.com/dlaepqex5/image/upload/gwd/people/ingo-boldt.svg" alt="Ingo Boldt" loading="lazy"><div><b>Ingo Boldt</b><span>Geschäftsführer, Smart Bridges</span></div></div></div>
-    <div class="tw-card"><p class="tw-q">"Wir haben wesentlich mehr Leads generiert und vor allem sind unsere Leads sehr viel hochwertiger als das die Jahre davor war."</p><div class="tw-who"><img src="https://res.cloudinary.com/dlaepqex5/image/upload/gwd/people/andreas-glemser.svg" alt="Andreas Glemser" loading="lazy"><div><b>Andreas Glemser</b><span>Geschäftsführer, COCOMIN AG</span></div></div></div>
-    <div class="tw-card"><p class="tw-q">"Grundwerk Digital hat mit uns erfolgreiche LinkedIn und Email-Kampagnen durchgeführt und bei der Implementierung von top-aktuellen Outreach-Prozessen höchst professionell beraten."</p><div class="tw-who"><img src="https://res.cloudinary.com/dlaepqex5/image/upload/gwd/people/alexander-kohler.svg" alt="Alexander Kohler" loading="lazy"><div><b>Alexander Kohler</b><span>pplwise</span></div></div></div>
-    <div class="tw-card"><p class="tw-q">"Die Zusammenarbeit mit GWD war geprägt von viel Beratung und Unterstützung unseren Email-Outreach zu professionalisieren und zum Erfolg zu bringen."</p><div class="tw-who"><img src="https://res.cloudinary.com/dlaepqex5/image/upload/gwd/people/nico-stoeckel.svg" alt="Nico Stöckel" loading="lazy"><div><b>Nico Stöckel</b><span>Our Greenery</span></div></div></div>
-    <div class="tw-card"><p class="tw-q">"Die Beratung ist auf den Punkt, das Know-how wirklich hilfreich und immer wieder kommen Impulse, auf die wir alleine wahrscheinlich nicht gekommen wären."</p><div class="tw-who"><img src="https://res.cloudinary.com/dlaepqex5/image/upload/gwd/people/marc-meyer.svg" alt="Marc Meyer" loading="lazy"><div><b>Marc Meyer</b><span>Geschäftsführer, echte Media</span></div></div></div>
-    <div class="tw-card"><p class="tw-q">"Top engagiertes und professionelles Team. Grundwerk reagiert flexibel und schnell auf neue Situationen."</p><div class="tw-who"><img src="https://res.cloudinary.com/dlaepqex5/image/upload/gwd/people/tassilo-wik.svg" alt="Tassilo" loading="lazy"><div><b>Tassilo</b><span>Geschäftsführer, XDi</span></div></div></div>
-    <div class="tw-card"><p class="tw-q">"Das Grundwerk Digital Scraping Team hat für CCV überaus akkurate Leads aus mehreren Deutschen Bundesländern gezogen."</p><div class="tw-who"><img src="https://res.cloudinary.com/dlaepqex5/image/upload/gwd/people/michael-fischer.svg" alt="Michael Fischer" loading="lazy"><div><b>Michael Fischer</b><span>Sales Lead SME Payment Solutions, CCV</span></div></div></div>
-    <div class="tw-card"><p class="tw-q">"Sehr gutes Konzept und ein wirklich professioneller Ansatz im Bereich Outreach und Partnerschaften."</p><div class="tw-who"><img src="https://res.cloudinary.com/dlaepqex5/image/upload/gwd/people/jackomo-kallen.svg" alt="Jackomo Kallen" loading="lazy"><div><b>Jackomo Kallen</b><span>Geschäftsführer, Digital Now</span></div></div></div>
+  <div class="kw-grid rv">
+    <div class="kw-col" id="kw1"></div>
+    <div class="kw-col" id="kw2"></div>
+    <div class="kw-col" id="kw3"></div>
   </div>
 </div></section>
+<script>
+(function(){
+  var AV='https://res.cloudinary.com/dlaepqex5/image/upload/gwd/people/';
+  var T=[
+   {q:'Das Team von Grundwerk Digital hat das komplette Onboarding innerhalb von 5 Tagen abgeschlossen. Nach 13 Tagen hatten wir bereits 20 neue Opportunities in unserer Pipeline.',nm:'Lasse Petry',rl:'Co-Founder',co:'Peer Studios',av:'lasse-petry',m:'20',ml:'Opportunities in 13 Tagen'},
+   {q:'28 Termine, davon mehr als 240k Dealsize closed, in nur 74 Tagen. Das Team von Grundwerk lebt AI und pusht unsere Sales-Prozesse mit minimalem internem Aufwand.',nm:'Tim Kuesters',rl:'Geschäftsführer',co:'Birdsview',av:'tim-kuesters',m:'240k',ml:'ARR closed in 74 Tagen'},
+   {q:'Mit Grundwerk konnten wir 172 Leads in 3 Monaten generieren und davon 14 Aufträge bzw. Neukunden gewinnen.',nm:'Stephan Meinecke',rl:'Geschäftsführer',co:'greenlovers',av:'stephan-meinecke',m:'172',ml:'Leads in 3 Monaten'},
+   {q:'Mit Grundwerk Digital konnten wir innerhalb von 3 Monaten den ersten Abschluss mit einem ROI von 2,7 für uns gewinnen.',nm:'Philipp Köhnlein',rl:'Geschäftsführer',co:'cervis',av:'philipp-koehnlein',m:'2,7x',ml:'ROI in 3 Monaten'},
+   {q:'Mit Grundwerk Digital konnten wir neue Business Opportunities in kürzester Zeit abschließen und werden individuell und professionell betreut. 12 Events, 397 generierte Leads.',nm:'Ingo Boldt',rl:'Geschäftsführer',co:'Smart Bridges',av:'ingo-boldt',m:'12',ml:'Events betreut'},
+   {q:'Die Zusammenarbeit mit GWD war geprägt von viel Beratung und Unterstützung unseren Email-Outreach zu professionalisieren und zum Erfolg zu bringen.',nm:'Nico Stöckel',rl:'',co:'Our Greenery',av:'nico-stoeckel'},
+   {q:'Die Beratung ist auf den Punkt, das Know-how wirklich hilfreich und immer wieder kommen Impulse, auf die wir alleine wahrscheinlich nicht gekommen wären.',nm:'Marc Meyer',rl:'Geschäftsführer',co:'echte Media',av:'marc-meyer'},
+   {q:'Top engagiertes und professionelles Team. Grundwerk reagiert flexibel und schnell auf neue Situationen.',nm:'Tassilo',rl:'Geschäftsführer',co:'XDi',av:'tassilo-wik'},
+   {q:'Das Grundwerk Digital Scraping Team hat für CCV überaus akkurate Leads aus mehreren Deutschen Bundesländern gezogen.',nm:'Michael Fischer',rl:'Sales Lead SME Payment Solutions',co:'CCV',av:'michael-fischer'},
+   {q:'Grundwerk Digital hat mit uns erfolgreiche LinkedIn und Email-Kampagnen durchgeführt und bei der Implementierung von top-aktuellen Outreach-Prozessen höchst professionell beraten.',nm:'Alexander Kohler',rl:'',co:'pplwise',av:'alexander-kohler'},
+   {q:'Wir haben wesentlich mehr Leads generiert und vor allem sind unsere Leads sehr viel hochwertiger als das die Jahre davor war.',nm:'Andreas Glemser',rl:'Geschäftsführer',co:'COCOMIN AG',av:'andreas-glemser'},
+   {q:'Sehr gutes Konzept und ein wirklich professioneller Ansatz im Bereich Outreach und Partnerschaften.',nm:'Jackomo Kallen',rl:'Geschäftsführer',co:'Digital Now',av:'jackomo-kallen'}
+  ];
+  function card(t){
+    var metric=t.m?'<div class="kw-metric"><span class="kw-num">'+t.m+'</span><span class="kw-ml">'+t.ml+'</span></div>':'';
+    var role=t.rl?t.rl+', '+t.co:t.co;
+    return '<article class="kw-card">'+metric+'<p class="kw-q">"'+t.q+'"</p><div class="kw-who"><img src="'+AV+t.av+'.svg" alt="'+t.nm+'" loading="lazy"><div><div class="kw-nm">'+t.nm+'</div><div class="kw-rl">'+role+'</div></div></div></article>';
+  }
+  function fill(id,items,dur){
+    var inner=items.map(card).join('');
+    var el=document.getElementById(id);
+    if(el) el.innerHTML='<div class="kw-track" style="animation-duration:'+dur+'s">'+inner+inner+'</div>';
+  }
+  var n=T.length, third=Math.ceil(n/3);
+  fill('kw1',T.slice(0,third),50);
+  fill('kw2',T.slice(third,third*2),70);
+  fill('kw3',T.slice(third*2),60);
+})();
+</script>
 
 <!-- LEAD MAGNET (stub) -->
 <section class="sec"><div class="wrap rv">
@@ -1370,6 +1401,6 @@ function switchSignal(i, el){
 }
 
 </script>
-<script>(function(){var ids=['tools','integrationen'];if(!('IntersectionObserver'in window)){ids.forEach(function(id){var e=document.getElementById(id);if(e)e.classList.add('viz');});return;}var io=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('viz',e.isIntersecting);});},{rootMargin:'150px'});ids.forEach(function(id){var e=document.getElementById(id);if(e)io.observe(e);});})();</script>
+<script>(function(){var ids=['tools','integrationen','kundenstimmen'];if(!('IntersectionObserver'in window)){ids.forEach(function(id){var e=document.getElementById(id);if(e)e.classList.add('viz');});return;}var io=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('viz',e.isIntersecting);});},{rootMargin:'150px'});ids.forEach(function(id){var e=document.getElementById(id);if(e)io.observe(e);});})();</script>
 </body>
 </html>
