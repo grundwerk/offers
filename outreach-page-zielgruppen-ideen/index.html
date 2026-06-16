@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="de"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Zielgruppen-Sektion — 10 Design-Varianten</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=inter@400,500,600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0e0e10;--bg2:#141417;--bg3:#1a1a1f;--line:rgba(255,255,255,.09);--line2:rgba(255,255,255,.14);--fg:#f4f5f7;--mut:#a0a3ab;--mut2:#73767e;--blue:#0066ff;--blue-soft:rgba(0,102,255,.14);--blue-line:rgba(0,102,255,.40);--ff-d:"Clash Display",system-ui,sans-serif;--ff-b:"Inter",Helvetica,Arial,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--ff-b);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--ff-d);font-weight:600;letter-spacing:-.02em;line-height:1.1}
+.hl{color:var(--blue)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.page-head{text-align:center;padding:60px 24px 30px}
+.page-head .eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin-bottom:14px}
+.page-head h1{font-size:clamp(28px,4vw,46px)}
+.page-head p{color:var(--mut);max-width:640px;margin:14px auto 0}
+.vbox{border-top:1px solid var(--line);padding:54px 0}
+.vlabel{display:flex;align-items:center;gap:12px;max-width:1120px;margin:0 auto 30px;padding:0 24px}
+.vlabel .n{flex:0 0 auto;width:34px;height:34px;border-radius:9px;background:var(--blue);color:#fff;font-family:var(--ff-d);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:16px}
+.vlabel .t{font-family:var(--ff-d);font-weight:600;font-size:19px}
+.vlabel .t small{display:block;font-family:var(--ff-b);font-weight:400;font-size:13px;color:var(--mut2);letter-spacing:0}
+.sec-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:14px}
+.sec-eyebrow::before{content:"";width:22px;height:1px;background:var(--blue)}
+.sec-h2{font-size:clamp(24px,3vw,38px);margin-bottom:10px}
+.sec-lead{color:var(--mut);max-width:620px}
+.center{text-align:center}.center .sec-eyebrow::before{display:none}
+/* V1 Bento */
+.v1-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}
+.v1-card{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:22px}
+.v1-card .ic{font-size:26px}.v1-card h3{font-size:17px;margin:12px 0 7px}.v1-card p{font-size:13.5px;color:var(--mut);line-height:1.5}
+.v1-card.big{grid-column:span 2;grid-row:span 2;background:linear-gradient(150deg,var(--blue-soft),var(--bg2));border-color:var(--blue-line)}
+.v1-card.wide{grid-column:span 2}
+@media(max-width:760px){.v1-grid{grid-template-columns:1fr 1fr}.v1-card.big,.v1-card.wide{grid-column:span 2;grid-row:auto}}
+/* V2 Tabs */
+.v2-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px}
+.v2-tab{display:inline-flex;align-items:center;gap:8px;background:var(--bg3);border:1px solid var(--line);border-radius:999px;padding:10px 18px;font-size:14px;font-weight:600;color:var(--mut);cursor:pointer;transition:.15s}
+.v2-tab.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.v2-panel{margin-top:24px;background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:32px;min-height:150px;display:flex;gap:22px;align-items:flex-start}
+.v2-panel .ic{font-size:40px}.v2-panel h3{font-size:23px;margin-bottom:10px}.v2-panel p{color:var(--mut)}
+/* V3 Accordion */
+.v3-acc{margin-top:30px;border-top:1px solid var(--line)}
+.v3-row{border-bottom:1px solid var(--line)}
+.v3-q{display:flex;align-items:center;gap:16px;padding:20px 4px;cursor:pointer;font-family:var(--ff-d);font-weight:600;font-size:19px}
+.v3-q .ic{font-size:22px}.v3-q .ar{margin-left:auto;color:var(--mut2);transition:.2s;font-size:20px}
+.v3-row.on .v3-q .ar{transform:rotate(45deg);color:var(--blue)}
+.v3-a{max-height:0;overflow:hidden;transition:max-height .3s;color:var(--mut)}
+.v3-row.on .v3-a{max-height:160px}
+.v3-a div{padding:0 4px 22px 42px}
+/* V4 Icon cards 3col */
+.v4-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+.v4-card{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:26px;transition:.18s}
+.v4-card:hover{border-color:var(--blue-line);transform:translateY(-3px)}
+.v4-card .ic{width:50px;height:50px;border-radius:13px;background:var(--blue-soft);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px}
+.v4-card h3{font-size:18px;margin-bottom:8px}.v4-card p{font-size:14px;color:var(--mut);line-height:1.5}
+@media(max-width:760px){.v4-grid{grid-template-columns:1fr}}
+/* V5 Timeline */
+.v5-tl{margin-top:34px;position:relative;padding-left:42px}
+.v5-tl::before{content:"";position:absolute;left:16px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--blue),var(--line))}
+.v5-item{position:relative;padding:0 0 28px}
+.v5-item .dot{position:absolute;left:-34px;top:0;width:34px;height:34px;border-radius:50%;background:var(--bg2);border:2px solid var(--blue);display:flex;align-items:center;justify-content:center;font-size:15px}
+.v5-item h3{font-size:18px;margin-bottom:6px}.v5-item p{color:var(--mut);font-size:14.5px}
+/* V6 Split */
+.v6-wrap{display:grid;grid-template-columns:300px 1fr;gap:24px;margin-top:30px}
+.v6-list{display:flex;flex-direction:column;gap:6px}
+.v6-li{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:12px;background:var(--bg2);border:1px solid var(--line);cursor:pointer;font-weight:600;font-size:14.5px;transition:.15s}
+.v6-li .ic{font-size:18px}.v6-li.on{background:var(--blue-soft);border-color:var(--blue-line);color:var(--fg)}
+.v6-detail{background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:34px;display:flex;flex-direction:column;justify-content:center}
+.v6-detail .ic{font-size:44px;margin-bottom:14px}.v6-detail h3{font-size:24px;margin-bottom:12px}.v6-detail p{color:var(--mut);font-size:16px}
+@media(max-width:760px){.v6-wrap{grid-template-columns:1fr}}
+/* V7 Pills */
+.v7-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.v7-pill{display:inline-flex;align-items:center;gap:9px;background:var(--bg2);border:1px solid var(--line2);border-radius:999px;padding:13px 20px;font-size:15px;font-weight:600;cursor:pointer;transition:.15s}
+.v7-pill .ic{font-size:18px}.v7-pill.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.v7-out{margin-top:22px;background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:26px 28px;color:var(--mut);font-size:16px;line-height:1.6}
+/* V8 Editorial */
+.v8-list{margin-top:34px;border-top:1px solid var(--line2)}
+.v8-row{display:grid;grid-template-columns:90px 1fr;gap:24px;align-items:start;padding:26px 0;border-bottom:1px solid var(--line)}
+.v8-row .num{font-family:var(--ff-d);font-weight:700;font-size:44px;color:var(--blue);line-height:.9}
+.v8-row h3{font-size:21px;margin-bottom:8px}.v8-row p{color:var(--mut)}
+.v8-row .ic{font-size:18px;margin-left:8px}
+@media(max-width:600px){.v8-row{grid-template-columns:60px 1fr;gap:16px}.v8-row .num{font-size:32px}}
+/* V9 Carousel */
+.v9-scroll{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:30px 0 16px;scrollbar-width:thin}
+.v9-card{flex:0 0 300px;scroll-snap-align:start;background:linear-gradient(160deg,var(--bg2),var(--bg3));border:1px solid var(--line);border-radius:18px;padding:26px}
+.v9-card .ic{font-size:30px;margin-bottom:14px}.v9-card h3{font-size:19px;margin-bottom:8px}.v9-card p{font-size:14px;color:var(--mut)}
+.v9-hint{font-size:13px;color:var(--mut2);margin-top:6px}
+/* V10 Gradient mosaic */
+.v10-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+.v10-card{border-radius:18px;padding:26px;border:1px solid var(--line2);position:relative;overflow:hidden;min-height:170px;display:flex;flex-direction:column;justify-content:flex-end}
+.v10-card .ic{position:absolute;top:20px;right:20px;font-size:30px;opacity:.9}
+.v10-card h3{font-size:18px;margin-bottom:7px}.v10-card p{font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.5}
+@media(max-width:760px){.v10-grid{grid-template-columns:1fr}}
+.foot{text-align:center;color:var(--mut2);font-size:13px;padding:40px 24px 60px;border-top:1px solid var(--line)}
+</style></head>
+<body>
+<div class="page-head">
+  <div class="eyebrow">Intern — zur Auswahl</div>
+  <h1>Zielgruppen-Sektion — <span class="hl">10 Design-Varianten</span></h1>
+  <p>Gleicher Inhalt (7 Branchen), 10 verschiedene Design-Richtungen. Klick dich durch, sag mir die Nummer, dann baue ich sie final in die Outreach-Seite.</p>
+</div>
+
+<section class="vbox"><div class="vlabel"><span class="n">1</span><span class="t">Bento-Grid<small>Asymmetrische Kacheln, ein Hero-Feld hervorgehoben</small></span></div>
+<div class="wrap"><div class="center"><div class="sec-eyebrow">Funktioniert in deiner Welt</div><h2 class="sec-h2">Wie das System pro <span class="hl">Branche</span> spielt.</h2></div><div class="v1-grid" id="v1"></div></div></section>
+
+<section class="vbox"><div class="vlabel"><span class="n">2</span><span class="t">Tabs + Detail-Panel<small>Branche oben waehlen, Detail darunter (wie Feature-Switcher)</small></span></div>
+<div class="wrap"><div class="sec-eyebrow">Funktioniert in deiner Welt</div><h2 class="sec-h2">Wie das System pro <span class="hl">Branche</span> spielt.</h2><div class="v2-tabs" id="v2tabs"></div><div class="v2-panel" id="v2panel"></div></div></section>
+
+<section class="vbox"><div class="vlabel"><span class="n">3</span><span class="t">Accordion<small>Aufklappbare Zeilen, kompakt</small></span></div>
+<div class="wrap"><div class="sec-eyebrow">Funktioniert in deiner Welt</div><h2 class="sec-h2">Wie das System pro <span class="hl">Branche</span> spielt.</h2><div class="v3-acc" id="v3"></div></div></section>
+
+<section class="vbox"><div class="vlabel"><span class="n">4</span><span class="t">Icon-Cards 3-spaltig<small>Saubere gleichmaessige Karten mit Icon-Badge</small></span></div>
+<div class="wrap"><div class="center"><div class="sec-eyebrow">Funktioniert in deiner Welt</div><h2 class="sec-h2">Wie das System pro <span class="hl">Branche</span> spielt.</h2></div><div class="v4-grid" id="v4"></div></div></section>
+
+<section class="vbox"><div class="vlabel"><span class="n">5</span><span class="t">Timeline / Stepper<small>Vertikaler Fluss mit verbindender Linie</small></span></div>
+<div class="wrap"><div class="sec-eyebrow">Funktioniert in deiner Welt</div><h2 class="sec-h2">Wie das System pro <span class="hl">Branche</span> spielt.</h2><div class="v5-tl" id="v5"></div></div></section>
+
+<section class="vbox"><div class="vlabel"><span class="n">6</span><span class="t">Split (Liste + Detail)<small>Links waehlen, rechts Detail (interaktiv)</small></span></div>
+<div class="wrap"><div class="sec-eyebrow">Funktioniert in deiner Welt</div><h2 class="sec-h2">Wie das System pro <span class="hl">Branche</span> spielt.</h2><div class="v6-wrap"><div class="v6-list" id="v6list"></div><div class="v6-detail" id="v6detail"></div></div></div></section>
+
+<section class="vbox"><div class="vlabel"><span class="n">7</span><span class="t">Pill-Cluster<small>Branchen als Chips, Klick zeigt Detail darunter</small></span></div>
+<div class="wrap"><div class="center"><div class="sec-eyebrow">Funktioniert in deiner Welt</div><h2 class="sec-h2">Wie das System pro <span class="hl">Branche</span> spielt.</h2></div><div class="v7-pills" id="v7pills"></div><div class="v7-out" id="v7out"></div></div></section>
+
+<section class="vbox"><div class="vlabel"><span class="n">8</span><span class="t">Editorial<small>Grosse Nummer, Magazin-Stil, feine Linien</small></span></div>
+<div class="wrap"><div class="sec-eyebrow">Funktioniert in deiner Welt</div><h2 class="sec-h2">Wie das System pro <span class="hl">Branche</span> spielt.</h2><div class="v8-list" id="v8"></div></div></section>
+
+<section class="vbox"><div class="vlabel"><span class="n">9</span><span class="t">Carousel<small>Horizontal scrollbare Karten</small></span></div>
+<div class="wrap"><div class="sec-eyebrow">Funktioniert in deiner Welt</div><h2 class="sec-h2">Wie das System pro <span class="hl">Branche</span> spielt.</h2><div class="v9-scroll" id="v9"></div><div class="v9-hint">← horizontal scrollen →</div></div></section>
+
+<section class="vbox"><div class="vlabel"><span class="n">10</span><span class="t">Gradient-Mosaik<small>Karten mit eigenem Farbverlauf je Branche</small></span></div>
+<div class="wrap"><div class="center"><div class="sec-eyebrow">Funktioniert in deiner Welt</div><h2 class="sec-h2">Wie das System pro <span class="hl">Branche</span> spielt.</h2></div><div class="v10-grid" id="v10"></div></div></section>
+
+<div class="foot">Grundwerk Digital — interne Design-Auswahl. Sag mir die Varianten-Nummer.</div>
+<script>
+var IND=[
+ {ic:'🎯',t:'Recruiting & Personalberatung',d:'Cold Email + KI-Video auf Basis der echten Stellenanzeige. Pro offener Position der passende Kandidaten-Hook, skaliert auf tausende Stellen.'},
+ {ic:'🔧',t:'Handwerk, SHK & Energie',d:'Regionale Firmen aus Maps, Gelben Seiten und Fachpartner-Listen, angereichert mit Spezialisierung (Wärmepumpe, Solar) und Ort, dann Cold Email mit lokalem Opener.'},
+ {ic:'🏨',t:'Hotellerie & Hospitality',d:'Hoteldirektoren nach Größe und Region, angeschrieben mit dem konkreten Engpass im Betrieb statt generischem Pitch.'},
+ {ic:'🛒',t:'E-Commerce & Shops',d:'Shops nach Tech-Stack (Shopify, Klaviyo) gefiltert, Nachricht auf die echte Plattform und Listengröße zugeschnitten.'},
+ {ic:'🏥',t:'Healthcare & Pflege',d:'Einrichtungen nach Typ und Spezialisierung, Research-Opener aus der echten Website, compliance-bewusst und persönlich.'},
+ {ic:'💻',t:'Software & Tech-Startups',d:'Signal-basiert: frische Finanzierung, Hiring-Spike, neuer Head-of. Multichannel aus E-Mail, LinkedIn und Video in genau dem Fenster.'},
+ {ic:'🏭',t:'Industrie & Fertigung',d:'Firmen aus Kammer-Registern nach Größe und Teilbranche, angeschrieben mit dem typischen Prozess-Schmerz der Geschäftsführung.'}
+];
+var num=['01','02','03','04','05','06','07'];
+// V1 Bento
+(function(){var cls=['big','','','wide','','',''];var h='';IND.forEach(function(x,i){h+='<div class="v1-card '+cls[i]+'"><div class="ic">'+x.ic+'</div><h3>'+x.t+'</h3><p>'+x.d+'</p></div>';});document.getElementById('v1').innerHTML=h;})();
+// V2 Tabs
+(function(){var tabs='';IND.forEach(function(x,i){tabs+='<button class="v2-tab'+(i===0?' on':'')+'" data-i="'+i+'"><span>'+x.ic+'</span>'+x.t.split(' ')[0].replace(',','')+'</button>';});document.getElementById('v2tabs').innerHTML=tabs;
+function show(i){document.getElementById('v2panel').innerHTML='<div class="ic">'+IND[i].ic+'</div><div><h3>'+IND[i].t+'</h3><p>'+IND[i].d+'</p></div>';[].forEach.call(document.querySelectorAll('#v2tabs .v2-tab'),function(b){b.classList.toggle('on',+b.dataset.i===i);});}
+document.getElementById('v2tabs').addEventListener('click',function(e){var b=e.target.closest('.v2-tab');if(b)show(+b.dataset.i);});show(0);})();
+// V3 Accordion
+(function(){var h='';IND.forEach(function(x,i){h+='<div class="v3-row'+(i===0?' on':'')+'"><div class="v3-q"><span class="ic">'+x.ic+'</span>'+x.t+'<span class="ar">+</span></div><div class="v3-a"><div>'+x.d+'</div></div></div>';});var el=document.getElementById('v3');el.innerHTML=h;el.addEventListener('click',function(e){var q=e.target.closest('.v3-q');if(!q)return;q.parentElement.classList.toggle('on');});})();
+// V4 Icon cards
+(function(){var h='';IND.forEach(function(x){h+='<div class="v4-card"><div class="ic">'+x.ic+'</div><h3>'+x.t+'</h3><p>'+x.d+'</p></div>';});document.getElementById('v4').innerHTML=h;})();
+// V5 Timeline
+(function(){var h='';IND.forEach(function(x){h+='<div class="v5-item"><div class="dot">'+x.ic+'</div><h3>'+x.t+'</h3><p>'+x.d+'</p></div>';});document.getElementById('v5').innerHTML=h;})();
+// V6 Split
+(function(){var li='';IND.forEach(function(x,i){li+='<div class="v6-li'+(i===0?' on':'')+'" data-i="'+i+'"><span class="ic">'+x.ic+'</span>'+x.t+'</div>';});document.getElementById('v6list').innerHTML=li;
+function show(i){document.getElementById('v6detail').innerHTML='<div class="ic">'+IND[i].ic+'</div><h3>'+IND[i].t+'</h3><p>'+IND[i].d+'</p>';[].forEach.call(document.querySelectorAll('#v6list .v6-li'),function(b){b.classList.toggle('on',+b.dataset.i===i);});}
+document.getElementById('v6list').addEventListener('click',function(e){var b=e.target.closest('.v6-li');if(b)show(+b.dataset.i);});show(0);})();
+// V7 Pills
+(function(){var p='';IND.forEach(function(x,i){p+='<div class="v7-pill'+(i===0?' on':'')+'" data-i="'+i+'"><span class="ic">'+x.ic+'</span>'+x.t+'</div>';});document.getElementById('v7pills').innerHTML=p;
+function show(i){document.getElementById('v7out').textContent=IND[i].d;[].forEach.call(document.querySelectorAll('#v7pills .v7-pill'),function(b){b.classList.toggle('on',+b.dataset.i===i);});}
+document.getElementById('v7pills').addEventListener('click',function(e){var b=e.target.closest('.v7-pill');if(b)show(+b.dataset.i);});show(0);})();
+// V8 Editorial
+(function(){var h='';IND.forEach(function(x,i){h+='<div class="v8-row"><div class="num">'+num[i]+'</div><div><h3>'+x.t+'<span class="ic">'+x.ic+'</span></h3><p>'+x.d+'</p></div></div>';});document.getElementById('v8').innerHTML=h;})();
+// V9 Carousel
+(function(){var h='';IND.forEach(function(x){h+='<div class="v9-card"><div class="ic">'+x.ic+'</div><h3>'+x.t+'</h3><p>'+x.d+'</p></div>';});document.getElementById('v9').innerHTML=h;})();
+// V10 Gradient mosaic
+(function(){var g=['linear-gradient(155deg,#16243f,#101013)','linear-gradient(155deg,#241a38,#101013)','linear-gradient(155deg,#0e2a2a,#101013)','linear-gradient(155deg,#2a2410,#101013)','linear-gradient(155deg,#10291c,#101013)','linear-gradient(155deg,#0e1f3a,#101013)','linear-gradient(155deg,#2a1414,#101013)'];var h='';IND.forEach(function(x,i){h+='<div class="v10-card" style="background:'+g[i]+'"><div class="ic">'+x.ic+'</div><h3>'+x.t+'</h3><p>'+x.d+'</p></div>';});document.getElementById('v10').innerHTML=h;})();
+</script>
+</body></html>
