@@ -721,20 +721,45 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeVid();}
 
   <!-- PANEL: CRM SETUP -->
   <style>
-  .crm-board{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:6px}
-  .crm-col{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:9px}
-  .crm-h{display:flex;align-items:center;justify-content:space-between;font-size:11.5px;font-weight:700;color:var(--mut);text-transform:uppercase;letter-spacing:.04em;padding:2px 4px 6px}
-  .crm-h .ct{background:var(--bg3);border:1px solid var(--line);border-radius:999px;padding:1px 8px;font-size:11px;color:var(--fg)}
-  .crm-card{background:var(--bg3);border:1px solid var(--line);border-radius:10px;padding:11px 12px}
-  .crm-card.hot{background:var(--blue-soft);border-color:var(--blue-line)}
-  .crm-card .who{display:flex;align-items:center;gap:8px}
-  .crm-card .av{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--blue),#003ec7);color:#fff;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-  .crm-card .nm{font-size:12.5px;font-weight:600;color:var(--fg);line-height:1.2}
-  .crm-card .co{font-size:11px;color:var(--mut2)}
-  .crm-card .tag{display:inline-block;margin-top:8px;font-size:10px;font-weight:700;color:var(--blue);background:rgba(0,102,255,.14);border:1px solid var(--blue-line);border-radius:999px;padding:2px 8px}
-  .crm-card .sub{font-size:10.5px;color:var(--mut);margin-top:6px;line-height:1.35}
-  @media(max-width:860px){.crm-board{grid-template-columns:1fr 1fr}}
-  @media(max-width:520px){.crm-board{grid-template-columns:1fr}}
+  /* CRM Setup: authentic Close lead-detail (white window, embedded on dark page) */
+  .cwin{background:#fff;border:1px solid #e6e8ec;border-radius:14px;overflow:hidden;box-shadow:0 34px 80px rgba(0,0,0,.45);margin-top:8px;color:#1a1d21;font-family:-apple-system,"Segoe UI",Inter,Arial,sans-serif;text-align:left;font-size:14px}
+  .cfav{border-radius:6px;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;flex-shrink:0}
+  .cav{border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:600;flex-shrink:0}
+  .cl{display:grid;grid-template-columns:300px 1fr}
+  .cl-side{border-right:1px solid #eceef1;padding:16px}
+  .cl-hd{display:flex;align-items:center;gap:11px;margin-bottom:6px}
+  .cl-hd .cfav{width:40px;height:40px;font-size:18px;border-radius:9px}
+  .cl-co{font-family:var(--ff-d);font-weight:700;font-size:17px;letter-spacing:.01em;text-transform:uppercase}
+  .cl-status{display:inline-block;background:#d6f0dc;color:#2f7a3f;font-size:11px;font-weight:700;border-radius:6px;padding:2px 9px;margin-top:4px}
+  .cl-tabs{display:flex;gap:18px;border-bottom:1px solid #eceef1;margin:14px 0;font-size:13px;color:#6b7280}
+  .cl-tabs .on{color:#1a1d21;font-weight:600;border-bottom:2px solid #1a1d21;padding-bottom:8px;margin-bottom:-1px}
+  .cl-sec{font-size:11px;font-weight:700;color:#7d8794;letter-spacing:.05em;text-transform:uppercase;margin:16px 0 9px;display:flex;align-items:center;gap:7px}
+  .cl-sec .ct{background:#eef1f5;border-radius:999px;padding:0 7px;font-size:11px;color:#6b7280}
+  .cl-f{display:flex;gap:9px;font-size:13px;padding:5px 0;color:#1a1d21}
+  .cl-f .ic{color:#9aa1ab;width:16px;flex-shrink:0}
+  .cl-link{color:#2f6fed}
+  .cl-contact{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #f1f2f4}
+  .cl-contact:last-child{border-bottom:0}
+  .cl-contact .cav{width:30px;height:30px;font-size:10px}
+  .cl-contact .nm{font-size:13px;font-weight:600}.cl-contact .rl{font-size:11.5px;color:#9aa1ab}
+  .cl-main{display:flex;flex-direction:column;min-width:0}
+  .cl-actions{display:flex;gap:8px;padding:13px 16px;border-bottom:1px solid #eceef1;flex-wrap:wrap}
+  .cl-ab{display:inline-flex;align-items:center;gap:6px;border:1px solid #e0e2e6;border-radius:8px;padding:6px 12px;font-size:12.5px;font-weight:600;color:#3d4148}
+  .cl-ab.mail{border-color:#cfe0fb;color:#2f6fed}
+  .cl-sum{padding:13px 16px;border-bottom:1px solid #eceef1;font-size:13px}
+  .cl-sum b{color:#2f6fed;font-weight:700;letter-spacing:.03em}.cl-sum span{color:#6b7280}
+  .cl-ftabs{display:flex;gap:16px;padding:11px 16px 0;font-size:13px;color:#6b7280}
+  .cl-ftabs .on{color:#1a1d21;font-weight:600}
+  .cl-mail{padding:16px}
+  .cl-mailhd{display:flex;align-items:center;gap:9px;margin-bottom:6px}
+  .cl-mailhd .cav{width:26px;height:26px;font-size:9px}
+  .cl-mailhd .lbl{font-size:11px;font-weight:700;color:#3d4148;background:#eef4fd;border:1px solid #cfe0fb;border-radius:5px;padding:2px 8px}
+  .cl-mailhd .tm{margin-left:auto;font-size:11.5px;color:#9aa1ab}
+  .cl-subj{font-family:var(--ff-d);font-weight:600;font-size:16px;margin:8px 0 6px;color:#1a1d21}
+  .cl-meta{font-size:12px;color:#6b7280;margin-bottom:12px}
+  .cl-meta b{color:#1a1d21;font-weight:600}
+  .cl-body{font-size:13.5px;line-height:1.6;color:#2c2f34;white-space:pre-line;border-left:2px solid #e6e8ec;padding-left:14px}
+  @media(max-width:860px){.cl{grid-template-columns:1fr}.cl-side{border-right:0;border-bottom:1px solid #eceef1}}
   </style>
   <div class="fpanel on" id="fp-crm">
     <div class="fp-head">
@@ -742,34 +767,44 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeVid();}
       <h3>Dein <span class="hl">CRM</span>, sauber aufgesetzt.</h3>
       <p>Wir setzen dein CRM sauber auf und verbinden es mit dem Outreach. Jede Antwort landet automatisch als Lead, mit vollem Kontext und im richtigen Status.</p>
     </div>
-    <div class="crm-board rv">
-      <div class="crm-col">
-        <div class="crm-h">Neu <span class="ct">3</span></div>
-        <div class="crm-card hot"><div class="who"><span class="av">AK</span><div><div class="nm">Alex Krause</div><div class="co">Muster GmbH</div></div></div><span class="tag">via Outreach</span><div class="sub">Antwort vor 2 Min automatisch synchronisiert</div></div>
-        <div class="crm-card"><div class="who"><span class="av">SV</span><div><div class="nm">Sarah Vogt</div><div class="co">Orbis Solutions</div></div></div></div>
+    <div class="cwin rv"><div class="cl">
+      <div class="cl-side">
+        <div class="cl-hd"><span class="cfav" style="background:#e1453d">M</span><div class="cl-co"><!-- SLOT:COMPANY START -->Muster GmbH<!-- SLOT:COMPANY END --></div></div>
+        <span class="cl-status">Aktiv</span>
+        <div class="cl-tabs"><span class="on">Details</span><span>Dateien 4</span></div>
+        <div class="cl-sec">&#9432; Über</div>
+        <div class="cl-f"><span class="ic">&#128279;</span><a class="cl-link"><!-- SLOT:LEAD_DOMAIN START -->muster-gmbh.de<!-- SLOT:LEAD_DOMAIN END --></a></div>
+        <div class="cl-f"><span class="ic">&#128205;</span>Berlin, Deutschland</div>
+        <div class="cl-sec">Kontakte <span class="ct">3</span></div>
+        <div class="cl-contact"><span class="cav" style="background:#fde8ea;color:#c0392b">AK</span><div><div class="nm">Alex Krause</div><div class="rl">Geschäftsführer</div></div></div>
+        <div class="cl-contact"><span class="cav" style="background:#ece9fb;color:#6b4fbf">MV</span><div><div class="nm">Marie Voss</div><div class="rl">Head of Sales</div></div></div>
+        <div class="cl-sec">Custom Fields <span class="ct">3</span></div>
+        <div class="cl-f"><span class="ic">&#128188;</span>Branche: Werbung &amp; Marketing</div>
+        <div class="cl-f"><span class="ic">&#128101;</span>Mitarbeiter: 25-50</div>
       </div>
-      <div class="crm-col">
-        <div class="crm-h">Kontaktiert <span class="ct">2</span></div>
-        <div class="crm-card"><div class="who"><span class="av">MR</span><div><div class="nm">Mark Renner</div><div class="co">Nexfield AG</div></div></div></div>
-        <div class="crm-card"><div class="who"><span class="av">LB</span><div><div class="nm">Lena Brandt</div><div class="co">Brunner Group</div></div></div></div>
+      <div class="cl-main">
+        <div class="cl-actions"><span class="cl-ab">&#128197; Meeting</span><span class="cl-ab">&#128221; Notiz</span><span class="cl-ab mail">&#9993; E-Mail</span><span class="cl-ab">&#128222; Call</span><span class="cl-ab">&#9873; Aktivität</span></div>
+        <div class="cl-sum"><b>LEAD ZUSAMMENFASSEN</b> <span>&middot; Snapshot der wichtigsten Details und Aktivitäten</span></div>
+        <div class="cl-ftabs"><span class="on">Alle</span><span>Wichtig</span><span>Konversationen</span><span>Notizen</span></div>
+        <div class="cl-mail">
+          <div class="cl-mailhd"><span class="cav" style="background:#dcf0ef;color:#1d8f86">TS</span><span class="lbl">Gesendet</span><span class="tm">heute, 08:14</span></div>
+          <div class="cl-subj">Kurze Frage zu <!-- SLOT:COMPANY START -->Muster GmbH<!-- SLOT:COMPANY END --></div>
+          <div class="cl-meta">Von: <b>Tom Soto Schiller</b> &lt;tom@grundwerk.digital&gt; &nbsp;&middot;&nbsp; An: Alex Krause &lt;alex@<!-- SLOT:LEAD_DOMAIN START -->muster-gmbh.de<!-- SLOT:LEAD_DOMAIN END -->&gt;</div>
+          <div class="cl-body">Hallo <!-- SLOT:LEAD_FIRST START -->Alex<!-- SLOT:LEAD_FIRST END -->,
+
+gerade gesehen, dass ihr auf eurer Website drei neue Vertriebsrollen ausgeschrieben habt, das Team wächst also spürbar.
+
+Genau dann fällt oft auf, dass der Outbound-Kanal noch nicht systematisch läuft.
+
+Wir bauen B2B-Teams in 6 Wochen einen reproduzierbaren Kanal, der qualifizierte Termine liefert.
+
+Hätte das Sinn für euch?
+
+Beste Grüße
+Tom</div>
+        </div>
       </div>
-      <div class="crm-col">
-        <div class="crm-h">Termin <span class="ct">2</span></div>
-        <div class="crm-card"><div class="who"><span class="av">DK</span><div><div class="nm">Daniel Kern</div><div class="co">Talvio AG</div></div></div><span class="tag">Do 11:00</span></div>
-        <div class="crm-card"><div class="who"><span class="av">PM</span><div><div class="nm">Peter Maus</div><div class="co">Kessler &amp; Co</div></div></div></div>
-      </div>
-      <div class="crm-col">
-        <div class="crm-h">Gewonnen <span class="ct">1</span></div>
-        <div class="crm-card"><div class="who"><span class="av">TK</span><div><div class="nm">Tim Kuesters</div><div class="co">Birdsview</div></div></div><span class="tag">240k Dealsize</span></div>
-      </div>
-    </div>
-    <div class="vid-flow rv">
-      <div class="vflow-card"><div class="ic">&#128231;</div><h4>Antwort kommt rein</h4><p>Ein Lead antwortet im Outreach, egal ob per E-Mail oder LinkedIn.</p></div>
-      <div class="farr">&#8594;</div>
-      <div class="vflow-card"><div class="ic">&#128260;</div><h4>Auto-Sync ins CRM</h4><p>Kontakt, Firma, Nachricht und Quelle landen automatisch im richtigen Feld.</p></div>
-      <div class="farr">&#8594;</div>
-      <div class="vflow-card"><div class="ic">&#9989;</div><h4>Lead mit Kontext</h4><p>Dein Team sieht sofort Status und Historie, ohne manuelles Nachpflegen.</p></div>
-    </div>
+    </div></div>
   </div>
 
   <!-- PANEL: KI-VIDEO -->
