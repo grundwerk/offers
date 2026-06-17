@@ -410,7 +410,7 @@ img,svg,iframe{display:block;max-width:100%;}
 #b-footer .b-footer-copy{max-width:1080px;margin:1.5rem auto 0;font-size:0.7rem;color:#5a7a94;border-top:1px solid rgba(255,255,255,0.06);padding-top:1.5rem;}
 
 /* ============================================================
-   POPUPS (gestaffelt, ein globaler modalOpen-Guard)
+   POPUPS (b-book/b-radar gated mit 90s-Abstand; b-whisper = persistenter Chatbot)
    ============================================================ */
 .b-modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:24px;}
 .b-modal.open{display:flex;}
@@ -1163,13 +1163,17 @@ img,svg,iframe{display:block;max-width:100%;}
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------- GLOBAL MODAL GUARD ---------- */
-  var modalOpen = false;
-  var MIN_POPUP_GAP = 90000; // Tom 2026-06-17: min 90s zwischen zwei Popups
-  var lastPopupTs = 0;
-  // Auto-Popup mit Abstands-Gate: oeffnet erst wenn kein Modal offen ist UND seit dem letzten Popup >=90s vergangen sind
+  // Gated Popups = b-book + b-radar. b-whisper ist KEIN Popup, sondern ein persistenter Chatbot (Tom 2026-06-17).
+  var MIN_POPUP_GAP = 90000;            // min 90s NACH dem Schliessen, bevor das naechste Popup kommt
+  var lastPopupClosedTs = 0;
+  var GATED_POPUPS = ['b-book','b-radar'];
+  function anyPopupOpen(){
+    return GATED_POPUPS.some(function(x){ var o = document.getElementById(x); return o && o.classList.contains('open'); });
+  }
+  // Auto-Popup-Gate: oeffnet erst wenn KEIN gated Popup offen ist UND seit dem letzten Schliessen >=90s vergangen sind
   function autoPopup(id, seenKey){
     if (seenKey) { try { if (sessionStorage.getItem(seenKey)) return; } catch(e){} }
-    if (modalOpen || (lastPopupTs && Date.now() - lastPopupTs < MIN_POPUP_GAP)) {
+    if (anyPopupOpen() || (lastPopupClosedTs && Date.now() - lastPopupClosedTs < MIN_POPUP_GAP)) {
       setTimeout(function(){ autoPopup(id, seenKey); }, 5000);
       return;
     }
@@ -1178,37 +1182,30 @@ img,svg,iframe{display:block;max-width:100%;}
   }
 
   function openModal(id){
-    if (modalOpen) return;            // staffeln: nie 2 Modals gleichzeitig
     var el = document.getElementById(id);
     if (!el) return;
-    // Calendly-iframe erst bei Bedarf laden
+    // nie zwei gleichzeitig: alle anderen gated Popups hart schliessen, dann oeffnen
+    GATED_POPUPS.forEach(function(x){ if (x !== id) { var o = document.getElementById(x); if (o) o.classList.remove('open'); } });
     var cal = el.querySelector('iframe[data-src]');
     if (cal && !cal.getAttribute('src')) cal.setAttribute('src', cal.getAttribute('data-src'));
     el.classList.add('open');
-    modalOpen = true;
-    lastPopupTs = Date.now();
   }
   function closeModal(id){
     var el = document.getElementById(id);
     if (!el) return;
     el.classList.remove('open');
-    modalOpen = false;
+    if (id !== 'b-whisper') lastPopupClosedTs = Date.now();  // 90s-Counter startet beim Schliessen
   }
   function closeAll(){
-    ['b-book','b-radar','b-whisper'].forEach(function(id){
-      var el = document.getElementById(id);
-      if (el) el.classList.remove('open');
-    });
-    modalOpen = false;
+    GATED_POPUPS.forEach(function(x){ var el = document.getElementById(x); if (el) el.classList.remove('open'); });
+    lastPopupClosedTs = Date.now();
   }
 
   // Alle "Erstgespräch"-Buttons öffnen das zentrale Buchungs-Popup
   document.querySelectorAll('.b-open-book').forEach(function(btn){
     btn.addEventListener('click', function(e){
       e.preventDefault();
-      // wenn ein anderes Modal offen ist, schließen wir es zuerst (Buchung hat Vorrang)
-      if (modalOpen) closeAll();
-      openModal('b-book');
+      openModal('b-book'); // openModal schliesst andere gated Popups selbst
     });
   });
   // Whisper-CTA ist ein echter Calendly-Link (target _blank) - kein preventDefault nötig,
@@ -1249,16 +1246,11 @@ img,svg,iframe{display:block;max-width:100%;}
     }
   } catch(e) {}
 
-  /* ---------- EXIT-INTENT WHISPER WIDGET (1x/Session) ---------- */
+  /* ---------- PERSISTENTER CHATBOT (immer sichtbar unten rechts, Tom 2026-06-17) ---------- */
   try {
-    if (!sessionStorage.getItem('b_whisper_shown')) {
-      var exitHandler = function(e){
-        if (e.clientY <= 0 && !sessionStorage.getItem('b_whisper_shown')) {
-          document.removeEventListener('mouseout', exitHandler);
-          autoPopup('b-whisper','b_whisper_shown');
-        }
-      };
-      document.addEventListener('mouseout', exitHandler);
+    var whisperEl = document.getElementById('b-whisper');
+    if (whisperEl) {
+      setTimeout(function(){ whisperEl.classList.add('open'); }, 1200); // kurz nach Load einblenden, dann dauerhaft sichtbar
     }
   } catch(e) {}
 
