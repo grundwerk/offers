@@ -889,7 +889,7 @@ s2.addEventListener('click',go);i2.addEventListener('keydown',function(e){if(e.k
   setTimeout(function(){
     if(document.documentElement.style.display==='none')return; // secure-gate not passed -> do not count
     try{ fetch(T,{method:'POST',headers:{'Content-Type':'application/json'},keepalive:true,
-      body:JSON.stringify({page_slug:sl(),event:'view',close_lead_id:(window.__CLOSE_LEAD_ID||''),channel:(window.__LP_CHANNEL||'')})}); }catch(e){}
+      body:JSON.stringify({page_slug:sl(),event:'view',close_lead_id:(window.__CLOSE_LEAD_ID||''),channel:(window.__LP_CHANNEL||''),secure:(new URLSearchParams(location.search).get('secure')||'')})}); }catch(e){}
   },5000);
 })();</script>
 </body>
