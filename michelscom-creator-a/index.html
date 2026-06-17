@@ -1135,6 +1135,19 @@ img,iframe{display:block;max-width:100%}
   var exit = document.getElementById('mc-exit');
   var calLoaded = false;
   var lastFocus = null;
+  var MIN_POPUP_GAP = 90000; // Tom 2026-06-17: min 90s zwischen zwei Popups
+  var lastPopupTs = 0;
+  // Auto-Popup mit Abstands-Gate: oeffnet erst wenn kein Modal offen ist UND seit dem letzten Popup >=90s vergangen sind
+  function autoPopup(el, seenKey){
+    if(!el) return;
+    if(seenKey){ try{ if(sessionStorage.getItem(seenKey)) return; }catch(e){} }
+    if(modalOpen || (lastPopupTs && Date.now() - lastPopupTs < MIN_POPUP_GAP)){
+      setTimeout(function(){ autoPopup(el, seenKey); }, 5000);
+      return;
+    }
+    if(seenKey){ try{ sessionStorage.setItem(seenKey,'1'); }catch(e){} }
+    openModal(el);
+  }
 
   function lockScroll(on){ document.body.style.overflow = on ? 'hidden' : ''; }
 
@@ -1148,6 +1161,7 @@ img,iframe{display:block;max-width:100%}
     el.classList.add('is-open');
     el.setAttribute('aria-hidden','false');
     modalOpen = true;
+    lastPopupTs = Date.now();
     lockScroll(true);
     if(el===book && !calLoaded){
       var ifr = book.querySelector('.bk-cal');
@@ -1184,16 +1198,12 @@ img,iframe{display:block;max-width:100%}
     if(e.key==='Escape' && modalOpen) closeAll();
   });
 
-  /* ---------- Timed central popup (~30s, once per session) ---------- */
+  /* ---------- Timed central popup (~45s, once per session, mit 90s-Gate) ---------- */
   (function(){
     try{
       if(sessionStorage.getItem('mc_book_seen')) return;
     }catch(e){}
-    setTimeout(function(){
-      if(modalOpen) return; // do not stack
-      try{ sessionStorage.setItem('mc_book_seen','1'); }catch(e){}
-      openModal(book);
-    }, 30000);
+    setTimeout(function(){ autoPopup(book, 'mc_book_seen'); }, 45000);
   })();
 
   /* ---------- Mid-scroll Branchenzeuge (~60% scroll, once per session) ---------- */
@@ -1206,9 +1216,7 @@ img,iframe{display:block;max-width:100%}
       if(h<=0) return;
       if(sc / h >= 0.60){
         window.removeEventListener('scroll', onScroll);
-        if(modalOpen) return; // guard: never two at once
-        try{ sessionStorage.setItem('mc_mid_seen','1'); }catch(e){}
-        openModal(mid);
+        autoPopup(mid, 'mc_mid_seen');
       }
     }
     window.addEventListener('scroll', onScroll, {passive:true});
@@ -1221,9 +1229,7 @@ img,iframe{display:block;max-width:100%}
       try{ if(sessionStorage.getItem('mc_exit_seen')) { document.removeEventListener('mouseout', onLeave); return; } }catch(err){}
       if(e.clientY <= 0 && (!e.relatedTarget && !e.toElement)){
         document.removeEventListener('mouseout', onLeave);
-        if(modalOpen) return; // guard
-        try{ sessionStorage.setItem('mc_exit_seen','1'); }catch(err){}
-        openModal(exit);
+        autoPopup(exit, 'mc_exit_seen');
       }
     }
     // Give the timed popup priority for the first 35s

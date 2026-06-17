@@ -430,16 +430,16 @@ img,svg,iframe{display:block;max-width:100%;}
 @media(max-width:560px){#b-book .b-book-cal{height:auto;min-height:340px;}}
 
 /* Radar modal (5-Dimensionen-Profil) */
-#b-radar .b-radar-box{position:relative;display:flex;flex-direction:column;background:#fff;border-radius:14px;width:100%;max-width:680px;max-height:calc(100dvh - 48px);overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,0.5);z-index:2;}
-#b-radar .b-radar-head{background:var(--mc-navy-dark);padding:1.4rem 1.6rem;}
+#b-radar .b-radar-box{position:relative;display:flex;flex-direction:column;background:#fff;border-radius:14px;width:100%;max-width:880px;max-height:calc(100dvh - 48px);overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,0.5);z-index:2;}
+#b-radar .b-radar-head{background:var(--mc-navy-dark);padding:1.05rem 1.6rem;}
 #b-radar .b-radar-tag{display:inline-block;background:rgba(52,128,221,0.18);color:var(--mc-blue-light);font-size:0.62rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.25rem 0.7rem;border-radius:3px;margin-bottom:0.6rem;}
 #b-radar .b-radar-title{font-family:var(--font-head);font-size:1.3rem;font-weight:700;color:#fff;}
 #b-radar .b-radar-sub{font-size:0.74rem;color:#9fb5c9;margin-top:0.25rem;}
-#b-radar .b-radar-body{padding:1.6rem;display:flex;gap:1.8rem;align-items:flex-start;flex-wrap:wrap;justify-content:center;overflow-y:auto;}
-#b-radar .b-radar-chart{flex:0 0 280px;max-width:100%;}
+#b-radar .b-radar-body{padding:1.2rem 1.5rem;display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;justify-content:center;overflow-y:auto;}
+#b-radar .b-radar-chart{flex:0 0 260px;max-width:100%;}
 #b-radar #b-radar-svg{width:100%;height:auto;}
-#b-radar .b-radar-dims{flex:1;min-width:240px;max-width:340px;display:flex;flex-direction:column;gap:0.6rem;}
-#b-radar .b-radar-dim{background:#f8f9fb;border:1px solid #e2e8f0;border-left:3px solid var(--mc-blue);border-radius:0 6px 6px 0;padding:0.6rem 0.85rem;}
+#b-radar .b-radar-dims{flex:1 1 460px;min-width:300px;display:flex;flex-direction:column;gap:0.45rem;}
+#b-radar .b-radar-dim{background:#f8f9fb;border:1px solid #e2e8f0;border-left:3px solid var(--mc-blue);border-radius:0 6px 6px 0;padding:0.5rem 0.8rem;}
 #b-radar .b-radar-dim.high{border-left-color:#c0392b;}
 #b-radar .b-radar-dim.medium{border-left-color:#e67e22;}
 #b-radar .b-radar-dim-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.2rem;}
@@ -447,8 +447,8 @@ img,svg,iframe{display:block;max-width:100%;}
 #b-radar .b-radar-dim-score{font-family:var(--font-head);font-size:0.78rem;font-weight:700;color:var(--mc-blue);}
 #b-radar .b-radar-dim-score.high{color:#c0392b;}
 #b-radar .b-radar-dim-score.medium{color:#e67e22;}
-#b-radar .b-radar-dim-text{font-size:0.66rem;color:var(--mc-muted);line-height:1.5;}
-#b-radar .b-radar-foot{padding:0 1.6rem 1.6rem;text-align:center;}
+#b-radar .b-radar-dim-text{font-size:0.7rem;color:var(--mc-muted);line-height:1.4;margin-top:0.1rem;}
+#b-radar .b-radar-foot{padding:0.4rem 1.6rem 1.1rem;text-align:center;}
 
 /* Candidate-whisper widget (corner) */
 #b-whisper{position:fixed;bottom:20px;right:20px;z-index:90;width:330px;max-width:calc(100vw - 40px);display:none;}
@@ -457,7 +457,8 @@ img,svg,iframe{display:block;max-width:100%;}
 @keyframes bWhisperIn{from{opacity:0;transform:translateY(14px) scale(.96);}to{opacity:1;transform:none;}}
 @media(prefers-reduced-motion:reduce){#b-whisper .b-whisper-chat{animation:none;}}
 #b-whisper .b-whisper-head{background:var(--mc-navy);padding:0.8rem 1rem;display:flex;align-items:center;gap:0.6rem;}
-#b-whisper .b-whisper-av{width:34px;height:34px;border-radius:50%;background:var(--mc-blue);display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:0.9rem;font-weight:700;color:#fff;flex-shrink:0;}
+#b-whisper .b-whisper-av{width:36px;height:36px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;box-shadow:0 0 0 1px rgba(255,255,255,.25);}
+#b-whisper .b-whisper-av img{width:100%;height:100%;object-fit:cover;display:block;}
 #b-whisper .b-whisper-ci{flex:1;}
 #b-whisper .b-whisper-cn{font-family:var(--font-head);font-size:0.78rem;font-weight:700;color:#fff;}
 #b-whisper .b-whisper-cs{font-size:0.6rem;color:#7ab3e0;margin-top:1px;display:flex;align-items:center;gap:4px;}
@@ -1130,7 +1131,7 @@ img,svg,iframe{display:block;max-width:100%;}
 <div id="b-whisper" role="dialog" aria-label="Kandidaten-Treffer">
   <div class="b-whisper-chat">
     <div class="b-whisper-head">
-      <div class="b-whisper-av">M</div>
+      <div class="b-whisper-av"><img src="/assets/michelscom/michelscom-icon.svg" alt="Michelscom" width="36" height="36"></div>
       <div class="b-whisper-ci">
         <div class="b-whisper-cn">Michelscom Matching</div>
         <div class="b-whisper-cs">Online · Echtzeit-Talentpool</div>
@@ -1138,11 +1139,10 @@ img,svg,iframe{display:block;max-width:100%;}
       <button class="b-whisper-x" type="button" data-close="b-whisper" aria-label="Schließen">&#x2715;</button>
     </div>
     <div class="b-whisper-body">
-      <div class="b-whisper-metalbl">Automatisch gefunden für Ihre Stelle</div>
-      <div class="b-whisper-mc"><strong>KFZ-Mechatroniker · Raum Hannover</strong> → 1 aktiver Treffer im Pool</div><!-- SLOT:STELLE --><!-- SLOT:REGION -->
+      <div class="b-whisper-metalbl">Recruiting-Beratung · Michelscom</div>
+      <div class="b-whisper-cand">&#8222;Ich habe es schon mit vielen Recruiting-Agenturen probiert, aber niemand konnte es bisher lösen.&#8220;</div>
       <div class="b-whisper-typing"><div class="b-whisper-d"></div><div class="b-whisper-d"></div><div class="b-whisper-d"></div></div>
-      <div class="b-whisper-cand">&#8222;Ich bin seit 3 Wochen aktiv auf der Suche nach einer neuen Stelle im KFZ-Bereich. Raum Hannover passt perfekt. Ich bin bereit für ein Gespräch.&#8220;</div>
-      <div class="b-whisper-cid">Kandidat #DE-HAN-KFZ-1847 · Anonymisiert · Verifiziert</div>
+      <div class="b-whisper-mc">Das liegt daran, dass Bewerber auf die falsche Art und Weise kontaktiert werden. Mit der 6-Schritt-Kandidatenreise von Michelscom besetzen wir seit 2018 erfolgreich Stellen.<br><br>Möchten Sie herausfinden, wieso wir für Ihre Stelle eine Einstellungsgarantie ausstellen können?</div>
     </div>
     <div class="b-whisper-foot">
       <a href="https://calendly.com/michelscom-s/potenzialanalyse" class="b-whisper-fta b-open-book-link" target="_blank" rel="noopener">Jetzt Erstgespräch vereinbaren</a>
@@ -1162,25 +1162,20 @@ img,svg,iframe{display:block;max-width:100%;}
   "use strict";
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---------- KANDIDATEN-FLÜSTERN: rotierende Beispiel-Texte ---------- */
-  var whisperVariants = [
-    { msg: 'Ich bin seit 3 Wochen offen für was Neues im KFZ-Bereich. Raum Hannover passt. Bereit für ein Gespräch.', cid: 'DE-HAN-KFZ-1847' },
-    { msg: 'Aktuell unzufrieden, schaue mich diskret um. Mechatronik, Umkreis Hannover. Wann können wir sprechen?', cid: 'DE-HAN-KFZ-2093' },
-    { msg: '10 Jahre Erfahrung, will mich verändern. Suche einen Betrieb mit Perspektive in der Region.', cid: 'DE-HAN-KFZ-1622' },
-    { msg: 'Mein aktueller Arbeitgeber bietet keine Weiterentwicklung. Bin gesprächsbereit, Raum Hannover.', cid: 'DE-HAN-KFZ-2310' },
-    { msg: 'Geselle mit Meister-Ambition, suche Arbeitgeber der das fördert. Offen ab sofort.', cid: 'DE-HAN-KFZ-1955' },
-    { msg: 'Pendle aktuell zu weit, suche näher an Hannover. Erfahren, sofort verfügbar für ein Kennenlernen.', cid: 'DE-HAN-KFZ-2178' }
-  ];
-  function setWhisperMessage(el){
-    var v = whisperVariants[Math.floor(Math.random() * whisperVariants.length)];
-    var cand = el.querySelector('.b-whisper-cand');
-    var cidEl = el.querySelector('.b-whisper-cid');
-    if (cand) cand.innerHTML = '„' + v.msg + '“';
-    if (cidEl) cidEl.textContent = 'Kandidat #' + v.cid + ' · Anonymisiert · Verifiziert';
-  }
-
   /* ---------- GLOBAL MODAL GUARD ---------- */
   var modalOpen = false;
+  var MIN_POPUP_GAP = 90000; // Tom 2026-06-17: min 90s zwischen zwei Popups
+  var lastPopupTs = 0;
+  // Auto-Popup mit Abstands-Gate: oeffnet erst wenn kein Modal offen ist UND seit dem letzten Popup >=90s vergangen sind
+  function autoPopup(id, seenKey){
+    if (seenKey) { try { if (sessionStorage.getItem(seenKey)) return; } catch(e){} }
+    if (modalOpen || (lastPopupTs && Date.now() - lastPopupTs < MIN_POPUP_GAP)) {
+      setTimeout(function(){ autoPopup(id, seenKey); }, 5000);
+      return;
+    }
+    if (seenKey) { try { sessionStorage.setItem(seenKey, '1'); } catch(e){} }
+    openModal(id);
+  }
 
   function openModal(id){
     if (modalOpen) return;            // staffeln: nie 2 Modals gleichzeitig
@@ -1189,9 +1184,9 @@ img,svg,iframe{display:block;max-width:100%;}
     // Calendly-iframe erst bei Bedarf laden
     var cal = el.querySelector('iframe[data-src]');
     if (cal && !cal.getAttribute('src')) cal.setAttribute('src', cal.getAttribute('data-src'));
-    if (id === 'b-whisper') { setWhisperMessage(el); el.classList.add('open'); }
-    else { el.classList.add('open'); }
+    el.classList.add('open');
     modalOpen = true;
+    lastPopupTs = Date.now();
   }
   function closeModal(id){
     var el = document.getElementById(id);
@@ -1232,9 +1227,7 @@ img,svg,iframe{display:block;max-width:100%;}
   /* ---------- TIMED CENTRAL BOOKING POPUP (~30s, 1x/Session) ---------- */
   try {
     if (!sessionStorage.getItem('b_book_shown')) {
-      setTimeout(function(){
-        if (!modalOpen) { openModal('b-book'); sessionStorage.setItem('b_book_shown','1'); }
-      }, 30000);
+      setTimeout(function(){ autoPopup('b-book','b_book_shown'); }, 45000);
     }
   } catch(e) {}
 
@@ -1245,10 +1238,9 @@ img,svg,iframe{display:block;max-width:100%;}
       if (briefEl) {
         var ro = new IntersectionObserver(function(entries){
           entries.forEach(function(en){
-            if (en.isIntersecting && !modalOpen && !sessionStorage.getItem('b_radar_shown')) {
-              openModal('b-radar');
-              sessionStorage.setItem('b_radar_shown','1');
+            if (en.isIntersecting && !sessionStorage.getItem('b_radar_shown')) {
               ro.disconnect();
+              autoPopup('b-radar','b_radar_shown');
             }
           });
         }, { threshold: 0.4 });
@@ -1261,10 +1253,9 @@ img,svg,iframe{display:block;max-width:100%;}
   try {
     if (!sessionStorage.getItem('b_whisper_shown')) {
       var exitHandler = function(e){
-        if (e.clientY <= 0 && !modalOpen && !sessionStorage.getItem('b_whisper_shown')) {
-          openModal('b-whisper');
-          sessionStorage.setItem('b_whisper_shown','1');
+        if (e.clientY <= 0 && !sessionStorage.getItem('b_whisper_shown')) {
           document.removeEventListener('mouseout', exitHandler);
+          autoPopup('b-whisper','b_whisper_shown');
         }
       };
       document.addEventListener('mouseout', exitHandler);
