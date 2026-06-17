@@ -1,11 +1,11 @@
-<!-- GRUNDWERK-OFFER v13 | 2026-06-17 | Echter 8-Tab Sales Room (Inhalt portiert, keine Zitate) -->
+<!-- GRUNDWERK-OFFER v14 | 2026-06-17 | Ergebnisse wie Beispiel-Sales-Room (Proof+Videos+Stimmen), Strategie-Tab entfernt -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII=" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="offer-version" content="v13 | 2026-06-17">
+    <meta name="offer-version" content="v14 | 2026-06-17">
     <title>Kaulfu&szlig; &times; Grundwerk Digital : Sales Room</title>
     <script>
         (function(){
@@ -671,7 +671,6 @@
     <button class="tab-btn"        data-tab="system"    onclick="switchTab('system')">   <span class="tab-emoji">&#128640;</span> Das System</button>
     <button class="tab-btn"        data-tab="results"   onclick="switchTab('results')">  <span class="tab-emoji">&#128202;</span> Ergebnisse</button>
     <button class="tab-btn"        data-tab="invest"    onclick="switchTab('invest')">   <span class="tab-emoji">&#128176;</span> Investition</button>
-    <button class="tab-btn"        data-tab="strategy"  onclick="switchTab('strategy')"> <span class="tab-emoji">&#129504;</span> Strategie</button>
     <button class="tab-btn"        data-tab="plan"      onclick="switchTab('plan')">     <span class="tab-emoji">&#128506;&#65039;</span> Aktionsplan</button>
     <button class="tab-btn"        data-tab="booking"   onclick="switchTab('booking')">  <span class="tab-emoji">&#128197;</span> Termin</button>
 </div>
@@ -893,34 +892,239 @@
     <div class="panel-inner">
         <div class="container">
 
-            <span class="section-label">Ergebnisse</span>
-            <h2>Zahlen, keine Versprechen.</h2>
-            <p class="lead">Was wir f&uuml;r andere B2B-Unternehmen erreicht haben: echte Kunden, echte Resultate.</p>
+            <span class="section-label" style="display:inline-block;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent);font-weight:600;">Nachgewiesene Ergebnisse</span>
+            <h2 style="font-size:2rem;font-weight:800;margin:12px 0 8px;">Was andere B2B-Unternehmen damit erreicht haben</h2>
+            <p class="lead" style="max-width:560px;margin-bottom:32px;line-height:1.7;color:var(--text-muted);font-size:0.95rem;">Echte Zahlen aus aktiven Projekten, von Startups bis Mittelstand.</p>
 
+            <!-- ── Kunden-Logo Ticker ── -->
+            <div class="logo-ticker-section" style="padding:10px 0 20px;overflow:hidden;">
+                <div class="ticker-track-wrap" style="overflow:hidden;position:relative;margin-bottom:16px;">
+                    <div class="ticker-track forward" style="display:flex;align-items:center;gap:56px;width:max-content;animation:tickerFwd 52s linear infinite;">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/666aef18f9c0430cf41626ac/66702de41b53aeecffd5b8d8_Logo.svg" alt="HappyGang">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview">
+                    </div>
+                </div>
+                <div class="ticker-track-wrap" style="overflow:hidden;position:relative;margin-bottom:16px;">
+                    <div class="ticker-track reverse" style="display:flex;align-items:center;gap:56px;width:max-content;animation:tickerRev 58s linear infinite;">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://digitalnow.online/logo.png" alt="Digital Now">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://digitalnow.online/logo.png" alt="Digital Now">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://digitalnow.online/logo.png" alt="Digital Now">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://digitalnow.online/logo.png" alt="Digital Now">
+                        <img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios">
+                    </div>
+                </div>
+            </div>
+
+            <!-- ── Stat-Banner ── -->
+            <div class="stat-row" style="display:flex;gap:16px;margin-bottom:0;">
+                <div class="stat-item" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px 24px;flex:1;text-align:center;">
+                    <div class="stat-num" style="font-size:1.6rem;font-weight:800;color:var(--accent);">10 Mio.+</div>
+                    <div class="stat-lbl" style="font-size:0.8rem;color:var(--text-muted);margin-top:2px;">E-Mails versendet</div>
+                </div>
+                <div class="stat-item" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px 24px;flex:1;text-align:center;">
+                    <div class="stat-num" style="font-size:1.6rem;font-weight:800;color:var(--accent);">50+</div>
+                    <div class="stat-lbl" style="font-size:0.8rem;color:var(--text-muted);margin-top:2px;">Erfolgreiche B2B-Projekte</div>
+                </div>
+                <div class="stat-item" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px 24px;flex:1;text-align:center;">
+                    <div class="stat-num" style="font-size:1.6rem;font-weight:800;color:var(--accent);">75+</div>
+                    <div class="stat-lbl" style="font-size:0.8rem;color:var(--text-muted);margin-top:2px;">Tools &amp; Datenanbieter</div>
+                </div>
+            </div>
+
+            <!-- ── Ergebnisse Überschrift ── -->
+            <div style="margin-top:48px;">
+                <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:6px;">Ergebnisse</h3>
+                <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:28px;">Echte Zahlen aus aktiven Grundwerk-Projekten, von Startups bis Mittelstand.</p>
+            </div>
+
+            <!-- ── Proof Cards (7) ── -->
             <div class="proof-grid">
                 <div class="proof-card">
-                    <div class="proof-num">14 Neukunden</div>
-                    <div class="proof-period">172 Leads in 3 Monaten, Hamburg</div>
-                    <div class="proof-co">Greenlovers</div>
-                    <div class="proof-desc">Stephan Meinecke</div>
+                    <div class="proof-co">Smart Bridges GmbH &middot; Berlin</div>
+                    <div class="proof-num">1.178 Leads</div>
+                    <div class="proof-period">in 5 Monaten</div>
+                    <div class="proof-desc">Premium-Event-Veranstalter. 36 verschiedene Kampagnen-Formate, 397 Leads in den ersten 3 Monaten.</div>
                 </div>
                 <div class="proof-card">
-                    <div class="proof-num">100.000&euro;</div>
-                    <div class="proof-period">Auftragswert in 9 Monaten Zusammenarbeit</div>
-                    <div class="proof-co">Hivebuy</div>
-                    <div class="proof-desc">Moritz Liehnert</div>
+                    <div class="proof-co">Birdsview GmbH</div>
+                    <div class="proof-num">286.000 &euro; ARR</div>
+                    <div class="proof-period">in 6 Monaten</div>
+                    <div class="proof-desc">E-Commerce SaaS. ROI 3x nach 5 Tagen, 23 Meetings in 6 Wochen, 4 Closings mit 27k ACV.</div>
                 </div>
                 <div class="proof-card">
-                    <div class="proof-num">2,7x ROI</div>
-                    <div class="proof-period">Return on Investment in Q1</div>
-                    <div class="proof-co">Cervis</div>
-                    <div class="proof-desc">Philipp K&ouml;hnlein</div>
+                    <div class="proof-co">Greenlovers &middot; Hamburg</div>
+                    <div class="proof-num">172 Leads</div>
+                    <div class="proof-period">+ 14 Auftr&auml;ge in 3 Monaten</div>
+                    <div class="proof-desc">Catering-Unternehmen. Multichannel-Kampagne mit 21% Reply-Rate (E-Mail) und &gt;25% Reply-Rate (LinkedIn).</div>
                 </div>
                 <div class="proof-card">
-                    <div class="proof-num">397 Leads</div>
-                    <div class="proof-period">in 3 Monaten</div>
-                    <div class="proof-co">Smart Bridges</div>
-                    <div class="proof-desc">Ingo Boldt</div>
+                    <div class="proof-co">Hivebuy &middot; Berlin</div>
+                    <div class="proof-num">400k+ Pipeline</div>
+                    <div class="proof-period">100k Deals closed</div>
+                    <div class="proof-desc">B2B Procurement SaaS. Grundwerk als prim&auml;rer Akquise-Kanal, &uuml;ber 100k EUR nachweisbarer Auftragswert.</div>
+                </div>
+                <div class="proof-card">
+                    <div class="proof-co">Peer Studios GbR &middot; Berlin</div>
+                    <div class="proof-num">20 Opportunities</div>
+                    <div class="proof-period">in 13 Tagen</div>
+                    <div class="proof-desc">Kreativ-Agentur. 6 Closings in 5 Monaten, inkl. Brands mit OrderValue von 10k+. Von unter 10k Umsatz zu konstanter Pipeline.</div>
+                </div>
+            </div>
+
+            <!-- ── Video-Testimonials ── -->
+            <div style="margin-top:48px;">
+                <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:6px;">Was unsere Kunden sagen</h3>
+                <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:28px;">Video-Referenzen direkt von Entscheidern, die mit Grundwerk arbeiten.</p>
+
+                <!-- Landscape Videos (16:9) -->
+                <div class="vid-landscape" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px;">
+                    <div>
+                        <div class="video-embed-wrap">
+                            <script src="https://fast.wistia.com/embed/8um6o166gg.js" async type="module"></script>
+                            <style>wistia-player[media-id='8um6o166gg']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/8um6o166gg/swatch');display:block;filter:blur(5px);padding-top:56.25%}</style>
+                            <wistia-player media-id="8um6o166gg" aspect="1.7777777777777777"></wistia-player>
+                        </div>
+                        <div style="margin-top:10px;text-align:center;">
+                            <div style="font-size:0.85rem;font-weight:700;color:var(--text);">Lasse Petry · Co-Founder, Peer Studios</div>
+                            <div style="font-size:0.75rem;color:var(--text-muted);">Creative Content & Brand Marketing Agentur</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="video-embed-wrap">
+                            <script src="https://fast.wistia.com/embed/ohjo6np2cx.js" async type="module"></script>
+                            <style>wistia-player[media-id='ohjo6np2cx']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/ohjo6np2cx/swatch');display:block;filter:blur(5px);padding-top:56.25%}</style>
+                            <wistia-player media-id="ohjo6np2cx" aspect="1.7777777777777777"></wistia-player>
+                        </div>
+                        <div style="margin-top:10px;text-align:center;">
+                            <div style="font-size:0.85rem;font-weight:700;color:var(--text);">Ingo Boldt · Geschäftsführer, Smart Bridges</div>
+                            <div style="font-size:0.75rem;color:var(--text-muted);">Premium B2B Networking Events</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portrait Videos (9:16) -->
+                <div class="vid-portrait" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
+                    <div>
+                        <div class="video-embed-wrap" style="max-width:240px;margin:0 auto;">
+                            <script src="https://fast.wistia.com/embed/xrshk3je41.js" async type="module"></script>
+                            <style>wistia-player[media-id='xrshk3je41']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/xrshk3je41/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style>
+                            <wistia-player media-id="xrshk3je41" aspect="0.5625"></wistia-player>
+                        </div>
+                        <div style="margin-top:10px;text-align:center;">
+                            <div style="font-size:0.82rem;font-weight:700;color:var(--text);">Valentin Eiber</div>
+                            <div style="font-size:0.72rem;color:var(--text-muted);">Founder · LinkedIn & B2B Lead Generation</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="video-embed-wrap" style="max-width:240px;margin:0 auto;">
+                            <script src="https://fast.wistia.com/embed/ecg4jyx9cg.js" async type="module"></script>
+                            <style>wistia-player[media-id='ecg4jyx9cg']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/ecg4jyx9cg/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style>
+                            <wistia-player media-id="ecg4jyx9cg" aspect="0.5625"></wistia-player>
+                        </div>
+                        <div style="margin-top:10px;text-align:center;">
+                            <div style="font-size:0.82rem;font-weight:700;color:var(--text);">Tim Küsters</div>
+                            <div style="font-size:0.72rem;color:var(--text-muted);">GF, Birdsview · AI E-Mail-Marketing für E-Commerce</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="video-embed-wrap" style="max-width:240px;margin:0 auto;">
+                            <script src="https://fast.wistia.com/embed/c97klwzjh4.js" async type="module"></script>
+                            <style>wistia-player[media-id='c97klwzjh4']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/c97klwzjh4/swatch');display:block;filter:blur(5px);padding-top:177.78%}</style>
+                            <wistia-player media-id="c97klwzjh4" aspect="0.5625"></wistia-player>
+                        </div>
+                        <div style="margin-top:10px;text-align:center;">
+                            <div style="font-size:0.82rem;font-weight:700;color:var(--text);">Andreas Glemser</div>
+                            <div style="font-size:0.72rem;color:var(--text-muted);">GF, COCOMIN · Executive Coaching</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ── Schriftliche Kundenstimmen ── -->
+            <div style="margin-top:48px;">
+                <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:6px;">Was Entscheider &uuml;ber die Ergebnisse sagen</h3>
+                <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:28px;">Originalzitate von Gesch&auml;ftsf&uuml;hrern und Verantwortlichen aus B2B-Unternehmen, die mit Grundwerk arbeiten.</p>
+
+                <div class="quote-grid">
+                    <div class="quote-card">
+                        <div class="q-text">Die Zusammenarbeit mit GWD war gepr&auml;gt von viel Beratung und Unterst&uuml;tzung unseren Email-Outreach zu professionalisieren und zum Erfolg zu bringen. Wir wissen die Erfahrung und Leistung zu sch&auml;tzen und freuen uns auf eine weitere Zusammenarbeit.</div>
+                        <div>
+                            <div class="q-author" style="font-weight:700;font-size:0.85rem;color:var(--text);">Nico St&ouml;ckel</div>
+                            <div class="q-role">Our Greenery</div>
+                        </div>
+                    </div>
+                    <div class="quote-card">
+                        <div class="q-text">Die Zusammenarbeit mit Grundwerk Digital war zuverl&auml;ssig und h&ouml;chstindividuell. Dabei ist Anthony Katzur direkt auf unsere Probleme eingegangen und hat mit uns unsere ICPs und den Markt analysiert und unseren apollo.io-Setup mit uns durchgef&uuml;hrt. Gerne wieder!</div>
+                        <div>
+                            <div class="q-author" style="font-weight:700;font-size:0.85rem;color:var(--text);">Michell Pascall Schmidt</div>
+                            <div class="q-role">eGroup</div>
+                        </div>
+                    </div>
+                    <div class="quote-card">
+                        <div class="q-text">Das Grundwerk Digital Scraping Team hat f&uuml;r CCV &uuml;beraus akkurate Leads aus mehreren deutschen Bundesl&auml;ndern gezogen, obwohl wir bisher alle Datenbanken schon v&ouml;llig ersch&ouml;pft hatten. Wir waren sehr &uuml;berrascht, dass die Ergebnisse so zufriedenstellend waren.</div>
+                        <div>
+                            <div class="q-author" style="font-weight:700;font-size:0.85rem;color:var(--text);">Michael Fischer</div>
+                            <div class="q-role">Sales Lead-SME, CCV &middot; Payment Solutions</div>
+                        </div>
+                    </div>
+                    <div class="quote-card">
+                        <div class="q-text">Grundwerk Digital hat mit uns erfolgreiche LinkedIn und Email-Kampagnen durchgef&uuml;hrt und bei der Implementierung von top-aktuellen Outreach-Prozessen h&ouml;chst professionell beraten.</div>
+                        <div>
+                            <div class="q-author" style="font-weight:700;font-size:0.85rem;color:var(--text);">Alexander Kohler</div>
+                            <div class="q-role">pplwise</div>
+                        </div>
+                    </div>
+                    <div class="quote-card">
+                        <div class="q-text">Wir haben wesentlich mehr Leads generiert und vor allem sind unsere Leads sehr viel hochwertiger als das die Jahre davor war. Wir k&ouml;nnen die Arbeit von Grundwerk wirklich weiterempfehlen!</div>
+                        <div>
+                            <div class="q-author" style="font-weight:700;font-size:0.85rem;color:var(--text);">Andreas Glemser</div>
+                            <div class="q-role">Gesch&auml;ftsf&uuml;hrer, COCOMIN AG</div>
+                        </div>
+                    </div>
+                    <div class="quote-card">
+                        <div class="q-text">Die Beratung ist auf den Punkt, das Know-how wirklich hilfreich und immer wieder kommen Impulse, auf die wir alleine wahrscheinlich nicht gekommen w&auml;ren. Nach den Gespr&auml;chen kommt immer eine saubere Zusammenfassung, und oft wird mehr gemacht, als urspr&uuml;nglich vereinbart war, dieses &bdquo;Overdelivern&ldquo; ist keine leere Floskel, sondern passiert wirklich.</div>
+                        <div>
+                            <div class="q-author" style="font-weight:700;font-size:0.85rem;color:var(--text);">Marc Meyer</div>
+                            <div class="q-role">Gesch&auml;ftsf&uuml;hrer, echte Media</div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -1019,85 +1223,7 @@
 </div>
 
 <!-- ═══════════════════════════════════════════════════ -->
-<!-- TAB 6 — STRATEGIE                                  -->
 <!-- ═══════════════════════════════════════════════════ -->
-<div class="panel" id="panel-strategy">
-    <div class="panel-inner">
-        <div class="container" style="max-width:740px;">
-
-            <div style="font-size:0.7rem;font-weight:600;color:var(--accent);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:20px;">Vertraulich : Grundwerk &times; Kaulfu&szlig;</div>
-            <h2 style="font-size:2rem;font-weight:700;line-height:1.2;margin-bottom:12px;">Outbound-Strategie f&uuml;r Kaulfu&szlig;</h2>
-            <p style="font-size:0.95rem;color:var(--text-muted);line-height:1.6;max-width:620px;">Ein klarer Plan, wie wir euren Preis- und Kapazit&auml;tsvorteil planbar an den Markt bringen.</p>
-            <div style="width:100%;height:1px;background:var(--border);margin-top:40px;"></div>
-
-            <!-- Zielmarkt -->
-            <div style="padding:56px 0 0;">
-                <div style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:28px;">Zielmarkt</div>
-                <div style="margin-bottom:24px;">
-                    <div style="font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:12px;">Rund 4.000 relevante Betriebe im Umkreis von 100 bis 150 km um Hamburg</div>
-                    <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;margin-bottom:16px;">Schleswig-Holstein und der norddeutsche Raum. Wir adressieren Betriebe, die regelm&auml;&szlig;ig zerspante Teile brauchen und vom Preis- und Kapazit&auml;tsvorteil eurer eigenen Produktion profitieren.</div>
-                </div>
-                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px;">
-                    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px;">
-                        <div style="font-size:0.68rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Segment A</div>
-                        <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:4px;">Industriebetriebe</div>
-                        <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.6;">1.500 bis 2.500 Betriebe im Zielgebiet.</div>
-                    </div>
-                    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px;">
-                        <div style="font-size:0.68rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Segment B</div>
-                        <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:4px;">Maschinen- und Werkzeugbau</div>
-                        <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.6;">1.000 bis 2.000 Betriebe im Zielgebiet.</div>
-                    </div>
-                    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px;">
-                        <div style="font-size:0.68rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Segment C</div>
-                        <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:4px;">Werften, Metallverarbeitung, E-Mobility</div>
-                        <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.6;">Metallverarbeitung ab 20 Mitarbeitern, E-Mobility und Elektroinstallation.</div>
-                    </div>
-                </div>
-            </div>
-
-            <div style="width:100%;height:1px;background:var(--border);margin-top:56px;"></div>
-
-            <!-- Kanal und Volumen -->
-            <div style="padding:56px 0 0;">
-                <div style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:28px;">Kanal und Volumen</div>
-                <div style="margin-bottom:32px;">
-                    <div style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:6px;">Cold Email als Hauptkanal</div>
-                    <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;">Im zweiten Monat schreiben wir den kompletten Zielmarkt einmal sauber an: rund 5.000 bis 8.000 Mails, eine Erstnachricht plus ein Follow-up. Hyper-personalisiert pro Segment, &uuml;ber eine eigene Infrastruktur mit Warm-up und laufendem Deliverability-Monitoring.</div>
-                </div>
-            </div>
-
-            <div style="width:100%;height:1px;background:var(--border);margin-top:56px;"></div>
-
-            <!-- Der Angle -->
-            <div style="padding:56px 0 0;">
-                <div style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:28px;">Der Angle</div>
-                <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;margin-bottom:24px;">Wir steigen &uuml;ber euren Preis- und Kapazit&auml;tsvorteil aus der Vietnam-Produktion ein: Klein- und Mittelserien zu Konditionen, die im DACH-Raum schwer zu schlagen sind. Der Up-Sell l&auml;uft auf in Deutschland gefertigte Einzelteile (1 bis 3 St&uuml;ck) f&uuml;r kurze Wege und hohe Flexibilit&auml;t.</div>
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-                    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px;">
-                        <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.6;"><strong style="color:var(--green);">Einstieg:</strong> Preis- und Kapazit&auml;tsvorteil aus Vietnam, Klein- und Mittelserien.</div>
-                    </div>
-                    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px;">
-                        <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.6;"><strong style="color:var(--text);">Up-Sell:</strong> In Deutschland gefertigte Einzelteile, 1 bis 3 St&uuml;ck.</div>
-                    </div>
-                </div>
-            </div>
-
-            <div style="width:100%;height:1px;background:var(--border);margin-top:56px;"></div>
-
-            <!-- Ziel -->
-            <div style="padding:56px 0 0;">
-                <div style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:28px;">Ziel</div>
-                <div style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;">Realistischer Startpunkt sind ein bis zwei qualifizierte Anfragen, danach skalierbar. Wichtig ist der planbare Kanal, bevor die n&auml;chste Auftragsdelle kommt.</div>
-            </div>
-
-            <div style="padding:48px 0 0;text-align:center;border-top:1px solid var(--border);margin-top:56px;">
-                <p style="font-size:0.75rem;color:var(--text-dim);letter-spacing:0.06em;">Grundwerk Digital &middot; Vertraulich</p>
-            </div>
-
-        </div>
-    </div>
-</div>
 
 <!-- ═══════════════════════════════════════════════════ -->
 <!-- TAB 7 — AKTIONSPLAN                                -->
@@ -1235,7 +1361,7 @@
 </footer>
 
 <script>
-    const TABS = ['hello', 'situation', 'system', 'results', 'invest', 'strategy', 'plan', 'booking'];
+    const TABS = ['hello', 'situation', 'system', 'results', 'invest', 'plan', 'booking'];
 
     function switchTab(id) {
         TABS.forEach(t => {
