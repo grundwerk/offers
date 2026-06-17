@@ -340,63 +340,7 @@ a{color:inherit;text-decoration:none}
 .ce-step h4{font-family:var(--ff-d);font-size:14px;font-weight:600;margin:3px 0 3px}
 .ce-step p{font-size:13px;color:var(--mut);line-height:1.5;margin:0}
 
-/* LinkedIn (light UI) */
-.li-win{max-width:560px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,.5);color:#1d2226}
-.li-bar{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid #e6e6e6;background:#fff}
-.li-logo{width:26px;height:26px;border-radius:5px;background:#0a66c2;color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;font-family:var(--ff-d)}
-.li-bar .t{font-size:14px;font-weight:700;color:#1d2226}
-.li-conn{display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid #ededed;background:#f3f6f8}
-.li-ava{width:44px;height:44px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,#0a66c2,#004182);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;font-family:var(--ff-d)}
-.li-conn .meta{flex:1;min-width:0}
-.li-conn .meta .n{font-size:14px;font-weight:700;color:#1d2226}
-.li-conn .meta .n b{font-weight:600;color:#56687a;font-size:12px}
-.li-conn .meta .h{font-size:12px;color:#56687a;margin-top:1px}
-.li-accepted{font-size:11px;font-weight:700;color:#057642;background:#dff0e4;border-radius:999px;padding:3px 10px;white-space:nowrap}
-.li-thread{padding:18px 16px;display:flex;flex-direction:column;gap:18px;background:#fff}
-.li-msg{display:flex;gap:11px}
-.li-msg .av{width:34px;height:34px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;color:#fff;font-family:var(--ff-d)}
-.li-msg .av.gw{background:linear-gradient(135deg,#0a66c2,#004182)}
-.li-msg .av.ld{background:#9aa7b2}
-.li-msg .c{flex:1;min-width:0}
-.li-msg .c .top{display:flex;align-items:baseline;gap:7px}
-.li-msg .c .nm{font-size:13.5px;font-weight:700;color:#1d2226}
-.li-msg .c .tm{font-size:11px;color:#8a96a3}
-.li-msg .c .tx{font-size:13.5px;line-height:1.6;color:#1d2226;margin-top:3px;white-space:pre-line}
-.li-note{display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#0a66c2;background:#e8f1fb;border-radius:5px;padding:2px 8px;margin-bottom:6px}
-
-/* Signal switcher */
-.sig-stage{display:grid;grid-template-columns:272px 1fr;background:var(--bg2);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.45);max-width:1000px;margin:0 auto}
-@media(max-width:780px){.sig-stage{grid-template-columns:1fr}}
-.sig-side{border-right:1px solid var(--line);display:flex;flex-direction:column}
-@media(max-width:780px){.sig-side{border-right:none;border-bottom:1px solid var(--line)}}
-.sig-side .hd{padding:15px 18px;border-bottom:1px solid var(--line);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mut2)}
-.sig-list{padding:10px;display:flex;flex-direction:column;gap:5px}
-.sig-item{display:flex;align-items:flex-start;gap:10px;padding:10px 11px;border-radius:10px;cursor:pointer;border:1px solid transparent;background:var(--bg3);transition:.15s;text-align:left;font-family:var(--ff-b);width:100%}
-.sig-item:hover{border-color:var(--blue-line)}
-.sig-item.on{background:var(--blue-soft);border-color:var(--blue-line)}
-.sig-item .ic{width:30px;height:30px;border-radius:8px;background:var(--blue-soft);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
-.sig-item .b{flex:1;min-width:0;display:flex;flex-direction:column}
-.sig-item .lb{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--blue);margin-bottom:2px}
-.sig-item .dt{font-size:12px;color:var(--fg);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.sig-item .sr{font-size:10px;color:var(--mut2);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.sig-main{min-height:440px}
-.sig-pane{display:none;flex-direction:column;height:100%}
-.sig-pane.on{display:flex}
-.sig-mailbar{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--line);background:var(--bg3)}
-.sig-mailbar .l{font-size:12px;font-weight:600;color:var(--mut)}
-.sig-mailbar .badge{display:inline-flex;align-items:center;gap:5px;background:var(--blue-soft);border:1px solid var(--blue-line);border-radius:999px;padding:3px 10px;font-size:10px;font-weight:700;color:var(--blue);white-space:nowrap}
-.sig-body{padding:22px 24px}
-.sig-annot{display:flex;gap:10px;align-items:center;background:var(--blue-soft);border:1px solid var(--blue-line);border-radius:10px;padding:10px 13px;margin-bottom:18px}
-.sig-annot .ic{font-size:17px;flex-shrink:0}
-.sig-annot p{font-size:12px;color:var(--mut);line-height:1.45;margin:0}
-.sig-annot p b{color:var(--blue)}
-.sig-email .sj{font-family:var(--ff-d);font-size:16px;font-weight:600;margin:0 0 14px}
-.sig-mb .who{display:flex;align-items:center;gap:9px;margin-bottom:7px}
-.sig-mb .who .av{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--blue),#003ec7);color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.sig-mb .who .nm{font-size:12px;font-weight:700;color:var(--fg)}
-.sig-mb .who .tm{font-size:11px;color:var(--mut2);margin-left:auto}
-.sig-mb .txt{font-size:13px;line-height:1.6;color:var(--fg);margin-left:35px;background:var(--blue-soft);border:1px solid var(--blue-line);border-radius:4px 12px 12px 12px;padding:13px 15px;white-space:pre-line}
-.sig-mb .txt .pill{display:inline-flex;align-items:center;gap:4px;background:var(--blue);color:#fff;border-radius:5px;padding:1px 7px;font-size:10.5px;font-weight:700;letter-spacing:.03em}
+/* LinkedIn + Signal mockups: styles now live inline in their panels (fp-linkedin .lix, fp-signal .sg2) */
 
 
 /* hero meet-pair (wobble) */
@@ -1509,14 +1453,6 @@ function switchFeat(f, btn){
   for(var k=0;k<rvs.length;k++){ rvs[k].classList.add('in'); }
   if(typeof track==='function'){ track('feat_'+f); }
 }
-function switchSignal(i, el){
-  var box=el.closest('.sig-stage');
-  var items=box.querySelectorAll('.sig-item');
-  for(var a=0;a<items.length;a++){ items[a].classList.toggle('on', items[a]===el); }
-  var panes=box.querySelectorAll('.sig-pane');
-  for(var b=0;b<panes.length;b++){ panes[b].classList.toggle('on', panes[b].getAttribute('data-sig')===String(i)); }
-}
-
 </script>
 <script>(function(){var ids=['tools','integrationen','kundenstimmen'];if(!('IntersectionObserver'in window)){ids.forEach(function(id){var e=document.getElementById(id);if(e)e.classList.add('viz');});return;}var io=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('viz',e.isIntersecting);});},{rootMargin:'150px'});ids.forEach(function(id){var e=document.getElementById(id);if(e)io.observe(e);});})();</script>
 </body>
