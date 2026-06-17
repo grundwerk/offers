@@ -767,15 +767,69 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeVid();}
   <p class="lead center">Je nach Zielgruppe und Signal ziehen wir den passenden Hebel. Klick dich durch - jeder Hebel ist ein eigenes, durchdachtes System.</p></div>
 
   <div class="ftabs rv">
-    <button class="on" data-ft="video" onclick="switchFeat('video',this)"><span class="femoji">🎥</span>KI-Video Outreach</button>
+    <button class="on" data-ft="crm" onclick="switchFeat('crm',this)"><span class="femoji">📇</span>CRM Setup</button>
+    <button data-ft="video" onclick="switchFeat('video',this)"><span class="femoji">🎥</span>KI-Video Outreach</button>
     <button data-ft="email" onclick="switchFeat('email',this)"><span class="femoji">📧</span>Cold Email</button>
     <button data-ft="linkedin" onclick="switchFeat('linkedin',this)"><span class="femoji"><img src="https://res.cloudinary.com/dlaepqex5/image/upload/v1/gwd/tools/linkedin.svg" alt=""></span>LinkedIn</button>
     <button data-ft="signal" onclick="switchFeat('signal',this)"><span class="femoji">📡</span>Signal-Timing</button>
     <button data-ft="reply" onclick="switchFeat('reply',this)"><span class="femoji">🤖</span>Reply-Agent</button>
   </div>
 
+  <!-- PANEL: CRM SETUP -->
+  <style>
+  .crm-board{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:6px}
+  .crm-col{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:9px}
+  .crm-h{display:flex;align-items:center;justify-content:space-between;font-size:11.5px;font-weight:700;color:var(--mut);text-transform:uppercase;letter-spacing:.04em;padding:2px 4px 6px}
+  .crm-h .ct{background:var(--bg3);border:1px solid var(--line);border-radius:999px;padding:1px 8px;font-size:11px;color:var(--fg)}
+  .crm-card{background:var(--bg3);border:1px solid var(--line);border-radius:10px;padding:11px 12px}
+  .crm-card.hot{background:var(--blue-soft);border-color:var(--blue-line)}
+  .crm-card .who{display:flex;align-items:center;gap:8px}
+  .crm-card .av{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--blue),#003ec7);color:#fff;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .crm-card .nm{font-size:12.5px;font-weight:600;color:var(--fg);line-height:1.2}
+  .crm-card .co{font-size:11px;color:var(--mut2)}
+  .crm-card .tag{display:inline-block;margin-top:8px;font-size:10px;font-weight:700;color:var(--blue);background:rgba(0,102,255,.14);border:1px solid var(--blue-line);border-radius:999px;padding:2px 8px}
+  .crm-card .sub{font-size:10.5px;color:var(--mut);margin-top:6px;line-height:1.35}
+  @media(max-width:860px){.crm-board{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.crm-board{grid-template-columns:1fr}}
+  </style>
+  <div class="fpanel on" id="fp-crm">
+    <div class="fp-head">
+      <div class="eyebrow">CRM Setup</div>
+      <h3>Dein <span class="hl">CRM</span>, sauber aufgesetzt.</h3>
+      <p>Wir richten dein CRM ein (Close, HubSpot oder Zoho) und verbinden es mit dem Outreach. Jede Antwort landet automatisch als Lead, mit vollem Kontext und im richtigen Status.</p>
+    </div>
+    <div class="crm-board rv">
+      <div class="crm-col">
+        <div class="crm-h">Neu <span class="ct">3</span></div>
+        <div class="crm-card hot"><div class="who"><span class="av">AK</span><div><div class="nm">Alex Krause</div><div class="co">Muster GmbH</div></div></div><span class="tag">via Outreach</span><div class="sub">Antwort vor 2 Min automatisch synchronisiert</div></div>
+        <div class="crm-card"><div class="who"><span class="av">SV</span><div><div class="nm">Sarah Vogt</div><div class="co">Orbis Solutions</div></div></div></div>
+      </div>
+      <div class="crm-col">
+        <div class="crm-h">Kontaktiert <span class="ct">2</span></div>
+        <div class="crm-card"><div class="who"><span class="av">MR</span><div><div class="nm">Mark Renner</div><div class="co">Nexfield AG</div></div></div></div>
+        <div class="crm-card"><div class="who"><span class="av">LB</span><div><div class="nm">Lena Brandt</div><div class="co">Brunner Group</div></div></div></div>
+      </div>
+      <div class="crm-col">
+        <div class="crm-h">Termin <span class="ct">2</span></div>
+        <div class="crm-card"><div class="who"><span class="av">DK</span><div><div class="nm">Daniel Kern</div><div class="co">Talvio AG</div></div></div><span class="tag">Do 11:00</span></div>
+        <div class="crm-card"><div class="who"><span class="av">PM</span><div><div class="nm">Peter Maus</div><div class="co">Kessler &amp; Co</div></div></div></div>
+      </div>
+      <div class="crm-col">
+        <div class="crm-h">Gewonnen <span class="ct">1</span></div>
+        <div class="crm-card"><div class="who"><span class="av">TK</span><div><div class="nm">Tim Kuesters</div><div class="co">Birdsview</div></div></div><span class="tag">240k Dealsize</span></div>
+      </div>
+    </div>
+    <div class="vid-flow rv">
+      <div class="vflow-card"><div class="ic">&#128231;</div><h4>Antwort kommt rein</h4><p>Ein Lead antwortet im Outreach, egal ob per E-Mail oder LinkedIn.</p></div>
+      <div class="farr">&#8594;</div>
+      <div class="vflow-card"><div class="ic">&#128260;</div><h4>Auto-Sync ins CRM</h4><p>Kontakt, Firma, Nachricht und Quelle landen automatisch im richtigen Feld.</p></div>
+      <div class="farr">&#8594;</div>
+      <div class="vflow-card"><div class="ic">&#9989;</div><h4>Lead mit Kontext</h4><p>Dein Team sieht sofort Status und Historie, ohne manuelles Nachpflegen.</p></div>
+    </div>
+  </div>
+
   <!-- PANEL: KI-VIDEO -->
-  <div class="fpanel on" id="fp-video">
+  <div class="fpanel" id="fp-video">
     <div class="fp-two">
       <div class="rv">
         <div class="eyebrow">KI-Video Outreach</div>
@@ -860,19 +914,46 @@ Tom</div>
       <h3>Auf LinkedIn startet man Konversation und wer nach Terminen fragt, <span class="hl">verliert</span>.</h3>
       <p>Erst vernetzen, dann ein echtes Gespräch. Kein Pitch, keine Spam-Flags, so antworten Entscheider wirklich.</p>
     </div>
-    <div class="li-win rv">
-      <div class="li-bar"><div class="li-logo">in</div><span class="t">Nachrichten</span></div>
-      <div class="li-conn">
-        <div class="li-ava">AK</div>
-        <div class="meta"><div class="n">Alex Krause <b>&#183; 1. Grades</b></div><div class="h">Geschäftsführer bei <!-- SLOT:COMPANY START -->Muster GmbH<!-- SLOT:COMPANY END --></div></div>
-        <span class="li-accepted">Vernetzt</span>
+    <style>
+    .lix{max-width:560px;margin:34px auto 0;background:#fff;border:1px solid #e2e2e2;border-radius:14px;box-shadow:0 34px 80px rgba(0,0,0,.5);overflow:hidden;font-family:-apple-system,"Segoe UI",Inter,Arial,sans-serif;color:rgba(0,0,0,.9);text-align:left}
+    .lix-hd{display:flex;align-items:center;gap:11px;padding:12px 16px;border-bottom:1px solid #ededed}
+    .lix-hd .pic{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#5b6b7b,#37424d);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;flex-shrink:0}
+    .lix-hd .who{flex:1;min-width:0}
+    .lix-hd .who .n{font-weight:600;font-size:15px;color:rgba(0,0,0,.9)}
+    .lix-hd .who .deg{font-weight:400;color:rgba(0,0,0,.55);font-size:13px}
+    .lix-hd .who .h{font-size:12.5px;color:rgba(0,0,0,.6);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .lix-hd .in{width:28px;height:28px;border-radius:7px;background:#0a66c2;color:#fff;font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:Georgia,"Times New Roman",serif}
+    .lix-body{padding:6px 16px 16px;background:#fff}
+    .lix-sys{text-align:center;margin:16px 0 4px}
+    .lix-sys span{font-size:12px;color:rgba(0,0,0,.55);background:#eef3f8;border-radius:999px;padding:5px 13px}
+    .lix-msg{display:flex;gap:10px;margin-top:16px}
+    .lix-msg .av{width:40px;height:40px;border-radius:50%;color:#fff;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .lix-msg .av.gw{background:linear-gradient(135deg,#0066ff,#003ec7)}
+    .lix-msg .av.ld{background:linear-gradient(135deg,#5b6b7b,#37424d)}
+    .lix-msg .c{flex:1;min-width:0}
+    .lix-msg .top{display:flex;align-items:baseline;gap:6px;margin-bottom:2px}
+    .lix-msg .nm{font-weight:600;font-size:14px;color:rgba(0,0,0,.9)}
+    .lix-msg .tm{font-size:12px;color:rgba(0,0,0,.45)}
+    .lix-msg .tx{font-size:14px;line-height:1.46;color:rgba(0,0,0,.88)}
+    .lix-foot{display:flex;align-items:center;gap:12px;padding:11px 16px;border-top:1px solid #ededed}
+    .lix-foot .box{flex:1;background:#eef3f8;border-radius:20px;padding:9px 15px;color:rgba(0,0,0,.4);font-size:13.5px}
+    .lix-foot .ic{font-size:16px;opacity:.5}
+    @media(max-width:520px){.lix{margin-top:24px}}
+    </style>
+    <div class="lix rv">
+      <div class="lix-hd">
+        <div class="pic">AK</div>
+        <div class="who"><div class="n">Alex Krause <span class="deg">&#183; 1.</span></div><div class="h">Geschäftsführer bei <!-- SLOT:COMPANY START -->Muster GmbH<!-- SLOT:COMPANY END --></div></div>
+        <div class="in">in</div>
       </div>
-      <div class="li-thread">
-        <div class="li-msg"><div class="av gw">TS</div><div class="c"><div class="top"><span class="nm">Tom Soto Schiller</span><span class="tm">Mo. 09:40</span></div><div class="tx"><span class="li-note">Schritt 1 &#183; Vernetzung</span>Hi Alex, eure Arbeit bei <!-- SLOT:COMPANY START -->Muster GmbH<!-- SLOT:COMPANY END --> verfolge ich schon eine Weile, gerne vernetzt.</div></div></div>
-        <div class="li-msg"><div class="av ld">AK</div><div class="c"><div class="top"><span class="nm">Alex Krause</span><span class="tm">Mo. 11:02</span></div><div class="tx">Danke, gerne. Worum geht es denn?</div></div></div>
-        <div class="li-msg"><div class="av gw">TS</div><div class="c"><div class="top"><span class="nm">Tom Soto Schiller</span><span class="tm">Mo. 11:15</span></div><div class="tx"><span class="li-note">Schritt 2 &#183; Gespräch</span>Ehrlich gesagt kein konkretes Angebot. Mir ist nur aufgefallen, dass ihr gerade im Vertrieb wachst. Bei dem Tempo wird der Outbound-Kanal schnell zum Flaschenhals. Wie löst ihr das aktuell?</div></div></div>
-        <div class="li-msg"><div class="av ld">AK</div><div class="c"><div class="top"><span class="nm">Alex Krause</span><span class="tm">Mo. 14:20</span></div><div class="tx">Gute Frage, genau da hakt es bei uns gerade. Erzähl mal, wie ihr das angeht.</div></div></div>
+      <div class="lix-body">
+        <div class="lix-sys"><span>Ihr seid seit Montag vernetzt</span></div>
+        <div class="lix-msg"><div class="av gw">TS</div><div class="c"><div class="top"><span class="nm">Tom Soto Schiller</span><span class="tm">09:40</span></div><div class="tx">Hi Alex, eure Arbeit bei <!-- SLOT:COMPANY START -->Muster GmbH<!-- SLOT:COMPANY END --> verfolge ich schon eine Weile, gerne vernetzt.</div></div></div>
+        <div class="lix-msg"><div class="av ld">AK</div><div class="c"><div class="top"><span class="nm">Alex Krause</span><span class="tm">11:02</span></div><div class="tx">Danke, gerne. Worum geht es denn?</div></div></div>
+        <div class="lix-msg"><div class="av gw">TS</div><div class="c"><div class="top"><span class="nm">Tom Soto Schiller</span><span class="tm">11:15</span></div><div class="tx">Ehrlich gesagt kein konkretes Angebot. Mir ist nur aufgefallen, dass ihr gerade im Vertrieb wachst. Bei dem Tempo wird der Outbound-Kanal schnell zum Flaschenhals. Wie löst ihr das aktuell?</div></div></div>
+        <div class="lix-msg"><div class="av ld">AK</div><div class="c"><div class="top"><span class="nm">Alex Krause</span><span class="tm">14:20</span></div><div class="tx">Gute Frage, genau da hakt es bei uns gerade. Erzähl mal, wie ihr das angeht.</div></div></div>
       </div>
+      <div class="lix-foot"><div class="box">Schreibe eine Nachricht...</div><span class="ic">&#128206;</span><span class="ic">&#128512;</span></div>
     </div>
   </div>
 
@@ -883,69 +964,81 @@ Tom</div>
       <h3>Im exakt <span class="hl">richtigen Moment</span>.</h3>
       <p>Sechs Signale, die wir live beobachten. Klick ein Signal an und sieh, wie die passende Nachricht aussieht.</p>
     </div>
-    <div class="sig-stage rv">
-      <div class="sig-side">
-        <div class="hd">Signale erkannt</div>
-        <div class="sig-list">
-          <button class="sig-item on" onclick="switchSignal(0,this)"><span class="ic">&#128203;</span><span class="b"><span class="lb">Stellenausschreibung</span><span class="dt">Head of Marketing gesucht</span><span class="sr">Meliora GmbH, LinkedIn</span></span></button>
-          <button class="sig-item" onclick="switchSignal(1,this)"><span class="ic">&#128176;</span><span class="b"><span class="lb">Finanzierungsrunde</span><span class="dt">Series A: 8 Mio. Euro</span><span class="sr">Nexfield AG, Crunchbase</span></span></button>
-          <button class="sig-item" onclick="switchSignal(2,this)"><span class="ic">&#128295;</span><span class="b"><span class="lb">Tech-Wechsel</span><span class="dt">Salesforce abgelöst</span><span class="sr">Orbis Solutions, Web</span></span></button>
-          <button class="sig-item" onclick="switchSignal(3,this)"><span class="ic">&#128100;</span><span class="b"><span class="lb">Neue Führungskraft</span><span class="dt">VP Sales seit 12 Tagen</span><span class="sr">Talvio AG, LinkedIn</span></span></button>
-          <button class="sig-item" onclick="switchSignal(4,this)"><span class="ic">&#128205;</span><span class="b"><span class="lb">Expansion</span><span class="dt">Neuer Standort München</span><span class="sr">Brunner Group, Presse</span></span></button>
-          <button class="sig-item" onclick="switchSignal(5,this)"><span class="ic">&#127942;</span><span class="b"><span class="lb">Auszeichnung</span><span class="dt">Top-Arbeitgeber 2026</span><span class="sr">Kessler &amp; Co, Web</span></span></button>
-        </div>
-      </div>
-      <div class="sig-main">
-        <div class="sig-pane on" data-sig="0">
-          <div class="sig-mailbar"><span class="l">E-Mail an Meliora GmbH</span><span class="badge">2h nach Signal</span></div>
-          <div class="sig-body"><div class="sig-annot"><span class="ic">&#9889;</span><p><b>Signal erkannt 09:12</b>: Meliora GmbH sucht einen Head of Marketing. E-Mail ausgelöst um 11:04, also rund 2 Stunden später.</p></div>
-            <div class="sig-email"><div class="sj">Wachstum im Marketing-Team: kurze Frage</div>
-              <div class="sig-mb"><div class="who"><span class="av">TS</span><span class="nm">Tom, Grundwerk</span><span class="tm">11:04</span></div><div class="txt">Hallo Jana, ich habe gesehen, dass ihr gerade einen <span class="pill">Head of Marketing</span> sucht. Genau in dieser Wachstumsphase merken viele Teams, dass der Outbound-Kanal noch nicht systematisch läuft. Wir bauen genau das in 6 Wochen auf. Hättest du diese Woche 20 Minuten?</div></div>
-            </div>
-          </div>
-        </div>
-        <div class="sig-pane" data-sig="1">
-          <div class="sig-mailbar"><span class="l">E-Mail an Nexfield AG</span><span class="badge">1 Tag nach Signal</span></div>
-          <div class="sig-body"><div class="sig-annot"><span class="ic">&#128176;</span><p><b>Signal erkannt</b>: Nexfield AG hat eine Series A über 8 Mio. Euro abgeschlossen. Wachstumskapital trifft auf Pipeline-Druck.</p></div>
-            <div class="sig-email"><div class="sj">Glückwunsch zur Series A</div>
-              <div class="sig-mb"><div class="who"><span class="av">TS</span><span class="nm">Tom, Grundwerk</span><span class="tm">09:30</span></div><div class="txt">Hallo Mark, glückwunsch zur <span class="pill">Series A</span>. Nach einer Runde steht meist dieselbe Frage an: das Wachstum vorhersehbar machen. Wir bauen B2B-Teams einen Outbound-Kanal, der planbar Termine liefert, statt auf Empfehlungen zu warten. Magst du dir das ansehen?</div></div>
-            </div>
-          </div>
-        </div>
-        <div class="sig-pane" data-sig="2">
-          <div class="sig-mailbar"><span class="l">E-Mail an Orbis Solutions</span><span class="badge">am Tag des Signals</span></div>
-          <div class="sig-body"><div class="sig-annot"><span class="ic">&#128295;</span><p><b>Signal erkannt</b>: Orbis Solutions hat Salesforce abgelöst. Ein Tool-Wechsel ist der Moment, in dem Prozesse neu gedacht werden.</p></div>
-            <div class="sig-email"><div class="sj">Neues CRM, neuer Outbound?</div>
-              <div class="sig-mb"><div class="who"><span class="av">TS</span><span class="nm">Tom, Grundwerk</span><span class="tm">14:10</span></div><div class="txt">Hallo Sarah, ich habe gesehen, dass ihr gerade euer <span class="pill">CRM gewechselt</span> habt. Wenn ohnehin alles neu aufgesetzt wird, ist es der ideale Moment, den Outbound-Kanal sauber mitzudenken. Wollen wir kurz sprechen, bevor die Prozesse fest sind?</div></div>
-            </div>
-          </div>
-        </div>
-        <div class="sig-pane" data-sig="3">
-          <div class="sig-mailbar"><span class="l">E-Mail an Talvio AG</span><span class="badge">in den ersten 100 Tagen</span></div>
-          <div class="sig-body"><div class="sig-annot"><span class="ic">&#128100;</span><p><b>Signal erkannt</b>: Talvio AG hat seit 12 Tagen einen neuen VP Sales. Neue Führungskräfte wollen früh Wirkung zeigen.</p></div>
-            <div class="sig-email"><div class="sj">Die ersten 100 Tage als VP Sales</div>
-              <div class="sig-mb"><div class="who"><span class="av">TS</span><span class="nm">Tom, Grundwerk</span><span class="tm">10:20</span></div><div class="txt">Hallo Daniel, glückwunsch zur neuen Rolle als <span class="pill">VP Sales</span>. In den ersten 100 Tagen zählt vor allem ein planbarer Pipeline-Zuwachs. Genau das bauen wir auf, ohne dass dein Team mehr manuell prospekten muss. Spannend für dich?</div></div>
-            </div>
-          </div>
-        </div>
-        <div class="sig-pane" data-sig="4">
-          <div class="sig-mailbar"><span class="l">E-Mail an Brunner Group</span><span class="badge">zur Markt-Eröffnung</span></div>
-          <div class="sig-body"><div class="sig-annot"><span class="ic">&#128205;</span><p><b>Signal erkannt</b>: Brunner Group eröffnet einen Standort in München. Ein neuer Markt braucht schnell die ersten Kunden.</p></div>
-            <div class="sig-email"><div class="sj">Neuer Standort München: schon Kunden vor Ort?</div>
-              <div class="sig-mb"><div class="who"><span class="av">TS</span><span class="nm">Tom, Grundwerk</span><span class="tm">08:50</span></div><div class="txt">Hallo Lena, ich habe gelesen, dass ihr einen <span class="pill">Standort in München</span> eröffnet. Ein neuer Markt lebt von den ersten Terminen. Wir können gezielt Entscheider in der Region ansprechen, damit der Standort nicht bei null startet. Magst du dir das ansehen?</div></div>
-            </div>
-          </div>
-        </div>
-        <div class="sig-pane" data-sig="5">
-          <div class="sig-mailbar"><span class="l">E-Mail an Kessler &amp; Co</span><span class="badge">im Moment der Aufmerksamkeit</span></div>
-          <div class="sig-body"><div class="sig-annot"><span class="ic">&#127942;</span><p><b>Signal erkannt</b>: Kessler &amp; Co wurde als Top-Arbeitgeber 2026 ausgezeichnet. Auszeichnungen erzeugen Sichtbarkeit, die man nutzen kann.</p></div>
-            <div class="sig-email"><div class="sj">Glückwunsch zur Auszeichnung</div>
-              <div class="sig-mb"><div class="who"><span class="av">TS</span><span class="nm">Tom, Grundwerk</span><span class="tm">12:05</span></div><div class="txt">Hallo Peter, glückwunsch zur Auszeichnung als <span class="pill">Top-Arbeitgeber 2026</span>. Solche Momente erzeugen genau die Aufmerksamkeit, die im Outbound Gold wert ist. Wir helfen, daraus konkrete Termine zu machen, solange das Thema frisch ist. Lass uns kurz sprechen?</div></div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <style>
+    .sg2{display:grid;grid-template-columns:240px 130px 1fr;margin-top:34px;align-items:stretch;min-height:486px}
+    .sg2-rail{display:flex;flex-direction:column}
+    .sg2-sig{flex:1;display:flex;align-items:center;gap:11px;padding:10px 13px;margin:4px 0;border-radius:12px;background:var(--bg3);border:1px solid var(--line);cursor:pointer;text-align:left;font-family:inherit;transition:.15s}
+    .sg2-sig:hover{border-color:var(--blue-line)}
+    .sg2-sig.on{background:var(--blue-soft);border-color:var(--blue-line)}
+    .sg2-sig .ic{width:34px;height:34px;border-radius:9px;background:var(--blue-soft);border:1px solid var(--blue-line);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+    .sg2-sig .meta{min-width:0;display:flex;flex-direction:column}
+    .sg2-sig .lb{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--blue)}
+    .sg2-sig .dt{font-size:12.5px;color:var(--fg);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .sg2-sig .sr{font-size:10.5px;color:var(--mut2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .sg2-flow{position:relative}
+    .sg2-flow svg{position:absolute;inset:0;width:100%;height:100%}
+    .sg2-path{fill:none;stroke:var(--line2);stroke-width:1.4;opacity:.45;transition:.25s}
+    .sg2-path.on{stroke:var(--blue);stroke-width:2.6;opacity:1}
+    .sg2-dot{fill:var(--blue)}
+    .sg2-mail{background:var(--bg3);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
+    .sg2-mailbar{display:flex;align-items:center;justify-content:space-between;padding:13px 18px;border-bottom:1px solid var(--line);background:var(--bg2)}
+    .sg2-mailbar .l{font-size:12.5px;font-weight:600;color:var(--mut)}
+    .sg2-mailbar .bg{display:inline-flex;align-items:center;gap:5px;background:var(--blue-soft);border:1px solid var(--blue-line);border-radius:999px;padding:3px 11px;font-size:10.5px;font-weight:700;color:var(--blue);white-space:nowrap}
+    .sg2-body{padding:20px 22px}
+    .sg2-annot{display:flex;gap:9px;align-items:flex-start;background:var(--blue-soft);border:1px solid var(--blue-line);border-radius:10px;padding:10px 13px;margin-bottom:16px}
+    .sg2-annot .ic{font-size:15px;flex-shrink:0}
+    .sg2-annot p{font-size:12px;color:var(--mut);line-height:1.45;margin:0}
+    .sg2-annot b{color:var(--blue)}
+    .sg2-sj{font-family:var(--ff-d);font-weight:600;font-size:16px;margin-bottom:14px}
+    .sg2-mb{display:flex;gap:10px}
+    .sg2-mb .av{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--blue),#003ec7);color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .sg2-mb .bd{flex:1;min-width:0}
+    .sg2-mb .who{display:flex;gap:8px;align-items:center;margin-bottom:6px}
+    .sg2-mb .who .nm{font-size:12px;font-weight:700;color:var(--fg)}
+    .sg2-mb .who .tm{font-size:11px;color:var(--mut2);margin-left:auto}
+    .sg2-mb .tx{font-size:13px;line-height:1.6;color:var(--fg);background:var(--blue-soft);border:1px solid var(--blue-line);border-radius:4px 13px 13px 13px;padding:12px 14px}
+    .sg2-mb .tx .pill{display:inline-flex;align-items:center;background:var(--blue);color:#fff;border-radius:5px;padding:1px 7px;font-size:10.5px;font-weight:700}
+    @media(max-width:860px){.sg2{grid-template-columns:1fr;min-height:0;gap:18px}.sg2-flow{display:none}.sg2-rail{flex-direction:row;flex-wrap:wrap}.sg2-sig{flex:1 1 44%}}
+    </style>
+    <div class="sg2 rv">
+      <div class="sg2-rail" id="sg2rail"></div>
+      <div class="sg2-flow"><svg viewBox="0 0 130 486" preserveAspectRatio="none" aria-hidden="true">
+        <path id="sgp0" class="sg2-path on" d="M0,40 C66,40 64,243 126,243"></path>
+        <path id="sgp1" class="sg2-path" d="M0,121 C66,121 64,243 126,243"></path>
+        <path id="sgp2" class="sg2-path" d="M0,202 C66,202 64,243 126,243"></path>
+        <path id="sgp3" class="sg2-path" d="M0,284 C66,284 64,243 126,243"></path>
+        <path id="sgp4" class="sg2-path" d="M0,365 C66,365 64,243 126,243"></path>
+        <path id="sgp5" class="sg2-path" d="M0,446 C66,446 64,243 126,243"></path>
+        <circle class="sg2-dot" cx="125" cy="243" r="4"></circle>
+      </svg></div>
+      <div class="sg2-mail" id="sg2mail"></div>
     </div>
+    <script>
+    (function(){
+      var S=[
+       {ic:'📋',lb:'Stellenausschreibung',dt:'Head of Marketing gesucht',sr:'Meliora GmbH, LinkedIn',to:'Meliora GmbH',bg:'2h nach Signal',anb:'Signal erkannt 09:12',an:': Meliora GmbH sucht einen Head of Marketing. E-Mail ausgelöst um 11:04, also rund 2 Stunden später.',sj:'Wachstum im Marketing-Team: kurze Frage',who:'Tom, Grundwerk',tm:'11:04',tx:'Hallo Jana, ich habe gesehen, dass ihr gerade einen <span class="pill">Head of Marketing</span> sucht. Genau in dieser Wachstumsphase merken viele Teams, dass der Outbound-Kanal noch nicht systematisch läuft. Wir bauen genau das in 6 Wochen auf. Hättest du diese Woche 20 Minuten?'},
+       {ic:'💰',lb:'Finanzierungsrunde',dt:'Series A: 8 Mio. Euro',sr:'Nexfield AG, Crunchbase',to:'Nexfield AG',bg:'1 Tag nach Signal',anb:'Signal erkannt',an:': Nexfield AG hat eine Series A über 8 Mio. Euro abgeschlossen. Wachstumskapital trifft auf Pipeline-Druck.',sj:'Glückwunsch zur Series A',who:'Tom, Grundwerk',tm:'09:30',tx:'Hallo Mark, glückwunsch zur <span class="pill">Series A</span>. Nach einer Runde steht meist dieselbe Frage an: das Wachstum vorhersehbar machen. Wir bauen B2B-Teams einen Outbound-Kanal, der planbar Termine liefert, statt auf Empfehlungen zu warten. Magst du dir das ansehen?'},
+       {ic:'🔧',lb:'Tech-Wechsel',dt:'Salesforce abgelöst',sr:'Orbis Solutions, Web',to:'Orbis Solutions',bg:'am Tag des Signals',anb:'Signal erkannt',an:': Orbis Solutions hat Salesforce abgelöst. Ein Tool-Wechsel ist der Moment, in dem Prozesse neu gedacht werden.',sj:'Neues CRM, neuer Outbound?',who:'Tom, Grundwerk',tm:'14:10',tx:'Hallo Sarah, ich habe gesehen, dass ihr gerade euer <span class="pill">CRM gewechselt</span> habt. Wenn ohnehin alles neu aufgesetzt wird, ist es der ideale Moment, den Outbound-Kanal sauber mitzudenken. Wollen wir kurz sprechen, bevor die Prozesse fest sind?'},
+       {ic:'👤',lb:'Neue Führungskraft',dt:'VP Sales seit 12 Tagen',sr:'Talvio AG, LinkedIn',to:'Talvio AG',bg:'in den ersten 100 Tagen',anb:'Signal erkannt',an:': Talvio AG hat seit 12 Tagen einen neuen VP Sales. Neue Führungskräfte wollen früh Wirkung zeigen.',sj:'Die ersten 100 Tage als VP Sales',who:'Tom, Grundwerk',tm:'10:20',tx:'Hallo Daniel, glückwunsch zur neuen Rolle als <span class="pill">VP Sales</span>. In den ersten 100 Tagen zählt vor allem ein planbarer Pipeline-Zuwachs. Genau das bauen wir auf, ohne dass dein Team mehr manuell prospekten muss. Spannend für dich?'},
+       {ic:'📍',lb:'Expansion',dt:'Neuer Standort München',sr:'Brunner Group, Presse',to:'Brunner Group',bg:'zur Markt-Eröffnung',anb:'Signal erkannt',an:': Brunner Group eröffnet einen Standort in München. Ein neuer Markt braucht schnell die ersten Kunden.',sj:'Neuer Standort München: schon Kunden vor Ort?',who:'Tom, Grundwerk',tm:'08:50',tx:'Hallo Lena, ich habe gelesen, dass ihr einen <span class="pill">Standort in München</span> eröffnet. Ein neuer Markt lebt von den ersten Terminen. Wir können gezielt Entscheider in der Region ansprechen, damit der Standort nicht bei null startet. Magst du dir das ansehen?'},
+       {ic:'🏆',lb:'Auszeichnung',dt:'Top-Arbeitgeber 2026',sr:'Kessler &amp; Co, Web',to:'Kessler &amp; Co',bg:'im Moment der Aufmerksamkeit',anb:'Signal erkannt',an:': Kessler &amp; Co wurde als Top-Arbeitgeber 2026 ausgezeichnet. Auszeichnungen erzeugen Sichtbarkeit, die man nutzen kann.',sj:'Glückwunsch zur Auszeichnung',who:'Tom, Grundwerk',tm:'12:05',tx:'Hallo Peter, glückwunsch zur Auszeichnung als <span class="pill">Top-Arbeitgeber 2026</span>. Solche Momente erzeugen genau die Aufmerksamkeit, die im Outbound Gold wert ist. Wir helfen, daraus konkrete Termine zu machen, solange das Thema frisch ist. Lass uns kurz sprechen?'}
+      ];
+      var railEl=document.getElementById('sg2rail'), mailEl=document.getElementById('sg2mail');
+      if(!railEl||!mailEl) return;
+      var rh='';
+      S.forEach(function(s,i){ rh+='<button class="sg2-sig'+(i===0?' on':'')+'" data-i="'+i+'"><span class="ic">'+s.ic+'</span><span class="meta"><span class="lb">'+s.lb+'</span><span class="dt">'+s.dt+'</span><span class="sr">'+s.sr+'</span></span></button>'; });
+      railEl.innerHTML=rh;
+      function mail(s){ return '<div class="sg2-mailbar"><span class="l">E-Mail an '+s.to+'</span><span class="bg">'+s.bg+'</span></div><div class="sg2-body"><div class="sg2-annot"><span class="ic">⚡</span><p><b>'+s.anb+'</b>'+s.an+'</p></div><div class="sg2-sj">'+s.sj+'</div><div class="sg2-mb"><span class="av">TS</span><div class="bd"><div class="who"><span class="nm">'+s.who+'</span><span class="tm">'+s.tm+'</span></div><div class="tx">'+s.tx+'</div></div></div></div>'; }
+      function sel(i){
+        mailEl.innerHTML=mail(S[i]);
+        var bs=railEl.querySelectorAll('.sg2-sig');
+        for(var j=0;j<bs.length;j++){ bs[j].classList.toggle('on',+bs[j].dataset.i===i); }
+        for(var p=0;p<S.length;p++){ var pa=document.getElementById('sgp'+p); if(pa) pa.classList.toggle('on',p===i); }
+      }
+      railEl.addEventListener('click',function(e){ var b=e.target.closest('.sg2-sig'); if(b) sel(+b.dataset.i); });
+      sel(0);
+    })();
+    </script>
   </div>
 
 
@@ -968,10 +1061,11 @@ Tom</div>
             <div class="ra-dh"><span>&#9889;</span>Vorgeschriebener Entwurf</div>
             <div class="ra-db">Hallo Jana,
 
-freut mich. <span class="v">Donnerstag um 11:00 Uhr</span> passt gut, hier der Link zum Bestätigen: <span class="v">cal.grundwerk.digital/jana</span>
+freut mich. <span class="v">Donnerstag um 11:00 Uhr</span> passt gut, hier der Link zum Bestätigen: <span class="v"><!-- SLOT:LEAD_BOOKING START -->cal.muster-gmbh.de/alex<!-- SLOT:LEAD_BOOKING END --></span>
 
 Beste Grüße
-Tom</div>
+<!-- SLOT:LEAD_FIRST START -->Alex<!-- SLOT:LEAD_FIRST END -->
+<!-- SLOT:COMPANY START -->Muster GmbH<!-- SLOT:COMPANY END --></div>
             <div class="ra-act"><span class="ra-btn send">Senden</span><span class="ra-btn edit">Anpassen</span></div>
           </div>
         </div>
@@ -1179,6 +1273,29 @@ Tom</div>
   show(0);
 })();
 </script>
+
+<!-- KI-WORKSHOPS (Bonus-Service, G2) -->
+<style>
+.wks{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+.wks-card{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:28px 24px;transition:.18s}
+.wks-card:hover{border-color:var(--blue-line);transform:translateY(-3px)}
+.wks-card .ic{width:48px;height:48px;border-radius:13px;background:var(--blue-soft);border:1px solid var(--blue-line);display:flex;align-items:center;justify-content:center;font-size:23px;margin-bottom:16px}
+.wks-card h3{font-size:18px;margin-bottom:8px}
+.wks-card p{font-size:14px;color:var(--mut);line-height:1.55;margin:0}
+.wks-note{text-align:center;color:var(--mut2);font-size:13px;margin-top:26px}
+@media(max-width:820px){.wks{grid-template-columns:1fr}}
+</style>
+<section class="sec"><div class="wrap">
+  <div class="center rv"><div class="eyebrow">Bonus: KI-Enablement</div>
+  <h2>Nicht nur Leads. Wir machen dein <span class="hl">Team KI-fit</span>.</h2>
+  <p class="lead center">Neben dem Outreach bringen wir euch bei, selbst KI-Automationen zu bauen, im praxisnahen Claude-Code-Workshop, direkt an euren eigenen Prozessen.</p></div>
+  <div class="wks rv">
+    <div class="wks-card"><div class="ic">🛠️</div><h3>Hands-on, kein Vortrag</h3><p>Dein Team baut im Workshop live die ersten eigenen KI-Automationen, statt nur zuzuhören.</p></div>
+    <div class="wks-card"><div class="ic">🎯</div><h3>Auf euren Alltag</h3><p>Wir arbeiten an echten Use-Cases aus eurem Tagesgeschäft, nicht an generischen Beispielen.</p></div>
+    <div class="wks-card"><div class="ic">🚀</div><h3>Sofort einsatzbereit</h3><p>Am Ende laufen erste Automationen, die ihr direkt weiternutzt und ausbaut.</p></div>
+  </div>
+  <p class="wks-note">Im Termin schauen wir gemeinsam, ob ein Workshop für euch sinnvoll ist.</p>
+</div></section>
 
 <!-- KUNDENSTIMMEN (3-spaltige Auto-Scroll-Wall, Framer-Design als Vanilla) -->
 <section class="sec" id="kundenstimmen" style="background:var(--bg2);border-block:1px solid var(--line)"><div class="wrap">
