@@ -443,7 +443,11 @@ window.addEventListener('message',function(e){
   setTxt('.post-name', d.name);
   setTxt('.post-headline', d.headline);
   if(d.photo){var a=document.querySelector('.avatar img'); if(a){a.src=d.photo; a.alt=d.name||'';}}
-  if(d.first){var c=document.querySelector('.comment-text'); if(c) c.textContent='Freut mich, '+d.first+'! Voll cool, dass du dir den kostenlosen Post von uns gesichert hast. Ohne den hätten die meisten nie gestartet, und genau daraus kommen die ersten Leads.';}
+  // Calendar-tile click: show THAT post's own text (not the generic sample testimonial).
+  if(d.body){var b=document.querySelector('.post-body'); if(b){b.textContent=d.body;}}
+  // WarmedIn reply: works for both the calendar-click and the 30s lead-magnet flow.
+  var c=document.querySelector('.comment-text');
+  if(c){c.textContent=(d.first?'So sieht dein Post mit WarmedIn aus, '+d.first+'. ':'So sieht dein Post mit WarmedIn aus. ')+'In deiner Stimme, komplett für dich geschrieben. 16x im Monat, ohne dass du selbst eine Zeile tippst.';}
 });
 </script>
 </body>
