@@ -721,130 +721,68 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeVid();}
 
   <!-- PANEL: CRM SETUP -->
   <style>
-  /* CRM Setup: authentic Close lead-detail (white window, real photos + rich timeline) */
-  .cwin{background:#fff;border:1px solid #e6e8ec;border-radius:14px;overflow:hidden;box-shadow:0 34px 80px rgba(0,0,0,.45);margin-top:8px;color:#1a1d21;font-family:-apple-system,"Segoe UI",Inter,Arial,sans-serif;text-align:left;font-size:14px}
-  .cfav{border-radius:6px;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;flex-shrink:0}
-  .cav-img{border-radius:50%;object-fit:cover;flex-shrink:0;display:block;background:#eef1f5}
-  .cl{display:grid;grid-template-columns:312px 1fr}
-  .cl-side{border-right:1px solid #eceef1;padding:16px}
-  .cl-hd{display:flex;align-items:center;gap:11px}
-  .cl-hd .cfav{width:40px;height:40px;font-size:18px;border-radius:9px}
-  .cl-co{font-family:var(--ff-d);font-weight:700;font-size:17px;letter-spacing:.01em;text-transform:uppercase}
-  .cl-hot{display:inline-block;background:#fde4c4;color:#a85b1a;font-size:11px;font-weight:700;border-radius:6px;padding:2px 9px;margin-top:8px}
-  .cl-tabs{display:flex;gap:18px;border-bottom:1px solid #eceef1;margin:14px 0;font-size:13px;color:#6b7280}
-  .cl-tabs .on{color:#1a1d21;font-weight:600;border-bottom:2px solid #1a1d21;padding-bottom:8px;margin-bottom:-1px}
-  .cl-sec{font-size:11px;font-weight:700;color:#7d8794;letter-spacing:.05em;text-transform:uppercase;margin:15px 0 9px;display:flex;align-items:center;gap:7px}
-  .cl-sec .ct{background:#eef1f5;border-radius:999px;padding:0 7px;font-size:11px;color:#6b7280}
-  .cl-f{display:flex;gap:9px;font-size:13px;padding:5px 0;color:#1a1d21}
-  .cl-f .ic{color:#9aa1ab;width:16px;flex-shrink:0}
-  .cl-link{color:#2f6fed}
-  .cl-task{display:flex;align-items:center;gap:9px;border:1px solid #eceef1;border-radius:9px;padding:9px 10px}
-  .cl-task .cav-img{width:26px;height:26px}
-  .cl-task .nm{font-size:13px;font-weight:600}.cl-task .due{font-size:11.5px;color:#9aa1ab}
-  .cl-opp{border:1px solid #eceef1;border-left:3px solid #f0b429;border-radius:9px;padding:11px 12px}
-  .cl-opp .ost{display:inline-block;background:#f6e2a0;color:#7a5c12;font-size:10px;font-weight:700;border-radius:5px;padding:2px 8px;text-transform:uppercase}
-  .cl-opp .odesc{font-size:12px;color:#6b7280;margin-top:8px;line-height:1.4}
-  .cl-contact{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #f1f2f4}
-  .cl-contact:last-child{border-bottom:0}
-  .cl-contact .cav-img{width:32px;height:32px}
-  .cl-contact .nm{font-size:13px;font-weight:600}.cl-contact .rl{font-size:11.5px;color:#9aa1ab}
-  .cl-main{display:flex;flex-direction:column;min-width:0}
-  .cl-actions{display:flex;gap:8px;padding:13px 16px;border-bottom:1px solid #eceef1;flex-wrap:wrap}
-  .cl-ab{display:inline-flex;align-items:center;gap:6px;border:1px solid #e0e2e6;border-radius:8px;padding:6px 12px;font-size:12.5px;font-weight:600;color:#3d4148}
-  .cl-ab.mail{border-color:#cfe0fb;color:#2f6fed}
-  .cl-sum{padding:13px 16px;border-bottom:1px solid #eceef1;font-size:13px}
-  .cl-sum b{color:#2f6fed;font-weight:700;letter-spacing:.03em}.cl-sum span{color:#6b7280}
-  .cl-ftabs{display:flex;gap:16px;padding:11px 16px;font-size:13px;color:#6b7280;border-bottom:1px solid #eceef1}
-  .cl-ftabs .on{color:#1a1d21;font-weight:600}
-  .cl-tl{padding:4px 16px 16px}
-  .cl-tl-i{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid #f1f2f4}
-  .cl-tl-i:last-child{border-bottom:0}
-  .cl-tl-ic{width:30px;height:30px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:13px}
-  .cl-tl-ic.flag{background:#fdf3d4;color:#a8851a}
-  .cl-tl-ic.mail{background:#e6effd;color:#2f6fed}
-  .cl-tl-c{flex:1;min-width:0}
-  .cl-tl-h{display:flex;align-items:center;gap:8px;font-weight:600;font-size:13.5px}
-  .cl-tl-h .tm{margin-left:auto;font-size:11.5px;color:#9aa1ab;font-weight:400}
-  .cl-appt{border:1px solid #eceef1;border-radius:10px;background:#fafbfc;padding:13px;margin-top:9px}
-  .cl-appt-g{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-  .cl-appt-f .k{font-size:11px;color:#9aa1ab;margin-bottom:3px}
-  .cl-appt-f .v{font-size:13px;font-weight:500;display:flex;align-items:center;gap:7px}
-  .cl-appt-f .v .cav-img{width:20px;height:20px}
-  .cl-subj{font-family:var(--ff-d);font-weight:600;font-size:15px;margin:9px 0 5px;color:#1a1d21}
-  .cl-meta{font-size:12px;color:#6b7280;margin-bottom:11px}
-  .cl-meta b{color:#1a1d21;font-weight:600}
-  .cl-body{font-size:13px;line-height:1.6;color:#2c2f34;white-space:pre-line;border-left:2px solid #e6e8ec;padding-left:14px}
-  @media(max-width:860px){.cl{grid-template-columns:1fr}.cl-side{border-right:0;border-bottom:1px solid #eceef1}.cl-appt-g{grid-template-columns:1fr}}
+  /* CRM Setup: CRM-Hub (CRM im Zentrum, Setup-Features radial drumherum, fliessende Verbindungen) */
+  .crmhub{position:relative;max-width:980px;height:600px;margin:40px auto 0}
+  .crmhub svg.links{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+  .crmhub .lnk{fill:none;stroke:var(--blue-line);stroke-width:2}
+  .crmhub .lnk.flow{stroke:var(--blue);stroke-width:2;stroke-dasharray:5 10;opacity:.85;animation:crmflow 1.1s linear infinite}
+  @keyframes crmflow{to{stroke-dashoffset:-15}}
+  .crm-core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:270px;background:#fff;border:1px solid #e6e8ec;border-radius:16px;box-shadow:0 30px 70px rgba(0,0,0,.55);overflow:hidden;z-index:3}
+  .crm-core .hd{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid #eceef1}
+  .crm-core .lg{width:32px;height:32px;border-radius:8px;background:#eef4fd;border:1px solid #cfe0fb;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+  .crm-core .tt{font-family:var(--ff-d);font-weight:600;font-size:15px;color:#1a1d21;line-height:1.15}
+  .crm-core .tt small{display:block;font-family:var(--ff-b);font-weight:400;font-size:10.5px;color:#9aa1ab;letter-spacing:0}
+  .crm-core .pipe{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;padding:13px 14px}
+  .crm-core .pcol{background:#f6f8fa;border:1px solid #eceef1;border-radius:8px;padding:7px 6px;min-height:56px}
+  .crm-core .pcol .ph{font-size:8px;font-weight:700;color:#9aa1ab;text-transform:uppercase;letter-spacing:.03em;margin-bottom:6px}
+  .crm-core .pcard{background:#fff;border:1px solid #e6e8ec;border-radius:5px;height:13px;margin-bottom:5px}
+  .crm-core .pcard.b{background:#eef4fd;border-color:#cfe0fb}
+  .crm-node{position:absolute;width:240px;background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:16px 17px;z-index:2;transition:.18s}
+  .crm-node:hover{border-color:var(--blue-line);transform:translateY(-2px)}
+  .crm-node .ic{width:38px;height:38px;border-radius:10px;background:var(--blue-soft);border:1px solid var(--blue-line);display:flex;align-items:center;justify-content:center;font-size:19px;margin-bottom:11px}
+  .crm-node h4{font-size:15px;font-family:var(--ff-d);font-weight:600;margin-bottom:6px}
+  .crm-node p{font-size:12.5px;color:var(--mut);line-height:1.45;margin:0}
+  .crm-node .conn{display:flex;gap:7px;margin-top:11px}
+  .crm-node .chip{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--fg);background:var(--bg3);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+  .crm-n-tl{left:0;top:36px}.crm-n-tr{right:0;top:36px}.crm-n-bl{left:0;bottom:36px}.crm-n-br{right:0;bottom:36px}
+  @media(max-width:880px){
+    .crmhub{height:auto;display:flex;flex-direction:column;gap:14px;align-items:center}
+    .crmhub svg.links{display:none}
+    .crm-core{position:static;transform:none;order:-1;width:100%;max-width:420px}
+    .crm-node{position:static;width:100%;max-width:420px}
+  }
+  @media(prefers-reduced-motion:reduce){.crmhub .lnk.flow{animation:none}}
   </style>
   <div class="fpanel on" id="fp-crm">
     <div class="fp-head">
       <div class="eyebrow">CRM Setup</div>
-      <h3>Dein <span class="hl">CRM</span>, sauber aufgesetzt.</h3>
-      <p>Wir setzen dein CRM sauber auf und verbinden es mit dem Outreach. Jede Antwort landet automatisch als Lead, mit vollem Kontext und im richtigen Status.</p>
+      <h3>Dein <span class="hl">CRM</span> im Herzen, alles fließt hinein.</h3>
+      <p>Wir setzen dein CRM komplett auf und verbinden es mit deinem Postfach und dem Outreach, sodass jede Antwort automatisch als Lead am richtigen Ort landet.</p>
     </div>
-    <div class="cwin rv"><div class="cl">
-      <div class="cl-side">
-        <div class="cl-hd"><span class="cfav" style="background:#e1453d">M</span><div class="cl-co"><!-- SLOT:COMPANY START -->Muster GmbH<!-- SLOT:COMPANY END --></div></div>
-        <span class="cl-hot">Hot</span>
-        <div class="cl-tabs"><span class="on">Details</span><span>Dateien 4</span></div>
-        <div class="cl-sec">&#9432; Über</div>
-        <div class="cl-f"><span class="ic">&#128205;</span>Berlin, Deutschland</div>
-        <div class="cl-f"><span class="ic">&#128279;</span><a class="cl-link"><!-- SLOT:LEAD_DOMAIN START -->deine-website<!-- SLOT:LEAD_DOMAIN END --></a></div>
-        <div class="cl-sec">Aufgaben <span class="ct">1</span></div>
-        <div class="cl-task"><img class="cav-img" src="https://start.grundwerk.digital/assets/team/tom-soto-schiller.jpeg" alt="" loading="lazy"><div><div class="nm">Termin vorbereiten</div><div class="due">Morgen</div></div></div>
-        <div class="cl-sec">Opportunities <span class="ct">1</span></div>
-        <div class="cl-opp"><span class="ost">Termin vereinbart</span><div class="odesc">Outreach-System, Erstgespräch am 24.06.2026</div></div>
-        <div class="cl-sec">Kontakte <span class="ct">2</span></div>
-        <div class="cl-contact"><img class="cav-img" src="https://ui-avatars.com/api/?name=Alex+Krause&amp;size=72&amp;background=fde8ea&amp;color=c0392b&amp;bold=true&amp;format=png" alt="Alex Krause" loading="lazy"><div><div class="nm">Alex Krause</div><div class="rl">Geschäftsführer</div></div></div>
-        <div class="cl-contact"><img class="cav-img" src="https://ui-avatars.com/api/?name=Marie+Voss&amp;size=72&amp;background=ece9fb&amp;color=6b4fbf&amp;bold=true&amp;format=png" alt="Marie Voss" loading="lazy"><div><div class="nm">Marie Voss</div><div class="rl">Head of Sales</div></div></div>
-        <div class="cl-sec">Felder <span class="ct">2</span></div>
-        <div class="cl-f"><span class="ic">&#128188;</span>Branche: Werbung &amp; Marketing</div>
-        <div class="cl-f"><span class="ic">&#128229;</span>Quelle: Outreach</div>
-      </div>
-      <div class="cl-main">
-        <div class="cl-actions"><span class="cl-ab">&#128197; Meeting</span><span class="cl-ab">&#128221; Notiz</span><span class="cl-ab mail">&#9993; E-Mail</span><span class="cl-ab">&#128172; SMS</span><span class="cl-ab">&#128222; Call</span><span class="cl-ab">&#9873; Aktivität</span></div>
-        <div class="cl-sum"><b>LEAD ZUSAMMENFASSEN</b> <span>&middot; Snapshot der wichtigsten Details und Aktivitäten</span></div>
-        <div class="cl-ftabs"><span class="on">Alle</span><span>Wichtig</span><span>Konversationen</span><span>Notizen</span></div>
-        <div class="cl-tl">
-          <div class="cl-tl-i">
-            <div class="cl-tl-ic flag">&#9873;</div>
-            <div class="cl-tl-c">
-              <div class="cl-tl-h">Termin vereinbart <span class="tm">vor 1 Tag</span></div>
-              <div class="cl-appt"><div class="cl-appt-g">
-                <div class="cl-appt-f"><div class="k">Termin-Typ</div><div class="v">Erstgespräch</div></div>
-                <div class="cl-appt-f"><div class="k">Termin am</div><div class="v">24.06.2026, 10:30</div></div>
-                <div class="cl-appt-f"><div class="k">Vereinbart von</div><div class="v"><img class="cav-img" src="https://ui-avatars.com/api/?name=Alex+Krause&amp;size=40&amp;background=fde8ea&amp;color=c0392b&amp;bold=true&amp;format=png" alt="">Alex Krause</div></div>
-                <div class="cl-appt-f"><div class="k">Vereinbart für</div><div class="v"><img class="cav-img" src="https://start.grundwerk.digital/assets/team/tom-soto-schiller.jpeg" alt="">Tom Soto Schiller</div></div>
-              </div></div>
-            </div>
-          </div>
-          <div class="cl-tl-i">
-            <div class="cl-tl-ic mail">&#9993;</div>
-            <div class="cl-tl-c">
-              <div class="cl-tl-h">E-Mail gesendet <span class="tm">vor 2 Tagen</span></div>
-              <div class="cl-subj">Kurze Frage zu <!-- SLOT:COMPANY START -->Muster GmbH<!-- SLOT:COMPANY END --></div>
-              <div class="cl-meta">Von: <b>Tom Soto Schiller</b> &lt;tom@grundwerk.digital&gt; &nbsp;&middot;&nbsp; An: Alex Krause &lt;alex@<!-- SLOT:LEAD_DOMAIN START -->deine-website<!-- SLOT:LEAD_DOMAIN END -->&gt;</div>
-              <div class="cl-body">Hallo <!-- SLOT:LEAD_FIRST START -->Alex<!-- SLOT:LEAD_FIRST END -->,
-
-gerade gesehen, dass ihr auf eurer Website drei neue Vertriebsrollen ausgeschrieben habt, das Team wächst also spürbar.
-
-Genau dann fällt oft auf, dass der Outbound-Kanal noch nicht systematisch läuft.
-
-Wir bauen B2B-Teams in 6 Wochen einen reproduzierbaren Kanal, der qualifizierte Termine liefert.
-
-Hätte das Sinn für euch?
-
-Beste Grüße
-Tom</div>
-            </div>
-          </div>
-          <div class="cl-tl-i">
-            <div class="cl-tl-ic flag">&#9873;</div>
-            <div class="cl-tl-c"><div class="cl-tl-h">Cold Email gesendet <span class="tm">vor 2 Tagen</span></div></div>
-          </div>
+    <div class="crmhub rv">
+      <svg class="links" viewBox="0 0 980 600" preserveAspectRatio="none" aria-hidden="true">
+        <path class="lnk" d="M235,160 L490,300"></path>
+        <path class="lnk" d="M745,160 L490,300"></path>
+        <path class="lnk" d="M235,440 L490,300"></path>
+        <path class="lnk" d="M745,440 L490,300"></path>
+        <path class="lnk flow" d="M235,160 L490,300"></path>
+        <path class="lnk flow" d="M745,160 L490,300"></path>
+        <path class="lnk flow" d="M235,440 L490,300"></path>
+        <path class="lnk flow" d="M745,440 L490,300"></path>
+      </svg>
+      <div class="crm-core">
+        <div class="hd"><div class="lg">📇</div><div class="tt">Dein CRM<small>sauber aufgesetzt &amp; verbunden</small></div></div>
+        <div class="pipe">
+          <div class="pcol"><div class="ph">Neu</div><div class="pcard b"></div><div class="pcard"></div></div>
+          <div class="pcol"><div class="ph">Termin</div><div class="pcard"></div></div>
+          <div class="pcol"><div class="ph">Gewonnen</div><div class="pcard"></div></div>
         </div>
       </div>
-    </div></div>
+      <div class="crm-node crm-n-tl"><div class="ic">📊</div><h4>Pipeline Setup</h4><p>Phasen, Stages und Smart Views sauber aufgesetzt, dein Vertrieb hat sofort Struktur.</p></div>
+      <div class="crm-node crm-n-tr"><div class="ic">🔁</div><h4>Merge &amp; Follow-up</h4><p>Dubletten automatisch gemerged, Follow-up-Sequenzen, kein Lead fällt durchs Raster.</p></div>
+      <div class="crm-node crm-n-bl"><div class="ic">✨</div><h4>Auto-Anreicherung</h4><p>Firmendaten, Kontakte und Signale werden automatisch ins CRM ergänzt.</p></div>
+      <div class="crm-node crm-n-br"><div class="ic">✉️</div><h4>Email-Connection</h4><p>Postfach mit dem CRM verbunden, jede Mail landet automatisch am Lead.</p><div class="conn"><span class="chip">Google</span><span class="chip">Teams</span></div></div>
+    </div>
   </div>
 
   <!-- PANEL: KI-VIDEO -->
@@ -1383,6 +1321,14 @@ Beste Grüße
       <div class="node" style="border-color:var(--blue-line);background:var(--blue-soft)"><b>4</b>&nbsp; Deine Grundstrategie landet im Postfach</div>
     </div>
   </div>
+</div></section>
+
+<!-- END-CTA (F, post-booking closing) -->
+<section class="sec" style="background:radial-gradient(820px 420px at 50% 0,rgba(0,102,255,.16),transparent 66%);border-top:1px solid var(--line)"><div class="wrap rv" style="text-align:center;max-width:720px;margin:0 auto">
+  <div class="eyebrow" style="justify-content:center">Bis zum Termin</div>
+  <h2>Wir freuen uns auf <span class="hl"><!-- SLOT:COMPANY START -->dein Unternehmen<!-- SLOT:COMPANY END --></span>.</h2>
+  <p class="lead center">Damit wir im Termin direkt loslegen können: füll vorab kurz den Fragebogen aus. Dann steigen wir mit einer ersten, auf euch zugeschnittenen Outreach-Idee ins Gespräch ein.</p>
+  <a class="btn btn-blue" href="#fragebogen" style="margin-top:10px;justify-content:center" onclick="if(typeof track==='function')track('cta_endcta')">Fragebogen ausfüllen</a>
 </div></section>
 
 <!-- FOOTER (1:1 grundwerk.digital) -->
