@@ -1400,7 +1400,9 @@ img,svg,iframe{display:block;max-width:100%;}
     function go(){ sec.classList.add('b-sign-anim'); }
     if (reduced){ go(); return; }
     if ('IntersectionObserver' in window){
-      var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ go(); io.disconnect(); } }); }, { threshold: 0.3 });
+      // threshold:0 + rootMargin: feuert zuverlaessig sobald die (hohe) Sektion in den Viewport kommt
+      // (threshold 0.3 erreichte bei der hohen Signatur-Sektion nie 30% Sichtbarkeit -> blieb opacity:0 -> weiss)
+      var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ go(); io.disconnect(); } }); }, { threshold: 0, rootMargin: '0px 0px -12% 0px' });
       io.observe(sec);
     } else { go(); }
   })();
