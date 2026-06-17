@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="de"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CRM-Setup-Sektion: 10 Design-Varianten</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=inter@400,500,600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0e0e10;--bg2:#141417;--bg3:#1a1a1f;--line:rgba(255,255,255,.09);--line2:rgba(255,255,255,.14);--fg:#f4f5f7;--mut:#a0a3ab;--mut2:#73767e;--blue:#0066ff;--blue-soft:rgba(0,102,255,.14);--blue-line:rgba(0,102,255,.40);--ff-d:"Clash Display",system-ui,sans-serif;--ff-b:"Inter",Helvetica,Arial,sans-serif;--ok:#1f9d5b;--ok-soft:rgba(31,157,91,.14);--ok-line:rgba(31,157,91,.4)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--ff-b);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--ff-d);font-weight:600;letter-spacing:-.02em;line-height:1.12}
+.hl{color:var(--blue)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.page-head{text-align:center;padding:60px 24px 24px}
+.page-head .eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin-bottom:14px}
+.page-head h1{font-size:clamp(28px,4vw,46px)}
+.page-head p{color:var(--mut);max-width:680px;margin:14px auto 0}
+.vbox{border-top:1px solid var(--line);padding:50px 0}
+.vlabel{display:flex;align-items:center;gap:12px;max-width:1120px;margin:0 auto 12px;padding:0 24px}
+.vlabel .n{flex:0 0 auto;width:34px;height:34px;border-radius:9px;background:var(--blue);color:#fff;font-family:var(--ff-d);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:16px}
+.vlabel .t{font-family:var(--ff-d);font-weight:600;font-size:19px}
+.vlabel .t small{display:block;font-family:var(--ff-b);font-weight:400;font-size:13px;color:var(--mut2);letter-spacing:0}
+.foot{text-align:center;color:var(--mut2);font-size:13px;padding:40px 24px 60px;border-top:1px solid var(--line)}
+/* shared CRM window chrome */
+.cw{background:var(--bg2);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.4);margin-top:8px}
+.cw-bar{display:flex;align-items:center;gap:11px;padding:11px 16px;border-bottom:1px solid var(--line);background:var(--bg3)}
+.cw-dots{display:flex;gap:6px}.cw-dots i{width:11px;height:11px;border-radius:50%;background:var(--line2);display:block}
+.cw-title{font-size:12.5px;color:var(--mut);font-weight:600}
+.cw-tag{margin-left:auto;font-size:10.5px;font-weight:700;color:var(--blue);background:var(--blue-soft);border:1px solid var(--blue-line);border-radius:999px;padding:3px 10px}
+.cw-body{padding:18px}
+.av{border-radius:50%;background:linear-gradient(135deg,var(--blue),#003ec7);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.tag-src{font-size:10px;font-weight:700;color:var(--blue);background:var(--blue-soft);border:1px solid var(--blue-line);border-radius:999px;padding:2px 8px;white-space:nowrap}
+.tag-won{color:var(--ok);background:var(--ok-soft);border-color:var(--ok-line)}
+/* V1 Pipeline board */
+.pl{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.pl-col{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:11px;display:flex;flex-direction:column;gap:9px}
+.pl-h{display:flex;justify-content:space-between;font-size:11px;font-weight:700;color:var(--mut);text-transform:uppercase;letter-spacing:.04em;padding:2px 3px 4px}
+.pl-h span{background:var(--bg3);border:1px solid var(--line);border-radius:999px;padding:1px 7px;color:var(--fg)}
+.pl-c{background:var(--bg3);border:1px solid var(--line);border-radius:9px;padding:10px}
+.pl-c.hot{background:var(--blue-soft);border-color:var(--blue-line)}
+.pl-c .who{display:flex;align-items:center;gap:7px}
+.pl-c .av{width:24px;height:24px;font-size:9px}
+.pl-c .nm{font-size:12px;font-weight:600}.pl-c .co{font-size:10.5px;color:var(--mut2)}
+.pl-c .meta{margin-top:7px}
+@media(max-width:780px){.pl{grid-template-columns:1fr 1fr}}
+/* V2 Lead inbox */
+.ib-row{display:flex;align-items:center;gap:12px;padding:12px 8px;border-bottom:1px solid var(--line)}
+.ib-row:last-child{border-bottom:0}
+.ib-row.unread{background:var(--blue-soft);border-radius:8px;border-bottom-color:transparent}
+.ib-row .av{width:38px;height:38px;font-size:12px}
+.ib-row .mid{flex:1;min-width:0}
+.ib-row .l1{display:flex;align-items:center;gap:8px}
+.ib-row .nm{font-size:13.5px;font-weight:700}.ib-row .co{font-size:12px;color:var(--mut2)}
+.ib-row .snip{font-size:12.5px;color:var(--mut);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px}
+.ib-row .r{text-align:right;flex-shrink:0}
+.ib-row .tm{font-size:11px;color:var(--mut2)}
+/* V3 Smart-view table */
+.tb{width:100%;border-collapse:collapse;font-size:13px}
+.tb th{text-align:left;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--mut2);padding:9px 12px;border-bottom:1px solid var(--line2)}
+.tb td{padding:11px 12px;border-bottom:1px solid var(--line);color:var(--fg)}
+.tb tr:last-child td{border-bottom:0}
+.tb .cell-nm{display:flex;align-items:center;gap:9px}
+.tb .av{width:26px;height:26px;font-size:9px}
+.tb .pill{font-size:11px;font-weight:600;border-radius:999px;padding:2px 9px;background:var(--bg3);border:1px solid var(--line)}
+.tb .pill.b{color:var(--blue);background:var(--blue-soft);border-color:var(--blue-line)}
+.tb .pill.g{color:var(--ok);background:var(--ok-soft);border-color:var(--ok-line)}
+.tb-scroll{overflow-x:auto}
+</style></head>
+<body>
+<div class="page-head">
+  <div class="eyebrow">Intern: zur Auswahl</div>
+  <h1>CRM-Setup-Sektion: <span class="hl">10 Design-Varianten</span></h1>
+  <p>Jede Variante ist an eine echte Close-CRM-Ansicht angelehnt und im Grundwerk-Design aufgearbeitet. Klick dich durch, sag mir die Nummer, dann baue ich sie final in die Outreach-Seite. Auf Wunsch verfeinern wir die gewaehlte mit echten Close-Screenshots.</p>
+</div>
+
+<section class="vbox"><div class="vlabel"><span class="n">1</span><span class="t">Pipeline-Board (Kanban)<small>Close Opportunities: Leads wandern durch die Phasen</small></span></div>
+<div class="wrap"><div class="cw"><div class="cw-bar"><div class="cw-dots"><i></i><i></i><i></i></div><span class="cw-title">Pipeline</span><span class="cw-tag">Auto-Sync aktiv</span></div>
+<div class="cw-body"><div class="pl">
+  <div class="pl-col"><div class="pl-h">Neu <span>3</span></div>
+    <div class="pl-c hot"><div class="who"><span class="av">AK</span><div><div class="nm">Alex Krause</div><div class="co">Muster GmbH</div></div></div><div class="meta"><span class="tag-src">via Outreach</span></div></div>
+    <div class="pl-c"><div class="who"><span class="av">SV</span><div><div class="nm">Sarah Vogt</div><div class="co">Orbis Solutions</div></div></div></div>
+  </div>
+  <div class="pl-col"><div class="pl-h">Kontaktiert <span>2</span></div>
+    <div class="pl-c"><div class="who"><span class="av">MR</span><div><div class="nm">Mark Renner</div><div class="co">Nexfield AG</div></div></div></div>
+    <div class="pl-c"><div class="who"><span class="av">LB</span><div><div class="nm">Lena Brandt</div><div class="co">Brunner Group</div></div></div></div>
+  </div>
+  <div class="pl-col"><div class="pl-h">Termin <span>2</span></div>
+    <div class="pl-c"><div class="who"><span class="av">DK</span><div><div class="nm">Daniel Kern</div><div class="co">Talvio AG</div></div></div><div class="meta"><span class="tag-src">Do 11:00</span></div></div>
+    <div class="pl-c"><div class="who"><span class="av">PM</span><div><div class="nm">Peter Maus</div><div class="co">Kessler &amp; Co</div></div></div></div>
+  </div>
+  <div class="pl-col"><div class="pl-h">Gewonnen <span>1</span></div>
+    <div class="pl-c"><div class="who"><span class="av">TK</span><div><div class="nm">Tim Kuesters</div><div class="co">Birdsview</div></div></div><div class="meta"><span class="tag-src tag-won">Deal</span></div></div>
+  </div>
+</div></div></div></div></section>
+
+<section class="vbox"><div class="vlabel"><span class="n">2</span><span class="t">Lead-Inbox<small>Close Inbox: jede Antwort landet als Lead, wie ein Posteingang</small></span></div>
+<div class="wrap"><div class="cw"><div class="cw-bar"><div class="cw-dots"><i></i><i></i><i></i></div><span class="cw-title">Inbox</span><span class="cw-tag">7 neue Leads</span></div>
+<div class="cw-body">
+  <div class="ib-row unread"><span class="av">AK</span><div class="mid"><div class="l1"><span class="nm">Alex Krause</span><span class="co">Muster GmbH</span><span class="tag-src">via Outreach</span></div><div class="snip">Klingt spannend, Donnerstag oder Freitag wuerde bei mir passen.</div></div><div class="r"><div class="tm">14:22</div></div></div>
+  <div class="ib-row"><span class="av">SV</span><div class="mid"><div class="l1"><span class="nm">Sarah Vogt</span><span class="co">Orbis Solutions</span></div><div class="snip">Schickt mir gerne mehr Infos zum Vorgehen.</div></div><div class="r"><div class="tm">11:08</div></div></div>
+  <div class="ib-row"><span class="av">MR</span><div class="mid"><div class="l1"><span class="nm">Mark Renner</span><span class="co">Nexfield AG</span></div><div class="snip">Danke, leite ich intern weiter.</div></div><div class="r"><div class="tm">Gestern</div></div></div>
+  <div class="ib-row"><span class="av">LB</span><div class="mid"><div class="l1"><span class="nm">Lena Brandt</span><span class="co">Brunner Group</span></div><div class="snip">Wer ist bei euch der richtige Ansprechpartner?</div></div><div class="r"><div class="tm">Gestern</div></div></div>
+</div></div></div></section>
+
+<section class="vbox"><div class="vlabel"><span class="n">3</span><span class="t">Smart-View-Tabelle<small>Close Smart View: gefilterte Lead-Liste mit Status + Quelle</small></span></div>
+<div class="wrap"><div class="cw"><div class="cw-bar"><div class="cw-dots"><i></i><i></i><i></i></div><span class="cw-title">Smart View: Outreach-Leads</span><span class="cw-tag">Live gefiltert</span></div>
+<div class="cw-body"><div class="tb-scroll"><table class="tb">
+  <thead><tr><th>Lead</th><th>Status</th><th>Quelle</th><th>Letzte Aktivitaet</th></tr></thead>
+  <tbody>
+    <tr><td><div class="cell-nm"><span class="av">AK</span>Alex Krause, Muster GmbH</div></td><td><span class="pill b">Neu</span></td><td>Outreach</td><td>vor 2 Min</td></tr>
+    <tr><td><div class="cell-nm"><span class="av">DK</span>Daniel Kern, Talvio AG</div></td><td><span class="pill b">Termin</span></td><td>Outreach</td><td>heute 10:20</td></tr>
+    <tr><td><div class="cell-nm"><span class="av">MR</span>Mark Renner, Nexfield AG</div></td><td><span class="pill">Kontaktiert</span></td><td>Outreach</td><td>gestern</td></tr>
+    <tr><td><div class="cell-nm"><span class="av">TK</span>Tim Kuesters, Birdsview</div></td><td><span class="pill g">Gewonnen</span></td><td>Outreach</td><td>vor 3 Tagen</td></tr>
+  </tbody>
+</table></div></div></div></div></section>
+
+<style>
+.dt{display:grid;grid-template-columns:1fr 1.1fr}
+@media(max-width:760px){.dt{grid-template-columns:1fr}.dt-l{border-right:0;border-bottom:1px solid var(--line)}}
+.dt-l{padding:20px;border-right:1px solid var(--line)}
+.dt-hd{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.dt-hd .av{width:52px;height:52px;font-size:17px}
+.dt-hd .nm{font-size:18px;font-weight:700;font-family:var(--ff-d)}
+.dt-hd .co{font-size:13px;color:var(--mut)}
+.dt-f{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line);font-size:13px}
+.dt-f:last-child{border-bottom:0}
+.dt-f .k{color:var(--mut2)}.dt-f .v{color:var(--fg);font-weight:500}
+.dt-r{padding:20px}
+.dt-r .rh{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--mut2);margin-bottom:14px}
+.tl{position:relative;padding-left:26px}
+.tl::before{content:"";position:absolute;left:8px;top:4px;bottom:4px;width:2px;background:var(--line2)}
+.tl-i{position:relative;padding-bottom:15px}.tl-i:last-child{padding-bottom:0}
+.tl-i .dot{position:absolute;left:-26px;top:0;width:18px;height:18px;border-radius:50%;background:var(--bg2);border:2px solid var(--blue);display:flex;align-items:center;justify-content:center;font-size:9px}
+.tl-i .ti{font-size:12.5px;font-weight:600}.tl-i .ts{font-size:11.5px;color:var(--mut)}.tl-i .tm{font-size:10.5px;color:var(--mut2);margin-top:1px}
+</style>
+<section class="vbox"><div class="vlabel"><span class="n">4</span><span class="t">Lead-Detail + Aktivitaets-Timeline<small>Close Lead-Page: alle Daten + die komplette Historie auf einen Blick</small></span></div>
+<div class="wrap"><div class="cw"><div class="cw-bar"><div class="cw-dots"><i></i><i></i><i></i></div><span class="cw-title">Lead-Detail</span><span class="cw-tag">via Outreach</span></div>
+<div class="cw-body" style="padding:0"><div class="dt">
+  <div class="dt-l">
+    <div class="dt-hd"><span class="av">AK</span><div><div class="nm">Alex Krause</div><div class="co">Muster GmbH</div></div></div>
+    <div class="dt-f"><span class="k">Status</span><span class="v">Termin vereinbart</span></div>
+    <div class="dt-f"><span class="k">Quelle</span><span class="v">Outreach (E-Mail)</span></div>
+    <div class="dt-f"><span class="k">E-Mail</span><span class="v">a.krause@muster-gmbh.de</span></div>
+    <div class="dt-f"><span class="k">Telefon</span><span class="v">+49 30 1234567</span></div>
+    <div class="dt-f"><span class="k">Naechster Schritt</span><span class="v">Termin Do 11:00</span></div>
+  </div>
+  <div class="dt-r"><div class="rh">Aktivitaet</div>
+    <div class="tl">
+      <div class="tl-i"><div class="dot">&#9889;</div><div class="ti">Antwort erhalten</div><div class="ts">"Klingt spannend, Donnerstag passt."</div><div class="tm">heute, 14:22</div></div>
+      <div class="tl-i"><div class="dot">&#128231;</div><div class="ti">Lead automatisch angelegt</div><div class="ts">Kontakt, Firma + Nachricht synchronisiert</div><div class="tm">heute, 14:22</div></div>
+      <div class="tl-i"><div class="dot">&#128197;</div><div class="ti">Termin gebucht</div><div class="ts">cal.muster-gmbh.de/alex, Do 11:00</div><div class="tm">heute, 14:25</div></div>
+      <div class="tl-i"><div class="dot">&#9989;</div><div class="ti">Aufgabe fuer das Team</div><div class="ts">Vorbereitung + Briefing erstellt</div><div class="tm">heute, 14:25</div></div>
+    </div>
+  </div>
+</div></div></div></div></section>
+
+<style>
+.sp{display:grid;grid-template-columns:240px 1fr}
+@media(max-width:760px){.sp{grid-template-columns:1fr}.sp-l{display:none}}
+.sp-l{border-right:1px solid var(--line)}
+.sp-li{display:flex;align-items:center;gap:9px;padding:12px 14px;border-bottom:1px solid var(--line)}
+.sp-li.on{background:var(--blue-soft)}
+.sp-li .av{width:30px;height:30px;font-size:10px}
+.sp-li .nm{font-size:12.5px;font-weight:600}.sp-li .co{font-size:10.5px;color:var(--mut2)}
+.sp-r{padding:22px}
+</style>
+<section class="vbox"><div class="vlabel"><span class="n">5</span><span class="t">Split: Inbox + Detail<small>Close Zwei-Spalten: Lead-Liste links, Detail rechts (wie im echten Tool)</small></span></div>
+<div class="wrap"><div class="cw"><div class="cw-bar"><div class="cw-dots"><i></i><i></i><i></i></div><span class="cw-title">Leads</span><span class="cw-tag">Auto-Sync aktiv</span></div>
+<div class="cw-body" style="padding:0"><div class="sp">
+  <div class="sp-l">
+    <div class="sp-li on"><span class="av">AK</span><div><div class="nm">Alex Krause</div><div class="co">Muster GmbH</div></div></div>
+    <div class="sp-li"><span class="av">SV</span><div><div class="nm">Sarah Vogt</div><div class="co">Orbis Solutions</div></div></div>
+    <div class="sp-li"><span class="av">MR</span><div><div class="nm">Mark Renner</div><div class="co">Nexfield AG</div></div></div>
+    <div class="sp-li"><span class="av">DK</span><div><div class="nm">Daniel Kern</div><div class="co">Talvio AG</div></div></div>
+  </div>
+  <div class="sp-r">
+    <div class="dt-hd"><span class="av" style="width:48px;height:48px;font-size:16px">AK</span><div><div class="nm" style="font-size:17px;font-weight:700;font-family:var(--ff-d)">Alex Krause</div><div class="co" style="font-size:13px;color:var(--mut)">Muster GmbH &middot; via Outreach</div></div></div>
+    <div class="dt-f"><span class="k">Status</span><span class="v">Termin vereinbart</span></div>
+    <div class="dt-f"><span class="k">Letzte Antwort</span><span class="v">heute, 14:22</span></div>
+    <div class="dt-f"><span class="k">Naechster Schritt</span><span class="v">Termin Do 11:00</span></div>
+    <div class="dt-f"><span class="k">Owner</span><span class="v">dein Vertriebsteam</span></div>
+  </div>
+</div></div></div></div></section>
+
+<style>
+.db-k{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+@media(max-width:760px){.db-k{grid-template-columns:1fr 1fr}}
+.db-kc{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:15px}
+.db-kc .v{font-family:var(--ff-d);font-weight:700;font-size:26px}
+.db-kc .l{font-size:11.5px;color:var(--mut);margin-top:2px}
+.db-kc .d{font-size:11px;color:var(--ok);margin-top:7px;font-weight:600}
+.fn{display:flex;flex-direction:column;gap:9px}
+.fn-row{display:flex;align-items:center;gap:12px}
+.fn-row .lab{width:120px;font-size:12px;color:var(--mut);flex-shrink:0;text-align:right}
+.fn-bar{height:30px;border-radius:7px;background:linear-gradient(90deg,var(--blue),#4b9bff);display:flex;align-items:center;padding:0 12px;color:#fff;font-size:12px;font-weight:700;min-width:60px}
+</style>
+<section class="vbox"><div class="vlabel"><span class="n">6</span><span class="t">Reporting-Dashboard<small>Close Reporting: KPIs + Funnel, der Outreach-Erfolg sichtbar gemacht</small></span></div>
+<div class="wrap"><div class="cw"><div class="cw-bar"><div class="cw-dots"><i></i><i></i><i></i></div><span class="cw-title">Reporting</span><span class="cw-tag">Letzte 30 Tage</span></div>
+<div class="cw-body">
+  <div class="db-k">
+    <div class="db-kc"><div class="v">214</div><div class="l">Neue Leads</div><div class="d">+38% vs Vormonat</div></div>
+    <div class="db-kc"><div class="v">61</div><div class="l">Antworten</div><div class="d">+22%</div></div>
+    <div class="db-kc"><div class="v">27</div><div class="l">Termine</div><div class="d">+19%</div></div>
+    <div class="db-kc"><div class="v">9</div><div class="l">Deals</div><div class="d">+12%</div></div>
+  </div>
+  <div class="fn">
+    <div class="fn-row"><span class="lab">Leads</span><div class="fn-bar" style="width:100%">214</div></div>
+    <div class="fn-row"><span class="lab">Kontaktiert</span><div class="fn-bar" style="width:74%">158</div></div>
+    <div class="fn-row"><span class="lab">Antwort</span><div class="fn-bar" style="width:46%">61</div></div>
+    <div class="fn-row"><span class="lab">Termin</span><div class="fn-bar" style="width:24%">27</div></div>
+    <div class="fn-row"><span class="lab">Deal</span><div class="fn-bar" style="width:11%">9</div></div>
+  </div>
+</div></div></div></section>
+
+<style>
+.fl{display:flex;align-items:stretch;flex-wrap:wrap;margin-top:8px}
+.fl-c{flex:1;min-width:210px;background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:24px 22px}
+.fl-c .ic{width:46px;height:46px;border-radius:12px;background:var(--blue-soft);border:1px solid var(--blue-line);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px}
+.fl-c h4{font-size:16px;margin-bottom:7px}
+.fl-c p{font-size:13.5px;color:var(--mut);line-height:1.5}
+.fl-arr{display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:24px;padding:0 12px}
+@media(max-width:760px){.fl-arr{transform:rotate(90deg);padding:10px 0;width:100%}.fl-c{min-width:100%}}
+</style>
+<section class="vbox"><div class="vlabel"><span class="n">7</span><span class="t">Auto-Sync-Flow<small>Der Mechanismus als Fokus: von der Antwort bis zum Lead im CRM</small></span></div>
+<div class="wrap"><div class="fl">
+  <div class="fl-c"><div class="ic">&#128231;</div><h4>Antwort kommt rein</h4><p>Ein Lead antwortet im Outreach, egal ob per E-Mail oder LinkedIn.</p></div>
+  <div class="fl-arr">&#8594;</div>
+  <div class="fl-c"><div class="ic">&#128260;</div><h4>Auto-Sync ins CRM</h4><p>Kontakt, Firma, Nachricht und Quelle landen automatisch im richtigen Feld.</p></div>
+  <div class="fl-arr">&#8594;</div>
+  <div class="fl-c"><div class="ic">&#9989;</div><h4>Lead mit Kontext</h4><p>Dein Team sieht sofort Status und Historie, ohne manuelles Nachpflegen.</p></div>
+</div></div></section>
+
+<style>
+.tk-row{display:flex;align-items:center;gap:13px;padding:13px 8px;border-bottom:1px solid var(--line)}
+.tk-row:last-child{border-bottom:0}
+.tk-box{width:20px;height:20px;border-radius:6px;border:2px solid var(--line2);flex-shrink:0}
+.tk-box.done{background:var(--ok);border-color:var(--ok);display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px}
+.tk-mid{flex:1;min-width:0}
+.tk-t{font-size:13.5px;font-weight:600}.tk-t.is-done{color:var(--mut2);text-decoration:line-through}
+.tk-s{font-size:11.5px;color:var(--mut2)}
+.tk-due{font-size:11px;font-weight:700;color:var(--blue);background:var(--blue-soft);border:1px solid var(--blue-line);border-radius:999px;padding:2px 9px;white-space:nowrap}
+.tk-due.now{color:#e5484d;background:rgba(229,72,77,.12);border-color:rgba(229,72,77,.4)}
+</style>
+<section class="vbox"><div class="vlabel"><span class="n">8</span><span class="t">Task- und Anruf-Queue<small>Close Tasks: das CRM sagt dem Team, wer heute dran ist</small></span></div>
+<div class="wrap"><div class="cw"><div class="cw-bar"><div class="cw-dots"><i></i><i></i><i></i></div><span class="cw-title">Heute zu tun</span><span class="cw-tag">automatisch erstellt</span></div>
+<div class="cw-body">
+  <div class="tk-row"><div class="tk-box"></div><div class="tk-mid"><div class="tk-t">Alex Krause anrufen</div><div class="tk-s">Muster GmbH &middot; Termin Do 11:00 bestaetigen</div></div><span class="tk-due now">11:00</span></div>
+  <div class="tk-row"><div class="tk-box"></div><div class="tk-mid"><div class="tk-t">Follow-up an Sarah Vogt</div><div class="tk-s">Orbis Solutions &middot; Infos zum Vorgehen</div></div><span class="tk-due">heute</span></div>
+  <div class="tk-row"><div class="tk-box"></div><div class="tk-mid"><div class="tk-t">Mark Renner nachfassen</div><div class="tk-s">Nexfield AG &middot; Angebot offen</div></div><span class="tk-due">heute</span></div>
+  <div class="tk-row"><div class="tk-box done">&#10003;</div><div class="tk-mid"><div class="tk-t is-done">Lena Brandt qualifiziert</div><div class="tk-s">Brunner Group</div></div></div>
+</div></div></div></section>
+
+<style>
+.fd-i{display:flex;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line)}
+.fd-i:last-child{border-bottom:0}
+.fd-ic{width:32px;height:32px;border-radius:9px;background:var(--bg3);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.fd-c{flex:1;min-width:0}
+.fd-t{font-size:13px;line-height:1.4}.fd-t b{font-weight:700}
+.fd-tm{font-size:11px;color:var(--mut2);margin-top:2px}
+</style>
+<section class="vbox"><div class="vlabel"><span class="n">9</span><span class="t">Aktivitaets-Feed<small>Close Activity: jede Bewegung im CRM in einem Stream</small></span></div>
+<div class="wrap"><div class="cw"><div class="cw-bar"><div class="cw-dots"><i></i><i></i><i></i></div><span class="cw-title">Aktivitaet</span><span class="cw-tag">Live</span></div>
+<div class="cw-body">
+  <div class="fd-i"><div class="fd-ic">&#9889;</div><div class="fd-c"><div class="fd-t"><b>Antwort</b> von Alex Krause (Muster GmbH): "Klingt spannend, Donnerstag passt."</div><div class="fd-tm">vor 2 Minuten</div></div></div>
+  <div class="fd-i"><div class="fd-ic">&#128231;</div><div class="fd-c"><div class="fd-t"><b>Lead automatisch angelegt</b> aus dem Outreach, Status: Neu</div><div class="fd-tm">vor 2 Minuten</div></div></div>
+  <div class="fd-i"><div class="fd-ic">&#128197;</div><div class="fd-c"><div class="fd-t"><b>Termin gebucht</b> mit Daniel Kern (Talvio AG)</div><div class="fd-tm">vor 1 Stunde</div></div></div>
+  <div class="fd-i"><div class="fd-ic">&#127942;</div><div class="fd-c"><div class="fd-t"><b>Deal gewonnen</b> mit Tim Kuesters (Birdsview)</div><div class="fd-tm">heute, 09:14</div></div></div>
+</div></div></div></section>
+
+<style>
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
+@media(max-width:760px){.ba{grid-template-columns:1fr}}
+.ba-c{border-radius:14px;padding:24px;border:1px solid var(--line)}
+.ba-c.before{background:var(--bg2)}
+.ba-c.after{background:linear-gradient(160deg,var(--blue-soft),var(--bg2));border-color:var(--blue-line)}
+.ba-h{font-family:var(--ff-d);font-weight:600;font-size:17px;margin-bottom:16px;display:flex;align-items:center;gap:9px}
+.ba-li{display:flex;gap:10px;font-size:13.5px;color:var(--mut);padding:7px 0;align-items:flex-start}
+.ba-li .m{flex-shrink:0;font-size:14px}
+.ba-c.after .ba-li{color:var(--fg)}
+</style>
+<section class="vbox"><div class="vlabel"><span class="n">10</span><span class="t">Vorher / Nachher<small>Der Kontrast: Lead-Chaos ohne System vs. sauberes CRM</small></span></div>
+<div class="wrap"><div class="ba">
+  <div class="ba-c before"><div class="ba-h">&#128533; Ohne System</div>
+    <div class="ba-li"><span class="m">&#10007;</span>Antworten verstreut in mehreren Postfaechern</div>
+    <div class="ba-li"><span class="m">&#10007;</span>Leads in Excel, halb gepflegt und schnell veraltet</div>
+    <div class="ba-li"><span class="m">&#10007;</span>Niemand weiss, wer wann reagiert hat</div>
+    <div class="ba-li"><span class="m">&#10007;</span>Heisse Leads und Termine gehen unter</div>
+  </div>
+  <div class="ba-c after"><div class="ba-h">&#128640; Mit sauberem CRM</div>
+    <div class="ba-li"><span class="m">&#10003;</span>Jede Antwort landet automatisch als Lead</div>
+    <div class="ba-li"><span class="m">&#10003;</span>Status und Historie sind immer aktuell</div>
+    <div class="ba-li"><span class="m">&#10003;</span>Klare Zustaendigkeit im Team</div>
+    <div class="ba-li"><span class="m">&#10003;</span>Kein Termin und kein Lead geht verloren</div>
+  </div>
+</div></div></section>
+
+<div class="foot">Grundwerk Digital, interne Design-Auswahl. Sag mir die Varianten-Nummer, dann baue ich sie final in die CRM-Setup-Sektion.</div>
+</body></html>
