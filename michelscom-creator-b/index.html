@@ -760,106 +760,6 @@ img,svg,iframe{display:block;max-width:100%;}
 </section>
 
 <!-- ============================================================
-     SEKTION 6 - ERSTGESPRÄCH-BRIEFING
-     ============================================================ -->
-<section id="b-brief" class="b-band-canvas2">
-  <div class="b-brief-card">
-    <div class="b-brief-logobar">
-      <div class="b-brief-logo">Michelscom</div>
-      <div class="b-brief-trust">
-        <span>TÜV-zertifiziert</span><span class="bar"></span><span>4.100 Stellen besetzt</span>
-      </div>
-    </div>
-
-    <div class="b-brief-title">
-      <h3>Ihre Potenzialanalyse</h3>
-      <div class="meta">15 Minuten · Kostenlos · Unverbindlich</div>
-    </div>
-
-    <div class="b-brief-addr">
-      <div class="b-brief-addr-lbl">Vorbereitet für</div>
-      <div class="b-brief-addr-val">Herr Müller · Muster Spedition GmbH</div><!-- SLOT:ENTSCHEIDER --><!-- SLOT:FIRMA -->
-    </div>
-
-    <div class="b-brief-agenda" id="b-brief-agenda">
-      <div class="b-brief-item" data-i="0">
-        <div class="b-brief-item-num">1</div>
-        <div>
-          <div class="b-brief-item-title">Analyse Ihrer offenen Stelle</div>
-          <div class="b-brief-item-desc">KFZ-Mechatroniker (m/w/d) · Raum Hannover · Anforderungsprofil</div><!-- SLOT:STELLE --><!-- SLOT:REGION -->
-        </div>
-      </div>
-      <div class="b-brief-item" data-i="1">
-        <div class="b-brief-item-num">2</div>
-        <div>
-          <div class="b-brief-item-title">KI-Score Ihrer Vakanz</div>
-          <div class="b-brief-item-desc">Vorab-Einschätzung: <strong>7,4 / 10</strong> → Einstellungsgarantie möglich ab Score 6,3</div><!-- SLOT:KI_SCORE -->
-        </div>
-      </div>
-      <div class="b-brief-item" data-i="2">
-        <div class="b-brief-item-num">3</div>
-        <div>
-          <div class="b-brief-item-title">Kandidatenprofile aus unserem Pool</div>
-          <div class="b-brief-item-desc">3 geprüfte Kandidaten · 80.000+ Pool · Wechselbereitschaft verifiziert</div>
-        </div>
-      </div>
-      <div class="b-brief-item" data-i="3">
-        <div class="b-brief-item-num">4</div>
-        <div>
-          <div class="b-brief-item-title">Das Michelscom-System</div>
-          <div class="b-brief-item-desc">5 Schritte · 4.100 besetzte Stellen · 42+ Branchen · Wie es sich von klassischem Recruiting unterscheidet</div>
-        </div>
-      </div>
-      <div class="b-brief-item" data-i="4">
-        <div class="b-brief-item-num green">5</div>
-        <div>
-          <div class="b-brief-item-title green">Schriftliche Einstellungsgarantie</div>
-          <div class="b-brief-item-desc">Bedingungen plus Konditionen für Ihren konkreten Fall · Muster Spedition GmbH</div><!-- SLOT:FIRMA -->
-        </div>
-      </div>
-    </div>
-
-    <div class="b-brief-cta-row">
-      <button class="b-cta b-open-book" type="button">Termin jetzt bestätigen</button>
-      <p class="b-cta-sub">Herr Müller, Ihr Gesprächspartner erwartet Sie · +49 30 65212 0138</p><!-- SLOT:ENTSCHEIDER -->
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     SEKTION 7 - DIE UNTERSCHRIFT (Garantie, CTA 3)
-     ============================================================ -->
-<section id="b-sign">
-  <p class="b-sign-greeting">Sehr geehrter Herr Müller,</p><!-- SLOT:ANREDE -->
-
-  <h2 class="b-sign-h">
-    Wir garantieren Ihnen schriftlich die Einstellung Ihres KFZ-Mechatronikers für die Muster&nbsp;Spedition&nbsp;GmbH.<!-- SLOT:STELLE --><!-- SLOT:FIRMA -->
-  </h2>
-
-  <p class="b-sign-sub">Falls nicht: volle Rückerstattung. Ab KI-Score 6,3.</p>
-
-  <div class="b-sign-svg-wrap">
-    <span class="mc-sig">Niclas Michels</span>
-  </div>
-
-  <p class="b-sign-team">Michelscom GmbH · Das Gründerteam</p>
-
-  <div class="b-sign-divider"></div>
-
-  <div class="b-sign-badges">
-    <div class="b-sign-badge"><span class="v">TÜV</span><span class="l">Zertifiziert</span></div>
-    <div class="b-sign-badge"><span class="v stars">★★★★★</span><span class="l">Trustpilot 4,8</span></div>
-    <div class="b-sign-badge"><span class="v blue">4.100</span><span class="l">besetzte Stellen</span></div>
-    <div class="b-sign-badge"><span class="v">42+</span><span class="l">Branchen</span></div>
-  </div>
-
-  <div class="b-sign-cta-wrap">
-    <button class="b-cta b-open-book" type="button">Jetzt Erstgespräch vereinbaren</button>
-    <p class="b-cta-sub">15 Minuten · +49 30 65212 0138</p>
-  </div>
-</section>
-
-<!-- ============================================================
      SEKTION KANDIDATENREISE - 6-Phasen-Stepper (employer-facing)
      ============================================================ -->
 <section id="b-journey" class="b-band-canvas">
@@ -1240,7 +1140,7 @@ img,svg,iframe{display:block;max-width:100%;}
   /* ---------- MID-SCROLL RADAR POPUP (~60% Scroll, 1x/Session) ---------- */
   try {
     if (!sessionStorage.getItem('b_radar_shown') && 'IntersectionObserver' in window) {
-      var briefEl = document.getElementById('b-brief');
+      var briefEl = document.getElementById('b-helix'); // b-brief entfernt (Duplikat) -> Radar triggert an b-helix
       if (briefEl) {
         var ro = new IntersectionObserver(function(entries){
           entries.forEach(function(en){
