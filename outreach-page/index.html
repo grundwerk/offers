@@ -711,12 +711,13 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeVid();}
   <p class="lead center">Je nach Zielgruppe und Signal ziehen wir den passenden Hebel. Klick dich durch - jeder Hebel ist ein eigenes, durchdachtes System.</p></div>
 
   <div class="ftabs rv">
-    <button class="on" data-ft="crm" onclick="switchFeat('crm',this)"><span class="femoji">📇</span>CRM Setup</button>
-    <button data-ft="video" onclick="switchFeat('video',this)"><span class="femoji">🎥</span>KI-Video Outreach</button>
+    <button class="on" data-ft="video" onclick="switchFeat('video',this)"><span class="femoji">🎥</span>KI-Video Outreach</button>
     <button data-ft="email" onclick="switchFeat('email',this)"><span class="femoji">📧</span>Cold Email</button>
     <button data-ft="linkedin" onclick="switchFeat('linkedin',this)"><span class="femoji"><img src="https://res.cloudinary.com/dlaepqex5/image/upload/v1/gwd/tools/linkedin.svg" alt=""></span>LinkedIn</button>
     <button data-ft="signal" onclick="switchFeat('signal',this)"><span class="femoji">📡</span>Signal-Timing</button>
     <button data-ft="reply" onclick="switchFeat('reply',this)"><span class="femoji">🤖</span>Reply-Agent</button>
+    <button data-ft="workshop" onclick="switchFeat('workshop',this)"><span class="femoji">🎓</span>KI-Sales-Workshop</button>
+    <button data-ft="crm" onclick="switchFeat('crm',this)"><span class="femoji">📇</span>CRM Setup</button>
   </div>
 
   <!-- PANEL: CRM SETUP -->
@@ -743,7 +744,8 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeVid();}
   .crm-node h4{font-size:15px;font-family:var(--ff-d);font-weight:600;margin-bottom:6px}
   .crm-node p{font-size:12.5px;color:var(--mut);line-height:1.45;margin:0}
   .crm-node .conn{display:flex;gap:7px;margin-top:11px}
-  .crm-node .chip{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--fg);background:var(--bg3);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+  .crm-node .chip{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:var(--fg);background:var(--bg3);border:1px solid var(--line);border-radius:999px;padding:4px 11px}
+  .crm-node .chip img{height:14px;width:14px;object-fit:contain;display:block}
   .crm-n-tl{left:0;top:36px}.crm-n-tr{right:0;top:36px}.crm-n-bl{left:0;bottom:36px}.crm-n-br{right:0;bottom:36px}
   @media(max-width:880px){
     .crmhub{height:auto;display:flex;flex-direction:column;gap:14px;align-items:center}
@@ -753,7 +755,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeVid();}
   }
   @media(prefers-reduced-motion:reduce){.crmhub .lnk.flow{animation:none}}
   </style>
-  <div class="fpanel on" id="fp-crm">
+  <div class="fpanel" id="fp-crm">
     <div class="fp-head">
       <div class="eyebrow">CRM Setup</div>
       <h3>Dein <span class="hl">CRM</span> im Herzen, alles fließt hinein.</h3>
@@ -781,12 +783,12 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeVid();}
       <div class="crm-node crm-n-tl"><div class="ic">📊</div><h4>Pipeline Setup</h4><p>Phasen, Stages und Smart Views sauber aufgesetzt, dein Vertrieb hat sofort Struktur.</p></div>
       <div class="crm-node crm-n-tr"><div class="ic">🔁</div><h4>Merge &amp; Follow-up</h4><p>Dubletten automatisch gemerged, Follow-up-Sequenzen, kein Lead fällt durchs Raster.</p></div>
       <div class="crm-node crm-n-bl"><div class="ic">✨</div><h4>Auto-Anreicherung</h4><p>Firmendaten, Kontakte und Signale werden automatisch ins CRM ergänzt.</p></div>
-      <div class="crm-node crm-n-br"><div class="ic">✉️</div><h4>Email-Connection</h4><p>Postfach mit dem CRM verbunden, jede Mail landet automatisch am Lead.</p><div class="conn"><span class="chip">Google</span><span class="chip">Teams</span></div></div>
+      <div class="crm-node crm-n-br"><div class="ic">✉️</div><h4>Email-Connection</h4><p>Postfach mit dem CRM verbunden, jede Mail landet automatisch am Lead.</p><div class="conn"><span class="chip"><img src="https://cdn.simpleicons.org/google" alt="" loading="lazy">Google</span><span class="chip"><img src="https://cdn.simpleicons.org/microsoftteams" alt="" loading="lazy">Teams</span></div></div>
     </div>
   </div>
 
   <!-- PANEL: KI-VIDEO -->
-  <div class="fpanel" id="fp-video">
+  <div class="fpanel on" id="fp-video">
     <div class="fp-two">
       <div class="rv">
         <div class="eyebrow">KI-Video Outreach</div>
@@ -1036,6 +1038,22 @@ Beste Grüße
     </div>
   </div>
 
+  <!-- PANEL: KI-SALES-WORKSHOP -->
+  <div class="fpanel" id="fp-workshop">
+    <div class="fp-head">
+      <div class="eyebrow">KI-Sales-Workshop</div>
+      <h3>Dein Sales-Team baut <span class="hl">eigene KI-Workflows</span>.</h3>
+      <p>Neben dem Done-for-you-Outreach zeigen wir deinem Team im Hands-on-Workshop, wie es selbst KI-Automationen baut, direkt an euren echten Sales-Prozessen.</p>
+    </div>
+    <div class="vid-flow rv">
+      <div class="vflow-card"><div class="ic">&#129302;</div><h4>KI-Grundlagen für Sales</h4><p>Wie moderne KI im Vertrieb wirklich Zeit spart, ohne Buzzword-Bingo.</p></div>
+      <div class="farr">&#8594;</div>
+      <div class="vflow-card"><div class="ic">&#128296;</div><h4>Eigene Automationen bauen</h4><p>Dein Team baut live die ersten Workflows, an echten Use-Cases statt Theorie.</p></div>
+      <div class="farr">&#8594;</div>
+      <div class="vflow-card"><div class="ic">&#128640;</div><h4>Sofort im Alltag</h4><p>Am Ende laufen erste Automationen, die ihr direkt weiternutzt und ausbaut.</p></div>
+    </div>
+  </div>
+
 </div></section>
 
 <!-- TOOL-STACK (ersetzt 75+ Datenquellen, /methode-Stil hell) -->
@@ -1231,28 +1249,7 @@ Beste Grüße
 })();
 </script>
 
-<!-- KI-WORKSHOPS (Bonus-Service, G2) -->
-<style>
-.wks{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
-.wks-card{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:28px 24px;transition:.18s}
-.wks-card:hover{border-color:var(--blue-line);transform:translateY(-3px)}
-.wks-card .ic{width:48px;height:48px;border-radius:13px;background:var(--blue-soft);border:1px solid var(--blue-line);display:flex;align-items:center;justify-content:center;font-size:23px;margin-bottom:16px}
-.wks-card h3{font-size:18px;margin-bottom:8px}
-.wks-card p{font-size:14px;color:var(--mut);line-height:1.55;margin:0}
-.wks-note{text-align:center;color:var(--mut2);font-size:13px;margin-top:26px}
-@media(max-width:820px){.wks{grid-template-columns:1fr}}
-</style>
-<section class="sec"><div class="wrap">
-  <div class="center rv"><div class="eyebrow">Bonus: KI-Enablement</div>
-  <h2>Nicht nur Leads. Wir machen dein <span class="hl">Team KI-fit</span>.</h2>
-  <p class="lead center">Neben dem Outreach bringen wir euch bei, selbst KI-Automationen zu bauen, im praxisnahen Claude-Code-Workshop, direkt an euren eigenen Prozessen.</p></div>
-  <div class="wks rv">
-    <div class="wks-card"><div class="ic">🛠️</div><h3>Hands-on, kein Vortrag</h3><p>Dein Team baut im Workshop live die ersten eigenen KI-Automationen, statt nur zuzuhören.</p></div>
-    <div class="wks-card"><div class="ic">🎯</div><h3>Auf euren Alltag</h3><p>Wir arbeiten an echten Use-Cases aus eurem Tagesgeschäft, nicht an generischen Beispielen.</p></div>
-    <div class="wks-card"><div class="ic">🚀</div><h3>Sofort einsatzbereit</h3><p>Am Ende laufen erste Automationen, die ihr direkt weiternutzt und ausbaut.</p></div>
-  </div>
-  <p class="wks-note">Im Termin schauen wir gemeinsam, ob ein Workshop für euch sinnvoll ist.</p>
-</div></section>
+<!-- KI-WORKSHOPS: jetzt als Feature-Tab (fp-workshop) im System-Switcher, Bonus-Sektion entfernt -->
 
 <!-- KUNDENSTIMMEN (3-spaltige Auto-Scroll-Wall, Framer-Design als Vanilla) -->
 <section class="sec" id="kundenstimmen" style="background:var(--bg2);border-block:1px solid var(--line)"><div class="wrap">
@@ -1303,13 +1300,9 @@ Beste Grüße
 <section class="sec"><div class="wrap rv">
   <div class="lm">
     <div>
-      <div class="eyebrow">Kostenlos, vor dem Termin</div>
-      <h2 style="margin-bottom:14px">Hol dir eine erste <span class="hl">Outreach-Strategie</span>.</h2>
-      <p class="lead">Sag uns kurz, wer eure Zielkunden sind - unsere KI entwirft daraus eine erste Outreach-Grundstrategie (Zielgruppe, Kanal-Mix, Angle) und schickt sie dir zu.</p>
-      <input id="lm-target" placeholder="Wer ist eure Zielgruppe? (z.B. Hotels in DACH ab 50 Zimmern)">
-      <input id="lm-email" type="email" placeholder="Wohin dürfen wir sie schicken?">
-      <button class="btn btn-blue" onclick="lmSubmit()" style="width:100%;justify-content:center">Strategie kostenlos anfordern</button>
-      <p class="note">Natürlich entwickeln wir gemeinsam eine deutlich bessere - das hier ist eine solide Grundstrategie als Vorgeschmack.</p>
+      <div class="eyebrow">Vor dem Termin</div>
+      <h2 style="margin-bottom:14px">So entsteht deine erste <span class="hl">Outreach-Strategie</span>.</h2>
+      <p class="lead">Wir ziehen für eure Zielkunden automatisch Firmen, Signale und Kontakte und verdichten das zu einer ersten Outreach-Grundstrategie aus Zielgruppe, Kanal-Mix und Angle. Genau die zeigen wir dir im Termin, fertig auf euch zugeschnitten.</p>
     </div>
     <div class="lm-flow">
       <div class="node"><b>1</b>&nbsp; 75+ Datenanbieter ziehen passende Firmen</div>
@@ -1318,7 +1311,7 @@ Beste Grüße
       <div class="arr">&darr;</div>
       <div class="node"><b>3</b>&nbsp; KI verdichtet das zu Zielgruppe + Angle + Kanal-Mix</div>
       <div class="arr">&darr;</div>
-      <div class="node" style="border-color:var(--blue-line);background:var(--blue-soft)"><b>4</b>&nbsp; Deine Grundstrategie landet im Postfach</div>
+      <div class="node" style="border-color:var(--blue-line);background:var(--blue-soft)"><b>4</b>&nbsp; Deine Grundstrategie, fertig für den Termin</div>
     </div>
   </div>
 </div></section>
