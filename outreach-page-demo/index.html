@@ -391,7 +391,8 @@ a{color:inherit;text-decoration:none}
 .ra-tag{margin-left:auto;font-size:10.5px;font-weight:700;color:var(--blue);background:var(--blue-soft);border:1px solid var(--blue-line);border-radius:6px;padding:2px 8px}
 .ra-in{padding:16px;border-bottom:1px solid var(--line)}
 .ra-who{display:flex;align-items:center;gap:9px;margin-bottom:8px}
-.ra-av{width:28px;height:28px;border-radius:50%;background:#9aa7b2;color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ra-av{width:28px;height:28px;border-radius:50%;background:#9aa7b2;color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden}
+.ra-av img{width:100%;height:100%;object-fit:cover;display:block}
 .ra-nm{font-size:12.5px;font-weight:700;color:var(--fg)}
 .ra-tm{font-size:11px;color:var(--mut2);margin-left:auto}
 .ra-body{font-size:13.5px;color:var(--fg);line-height:1.6}
@@ -940,7 +941,7 @@ Tom</div>
     <div class="lix rv">
       <div class="lix-hd">
         <div class="pic"><img src="https://start.grundwerk.digital/assets/demo/lead-alex.jpg" alt="Alex Krause"><span class="dot"></span></div>
-        <div class="who"><div class="n">Alex Krause</div><div class="st">Jetzt aktiv</div></div>
+        <div class="who"><div class="n"><!-- SLOT:LEAD_NAME START -->Alex Krause<!-- SLOT:LEAD_NAME END --></div><div class="st">Jetzt aktiv</div></div>
         <div class="ctr">
           <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/><line x1="14" y1="10" x2="21" y2="3"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
@@ -952,19 +953,19 @@ Tom</div>
         <div class="lix-sys">Ihr seid seit Montag vernetzt</div>
         <div class="lix-g">
           <div class="meta"><img src="https://start.grundwerk.digital/assets/team/tom-soto-schiller.jpeg" alt="Tom Soto Schiller"><span class="nm">Tom Soto Schiller</span><span class="tm">09:40</span></div>
-          <div class="bub">Hi Alex, eure Arbeit bei <!-- SLOT:COMPANY START -->Muster GmbH<!-- SLOT:COMPANY END --> verfolge ich schon eine Weile, gerne vernetzt.</div>
+          <div class="bub">Hi <!-- SLOT:LEAD_FIRST START -->Alex<!-- SLOT:LEAD_FIRST END -->, gerade eure Meta-Ad über <!-- SLOT:LEAD_AD_TOPIC START -->euer neues Angebot<!-- SLOT:LEAD_AD_TOPIC END --> im Feed gesehen, stark gemacht. Heißt ihr investiert aktuell aktiv in neue Nachfrage.</div>
         </div>
         <div class="lix-g">
-          <div class="meta"><img src="https://start.grundwerk.digital/assets/demo/lead-alex.jpg" alt="Alex Krause"><span class="nm">Alex Krause</span><span class="tm">11:02</span></div>
-          <div class="bub">Danke, gerne. Worum geht es denn?</div>
+          <div class="meta"><img src="https://start.grundwerk.digital/assets/demo/lead-alex.jpg" alt="Alex Krause"><span class="nm"><!-- SLOT:LEAD_NAME START -->Alex Krause<!-- SLOT:LEAD_NAME END --></span><span class="tm">11:02</span></div>
+          <div class="bub">Danke, gerne. Worum geht es bei dir?</div>
         </div>
         <div class="lix-g">
           <div class="meta"><img src="https://start.grundwerk.digital/assets/team/tom-soto-schiller.jpeg" alt="Tom Soto Schiller"><span class="nm">Tom Soto Schiller</span><span class="tm">11:15</span></div>
-          <div class="bub">Ehrlich gesagt kein konkretes Angebot. Mir ist nur aufgefallen, dass ihr gerade im Vertrieb wachst. Bei dem Tempo wird der Outbound-Kanal schnell zum Flaschenhals. Wie löst ihr das aktuell?</div>
+          <div class="bub">Ehrlich gesagt kein Pitch. Mir fällt nur auf: wer oben über Ads Nachfrage erzeugt, bei dem entscheidet danach der Follow-up-Kanal, wie viel davon wirklich zu Terminen wird. Wie holt ihr die Leute aktuell ab, die über die Ads reinkommen, aber noch nicht direkt buchen?</div>
         </div>
         <div class="lix-g">
-          <div class="meta"><img src="https://start.grundwerk.digital/assets/demo/lead-alex.jpg" alt="Alex Krause"><span class="nm">Alex Krause</span><span class="tm">14:20</span></div>
-          <div class="bub">Gute Frage, genau da hakt es bei uns gerade. Erzähl mal, wie ihr das angeht.</div>
+          <div class="meta"><img src="https://start.grundwerk.digital/assets/demo/lead-alex.jpg" alt="Alex Krause"><span class="nm"><!-- SLOT:LEAD_NAME START -->Alex Krause<!-- SLOT:LEAD_NAME END --></span><span class="tm">14:20</span></div>
+          <div class="bub">Gute Frage, genau da verlieren wir gerade was. Erzähl mal, wie ihr das angeht.</div>
         </div>
       </div>
       <div class="lix-sr">
@@ -1086,7 +1087,7 @@ Tom</div>
         <div class="ra-inbox">
           <div class="ra-ih">Posteingang <span class="ra-tag">Meeting Request</span></div>
           <div class="ra-in">
-            <div class="ra-who"><span class="ra-av">JK</span><span class="ra-nm">Jana Kraft, Meliora GmbH</span><span class="ra-tm">14:22</span></div>
+            <div class="ra-who"><span class="ra-av"><img src="https://start.grundwerk.digital/assets/demo/lead-jana.jpg" alt="Jana Kraft"></span><span class="ra-nm">Jana Kraft, Meliora GmbH</span><span class="ra-tm">14:22</span></div>
             <div class="ra-body">Hallo, klingt spannend. Donnerstag oder Freitag würde bei mir passen, schicken Sie mir gerne einen Terminvorschlag.</div>
           </div>
           <div class="ra-draft">
@@ -1299,6 +1300,7 @@ Beste Grüße
 .zg-li .nm{flex:1}
 .zg-li:hover{border-color:var(--line2);color:var(--fg)}
 .zg-li.on{background:var(--blue-soft);border-color:var(--blue-line);color:var(--fg)}
+.zg-li.lead{background:var(--blue-soft);border-color:var(--blue-line);color:var(--fg);box-shadow:inset 3px 0 0 var(--blue)}
 .zg-li .yours{flex:0 0 auto;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);border:1px solid var(--blue-line);border-radius:999px;padding:3px 9px}
 .zg-detail{background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:36px;min-height:380px;display:flex;flex-direction:column;justify-content:center}
 .zg-detail .d-ic{font-size:46px;margin-bottom:14px;line-height:1}
@@ -1349,12 +1351,12 @@ Beste Grüße
   var listEl=document.getElementById('zg-list'), detEl=document.getElementById('zg-detail');
   function bullets(arr){ var h=''; for(var i=0;i<arr.length;i++){ h+='<li>'+arr[i]+'</li>'; } return h; }
   function detail(x,isLead){
-    detEl.innerHTML='<div class="d-ic">'+x.ic+'</div>'+(isLead?'<div class="d-tag">★ Deine Branche</div>':'')+'<h3>'+x.t+'</h3><p class="d-sum">'+x.s+'</p><ul class="d-list">'+bullets(x.b)+'</ul>';
+    detEl.innerHTML='<div class="d-ic">'+x.ic+'</div><h3>'+x.t+'</h3><p class="d-sum">'+x.s+'</p><ul class="d-list">'+bullets(x.b)+'</ul>';
   }
   var lh='';
   order.forEach(function(x,i){
-    var yours=(hasLead&&i===0)?'<span class="yours">Deine Branche</span>':'';
-    lh+='<button class="zg-li'+(i===0?' on':'')+'" data-i="'+i+'" role="tab"><span class="ic">'+x.ic+'</span><span class="nm">'+x.t+'</span>'+yours+'</button>';
+    var isLeadRow=(hasLead&&i===0)?' lead':'';
+    lh+='<button class="zg-li'+(i===0?' on':'')+isLeadRow+'" data-i="'+i+'" role="tab"><span class="ic">'+x.ic+'</span><span class="nm">'+x.t+'</span></button>';
   });
   listEl.innerHTML=lh;
   function show(i){ detail(order[i],hasLead&&i===0); var bs=listEl.querySelectorAll('.zg-li'); for(var j=0;j<bs.length;j++){ bs[j].classList.toggle('on',+bs[j].dataset.i===i); } }
