@@ -324,6 +324,37 @@ a{color:inherit;text-decoration:none}
 .vflow-card p{font-size:12.5px;color:var(--mut);line-height:1.5;margin:0}
 .farr{color:var(--blue);font-size:24px;display:flex;align-items:center;justify-content:center}
 
+/* KI-Sales-Workshop enriched (Elemente von der Claude-Workshop-Seite) */
+.ws-sub{font-family:var(--ff-d);font-size:clamp(18px,2.3vw,23px);font-weight:600;letter-spacing:-.015em;text-align:center;margin:60px 0 8px}
+.ws-subp{text-align:center;color:var(--mut);font-size:14px;line-height:1.55;max-width:520px;margin:0 auto 26px}
+.ws-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:980px;margin:0 auto}
+.ws-card{background:var(--bg3);border:1px solid var(--line);border-radius:14px;padding:20px 18px;transition:transform .25s ease,border-color .25s ease}
+.ws-card:hover{transform:translateY(-4px);border-color:var(--blue-line)}
+.ws-card .ic{width:40px;height:40px;border-radius:11px;background:var(--blue-soft);border:1px solid var(--blue-line);display:flex;align-items:center;justify-content:center;font-size:19px;margin-bottom:13px}
+.ws-card h4{font-family:var(--ff-d);font-size:14.5px;font-weight:600;margin:0 0 6px;letter-spacing:-.01em;line-height:1.25}
+.ws-card p{font-size:12.5px;color:var(--mut);line-height:1.5;margin:0}
+.ws-tag{display:inline-block;margin-top:11px;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--blue);padding:3px 9px;border-radius:6px}
+@media(max-width:880px){.ws-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.ws-grid{grid-template-columns:1fr}}
+.ws-setup{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;max-width:960px;margin:50px auto 0}
+@media(max-width:780px){.ws-setup{grid-template-columns:1fr;gap:26px}}
+.ws-term{background:#0a0a0c;border:1px solid var(--line2);border-radius:13px;overflow:hidden;font-family:ui-monospace,"SF Mono",Menlo,monospace;box-shadow:0 22px 54px rgba(0,0,0,.5)}
+.ws-termbar{display:flex;align-items:center;gap:7px;padding:11px 14px;border-bottom:1px solid var(--line);background:#101015}
+.ws-termbar i{width:9px;height:9px;border-radius:50%;display:inline-block}
+.ws-termbar .t{margin-left:7px;font-size:11.5px;color:var(--mut2)}
+.ws-termbody{padding:17px;font-size:12.5px;line-height:1.95;color:#e2e8f0}
+.ws-termbody p{margin:0;white-space:pre-wrap}
+.ws-termbody .p{color:#7aa7ff}.ws-termbody .d{color:var(--mut2)}.ws-termbody .ok{color:var(--ok)}
+.ws-setl{list-style:none;display:flex;flex-direction:column;gap:14px;padding:0;margin:0}
+.ws-setl li{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--fg);line-height:1.45}
+.ws-setl .sb{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:rgba(34,197,94,.14);border:1px solid rgba(34,197,94,.45);color:var(--ok);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;margin-top:1px}
+.ws-tools{max-width:960px;margin:44px auto 0;text-align:center}
+.ws-toolhead{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--blue);font-weight:700;margin-bottom:18px}
+.ws-logos{display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap}
+.ws-logo{width:54px;height:54px;border-radius:14px;background:#fff;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 16px rgba(0,0,0,.4)}
+.ws-logo img{width:30px;height:30px;object-fit:contain;display:block}
+.ws-mcp{margin:18px auto 0;font-size:12.5px;color:var(--mut)}
+
 /* Cold Email */
 .ce-mail{max-width:600px;margin:0 auto;background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.4)}
 .ce-top{display:flex;align-items:center;gap:10px;padding:13px 18px;border-bottom:1px solid var(--line);background:var(--bg3)}
@@ -1051,6 +1082,55 @@ Beste Grüße
       <div class="vflow-card"><div class="ic">&#128296;</div><h4>Eigene Automationen bauen</h4><p>Dein Team baut live die ersten Workflows, an echten Use-Cases statt Theorie.</p></div>
       <div class="farr">&#8594;</div>
       <div class="vflow-card"><div class="ic">&#128640;</div><h4>Sofort im Alltag</h4><p>Am Ende laufen erste Automationen, die ihr direkt weiternutzt und ausbaut.</p></div>
+    </div>
+
+    <div class="ws-sub rv">Alles, was im Workshop enthalten ist</div>
+    <p class="ws-subp rv">Ein Tag Workshop, vier Wochen Begleitung. Wir bauen, befähigen und garantieren, dass es läuft.</p>
+    <div class="ws-grid rv">
+      <div class="ws-card"><div class="ic">&#9889;</div><h4>Team-Enabling auf Claude Code</h4><p>Das ganze Team wird befähigt, mit Claude Code zu arbeiten und eigene Abläufe zu automatisieren.</p></div>
+      <div class="ws-card"><div class="ic">&#128736;&#65039;</div><h4>Antigravity eingerichtet</h4><p>Wir richten Antigravity auf allen Rechnern ein, sodass euer Team sofort loslegen kann.</p></div>
+      <div class="ws-card"><div class="ic">&#127959;&#65039;</div><h4>Euer komplettes Setup</h4><p>Das gesamte System, mit dem wir intern arbeiten, aufgesetzt bei euch.</p></div>
+      <div class="ws-card"><div class="ic">&#127873;</div><h4>Eine Automation kostenlos</h4><p>Im Workshop bauen wir eine fertige Automation für euer Unternehmen.<span class="ws-tag">inklusive</span></p></div>
+      <div class="ws-card"><div class="ic">&#128101;</div><h4>Aufgabe für jeden im Team</h4><p>Jedes Team-Mitglied bekommt eine eigene Automations-Aufgabe aus dem Alltag.</p></div>
+      <div class="ws-card"><div class="ic">&#128257;</div><h4>Vier Wochen Nachbetreuung</h4><p>Session nach zwei Wochen plus ein weiterer 30-Minuten-Call für alle Rückfragen.</p></div>
+      <div class="ws-card"><div class="ic">&#9989;</div><h4>Umsetzungs-Kontrolle</h4><p>Wir prüfen aktiv, dass die gestarteten Automationen auch wirklich live gehen.</p></div>
+      <div class="ws-card"><div class="ic">&#128737;&#65039;</div><h4>Garantie</h4><p>Mindestens eine Automation läuft produktiv. Garantiert.<span class="ws-tag">risikofrei</span></p></div>
+    </div>
+
+    <div class="ws-setup rv">
+      <div class="ws-term">
+        <div class="ws-termbar"><i style="background:#ef4444"></i><i style="background:#eab308"></i><i style="background:#22c55e"></i><span class="t">antigravity</span></div>
+        <div class="ws-termbody">
+          <p><span class="p">$</span> setup workspace --team</p>
+          <p><span class="d">&nbsp;&nbsp;Claude Code wird installiert &hellip;</span></p>
+          <p><span class="d">&nbsp;&nbsp;Skills &amp; Vorlagen werden angelegt &hellip;</span></p>
+          <p><span class="d">&nbsp;&nbsp;Antigravity verbunden &hellip;</span></p>
+          <p><span class="d">&nbsp;&nbsp;Wispr Flow wird eingerichtet &hellip;</span></p>
+          <p><span class="ok">&#10003; bereit. Viel Spaß beim Bauen.</span></p>
+        </div>
+      </div>
+      <ul class="ws-setl">
+        <li><span class="sb">&#10003;</span><span>Claude Code auf allen Rechnern installiert</span></li>
+        <li><span class="sb">&#10003;</span><span>Antigravity eingerichtet &amp; verbunden</span></li>
+        <li><span class="sb">&#10003;</span><span>Wispr Flow eingerichtet: sprechen statt tippen, rund 60% schneller</span></li>
+        <li><span class="sb">&#10003;</span><span>Eure Skills &amp; Vorlagen angelegt</span></li>
+        <li><span class="sb">&#10003;</span><span>Erste Automation am selben Tag live</span></li>
+      </ul>
+    </div>
+
+    <div class="ws-tools rv">
+      <div class="ws-toolhead">Was wir bei euch fertig einrichten</div>
+      <div class="ws-logos">
+        <div class="ws-logo"><img src="https://start.grundwerk.digital/assets/tools/claude.svg" alt="Claude Code" loading="lazy"></div>
+        <div class="ws-logo"><img src="https://start.grundwerk.digital/assets/tools/antigravity.png" alt="Antigravity" loading="lazy"></div>
+        <div class="ws-logo"><img src="https://start.grundwerk.digital/assets/tools/wispr.png" alt="Wispr Flow" loading="lazy"></div>
+        <div class="ws-logo"><img src="https://start.grundwerk.digital/assets/tools/triggerdev.png" alt="Trigger.dev" loading="lazy"></div>
+        <div class="ws-logo"><img src="https://start.grundwerk.digital/assets/tools/github.svg" alt="GitHub" loading="lazy"></div>
+        <div class="ws-logo"><img src="https://start.grundwerk.digital/assets/tools/gmail.svg" alt="Gmail" loading="lazy"></div>
+        <div class="ws-logo"><img src="https://start.grundwerk.digital/assets/tools/slack.svg" alt="Slack" loading="lazy"></div>
+        <div class="ws-logo"><img src="https://start.grundwerk.digital/assets/tools/notion.svg" alt="Notion" loading="lazy"></div>
+      </div>
+      <p class="ws-mcp">1.000+ Tools nahtlos über MCP und API-Tokens mit Claude Code verknüpfbar.</p>
     </div>
   </div>
 
