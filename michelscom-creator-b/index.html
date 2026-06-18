@@ -299,14 +299,14 @@ img,svg,iframe{display:block;max-width:100%;}
 #b-sign .b-sign-badge .v.stars{color:#f59e0b;letter-spacing:0.05em;}
 #b-sign .b-sign-badge .l{font-size:0.62rem;color:var(--mc-muted);}
 #b-sign .b-sign-cta-wrap{opacity:0;}
-#b-sign .b-sign-anim .b-sign-greeting{animation:bSignFadeUp 0.5s ease 0.2s forwards;}
-#b-sign .b-sign-anim .b-sign-h{animation:bSignFadeUp 0.6s ease 0.4s forwards;}
-#b-sign .b-sign-anim .b-sign-sub{animation:bSignFadeUp 0.5s ease 0.65s forwards;}
-#b-sign .b-sign-anim .b-sign-svg-wrap{animation:bSignFadeUp 0.5s ease 0.8s forwards;}
-#b-sign .b-sign-anim .b-sign-team{animation:bSignFadeUp 0.4s ease 3.8s forwards;}
-#b-sign .b-sign-anim .b-sign-divider{animation:bSignFadeUp 0.4s ease 4s forwards;}
-#b-sign .b-sign-anim .b-sign-badges{animation:bSignFadeUp 0.5s ease 4.1s forwards;}
-#b-sign .b-sign-anim .b-sign-cta-wrap{animation:bSignFadeUp 0.5s ease 4.3s forwards;}
+#b-sign.b-sign-anim .b-sign-greeting{animation:bSignFadeUp 0.5s ease 0.2s forwards;}
+#b-sign.b-sign-anim .b-sign-h{animation:bSignFadeUp 0.6s ease 0.4s forwards;}
+#b-sign.b-sign-anim .b-sign-sub{animation:bSignFadeUp 0.5s ease 0.65s forwards;}
+#b-sign.b-sign-anim .b-sign-svg-wrap{animation:bSignFadeUp 0.5s ease 0.8s forwards;}
+#b-sign.b-sign-anim .b-sign-team{animation:bSignFadeUp 0.4s ease 3.8s forwards;}
+#b-sign.b-sign-anim .b-sign-divider{animation:bSignFadeUp 0.4s ease 4s forwards;}
+#b-sign.b-sign-anim .b-sign-badges{animation:bSignFadeUp 0.5s ease 4.1s forwards;}
+#b-sign.b-sign-anim .b-sign-cta-wrap{animation:bSignFadeUp 0.5s ease 4.3s forwards;}
 @keyframes bSignFadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
 .mc-sig{
   font-family:'Mr Dafoe',cursive; font-size:46px; line-height:1; color:#14253a;
@@ -1224,7 +1224,7 @@ img,svg,iframe{display:block;max-width:100%;}
   /* ---------- TIMED CENTRAL BOOKING POPUP (~30s, 1x/Session) ---------- */
   try {
     if (!sessionStorage.getItem('b_book_shown')) {
-      setTimeout(function(){ autoPopup('b-book','b_book_shown'); }, 45000);
+      setTimeout(function(){ autoPopup('b-book','b_book_shown'); }, 60000);
     }
   } catch(e) {}
 
