@@ -1399,13 +1399,6 @@ window.addEventListener("scroll",function(){
 },{passive:true});
 function goQuiz(){slide.classList.remove("on");sessionStorage.setItem("gw_slide","1");document.getElementById("fragebogen").scrollIntoView({behavior:"smooth"});track("cta_slidein");}
 
-/* ---- lead magnet stub ---- */
-function lmSubmit(){
-  var t=document.getElementById("lm-target").value, e=document.getElementById("lm-email").value;
-  track("leadmagnet",{target:t,email:e});
-  var btn=event.target; btn.textContent="Angefordert - kommt per Mail"; btn.disabled=true; btn.style.opacity=.7;
-}
-
 /* ---- QUESTIONNAIRE flow (branching on done_outreach) ---- */
 var qAns={}, qOrder=[], qi=0;
 var BASE_AFTER=["employees","sales_employees","agency","crm","interest","contact","done"];
