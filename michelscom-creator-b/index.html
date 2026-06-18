@@ -338,9 +338,10 @@ img,svg,iframe{display:block;max-width:100%;}
 #b-test .b-test-meta .company{font-family:var(--font-head);font-weight:600;font-size:0.92rem;color:#fff;}
 #b-test .b-test-meta .role{font-size:0.74rem;color:#9fb5c9;margin-top:0.15rem;}
 #b-test .b-test-gridlabel{font-size:0.72rem;color:#9fb5c9;text-transform:uppercase;letter-spacing:0.08em;font-weight:600;margin:2.5rem 0 1rem;text-align:center;}
-#b-test .b-test-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;}
-@media(max-width:860px){#b-test .b-test-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:480px){#b-test .b-test-grid{grid-template-columns:1fr;}}
+#b-test .b-test-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;}
+#b-test .b-test-grid > *{flex:0 1 calc(25% - 0.75rem);}
+@media(max-width:860px){#b-test .b-test-grid > *{flex-basis:calc(50% - 0.5rem);}}
+@media(max-width:480px){#b-test .b-test-grid > *{flex-basis:100%;}}
 #b-test .b-test-tile{background:#0b1726;border:1px solid #233650;border-radius:10px;overflow:hidden;}
 #b-test .b-test-tile .b-test-vid{aspect-ratio:16/10;}
 #b-test .b-test-tile .name{font-size:0.7rem;color:#cdd9e6;padding:0.55rem 0.7rem;font-weight:500;line-height:1.35;}
@@ -451,8 +452,15 @@ img,svg,iframe{display:block;max-width:100%;}
 #b-radar .b-radar-foot{padding:0.4rem 1.6rem 1.1rem;text-align:center;}
 
 /* Candidate-whisper widget (corner) */
-#b-whisper{position:fixed;bottom:20px;right:20px;z-index:90;width:330px;max-width:calc(100vw - 40px);display:none;}
-#b-whisper.open{display:block;}
+#b-whisper{position:fixed;bottom:20px;right:20px;z-index:90;width:330px;max-width:calc(100vw - 40px);display:none;flex-direction:column;align-items:flex-end;}
+#b-whisper.ready{display:flex;}
+#b-whisper .b-whisper-launcher{width:60px;height:60px;border-radius:50%;background:#fff;border:2px solid var(--mc-navy);box-shadow:0 10px 30px rgba(0,0,0,0.28);cursor:pointer;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;padding:0;transition:transform 0.18s ease;animation:bWhisperIn 0.45s cubic-bezier(.2,0,.3,1);}
+#b-whisper .b-whisper-launcher:hover{transform:scale(1.06);}
+#b-whisper .b-whisper-launcher img{width:100%;height:100%;object-fit:cover;display:block;}
+#b-whisper .b-whisper-launcher .lping{position:absolute;top:-1px;right:-1px;width:14px;height:14px;border-radius:50%;background:var(--mc-green);border:2px solid #fff;}
+#b-whisper .b-whisper-chat{display:none;}
+#b-whisper.is-open .b-whisper-chat{display:block;}
+#b-whisper.is-open .b-whisper-launcher{display:none;}
 #b-whisper .b-whisper-chat{background:#fff;border-radius:16px 16px 4px 16px;box-shadow:0 18px 54px rgba(0,0,0,0.28),0 0 0 1px rgba(0,0,0,0.06);overflow:hidden;animation:bWhisperIn 0.45s cubic-bezier(.2,0,.3,1);}
 @keyframes bWhisperIn{from{opacity:0;transform:translateY(14px) scale(.96);}to{opacity:1;transform:none;}}
 @media(prefers-reduced-motion:reduce){#b-whisper .b-whisper-chat{animation:none;}}
@@ -1128,7 +1136,8 @@ img,svg,iframe{display:block;max-width:100%;}
 <!-- ============================================================
      POPUP C - DAS KANDIDATEN-FLÜSTERN (Exit-Intent, Corner-Widget)
      ============================================================ -->
-<div id="b-whisper" role="dialog" aria-label="Kandidaten-Treffer">
+<div id="b-whisper" role="dialog" aria-label="Michelscom Chat">
+  <button class="b-whisper-launcher" type="button" aria-label="Chat öffnen"><img src="/assets/michelscom/michelscom-icon.svg" alt="Michelscom"><span class="lping"></span></button>
   <div class="b-whisper-chat">
     <div class="b-whisper-head">
       <div class="b-whisper-av"><img src="/assets/michelscom/michelscom-icon.svg" alt="Michelscom" width="36" height="36"></div>
@@ -1246,11 +1255,33 @@ img,svg,iframe{display:block;max-width:100%;}
     }
   } catch(e) {}
 
-  /* ---------- PERSISTENTER CHATBOT (immer sichtbar unten rechts, Tom 2026-06-17) ---------- */
+  /* ---------- CHATBOT: eingeklappt -> mittendrin auto-ausklappen -> nach 60s auto-einklappen (Tom 2026-06-18) ---------- */
   try {
     var whisperEl = document.getElementById('b-whisper');
     if (whisperEl) {
-      setTimeout(function(){ whisperEl.classList.add('open'); }, 1200); // kurz nach Load einblenden, dann dauerhaft sichtbar
+      var wLauncher = whisperEl.querySelector('.b-whisper-launcher');
+      var wCollapseTimer = null;
+      var wExpandedOnce = false;
+      var whisperExpand = function(auto){
+        whisperEl.classList.add('is-open');
+        if (wCollapseTimer){ clearTimeout(wCollapseTimer); wCollapseTimer = null; }
+        if (auto){ wCollapseTimer = setTimeout(function(){ whisperEl.classList.remove('is-open'); }, 60000); }
+      };
+      var whisperCollapse = function(){
+        whisperEl.classList.remove('is-open');
+        if (wCollapseTimer){ clearTimeout(wCollapseTimer); wCollapseTimer = null; }
+      };
+      var whisperAutoExpand = function(){ if (wExpandedOnce) return; wExpandedOnce = true; whisperExpand(true); };
+      setTimeout(function(){ whisperEl.classList.add('ready'); }, 1000); // Launcher (eingeklappt) kurz nach Load einblenden
+      if (wLauncher) wLauncher.addEventListener('click', function(){ if (whisperEl.classList.contains('is-open')) whisperCollapse(); else whisperExpand(false); });
+      whisperEl.querySelectorAll('[data-close="b-whisper"]').forEach(function(b){ b.addEventListener('click', function(e){ e.preventDefault(); whisperCollapse(); }); });
+      var wScroll = function(){
+        var sc = window.scrollY || document.documentElement.scrollTop;
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        if (h > 0 && sc / h >= 0.45){ window.removeEventListener('scroll', wScroll); whisperAutoExpand(); }
+      };
+      window.addEventListener('scroll', wScroll, { passive: true });
+      setTimeout(function(){ window.removeEventListener('scroll', wScroll); whisperAutoExpand(); }, 40000);
     }
   } catch(e) {}
 
