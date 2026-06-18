@@ -323,7 +323,7 @@ img,svg,iframe{display:block;max-width:100%;}
 }
 
 /* ============================================================
-   SEKTION: TESTIMONIALS (Branchenzeuge + Super-Cut + Grid)
+   SEKTION: TESTIMONIALS (Branchenzeuge + Zusammenschnitt + Grid)
    ============================================================ */
 #b-test{background:var(--mc-navy-dark);color:#fff;padding:80px 24px;}
 #b-test .b-test-feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:3rem;}
@@ -376,26 +376,33 @@ img,svg,iframe{display:block;max-width:100%;}
 
 /* ===== SEKTION KANDIDATENREISE (#b-journey) ===== */
 #b-journey{background:var(--mc-canvas);padding:clamp(4rem,8vw,6rem) 24px;}
-#b-journey .b-jwrap{max-width:920px;margin:0 auto;}
-#b-journey .b-j-timeline{position:relative;margin-top:3.5rem;padding-left:0;}
-#b-journey .b-j-line{position:absolute;left:30px;top:18px;bottom:120px;width:2px;background:linear-gradient(180deg,var(--mc-blue) 0%,var(--mc-navy) 100%);opacity:0.22;}
-@media(max-width:600px){#b-journey .b-j-line{left:22px;}}
-#b-journey .b-j-step{position:relative;display:flex;gap:1.6rem;padding-bottom:2.2rem;opacity:0;transform:translateY(22px);transition:opacity 0.6s ease,transform 0.6s ease;}
-#b-journey .b-j-step.vis{opacity:1;transform:none;}
-#b-journey .b-j-num{flex-shrink:0;width:62px;height:62px;border-radius:50%;background:var(--mc-navy-dark);color:#fff;font-family:var(--font-head);font-weight:700;font-size:1.35rem;display:flex;align-items:center;justify-content:center;position:relative;z-index:2;box-shadow:0 6px 18px rgba(20,37,58,0.18);letter-spacing:-0.02em;}
-@media(max-width:600px){#b-journey .b-j-num{width:46px;height:46px;font-size:1.05rem;}}
-#b-journey .b-j-card{flex:1;background:#fff;border:1px solid var(--mc-border);border-radius:14px;padding:1.5rem 1.7rem;box-shadow:0 4px 18px rgba(20,37,58,0.06);min-width:0;}
-@media(max-width:600px){#b-journey .b-j-card{padding:1.15rem 1.2rem;}}
-#b-journey .b-j-emotion{display:inline-block;font-size:0.66rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--mc-blue);background:#eef5ff;border-radius:999px;padding:0.28rem 0.7rem;margin-bottom:0.7rem;}
-#b-journey .b-j-title{font-family:var(--font-head);font-weight:700;font-size:1.28rem;color:var(--mc-text);letter-spacing:-0.02em;line-height:1.2;margin-bottom:0.6rem;}
-@media(max-width:600px){#b-journey .b-j-title{font-size:1.1rem;}}
-#b-journey .b-j-desc{font-size:0.95rem;color:var(--mc-text);line-height:1.55;margin-bottom:1rem;}
-#b-journey .b-j-quote{position:relative;border-left:3px solid var(--mc-blue);background:var(--mc-canvas-2);border-radius:0 10px 10px 0;padding:0.75rem 1rem 0.75rem 1.1rem;display:flex;align-items:center;gap:0.6rem;}
-#b-journey .b-j-quote .b-j-qmark{font-family:var(--font-head);font-weight:700;font-size:1.7rem;color:var(--mc-blue);line-height:1;opacity:0.5;flex-shrink:0;}
-#b-journey .b-j-quote em{font-style:italic;font-size:0.98rem;color:var(--mc-navy-dark);font-weight:500;}
-#b-journey .b-j-cta-wrap{text-align:center;margin-top:1rem;}
-@media(prefers-reduced-motion:reduce){
-  #b-journey .b-j-step{opacity:1;transform:none;transition:none;}
+#b-journey .b-jwrap{max-width:1080px;margin:0 auto;}
+#b-journey .jp{margin-bottom:54px;}
+#b-journey .jp:last-of-type{margin-bottom:0;}
+#b-journey .jp-head{display:grid;grid-template-columns:104px 1fr auto;gap:30px;align-items:end;padding-bottom:20px;border-bottom:1px solid var(--mc-border);margin-bottom:28px;}
+#b-journey .jp-num{font-family:var(--font-head);font-size:84px;font-weight:700;letter-spacing:-0.06em;line-height:0.82;color:var(--mc-navy-dark);font-variant-numeric:tabular-nums;}
+#b-journey .jp-title h2{font-family:var(--font-head);font-size:clamp(24px,2.8vw,36px);font-weight:700;letter-spacing:-0.025em;line-height:1.06;color:var(--mc-text);margin:0 0 6px;}
+#b-journey .jp-kicker{font-family:var(--font-body);font-size:14px;color:var(--mc-muted);line-height:1.5;margin:0;}
+#b-journey .jp-kicker strong{color:var(--mc-navy-dark);font-weight:700;}
+#b-journey .jp-ind{font-family:var(--font-body);text-align:right;color:var(--mc-muted);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;padding-bottom:6px;white-space:nowrap;}
+#b-journey .jp-ind .of{color:var(--mc-border);}
+#b-journey .jp-cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+#b-journey .jcard{position:relative;background:#fff;border:1px solid var(--mc-border);border-radius:14px;padding:24px;display:flex;flex-direction:column;transition:box-shadow .25s ease,transform .25s ease,border-color .25s ease;}
+#b-journey .jcard:hover{box-shadow:0 8px 26px rgba(52,128,221,0.1);border-color:var(--mc-blue);transform:translateY(-2px);}
+#b-journey .jc-tag{display:inline-flex;align-items:center;gap:7px;font-family:var(--font-body);font-size:11.5px;font-weight:600;color:var(--mc-navy-dark);padding:4px 11px;border-radius:999px;background:var(--mc-canvas);border:1px solid var(--mc-border);margin-bottom:14px;width:fit-content;}
+#b-journey .jc-tag .dot{width:6px;height:6px;border-radius:50%;background:var(--mc-blue);flex-shrink:0;}
+#b-journey .jcard h3{font-family:var(--font-head);font-size:18.5px;font-weight:700;letter-spacing:-0.015em;line-height:1.25;color:var(--mc-text);margin:0 0 12px;}
+#b-journey .jc-quote{font-family:var(--font-body);font-size:14px;font-style:italic;color:var(--mc-blue-dark);line-height:1.45;margin:0 0 13px;padding-left:13px;border-left:3px solid var(--mc-blue);}
+#b-journey .jcard p{font-family:var(--font-body);font-size:13.5px;line-height:1.6;color:var(--mc-muted);margin:0;}
+#b-journey .jcard p b{color:var(--mc-text);font-weight:700;}
+#b-journey .jc-link{margin-top:auto;padding-top:16px;font-family:var(--font-body);font-size:12.5px;font-weight:600;color:var(--mc-blue);display:inline-flex;align-items:center;gap:6px;width:fit-content;}
+#b-journey .b-j-cta-wrap{text-align:center;margin-top:48px;}
+@media(max-width:680px){
+  #b-journey .jp-head{grid-template-columns:1fr;gap:6px;}
+  #b-journey .jp-num{font-size:58px;}
+  #b-journey .jp-ind{text-align:left;}
+  #b-journey .jp-cards{grid-template-columns:1fr;}
+  #b-journey .jcard{padding:20px;}
 }
 
 /* ============================================================
@@ -550,7 +557,7 @@ img,svg,iframe{display:block;max-width:100%;}
 
       <p class="b-hero-para">
         Wir laden Sie ein zu einem <strong>kostenlosen Erstgespräch</strong>. 15 Minuten, konkrete
-        Einschätzung für Ihre Stelle, kein Pitch, keine Verpflichtung. Wenn wir passen, erhalten
+        Einschätzung für Ihre Stelle, kein Verkaufsgespräch, keine Verpflichtung. Wenn wir passen, erhalten
         Sie ein Angebot mit schriftlicher Einstellungsgarantie.
       </p>
 
@@ -675,14 +682,14 @@ img,svg,iframe{display:block;max-width:100%;}
      ============================================================ -->
 <section id="b-cand" class="b-band-navy">
   <div class="b-wrap">
-    <div class="b-section-kicker">Vertraulich · Nur für Herr Müller</div><!-- SLOT:ENTSCHEIDER -->
+    <div class="b-section-kicker">Vertraulich · Nur für Herrn Müller</div><!-- SLOT:ENTSCHEIDER -->
     <h2 class="b-section-title">Wir haben Ihre Kandidaten. Sie sehen sie noch nicht.</h2>
     <p class="b-section-sub">Aus 80.000 Kandidaten im Pool: die eine Akte für Ihre Stelle als KFZ-Mechatroniker (m/w/d) im Raum Hannover.</p><!-- SLOT:STELLE --><!-- SLOT:REGION -->
 
     <div class="b-cand-grid">
       <!-- Akten-Karussell (3D-Zylinder) -->
       <div>
-        <div class="b-cand-side-label">80.000 Akten rotieren. Eine matcht.</div>
+        <div class="b-cand-side-label">80.000 Kandidaten im Pool. Einer passt zu Ihrer Stelle.</div>
         <div class="b-carousel-wrap">
           <div class="b-carousel-inner" id="b-carousel"></div>
         </div>
@@ -735,7 +742,7 @@ img,svg,iframe{display:block;max-width:100%;}
   <div class="b-wrap">
     <div class="b-section-kicker">Das System hinter 4.100 besetzten Stellen</div>
     <h2 class="b-section-title">Fünf Schritte. Ein System. Einstellungsgarantie.</h2>
-    <p class="b-section-sub">Kein Agentur-Brei. Eine methodisch entwickelte Helix aus Technologie, Netzwerk und menschlichem Urteilsvermögen.</p>
+    <p class="b-section-sub">Kein generisches Agentur-Vorgehen. Ein methodisch aufgebautes System aus Technologie, Netzwerk und menschlichem Urteil.</p>
 
     <div class="b-helix-stage">
       <canvas id="b-helix-canvas" width="200" height="420" aria-hidden="true"></canvas>
@@ -758,7 +765,7 @@ img,svg,iframe{display:block;max-width:100%;}
           <div class="b-helix-num">3</div>
           <div>
             <p class="b-helix-step-title">Kandidatenreise</p>
-            <p class="b-helix-step-desc">Eine Multi-Touchpoint-Journey führt Kandidaten Schritt für Schritt zur Bewerbung.</p>
+            <p class="b-helix-step-desc">Eine mehrstufige Kandidatenreise führt Kandidaten Schritt für Schritt zur Bewerbung.</p>
           </div>
         </div>
         <div class="b-helix-step" id="b-helix-s4">
@@ -790,69 +797,149 @@ img,svg,iframe{display:block;max-width:100%;}
 <section id="b-journey" class="b-band-canvas">
   <div class="b-jwrap">
     <div class="b-section-kicker">So gewinnen wir Kandidaten für Ihre Stelle</div>
-    <h2 class="b-section-title">Die 6-Phasen-Kandidatenreise: so füllen wir Ihre Stelle</h2>
-    <p class="b-section-sub">Sechs psychologische Phasen, 13 Werbemittel, ein System. Genau diese Reise durchläuft jeder Kandidat für Ihre offene Stelle als KFZ-Mechatroniker (m/w/d).</p>
+    <h2 class="b-section-title">Die 6-Phasen-Kandidatenreise: So besetzen wir Ihre Stelle</h2>
+    <p class="b-section-sub">Sechs psychologische Phasen, ein System. Genau diese Reise durchläuft jeder Kandidat für Ihre offene Stelle als KFZ-Mechatroniker (m/w/d).</p>
 
-    <div class="b-j-timeline" id="b-j-timeline">
-      <div class="b-j-line" aria-hidden="true"></div>
-
-      <div class="b-j-step" data-i="0">
-        <div class="b-j-num">01</div>
-        <div class="b-j-card">
-          <span class="b-j-emotion">Aufmerksamkeit</span>
-          <div class="b-j-title">Wir treffen die latente Frustration</div>
-          <div class="b-j-desc">Wir sprechen die unausgesprochene Unzufriedenheit passiver KFZ-Fachkräfte in der Region an: Monotonie, unbezahlte Fahrzeit, unsichere Betriebe.</div>
-          <div class="b-j-quote"><span class="b-j-qmark" aria-hidden="true">&bdquo;</span><em>Ja. Genau das.</em></div>
+    <div class="jp">
+      <div class="jp-head">
+        <div class="jp-num">01</div>
+        <div class="jp-title"><h2>Aufmerksamkeit</h2><p class="jp-kicker">Latente Frustration treffen &mdash; <strong>Emotion: &bdquo;Ja. Genau das.&ldquo;</strong></p></div>
+        <div class="jp-ind">Phase 01 <span class="of">/ 06</span></div>
+      </div>
+      <div class="jp-cards">
+        <div class="jcard">
+          <div class="jc-tag"><span class="dot"></span>🧠 Monotonie in der Werkstatt</div>
+          <h3>Immer dieselben Modelle, derselbe Ablauf.</h3>
+          <p class="jc-quote">&bdquo;Ich schraube seit Jahren am Gleichen und lerne nichts Neues mehr.&ldquo;</p>
+          <p>Das technische Können stagniert. <b>Genau diese Fachkräfte sprechen wir an, bevor sie selbst suchen.</b></p>
+          <div class="jc-link">Frustration treffen →</div>
+        </div>
+        <div class="jcard">
+          <div class="jc-tag"><span class="dot"></span>🧠 Unsicherer Betrieb</div>
+          <h3>Kleiner Betrieb, alte Ausstattung, wenig Perspektive.</h3>
+          <p class="jc-quote">&bdquo;Wenn die Aufträge wegbrechen, gehe ich als Erster.&ldquo;</p>
+          <p><b>Wir positionieren die Muster Spedition GmbH als stabile, moderne Alternative.</b></p>
+          <div class="jc-link">Stabilität zeigen →</div>
         </div>
       </div>
+    </div>
 
-      <div class="b-j-step" data-i="1">
-        <div class="b-j-num">02</div>
-        <div class="b-j-card">
-          <span class="b-j-emotion">Interesse wecken</span>
-          <div class="b-j-title">Wir zeigen Ihren Betrieb als echte Alternative</div>
-          <div class="b-j-desc">Konkrete Technik, klare Benefits, echte Stabilität. Kein Floskel-Recruiting, sondern Gründe, die ein Mechatroniker sofort versteht.</div>
-          <div class="b-j-quote"><span class="b-j-qmark" aria-hidden="true">&bdquo;</span><em>Das ist tatsächlich anders.</em></div>
+    <div class="jp">
+      <div class="jp-head">
+        <div class="jp-num">02</div>
+        <div class="jp-title"><h2>Interesse wecken</h2><p class="jp-kicker">Echte Alternative zeigen &mdash; <strong>Emotion: &bdquo;Das ist tatsächlich anders.&ldquo;</strong></p></div>
+        <div class="jp-ind">Phase 02 <span class="of">/ 06</span></div>
+      </div>
+      <div class="jp-cards">
+        <div class="jcard">
+          <div class="jc-tag"><span class="dot"></span>🧠 Moderne Nutzfahrzeug-Technik</div>
+          <h3>Aktuelle Flotte, moderne Diagnose, echte Technik.</h3>
+          <p class="jc-quote">&bdquo;Bei euch arbeite ich an aktueller Technik statt an 15 Jahre alten Modellen?&ldquo;</p>
+          <p><b>Wir machen Ausstattung und Fuhrpark der Muster Spedition GmbH konkret sichtbar.</b></p>
+          <div class="jc-link">Technik zeigen →</div>
+        </div>
+        <div class="jcard">
+          <div class="jc-tag"><span class="dot"></span>🧠 Faires Paket</div>
+          <h3>Übertarifliches Gehalt, Zuschläge, Weiterbildung.</h3>
+          <p class="jc-quote">&bdquo;Endlich ein Betrieb, der ordentlich zahlt und fördert.&ldquo;</p>
+          <p><b>Wir stellen Benefits und Aufstiegschancen klar heraus.</b></p>
+          <div class="jc-link">Paket zeigen →</div>
         </div>
       </div>
+    </div>
 
-      <div class="b-j-step" data-i="2">
-        <div class="b-j-num">03</div>
-        <div class="b-j-card">
-          <span class="b-j-emotion">Verlangen aufbauen</span>
-          <div class="b-j-title">Wir machen den Alltag bei Ihnen greifbar</div>
-          <div class="b-j-desc">Erste Woche, erste Monate, konkrete Einsätze. Der Kandidat sieht sich bereits in Ihrer Werkstatt arbeiten.</div>
-          <div class="b-j-quote"><span class="b-j-qmark" aria-hidden="true">&bdquo;</span><em>Da will ich hin.</em></div>
+    <div class="jp">
+      <div class="jp-head">
+        <div class="jp-num">03</div>
+        <div class="jp-title"><h2>Verlangen aufbauen</h2><p class="jp-kicker">Konkreten Alltag zeigen &mdash; <strong>Emotion: &bdquo;Da will ich hin.&ldquo;</strong></p></div>
+        <div class="jp-ind">Phase 03 <span class="of">/ 06</span></div>
+      </div>
+      <div class="jp-cards">
+        <div class="jcard">
+          <div class="jc-tag"><span class="dot"></span>🧠 Die erste Woche</div>
+          <h3>Eigene Box, eingespieltes Team, klare Abläufe.</h3>
+          <p class="jc-quote">&bdquo;So stelle ich mir das vor.&ldquo;</p>
+          <p><b>Wir machen den Alltag bei Ihnen greifbar, bevor er sich bewirbt.</b></p>
+          <div class="jc-link">Alltag zeigen →</div>
+        </div>
+        <div class="jcard">
+          <div class="jc-tag"><span class="dot"></span>🧠 Perspektive</div>
+          <h3>Vom Mechatroniker zum Meister oder Werkstattleiter.</h3>
+          <p class="jc-quote">&bdquo;Hier kann ich mich wirklich weiterentwickeln.&ldquo;</p>
+          <p><b>Wir zeigen den Karriereweg in der Muster Spedition GmbH.</b></p>
+          <div class="jc-link">Perspektive zeigen →</div>
         </div>
       </div>
+    </div>
 
-      <div class="b-j-step" data-i="3">
-        <div class="b-j-num">04</div>
-        <div class="b-j-card">
-          <span class="b-j-emotion">Einwände entkräften</span>
-          <div class="b-j-title">Wir nehmen Zweifel vorweg</div>
-          <div class="b-j-desc">Gehalt, Montage-Sorgen, Transparenz: Wir adressieren die typischen Bremsen, bevor sie zum Abbruch führen.</div>
-          <div class="b-j-quote"><span class="b-j-qmark" aria-hidden="true">&bdquo;</span><em>Das hatte ich befürchtet, aber...</em></div>
+    <div class="jp">
+      <div class="jp-head">
+        <div class="jp-num">04</div>
+        <div class="jp-title"><h2>Einwände entkräften</h2><p class="jp-kicker">Ängste adressieren &mdash; <strong>Emotion: &bdquo;Das hatte ich befürchtet, aber&hellip;&ldquo;</strong></p></div>
+        <div class="jp-ind">Phase 04 <span class="of">/ 06</span></div>
+      </div>
+      <div class="jp-cards">
+        <div class="jcard">
+          <div class="jc-tag"><span class="dot"></span>🧠 Gehalt & Schichten</div>
+          <h3>Was verdiene ich wirklich? Wie sind die Schichten?</h3>
+          <p class="jc-quote">&bdquo;Das hatte ich befürchtet, aber das klingt fair.&ldquo;</p>
+          <p><b>Wir adressieren Gehalt und Arbeitszeiten offen, schon vor dem Gespräch.</b></p>
+          <div class="jc-link">Einwand klären →</div>
+        </div>
+        <div class="jcard">
+          <div class="jc-tag"><span class="dot"></span>🧠 Transparenz</div>
+          <h3>Direkter Ansprechpartner statt anonymes Portal.</h3>
+          <p class="jc-quote">&bdquo;Ich will wissen, mit wem ich es zu tun habe.&ldquo;</p>
+          <p><b>Direkter Draht statt HR-Wasserfall.</b></p>
+          <div class="jc-link">Direkt klären →</div>
         </div>
       </div>
+    </div>
 
-      <div class="b-j-step" data-i="4">
-        <div class="b-j-num">05</div>
-        <div class="b-j-card">
-          <span class="b-j-emotion">Risiko-Umkehr</span>
-          <div class="b-j-title">Wir nehmen dem Kandidaten das Risiko</div>
-          <div class="b-j-desc">Nachprüfbare Fakten, direkter Kontakt, keine leeren Versprechen. Die Entscheidung fühlt sich sicher an.</div>
-          <div class="b-j-quote"><span class="b-j-qmark" aria-hidden="true">&bdquo;</span><em>Das Risiko liegt nicht bei mir.</em></div>
+    <div class="jp">
+      <div class="jp-head">
+        <div class="jp-num">05</div>
+        <div class="jp-title"><h2>Risiko-Umkehr</h2><p class="jp-kicker">Hürde abbauen &mdash; <strong>Emotion: &bdquo;Das Risiko liegt nicht bei mir.&ldquo;</strong></p></div>
+        <div class="jp-ind">Phase 05 <span class="of">/ 06</span></div>
+      </div>
+      <div class="jp-cards">
+        <div class="jcard">
+          <div class="jc-tag"><span class="dot"></span>🛡️ Nachprüfbar</div>
+          <h3>Fakten, die der Kandidat selbst prüfen kann.</h3>
+          <p class="jc-quote">&bdquo;Woher weiß ich, dass die Versprechen stimmen?&ldquo;</p>
+          <p><b>Nachprüfbare Fakten und echte Referenzen vor der Zusage.</b></p>
+          <div class="jc-link">Risiko umkehren →</div>
+        </div>
+        <div class="jcard">
+          <div class="jc-tag"><span class="dot"></span>🛡️ Unverbindlich</div>
+          <h3>Ein erstes Gespräch kostet nichts.</h3>
+          <p class="jc-quote">&bdquo;Erst reinschnuppern, dann entscheiden.&ldquo;</p>
+          <p><b>Kein Risiko, ein erstes Gespräch zu führen.</b></p>
+          <div class="jc-link">Hürde abbauen →</div>
         </div>
       </div>
+    </div>
 
-      <div class="b-j-step" data-i="5">
-        <div class="b-j-num">06</div>
-        <div class="b-j-card">
-          <span class="b-j-emotion">Letzter Push</span>
-          <div class="b-j-title">Wir lösen die Entscheidung aus</div>
-          <div class="b-j-desc">Ein klares 12-Monats-Szenario plus ein eindeutiger nächster Schritt. Aus Interesse wird eine echte Bewerbung.</div>
-          <div class="b-j-quote"><span class="b-j-qmark" aria-hidden="true">&bdquo;</span><em>Ich bewerbe mich.</em></div>
+    <div class="jp">
+      <div class="jp-head">
+        <div class="jp-num">06</div>
+        <div class="jp-title"><h2>Letzter Anstoß</h2><p class="jp-kicker">Entscheidung auslösen &mdash; <strong>Emotion: &bdquo;Ich bewerbe mich.&ldquo;</strong></p></div>
+        <div class="jp-ind">Phase 06 <span class="of">/ 06</span></div>
+      </div>
+      <div class="jp-cards">
+        <div class="jcard">
+          <div class="jc-tag"><span class="dot"></span>🧠 12-Monats-Szenario</div>
+          <h3>In einem Jahr noch im Alten? Oder bei Ihnen?</h3>
+          <p class="jc-quote">&bdquo;Zwei völlig verschiedene Berufsrealitäten.&ldquo;</p>
+          <p><b>Wir zeichnen das Zukunftsbild, das die Entscheidung auslöst.</b></p>
+          <div class="jc-link">Szenario zeigen →</div>
+        </div>
+        <div class="jcard">
+          <div class="jc-tag"><span class="dot"></span>🧠 Klarer nächster Schritt</div>
+          <h3>Ein Klick, ein kurzes Gespräch, der Wechsel.</h3>
+          <p class="jc-quote">&bdquo;Du hast bis hierhin gelesen. Das sagt alles.&ldquo;</p>
+          <p><b>Aus Interesse wird eine echte Bewerbung.</b></p>
+          <div class="jc-link">Bewerbung auslösen →</div>
         </div>
       </div>
     </div>
@@ -865,14 +952,14 @@ img,svg,iframe{display:block;max-width:100%;}
 </section>
 
 <!-- ============================================================
-     SEKTION 8 - TESTIMONIALS (Branchenzeuge featured + Super-Cut + Grid aller 13)
+     SEKTION 8 - TESTIMONIALS (Branchenzeuge featured + Zusammenschnitt + Grid aller 13)
      13 echte YouTube-Testimonials
      ============================================================ -->
 <section id="b-test" class="b-band-navy">
   <div class="b-wrap">
     <div class="b-section-kicker">Was Betriebe wie Ihrer sagen</div>
     <h2 class="b-section-title">Nicht irgendwer. Jemand aus Ihrer Branche.</h2>
-    <p class="b-section-sub">Aus 13 echten Referenzen: das Testimonial mit dem größten Branchen-Match zur Muster Spedition GmbH, plus der Super-Cut aller Kundenstimmen.</p><!-- SLOT:FIRMA -->
+    <p class="b-section-sub">Aus 13 echten Referenzen: die Kundenstimme mit der größten Branchennähe zur Muster Spedition GmbH, plus der Zusammenschnitt aller Kundenstimmen.</p><!-- SLOT:FIRMA -->
 
     <div class="b-test-feature-grid">
       <!-- Branchenzeuge (KFZ-Match featured) -->
@@ -888,9 +975,9 @@ img,svg,iframe{display:block;max-width:100%;}
         </div>
       </div>
 
-      <!-- Super-Cut -->
+      <!-- Zusammenschnitt -->
       <div class="b-test-card">
-        <div class="b-test-chip cut">Super-Cut · Kunden berichten</div>
+        <div class="b-test-chip cut">Zusammenschnitt · Kunden berichten</div>
         <div class="b-test-vid"><iframe loading="lazy" src="https://www.youtube.com/embed/NqrVkhNTMVo" title="Kunden berichten über die Zusammenarbeit" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
         <div class="b-test-meta">
           <div class="company">Kunden berichten über die Zusammenarbeit</div>
@@ -1039,7 +1126,7 @@ img,svg,iframe{display:block;max-width:100%;}
         </div>
         <div class="b-radar-dim medium">
           <div class="b-radar-dim-head"><span class="b-radar-dim-name">Stellenattraktivität</span><span class="b-radar-dim-score medium">55 / 100</span></div>
-          <p class="b-radar-dim-text">Verbesserungspotenzial bei Kandidatenansprache und Candidate Journey. Michelscom optimiert das im Prozess.</p>
+          <p class="b-radar-dim-text">Verbesserungspotenzial bei Kandidatenansprache und Kandidatenreise. Michelscom optimiert das im Prozess.</p>
         </div>
         <div class="b-radar-dim high">
           <div class="b-radar-dim-head"><span class="b-radar-dim-name">Zeitrisiko</span><span class="b-radar-dim-score high">75 / 100</span></div>
@@ -1076,7 +1163,7 @@ img,svg,iframe{display:block;max-width:100%;}
       <div class="b-whisper-metalbl">Recruiting-Beratung · Michelscom</div>
       <div class="b-whisper-cand">&#8222;Ich habe es schon mit vielen Recruiting-Agenturen probiert, aber niemand konnte es bisher lösen.&#8220;</div>
       <div class="b-whisper-typing"><div class="b-whisper-d"></div><div class="b-whisper-d"></div><div class="b-whisper-d"></div></div>
-      <div class="b-whisper-mc">Das liegt daran, dass Bewerber auf die falsche Art und Weise kontaktiert werden. Mit der 6-Schritt-Kandidatenreise von Michelscom besetzen wir seit 2018 erfolgreich Stellen.<br><br>Möchten Sie herausfinden, wieso wir für Ihre Stelle eine Einstellungsgarantie ausstellen können?</div>
+      <div class="b-whisper-mc">Das liegt daran, dass Bewerber auf die falsche Art und Weise kontaktiert werden. Mit der 6-Phasen-Kandidatenreise von Michelscom besetzen wir seit 2018 erfolgreich Stellen.<br><br>Möchten Sie herausfinden, wieso wir für Ihre Stelle eine Einstellungsgarantie ausstellen können?</div>
     </div>
     <div class="b-whisper-foot">
       <a href="https://calendly.com/michelscom-s/potenzialanalyse" class="b-whisper-fta b-open-book-link" target="_blank" rel="noopener">Jetzt Erstgespräch vereinbaren</a>
