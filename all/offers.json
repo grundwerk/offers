@@ -430,5 +430,14 @@
     "secure": "7550641466",
     "icon": "🚀",
     "created": "2026-06-17"
+  },
+  {
+    "slug": "holvi",
+    "name": "Holvi",
+    "subtitle": "Planbarer Direktvertrieb in Deutschland",
+    "type": "sales-room",
+    "secure": "7142836905",
+    "icon": "🏦",
+    "created": "2026-06-19"
   }
 ]
