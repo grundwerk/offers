@@ -518,7 +518,8 @@ Genau deshalb ist Sichtbarkeit kein Nice-to-have.<!-- SLOT:POST_NACHHER_2 END --
 <!-- SLOT:RASTER_DATA START --><script type="application/json" id="warmedin-raster-data">{"generated_at":"","lead":{"name":"Jonas Berger","handle":"jonas-berger","posts":[]},"competitors":[],"assets_base":"../warmedin/assets/"}</script><!-- SLOT:RASTER_DATA END -->
 <script>try{window.WARMEDIN_RASTER=JSON.parse(document.getElementById("warmedin-raster-data").textContent);}catch(e){console.error("raster data parse",e);}</script>
 <script src="../warmedin/assets/raster.js" defer></script>
-<script>(function(){var T='https://n8n.grundwerk.digital/webhook/warmedin-track';function sl(){var p=location.pathname.replace(/^\/+|\/+$/g,'').split('/')[0];return p||'warmedin';}setTimeout(function(){if(document.documentElement.style.display==='none')return;try{fetch(T,{method:'POST',headers:{'Content-Type':'application/json'},keepalive:true,body:JSON.stringify({page_slug:sl(),event:'view'})});}catch(e){}},5000);})();</script>
+<script>window.__CLOSE_LEAD_ID='';</script>
+<script>(function(){var T='https://n8n.grundwerk.digital/webhook/warmedin-track';function sl(){var p=location.pathname.replace(/^\/+|\/+$/g,'').split('/')[0];return p||'warmedin';}setTimeout(function(){if(document.documentElement.style.display==='none')return;try{fetch(T,{method:'POST',headers:{'Content-Type':'application/json'},keepalive:true,body:JSON.stringify({page_slug:sl(),event:'view',close_lead_id:(window.__CLOSE_LEAD_ID||'')})});}catch(e){}},5000);})();</script>
 <!-- ===================== 30s LINKEDIN-POPUP (lead-agnostic default; per-lead override durch popup-<slug>.html moeglich) ===================== -->
 <style>
 .popwrap{position:fixed;inset:0;z-index:1100;display:none}
@@ -527,7 +528,7 @@ Genau deshalb ist Sichtbarkeit kein Nice-to-have.<!-- SLOT:POST_NACHHER_2 END --
 .popclose{position:fixed;top:18px;right:22px;z-index:1101;width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid #ddd;font-size:20px;font-weight:700;cursor:pointer;display:none;box-shadow:0 4px 14px rgba(0,0,0,.2)}
 .popclose.on{display:block}
 </style>
-<div class="popwrap" id="pop"><button class="popclose" id="popclose" aria-label="Schliessen">&times;</button><iframe id="popframe" src="https://start.grundwerk.digital/warmedin/assets/popups/popup-lead.html?v=1" title="Angebot"></iframe></div>
+<div class="popwrap" id="pop" role="dialog" aria-modal="true" aria-label="Angebot"><button class="popclose" id="popclose" aria-label="Schliessen">&times;</button><iframe id="popframe" src="https://start.grundwerk.digital/warmedin/assets/popups/popup-lead.html?v=1" title="Angebot"></iframe></div>
 <script>
 (function(){
   var pop=document.getElementById('pop'),popframe=document.getElementById('popframe'),popclose=document.getElementById('popclose');
@@ -544,4 +545,38 @@ Genau deshalb ist Sichtbarkeit kein Nice-to-have.<!-- SLOT:POST_NACHHER_2 END --
   });
 })();
 </script>
+<script>window.__META_PIXEL_ID='';window.__LINKEDIN_PARTNER_ID='';window.__GTAG_ID='';</script>
+<script>(function(){
+  var M=(window.__META_PIXEL_ID||''),L=(window.__LINKEDIN_PARTNER_ID||''),G=(window.__GTAG_ID||'');
+  if(!M&&!L&&!G)return; // keine Pixel konfiguriert -> kein Banner, nichts laden
+  var KEY='gw_marketing_consent';
+  function load(){
+    if(M){ // Meta-Pixel
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      window.fbq('init',M);window.fbq('track','PageView');
+    }
+    if(L){ // LinkedIn Insight Tag
+      window._linkedin_partner_id=L;window._linkedin_data_partner_ids=window._linkedin_data_partner_ids||[];window._linkedin_data_partner_ids.push(L);
+      (function(l){if(!l){window.lintrk=function(a,b){window.lintrk.q.push([a,b])};window.lintrk.q=[]}var s=document.getElementsByTagName('script')[0];var b=document.createElement('script');b.type='text/javascript';b.async=true;b.src='https://snap.licdn.com/li.lms-analytics/insight.min.js';s.parentNode.insertBefore(b,s)})(window.lintrk);
+    }
+    if(G){ // Google Ads / GA4 (gtag)
+      var g=document.createElement('script');g.async=true;g.src='https://www.googletagmanager.com/gtag/js?id='+G;document.head.appendChild(g);
+      window.dataLayer=window.dataLayer||[];window.gtag=function(){window.dataLayer.push(arguments)};window.gtag('js',new Date());window.gtag('config',G);
+    }
+  }
+  try{
+    if(localStorage.getItem(KEY)==='yes'){load();return;}
+    if(localStorage.getItem(KEY)==='no'){return;}
+  }catch(e){}
+  var bar=document.createElement('div');
+  bar.setAttribute('style','position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#121212;color:#f5f5f5;font:14px/1.5 system-ui,-apple-system,sans-serif;padding:14px 18px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center;box-shadow:0 -2px 16px rgba(0,0,0,.35)');
+  var txt=document.createElement('span');txt.setAttribute('style','max-width:640px');
+  txt.innerHTML='Wir nutzen Cookies fuer Marketing (Meta, LinkedIn, Google), um dir relevante Inhalte zu zeigen. Mehr in der <a href="/datenschutz" style="color:#ffe01c">Datenschutzerklaerung</a>.';
+  function mkbtn(t,bg,fg){var x=document.createElement('button');x.textContent=t;x.setAttribute('style','border:0;border-radius:7px;padding:9px 16px;font-weight:600;cursor:pointer;background:'+bg+';color:'+fg);return x;}
+  var ok=mkbtn('Akzeptieren','#ffe01c','#121212'),no=mkbtn('Ablehnen','#2a2a2a','#f5f5f5');
+  ok.onclick=function(){try{localStorage.setItem(KEY,'yes')}catch(e){}bar.parentNode&&bar.parentNode.removeChild(bar);load();};
+  no.onclick=function(){try{localStorage.setItem(KEY,'no')}catch(e){}bar.parentNode&&bar.parentNode.removeChild(bar);};
+  bar.appendChild(txt);bar.appendChild(ok);bar.appendChild(no);
+  (document.body||document.documentElement).appendChild(bar);
+})();</script>
 </body></html>
