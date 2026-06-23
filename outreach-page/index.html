@@ -1471,7 +1471,7 @@ Beste Grüße
 window.__PAGE_SLUG = "outreach-page-demo";
 window.__CLOSE_LEAD_ID='';
 var TRACK_URL = "https://n8n.grundwerk.digital/webhook/warmedin-track";        /* shared landing view-beacon */
-var QZ_URL    = "https://n8n.grundwerk.digital/webhook/outreach-questionnaire"; /* questionnaire answers */
+var QZ_URL    = "https://app.grundwerk.digital/api/outreach/questionnaire"; /* questionnaire answers -> webapp route -> Supabase + Close (live 2026-06-23) */
 function track(ev, extra){
   try{
     var body = Object.assign({page_slug:window.__PAGE_SLUG, event:ev, close_lead_id:window.__CLOSE_LEAD_ID||null}, extra||{});
