@@ -335,14 +335,14 @@
       <!-- Header -->
       <div class="post-header">
         <div class="avatar">
-          <img src="https://start.grundwerk.digital/assets/og/warmedin-icon.png" alt="">
+          <img src="https://start.grundwerk.digital/assets/team/tom-soto-schiller.jpeg" alt="Tom">
         </div>
         <div class="post-meta">
           <div class="post-name-row">
-            <span class="post-name"></span>
+            <span class="post-name">Tom Soto Schiller</span>
             <span class="degree-badge">&#x2022; 1.</span>
           </div>
-          <div class="post-headline"></div>
+          <div class="post-headline">Gründer und CEO @ Grundwerk Digital · B2B-Outbound-Systeme</div>
           <div class="post-timestamp">
             <span>3 Std.</span>
             <svg width="12" height="12" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -407,7 +407,7 @@
             <span class="author-tag">Autor</span>
           </div>
           <div class="comment-text">
-            Freut mich! Voll cool, dass du dir den kostenlosen Post von uns gesichert hast. Ohne den hätten die meisten nie gestartet, und genau daraus kommen die ersten Leads.
+            Freut mich, Tom! Voll cool, dass du dir den kostenlosen Post von uns gesichert hast. Ohne den hätten die meisten nie gestartet, und genau daraus kommen die ersten Leads.
           </div>
         </div>
       </div>
@@ -435,20 +435,6 @@
   });
   // Esc closes too, even when focus is inside the iframe (parent also listens)
   document.addEventListener('keydown', function(e) { if (e.key === 'Escape') wmClose(); });
-</script>
-<script>
-window.addEventListener('message',function(e){
-  var d=e.data; if(!d||d.type!=='wm-lead') return;
-  function setTxt(sel,v){var el=document.querySelector(sel); if(el&&v) el.textContent=v;}
-  setTxt('.post-name', d.name);
-  setTxt('.post-headline', d.headline);
-  if(d.photo){var a=document.querySelector('.avatar img'); if(a){a.src=d.photo; a.alt=d.name||'';}}
-  // Calendar-tile click: show THAT post's own text (not the generic sample testimonial).
-  if(d.body){var b=document.querySelector('.post-body'); if(b){b.textContent=d.body;}}
-  // WarmedIn reply: works for both the calendar-click and the 30s lead-magnet flow.
-  var c=document.querySelector('.comment-text');
-  if(c){c.textContent=(d.first?'So sieht dein Post mit WarmedIn aus, '+d.first+'. ':'So sieht dein Post mit WarmedIn aus. ')+'In deiner Stimme, komplett für dich geschrieben. 16x im Monat, ohne dass du selbst eine Zeile tippst.';}
-});
 </script>
 </body>
 </html>
