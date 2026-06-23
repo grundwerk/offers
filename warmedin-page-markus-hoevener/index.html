@@ -491,11 +491,19 @@ h1 .hl{background:linear-gradient(transparent 58%,#ffe01c 58%);padding:0 6px}
 .popclose{position:fixed;top:18px;right:22px;z-index:1101;width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid #ddd;font-size:20px;font-weight:700;cursor:pointer;display:none;box-shadow:0 4px 14px rgba(0,0,0,.2)}
 .popclose.on{display:block}
 </style>
-<div class="popwrap" id="pop" role="dialog" aria-modal="true" aria-label="Angebot"><button class="popclose" id="popclose" aria-label="Schliessen">&times;</button><iframe id="popframe" src="https://start.grundwerk.digital/warmedin/assets/popups/popup-markus-hoevener.html?v=1" title="Angebot"></iframe></div>
+<div class="popwrap" id="pop" role="dialog" aria-modal="true" aria-label="Angebot"><button class="popclose" id="popclose" aria-label="Schliessen">&times;</button><iframe id="popframe" data-popup-base="https://start.grundwerk.digital/warmedin/assets/popups/" title="Angebot"></iframe></div>
 <script>
 (function(){
   var pop=document.getElementById('pop'),popframe=document.getElementById('popframe'),popclose=document.getElementById('popclose');
   if(!pop)return;
+  // Per-Lead-Popup selbst-konfigurierend aus dem URL-Slug laden: /warmedin-page-<slug>/
+  // -> popup-<slug>.html. So zeigt das Popup IMMER den Lead (Foto+Name), ohne config-
+  // /slot-/engine-Aenderung. Fallback popup-lead.html (generisch) nur wenn kein Slug.
+  if(popframe&&!popframe.getAttribute('src')){
+    var mslug=location.pathname.match(/warmedin-page-([^\/]+)/);
+    var base=popframe.getAttribute('data-popup-base')||'https://start.grundwerk.digital/warmedin/assets/popups/';
+    popframe.src=base+'popup-'+(mslug?mslug[1]:'lead')+'.html?v=1';
+  }
   function openPop(){pop.classList.add('on');popclose.classList.add('on');}
   function closePop(){pop.classList.remove('on');popclose.classList.remove('on');if(popframe){popframe.setAttribute('src',popframe.getAttribute('src'));}}
   var shown=false;function showPop(){if(shown)return;shown=true;openPop();}
