@@ -539,7 +539,7 @@ Genau deshalb ist Sichtbarkeit kein Nice-to-have.<!-- SLOT:POST_NACHHER_2 END --
   if(popframe&&!popframe.getAttribute('src')){
     var mslug=location.pathname.match(/warmedin-page-([^\/]+)/);
     var base=popframe.getAttribute('data-popup-base')||'https://start.grundwerk.digital/warmedin/assets/popups/';
-    popframe.src=base+'popup-'+(mslug?mslug[1]:'lead')+'.html?v=1';
+    popframe.src=base+'popup-'+(mslug?mslug[1]:'lead')+'.html?v=2';
   }
   function openPop(){pop.classList.add('on');popclose.classList.add('on');}
   function closePop(){pop.classList.remove('on');popclose.classList.remove('on');if(popframe){popframe.setAttribute('src',popframe.getAttribute('src'));}}
