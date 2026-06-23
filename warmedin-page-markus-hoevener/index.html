@@ -486,8 +486,8 @@ h1 .hl{background:linear-gradient(transparent 58%,#ffe01c 58%);padding:0 6px}
 <!-- ===================== 30s LINKEDIN-POPUP (lead-agnostic default; per-lead override durch popup-<slug>.html moeglich) ===================== -->
 <style>
 .popwrap{position:fixed;inset:0;z-index:1100;display:none}
-.popwrap.on{display:block}
-.popwrap iframe{width:100%;height:100%;border:0}
+.popwrap.on{display:block;background:rgba(0,0,0,0.6);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}
+.popwrap iframe{width:100%;height:100%;border:0;background:transparent}
 .popclose{position:fixed;top:18px;right:22px;z-index:1101;width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid #ddd;font-size:20px;font-weight:700;cursor:pointer;display:none;box-shadow:0 4px 14px rgba(0,0,0,.2)}
 .popclose.on{display:block}
 </style>
