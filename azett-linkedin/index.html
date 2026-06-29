@@ -1,0 +1,646 @@
+<!-- LinkedIn-Profil-Analyse für Dr. Thomas Meneghini (Azett) | v1.0 | 29.06.2026 -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="offer-version" content="1.0">
+<title>LinkedIn-Profil-Analyse, Dr. Thomas Meneghini | Grundwerk Digital</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII=" />
+<script>
+(function(){var c='5083927146',p=new URLSearchParams(window.location.search);if(p.get('secure')!==c){document.documentElement.style.display='none';document.title='Zugriff verweigert';window.stop();}})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--card:#111111;--card-2:#161616;--text:#f0f0f0;--muted:#888;--accent:#4f7df9;--accent-glow:rgba(79,125,249,0.15);--green:#22c55e;--green-glow:rgba(34,197,94,0.12);--red:#ef4444;--red-dim:rgba(239,68,68,0.1);--orange:#f97316;--orange-dim:rgba(249,115,22,0.1);--border:rgba(255,255,255,0.07);--border-acc:rgba(79,125,249,0.3);--r:14px;--r-sm:8px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.6;overflow-x:hidden;}
+a{color:var(--accent);text-decoration:none;}
+.w{max-width:1100px;margin:0 auto;padding:0 clamp(1rem,4vw,3rem);}
+section{padding:72px 0;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,10,10,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+.nav-in{max-width:1100px;margin:0 auto;padding:0 clamp(1rem,4vw,3rem);height:58px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.nav-brand{display:flex;align-items:center;gap:10px;}
+.nav-logo-img{height:24px;opacity:0.9;filter:brightness(2);}
+.nav-tag{font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.nav-cta{background:var(--accent);color:#fff;padding:8px 20px;border-radius:100px;font-weight:700;font-size:0.8rem;white-space:nowrap;transition:opacity 0.2s;}
+.nav-cta:hover{opacity:0.85;color:#fff;}
+.section-label{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);font-weight:600;display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.section-label::after{content:'';flex:1;height:1px;background:var(--border-acc);}
+.section-title{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;letter-spacing:-0.03em;line-height:1.15;margin-bottom:12px;}
+.status-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:28px;margin-bottom:20px;}
+.status-header{display:flex;align-items:center;gap:14px;margin-bottom:20px;flex-wrap:wrap;}
+.status-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;}
+.status-icon.red{background:var(--red-dim);border:1px solid rgba(239,68,68,0.25);}
+.status-icon.orange{background:var(--orange-dim);border:1px solid rgba(249,115,22,0.25);}
+.status-icon.green{background:var(--green-glow);border:1px solid rgba(34,197,94,0.25);}
+.status-title{font-weight:800;font-size:1.05rem;flex:1;}
+.status-label{padding:4px 12px;border-radius:100px;font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;white-space:nowrap;}
+.status-label.critical{background:var(--red-dim);color:var(--red);border:1px solid rgba(239,68,68,0.2);}
+.status-label.warning{background:var(--orange-dim);color:var(--orange);border:1px solid rgba(249,115,22,0.2);}
+.status-label.good{background:var(--green-glow);color:var(--green);border:1px solid rgba(34,197,94,0.2);}
+.analysis-box{background:var(--card-2);border-radius:var(--r-sm);padding:18px 20px;margin-bottom:18px;border-left:3px solid var(--border);}
+.analysis-box h4{font-size:0.78rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);margin-bottom:8px;font-weight:600;}
+.analysis-box p,.analysis-box ul{font-size:0.9rem;color:var(--muted);line-height:1.7;}
+.analysis-box ul{padding-left:18px;display:flex;flex-direction:column;gap:4px;margin-top:8px;}
+.example-box{background:rgba(79,125,249,0.06);border:1px solid var(--border-acc);border-radius:var(--r-sm);padding:18px 20px;margin-bottom:14px;position:relative;padding-top:32px;}
+.example-box::before{content:'VORSCHLAG';position:absolute;top:10px;left:16px;font-size:0.65rem;font-weight:800;letter-spacing:0.15em;color:var(--accent);text-transform:uppercase;}
+.example-box code{display:block;font-family:'Inter',sans-serif;font-size:0.88rem;color:var(--text);line-height:1.7;white-space:pre-wrap;word-break:break-word;}
+.example-box p{font-size:0.82rem;color:var(--muted);margin-bottom:8px;}
+.action-steps{display:flex;flex-direction:column;gap:12px;margin-top:18px;}
+.action-step{display:flex;gap:14px;align-items:flex-start;}
+.step-num{width:26px;height:26px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;font-size:0.78rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.step-content h5{font-size:0.9rem;font-weight:700;margin-bottom:3px;}
+.step-content p{font-size:0.85rem;color:var(--muted);line-height:1.6;}
+.step-tip{margin-top:6px;padding:8px 12px;background:var(--card-2);border-radius:6px;font-size:0.8rem;color:var(--accent);}
+.checklist-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:32px;}
+.check-item{display:flex;align-items:flex-start;gap:12px;background:var(--card);border:1px solid var(--border);border-radius:var(--r-sm);padding:14px 16px;}
+.check-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:3px;}
+.check-dot.red{background:var(--red);box-shadow:0 0 6px rgba(239,68,68,0.5);}
+.check-dot.orange{background:var(--orange);box-shadow:0 0 6px rgba(249,115,22,0.4);}
+.check-dot.green{background:var(--green);box-shadow:0 0 6px rgba(34,197,94,0.4);}
+.check-text{font-size:0.88rem;font-weight:600;line-height:1.3;}
+.check-text small{display:block;font-size:0.78rem;color:var(--muted);font-weight:400;margin-top:2px;}
+.summary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:36px;}
+.summary-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:24px;text-align:center;}
+.big-num{font-size:3rem;font-weight:900;letter-spacing:-0.05em;line-height:1;}
+.big-label{font-size:0.82rem;color:var(--muted);margin-top:6px;}
+.priority-item{background:var(--card);border-radius:var(--r);padding:20px 24px;margin-bottom:12px;display:flex;align-items:flex-start;gap:14px;}
+.priority-item.p-red{border-left:3px solid var(--red);}
+.priority-item.p-orange{border-left:3px solid var(--orange);}
+.priority-num{font-weight:800;font-size:0.85rem;color:var(--muted);min-width:24px;}
+.priority-content h4{font-weight:700;font-size:0.95rem;margin-bottom:3px;}
+.priority-content p{font-size:0.85rem;color:var(--muted);}
+.cta-box{background:linear-gradient(135deg,rgba(79,125,249,0.08),rgba(79,125,249,0.02));border:1px solid var(--border-acc);border-radius:var(--r);padding:clamp(32px,5vw,56px);text-align:center;}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;padding:14px 32px;border-radius:100px;font-weight:700;font-size:0.9rem;transition:opacity 0.2s,transform 0.2s;}
+.btn-primary:hover{opacity:0.88;transform:translateY(-1px);color:#fff;}
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--text);padding:14px 28px;border-radius:100px;font-weight:600;font-size:0.9rem;border:1px solid var(--border);transition:border-color 0.2s;}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent);}
+.note-box{background:var(--card-2);border:1px solid var(--border);border-radius:var(--r-sm);padding:16px 20px;font-size:0.84rem;color:var(--muted);line-height:1.65;max-width:680px;}
+.note-box strong{color:var(--text);}
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+.profile-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:28px 32px;display:flex;align-items:center;gap:20px;margin-bottom:28px;}
+.profile-avatar{width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#4f7df9,#7c9dff);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.4rem;color:#fff;flex-shrink:0;}
+.profile-name{font-size:1.1rem;font-weight:800;}
+.profile-sub{font-size:0.85rem;color:var(--muted);margin-top:2px;}
+.profile-url{font-size:0.78rem;color:var(--accent);margin-top:4px;}
+@media(max-width:768px){.checklist-grid{grid-template-columns:1fr 1fr;}.summary-grid{grid-template-columns:1fr;}}
+@media(max-width:480px){.checklist-grid{grid-template-columns:1fr;}.status-header{flex-wrap:wrap;}.profile-card{flex-direction:column;align-items:flex-start;}}
+</style>
+</head>
+<body>
+<!-- NAV -->
+<nav>
+<div class="nav-in">
+  <div class="nav-brand">
+    <img class="nav-logo-img" src="https://www.azett.de/wp-content/uploads/2024/04/logo.png" onerror="this.style.display='none'" alt="Azett">
+    <span class="nav-tag">LinkedIn-Profil-Analyse</span>
+  </div>
+  <a class="nav-cta" href="https://calendly.com/anthony-katzur/30min?email=thomas.meneghini%40azett.de&name=Thomas%20Meneghini" target="_blank">Termin buchen</a>
+</div>
+</nav>
+
+<!-- HERO -->
+<section style="padding-top:120px;padding-bottom:48px;">
+<div class="w">
+  <div class="section-label">Grundwerk Digital · Profil-Analyse</div>
+  <h1 class="section-title">LinkedIn-Profil-Analyse<br><span style="color:var(--accent);">Dr. Thomas Meneghini</span></h1>
+  <p style="font-size:0.95rem;color:var(--muted);max-width:640px;margin-bottom:28px;">Eine systematische Analyse Ihres LinkedIn-Profils gegen den Grundwerk Profil-Guide, mit konkreten Optimierungen, fertigen Textentwürfen und klaren Schritten für mehr Sichtbarkeit und qualifizierte Anfragen für Azett.</p>
+
+  <div class="profile-card fade-in">
+    <div class="profile-avatar">TM</div>
+    <div>
+      <div class="profile-name">Dr. Thomas Meneghini</div>
+      <div class="profile-sub">Geschäftsführender Gesellschafter · Azett GmbH &amp; Co. KG · Ungerhausen</div>
+      <div class="profile-url">linkedin.com/in/thomas-meneghini-661166a0</div>
+    </div>
+  </div>
+
+  <div class="note-box fade-in">
+    <strong>Zur Einordnung:</strong> Diese Analyse basiert auf Ihrem öffentlich sichtbaren LinkedIn-Profil sowie dem Grundwerk Profil-Guide. Bereiche, die LinkedIn nur eingeloggt vollständig anzeigt (z.B. Ihre Summary, Skills, Empfehlungen), sind als Empfehlung zum direkten Abgleich mit Ihrem Profil formuliert, nicht als Kritik am Ist-Zustand.
+  </div>
+</div>
+</section>
+
+<!-- SCHNELLCHECK -->
+<section style="padding-top:0;padding-bottom:56px;">
+<div class="w">
+  <div class="section-label fade-in">Ampel-Übersicht</div>
+  <h2 class="section-title fade-in">Profil-Schnellcheck</h2>
+  <p style="font-size:0.9rem;color:var(--muted);margin-bottom:8px;" class="fade-in">Alle 9 Profil-Bereiche auf einen Blick.</p>
+
+  <div class="checklist-grid fade-in">
+    <div class="check-item">
+      <div class="check-dot orange"></div>
+      <div class="check-text">Profilfoto<small>Guide-Standards zum Abgleich (Hintergrund, Ausschnitt)</small></div>
+    </div>
+    <div class="check-item">
+      <div class="check-dot orange"></div>
+      <div class="check-text">Profil-Banner<small>Chance: zeigen, was Azett tut &amp; für wen</small></div>
+    </div>
+    <div class="check-item">
+      <div class="check-dot orange"></div>
+      <div class="check-text">Name &amp; URL<small>URL enthält Zahlenfolge (661166a0)</small></div>
+    </div>
+    <div class="check-item">
+      <div class="check-dot orange"></div>
+      <div class="check-text">Headline<small>Öffentlich nur „CEO, Azett GmbH &amp; Co KG"</small></div>
+    </div>
+    <div class="check-item">
+      <div class="check-dot orange"></div>
+      <div class="check-text">Summary<small>Fertiger Entwurf nach 4-Sektionen-Struktur</small></div>
+    </div>
+    <div class="check-item">
+      <div class="check-dot orange"></div>
+      <div class="check-text">Featured Section<small>BaktEx®, Geneva-Award &amp; Produkte zeigen</small></div>
+    </div>
+    <div class="check-item">
+      <div class="check-dot orange"></div>
+      <div class="check-text">Werdegang<small>Aktuelle Rolle ausführlich, mit Medien</small></div>
+    </div>
+    <div class="check-item">
+      <div class="check-dot orange"></div>
+      <div class="check-text">Skills<small>Top-3 priorisieren für die Suche</small></div>
+    </div>
+    <div class="check-item">
+      <div class="check-dot orange"></div>
+      <div class="check-text">Recommendations<small>500+ Kunden = starke Empfehlungs-Quelle</small></div>
+    </div>
+  </div>
+</div>
+</section>
+<!-- DIVIDER -->
+<div style="height:1px;background:var(--border);margin:0;"></div>
+
+<!-- BEREICHE SECTION HEADER -->
+<section style="padding-bottom:24px;">
+<div class="w">
+  <div class="section-label fade-in">9 Bereiche · Detailanalyse</div>
+  <h2 class="section-title fade-in">Die vollständige Analyse</h2>
+</div>
+</section>
+
+<!-- BEREICH 1: PROFILFOTO -->
+<section style="padding-top:0;padding-bottom:40px;">
+<div class="w">
+  <p style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:16px;" class="fade-in">01 / Profilfoto</p>
+  <div class="status-card fade-in">
+    <div class="status-header">
+      <div class="status-icon orange">📸</div>
+      <div class="status-title">Profilfoto</div>
+      <span class="status-label warning">Prüfen</span>
+    </div>
+    <div class="analysis-box">
+      <h4>Analyse</h4>
+      <p>Das Profilfoto ist der wichtigste Vertrauensanker auf LinkedIn, Profile mit professionellem Foto erhalten laut LinkedIn bis zu <strong style="color:var(--text);">14x mehr Profilaufrufe</strong>. Als Geschäftsführer eines Traditionsunternehmens seit 1840 zahlt ein hochwertiges, seriöses Foto direkt auf Glaubwürdigkeit ein. Da das Foto nur eingeloggt vollständig sichtbar ist, hier die Guide-Standards zum Abgleich:</p>
+      <ul>
+        <li>Einfarbiger Hintergrund, idealerweise farblich passend zum Banner</li>
+        <li>Ausschnitt: Schultern aufwärts, das Gesicht füllt rund 60 % des Bildes</li>
+        <li>Auflösung mindestens 400×400px</li>
+        <li>Arbeitskleidung wie im echten Geschäftsalltag</li>
+      </ul>
+    </div>
+    <div class="action-steps">
+      <div class="action-step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h5>Foto gegen die Standards prüfen</h5>
+          <p>Falls das aktuelle Foto unruhigen Hintergrund hat oder zu weit weg ist: ein professionelles Foto vor neutralem Hintergrund reicht völlig, solange Licht, Ausschnitt und Ausdruck stimmen.</p>
+          <div class="step-tip">Tool-Tipp: remove.bg stellt den Hintergrund in Sekunden frei, Canva setzt einen einfarbigen ein.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- BEREICH 2: PROFIL-BANNER -->
+<section style="padding-top:0;padding-bottom:40px;">
+<div class="w">
+  <p style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:16px;" class="fade-in">02 / Profil-Banner</p>
+  <div class="status-card fade-in">
+    <div class="status-header">
+      <div class="status-icon orange">🖼️</div>
+      <div class="status-title">Profil-Banner</div>
+      <span class="status-label warning">Optimieren</span>
+    </div>
+    <div class="analysis-box">
+      <h4>Analyse</h4>
+      <p>Der Banner ist die größte Werbefläche Ihres Profils, und bei den meisten Geschäftsführer-Profilen ungenutzt (Standard-LinkedIn-Blau). Ein starker Banner kommuniziert in 2 Sekunden, was Azett tut und für wen. Genau das ist Ihre Chance: professioneller Hautschutz, Hautreinigung und Desinfektion „Made in Bayern" seit 1840, im Export in über 40 Länder.</p>
+    </div>
+    <div class="example-box">
+      <p><strong>Banner-Konzept: Azett als Hautschutz-Experte</strong></p>
+      <code>Azett-Logo (links oder mittig) + kurzer Claim, z.B.:
+„Gesunde Haut. Geschützte Hände. Seit 1840."
+oder „Das komplette Hautschutzkonzept, Made in Bayern"
+
+Visual: dezentes Produkt-/Industriebild (Hände, Werkstatt, Labor)
+Optional: „500+ Kunden · 40+ Länder" als Vertrauens-Zeile
+Spec: 1584×396px, in Canva in 15 Minuten erstellt</code>
+    </div>
+    <div class="action-steps">
+      <div class="action-step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h5>Banner in Canva erstellen</h5>
+          <p>Denselben Hintergrundton wie im Profilfoto verwenden, das lässt Ihr Gesicht stärker hervortreten. So wenige Wörter wie möglich.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- BEREICH 3: NAME & URL -->
+<section style="padding-top:0;padding-bottom:40px;">
+<div class="w">
+  <p style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:16px;" class="fade-in">03 / Name &amp; URL</p>
+  <div class="status-card fade-in">
+    <div class="status-header">
+      <div class="status-icon orange">🔗</div>
+      <div class="status-title">Name &amp; Custom URL</div>
+      <span class="status-label warning">Quick Win</span>
+    </div>
+    <div class="analysis-box">
+      <h4>Analyse</h4>
+      <p>Ihre aktuelle Profil-URL lautet <code style="color:var(--orange);background:var(--orange-dim);padding:2px 6px;border-radius:4px;font-size:0.85rem;">linkedin.com/in/thomas-meneghini-661166a0</code>, der Anhang „661166a0" ist eine automatisch vergebene Zahlenfolge. Eine saubere URL wirkt professioneller und ist leichter zu teilen, auf der Visitenkarte, in der E-Mail-Signatur oder im Impressum. Da Sie den Doktortitel führen, bietet sich auch eine Variante mit „dr-" an.</p>
+    </div>
+    <div class="example-box">
+      <p><strong>Saubere URL-Varianten</strong></p>
+      <code>linkedin.com/in/thomas-meneghini
+linkedin.com/in/dr-thomas-meneghini
+linkedin.com/in/thomas-meneghini-azett</code>
+    </div>
+    <div class="action-steps">
+      <div class="action-step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h5>Custom URL einrichten (3 Minuten)</h5>
+          <p>LinkedIn-Profil → „Profil bearbeiten" → oben rechts „Öffentliches Profil und URL bearbeiten" → „Benutzerdefinierte URL bearbeiten" → auf eine der Varianten oben ändern.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- BEREICH 4: HEADLINE -->
+<section style="padding-top:0;padding-bottom:40px;">
+<div class="w">
+  <p style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:16px;" class="fade-in">04 / Headline</p>
+  <div class="status-card fade-in">
+    <div class="status-header">
+      <div class="status-icon orange">📢</div>
+      <div class="status-title">LinkedIn-Headline</div>
+      <span class="status-label warning">Optimieren</span>
+    </div>
+    <div class="analysis-box">
+      <h4>Analyse</h4>
+      <p>Öffentlich sichtbar ist aktuell die Headline <strong style="color:var(--text);">„CEO, Azett GmbH &amp; Co KG"</strong>, also der reine Job-Titel. Das ist korrekt, lässt aber Potenzial liegen: Die Headline ist das meistgelesene Feld Ihres Profils, erscheint überall neben Ihrem Namen (Suche, Kommentare, Einladungen) und wird von der LinkedIn-Suche indexiert. Sie sollte in einem Satz sagen, <em>was Azett für wen löst</em>, und relevante Suchbegriffe wie „Hautschutz" oder „Desinfektion" enthalten.</p>
+      <ul>
+        <li><strong style="color:var(--text);">Stil 1, Job-Titel:</strong> für reine Positions-Klarheit (Ihr jetziger Stand)</li>
+        <li><strong style="color:var(--text);">Stil 2, „Ich helfe …":</strong> wenn Ihre Lösung ein klares Problem löst</li>
+        <li><strong style="color:var(--text);">Stil 3, Stichpunkte:</strong> wenn Sie mehrere Bereiche abbilden wollen</li>
+      </ul>
+    </div>
+    <div class="example-box">
+      <p><strong>Variante A, Nutzen-orientiert (Stil 2)</strong></p>
+      <code>Ich entwickle professionellen Hautschutz, der Hände gesund hält, für Industrie, Lebensmittelbranche &amp; Handwerk | Geschäftsführer Azett (seit 1840)</code>
+    </div>
+    <div class="example-box">
+      <p><strong>Variante B, Authority &amp; Keywords (Stil 3)</strong></p>
+      <code>Geschäftsführer Azett GmbH &amp; Co. KG · Promovierter Formulierungschemiker · Hautschutz, Hautreinigung &amp; Desinfektion · Made in Bayern seit 1840 · Export in 40+ Länder</code>
+    </div>
+    <div class="action-steps">
+      <div class="action-step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h5>Headline schärfen (10 Minuten)</h5>
+          <p>Eine der Varianten übernehmen und auf Ihren Wortlaut anpassen. LinkedIn erlaubt 220 Zeichen, Raum genug für Nutzen plus Keywords.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- BEREICH 5: SUMMARY -->
+<section style="padding-top:0;padding-bottom:40px;">
+<div class="w">
+  <p style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:16px;" class="fade-in">05 / Summary (Info-Bereich)</p>
+  <div class="status-card fade-in">
+    <div class="status-header">
+      <div class="status-icon orange">✍️</div>
+      <div class="status-title">LinkedIn Summary (Info)</div>
+      <span class="status-label warning">Prüfen</span>
+    </div>
+    <div class="analysis-box">
+      <h4>Analyse</h4>
+      <p>Die Summary ist Ihr Verkaufsraum auf LinkedIn. Der Guide empfiehlt eine klare <strong style="color:var(--text);">4-Sektionen-Struktur</strong>, nahe am 2.000-Zeichen-Limit, und vor allem: <strong style="color:var(--text);">kundenorientiert statt ich-orientiert</strong>, zeigen, wie Azett dem Leser hilft, nicht nur was Azett ist. Da Ihre Summary nur eingeloggt vollständig sichtbar ist, hier ein fertiger Entwurf zum Abgleich und Anpassen:</p>
+    </div>
+    <div class="example-box">
+      <p><strong>Summary-Entwurf (fertig zum Einfügen, ~1.700 Zeichen)</strong></p>
+      <code>𝗚𝗲𝘀𝘂𝗻𝗱𝗲 𝗛𝗮𝘂𝘁 𝗶𝘀𝘁 𝗸𝗲𝗶𝗻 𝗭𝘂𝗳𝗮𝗹𝗹, 𝘀𝗶𝗲 𝗶𝘀𝘁 𝗽𝗹𝗮𝗻𝗯𝗮𝗿.
+
+Wer mit Reinigungsmitteln, Chemie, Lebensmitteln oder im Handwerk arbeitet, belastet seine Haut jeden Tag. Die Folge: rissige Hände, Hautekzeme, Ausfalltage. Dabei lässt sich das mit dem richtigen Hautschutzkonzept fast vollständig vermeiden.
+
+Genau dafür gibt es Azett, seit 1840 aus Bayern, heute in über 40 Ländern im Einsatz.
+
+━━━━━━━━━━━━━━━━━━━━━━━
+
+𝗪𝗼𝗯𝗲𝗶 𝘄𝗶𝗿 𝗨𝗻𝘁𝗲𝗿𝗻𝗲𝗵𝗺𝗲𝗻 𝗵𝗲𝗹𝗳𝗲𝗻:
+
+▸ Hautschutz, Hautreinigung &amp; Hautpflege als komplettes Konzept
+▸ Desinfektion &amp; Waschraumhygiene für Industrie, Lebensmittel &amp; Hotellerie
+▸ Private-Label-Fertigung für Marken und Händler
+▸ Beratung statt Produktverkauf, passgenau für Ihren Betrieb
+
+━━━━━━━━━━━━━━━━━━━━━━━
+
+𝗙ü𝗿 𝘄𝗲𝗻:
+Industrie- und Werkstattbetriebe, Lebensmittelproduktion, professionelle Gebäudereinigung und Hotellerie, die ihre Mitarbeiter wirksam schützen und Hygiene-Standards sicher erfüllen wollen, mehr als 500 Kunden vertrauen uns bereits.
+
+━━━━━━━━━━━━━━━━━━━━━━━
+
+𝗨𝗻𝘀𝗲𝗿 𝗔𝗻𝘀𝗽𝗿𝘂𝗰𝗵: Qualität, Gesundheit und Nachhaltigkeit, entwickelt und produziert in Süddeutschland.
+
+𝗦𝗽𝗿𝗲𝗰𝗵𝗲𝗻 𝗦𝗶𝗲 𝗺𝗶𝗰𝗵 𝗮𝗻:
+→ Direkt hier auf LinkedIn
+→ info@azett.de
+→ azett.de</code>
+    </div>
+    <div class="action-steps">
+      <div class="action-step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h5>Summary einfügen &amp; anpassen</h5>
+          <p>Profil bearbeiten → „Info" → Text einfügen. Auf Ihren Tonfall und konkrete Zahlen/Beispiele anpassen.</p>
+        </div>
+      </div>
+      <div class="action-step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h5>Fettschrift via Unicode</h5>
+          <p>LinkedIn erlaubt keine echte Fettschrift, Unicode-Zeichen wie 𝗙𝗲𝘁𝘁 wirken aber wie Bold und gliedern den Text.</p>
+          <div class="step-tip">Tool-Tipp: fancy-generator.com/de/bold-text-generator</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- BEREICH 6: FEATURED -->
+<section style="padding-top:0;padding-bottom:40px;">
+<div class="w">
+  <p style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:16px;" class="fade-in">06 / Featured Section</p>
+  <div class="status-card fade-in">
+    <div class="status-header">
+      <div class="status-icon orange">⭐</div>
+      <div class="status-title">Featured Section</div>
+      <span class="status-label warning">Optimieren</span>
+    </div>
+    <div class="analysis-box">
+      <h4>Analyse</h4>
+      <p>Die Featured Section erscheint direkt unter Ihrer Summary und ist ideal für Social Proof. Sie haben hier außergewöhnlich starke Inhalte zur Verfügung, die nutzen sofort Vertrauen und Neugier: Ihr Desinfektionskonzept <strong style="color:var(--text);">BaktEx®</strong>, präsentiert auf der Internationalen Erfindermesse Genf 2025, und die 185-jährige Firmengeschichte sind echte Authority-Signale.</p>
+    </div>
+    <div class="example-box">
+      <p><strong>Empfohlene Inhalte für die Featured Section</strong></p>
+      <code>1. BaktEx®, Beitrag oder Link zur Innovation (Geneva Inventions 2025)
+2. Link zur Website azett.de, mit Vorschaubild
+3. Bester eigener LinkedIn-Post (z.B. zu Hautschutz / Hygiene-Trends)
+4. Produkt- oder Imagevideo / „175 Jahre Azett"-Story als Vertrauensanker</code>
+    </div>
+    <div class="action-steps">
+      <div class="action-step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h5>Featured Section aktivieren</h5>
+          <p>Profil bearbeiten → „Abschnitt hinzufügen" → „Im Fokus" („Featured") → Link oder Beitrag hinzufügen. Das stärkste Asset (BaktEx®) an erster Stelle.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- BEREICH 7: WERDEGANG -->
+<section style="padding-top:0;padding-bottom:40px;">
+<div class="w">
+  <p style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:16px;" class="fade-in">07 / Werdegang</p>
+  <div class="status-card fade-in">
+    <div class="status-header">
+      <div class="status-icon orange">💼</div>
+      <div class="status-title">Werdegang (Berufserfahrung)</div>
+      <span class="status-label warning">Prüfen</span>
+    </div>
+    <div class="analysis-box">
+      <h4>Analyse</h4>
+      <p>Der Guide-Ansatz: Die <strong style="color:var(--text);">aktuelle Rolle</strong> bekommt die meisten Informationen, frühere Stationen bleiben kurz. Die Beschreibung ergänzt die Summary und darf, als promovierter Formulierungschemiker mit über 30 Jahren Erfahrung, Ihre fachliche Tiefe zeigen. Wichtig: <strong style="color:var(--text);">Medien direkt an die aktuelle Position anhängen</strong> (Produktbilder, Datenblätter, Case-Links), das macht Ihr Profil greifbar.</p>
+    </div>
+    <div class="example-box">
+      <p><strong>Bausteine für die aktuelle Rolle (Azett)</strong></p>
+      <code>• Geschäftsführender Gesellschafter seit 2003, Aufbau zum kompletten Hautschutzkonzept
+• Promovierter Chemiker, 30+ Jahre Erfahrung in Kosmetik &amp; industrieller Hygiene
+• Strategische Weiterentwicklung: Repositionierung Richtung Hautschutz, Innovation BaktEx®
+• Export-Verantwortung, Azett heute in 40+ Ländern
+• Medien anhängen: Produktbild, BaktEx®-Datenblatt, Link azett.de</code>
+    </div>
+    <div class="action-steps">
+      <div class="action-step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h5>Aktuelle Position ausbauen + Medien anhängen</h5>
+          <p>Pro Position lassen sich mehrere Medien (Bild 552×368px, Dokument, Link) anhängen, jedes davon ist ein kleiner Vertrauensbeweis.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- BEREICH 8: SKILLS -->
+<section style="padding-top:0;padding-bottom:40px;">
+<div class="w">
+  <p style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:16px;" class="fade-in">08 / Skills</p>
+  <div class="status-card fade-in">
+    <div class="status-header">
+      <div class="status-icon orange">🎯</div>
+      <div class="status-title">Skills &amp; Endorsements</div>
+      <span class="status-label warning">Prüfen</span>
+    </div>
+    <div class="analysis-box">
+      <h4>Analyse</h4>
+      <p>LinkedIn zeigt die <strong style="color:var(--text);">obersten 3 Skills</strong> prominent an und nutzt sie für die Suche. Diese drei sollten die relevantesten für Ihre Zielgruppe sein, also Begriffe, nach denen Einkäufer, Hygieneverantwortliche oder Vertriebspartner suchen.</p>
+    </div>
+    <div class="example-box">
+      <p><strong>Empfohlene Top-3 Skills</strong></p>
+      <code>1. Hautschutz &amp; Formulierungschemie
+2. B2B-Vertrieb &amp; Export
+3. Desinfektion &amp; Hygienekonzepte</code>
+    </div>
+    <div class="action-steps">
+      <div class="action-step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h5>Top-3 Skills setzen &amp; ordnen</h5>
+          <p>Profil bearbeiten → „Kenntnisse" → Reihenfolge so anpassen, dass die drei stärksten Keywords ganz oben stehen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- BEREICH 9: RECOMMENDATIONS -->
+<section style="padding-top:0;padding-bottom:40px;">
+<div class="w">
+  <p style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:16px;" class="fade-in">09 / Recommendations</p>
+  <div class="status-card fade-in">
+    <div class="status-header">
+      <div class="status-icon orange">🗣️</div>
+      <div class="status-title">LinkedIn Recommendations</div>
+      <span class="status-label warning">Prüfen</span>
+    </div>
+    <div class="analysis-box">
+      <h4>Analyse</h4>
+      <p>Empfehlungen sind eines der stärksten Vertrauenssignale, echte Stimmen echter Kunden, öffentlich sichtbar. Der häufigste Fehler: Die meisten haben 0-2 und fragen nie aktiv danach (91 % der Kunden würden eine geben, aber nur 11 % der Anbieter fragen). Mit <strong style="color:var(--text);">über 500 Kunden in 40 Ländern</strong> haben Sie eine außergewöhnlich starke Quelle. Ziel laut Guide: mindestens 5 Empfehlungen.</p>
+    </div>
+    <div class="example-box">
+      <p><strong>Anfrage-Nachricht (Copy-Paste-fertig)</strong></p>
+      <code>Hallo [Name],
+
+ich freue mich sehr über unsere Zusammenarbeit rund um [Produkt / Projekt].
+
+Ich pflege gerade mein LinkedIn-Profil und würde mich freuen, wenn Sie mir kurz eine Empfehlung schreiben könnten, 3-4 Sätze zu Ihrer Erfahrung mit Azett reichen völlig. Selbstverständlich revanchiere ich mich gern.
+
+Hier der direkte Link: linkedin.com/in/[ihre-url] → „Empfehlung schreiben"
+
+Herzlichen Dank im Voraus!
+Thomas Meneghini</code>
+    </div>
+    <div class="action-steps">
+      <div class="action-step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h5>5-10 Stammkunden persönlich anfragen</h5>
+          <p>Die Vorlage an langjährige Kunden oder Partner schicken, der erste Satz auf die konkrete Zusammenarbeit angepasst. Eingeholte Empfehlungen lassen sich später als Post teilen (vorher um Erlaubnis fragen).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<!-- ZUSAMMENFASSUNG / AKTIONSPLAN -->
+<section style="padding-top:16px;">
+<div class="w">
+  <div class="section-label fade-in">Aktionsplan</div>
+  <h2 class="section-title fade-in">Zusammenfassung &amp; Prioritäten</h2>
+
+  <div class="summary-grid fade-in">
+    <div class="summary-card">
+      <div class="big-num" style="color:var(--accent);">9</div>
+      <div class="big-label">Bereiche analysiert</div>
+    </div>
+    <div class="summary-card">
+      <div class="big-num" style="color:var(--green);">2</div>
+      <div class="big-label">Quick Wins in &lt; 15 Min</div>
+    </div>
+    <div class="summary-card">
+      <div class="big-num" style="color:var(--accent);">~2000</div>
+      <div class="big-label">Zeichen Summary-Potenzial</div>
+    </div>
+  </div>
+
+  <p style="font-size:0.9rem;color:var(--muted);margin-bottom:24px;" class="fade-in">Empfohlene Reihenfolge nach Wirkung und Aufwand:</p>
+
+  <div class="priority-item p-orange fade-in">
+    <div class="priority-num">1.</div>
+    <div class="priority-content">
+      <h4>🟠 URL bereinigen, 3 Minuten</h4>
+      <p>„661166a0" entfernen → „thomas-meneghini" oder „dr-thomas-meneghini" setzen. Einmalig, dauerhafter Effekt.</p>
+    </div>
+  </div>
+  <div class="priority-item p-orange fade-in">
+    <div class="priority-num">2.</div>
+    <div class="priority-content">
+      <h4>🟠 Headline schärfen, 10 Minuten</h4>
+      <p>Vom reinen Job-Titel zu Nutzen + Keywords. Zwei fertige Varianten liegen oben.</p>
+    </div>
+  </div>
+  <div class="priority-item p-orange fade-in">
+    <div class="priority-num">3.</div>
+    <div class="priority-content">
+      <h4>🟠 Summary ausbauen, diese Woche</h4>
+      <p>Kundenorientiert, 4 Sektionen, nahe ans Zeichenlimit. Fertiger Entwurf liegt oben. ~20-30 Minuten.</p>
+    </div>
+  </div>
+  <div class="priority-item p-orange fade-in">
+    <div class="priority-num">4.</div>
+    <div class="priority-content">
+      <h4>🟠 Featured Section bestücken, diese Woche</h4>
+      <p>BaktEx® (Geneva-Award 2025), Website und 175-Jahre-Story strategisch platzieren. Starker Vertrauens-Boost.</p>
+    </div>
+  </div>
+  <div class="priority-item p-orange fade-in">
+    <div class="priority-num">5.</div>
+    <div class="priority-content">
+      <h4>🟠 Skills Top-3 setzen, 5 Minuten</h4>
+      <p>Hautschutz &amp; Formulierungschemie · B2B-Export · Desinfektion &amp; Hygienekonzepte ganz nach oben.</p>
+    </div>
+  </div>
+  <div class="priority-item p-orange fade-in">
+    <div class="priority-num">6.</div>
+    <div class="priority-content">
+      <h4>🟠 Recommendations anfragen, diesen Monat</h4>
+      <p>5-10 Stammkunden mit der Vorlage anschreiben. Bei 500+ Kunden eine starke, leicht erschließbare Quelle.</p>
+    </div>
+  </div>
+  <div class="priority-item p-orange fade-in">
+    <div class="priority-num">7.</div>
+    <div class="priority-content">
+      <h4>🟠 Banner &amp; Profilfoto prüfen, diesen Monat</h4>
+      <p>Banner in Canva (15 Min) mit Azett-Claim. Profilfoto gegen die Guide-Standards abgleichen.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- CTA -->
+<section>
+<div class="w">
+  <div class="cta-box fade-in">
+    <p style="font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:12px;">Nächste Schritte</p>
+    <h2 style="font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:12px;">Lassen Sie uns das gemeinsam umsetzen.</h2>
+    <p style="font-size:0.95rem;color:var(--muted);max-width:580px;margin:0 auto 32px;">Diese Analyse zeigt, wo Ihr LinkedIn-Profil noch Sichtbarkeit und Anfragen liegen lässt. Grundwerk Digital baut genau das auf, ein optimiertes Profil plus die passende Outreach-Strategie, damit aus Sichtbarkeit echte Geschäftskontakte für Azett werden.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;">
+      <a class="btn-primary" href="https://calendly.com/anthony-katzur/30min?email=thomas.meneghini%40azett.de&name=Thomas%20Meneghini" target="_blank">📅 Termin mit Anthony buchen</a>
+      <a class="btn-secondary" href="mailto:anthony.katzur@grundwerk.digital">✉️ E-Mail schreiben</a>
+    </div>
+    <p style="font-size:0.8rem;color:var(--muted);margin-top:20px;">Anthony Katzur · Grundwerk Digital · anthony.katzur@grundwerk.digital</p>
+  </div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer style="border-top:1px solid var(--border);padding:32px 0;">
+<div class="w" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+  <div style="font-size:0.8rem;color:var(--muted);">© 2026 Grundwerk Digital GmbH · Analyse für Dr. Thomas Meneghini</div>
+  <div style="font-size:0.8rem;color:var(--muted);">Erstellt am 29.06.2026 · Vertraulich</div>
+</div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
