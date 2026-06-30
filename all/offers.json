@@ -439,5 +439,14 @@
     "secure": "7142836905",
     "icon": "🏦",
     "created": "2026-06-19"
+  },
+  {
+    "slug": "wh-industrial-services",
+    "name": "WH Industrial Services GmbH",
+    "subtitle": "Sophie Reichert · Sales Room · Vertriebssystem für die Elektroabteilung",
+    "type": "sales-room",
+    "secure": "1656157034",
+    "icon": "⚡",
+    "created": "2026-06-30"
   }
 ]
