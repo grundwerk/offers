@@ -1,470 +1,999 @@
-<!-- GRUNDWERK-OFFER v2 | 2026-06-30 | Edits: chips raus, Strategie-Erwartete-Ergebnisse raus, FAQ raus, Foerderung nur BAFA, DACH-only -->
+<!-- GRUNDWERK-OFFER v3 | 2026-06-30 | Redesign auf Standard-Sales-Room-Template, Content unveraendert -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII=">
-<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII=">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="offer-version" content="v2 | 2026-06-30">
-<title>WH Industrial Services × Grundwerk</title>
-<meta name="description" content="Ihr planbarer zweiter Vertriebskanal: Wie Grundwerk für die Elektroabteilung von WH Industrial Services qualifizierte Neukundengespräche aufbaut.">
-<meta property="og:title" content="WH Industrial Services × Grundwerk">
-<meta property="og:description" content="Ihr planbarer zweiter Vertriebskanal: qualifizierte Neukundengespräche für die Elektroabteilung, statt Info-Friedhof.">
-<meta property="og:url" content="https://start.grundwerk.digital/wh-industrial-services/">
-<meta property="og:image" content="https://start.grundwerk.digital/assets/og/wh-industrial-services.png">
-<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://start.grundwerk.digital/assets/og/wh-industrial-services.png">
-<script>
-(function(){
-  var code='1656157034';
-  var params=new URLSearchParams(window.location.search);
-  if(params.get('secure')!==code){
-    document.documentElement.style.display='none';
-    document.title='Zugriff verweigert';
-    window.stop();
-  }
-})();
-</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#0a0a0a; --card:#111111; --card2:#161616; --text:#f0f0f0; --muted:#8a8a8a;
-  --accent:#4f7df9; --accent-soft:rgba(79,125,249,0.12); --green:#22c55e; --red:#ef4444;
-  --amber:#f5a623; --border:rgba(255,255,255,0.08); --radius:16px; --maxw:1120px;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:'Inter',-apple-system,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-a{color:inherit;text-decoration:none}
-img{max-width:100%}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-.muted{color:var(--muted)}
-.accent{color:var(--accent)}
-.green{color:var(--green)}
-/* TOPBAR */
-.topbar{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
-.topbar-inner{max-width:var(--maxw);margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.brand-lockup{display:flex;align-items:center;gap:12px;min-width:0}
-.gw-word{font-weight:700;font-size:1.15rem;letter-spacing:-0.02em;color:var(--text);white-space:nowrap}
-.brand-x{color:var(--muted);font-size:1rem}
-.wh-chip{background:#fff;border-radius:9px;padding:6px 12px;display:flex;align-items:center}
-.wh-chip img{height:22px;display:block}
-.nav-cta{display:flex;align-items:center;gap:14px}
-.btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;font-weight:600;font-size:0.9rem;padding:11px 20px;border-radius:11px;border:none;cursor:pointer;transition:transform .15s,box-shadow .15s;white-space:nowrap}
-.btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(79,125,249,0.3)}
-.btn-ghost{background:transparent;border:1px solid var(--border);color:var(--text)}
-.btn-ghost:hover{box-shadow:none;border-color:var(--accent)}
-/* CONTACT */
-.nav-contact{display:flex;align-items:center;gap:10px;cursor:pointer;position:relative}
-.nav-contact img{width:34px;height:34px;border-radius:50%;filter:grayscale(100%);object-fit:cover;border:1px solid var(--border)}
-.contact-dropdown{position:absolute;top:calc(100% + 10px);right:0;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 20px;min-width:270px;z-index:1000;display:none;box-shadow:0 20px 50px rgba(0,0,0,0.5)}
-.contact-dropdown.open{display:block}
-.contact-dropdown a{display:flex;align-items:center;gap:10px;padding:9px 0;font-size:0.9rem;color:var(--text);border-bottom:1px solid var(--border)}
-.contact-dropdown a:last-child{border-bottom:none}
-/* TABNAV */
-.tabnav{position:sticky;top:63px;z-index:90;background:rgba(10,10,10,0.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none}
-.tabnav::-webkit-scrollbar{display:none}
-.tabnav-inner{max-width:var(--maxw);margin:0 auto;padding:0 24px;display:flex;gap:4px}
-.tab-btn{background:none;border:none;color:var(--muted);font-family:inherit;font-size:0.9rem;font-weight:500;padding:15px 16px;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:color .15s}
-.tab-btn:hover{color:var(--text)}
-.tab-btn.active{color:var(--text);border-bottom-color:var(--accent)}
-/* PANELS */
-.panel{display:none;padding:64px 0;animation:fade .4s ease}
-.panel.active{display:block}
-@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-.eyebrow{display:inline-block;font-size:0.78rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
-h1{font-size:clamp(2rem,5vw,3.1rem);font-weight:800;letter-spacing:-0.03em;line-height:1.08;margin-bottom:20px}
-h2{font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:700;letter-spacing:-0.02em;line-height:1.15;margin-bottom:18px}
-h3{font-size:1.18rem;font-weight:600;margin-bottom:10px}
-.lead{font-size:1.12rem;color:#cfcfcf;max-width:680px}
-.section-gap{margin-top:52px}
-/* CARDS */
-.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px}
-.grid{display:grid;gap:18px}
-.g2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-.g3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-/* CHAT QUOTES */
-.chat{display:flex;flex-direction:column;gap:14px;max-width:760px}
-.bubble{background:var(--card);border:1px solid var(--border);border-radius:18px;border-top-left-radius:4px;padding:16px 20px;font-size:1.02rem;color:#e6e6e6;max-width:92%}
-.bubble .who{display:block;margin-top:10px;font-size:0.78rem;color:var(--muted);font-weight:500}
-/* FINDING */
-.finding{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:12px;padding:20px 22px}
-.finding .num{font-size:1.7rem;font-weight:800;color:var(--accent);line-height:1}
-.cost-box{background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.25);border-radius:var(--radius);padding:26px 28px;margin-top:28px}
-.cost-box ul{list-style:none;display:grid;gap:10px;margin-top:14px}
-.cost-box li{padding-left:26px;position:relative;color:#e0d2d2}
-.cost-box li:before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;border-radius:50%;background:var(--red)}
-/* PHASES */
-.phase{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:26px;position:relative;overflow:hidden}
-.phase .step{font-size:0.75rem;font-weight:700;letter-spacing:0.06em;color:var(--accent);text-transform:uppercase}
-.phase ul{list-style:none;margin-top:14px;display:grid;gap:9px}
-.phase li{padding-left:22px;position:relative;font-size:0.95rem;color:#d8d8d8}
-.phase li:before{content:"";position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:2px;background:var(--accent)}
-/* PROOF */
-.proof{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:26px}
-.proof .big{font-size:1.85rem;font-weight:800;color:var(--green);line-height:1.1;letter-spacing:-0.02em}
-.proof .co{font-weight:700;margin-top:10px}
-.proof .meta{font-size:0.85rem;color:var(--muted);margin-top:4px}
-.chiprow{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
-.rchip{background:var(--card2);border:1px solid var(--border);border-radius:30px;padding:9px 18px;font-size:0.88rem;color:#d8d8d8}
-.rchip b{color:var(--green)}
-/* TICKER */
-.ticker{padding:24px 0 8px;overflow:hidden;position:relative}
-.ticker:before,.ticker:after{content:"";position:absolute;top:0;bottom:0;width:9%;z-index:2;pointer-events:none}
-.ticker:before{left:0;background:linear-gradient(90deg,var(--bg) 35%,transparent)}
-.ticker:after{right:0;background:linear-gradient(270deg,var(--bg) 35%,transparent)}
-.ticker-row{display:flex;gap:54px;width:max-content;will-change:transform;align-items:center;margin-bottom:18px}
-.ticker-row.r1{animation:scrollL 42s linear infinite}
-.ticker-row.r2{animation:scrollR 48s linear infinite}
-@keyframes scrollL{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@keyframes scrollR{from{transform:translateX(-50%)}to{transform:translateX(0)}}
-.client-logo{height:34px;opacity:0.42;filter:grayscale(100%) brightness(2);transition:opacity .3s,filter .3s;flex-shrink:0}
-.client-logo:hover{opacity:0.85;filter:grayscale(0%) brightness(1)}
-/* STAT */
-.statbar{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;margin-top:40px;background:var(--bg);border:none}
-.stat .n{font-size:2rem;font-weight:800;letter-spacing:-0.02em}
-.stat .l{font-size:0.9rem;color:var(--muted);margin-top:4px}
-/* PRICING */
-.price-card{max-width:520px;margin:0 auto;background:var(--card);border:1px solid var(--accent);border-radius:20px;padding:34px;box-shadow:0 24px 60px rgba(79,125,249,0.12)}
-.price-card .tag{display:inline-block;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:6px 12px;border-radius:20px}
-.price-card .amount{font-size:3rem;font-weight:800;letter-spacing:-0.03em;margin:16px 0 2px}
-.price-card .sub{color:var(--muted);font-size:0.95rem}
-details.acc{border:1px solid var(--border);border-radius:12px;margin-top:12px;overflow:hidden;background:var(--card2)}
-details.acc summary{padding:15px 18px;cursor:pointer;font-weight:600;font-size:0.95rem;list-style:none;display:flex;justify-content:space-between;align-items:center}
-details.acc summary::-webkit-details-marker{display:none}
-details.acc summary:after{content:"+";color:var(--accent);font-size:1.3rem;font-weight:400}
-details.acc[open] summary:after{content:"−"}
-details.acc .body{padding:0 18px 18px}
-details.acc .body ul{list-style:none;display:grid;gap:8px}
-details.acc .body li{padding-left:24px;position:relative;font-size:0.92rem;color:#d4d4d4}
-details.acc .body li:before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:700}
-.total-line{display:flex;justify-content:space-between;align-items:baseline;padding:18px 0 4px;border-top:1px solid var(--border);margin-top:18px}
-.total-line .lab{color:var(--muted)}
-.total-line .val{font-size:1.5rem;font-weight:800}
-.goalbox{max-width:520px;margin:18px auto 0;background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.25);border-radius:14px;padding:20px 24px}
-.bafa-box{max-width:520px;margin:18px auto 0;background:var(--accent-soft);border:1px solid rgba(79,125,249,0.3);border-radius:14px;padding:22px 24px}
-.tier{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:26px}
-/* STRATEGY */
-.dossier{display:grid;gap:16px}
-.dblock{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px 24px}
-.dblock .k{font-size:0.78rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
-/* ACTION PLAN */
-.steps{display:grid;gap:12px;max-width:760px}
-.step-item{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 20px}
-.step-item .box{flex-shrink:0;width:22px;height:22px;border-radius:6px;border:2px solid var(--border);margin-top:2px;display:flex;align-items:center;justify-content:center;font-size:0.8rem}
-.step-item.done .box{background:var(--green);border-color:var(--green);color:#06210f}
-.step-item.done .txt{color:var(--muted)}
-.step-item .txt b{font-weight:600;color:var(--text)}
-.step-item.done .txt b{text-decoration:line-through;color:var(--muted)}
-/* FAQ */
-.faq{max-width:780px;display:grid;gap:10px}
-/* CTA panel */
-.cta-final{text-align:center;max-width:640px;margin:0 auto}
-.cta-final .when{display:inline-flex;align-items:center;gap:10px;background:var(--accent-soft);border:1px solid rgba(79,125,249,0.3);border-radius:30px;padding:10px 22px;font-weight:600;margin-bottom:24px}
-.trust{color:var(--muted);font-size:0.9rem;margin-top:18px}
-.footer{border-top:1px solid var(--border);padding:30px 0;color:var(--muted);font-size:0.85rem;text-align:center}
-@media(max-width:640px){.panel{padding:44px 0}.nav-cta .btn-text-hide{display:none}}
-</style>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII=" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WH Industrial Services × Grundwerk</title>
+    <meta name="offer-version" content="v3 | 2026-06-30">
+    <meta name="description" content="Ihr planbarer zweiter Vertriebskanal: qualifizierte Neukundengespräche für die Elektroabteilung von WH Industrial Services, statt Info-Friedhof.">
+    <meta property="og:title" content="WH Industrial Services × Grundwerk">
+    <meta property="og:description" content="Ihr planbarer zweiter Vertriebskanal: qualifizierte Neukundengespräche für die Elektroabteilung, statt Info-Friedhof.">
+    <meta property="og:url" content="https://start.grundwerk.digital/wh-industrial-services/">
+    <meta property="og:image" content="https://start.grundwerk.digital/assets/og/wh-industrial-services.png">
+    <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://start.grundwerk.digital/assets/og/wh-industrial-services.png">
+    <script>
+        (function(){
+            var code = '1656157034';
+            var params = new URLSearchParams(window.location.search);
+            if(params.get('secure') !== code){
+                document.documentElement.style.display='none';
+                document.title='Zugriff verweigert';
+                window.stop();
+            }
+        })();
+        (function(){
+            var t = localStorage.getItem('theme');
+            if(t === 'light') document.documentElement.setAttribute('data-theme','light');
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg:              #0a0a0a;
+            --bg-card:         #111111;
+            --bg-card-2:       #161616;
+            --bg-accent:       #0d1224;
+            --text:            #f0f0f0;
+            --text-muted:      #c8c8c8;
+            --text-dim:        #888888;
+            --accent:          #4f7df9;
+            --accent-glow:     rgba(79,125,249,0.18);
+            --accent-dark:     #3b63d4;
+            --green:           #22c55e;
+            --green-glow:      rgba(34,197,94,0.15);
+            --red:             #ef4444;
+            --red-dim:         rgba(239,68,68,0.12);
+            --orange:          #f97316;
+            --orange-dim:      rgba(249,115,22,0.12);
+            --border:          rgba(255,255,255,0.07);
+            --border-accent:   rgba(79,125,249,0.35);
+            --radius:          14px;
+            --radius-sm:       8px;
+            --nav-bg:          rgba(10,10,10,0.9);
+            --tab-bar-bg:      rgba(10,10,10,0.92);
+            --layer-subtle:    rgba(255,255,255,0.03);
+            --layer-subtle-2:  rgba(255,255,255,0.04);
+            --footer-bg:       rgba(255,255,255,0.02);
+            --blue-text:       #93a8f5;
+            --video-bg:        #000;
+            --grid-line:       rgba(255,255,255,0.03);
+            --consequence-h:   #fb923c;
+            --consequence-li:  #fdba74;
+        }
+        [data-theme="light"] {
+            --bg:              #ffffff;
+            --bg-card:         #f8f9fa;
+            --bg-card-2:       #f1f3f5;
+            --bg-accent:       #eef2ff;
+            --text:            #111111;
+            --text-muted:      #4b5563;
+            --text-dim:        #6b7280;
+            --accent:          #4f7df9;
+            --accent-dark:     #3b63d4;
+            --accent-glow:     rgba(79,125,249,0.08);
+            --green:           #16a34a;
+            --green-glow:      rgba(22,163,74,0.08);
+            --red:             #dc2626;
+            --red-dim:         rgba(220,38,38,0.08);
+            --orange:          #ea580c;
+            --orange-dim:      rgba(234,88,12,0.08);
+            --border:          #e5e7eb;
+            --border-accent:   rgba(79,125,249,0.40);
+            --nav-bg:          rgba(255,255,255,0.95);
+            --tab-bar-bg:      rgba(255,255,255,0.97);
+            --layer-subtle:    rgba(0,0,0,0.03);
+            --layer-subtle-2:  rgba(0,0,0,0.04);
+            --footer-bg:       rgba(0,0,0,0.02);
+            --blue-text:       #3b5bdb;
+            --video-bg:        #f3f4f6;
+            --grid-line:       rgba(0,0,0,0.05);
+            --consequence-h:   #9a3412;
+            --consequence-li:  #431407;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
+            font-size: 16px;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ─── PROGRESS BAR ─── */
+        .progress-bar {
+            position: fixed; top: 0; left: 0; height: 2px;
+            background: var(--accent); z-index: 400; width: 0;
+            transition: width 0.3s ease;
+            box-shadow: 0 0 8px var(--accent);
+        }
+
+        /* ─── NAV ─── */
+        nav {
+            position: sticky; top: 0; z-index: 300;
+            background: var(--nav-bg);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            height: 64px;
+            display: flex; align-items: center;
+            padding: 0 2rem;
+            justify-content: space-between;
+        }
+        .nav-logo {
+            display: flex; align-items: center; gap: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800; font-size: 0.95rem; letter-spacing: -0.01em;
+        }
+        .nav-logo-icon {
+            width: 28px; height: 28px;
+            background: var(--accent); border-radius: 7px;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 900; font-size: 0.75rem; color: white; flex-shrink: 0;
+        }
+        .nav-client-logo { width: 28px; height: 28px; object-fit: contain; flex-shrink: 0; border-radius: 6px; }
+        .nav-logo-text { color: var(--text); }
+        .nav-logo-sep { color: var(--text-dim); font-weight: 300; font-size: 1rem; margin: 0 4px; }
+        .nav-logo-client { color: var(--text-muted); font-weight: 500; }
+        .nav-cta {
+            background: var(--accent); color: white; border: none;
+            padding: 8px 22px; border-radius: var(--radius-sm); font-size: 0.85rem;
+            font-weight: 600; cursor: pointer; font-family: inherit;
+            transition: background 0.2s; text-decoration: none;
+        }
+        .nav-cta:hover { background: var(--accent-dark); }
+        .nav-contact {
+            position: relative; display: flex; align-items: center; gap: 8px;
+            cursor: pointer; padding: 5px 10px; border-radius: var(--radius-sm);
+            border: 1px solid var(--border); background: transparent; transition: border-color 0.2s;
+        }
+        .nav-contact:hover { border-color: rgba(255,255,255,0.15); }
+        .nav-contact-photo {
+            width: 32px; height: 32px; border-radius: 50%; object-fit: cover;
+            filter: grayscale(100%);
+        }
+        .nav-contact-info { display: flex; flex-direction: column; line-height: 1.2; }
+        .nav-contact-name { font-size: 0.8rem; font-weight: 600; color: var(--text); white-space: nowrap; }
+        .nav-contact-label { font-size: 0.65rem; color: var(--text-muted); }
+        .nav-contact-dropdown {
+            display: none; position: absolute; top: calc(100% + 8px); right: 0;
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius-sm); padding: 12px 16px; min-width: 260px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4); z-index: 400;
+        }
+        .nav-contact-dropdown.open { display: block; }
+        .nav-contact-dropdown a {
+            display: flex; align-items: center; gap: 10px; padding: 8px 0;
+            color: var(--text); text-decoration: none; font-size: 0.82rem;
+            border-bottom: 1px solid var(--border); transition: color 0.15s;
+        }
+        .nav-contact-dropdown a:last-child { border-bottom: none; }
+        .nav-contact-dropdown a:hover { color: var(--accent); }
+        .nav-contact-dropdown .contact-icon { width: 18px; text-align: center; flex-shrink: 0; }
+        .nav-contact-dropdown .contact-hint {
+            font-size: 0.72rem; color: var(--text-dim); padding-top: 8px; margin-top: 4px;
+            border-top: 1px solid var(--border); line-height: 1.4;
+        }
+
+        /* ─── TAB BAR ─── */
+        .tab-bar {
+            position: sticky; top: 64px; z-index: 290;
+            background: var(--tab-bar-bg);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 2rem;
+            display: flex; align-items: stretch;
+            overflow-x: auto; scrollbar-width: none;
+        }
+        .tab-bar::-webkit-scrollbar { display: none; }
+        .tab-btn {
+            display: flex; align-items: center; gap: 7px;
+            padding: 0 18px; height: 48px;
+            border: none; background: none;
+            font-family: inherit; font-size: 0.84rem; font-weight: 500;
+            color: var(--text-muted); cursor: pointer; white-space: nowrap;
+            border-bottom: 2px solid transparent; margin-bottom: -1px;
+            transition: color 0.15s, border-color 0.15s; flex-shrink: 0;
+        }
+        .tab-btn:hover { color: var(--text); }
+        .tab-btn.active { color: var(--accent); font-weight: 600; border-bottom-color: var(--accent); }
+        .tab-emoji { font-size: 1rem; line-height: 1; }
+
+        /* ─── PANELS ─── */
+        .panel { display: none; }
+        .panel.active { display: block; animation: fadeIn 0.2s ease; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .container { max-width: 960px; margin: 0 auto; padding: 0 2rem; }
+        .panel-inner { padding: 64px 0 96px; }
+
+        /* ─── TYPOGRAPHY ─── */
+        .section-label {
+            font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em;
+            color: var(--accent); font-weight: 700; margin-bottom: 10px;
+            display: block; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        h1 {
+            font-family: 'ClashDisplay-Variable', 'Clash Display', 'Helvetica Neue', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700;
+            letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 16px;
+        }
+        h2 {
+            font-family: 'ClashDisplay-Variable', 'Clash Display', 'Helvetica Neue', sans-serif;
+            font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700;
+            letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 10px;
+        }
+        .lead {
+            font-size: 1rem; color: var(--text-muted); font-weight: 300;
+            max-width: 600px; line-height: 1.75; margin-bottom: 36px;
+        }
+
+        /* ─── CARDS ─── */
+        .card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 24px;
+            transition: border-color 0.2s, background 0.2s;
+        }
+        .card:hover { border-color: var(--border-accent); background: var(--bg-card-2); }
+
+        /* ─── TAB 1: HALLO BEN · HERO ─── */
+        .hero-panel {
+            position: relative; overflow: hidden;
+            min-height: calc(100vh - 112px);
+            display: flex; align-items: center;
+        }
+        /* Grid lines */
+        .hero-panel::after {
+            content: '';
+            position: absolute; inset: 0; pointer-events: none;
+            background-image:
+                linear-gradient(var(--grid-line) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 50%, transparent 80%);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 50%, transparent 80%);
+        }
+        /* Blue glow */
+        .hero-panel::before {
+            content: '';
+            position: absolute; top: -30%; left: 50%; transform: translateX(-50%);
+            width: 900px; height: 900px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 65%);
+            pointer-events: none;
+        }
+        .hero-content {
+            position: relative; z-index: 1;
+            width: 100%; padding: 80px 2rem;
+            max-width: 960px; margin: 0 auto;
+        }
+        .hero-logos {
+            display: flex; align-items: center; gap: 16px; margin-bottom: 32px;
+        }
+        .hero-logo {
+            height: 38px; max-width: 140px; object-fit: contain;
+            border-radius: 10px; background: rgba(255,255,255,0.9); padding: 8px 14px;
+        }
+        [data-theme="light"] .hero-logo {
+            background: rgba(0,0,0,0.04); padding: 8px 14px;
+        }
+        .hero-logo-sep { font-size: 1rem; color: var(--text-dim); font-weight: 300; }
+        .gw-wordmark {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem; font-weight: 800; letter-spacing: -0.01em; color: var(--text);
+        }
+
+
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 7px;
+            background: rgba(79,125,249,0.12); border: 1px solid var(--border-accent);
+            color: var(--accent); font-size: 0.76rem; font-weight: 700;
+            padding: 5px 14px; border-radius: 100px; margin-bottom: 20px;
+            letter-spacing: 0.02em;
+        }
+        .hero-badge::before { content: '🔒'; font-size: 0.8rem; }
+
+        h1 .highlight { color: var(--accent); }
+
+        .hero-sub {
+            font-size: 1.05rem; color: var(--text-muted);
+            max-width: 600px; line-height: 1.75; margin-bottom: 0;
+        }
+
+        /* Video embed */
+        .video-section { margin: 36px 0; }
+        .video-label { font-size: 0.78rem; color: var(--text-dim); margin-bottom: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; }
+        .video-embed-wrap {
+            border-radius: var(--radius); overflow: hidden;
+            border: 1px solid var(--border);
+            background: var(--video-bg);
+        }
+        .video-embed-wrap wistia-player { display: block; width: 100%; }
+
+        /* Champion box */
+        .champion-box {
+            background: rgba(79,125,249,0.07); border: 1px solid var(--border-accent);
+            border-radius: var(--radius); padding: 24px 28px; margin-top: 4px;
+        }
+        .champion-header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+        .champion-avatar {
+            width: 40px; height: 40px; background: var(--accent); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-weight: 800; font-size: 0.8rem; flex-shrink: 0;
+        }
+        .champion-name { font-size: 0.9rem; font-weight: 700; color: var(--text); }
+        .champion-role { font-size: 0.76rem; color: var(--text-muted); }
+        .champion-box p { font-size: 0.87rem; color: var(--blue-text); line-height: 1.7; font-style: italic; }
+
+        .hero-meta { font-size: 0.74rem; color: var(--text-dim); margin-top: 20px; }
+
+        /* ─── TAB 2: SITUATION ─── */
+        .problem-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 14px; margin-bottom: 24px;
+        }
+        .problem-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-left: 3px solid var(--red); border-radius: var(--radius);
+            padding: 22px; transition: border-color 0.2s;
+        }
+        .problem-card:hover { border-left-color: var(--red); border-color: rgba(239,68,68,0.3); }
+        .problem-card .icon { font-size: 1.4rem; margin-bottom: 10px; }
+        .problem-card h3 { font-size: 0.88rem; font-weight: 700; margin-bottom: 7px; color: var(--text); }
+        .problem-card p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; font-weight: 300; }
+        .call-quote {
+            margin-top: 14px; padding: 11px 14px;
+            background: var(--layer-subtle);
+            border-left: 2px solid var(--accent);
+            border-radius: 0 6px 6px 0;
+        }
+        .call-quote-text {
+            font-size: 0.8rem; color: var(--blue-text); font-style: italic;
+            line-height: 1.6; font-weight: 300;
+        }
+        .call-quote-author {
+            font-size: 0.7rem; color: var(--text-dim);
+            margin-top: 6px; font-style: normal; font-weight: 400;
+        }
+
+        .cost-box {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 22px 24px; margin-bottom: 24px;
+        }
+        .cost-title {
+            font-size: 0.75rem; font-weight: 700; color: var(--text-muted);
+            margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.08em;
+        }
+        .cost-row { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
+        .cost-row:last-child { margin-bottom: 0; }
+        .cost-lbl { font-size: 0.82rem; color: var(--text-muted); min-width: 220px; }
+        .cost-bar-wrap { flex: 1; height: 5px; background: var(--border); border-radius: 100px; overflow: hidden; }
+        .cost-bar { height: 100%; border-radius: 100px; }
+        .cost-bar.r { background: var(--red); width: 0; transition: width 1.2s ease; }
+        .cost-bar.g { background: var(--green); width: 0; transition: width 1.2s ease 0.2s; }
+        .cost-val { font-size: 0.82rem; font-weight: 700; min-width: 70px; text-align: right; }
+        .cost-val.bad { color: var(--red); }
+        .cost-val.good { color: var(--green); }
+
+        .consequence {
+            background: var(--orange-dim); border: 1px solid rgba(249,115,22,0.25);
+            border-left: 3px solid var(--orange);
+            border-radius: var(--radius); padding: 24px 28px;
+        }
+        .consequence h3 { font-size: 0.9rem; font-weight: 700; color: var(--consequence-h); margin-bottom: 12px; }
+        .consequence ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+        .consequence li { font-size: 0.85rem; color: var(--consequence-li); padding-left: 18px; position: relative; line-height: 1.55; }
+        .consequence li::before { content: '→'; position: absolute; left: 0; color: var(--orange); }
+
+        /* ─── TAB 3: DAS SYSTEM ─── */
+        .timeline {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 14px; margin-bottom: 36px;
+        }
+        .t-step {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 20px; position: relative;
+            transition: border-color 0.2s;
+        }
+        .t-step:hover { border-color: var(--border-accent); }
+        .t-step::after {
+            content: '→'; position: absolute; right: -12px; top: 50%;
+            transform: translateY(-50%); color: var(--text-dim); font-size: 1rem; z-index: 1;
+        }
+        .t-step:last-child::after { display: none; }
+        .t-phase { font-size: 0.65rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px; }
+        .t-time { font-size: 0.72rem; color: var(--text-dim); margin-bottom: 9px; }
+        .t-step h3 { font-size: 0.88rem; font-weight: 700; margin-bottom: 9px; color: var(--text); }
+        .t-step ul { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+        .t-step li { font-size: 0.78rem; color: var(--text-muted); padding-left: 12px; position: relative; line-height: 1.5; }
+        .t-step li::before { content: '·'; position: absolute; left: 3px; color: var(--accent); font-size: 1.1rem; line-height: 1.3; }
+
+        /* ─── TAB 4: ERGEBNISSE ─── */
+        .proof-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 14px; margin-bottom: 28px;
+        }
+        .proof-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 22px;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+        .proof-card:hover { border-color: rgba(34,197,94,0.3); transform: translateY(-2px); }
+        .proof-co { font-size: 0.7rem; font-weight: 700; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; }
+        .proof-num { font-size: 1.8rem; font-weight: 800; color: var(--green); letter-spacing: -0.04em; line-height: 1.1; margin-bottom: 3px; }
+        .proof-period { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 12px; }
+        .proof-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.6; }
+
+        .stat-row {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+            padding: 28px 0; border: none;
+        }
+        .stat-item { text-align: center; }
+        .stat-num { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.04em; color: var(--accent); }
+        .stat-lbl { font-size: 0.75rem; color: var(--text-muted); margin-top: 3px; }
+
+        /* ─── LOGO TICKER ─── */
+        .logo-ticker-section { padding: 10px 0 20px; overflow: hidden; }
+        .ticker-track-wrap { overflow: hidden; position: relative; margin-bottom: 16px; }
+        .ticker-track-wrap::before, .ticker-track-wrap::after {
+            content: ''; position: absolute; top: 0; bottom: 0; width: 5%; z-index: 2; pointer-events: none;
+        }
+        .ticker-track-wrap::before { left: 0; background: linear-gradient(to right, var(--bg), transparent); }
+        .ticker-track-wrap::after { right: 0; background: linear-gradient(to left, var(--bg), transparent); }
+        .ticker-track {
+            display: flex; align-items: center; gap: 56px; width: max-content;
+        }
+        .ticker-track.forward { animation: tickerFwd 52s linear infinite; }
+        .ticker-track.reverse { animation: tickerRev 58s linear infinite; }
+        @keyframes tickerFwd {
+            from { transform: translateX(-25%); }
+            to { transform: translateX(-75%); }
+        }
+        @keyframes tickerRev {
+            from { transform: translateX(-75%); }
+            to { transform: translateX(-25%); }
+        }
+        .client-logo {
+            height: 28px; opacity: 0.4; filter: grayscale(100%) brightness(2);
+            transition: opacity 0.3s, filter 0.3s; flex-shrink: 0;
+        }
+        .client-logo:hover { opacity: 0.8; filter: grayscale(0%) brightness(1); }
+
+        /* ─── PRICING ACCORDIONS ─── */
+        details summary::-webkit-details-marker { display: none; }
+        details summary::marker { display: none; content: ''; }
+        details[open] summary span { transform: rotate(180deg); }
+
+        /* ─── TESTIMONIAL QUOTES ─── */
+        .quote-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 28px; }
+        .quote-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 24px 22px; display: flex; flex-direction: column;
+        }
+        .quote-card .q-text {
+            font-size: 0.88rem; line-height: 1.6; color: var(--text); flex: 1;
+            font-style: italic; margin-bottom: 16px;
+        }
+        .quote-card .q-text::before { content: "„"; }
+        .quote-card .q-text::after { content: """; }
+        .quote-card .q-author { font-size: 0.85rem; font-weight: 700; color: var(--accent); }
+        .quote-card .q-role { font-size: 0.75rem; color: var(--text-muted); font-style: italic; }
+        .quote-card .q-metric {
+            display: inline-block; margin-top: 10px; font-size: 0.72rem; font-weight: 700;
+            color: var(--green); background: var(--green-glow); padding: 3px 10px;
+            border-radius: 20px;
+        }
+
+        /* ─── TAB 5: INVESTITION ─── */
+        .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+        .price-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 26px 24px; position: relative;
+            transition: border-color 0.2s;
+        }
+        .price-card:hover { border-color: var(--border-accent); }
+        .price-card.rec { border-color: var(--accent); background: var(--bg-accent); }
+        .rec-badge {
+            position: absolute; top: -11px; left: 50%; transform: translateX(-50%);
+            background: var(--accent); color: white; font-size: 0.7rem; font-weight: 700;
+            padding: 3px 14px; border-radius: 100px; white-space: nowrap;
+        }
+        .price-name { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 14px; }
+        .price-setup { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 4px; }
+        .price-setup strong { color: var(--text); font-size: 0.95rem; }
+        .price-monthly { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.04em; line-height: 1; color: var(--text); }
+        .price-per { font-size: 0.76rem; color: var(--text-muted); margin-bottom: 14px; }
+        .price-total {
+            font-size: 0.8rem; color: var(--text-muted); background: var(--layer-subtle-2);
+            border: 1px solid var(--border); padding: 7px 12px; border-radius: var(--radius-sm); margin-bottom: 16px;
+        }
+        .price-total strong { color: var(--text); }
+        .price-features { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+        .price-features li { font-size: 0.8rem; color: var(--text-muted); padding-left: 18px; position: relative; line-height: 1.5; }
+        .price-features li::before { content: '✓'; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+
+        .roi-box {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 24px;
+        }
+        .roi-box h3 { font-size: 0.88rem; font-weight: 700; margin-bottom: 16px; color: var(--text); }
+        .roi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+        .roi-item { text-align: center; }
+        .roi-lbl { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 5px; }
+        .roi-val { font-size: 1.35rem; font-weight: 800; letter-spacing: -0.03em; color: var(--text); }
+        .roi-val.pos { color: var(--green); }
+        .roi-sub { font-size: 0.69rem; color: var(--text-dim); margin-top: 3px; }
+
+        /* ─── TAB 6: AKTIONSPLAN (MAP) ─── */
+        .map-intro {
+            background: rgba(79,125,249,0.07); border: 1px solid var(--border-accent);
+            border-radius: var(--radius); padding: 20px 24px; margin-bottom: 28px;
+        }
+        .map-intro p { font-size: 0.87rem; color: var(--blue-text); line-height: 1.7; }
+
+        .map-phases { display: flex; flex-direction: column; gap: 14px; }
+
+        .map-phase {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); overflow: hidden;
+            transition: border-color 0.2s;
+        }
+        .map-phase:hover { border-color: var(--border-accent); }
+
+        .map-phase-header {
+            display: flex; align-items: center; gap: 14px;
+            padding: 14px 20px; background: var(--layer-subtle);
+            border-bottom: 1px solid var(--border);
+        }
+        .map-phase-num {
+            width: 28px; height: 28px; background: var(--accent); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 0.74rem; font-weight: 800; flex-shrink: 0;
+        }
+        .map-phase-title { font-size: 0.9rem; font-weight: 700; flex: 1; color: var(--text); }
+        .map-phase-date { font-size: 0.74rem; color: var(--text-dim); white-space: nowrap; }
+
+        .map-tasks { list-style: none; padding: 14px 20px; display: flex; flex-direction: column; gap: 11px; }
+        .map-task { display: flex; align-items: flex-start; gap: 12px; }
+
+        .map-checkbox {
+            width: 18px; height: 18px; border: 2px solid var(--border);
+            border-radius: 4px; flex-shrink: 0; margin-top: 2px; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            transition: background 0.15s, border-color 0.15s;
+        }
+        .map-checkbox:hover { border-color: var(--accent); }
+        .map-checkbox.checked { background: var(--green); border-color: var(--green); }
+        .map-checkbox.checked::after { content: '✓'; color: white; font-size: 0.65rem; font-weight: 800; }
+
+        .map-task-text { flex: 1; }
+        .map-task-title { font-size: 0.84rem; font-weight: 600; color: var(--text); line-height: 1.4; }
+        .map-task-owner { font-size: 0.74rem; color: var(--text-muted); margin-top: 2px; }
+        .map-task-owner strong { color: var(--accent); font-weight: 600; }
+
+        /* ─── TAB 7: TERMIN ─── */
+        .cta-header { text-align: center; margin-bottom: 36px; }
+        .cta-header h2 { max-width: 520px; margin: 0 auto 10px; }
+        .cta-header .lead { margin: 0 auto; text-align: center; }
+
+        .calendly-wrap {
+            max-width: 700px; margin: 0 auto 24px;
+            background: var(--bg-card); border-radius: var(--radius);
+            border: 1px solid var(--border); overflow: hidden;
+        }
+        .cta-direct {
+            text-align: center; font-size: 0.82rem; color: var(--text-dim);
+            line-height: 1.9; margin-bottom: 48px;
+        }
+        .cta-direct strong { color: var(--text-muted); }
+
+        .faq-list { display: flex; flex-direction: column; gap: 8px; }
+        .faq-item {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius-sm); overflow: hidden;
+        }
+        .faq-q {
+            width: 100%; background: none; border: none; padding: 18px 22px;
+            display: flex; justify-content: space-between; align-items: center;
+            cursor: pointer; text-align: left; font-family: inherit;
+        }
+        .faq-q-text { font-size: 0.87rem; font-weight: 600; color: var(--text); }
+        .faq-icon { font-size: 1.1rem; color: var(--text-dim); transition: transform 0.2s; flex-shrink: 0; margin-left: 14px; }
+        .faq-item.open .faq-icon { transform: rotate(45deg); }
+        .faq-a { display: none; padding: 0 22px 18px; font-size: 0.84rem; color: var(--text-muted); line-height: 1.7; }
+        .faq-item.open .faq-a { display: block; }
+
+        /* ─── FOOTER ─── */
+        footer {
+            background: var(--footer-bg); border-top: 1px solid var(--border);
+            padding: 24px 0 100px; text-align: center; margin-top: 32px;
+        }
+
+        /* ─── THEME TOGGLE ─── */
+        .nav-right { display: flex; align-items: center; gap: 10px; }
+        .theme-toggle {
+            background: var(--bg-card); border: 1px solid var(--border);
+            color: var(--text-muted); border-radius: var(--radius-sm);
+            padding: 7px 13px; cursor: pointer; font-size: 0.8rem;
+            font-family: inherit; font-weight: 500;
+            transition: border-color 0.2s, color 0.2s, background 0.2s;
+            display: flex; align-items: center; gap: 6px; white-space: nowrap;
+        }
+        .theme-toggle:hover { border-color: var(--accent); color: var(--text); }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 640px) {
+            .panel-inner { padding: 36px 0 64px; }
+            .container { padding: 0 1.2rem; }
+            .timeline { grid-template-columns: 1fr; }
+            .t-step::after { display: none; }
+            .pricing-grid { grid-template-columns: 1fr; }
+            .roi-grid { grid-template-columns: 1fr; }
+            .proof-grid { grid-template-columns: 1fr; }
+            .problem-grid { grid-template-columns: 1fr; }
+            .stat-row { grid-template-columns: 1fr; gap: 10px; }
+            h1 { font-size: 1.6rem; }
+            .cost-lbl { min-width: 130px; font-size: 0.76rem; }
+            .tab-btn { padding: 0 12px; font-size: 0.78rem; }
+            .hero-content { padding: 48px 1.2rem; }
+            .vid-landscape { grid-template-columns: 1fr !important; }
+            .vid-portrait { grid-template-columns: repeat(2, 1fr) !important; }
+            .quote-grid { grid-template-columns: 1fr; }
+            .invest-2col { grid-template-columns: 1fr !important; }
+            .vision-3col { grid-template-columns: 1fr !important; }
+        }
+    </style>
 </head>
 <body>
-<!-- TOPBAR -->
-<div class="topbar">
-  <div class="topbar-inner">
-    <div class="brand-lockup">
-      <span class="gw-word">Grundwerk</span>
-      <span class="brand-x">×</span>
-      <span class="wh-chip"><img src="assets/wh_logo.svg" alt="WH Industrial Services"></span>
+
+<div class="progress-bar" id="pb"></div>
+
+<!-- ─── NAV ─── -->
+<nav>
+    <div class="nav-logo">
+        <img src="https://framerusercontent.com/images/4xEctZIb7Nfq9zuWT0Qa9v8GVHM.png" alt="Grundwerk" class="nav-client-logo">
+        <span class="nav-logo-text">Grundwerk</span>
+        <span class="nav-logo-sep">×</span>
+        <span class="nav-logo-client">WH Industrial Services</span>
     </div>
-    <div class="nav-cta">
-      <button class="btn btn-ghost" onclick="showTab(7)"><span class="btn-text-hide">Nächste&nbsp;</span>Schritte</button>
-      <div class="nav-contact" id="navContact" onclick="toggleContact(event)">
-        <img src="../assets/team/anthony-katzur.jpeg" alt="Anthony Katzur">
-        <div>
-          <div style="font-size:0.85rem;font-weight:600;color:var(--text)">Anthony Katzur</div>
-          <div style="font-size:0.7rem;color:var(--muted)">Ihr Ansprechpartner</div>
+    <div class="nav-right" style="display:flex;align-items:center;gap:10px;">
+        <button class="theme-toggle" id="theme-btn" onclick="toggleTheme()" style="background:var(--bg-card);border:1px solid var(--border);color:var(--text-muted);border-radius:var(--radius-sm);padding:7px 13px;cursor:pointer;font-size:0.8rem;font-family:inherit;font-weight:500;display:flex;align-items:center;gap:6px;white-space:nowrap;">☀️ Bright</button>
+        <div class="nav-contact" onclick="var dd=this.querySelector('.nav-contact-dropdown');dd.style.display=dd.style.display==='block'?'none':'block';" style="display:flex;align-items:center;gap:8px;cursor:pointer;padding:5px 10px;border-radius:var(--radius-sm);border:1px solid var(--border);background:transparent;">
+            <img class="nav-contact-photo" src="../assets/team/anthony-katzur.jpeg" alt="Anthony Katzur" style="width:32px;height:32px;border-radius:50%;object-fit:cover;filter:none;">
+            <div class="nav-contact-info" style="display:flex;flex-direction:column;line-height:1.2;">
+                <span class="nav-contact-name" style="font-size:0.8rem;font-weight:600;color:var(--text);white-space:nowrap;">Anthony Katzur</span>
+                <span class="nav-contact-label" style="font-size:0.65rem;color:var(--text-muted);">Kontakt</span>
+            </div>
+            <div class="nav-contact-dropdown" style="display:none;position:absolute;top:calc(100% + 8px);right:0;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 16px;min-width:260px;box-shadow:0 8px 32px rgba(0,0,0,0.4);z-index:400;">
+                <a href="mailto:anthony.katzur@grundwerk.digital" style="display:flex;align-items:center;gap:10px;padding:8px 0;color:var(--text);text-decoration:none;font-size:0.82rem;border-bottom:1px solid var(--border);">
+                    <span class="contact-icon" style="width:18px;text-align:center;">✉️</span> anthony.katzur@grundwerk.digital
+                </a>
+                <a href="https://calendly.com/anthony-katzur/anthony-katzur-grundwerk-outreach-session-follow-up" target="_blank" style="display:flex;align-items:center;gap:10px;padding:8px 0;color:var(--text);text-decoration:none;font-size:0.82rem;border-bottom:1px solid var(--border);"><span class="contact-icon" style="width:18px;text-align:center;">📅</span> Termin anpassen</a>
+                
+                <div class="contact-hint" style="font-size:0.72rem;color:var(--text-dim);padding-top:8px;margin-top:4px;border-top:1px solid var(--border);line-height:1.4;">Rückfragen? Schreiben Sie mir jederzeit.</div>
+            </div>
         </div>
-        <div class="contact-dropdown" id="contactDrop">
-          <p style="font-size:0.82rem;color:var(--muted);margin-bottom:10px">Rückfragen? Schreiben Sie mir jederzeit.</p>
-          <a href="mailto:anthony.katzur@grundwerk.digital">✉️ anthony.katzur@grundwerk.digital</a>
-          <a href="https://calendly.com/anthony-katzur/anthony-katzur-grundwerk-outreach-session-follow-up" target="_blank">📅 Termin verschieben / Rückfrage buchen</a>
+    </div>
+</nav>
+
+<!-- ─── TAB BAR ─── -->
+<div class="tab-bar">
+    <button class="tab-btn active" data-tab="hello"     onclick="switchTab('hello')">    <span class="tab-emoji">👋</span> Hallo Frau Reichert</button>
+    <button class="tab-btn"        data-tab="situation" onclick="switchTab('situation')"><span class="tab-emoji">🎯</span> Situation</button>
+    <button class="tab-btn"        data-tab="system"    onclick="switchTab('system')">   <span class="tab-emoji">🚀</span> Das System</button>
+    <button class="tab-btn"        data-tab="results"   onclick="switchTab('results')">  <span class="tab-emoji">📊</span> Ergebnisse</button>
+    <button class="tab-btn"        data-tab="invest"    onclick="switchTab('invest')">   <span class="tab-emoji">💰</span> Investition</button>
+    <button class="tab-btn"        data-tab="strategy"  onclick="switchTab('strategy')"> <span class="tab-emoji">🧠</span> Strategie</button>
+    <button class="tab-btn"        data-tab="plan"      onclick="switchTab('plan')">     <span class="tab-emoji">🗺️</span> Aktionsplan</button>
+    <button class="tab-btn"        data-tab="booking"   onclick="switchTab('booking')">  <span class="tab-emoji">📅</span> Termin</button>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- TAB 1 · HALLO Frau Reichert                           -->
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PERSONALISIEREN: Chat-Bubbles aus dem Sales Call Transkript extrahieren -->
+<div class="panel active" id="panel-hello">
+    <div class="hero-panel">
+        <div class="hero-content">
+            <div class="hero-logos">
+                <img src="assets/wh_logo.svg" alt="WH Industrial Services" class="hero-logo">
+                <span class="hero-logo-sep">×</span>
+                <div class="gw-wordmark">Grundwerk</div>
+            </div>
+            <div class="hero-badge">Vertraulich · für WH Industrial Services</div>
+            <h1>Ein zweiter, planbarer <span class="highlight">Vertriebskanal</span> für Ihre Elektroabteilung.</h1>
+            <p class="hero-sub">Hallo Frau Reichert, auf dieser Seite finden Sie alles aus unserem Gespräch gebündelt: Ihre aktuelle Situation, das System das wir für WH Industrial Services aufbauen, echte Ergebnisse anderer Kunden und die konkrete Investition inklusive Förderung. Gedacht zum gemeinsamen Durchgehen mit Herrn Rod-Horak.</p>
+            <!-- LOOM-PLATZHALTER: persönliches Video wird hier eingebettet, sobald URL vorliegt -->
+            <div style="margin:14px 0 4px;"><div style="font-size:0.78rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.08em;font-weight:500;">Aus unserem Gespräch, in Ihren Worten</div></div>
+            <div style="display:flex;flex-direction:column;gap:18px;margin:18px 0 24px;max-width:100%;">
+<div style="align-self:flex-start;width:90%;padding-right:10%;"><div style="background:rgba(79,125,249,0.08);border:1px solid rgba(79,125,249,0.15);border-left:3px solid #4f7df9;border-radius:12px;padding:14px 18px;"><p style="font-size:0.84rem;color:var(--text);line-height:1.55;margin:0 0 8px;">Ich bin todesunproduktiv. Ich komme gefühlt keinen Schritt weiter, obwohl ich den ganzen Tag am Telefonieren oder Mails schreiben bin.</p><div style="font-size:0.75rem;color:var(--text-muted);">· <strong style="color:#4f7df9;">Sophie Reichert</strong>, Sales Manager · 30.06.2026</div></div></div>
+<div style="align-self:flex-end;width:90%;padding-left:10%;"><div style="background:rgba(79,125,249,0.08);border:1px solid rgba(79,125,249,0.15);border-right:3px solid #4f7df9;border-radius:12px;padding:14px 18px;"><p style="font-size:0.84rem;color:var(--text);line-height:1.55;margin:0 0 8px;">Schick eine Mail an die Infoadresse, dann kommt natürlich nichts zurück. Der Info-Friedhof.</p><div style="font-size:0.75rem;color:var(--text-muted);">· <strong style="color:#4f7df9;">Sophie Reichert</strong></div></div></div>
+<div style="align-self:flex-start;width:90%;padding-right:10%;"><div style="background:rgba(79,125,249,0.08);border:1px solid rgba(79,125,249,0.15);border-left:3px solid #4f7df9;border-radius:12px;padding:14px 18px;"><p style="font-size:0.84rem;color:var(--text);line-height:1.55;margin:0 0 8px;">Es sind Massen, und die kann ich unmöglich alle anschreiben oder erreichen.</p><div style="font-size:0.75rem;color:var(--text-muted);">· <strong style="color:#4f7df9;">Sophie Reichert</strong></div></div></div>
+<div style="align-self:flex-end;width:90%;padding-left:10%;"><div style="background:rgba(79,125,249,0.08);border:1px solid rgba(79,125,249,0.15);border-right:3px solid #4f7df9;border-radius:12px;padding:14px 18px;"><p style="font-size:0.84rem;color:var(--text);line-height:1.55;margin:0 0 8px;">Ich kann nicht 500 Mails am Tag rausschicken, 500 Menschen wieder anrufen, auf Nachrichten warten und den Überblick behalten.</p><div style="font-size:0.75rem;color:var(--text-muted);">· <strong style="color:#4f7df9;">Sophie Reichert</strong></div></div></div>
+<div style="align-self:flex-start;width:90%;padding-right:10%;"><div style="background:rgba(79,125,249,0.08);border:1px solid rgba(79,125,249,0.15);border-left:3px solid #4f7df9;border-radius:12px;padding:14px 18px;"><p style="font-size:0.84rem;color:var(--text);line-height:1.55;margin:0 0 8px;">In diese großen Firmen kommst du unglaublich schwer rein, wenn du nur eine Mail an eine Infoadresse schreiben kannst. Da rennst du gegen eine Wand.</p><div style="font-size:0.75rem;color:var(--text-muted);">· <strong style="color:#4f7df9;">Sophie Reichert</strong></div></div></div>
+<div style="align-self:flex-end;width:90%;padding-left:10%;"><div style="background:rgba(79,125,249,0.08);border:1px solid rgba(79,125,249,0.15);border-right:3px solid #4f7df9;border-radius:12px;padding:14px 18px;"><p style="font-size:0.84rem;color:var(--text);line-height:1.55;margin:0 0 8px;">Man verliert irgendwann einfach den Spaß dran.</p><div style="font-size:0.75rem;color:var(--text-muted);">· <strong style="color:#4f7df9;">Sophie Reichert</strong></div></div></div>
+            </div>
+            <p class="hero-meta">Erstellt am 30.06.2026 · Anthony Katzur, Grundwerk Digital · Vertraulich</p>
         </div>
-      </div>
     </div>
-  </div>
 </div>
-<!-- TABNAV -->
-<div class="tabnav">
-  <div class="tabnav-inner" id="tabnav">
-    <button class="tab-btn active" onclick="showTab(0)">Hallo</button>
-    <button class="tab-btn" onclick="showTab(1)">Situation</button>
-    <button class="tab-btn" onclick="showTab(2)">Das System</button>
-    <button class="tab-btn" onclick="showTab(3)">Ergebnisse</button>
-    <button class="tab-btn" onclick="showTab(4)">Investition</button>
-    <button class="tab-btn" onclick="showTab(5)">Strategie</button>
-    <button class="tab-btn" onclick="showTab(6)">Aktionsplan</button>
-    <button class="tab-btn" onclick="showTab(7)">Termin</button>
-  </div>
+<div class="panel" id="panel-situation">
+    <div class="panel-inner">
+        <div class="container" style="max-width:760px;">
+            <div style="font-size:0.7rem;font-weight:600;color:var(--accent);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:20px;">Vertraulich · Grundwerk × WH Industrial Services</div>
+            <h2>Viel Aufwand, wenig planbarer Ertrag.</h2>
+            <p class="lead">Eine Vertrieblerin baut die neue Elektroabteilung im Alleingang per Hand auf. Der Markt ist riesig, der Weg dorthin ist es nicht.</p>
+            <div class="problem-grid">
+                <div class="problem-card"><div class="icon">📞</div><h3>240 Kontakte pro Monat</h3><p>Komplett von Hand recherchiert, angeschrieben, nachtelefoniert. Eine Person, gebunden den ganzen Tag.</p></div>
+                <div class="problem-card"><div class="icon">💬</div><h3>~20 qualifizierte Gespräche</h3><p>Aus 240 Kontakten. Der Rest versandet im Info-Friedhof oder wird abgeblockt.</p></div>
+                <div class="problem-card"><div class="icon">📅</div><h3>5 bis 6 echte Termine</h3><p>Pro Monat. Der Output bleibt minimal, obwohl der volle Arbeitstag hineinfließt.</p></div>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-bottom:24px;">
+                <div class="card"><h3 style="font-size:0.95rem;font-weight:700;margin-bottom:7px;">Kein System, nur Excel und Word</h3><p style="font-size:0.85rem;color:var(--text-muted);line-height:1.6;">Nichts wird sauber nachverfolgt, es gibt keinen Überblick. Interesse, das zurückkommt, kann untergehen, statt zu einem Termin zu werden.</p></div>
+                <div class="card"><h3 style="font-size:0.95rem;font-weight:700;margin-bottom:7px;">Die Zielgruppe sind "Massen"</h3><p style="font-size:0.85rem;color:var(--text-muted);line-height:1.6;">Größere Industriebetriebe im gesamten DACH-Raum. Manuell ist davon nur ein winziger Bruchteil überhaupt erreichbar.</p></div>
+            </div>
+            <div class="consequence">
+                <h3>Was passiert, wenn nichts passiert</h3>
+                <ul>
+                    <li>Eine ganze Vertriebskraft bleibt in Kaltakquise mit minimalem Ertrag gebunden.</li>
+                    <li>Der Aufbau der Elektroabteilung hängt am manuellen Vertrieb und verzögert sich.</li>
+                    <li>Der große Industrie-Markt bleibt unerschlossen, weil er von Hand nicht skaliert.</li>
+                    <li>Bei der geplanten Ausgründung Ende des Jahres steht kein funktionierender Vertriebsmotor bereit.</li>
+                    <li>Und ehrlich: der Spaß an der Arbeit leidet, wenn viel Einsatz wenig bewirkt.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel" id="panel-system">
+    <div class="panel-inner">
+        <div class="container">
+            <span class="section-label">Done-for-you Vertriebssystem</span>
+            <h2>Wir übernehmen die Kaltakquise. Sie sprechen nur noch mit Interessenten.</h2>
+            <p class="lead">Wir ersetzen niemanden, wir liefern zu. Sie bekommen einen Kanal, der die richtigen Entscheider direkt erreicht, und ein System, das jede interessierte Antwort sauber zu Ihnen bringt.</p>
+            <div class="video-section" style="margin:8px 0 36px;">
+                <div class="video-label">So funktioniert das Grundwerk-System</div>
+                <div class="video-embed-wrap">
+                    <div style="position:relative;padding-top:56.25%;height:0;">
+                        <iframe src="https://fast.wistia.net/embed/iframe/tm8si6qq6m?videoFoam=true" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Grundwerk System Erklärvideo"></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline">
+<div class="t-step"><div class="t-phase">Monat 1 · Setup</div><div class="t-time">Wir bauen alles auf</div><h3>Setup &amp; Infrastruktur</h3><ul><li>ICP definieren: Ihre echten Traumkunden</li><li>Kompletten Zielmarkt scrapen, passende Liste</li><li>Entscheider identifizieren + Kontaktdaten</li><li>Close CRM aufsetzen + Schulung</li><li>Domains und Inboxen 30 Tage warmlaufen</li><li>Personalisierte Copy schreiben</li></ul></div><div class="t-step"><div class="t-phase">Monat 2 · Launch</div><div class="t-time">Das System läuft</div><h3>Versand &amp; Replies</h3><ul><li>10.000 bis 20.000 personalisierte E-Mails</li><li>Alle Antworten zentral in einer Inbox</li><li>Sofort-Benachrichtigung bei Interesse</li><li>Sie buchen Termine mit Interessenten</li><li>Weekly Call mit Account Manager</li></ul></div><div class="t-step"><div class="t-phase">Danach · Skalierung</div><div class="t-time">Der Kanal wächst mit</div><h3>Scale &amp; Optimierung</h3><ul><li>Mehrere Kampagnen je Region und Pain Point</li><li>A/B-Tests, das Beste skalieren</li><li>Laufende Optimierung im Weekly Call</li><li>Daten und System gehören ab Tag 1 Ihnen</li></ul></div>
+            </div>
+            <h3 style="font-size:1.1rem;font-weight:700;margin:8px 0 18px;">Die Bausteine im Detail</h3>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;">
+<div class="card"><h3 style="font-size:0.92rem;font-weight:700;margin-bottom:7px;">1 · Zielmarkt + ICP</h3><p style="font-size:0.84rem;color:var(--text-muted);line-height:1.6;">Custom-Scraper bauen Ihre komplette Zielkundenliste. Die Recherchearbeit entfällt für Sie komplett.</p></div>
+<div class="card"><h3 style="font-size:0.92rem;font-weight:700;margin-bottom:7px;">2 · Entscheider + Kontakte</h3><p style="font-size:0.84rem;color:var(--text-muted);line-height:1.6;">Direkte Entscheider identifiziert und über mehrere Datenbanken gegengeprüft. Kontaktdaten angereichert: E-Mail, LinkedIn, Telefon wo verfügbar. Keine veralteten Kauflisten.</p></div>
+<div class="card"><h3 style="font-size:0.92rem;font-weight:700;margin-bottom:7px;">3 · Personalisierte Ansprache</h3><p style="font-size:0.84rem;color:var(--text-muted);line-height:1.6;">Kurze, sachliche E-Mails direkt an den Entscheider. Aufbau: Pain Point, Mehrwert, klarer nächster Schritt. Kein Werbe-Schnickschnack, kein Info-Friedhof.</p></div>
+<div class="card"><h3 style="font-size:0.92rem;font-weight:700;margin-bottom:7px;">4 · MasterInbox</h3><p style="font-size:0.84rem;color:var(--text-muted);line-height:1.6;">Alle Antworten aus allen Inboxen zentral und vorkategorisiert. Morgens öffnen Sie ein Postfach und sehen nur das Interesse.</p></div>
+<div class="card"><h3 style="font-size:0.92rem;font-weight:700;margin-bottom:7px;">5 · Close CRM</h3><p style="font-size:0.84rem;color:var(--text-muted);line-height:1.6;">Komplett für Sie aufgesetzt inklusive Schulung. Aufgaben, Follow-ups, integrierte Telefonie. Kein 15.000-Euro-Extra-Dienstleister nötig.</p></div>
+<div class="card"><h3 style="font-size:0.92rem;font-weight:700;margin-bottom:7px;">6 · Sofort-Benachrichtigung</h3><p style="font-size:0.84rem;color:var(--text-muted);line-height:1.6;">Jede interessierte Antwort landet sofort in Slack, Teams oder WhatsApp. Sie wissen genau, wen Sie jetzt anrufen.</p></div>
+<div class="card"><h3 style="font-size:0.92rem;font-weight:700;margin-bottom:7px;">7 · Kampagnen-Tracking</h3><p style="font-size:0.84rem;color:var(--text-muted);line-height:1.6;">Eigene Software: versendete Mails, Antworten, Termine, Umsatz pro Kampagne. Sie sehen, welcher Hebel funktioniert.</p></div>
+<div class="card"><h3 style="font-size:0.92rem;font-weight:700;margin-bottom:7px;">8 · Weekly Call</h3><p style="font-size:0.84rem;color:var(--text-muted);line-height:1.6;">Jede Woche ein Sparringspartner, der neutral auf die Zahlen schaut und gemeinsam mit Ihnen optimiert.</p></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel" id="panel-results">
+    <div class="panel-inner">
+        <div class="container">
+            <span class="section-label">Was andere mit dem System erreicht haben</span>
+            <h2>Echte Zahlen von echten Kunden.</h2>
+            <p class="lead">Echte Zahlen aus aktiven Grundwerk-Projekten.</p>
+<div class="logo-ticker-section" style="padding:10px 0 20px;overflow:hidden;"><div class="ticker-track-wrap" style="overflow:hidden;position:relative;margin-bottom:16px;"><div class="ticker-track forward" style="display:flex;align-items:center;gap:56px;width:max-content;animation:tickerFwd 52s linear infinite;"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cocomin.de/wp-content/uploads/2024/11/cocomin-logo.svg" alt="COCOMIN"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://greenlovers.de/media/greenlovers/greenlovers-logo.svg" alt="Greenlovers"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/636be452cfaef27bb708348b/64c007bb670af5c4b3350452_logo-echte-media.png" alt="echte Media"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cocomin.de/wp-content/uploads/2024/11/cocomin-logo.svg" alt="COCOMIN"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://greenlovers.de/media/greenlovers/greenlovers-logo.svg" alt="Greenlovers"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/636be452cfaef27bb708348b/64c007bb670af5c4b3350452_logo-echte-media.png" alt="echte Media"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cocomin.de/wp-content/uploads/2024/11/cocomin-logo.svg" alt="COCOMIN"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://greenlovers.de/media/greenlovers/greenlovers-logo.svg" alt="Greenlovers"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/636be452cfaef27bb708348b/64c007bb670af5c4b3350452_logo-echte-media.png" alt="echte Media"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cocomin.de/wp-content/uploads/2024/11/cocomin-logo.svg" alt="COCOMIN"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://greenlovers.de/media/greenlovers/greenlovers-logo.svg" alt="Greenlovers"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.prod.website-files.com/636be452cfaef27bb708348b/64c007bb670af5c4b3350452_logo-echte-media.png" alt="echte Media"></div></div><div class="ticker-track-wrap" style="overflow:hidden;position:relative;margin-bottom:16px;"><div class="ticker-track reverse" style="display:flex;align-items:center;gap:56px;width:max-content;animation:tickerRev 58s linear infinite;"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="../assets/logos/cervis.svg" alt="Cervis"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="../assets/logos/cervis.svg" alt="Cervis"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="../assets/logos/cervis.svg" alt="Cervis"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic"><img class="client-logo" style="height:28px;opacity:0.4;filter:grayscale(100%) brightness(2);flex-shrink:0;" src="../assets/logos/cervis.svg" alt="Cervis"></div></div></div>
+<div class="stat-row" style="display:flex;gap:16px;margin-bottom:0;flex-wrap:wrap;"><div class="stat-item" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px 24px;flex:1;text-align:center;"><div class="stat-num" style="font-size:1.6rem;font-weight:800;color:var(--accent);">10 Mio.+</div><div class="stat-lbl" style="font-size:0.8rem;color:var(--text-muted);margin-top:2px;">E-Mails versendet</div></div><div class="stat-item" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px 24px;flex:1;text-align:center;"><div class="stat-num" style="font-size:1.6rem;font-weight:800;color:var(--accent);">50+</div><div class="stat-lbl" style="font-size:0.8rem;color:var(--text-muted);margin-top:2px;">B2B-Projekte</div></div><div class="stat-item" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px 24px;flex:1;text-align:center;"><div class="stat-num" style="font-size:1.6rem;font-weight:800;color:var(--accent);">75+</div><div class="stat-lbl" style="font-size:0.8rem;color:var(--text-muted);margin-top:2px;">Tools &amp; Datenanbieter</div></div><div class="stat-item" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px 24px;flex:1;text-align:center;"><div class="stat-num" style="font-size:1.6rem;font-weight:800;color:var(--accent);">BAFA</div><div class="stat-lbl" style="font-size:0.8rem;color:var(--text-muted);margin-top:2px;">Registrierter Berater</div></div></div>
+            <div style="margin-top:40px;"></div>
+            <div class="proof-grid">
+<div class="proof-card"><div class="proof-co">Smart Bridges · Berlin</div><div class="proof-num">397 Leads</div><div class="proof-period">in 3 Monaten</div><div class="proof-desc">Ingo Boldt</div></div><div class="proof-card"><div class="proof-co">Birdsview</div><div class="proof-num">28 Termine</div><div class="proof-period">in 74 Tagen · 240k ARR</div><div class="proof-desc">Tim Küsters</div></div><div class="proof-card"><div class="proof-co">Greenlovers · Hamburg</div><div class="proof-num">172 Leads</div><div class="proof-period">+ 14 Aufträge in 3 Monaten</div><div class="proof-desc">Stephan Meinecke</div></div><div class="proof-card"><div class="proof-co">Hivebuy · Berlin</div><div class="proof-num">~100k</div><div class="proof-period">Closed Revenue · &gt;400k Pipeline</div><div class="proof-desc">Moritz Liehnert</div></div><div class="proof-card"><div class="proof-co">Peer Studios · Berlin</div><div class="proof-num">20 Opportunities</div><div class="proof-period">in 13 Tagen</div><div class="proof-desc">Lasse Petry</div></div><div class="proof-card"><div class="proof-co">Cervis</div><div class="proof-num">2,7x ROI</div><div class="proof-period">im ersten Quartal</div><div class="proof-desc">Philipp Köhnlein</div></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel" id="panel-invest">
+    <div class="panel-inner">
+        <div class="container">
+            <span class="section-label">Was Sie investieren, und was Sie generieren</span>
+            <h2>Ein bewusst einfacher Einstieg.</h2>
+            <p class="lead">Zwei Monate, voller Aufbau und volle Nutzung. Gefördert, mit Ausstieg danach. Damit Sie das System sehen, bevor Sie sich langfristig entscheiden.</p>
+
+            <div style="margin-bottom:28px;">
+                <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+                    <div style="background:var(--accent);color:white;font-weight:800;font-size:0.75rem;padding:4px 12px;border-radius:20px;">STUFE 1</div>
+                    <h3 style="font-size:1.05rem;font-weight:700;">Einstieg · 2 Monate</h3>
+                </div>
+                <div class="price-card" style="max-width:560px;background:var(--bg-accent);border:1px solid var(--accent);border-radius:var(--radius);padding:28px 26px;">
+                    <div class="price-name" style="font-size:0.75rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">Initialpaket</div>
+                    <div class="price-monthly" style="font-size:2.4rem;font-weight:800;letter-spacing:-0.04em;line-height:1;color:var(--text);">7.000 €</div>
+                    <div class="price-per" style="font-size:0.78rem;color:var(--text-muted);margin-bottom:16px;">gesamt für 2 Monate · Setup-Fee komplett gestrichen</div>
+<details open style="margin-bottom:8px;"><summary style="cursor:pointer;font-weight:700;font-size:0.85rem;color:var(--text);padding:10px 0;border-bottom:1px solid var(--border);list-style:none;display:flex;justify-content:space-between;align-items:center;">Setup &amp; Schulung <span style="font-size:0.7rem;color:var(--text-muted);transition:transform 0.2s;">▼</span></summary><ul style="list-style:none;display:flex;flex-direction:column;gap:7px;padding:12px 0 4px;"><li style="font-size:0.85rem;color:var(--text-muted);padding-left:18px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">✓</span>Close CRM komplett aufgesetzt</li><li style="font-size:0.85rem;color:var(--text-muted);padding-left:18px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">✓</span>Onboarding-Call + KickOff-Workshop (1 Stunde)</li><li style="font-size:0.85rem;color:var(--text-muted);padding-left:18px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">✓</span>Schulung im Umgang mit System und CRM</li></ul></details><details style="margin-bottom:8px;"><summary style="cursor:pointer;font-weight:700;font-size:0.85rem;color:var(--text);padding:10px 0;border-bottom:1px solid var(--border);list-style:none;display:flex;justify-content:space-between;align-items:center;">Daten &amp; Scraping <span style="font-size:0.7rem;color:var(--text-muted);transition:transform 0.2s;">▼</span></summary><ul style="list-style:none;display:flex;flex-direction:column;gap:7px;padding:12px 0 4px;"><li style="font-size:0.85rem;color:var(--text-muted);padding-left:18px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">✓</span>ICP-Definition Ihrer Traumkunden</li><li style="font-size:0.85rem;color:var(--text-muted);padding-left:18px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">✓</span>Custom-Scraper für Ihren kompletten Zielmarkt</li><li style="font-size:0.85rem;color:var(--text-muted);padding-left:18px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">✓</span>Entscheider identifiziert + über mehrere Datenbanken gegengeprüft</li><li style="font-size:0.85rem;color:var(--text-muted);padding-left:18px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">✓</span>Kontaktdaten angereichert (E-Mail, LinkedIn, Telefon wo verfügbar)</li></ul></details><details style="margin-bottom:8px;"><summary style="cursor:pointer;font-weight:700;font-size:0.85rem;color:var(--text);padding:10px 0;border-bottom:1px solid var(--border);list-style:none;display:flex;justify-content:space-between;align-items:center;">Versand &amp; Inboxen <span style="font-size:0.7rem;color:var(--text-muted);transition:transform 0.2s;">▼</span></summary><ul style="list-style:none;display:flex;flex-direction:column;gap:7px;padding:12px 0 4px;"><li style="font-size:0.85rem;color:var(--text-muted);padding-left:18px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">✓</span>Domains und Inboxen aufgesetzt + 30 Tage warmgelaufen</li><li style="font-size:0.85rem;color:var(--text-muted);padding-left:18px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">✓</span>10.000 bis 20.000 personalisierte E-Mails im Nutzungsmonat</li><li style="font-size:0.85rem;color:var(--text-muted);padding-left:18px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">✓</span>MasterInbox: alle Antworten zentral und vorkategorisiert</li></ul></details><details style="margin-bottom:8px;"><summary style="cursor:pointer;font-weight:700;font-size:0.85rem;color:var(--text);padding:10px 0;border-bottom:1px solid var(--border);list-style:none;display:flex;justify-content:space-between;align-items:center;">Begleitung &amp; Tracking <span style="font-size:0.7rem;color:var(--text-muted);transition:transform 0.2s;">▼</span></summary><ul style="list-style:none;display:flex;flex-direction:column;gap:7px;padding:12px 0 4px;"><li style="font-size:0.85rem;color:var(--text-muted);padding-left:18px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">✓</span>Weekly Call mit Ihrem Account Manager</li><li style="font-size:0.85rem;color:var(--text-muted);padding-left:18px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">✓</span>Kampagnen-Tracking-Software</li><li style="font-size:0.85rem;color:var(--text-muted);padding-left:18px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">✓</span>Sofort-Benachrichtigung bei jeder interessierten Antwort</li><li style="font-size:0.85rem;color:var(--text-muted);padding-left:18px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">✓</span>Alle Datensätze gehören ab Tag 1 Ihnen</li></ul></details>
+                    <div style="display:flex;justify-content:space-between;align-items:baseline;padding:16px 0 4px;border-top:1px solid var(--border);margin-top:14px;">
+                        <span style="color:var(--text-muted);font-size:0.85rem;">Gesamt-Invest (2 Monate)</span>
+                        <span style="font-size:1.4rem;font-weight:800;">7.000 €</span>
+                    </div>
+                    <p style="font-size:0.8rem;color:var(--text-dim);margin-top:6px;">Ausstieg nach 2 Monaten möglich. Danach entscheiden Sie frei.</p>
+                </div>
+                <div style="max-width:560px;margin-top:16px;background:var(--accent-glow);border:1px solid var(--border-accent);border-radius:var(--radius);padding:22px 24px;">
+                    <h3 style="font-size:0.95rem;font-weight:700;margin-bottom:6px;">BAFA-Förderung: 50 bis 80 % zurück</h3>
+                    <p style="font-size:0.86rem;color:var(--text-muted);line-height:1.7;">WH Industrial Services ist nach erster Einschätzung förderfähig. Den Antrag stellen und bearbeiten wir komplett für Sie. Sie brauchen nur einen kurzen Bogen (5 Minuten) und eine Vollmacht. Die Erstattung geht direkt an Sie. Eine konkrete Förderanalyse für BAFA liefern wir separat.</p>
+                </div>
+                <div style="max-width:560px;margin-top:16px;background:var(--green-glow);border:1px solid rgba(34,197,94,0.3);border-radius:var(--radius);padding:22px 24px;">
+                    <h3 style="font-size:0.95rem;font-weight:700;margin-bottom:6px;color:var(--green);">Prognose für den Nutzungsmonat</h3>
+                    <p style="font-size:0.86rem;color:var(--text-muted);line-height:1.7;">10.000 bis 20.000 versendete E-Mails an rund 5.000 bis 10.000 Entscheider, bei etwa 6 bis 7 % Antwortrate. Größenordnung: <strong style="color:var(--text);">30 bis 60 qualifizierte Leads</strong>. Das ist eine Prognose aus Erfahrungswerten, keine Garantie.</p>
+                </div>
+            </div>
+
+            <div class="invest-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;">
+                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;"><div style="background:var(--green);color:white;font-weight:800;font-size:0.72rem;padding:4px 12px;border-radius:20px;">STUFE 2</div><span style="font-size:0.95rem;font-weight:700;">Laufend</span></div>
+                    <div style="font-size:1.8rem;font-weight:800;margin-bottom:6px;">3.500 € <span style="font-size:0.95rem;font-weight:500;color:var(--text-muted);">/ Monat</span></div>
+                    <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.7;">Nach dem geförderten Einstieg. Der Kanal läuft weiter: Versand, MasterInbox, CRM, Tracking und Weekly Calls. Mehr Kampagnen, mehr Regionen, kontinuierliche Optimierung.</p>
+                </div>
+                <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;">
+                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;"><div style="background:#1a6b3c;color:white;font-weight:800;font-size:0.72rem;padding:4px 12px;border-radius:20px;">⭐ STUFE 3</div><span style="font-size:0.95rem;font-weight:700;">Vision</span></div>
+                    <div style="font-weight:700;font-size:1rem;margin-bottom:6px;color:var(--text);">Ihr eigener Vertriebsmotor</div>
+                    <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.7;">Vollautomatisierter, planbarer Vertriebskanal und auf Wunsch eine eigene Vertriebsabteilung. Wenn Sie die Elektroabteilung Ende des Jahres ausgründen, läuft das System mit neuer Firmierung weiter. Nur Domains und Inboxen werden angepasst, die Datensätze und das System bleiben.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel" id="panel-strategy">
+    <div class="panel-inner">
+        <div class="container" style="max-width:740px;">
+            <div style="font-size:0.7rem;font-weight:600;color:var(--accent);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:20px;">Vertraulich · Grundwerk × WH Industrial Services</div>
+            <h2>Outbound-Strategie</h2>
+            <p style="font-size:0.95rem;color:var(--text-muted);line-height:1.7;max-width:620px;">Aufgebaut auf dem, was Sie im Gespräch beschrieben haben: ein riesiger Industrie-Markt, der von Hand nicht erreichbar ist. Wir gehen ihn strukturiert und skalierbar an.</p>
+<div style="width:100%;height:1px;background:var(--border);margin-top:48px;"></div><div style="padding:48px 0 0;"><div style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;">Primäre Zielgruppe</div><p style="font-size:0.92rem;color:var(--text-muted);line-height:1.75;">Größere Industriebetriebe im gesamten DACH-Raum, die Elektrotechnik-Dienstleistung, Instandhaltung oder Anlagenbau extern vergeben. Genau Ihre Massen, nur eben gezielt statt zufällig.</p></div>
+<div style="width:100%;height:1px;background:var(--border);margin-top:48px;"></div><div style="padding:48px 0 0;"><div style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;">Entscheider</div><p style="font-size:0.92rem;color:var(--text-muted);line-height:1.75;">Technische Leitung, Instandhaltungs- und Werkleiter, Einkauf und Geschäftsführung. Statt über die Zentrale und den Info-Friedhof gehen wir direkt an die Person, die entscheidet.</p></div>
+<div style="width:100%;height:1px;background:var(--border);margin-top:48px;"></div><div style="padding:48px 0 0;"><div style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;">Kanal</div><p style="font-size:0.92rem;color:var(--text-muted);line-height:1.75;">Cold E-Mail als planbarer, skalierbarer Kanal. Kein Ersatz für Außendienst und Messe, sondern eine Ergänzung, die rund um die Uhr für Sie arbeitet.</p></div>
+<div style="width:100%;height:1px;background:var(--border);margin-top:48px;"></div><div style="padding:48px 0 0;"><div style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;">Ansatz pro Segment</div><p style="font-size:0.92rem;color:var(--text-muted);line-height:1.75;">Mehrere Kampagnen je Region, Branche und Pain Point. Wir schicken nicht eine Nachricht an alle, sondern sprechen jedes Segment mit dem passenden Argument an und testen Varianten gegeneinander.</p></div>
+<div style="width:100%;height:1px;background:var(--border);margin-top:48px;"></div><div style="padding:48px 0 0;"><div style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;">Daten &amp; Tools</div><p style="font-size:0.92rem;color:var(--text-muted);line-height:1.75;">Custom-Scraper bauen die Zielkundenliste, mehrere Datenbanken prüfen die Entscheider gegen. Nur aktuelle Kontakte, keine veralteten Kauflisten.</p></div>
+<div style="width:100%;height:1px;background:var(--border);margin-top:48px;"></div><div style="padding:48px 0 0;"><div style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;">Priorisierung</div><p style="font-size:0.92rem;color:var(--text-muted);line-height:1.75;">Start mit einem klar abgrenzbaren Segment für schnelle, lesbare Ergebnisse. Was funktioniert, skalieren wir hoch und erschließen den Markt Stück für Stück.</p></div>
+        </div>
+    </div>
+</div>
+<div class="panel" id="panel-plan">
+    <div class="panel-inner">
+        <div class="container">
+            <span class="section-label">Der Weg von hier</span>
+            <h2>Konkret die nächsten Schritte.</h2>
+            <p class="lead">Klar und ohne Reibung. Den größten Teil übernehmen wir, Ihr Aufwand bleibt minimal.</p>
+            <div class="map-phases" style="display:flex;flex-direction:column;gap:14px;">
+<div class="map-phase" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;"><div class="map-phase-header" style="display:flex;align-items:center;gap:14px;padding:14px 20px;background:var(--layer-subtle);border-bottom:1px solid var(--border);"><div class="map-phase-num" style="width:28px;height:28px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:0.74rem;font-weight:800;flex-shrink:0;">1</div><div class="map-phase-title" style="font-size:0.9rem;font-weight:700;flex:1;color:var(--text);">Entscheidung</div><div class="map-phase-date" style="font-size:0.74rem;color:var(--text-dim);white-space:nowrap;">jetzt</div></div><ul class="map-tasks" style="list-style:none;padding:14px 20px;display:flex;flex-direction:column;gap:11px;"><li class="map-task" style="display:flex;align-items:flex-start;gap:12px;"><div class="map-checkbox checked" onclick="toggleCheck(this)" style="width:18px;height:18px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;">&#10003;</div><div class="map-task-text" style="flex:1;"><div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">Erstgespräch mit Sophie Reichert (30.06.2026) zur Situation und Lösung.</div><div class="map-task-owner" style="font-size:0.74rem;color:var(--text-muted);margin-top:2px;"><strong style='color:var(--accent);font-weight:600;'>Erledigt</strong></div></div></li><li class="map-task" style="display:flex;align-items:flex-start;gap:12px;"><div class="map-checkbox checked" onclick="toggleCheck(this)" style="width:18px;height:18px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;">&#10003;</div><div class="map-task-text" style="flex:1;"><div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">Diese Übersicht und das Angebot erhalten, zum gemeinsamen Durchgehen mit Herrn Rod-Horak.</div><div class="map-task-owner" style="font-size:0.74rem;color:var(--text-muted);margin-top:2px;"><strong style='color:var(--accent);font-weight:600;'>Erledigt</strong></div></div></li><li class="map-task" style="display:flex;align-items:flex-start;gap:12px;"><div class="map-checkbox" onclick="toggleCheck(this)" style="width:18px;height:18px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;"></div><div class="map-task-text" style="flex:1;"><div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">2. Termin mit Thomas Rod-Horak: 9. Juli, 10:00 Uhr.</div><div class="map-task-owner" style="font-size:0.74rem;color:var(--text-muted);margin-top:2px;"><strong style='color:var(--accent);font-weight:600;'>Gemeinsam</strong> · Offene Fragen klären, Entscheidung vorbereiten</div></div></li><li class="map-task" style="display:flex;align-items:flex-start;gap:12px;"><div class="map-checkbox" onclick="toggleCheck(this)" style="width:18px;height:18px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;"></div><div class="map-task-text" style="flex:1;"><div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">Förderanalyse (BAFA) wird Ihnen separat zugestellt.</div><div class="map-task-owner" style="font-size:0.74rem;color:var(--text-muted);margin-top:2px;"><strong style='color:var(--accent);font-weight:600;'>Grundwerk</strong> · Förderfähigkeit schwarz auf weiß</div></div></li><li class="map-task" style="display:flex;align-items:flex-start;gap:12px;"><div class="map-checkbox" onclick="toggleCheck(this)" style="width:18px;height:18px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;"></div><div class="map-task-text" style="flex:1;"><div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">Go-Entscheidung, dann Vertrag + BAFA-Antrag (5-Minuten-Bogen + Vollmacht).</div><div class="map-task-owner" style="font-size:0.74rem;color:var(--text-muted);margin-top:2px;"><strong style='color:var(--accent);font-weight:600;'>Grundwerk</strong> · Wir bearbeiten den Antrag für Sie</div></div></li></ul></div>
+<div class="map-phase" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;"><div class="map-phase-header" style="display:flex;align-items:center;gap:14px;padding:14px 20px;background:var(--layer-subtle);border-bottom:1px solid var(--border);"><div class="map-phase-num" style="width:28px;height:28px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:0.74rem;font-weight:800;flex-shrink:0;">2</div><div class="map-phase-title" style="font-size:0.9rem;font-weight:700;flex:1;color:var(--text);">Start &amp; Nutzung</div><div class="map-phase-date" style="font-size:0.74rem;color:var(--text-dim);white-space:nowrap;">nach Go</div></div><ul class="map-tasks" style="list-style:none;padding:14px 20px;display:flex;flex-direction:column;gap:11px;"><li class="map-task" style="display:flex;align-items:flex-start;gap:12px;"><div class="map-checkbox" onclick="toggleCheck(this)" style="width:18px;height:18px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;"></div><div class="map-task-text" style="flex:1;"><div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">Onboarding-Call (30 Min., Tom Morawe, Technik), danach KickOff-Workshop (1 Stunde, Tom Morawe, Strategie).</div><div class="map-task-owner" style="font-size:0.74rem;color:var(--text-muted);margin-top:2px;"><strong style='color:var(--accent);font-weight:600;'>WH + Tom Morawe</strong></div></div></li><li class="map-task" style="display:flex;align-items:flex-start;gap:12px;"><div class="map-checkbox" onclick="toggleCheck(this)" style="width:18px;height:18px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;"></div><div class="map-task-text" style="flex:1;"><div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">Setup-Monat: Warm-up der Inboxen, ICP, Scraper, Copy und CRM. Wir bauen alles auf.</div><div class="map-task-owner" style="font-size:0.74rem;color:var(--text-muted);margin-top:2px;"><strong style='color:var(--accent);font-weight:600;'>Grundwerk</strong></div></div></li><li class="map-task" style="display:flex;align-items:flex-start;gap:12px;"><div class="map-checkbox" onclick="toggleCheck(this)" style="width:18px;height:18px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;"></div><div class="map-task-text" style="flex:1;"><div class="map-task-title" style="font-size:0.84rem;font-weight:600;color:var(--text);line-height:1.4;">Nutzungsmonat: 10.000 bis 20.000 E-Mails gehen raus, Weekly Calls starten, die ersten Termine kommen rein.</div><div class="map-task-owner" style="font-size:0.74rem;color:var(--text-muted);margin-top:2px;"><strong style='color:var(--accent);font-weight:600;'>Grundwerk → WH</strong></div></div></li></ul></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel" id="panel-booking">
+    <div class="panel-inner">
+        <div class="container">
+            <div class="cta-header">
+                <span class="section-label">Nächster Schritt</span>
+                <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(79,125,249,0.12);border:1px solid var(--border-accent);color:var(--accent);font-size:0.8rem;font-weight:700;padding:7px 18px;border-radius:100px;margin:6px 0 18px;">📅 2. Termin: 9. Juli, 10:00 Uhr</div>
+                <h2>Wir gehen es gemeinsam mit Herrn Rod-Horak durch.</h2>
+                <p class="lead">Der Termin steht. Bis dahin können Sie diese Seite in Ruhe mit ihm durchgehen. Wenn vorher Fragen auftauchen, schreiben Sie mir jederzeit, ich bereite alles vor.</p>
+            </div>
+            <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:18px;">
+                <a class="nav-cta" href="mailto:anthony.katzur@grundwerk.digital?subject=WH%20Industrial%20Services%20×%20Grundwerk" style="background:var(--accent);color:white;padding:11px 22px;border-radius:var(--radius-sm);font-size:0.9rem;font-weight:600;">✉️ Anthony schreiben</a>
+                <a class="nav-cta" href="https://calendly.com/anthony-katzur/anthony-katzur-grundwerk-outreach-session-follow-up" target="_blank" style="background:transparent;border:1px solid var(--border);color:var(--text);padding:11px 22px;border-radius:var(--radius-sm);font-size:0.9rem;font-weight:600;">📅 Termin anpassen</a>
+            </div>
+            <p class="cta-direct" style="text-align:center;font-size:0.82rem;color:var(--text-dim);line-height:1.9;">Kein Verkaufsdruck. Wir liefern Ihnen die Grundlage, damit die Entscheidung leicht fällt.</p>
+        </div>
+    </div>
 </div>
 
-<!-- ===== TAB 1: HALLO ===== -->
-<section class="panel active" id="panel-0">
-  <div class="wrap">
-    <span class="eyebrow">Vertraulich · für WH Industrial Services</span>
-    <h1>Ein zweiter, planbarer Vertriebskanal<br>für Ihre Elektroabteilung.</h1>
-    <p class="lead">Hallo Frau Reichert, auf dieser Seite finden Sie alles aus unserem Gespräch gebündelt: Ihre aktuelle Situation, das System das wir für WH Industrial Services aufbauen, echte Ergebnisse anderer Kunden und die konkrete Investition inklusive Förderung. Gedacht zum gemeinsamen Durchgehen mit Herrn Rod-Horak.</p>
-    <!-- LOOM-PLACEHOLDER: persoenliches Video wird hier eingebettet, sobald URL vorliegt -->
-    <div class="section-gap">
-      <h3 style="color:var(--muted);font-weight:500;font-size:0.95rem;margin-bottom:18px">Aus unserem Gespräch, in Ihren Worten:</h3>
-      <div class="chat">
-        <div class="bubble">Ich bin todesunproduktiv. Ich komme gefühlt keinen Schritt weiter, obwohl ich den ganzen Tag am Telefonieren oder Mails schreiben bin.<span class="who">Sophie Reichert · Sales Manager · 30.06.2026</span></div>
-        <div class="bubble">Schick eine Mail an die Infoadresse, dann kommt natürlich nichts zurück. Der Info-Friedhof.<span class="who">Sophie Reichert</span></div>
-        <div class="bubble">Es sind Massen, und die kann ich unmöglich alle anschreiben oder erreichen.<span class="who">Sophie Reichert</span></div>
-        <div class="bubble">Ich kann nicht 500 Mails am Tag rausschicken, 500 Menschen wieder anrufen, auf Nachrichten warten und den Überblick behalten.<span class="who">Sophie Reichert</span></div>
-        <div class="bubble">In diese großen Firmen kommst du unglaublich schwer rein, wenn du nur eine Mail an eine Infoadresse schreiben kannst. Da rennst du gegen eine Wand.<span class="who">Sophie Reichert</span></div>
-        <div class="bubble">Man verliert irgendwann einfach den Spaß dran.<span class="who">Sophie Reichert</span></div>
-      </div>
+<!-- ─── FOOTER ─── -->
+<footer>
+    <div class="container">
+        <div style="font-weight:800; font-size:0.95rem; letter-spacing:-0.02em; margin-bottom:6px;">
+            Grundwerk
+        </div>
+        <p style="font-size:0.77rem; color:var(--text-muted);">AI-getriebene Outbound-Systeme für B2B · Berlin · grundwerk.digital</p>
+        <p style="font-size:0.72rem; color:var(--text-dim); margin-top:6px;">Dieses Dokument ist vertraulich und ausschlie&szlig;lich f&uuml;r Sophie Reichert, WH Industrial Services, bestimmt.</p>
+        <div style="height:60px;"></div>
     </div>
-    <div class="section-gap"><button class="btn" onclick="showTab(1)">Weiter zur Situation →</button></div>
-  </div>
-</section>
-
-<!-- ===== TAB 2: SITUATION ===== -->
-<section class="panel" id="panel-1">
-  <div class="wrap">
-    <span class="eyebrow">Wo WH Industrial Services heute steht</span>
-    <h2>Viel Aufwand, wenig planbarer Ertrag.</h2>
-    <p class="lead">Eine Vertrieblerin baut die neue Elektroabteilung im Alleingang per Hand auf. Der Markt ist riesig, der Weg dorthin ist es nicht.</p>
-    <div class="grid g3 section-gap">
-      <div class="finding"><div class="num">240</div><h3 style="margin-top:8px">Kontakte pro Monat</h3><p class="muted" style="font-size:0.93rem">Komplett von Hand recherchiert, angeschrieben, nachtelefoniert. Eine Person, gebunden den ganzen Tag.</p></div>
-      <div class="finding"><div class="num">~20</div><h3 style="margin-top:8px">Qualifizierte Gespräche</h3><p class="muted" style="font-size:0.93rem">Aus 240 Kontakten. Der Rest versandet im Info-Friedhof oder wird abgeblockt.</p></div>
-      <div class="finding"><div class="num">5-6</div><h3 style="margin-top:8px">Echte Termine pro Monat</h3><p class="muted" style="font-size:0.93rem">Der Output bleibt minimal, obwohl der volle Arbeitstag hineinfließt.</p></div>
-    </div>
-    <div class="grid g2 section-gap">
-      <div class="card"><h3>Kein System, nur Excel und Word</h3><p class="muted">Nichts wird sauber nachverfolgt, es gibt keinen Überblick. Interesse, das zurückkommt, kann untergehen, statt zu einem Termin zu werden.</p></div>
-      <div class="card"><h3>Die Zielgruppe sind "Massen"</h3><p class="muted">Größere Industriebetriebe im gesamten DACH-Raum. Manuell ist davon nur ein winziger Bruchteil überhaupt erreichbar.</p></div>
-    </div>
-    <div class="cost-box">
-      <h3 style="color:#f3d3d3">Was passiert, wenn nichts passiert</h3>
-      <ul>
-        <li>Eine ganze Vertriebskraft bleibt in Kaltakquise mit minimalem Ertrag gebunden.</li>
-        <li>Der Aufbau der Elektroabteilung hängt am manuellen Vertrieb und verzögert sich.</li>
-        <li>Der große Industrie-Markt bleibt unerschlossen, weil er von Hand nicht skaliert.</li>
-        <li>Bei der geplanten Ausgründung Ende des Jahres steht kein funktionierender Vertriebsmotor bereit.</li>
-        <li>Und ehrlich: der Spaß an der Arbeit leidet, wenn viel Einsatz wenig bewirkt.</li>
-      </ul>
-    </div>
-    <div class="section-gap"><button class="btn" onclick="showTab(2)">So lösen wir das →</button></div>
-  </div>
-</section>
-<!-- ===== TAB 3: DAS SYSTEM ===== -->
-<section class="panel" id="panel-2">
-  <div class="wrap">
-    <span class="eyebrow">Done-for-you Vertriebssystem</span>
-    <h2>Wir übernehmen die Kaltakquise. Sie sprechen nur noch mit Interessenten.</h2>
-    <p class="lead">Wir ersetzen niemanden, wir liefern zu. Sie bekommen einen Kanal, der die richtigen Entscheider direkt erreicht, und ein System, das jede interessierte Antwort sauber zu Ihnen bringt.</p>
-    <div class="card section-gap" style="padding:0;overflow:hidden">
-      <div style="position:relative;padding-top:56.25%;height:0">
-        <iframe src="https://fast.wistia.net/embed/iframe/tm8si6qq6m?videoFoam=true" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" style="position:absolute;top:0;left:0;width:100%;height:100%" title="Grundwerk System Erklaervideo"></iframe>
-      </div>
-    </div>
-    <div class="grid g3 section-gap">
-      <div class="phase"><span class="step">Monat 1 · Setup</span><h3 style="margin-top:8px">Wir bauen alles auf</h3>
-        <ul><li>ICP definieren: Ihre echten Traumkunden</li><li>Kompletten Zielmarkt scrapen, passende Unternehmensliste</li><li>Direkte Entscheider identifizieren + Kontaktdaten anreichern</li><li>Close CRM aufsetzen + Schulung</li><li>Domains und Inboxen aufsetzen + 30 Tage warmlaufen</li><li>Personalisierte Copy schreiben</li></ul></div>
-      <div class="phase"><span class="step">Monat 2 · Launch</span><h3 style="margin-top:8px">Das System läuft</h3>
-        <ul><li>10.000 bis 20.000 personalisierte E-Mails an Entscheider</li><li>Alle Antworten zentral in einer Inbox</li><li>Sofort-Benachrichtigung bei jeder interessierten Antwort</li><li>Sie buchen Termine mit echten Interessenten</li><li>Weekly Call mit Ihrem Account Manager</li></ul></div>
-      <div class="phase"><span class="step">Danach · Skalierung</span><h3 style="margin-top:8px">Der Kanal wächst mit</h3>
-        <ul><li>Mehrere Kampagnen je Region und Pain Point</li><li>A/B-Tests, das Beste skalieren</li><li>Laufende Optimierung im Weekly Call</li><li>Daten und System gehören ab Tag 1 Ihnen</li></ul></div>
-    </div>
-    <h3 class="section-gap" style="margin-bottom:18px">Die Bausteine im Detail</h3>
-    <div class="grid g3">
-      <div class="card"><h3>1 · Zielmarkt + ICP</h3><p class="muted" style="font-size:0.93rem">Custom-Scraper bauen Ihre komplette Zielkundenliste. Die Recherchearbeit entfällt für Sie komplett.</p></div>
-      <div class="card"><h3>2 · Entscheider + Kontakte</h3><p class="muted" style="font-size:0.93rem">Direkte Entscheider identifiziert und über mehrere Datenbanken gegengeprüft. Kontaktdaten angereichert: E-Mail, LinkedIn, Telefon wo verfügbar. Keine veralteten Kauflisten.</p></div>
-      <div class="card"><h3>3 · Personalisierte Ansprache</h3><p class="muted" style="font-size:0.93rem">Kurze, sachliche E-Mails direkt an den Entscheider. Aufbau: Pain Point, Mehrwert, klarer nächster Schritt. Kein Werbe-Schnickschnack, kein Info-Friedhof.</p></div>
-      <div class="card"><h3>4 · MasterInbox</h3><p class="muted" style="font-size:0.93rem">Alle Antworten aus allen Inboxen zentral und vorkategorisiert. Morgens öffnen Sie ein Postfach und sehen nur das Interesse.</p></div>
-      <div class="card"><h3>5 · Close CRM</h3><p class="muted" style="font-size:0.93rem">Komplett für Sie aufgesetzt inklusive Schulung. Aufgaben, Follow-ups, integrierte Telefonie. Kein 15.000-Euro-Extra-Dienstleister nötig.</p></div>
-      <div class="card"><h3>6 · Sofort-Benachrichtigung</h3><p class="muted" style="font-size:0.93rem">Jede interessierte Antwort landet sofort in Slack, Teams oder WhatsApp. Sie wissen genau, wen Sie jetzt anrufen.</p></div>
-      <div class="card"><h3>7 · Kampagnen-Tracking</h3><p class="muted" style="font-size:0.93rem">Eigene Software: versendete Mails, Antworten, Termine, Umsatz pro Kampagne. Sie sehen, welcher Hebel funktioniert.</p></div>
-      <div class="card"><h3>8 · Weekly Call</h3><p class="muted" style="font-size:0.93rem">Jede Woche ein Sparringspartner, der neutral auf die Zahlen schaut und gemeinsam mit Ihnen optimiert.</p></div>
-    </div>
-    <div class="section-gap"><button class="btn" onclick="showTab(3)">Echte Ergebnisse ansehen →</button></div>
-  </div>
-</section>
-
-<!-- ===== TAB 4: ERGEBNISSE ===== -->
-<section class="panel" id="panel-3">
-  <div class="wrap">
-    <span class="eyebrow">Was andere mit dem System erreicht haben</span>
-    <h2>Echte Zahlen von echten Kunden.</h2>
-    <div class="grid g3 section-gap">
-      <div class="proof"><div class="big">397 Leads</div><div class="muted" style="font-size:0.9rem">in 3 Monaten</div><div class="co">Smart Bridges</div><div class="meta">Ingo Boldt · Berlin</div></div>
-      <div class="proof"><div class="big">28 Termine</div><div class="muted" style="font-size:0.9rem">in 74 Tagen · 240k ARR</div><div class="co">Birdsview</div><div class="meta">Tim Küsters</div></div>
-      <div class="proof"><div class="big">172 Leads</div><div class="muted" style="font-size:0.9rem">+ 14 Aufträge in 3 Monaten</div><div class="co">Greenlovers</div><div class="meta">Stephan Meinecke · Hamburg</div></div>
-      <div class="proof"><div class="big">~100k</div><div class="muted" style="font-size:0.9rem">Closed Revenue · &gt;400k Pipeline</div><div class="co">Hivebuy</div><div class="meta">Moritz Liehnert · Berlin</div></div>
-      <div class="proof"><div class="big">20 Opportunities</div><div class="muted" style="font-size:0.9rem">in 13 Tagen</div><div class="co">Peer Studios</div><div class="meta">Lasse Petry · Berlin</div></div>
-      <div class="proof"><div class="big">2,7x ROI</div><div class="muted" style="font-size:0.9rem">im ersten Quartal</div><div class="co">Cervis</div><div class="meta">Philipp Köhnlein</div></div>
-    </div>
-    <div class="ticker section-gap">
-      <div class="ticker-row r1">
-        <img class="client-logo" loading="eager" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel">
-        <img class="client-logo" loading="eager" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes">
-        <img class="client-logo" loading="eager" src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO">
-        <img class="client-logo" loading="eager" src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview">
-        <img class="client-logo" loading="eager" src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly">
-        <img class="client-logo" loading="eager" src="https://cocomin.de/wp-content/uploads/2024/11/cocomin-logo.svg" alt="COCOMIN">
-        <img class="client-logo" loading="eager" src="https://greenlovers.de/media/greenlovers/greenlovers-logo.svg" alt="Greenlovers">
-        <img class="client-logo" loading="eager" src="https://cdn.prod.website-files.com/636be452cfaef27bb708348b/64c007bb670af5c4b3350452_logo-echte-media.png" alt="echte Media">
-        <img class="client-logo" loading="eager" src="https://stackfuel.com/wp-content/uploads/2023/07/Group-5.svg" alt="StackFuel">
-        <img class="client-logo" loading="eager" src="https://raidboxes.io/wp-content/uploads/2024/04/raidboxes-wordmark-dark-1.svg" alt="Raidboxes">
-        <img class="client-logo" loading="eager" src="https://piabo.net/wp-content/uploads/2025/06/Kopie-von-Kopie-von-PIABO_Logo-Black-RGB-scaled.jpg" alt="PIABO">
-        <img class="client-logo" loading="eager" src="https://cdn.prod.website-files.com/63171f6605249d9c59eff6ef/68fb548b79eb019d7f54de76_BirdsView%20Logo%20(14).avif" alt="Birdsview">
-        <img class="client-logo" loading="eager" src="https://cdn.prod.website-files.com/65e8673a3c7ba0dc4d30f346/65eb2f10df1222354970a7b1_famedly-logo.svg" alt="Famedly">
-        <img class="client-logo" loading="eager" src="https://cocomin.de/wp-content/uploads/2024/11/cocomin-logo.svg" alt="COCOMIN">
-        <img class="client-logo" loading="eager" src="https://greenlovers.de/media/greenlovers/greenlovers-logo.svg" alt="Greenlovers">
-        <img class="client-logo" loading="eager" src="https://cdn.prod.website-files.com/636be452cfaef27bb708348b/64c007bb670af5c4b3350452_logo-echte-media.png" alt="echte Media">
-      </div>
-      <div class="ticker-row r2">
-        <img class="client-logo" loading="eager" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges">
-        <img class="client-logo" loading="eager" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy">
-        <img class="client-logo" loading="eager" src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios">
-        <img class="client-logo" loading="eager" src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic">
-        <img class="client-logo" loading="eager" src="../assets/logos/cervis.svg" alt="Cervis">
-        <img class="client-logo" loading="eager" src="https://greenlovers.de/media/greenlovers/greenlovers-logo.svg" alt="Greenlovers">
-        <img class="client-logo" loading="eager" src="https://www.smart-bridges.com/wp-content/uploads/2023/02/logo-smart-bridges-signet-name-safe-col1-col2.svg" alt="Smart Bridges">
-        <img class="client-logo" loading="eager" src="https://www.hivebuy.com/hubfs/Logo-1.svg" alt="Hivebuy">
-        <img class="client-logo" loading="eager" src="https://cdn.brandfetch.io/idoxxypiP_/w/1232/h/1620/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1761169171551" alt="Peer Studios">
-        <img class="client-logo" loading="eager" src="https://imagedelivery.net/UduvvRFAUoJF6YnYqkj5sw/main/images/logo.svg/w=400" alt="Reonic">
-        <img class="client-logo" loading="eager" src="../assets/logos/cervis.svg" alt="Cervis">
-        <img class="client-logo" loading="eager" src="https://greenlovers.de/media/greenlovers/greenlovers-logo.svg" alt="Greenlovers">
-      </div>
-    </div>
-    <div class="statbar">
-      <div class="stat"><div class="n">10 Mio.+</div><div class="l">versendete E-Mails</div></div>
-      <div class="stat"><div class="n">50+</div><div class="l">B2B-Projekte</div></div>
-      <div class="stat"><div class="n">75+</div><div class="l">Tools &amp; Datenanbieter</div></div>
-      <div class="stat"><div class="n">BAFA</div><div class="l">Registrierter Berater</div></div>
-    </div>
-    <div class="section-gap"><button class="btn" onclick="showTab(4)">Zur Investition →</button></div>
-  </div>
-</section>
-<!-- ===== TAB 5: INVESTITION ===== -->
-<section class="panel" id="panel-4">
-  <div class="wrap">
-    <span class="eyebrow">Was Sie investieren, und was Sie generieren</span>
-    <h2 style="text-align:center">Ein bewusst einfacher Einstieg.</h2>
-    <p class="lead" style="text-align:center;margin:0 auto 8px">Zwei Monate, voller Aufbau und volle Nutzung. Gefördert, mit Ausstieg danach. Damit Sie das System sehen, bevor Sie sich langfristig entscheiden.</p>
-    <div class="price-card section-gap">
-      <span class="tag">Stufe 1 · Einstieg · 2 Monate</span>
-      <div class="amount">7.000 €</div>
-      <div class="sub">gesamt für 2 Monate · Setup-Fee komplett gestrichen</div>
-      <details class="acc" open><summary>Setup &amp; Schulung</summary><div class="body"><ul><li>Close CRM komplett aufgesetzt</li><li>Onboarding-Call + KickOff-Workshop (1 Stunde)</li><li>Schulung im Umgang mit System und CRM</li></ul></div></details>
-      <details class="acc"><summary>Daten &amp; Scraping</summary><div class="body"><ul><li>ICP-Definition Ihrer Traumkunden</li><li>Custom-Scraper für Ihren kompletten Zielmarkt</li><li>Entscheider identifiziert + über mehrere Datenbanken gegengeprüft</li><li>Kontaktdaten angereichert (E-Mail, LinkedIn, Telefon wo verfügbar)</li></ul></div></details>
-      <details class="acc"><summary>Versand &amp; Inboxen</summary><div class="body"><ul><li>Domains und Inboxen aufgesetzt + 30 Tage warmgelaufen</li><li>10.000 bis 20.000 personalisierte E-Mails im Nutzungsmonat</li><li>MasterInbox: alle Antworten zentral und vorkategorisiert</li></ul></div></details>
-      <details class="acc"><summary>Begleitung &amp; Tracking</summary><div class="body"><ul><li>Weekly Call mit Ihrem Account Manager</li><li>Kampagnen-Tracking-Software</li><li>Sofort-Benachrichtigung bei jeder interessierten Antwort</li><li>Alle Datensätze gehören ab Tag 1 Ihnen</li></ul></div></details>
-      <div class="total-line"><span class="lab">Gesamt-Invest (2 Monate)</span><span class="val">7.000 €</span></div>
-      <p class="muted" style="font-size:0.85rem;margin-top:6px">Ausstieg nach 2 Monaten möglich. Danach entscheiden Sie frei.</p>
-    </div>
-    <div class="bafa-box">
-      <h3>BAFA-Förderung: 50 bis 80 % zurück</h3>
-      <p class="muted" style="font-size:0.94rem;margin-top:6px">WH Industrial Services ist nach erster Einschätzung förderfähig. Den Antrag stellen und bearbeiten wir komplett für Sie. Sie brauchen nur einen kurzen Bogen (5 Minuten) und eine Vollmacht. Die Erstattung geht direkt an Sie. Eine konkrete Förderanalyse für BAFA liefern wir separat.</p>
-    </div>
-    <div class="goalbox">
-      <h3 class="green">Prognose für den Nutzungsmonat</h3>
-      <p style="font-size:0.94rem;margin-top:6px;color:#d6ecd9">10.000 bis 20.000 versendete E-Mails an rund 5.000 bis 10.000 Entscheider, bei etwa 6 bis 7 % Antwortrate. Größenordnung: <b>30 bis 60 qualifizierte Leads</b>. Das ist eine Prognose aus Erfahrungswerten, keine Garantie.</p>
-    </div>
-    <div class="grid g2 section-gap">
-      <div class="tier"><span class="eyebrow" style="margin-bottom:8px">Stufe 2 · Laufend</span><h3>Langfristige Zusammenarbeit</h3><div style="font-size:1.8rem;font-weight:800;margin:6px 0">3.500 € <span style="font-size:1rem;font-weight:500;color:var(--muted)">/ Monat</span></div><p class="muted" style="font-size:0.93rem">Nach dem geförderten Einstieg. Der Kanal läuft weiter: Versand, MasterInbox, CRM, Tracking und Weekly Calls. Mehr Kampagnen, mehr Regionen, kontinuierliche Optimierung.</p></div>
-      <div class="tier"><span class="eyebrow" style="margin-bottom:8px">Stufe 3 · Vision</span><h3>Ihr eigener Vertriebsmotor</h3><p class="muted" style="font-size:0.93rem;margin-top:6px">Vollautomatisierter, planbarer Vertriebskanal und auf Wunsch eine eigene Vertriebsabteilung. Wenn Sie die Elektroabteilung Ende des Jahres ausgründen, läuft das System mit neuer Firmierung weiter. Nur Domains und Inboxen werden angepasst, die Datensätze und das System bleiben.</p></div>
-    </div>
-    <div class="section-gap" style="text-align:center"><button class="btn" onclick="showTab(5)">Die Strategie im Detail →</button></div>
-  </div>
-</section>
-
-<!-- ===== TAB 6: STRATEGIE ===== -->
-<section class="panel" id="panel-5">
-  <div class="wrap">
-    <span class="eyebrow">🧠 Strategie</span>
-    <h2>Wie wir den Markt für Sie angehen.</h2>
-    <p class="lead">Aufgebaut auf dem, was Sie im Gespräch beschrieben haben: ein riesiger Industrie-Markt, der von Hand nicht erreichbar ist. Wir gehen ihn strukturiert und skalierbar an.</p>
-    <div class="dossier section-gap">
-      <div class="dblock"><div class="k">Primäre Zielgruppe</div><p>Größere Industriebetriebe im gesamten DACH-Raum, die Elektrotechnik-Dienstleistung, Instandhaltung oder Anlagenbau extern vergeben. Genau Ihre Massen, nur eben gezielt statt zufällig.</p></div>
-      <div class="dblock"><div class="k">Entscheider</div><p>Technische Leitung, Instandhaltungs- und Werkleiter, Einkauf und Geschäftsführung. Statt über die Zentrale und den Info-Friedhof gehen wir direkt an die Person, die entscheidet.</p></div>
-      <div class="dblock"><div class="k">Kanal</div><p>Cold E-Mail als planbarer, skalierbarer Kanal. Kein Ersatz für Außendienst und Messe, sondern eine Ergänzung, die rund um die Uhr für Sie arbeitet.</p></div>
-      <div class="dblock"><div class="k">Ansatz pro Segment</div><p>Mehrere Kampagnen je Region, Branche und Pain Point. Wir schicken nicht eine Nachricht an alle, sondern sprechen jedes Segment mit dem passenden Argument an und testen Varianten gegeneinander.</p></div>
-      <div class="dblock"><div class="k">Daten &amp; Tools</div><p>Custom-Scraper bauen die Zielkundenliste, mehrere Datenbanken prüfen die Entscheider gegen. Nur aktuelle Kontakte, keine veralteten Kauflisten.</p></div>
-      <div class="dblock"><div class="k">Priorisierung</div><p>Start mit einem klar abgrenzbaren Segment für schnelle, lesbare Ergebnisse. Was funktioniert, skalieren wir hoch und erschließen den Markt Stück für Stück.</p></div>
-    </div>
-    <div class="section-gap"><button class="btn" onclick="showTab(6)">Zum Aktionsplan →</button></div>
-  </div>
-</section>
-<!-- ===== TAB 7: AKTIONSPLAN ===== -->
-<section class="panel" id="panel-6">
-  <div class="wrap">
-    <span class="eyebrow">Der Weg von hier</span>
-    <h2>Konkret die nächsten Schritte.</h2>
-    <p class="lead">Klar und ohne Reibung. Den größten Teil übernehmen wir, Ihr Aufwand bleibt minimal.</p>
-    <div class="steps section-gap">
-      <div class="step-item done"><span class="box">✓</span><span class="txt"><b>Erstgespräch mit Sophie Reichert</b> (30.06.2026) zur Situation und Lösung.</span></div>
-      <div class="step-item done"><span class="box">✓</span><span class="txt"><b>Diese Übersicht und das Angebot</b> erhalten, zum gemeinsamen Durchgehen mit Herrn Rod-Horak.</span></div>
-      <div class="step-item"><span class="box"></span><span class="txt"><b>2. Termin mit Thomas Rod-Horak: 9. Juli, 10:00 Uhr.</b> Offene Fragen klären, Entscheidung vorbereiten.</span></div>
-      <div class="step-item"><span class="box"></span><span class="txt"><b>Förderanalyse (BAFA)</b> wird Ihnen separat zugestellt, damit Sie die Förderfähigkeit schwarz auf weiß haben.</span></div>
-      <div class="step-item"><span class="box"></span><span class="txt"><b>Go-Entscheidung.</b> Danach: Vertrag + BAFA-Antrag. Sie füllen nur einen 5-Minuten-Bogen aus und geben uns die Vollmacht, den Rest erledigen wir.</span></div>
-      <div class="step-item"><span class="box"></span><span class="txt"><b>Onboarding-Call (30 Min., Tom Morawe, Technik)</b>, danach <b>KickOff-Workshop (1 Stunde, Tom Morawe, Strategie)</b>.</span></div>
-      <div class="step-item"><span class="box"></span><span class="txt"><b>Setup-Monat:</b> Warm-up der Inboxen, ICP, Scraper, Copy und CRM. Wir bauen alles auf.</span></div>
-      <div class="step-item"><span class="box"></span><span class="txt"><b>Nutzungsmonat:</b> 10.000 bis 20.000 E-Mails gehen raus, Weekly Calls starten, die ersten Termine kommen rein.</span></div>
-    </div>
-    <div class="section-gap"><button class="btn" onclick="showTab(7)">Termin &amp; offene Fragen →</button></div>
-  </div>
-</section>
-
-<!-- ===== TAB 8: TERMIN ===== -->
-<section class="panel" id="panel-7">
-  <div class="wrap">
-    <div class="cta-final">
-      <span class="eyebrow">Nächster Schritt</span>
-      <div class="when">📅 2. Termin: 9. Juli, 10:00 Uhr</div>
-      <h2>Wir gehen es gemeinsam mit Herrn Rod-Horak durch.</h2>
-      <p class="lead" style="margin:0 auto">Der Termin steht. Bis dahin können Sie diese Seite in Ruhe mit ihm durchgehen. Wenn vorher Fragen auftauchen, schreiben Sie mir jederzeit, ich bereite alles vor.</p>
-      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:26px">
-        <a class="btn" href="mailto:anthony.katzur@grundwerk.digital?subject=WH%20Industrial%20×%20Grundwerk">✉️ Anthony schreiben</a>
-        <a class="btn btn-ghost" href="https://calendly.com/anthony-katzur/anthony-katzur-grundwerk-outreach-session-follow-up" target="_blank">📅 Termin anpassen</a>
-      </div>
-      <p class="trust">Kein Verkaufsdruck. Wir liefern Ihnen die Grundlage, damit die Entscheidung leicht fällt.</p>
-    </div>
-  </div>
-  <div style="height:60px"></div>
-</section>
-
-<div class="footer">
-  <div class="wrap">Grundwerk Digital GmbH · Pappelallee 78/79, 10437 Berlin · Vertraulich für WH Industrial Services GmbH</div>
-</div>
+</footer>
 
 <script>
-function showTab(i){
-  document.querySelectorAll('.panel').forEach(function(p,idx){p.classList.toggle('active',idx===i)});
-  document.querySelectorAll('.tab-btn').forEach(function(b,idx){b.classList.toggle('active',idx===i)});
-  var drop=document.getElementById('contactDrop'); if(drop)drop.classList.remove('open');
-  window.scrollTo({top:0,behavior:'smooth'});
-  var nav=document.getElementById('tabnav'); var act=nav.querySelectorAll('.tab-btn')[i];
-  if(act&&act.scrollIntoView){act.scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'});}
-}
-function toggleContact(e){e.stopPropagation();document.getElementById('contactDrop').classList.toggle('open');}
-document.addEventListener('click',function(e){
-  var c=document.getElementById('navContact');
-  if(c&&!c.contains(e.target)){document.getElementById('contactDrop').classList.remove('open');}
-});
-// Exklusive Akkordeons: beim Oeffnen Geschwister schliessen
-document.querySelectorAll('details.acc').forEach(function(d){
-  d.addEventListener('toggle',function(){
-    if(this.open){
-      var siblings=this.parentElement.querySelectorAll('details.acc[open]');
-      siblings.forEach(function(s){if(s!==d)s.removeAttribute('open');});
+    const TABS = ['hello', 'situation', 'system', 'results', 'invest', 'strategy', 'plan', 'booking'];
+
+    function switchTab(id) {
+        TABS.forEach(t => {
+            document.getElementById('panel-' + t).classList.remove('active');
+            document.querySelector('[data-tab="' + t + '"]').classList.remove('active');
+        });
+        document.getElementById('panel-' + id).classList.add('active');
+        document.querySelector('[data-tab="' + id + '"]').classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        document.getElementById('pb').style.width = ((TABS.indexOf(id) + 1) / TABS.length * 100) + '%';
+
+        if (id === 'situation') {
+            setTimeout(() => {
+                const b1 = document.getElementById('bar1');
+                const b2 = document.getElementById('bar2');
+                if (b1) b1.style.width = '100%';
+                if (b2) b2.style.width = '26%';
+            }, 180);
+        }
     }
-  });
-});
+
+    function toggleFaq(btn) {
+        var item = btn.closest('.faq-item');
+        item.classList.toggle('open');
+        var answer = item.querySelector('.faq-a');
+        var icon = item.querySelector('.faq-icon');
+        if (item.classList.contains('open')) {
+            answer.style.display = 'block';
+            if (icon) icon.style.transform = 'rotate(45deg)';
+        } else {
+            answer.style.display = 'none';
+            if (icon) icon.style.transform = 'rotate(0deg)';
+        }
+    }
+    function toggleCheck(el) { el.classList.toggle('checked'); }
+
+    document.getElementById('pb').style.width = (1 / TABS.length * 100) + '%';
+
+    function toggleTheme() {
+        var html = document.documentElement;
+        var isLight = html.getAttribute('data-theme') === 'light';
+        var next = isLight ? 'dark' : 'light';
+        html.setAttribute('data-theme', next);
+        document.getElementById('theme-btn').innerHTML = next === 'light' ? '🌙 Dark' : '☀️ Bright';
+        localStorage.setItem('theme', next);
+        updateCalendlyTheme(next);
+    }
+
+    function updateCalendlyTheme(theme) {
+        var w = document.querySelector('.calendly-inline-widget');
+        if (!w) return;
+        var base = 'https://calendly.com/tom-soto-schiller/grundwerk-next-steps?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=4f7df9';
+        w.setAttribute('data-url', theme === 'light'
+            ? base + '&background_color=ffffff&text_color=111111'
+            : base + '&background_color=111111&text_color=f0f0f0');
+    }
+
+    // Apply saved theme label on load
+    (function() {
+        if (document.documentElement.getAttribute('data-theme') === 'light') {
+            var btn = document.getElementById('theme-btn');
+            if (btn) btn.innerHTML = '🌙 Dark';
+        }
+    })();
+
+    // Exclusive accordions: opening one closes the others in the same card
+    document.querySelectorAll('.price-card').forEach(function(card) {
+        var details = card.querySelectorAll('details');
+        details.forEach(function(d) {
+            d.addEventListener('toggle', function() {
+                if (d.open) {
+                    details.forEach(function(other) {
+                        if (other !== d) other.removeAttribute('open');
+                    });
+                }
+            });
+        });
+    });
+    /* Close contact dropdown on outside click */
+    document.addEventListener('click', function(e) {
+        var dd = document.querySelector('.nav-contact-dropdown');
+        if (dd && !e.target.closest('.nav-contact')) dd.style.display = 'none';
+    });
 </script>
+
 </body>
 </html>
