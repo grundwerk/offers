@@ -448,5 +448,14 @@
     "secure": "1656157034",
     "icon": "⚡",
     "created": "2026-06-30"
+  },
+  {
+    "slug": "nagels",
+    "name": "Nagels Druck GmbH",
+    "subtitle": "Insa Nagels · Sales Room · LinkedIn-Content & Ansprache",
+    "type": "sales-room",
+    "secure": "7391540682",
+    "icon": "🔗",
+    "created": "2026-07-01"
   }
 ]
