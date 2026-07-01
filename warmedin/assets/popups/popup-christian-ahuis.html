@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WarmedIn Popup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: transparent;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+
+  /* Backdrop */
+  .backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    z-index: 100;
+  }
+
+  /* Modal wrapper */
+  .modal {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.28);
+    animation: popIn 0.22s cubic-bezier(0.34,1.36,0.64,1) both;
+  }
+
+  @keyframes popIn {
+    from { opacity: 0; transform: scale(0.88); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .modal { animation: none; }
+  }
+
+  /* Close button */
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0,0,0,0.07);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 16px;
+    line-height: 1;
+    z-index: 10;
+    transition: background 0.15s;
+  }
+  .close-btn:hover { background: rgba(0,0,0,0.14); }
+
+  /* Post card */
+  .post {
+    padding: 14px 16px 0;
+  }
+
+  /* Header row */
+  .post-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #0A66C2;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .post-meta { flex: 1; min-width: 0; }
+
+  .post-name-row {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+
+  .post-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(0,0,0,0.9);
+    line-height: 1.3;
+  }
+
+  .degree-badge {
+    font-size: 12px;
+    color: #0A66C2;
+    font-weight: 600;
+  }
+
+  .post-headline {
+    font-size: 12px;
+    color: rgba(0,0,0,0.6);
+    line-height: 1.4;
+    margin-top: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .post-timestamp {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 12px;
+    color: rgba(0,0,0,0.5);
+    margin-top: 2px;
+  }
+
+  .post-timestamp svg { flex-shrink: 0; }
+
+  /* Post body */
+  .post-body {
+    font-size: 14px;
+    line-height: 1.55;
+    color: rgba(0,0,0,0.85);
+    margin-bottom: 10px;
+  }
+
+  .post-body .show-more {
+    color: rgba(0,0,0,0.55);
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  /* Reactions row */
+  .reactions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    font-size: 12px;
+    color: rgba(0,0,0,0.55);
+  }
+
+  .reactions-left {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+  }
+
+  .reaction-icons {
+    display: flex;
+  }
+
+  .reaction-icon {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    border: 1.5px solid #fff;
+    margin-left: -4px;
+  }
+  .reaction-icon:first-child { margin-left: 0; }
+
+  .r-like  { background: #0A66C2; }
+  .r-heart { background: #df704d; }
+  .r-clap  { background: #e7a33e; }
+
+  /* Action bar */
+  .action-bar {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    padding: 2px 0 4px;
+  }
+
+  .action-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 8px 4px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(0,0,0,0.55);
+    transition: background 0.12s, color 0.12s;
+  }
+  .action-btn:hover { background: rgba(0,0,0,0.06); color: rgba(0,0,0,0.75); }
+
+  /* Comment / WarmedIn reply */
+  .comment-section {
+    background: #f8f8f8;
+    border-top: 1px solid rgba(0,0,0,0.07);
+    padding: 12px 16px 16px;
+  }
+
+  .comment {
+    display: flex;
+    gap: 9px;
+    align-items: flex-start;
+    margin-bottom: 12px;
+  }
+
+  .comment-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #111;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  /* WarmedIn logo mark in avatar */
+  .wi-mark {
+    font-size: 13px;
+    font-weight: 800;
+    color: #ffe01c;
+    letter-spacing: -1px;
+  }
+
+  .comment-bubble {
+    background: #fff;
+    border-radius: 0 8px 8px 8px;
+    padding: 8px 12px;
+    flex: 1;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+  }
+
+  .comment-author-row {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 3px;
+  }
+
+  .comment-author {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(0,0,0,0.85);
+  }
+
+  .author-tag {
+    font-size: 10px;
+    font-weight: 500;
+    color: rgba(0,0,0,0.4);
+    background: rgba(0,0,0,0.06);
+    border-radius: 3px;
+    padding: 1px 5px;
+  }
+
+  .comment-text {
+    font-size: 13px;
+    color: rgba(0,0,0,0.75);
+    line-height: 1.5;
+  }
+
+  /* CTA button */
+  .cta-btn {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 11px 16px;
+    background: #ffe01c;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: filter 0.14s, transform 0.1s;
+  }
+  .cta-btn:hover  { filter: brightness(0.94); }
+  .cta-btn:active { transform: scale(0.98); }
+</style>
+</head>
+<body>
+
+<div class="backdrop" id="backdrop">
+  <div class="modal" role="dialog" aria-modal="true" aria-label="LinkedIn Post">
+
+    <button class="close-btn" id="closeBtn" aria-label="Schliessen">&#x2715;</button>
+
+    <!-- LinkedIn Post -->
+    <div class="post">
+
+      <!-- Header -->
+      <div class="post-header">
+        <div class="avatar">
+          <img src="https://start.grundwerk.digital/assets/team/christian-ahuis.jpg" alt="Christian">
+        </div>
+        <div class="post-meta">
+          <div class="post-name-row">
+            <span class="post-name">Christian Ahuis</span>
+            <span class="degree-badge">&#x2022; 1.</span>
+          </div>
+          <div class="post-headline">Founder & Business Development @ movemotions · Film für Freizeitparks</div>
+          <div class="post-timestamp">
+            <span>3 Std.</span>
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 1.5A5.5 5.5 0 118 13.5 5.5 5.5 0 018 2.5zm-.75 1v5.03l3.47 2.08.75-1.25-2.97-1.78V3.5h-1.25z" fill="currentColor"/>
+              <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.2" fill="none"/>
+              <path d="M3 8a5 5 0 0110 0" stroke="currentColor" stroke-width="1.1" fill="none"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Body -->
+      <div class="post-body">
+        Ich dachte immer, meine Arbeit spricht für sich. Tut sie, aber nur, wenn die Leute sie auch sehen.<br>
+        Seit WarmedIn meine Posts macht, erzählt mein LinkedIn endlich die Geschichten hinter den Baustellen und Attraktionen.
+        <span class="show-more">...mehr</span>
+      </div>
+
+      <!-- Reactions -->
+      <div class="reactions">
+        <div class="reactions-left">
+          <div class="reaction-icons">
+            <span class="reaction-icon r-like">&#x1F44D;</span>
+            <span class="reaction-icon r-heart">&#x2764;</span>
+            <span class="reaction-icon r-clap">&#x1F44F;</span>
+          </div>
+          <span>214 Personen</span>
+        </div>
+        <span>18 Kommentare</span>
+      </div>
+
+      <!-- Action bar -->
+      <div class="action-bar">
+        <button class="action-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/></svg>
+          Gefallt mir
+        </button>
+        <button class="action-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Kommentieren
+        </button>
+        <button class="action-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+          Teilen
+        </button>
+        <button class="action-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Senden
+        </button>
+      </div>
+    </div>
+
+    <!-- WarmedIn Comment / CTA -->
+    <div class="comment-section">
+      <div class="comment">
+        <div class="comment-avatar">
+          <span class="wi-mark">W</span>
+        </div>
+        <div class="comment-bubble">
+          <div class="comment-author-row">
+            <span class="comment-author">WarmedIn</span>
+            <span class="author-tag">Autor</span>
+          </div>
+          <div class="comment-text">
+            Freut mich, Christian! Cool, dass du dir den kostenlosen Post gesichert hast. Genau aus solchen Einblicken hinter die Kulissen entstehen die ersten Gespräche.
+          </div>
+        </div>
+      </div>
+      <button class="cta-btn" id="ctaBtn">
+        Kostenlosen LinkedIn-Post sichern
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function wmClose() {
+    document.getElementById('backdrop').style.display = 'none';
+    try { window.parent.postMessage('wm-close-popup', '*'); } catch (e) {}
+  }
+  document.getElementById('closeBtn').addEventListener('click', wmClose);
+  document.getElementById('backdrop').addEventListener('click', function(e) {
+    if (e.target === this) wmClose();
+  });
+  // CTA: close this popup and send the visitor to the post generator section
+  document.getElementById('ctaBtn').addEventListener('click', function() {
+    try { window.parent.postMessage('wm-goto-generator', '*'); } catch (e) {}
+    wmClose();
+  });
+  // Esc closes too, even when focus is inside the iframe (parent also listens)
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') wmClose(); });
+</script>
+</body>
+</html>
