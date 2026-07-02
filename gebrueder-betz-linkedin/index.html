@@ -1,0 +1,725 @@
+<!-- LinkedIn-Profil-Analyse für Dr. Georg Betz | v1.0 | 2026-07-02 -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABaFBMVEUAAAAODg4tLS1MTU1gYGBlZWVaWlpCQkIhISEGBgYkJCR5eXnDw8Pq6ur6+vr////9/f329vbg4OCtra1YWFgJCQlra2vb29v6+vm2trY2NjYPDw+UlJTf399ISEiNjY3+///09PTLy8yoqKibm5qpqanPz8/39/fx8fFcXV1ZWVm1trZHR0cRERECAgIDAwMUFBRRUVHAwMDp6elcXFwBAQHIyMiYmJgQEBAXFxeJiopSUlIWFhaRkZH8/PxfX18HBwe4uLfl5eUmJibJycnR0dEFBQVDQ0NDQ0IbGxvLy8sSEhL5+flkZGS9vb7h4eDQ0NBoaGicnJxhYWH+/v6xsbALCwvQ0M8fHx/X2Nh3d3dzc3P19fUjIyPa2tqvr6/c3NyhoaF4eHhrbGt6enqioqIhIiK7u7wcHByampru7u6WlpcbHBxNTU3V1dU8PDwEBAQsLCx9fX2UlZSGhoZqampBQUEYGRkE5UVoAAABH0lEQVQ4y2NgGHKAkYmZhZWNnYMTuzQXNw8vHz+/gKCQsAgjprSomDg/HEhISqHLS8vw8SMDWTlUeU55BZCwopKyiqqaOpCloYmqQEsQKCigraOrx6BvYGjEb2xiiiJvYAbSb24B5VpaGaK5wBrkAB4bOF8P3Ym2QHk7e9wB5OAIVODkjCcEXYAKXA1gXDcpdw8PT5RA8AIqUPOGcXVdfATVfVFC0Q+owJ8DxvUOAHIDUewIAor4GOJREBwCFAoNgykIx1AQEQkU4ovSh/As1DAUMESDjIiRjwUFsClTHKYCi3hwHCYkJiWnpIoLYCpgSEvnRwW+aAoYMjJjkKSzsnMwgpMzN95YACwbkyeTX4A1SgrZimyLS0rLyhmGFgAAxNYtAQGL17EAAAAASUVORK5CYII=" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="offer-version" content="1.0">
+    <title>LinkedIn-Profil-Analyse: Dr. Georg Betz | Grundwerk Digital</title>
+    <script>
+        (function(){
+            var code = '5fb39ab06f';
+            var params = new URLSearchParams(window.location.search);
+            if(params.get('secure') !== code){
+                document.documentElement.style.display='none';
+                document.title='Zugriff verweigert';
+                window.stop();
+            }
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --card: #111111;
+            --card-2: #161616;
+            --text: #f0f0f0;
+            --muted: #888888;
+            --accent: #4f7df9;
+            --accent-glow: rgba(79,125,249,0.18);
+            --green: #22c55e;
+            --green-glow: rgba(34,197,94,0.15);
+            --red: #ef4444;
+            --red-dim: rgba(239,68,68,0.12);
+            --orange: #f97316;
+            --orange-dim: rgba(249,115,22,0.12);
+            --grey: #9ca3af;
+            --grey-dim: rgba(156,163,175,0.14);
+            --border: rgba(255,255,255,0.07);
+            --border-accent: rgba(79,125,249,0.35);
+            --radius: 14px;
+            --radius-sm: 8px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 16px;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+        }
+        nav {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(10,10,10,0.92);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 14px 32px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-brand { display: flex; align-items: center; gap: 10px; }
+        .nav-brand img { height: 26px; }
+        .nav-brand span { font-weight: 600; font-size: 14px; color: var(--muted); letter-spacing: 0.5px; }
+        .nav-cta {
+            background: var(--accent); color: #fff; border: none; padding: 10px 22px;
+            border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer;
+            text-decoration: none; transition: all 0.2s;
+        }
+        .nav-cta:hover { background: #3b63d4; transform: translateY(-1px); }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+        section { padding: 80px 0; }
+        section + section { border-top: 1px solid var(--border); }
+        .hero { padding: 100px 0 80px; text-align: center; position: relative; }
+        .hero::before {
+            content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+            width: 600px; height: 600px; background: radial-gradient(circle, rgba(79,125,249,0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--card); border: 1px solid var(--border); border-radius: 100px;
+            padding: 8px 20px; font-size: 13px; color: var(--accent); font-weight: 500;
+            margin-bottom: 28px;
+        }
+        .hero h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 700; line-height: 1.2; margin-bottom: 16px; }
+        .hero h1 span { color: var(--accent); }
+        .hero p { font-size: 18px; color: var(--muted); max-width: 640px; margin: 0 auto; line-height: 1.7; }
+        .hero-for { font-size: 14px; color: var(--muted); margin-top: 20px; }
+        .hero-for strong { color: var(--text); font-weight: 600; }
+        .section-number {
+            font-size: 13px; font-weight: 700; color: var(--accent); letter-spacing: 2px;
+            text-transform: uppercase; margin-bottom: 8px;
+        }
+        h2 { font-size: clamp(24px, 3vw, 32px); font-weight: 700; margin-bottom: 12px; line-height: 1.25; }
+        .section-sub { font-size: 16px; color: var(--muted); margin-bottom: 40px; max-width: 660px; }
+        .status-card {
+            background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+            padding: 28px; margin-bottom: 24px;
+        }
+        .status-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+        .status-icon {
+            width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center;
+            justify-content: center; font-size: 20px; flex-shrink: 0;
+        }
+        .status-icon.red { background: var(--red-dim); }
+        .status-icon.orange { background: var(--orange-dim); }
+        .status-icon.green { background: var(--green-glow); }
+        .status-icon.grey { background: var(--grey-dim); }
+        .status-title { font-size: 18px; font-weight: 600; }
+        .status-label {
+            display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px;
+            border-radius: 100px; font-size: 12px; font-weight: 600; margin-left: auto; flex-shrink: 0;
+        }
+        .status-label.critical { background: var(--red-dim); color: var(--red); }
+        .status-label.warning { background: var(--orange-dim); color: var(--orange); }
+        .status-label.good { background: var(--green-glow); color: var(--green); }
+        .status-label.check { background: var(--grey-dim); color: var(--grey); }
+        .analysis-box {
+            background: var(--card-2); border-radius: var(--radius-sm);
+            padding: 20px; margin: 16px 0;
+        }
+        .analysis-box h4 { font-size: 14px; font-weight: 600; color: var(--accent); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+        .analysis-box p, .analysis-box li { font-size: 15px; color: var(--muted); line-height: 1.7; }
+        .analysis-box ul { padding-left: 20px; }
+        .analysis-box li { margin-bottom: 6px; }
+        .analysis-box li strong { color: var(--text); font-weight: 500; }
+        .action-steps { margin-top: 20px; }
+        .action-step {
+            display: flex; gap: 14px; padding: 14px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .action-step:last-child { border-bottom: none; }
+        .step-num {
+            width: 28px; height: 28px; border-radius: 8px; background: var(--accent);
+            color: #fff; font-size: 13px; font-weight: 700; display: flex;
+            align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;
+        }
+        .step-content h5 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+        .step-content p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+        .step-tip {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: var(--accent-glow); border: 1px solid var(--border-accent);
+            border-radius: 6px; padding: 6px 12px; font-size: 13px; color: var(--accent);
+            margin-top: 8px; font-weight: 500;
+        }
+        .checklist-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 24px; }
+        .check-item {
+            background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-sm);
+            padding: 16px 18px; display: flex; align-items: center; gap: 12px;
+        }
+        .check-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+        .check-dot.red { background: var(--red); box-shadow: 0 0 8px var(--red); }
+        .check-dot.orange { background: var(--orange); box-shadow: 0 0 8px var(--orange); }
+        .check-dot.green { background: var(--green); box-shadow: 0 0 8px var(--green); }
+        .check-dot.grey { background: var(--grey); box-shadow: 0 0 8px var(--grey); }
+        .check-text { font-size: 14px; font-weight: 500; }
+        .check-text small { display: block; font-size: 12px; color: var(--muted); font-weight: 400; margin-top: 2px; }
+        .example-box {
+            background: var(--card); border: 1px solid var(--border-accent); border-radius: var(--radius);
+            padding: 24px; margin: 20px 0; position: relative;
+        }
+        .example-box::before {
+            content: 'VORSCHLAG'; position: absolute; top: -10px; left: 20px;
+            background: var(--accent); color: #fff; font-size: 11px; font-weight: 700;
+            padding: 2px 10px; border-radius: 4px; letter-spacing: 1px;
+        }
+        .example-box p { font-size: 15px; line-height: 1.7; margin-top: 8px; }
+        .example-box code {
+            display: block; background: var(--card-2); border-radius: 8px;
+            padding: 16px; margin-top: 12px; font-family: 'Inter', monospace;
+            font-size: 14px; white-space: pre-wrap; line-height: 1.6; color: var(--text);
+        }
+        .example-box .label-alt::before { content: 'VARIANTE'; }
+        .summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 32px; }
+        .summary-card {
+            background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+            padding: 24px; text-align: center;
+        }
+        .summary-card .big-num { font-size: 48px; font-weight: 800; color: var(--accent); line-height: 1; }
+        .summary-card .big-label { font-size: 14px; color: var(--muted); margin-top: 8px; }
+        .cta-section { text-align: center; padding: 80px 0; }
+        .cta-section h2 { margin-bottom: 16px; }
+        .cta-section p { color: var(--muted); margin-bottom: 32px; max-width: 520px; margin-left: auto; margin-right: auto; }
+        .cta-btn {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: var(--accent); color: #fff; padding: 16px 36px;
+            border-radius: 12px; font-size: 16px; font-weight: 600;
+            text-decoration: none; transition: all 0.2s;
+        }
+        .cta-btn:hover { background: #3b63d4; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(79,125,249,0.3); }
+        .cta-alt { margin-top: 20px; font-size: 14px; color: var(--muted); }
+        .cta-alt a { color: var(--accent); text-decoration: none; }
+        footer {
+            text-align: center; padding: 40px; font-size: 13px; color: var(--muted);
+            border-top: 1px solid var(--border);
+        }
+        footer a { color: var(--accent); text-decoration: none; }
+        .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        @media (max-width: 640px) {
+            nav { padding: 12px 16px; }
+            section { padding: 60px 0; }
+            .hero { padding: 70px 0 60px; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .checklist-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <div class="nav-brand">
+        <img src="https://www.gebrueder-betz.de/images/layout/geBetz_logo.png" alt="Gebrüder Betz Medical Animation" onerror="this.style.display='none'">
+        <span>LINKEDIN-PROFIL-ANALYSE</span>
+    </div>
+    <a href="https://calendly.com/tom-soto-schiller/grundwerk-kurzes-kennenlernen?email=gbetz%40gebrueder-betz.de&name=Georg%20Betz" target="_blank" class="nav-cta">Termin buchen</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container fade-in">
+        <div class="hero-badge">Grundwerk Digital &times; Gebrüder Betz</div>
+        <h1>LinkedIn-Profil-Analyse<br>für <span>Dr. Georg Betz</span></h1>
+        <p>Ihr LinkedIn-Profil ist oft der erste Eindruck, den Pharma-, MedTech- und Biotech-Entscheider von Ihnen bekommen, bevor sie ein Gespräch über 3D Medical Animation führen. Diese Analyse zeigt konkret, wie Sie dieses Profil so aufstellen, dass Ihre Positionierung als Arzt und Regisseur sofort sichtbar wird, mit klaren Schritten.</p>
+        <p class="hero-for">Erstellt von <strong>Tom Soto Schiller</strong> · Grundwerk Digital · 02.07.2026</p>
+    </div>
+</section>
+
+<!-- QUICK-CHECK OVERVIEW -->
+<section>
+    <div class="container fade-in">
+        <div class="section-number">Übersicht</div>
+        <h2>Profil-Schnellcheck</h2>
+        <p class="section-sub">Status aller wichtigen Profil-Bereiche auf einen Blick, gemessen am Grundwerk LinkedIn-Profil-Guide. Wichtig zur Einordnung: LinkedIn zeigt Nicht-Kontakten nicht jeden Bereich vollständig an. Bereiche, die wir von außen nicht sicher einsehen konnten, sind als "Prüfen" markiert, dort bekommen Sie die genauen Kriterien plus einen fertigen Vorschlag zum Selbst-Abgleich.</p>
+
+        <div class="checklist-grid">
+            <div class="check-item">
+                <div class="check-dot grey"></div>
+                <div class="check-text">Profilfoto<small>Von außen nicht einsehbar, Kriterien unten</small></div>
+            </div>
+            <div class="check-item">
+                <div class="check-dot grey"></div>
+                <div class="check-text">Profil-Banner<small>Von außen nicht einsehbar, Konzept unten</small></div>
+            </div>
+            <div class="check-item">
+                <div class="check-dot green"></div>
+                <div class="check-text">Name &amp; Profil-URL<small>Sauber und personalisiert, sehr gut</small></div>
+            </div>
+            <div class="check-item">
+                <div class="check-dot orange"></div>
+                <div class="check-text">Headline<small>Nennt Firma und Titel, aber nicht den Kundennutzen</small></div>
+            </div>
+            <div class="check-item">
+                <div class="check-dot grey"></div>
+                <div class="check-text">Info-Text / Summary<small>Nicht einsehbar, fertiger Entwurf unten</small></div>
+            </div>
+            <div class="check-item">
+                <div class="check-dot orange"></div>
+                <div class="check-text">Featured / Fokusbereich<small>Starke Referenzen vorhanden, sichtbar machen</small></div>
+            </div>
+            <div class="check-item">
+                <div class="check-dot orange"></div>
+                <div class="check-text">Werdegang / CV<small>Story ist stark, kundenorientiert schärfen</small></div>
+            </div>
+            <div class="check-item">
+                <div class="check-dot grey"></div>
+                <div class="check-text">Skills<small>Nicht einsehbar, Top-3-Empfehlung unten</small></div>
+            </div>
+            <div class="check-item">
+                <div class="check-dot grey"></div>
+                <div class="check-text">Recommendations<small>Nicht einsehbar, Vorlage zum Anfragen unten</small></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- 1. PROFILFOTO -->
+<section>
+    <div class="container fade-in">
+        <div class="section-number">Bereich 01</div>
+        <h2>Profilfoto</h2>
+        <p class="section-sub">Profile mit professionellem Profilbild bekommen laut LinkedIn bis zu 14x mehr Profilaufrufe und 36x mehr Nachrichten. Es entscheidet mit, ob eine Kontaktanfrage angenommen wird.</p>
+
+        <div class="status-card">
+            <div class="status-header">
+                <div class="status-icon grey">📸</div>
+                <div class="status-title">Von außen nicht einsehbar, hier die Kriterien</div>
+                <span class="status-label check">Prüfen</span>
+            </div>
+            <div class="analysis-box">
+                <h4>Kurz erklärt</h4>
+                <p>Wir konnten Ihr Profilfoto von außen nicht zuverlässig einsehen. Gleichen Sie es bitte kurz mit dieser Checkliste ab, damit Foto und Banner als Einheit wirken und Ihr Gesicht klar heraussticht.</p>
+            </div>
+            <div class="action-steps">
+                <div class="action-step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h5>Einfarbiger Hintergrund, Gesicht ca. 60 Prozent</h5>
+                        <p>Ausschnitt Schultern und darüber. Der Hintergrund sollte einfarbig sein und farblich zum Banner passen, dann wirken beide zusammen wie aus einem Guss.</p>
+                    </div>
+                </div>
+                <div class="action-step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h5>Authentischer, freundlicher Ausdruck</h5>
+                        <p>Echtes Lächeln (obere Wangenmuskeln aktiv), kein einseitiges Lächeln, keine aufgerissenen Augen. Kleidung wie bei einem Kundentermin: professionell, aber Sie selbst.</p>
+                    </div>
+                </div>
+                <div class="action-step">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h5>Format 400 &times; 400 px</h5>
+                        <p>Zuschneiden und Hintergrund angleichen geht kostenlos in Canva. Als Arzt und Regisseur zahlt ein seriöses, klares Foto direkt auf Ihre Glaubwürdigkeit ein.</p>
+                        <div class="step-tip">Tool-Tipp: canva.com, kostenlos nutzbar</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 2. PROFIL-BANNER -->
+<section>
+    <div class="container fade-in">
+        <div class="section-number">Bereich 02</div>
+        <h2>Profil-Banner</h2>
+        <p class="section-sub">Der Banner ist die größte Fläche Ihres Profils und meist ungenutzt. Bei Ihnen ist er eine Steilvorlage, denn Sie produzieren selbst hochwertige medizinische Bildwelten.</p>
+
+        <div class="status-card">
+            <div class="status-header">
+                <div class="status-icon grey">🖼️</div>
+                <div class="status-title">Von außen nicht einsehbar, hier ein Konzept</div>
+                <span class="status-label check">Prüfen</span>
+            </div>
+            <div class="analysis-box">
+                <h4>Kurz erklärt</h4>
+                <p>Der Banner soll in wenigen Sekunden zeigen, was Sie tun und für wen. Sie haben einen unfairen Vorteil: ein Still aus einer Ihrer eigenen 3D-Animationen wirkt sofort und beweist Ihr Können, statt es nur zu behaupten.</p>
+            </div>
+            <div class="example-box">
+                <p><strong>Banner-Konzept</strong></p>
+                <code>Bild: ein starkes Still aus einer Ihrer 3D Medical Animations (z.B. Zellebene, Molekül, Organ), dunkel gehalten, passend zum Foto-Hintergrund.
+
+Text (so wenig wie möglich, eine Zeile):
+"Komplexe Medizin, sichtbar gemacht."
+
+Kleiner Zusatz + Logo unten rechts:
+3D Medical Animation für Pharma, MedTech &amp; Biotech · Gebrüder Betz</code>
+            </div>
+            <div class="action-steps">
+                <div class="action-step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h5>Format 1584 &times; 396 px</h5>
+                        <p>In Canva anlegen. Wichtiges nicht zu weit unten platzieren, dort überlagert LinkedIn den Banner mit dem Profilfoto.</p>
+                    </div>
+                </div>
+                <div class="action-step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h5>Gleicher Hintergrund-Ton wie das Foto</h5>
+                        <p>So verschmelzen Foto und Banner optisch, und Ihr Gesicht steht klar im Vordergrund.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 3. NAME & URL -->
+<section>
+    <div class="container fade-in">
+        <div class="section-number">Bereich 03</div>
+        <h2>Name &amp; Profil-URL</h2>
+        <p class="section-sub">Eine saubere, personalisierte Profil-URL wirkt professionell und ist besser auffindbar. Hier sind Sie bereits vorbildlich.</p>
+
+        <div class="status-card">
+            <div class="status-header">
+                <div class="status-icon green">✅</div>
+                <div class="status-title">Sehr gut gelöst</div>
+                <span class="status-label good">Gut</span>
+            </div>
+            <div class="analysis-box">
+                <h4>Analyse</h4>
+                <p>Ihre Profil-URL ist <strong>linkedin.com/in/dr-georg-betz-medical-animation</strong>. Das ist genau richtig: personalisiert, keine Zahlenkette, und mit dem Keyword "medical animation" sogar zusätzlich auffindbar. Der Titel "Dr." baut Vertrauen auf. Hier gibt es nichts zu ändern.</p>
+            </div>
+            <div class="action-steps">
+                <div class="action-step">
+                    <div class="step-num">✓</div>
+                    <div class="step-content">
+                        <h5>Optional: Emoji im Namen</h5>
+                        <p>Ein Emoji im Namensfeld ist bei Ihnen nicht nötig. Der Doktortitel ist das stärkere Signal, den unbedingt drin lassen.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- 4. HEADLINE -->
+<section>
+    <div class="container fade-in">
+        <div class="section-number">Bereich 04</div>
+        <h2>Headline</h2>
+        <p class="section-sub">Die Headline steht unter Ihrem Namen und erscheint überall: in der Suche, bei Kommentaren, bei Kontaktanfragen. Sie sollte in einem Satz sagen, wem Sie wie helfen, nicht nur wie Sie heißen.</p>
+
+        <div class="status-card">
+            <div class="status-header">
+                <div class="status-icon orange">🎯</div>
+                <div class="status-title">Nennt Firma und Titel, aber nicht den Nutzen</div>
+                <span class="status-label warning">Optimieren</span>
+            </div>
+            <div class="analysis-box">
+                <h4>Analyse</h4>
+                <p>In den öffentlichen Suchergebnissen erscheint Ihre Positionierung als Kombination aus Name, Titel und Firma ("Dr. Georg Betz, MD, Gebrüder Betz Medical Animation GmbH"). Das ist sauber, aber es beantwortet nicht die Frage, die ein Pharma- oder MedTech-Entscheider im Kopf hat: Was habe ich davon? Ihr stärkstes Verkaufsargument, dass hier ein echter Arzt die Animation verantwortet, fehlt in der ersten Zeile.</p>
+            </div>
+            <div class="analysis-box">
+                <h4>Die Formel dahinter</h4>
+                <p><strong>Ergebnis</strong> für <strong>Zielgruppe</strong>, ohne <strong>das übliche Problem</strong>. Zwei fertige Varianten, beide unter dem LinkedIn-Limit von 220 Zeichen:</p>
+            </div>
+            <div class="example-box">
+                <p><strong>Variante A, Nutzen und Person</strong></p>
+                <code>Ich mache komplexe Medizin sichtbar: 3D-Animation &amp; Illustration für Pharma, MedTech &amp; Biotech · Arzt + Regisseur</code>
+            </div>
+            <div class="example-box">
+                <p><strong>Variante B, Ergebnis ohne Problem</strong></p>
+                <code>Verständliche Healthcare-Visuals, medizinisch geprüft vom Arzt: 3D-Animation &amp; Illustration für Pharma, MedTech &amp; Biotech</code>
+            </div>
+            <div class="action-steps">
+                <div class="action-step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h5>Eine Variante wählen und einsetzen</h5>
+                        <p>Beide stellen Ihren Arzt-Hintergrund als Alleinstellung nach vorn. Das trennt Sie von reinen 3D-Studios ohne medizinische Tiefe.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 5. SUMMARY -->
+<section>
+    <div class="container fade-in">
+        <div class="section-number">Bereich 05</div>
+        <h2>Info-Text / Summary</h2>
+        <p class="section-sub">Der Info-Bereich ist Ihr Verkaufstext. Er sollte zeigen, wie Sie Ihren Kunden helfen, nicht nur wie gut Sie sind, und den Platz weitgehend ausnutzen (LinkedIn erlaubt bis zu 2.600 Zeichen).</p>
+
+        <div class="status-card">
+            <div class="status-header">
+                <div class="status-icon grey">📝</div>
+                <div class="status-title">Von außen nicht einsehbar, hier ein fertiger Entwurf</div>
+                <span class="status-label check">Prüfen</span>
+            </div>
+            <div class="analysis-box">
+                <h4>Kurz erklärt</h4>
+                <p>Wir konnten Ihren Info-Text als Nicht-Kontakt nicht vollständig lesen. Falls er heute kurz ist oder eher beschreibt, wer Sie sind: Hier ist ein Entwurf nach unserer bewährten 4-Sektionen-Struktur (Wer, Wem, Womit, Kontakt), zugeschnitten auf Ihre Positionierung. Sie können ihn direkt übernehmen und feinschleifen.</p>
+            </div>
+            <div class="example-box">
+                <p><strong>Entwurf für Ihren Info-Text</strong></p>
+                <code>Ich bin Arzt (Innere Medizin) und Regisseur. Mit Gebrüder Betz Medical Animation mache ich komplexe medizinische und wissenschaftliche Inhalte sichtbar: als 3D-Animation, Illustration und Film für Pharma, MedTech und Biotech. Mein Anspruch ist, dass die Bilder ästhetisch UND wissenschaftlich korrekt sind, denn beides gehört zusammen.
+
+Wem ich helfe:
+Ich arbeite mit Marketing-, Medical- und Produkt-Teams, die einen Wirkmechanismus, ein Device oder eine Therapie erklären müssen, ohne die Medizin zu verfälschen. Von Storyboard und Medical Advising über 3D-Modelling und Regie bis zum fertigen Film und zu VR-Anwendungen begleite ich das Projekt durchgehend. Der Unterschied: das medizinische Fachwissen kommt nicht aus einem Briefing, sondern von einem Arzt.
+
+Womit ich zuletzt geholfen habe:
+[Hier Ihre 1 bis 2 stärksten Referenzen einsetzen, z.B. ein ausgezeichnetes Projekt (COMPRIX-Finalist) oder ein bekanntes Feature. Konkret wirkt stärker als abstrakt: welches Produkt, welche Aufgabe, welches Ergebnis.]
+
+Kontakt:
+Sie möchten komplexe Medizin verständlich und korrekt zeigen? Schreiben Sie mir.
+E-Mail: gbetz@gebrueder-betz.de
+Web: www.gebrueder-betz.de</code>
+            </div>
+            <div class="action-steps">
+                <div class="action-step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h5>Zwischenüberschriften fett setzen</h5>
+                        <p>LinkedIn erlaubt keine Formatierung. Nutzen Sie einen Fett-Schrift-Generator (z.B. bold-text-generator online), um die Zwischenüberschriften optisch abzusetzen.</p>
+                    </div>
+                </div>
+                <div class="action-step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h5>Such-Keywords einbauen</h5>
+                        <p>Begriffe wie "Medical Animation", "medizinische Illustration", "Scientific Visualization", "Explainer" natürlich einstreuen, damit Sie bei genau diesen Suchen gefunden werden.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- 6. FEATURED -->
+<section>
+    <div class="container fade-in">
+        <div class="section-number">Bereich 06</div>
+        <h2>Featured / Fokusbereich</h2>
+        <p class="section-sub">Die Featured-Section direkt unter dem Info-Text ist Ihr Schaufenster. Genau hier gehören Ihre besten Arbeiten und Referenzen hin, denn Ihr Produkt ist visuell, das können Sie zeigen statt nur beschreiben.</p>
+
+        <div class="status-card">
+            <div class="status-header">
+                <div class="status-icon orange">⭐</div>
+                <div class="status-title">Starke Referenzen vorhanden, sichtbar machen</div>
+                <span class="status-label warning">Optimieren</span>
+            </div>
+            <div class="analysis-box">
+                <h4>Analyse</h4>
+                <p>Sie haben Vorzeigematerial, das viele Wettbewerber nicht haben: einen COMPRIX-Finalisten-Beitrag und öffentlich sichtbare Referenzen. Wenn diese Highlights nicht in der Featured-Section angepinnt sind, verschenken Sie den stärksten Vertrauensbeweis direkt unter Ihrem Info-Text.</p>
+            </div>
+            <div class="analysis-box">
+                <h4>Was hier hingehört</h4>
+                <ul>
+                    <li><strong>Showreel:</strong> ein kurzes Best-of Ihrer 3D-Animationen als Video oder Link (z.B. YouTube).</li>
+                    <li><strong>Preis-Highlight:</strong> der COMPRIX-Finalist-Beitrag als Post oder Link.</li>
+                    <li><strong>Ein Referenz-Case je Zielgruppe:</strong> je ein Beispiel für Pharma, MedTech und Biotech, damit sich jeder Besucher wiederfindet.</li>
+                    <li><strong>Behind-the-scenes:</strong> "So entsteht eine medizinisch korrekte Animation", das unterstreicht den Arzt-Vorteil.</li>
+                </ul>
+            </div>
+            <div class="action-steps">
+                <div class="action-step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h5>3 bis 5 Highlights anpinnen</h5>
+                        <p>Mix aus Formaten (Video, Link, Post). Lieber wenige starke als viele mittelmäßige. Das erste Element wird am größten angezeigt, dort das beste Stück.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 7. WERDEGANG / CV -->
+<section>
+    <div class="container fade-in">
+        <div class="section-number">Bereich 07</div>
+        <h2>Werdegang / CV</h2>
+        <p class="section-sub">Der Werdegang ergänzt den Info-Text. Die aktuelle Rolle bekommt die meiste Aufmerksamkeit, frühere Stationen bleiben kurz. Auch hier gilt: kundenorientiert statt reine Aufzählung.</p>
+
+        <div class="status-card">
+            <div class="status-header">
+                <div class="status-icon orange">💼</div>
+                <div class="status-title">Ihre Story ist stark, jetzt kundenorientiert schärfen</div>
+                <span class="status-label warning">Optimieren</span>
+            </div>
+            <div class="analysis-box">
+                <h4>Analyse</h4>
+                <p>Ihr Weg vom Klinikarzt (Innere Medizin) hin zur medizinischen Visualisierung ist ein echter Vertrauensanker, den fast kein 3D-Studio bieten kann. Nutzen Sie ihn: In der aktuellen Rolle bei Gebrüder Betz sollte stehen, WAS Sie für Kunden lösen (nicht nur Leistungen auflisten), plus konkrete Medien.</p>
+            </div>
+            <div class="action-steps">
+                <div class="action-step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h5>Aktuelle Rolle ausbauen</h5>
+                        <p>2 bis 3 Sätze kundenorientiert: für wen, welches Problem, welches Ergebnis. Den Arzt-plus-Regisseur-Winkel ausdrücklich nennen.</p>
+                    </div>
+                </div>
+                <div class="action-step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h5>Medien nur bei der aktuellen Position</h5>
+                        <p>Case-Study, Referenz oder ein starkes Still direkt an die Rolle anhängen. Bildformat 552 &times; 368 px. Ihre Position vor der Klinik-Zeit kurz halten.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- 8. SKILLS -->
+<section>
+    <div class="container fade-in">
+        <div class="section-number">Bereich 08</div>
+        <h2>Skills</h2>
+        <p class="section-sub">LinkedIn zeigt die ersten 3 Skills prominent an. Deshalb entscheidet die Reihenfolge: Die drei relevantesten gehören nach oben.</p>
+
+        <div class="status-card">
+            <div class="status-header">
+                <div class="status-icon grey">🧩</div>
+                <div class="status-title">Von außen nicht einsehbar, hier die Top-3-Empfehlung</div>
+                <span class="status-label check">Prüfen</span>
+            </div>
+            <div class="analysis-box">
+                <h4>Kurz erklärt</h4>
+                <p>Endorsements sagen wenig aus, aber die Skill-Liste ist ein Suchfilter und ein schneller Kompetenz-Beweis. Prüfen Sie, ob Ihre drei wichtigsten Skills wirklich ganz oben stehen.</p>
+            </div>
+            <div class="example-box">
+                <p><strong>Empfohlene Top-3 (in dieser Reihenfolge)</strong></p>
+                <code>1. 3D Medical Animation
+2. Medizinische Illustration / Scientific Visualization
+3. Medical Advising / Scientific Storytelling</code>
+            </div>
+            <div class="action-steps">
+                <div class="action-step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h5>Reihenfolge anpassen</h5>
+                        <p>Weitere Skills wie Art Direction, Regie, 3D-Modelling oder VR dahinter. Die drei oben sollten exakt das widerspiegeln, wofür Kunden Sie buchen.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 9. RECOMMENDATIONS -->
+<section>
+    <div class="container fade-in">
+        <div class="section-number">Bereich 09</div>
+        <h2>Recommendations</h2>
+        <p class="section-sub">Empfehlungen sind der stärkste Social Proof auf LinkedIn. 91 Prozent der Kunden würden weiterempfehlen, aber nur 11 Prozent werden je gefragt (Dale Carnegie). Ziel: mindestens 5 sichtbare Empfehlungen.</p>
+
+        <div class="status-card">
+            <div class="status-header">
+                <div class="status-icon grey">💬</div>
+                <div class="status-title">Von außen nicht einsehbar, hier eine Vorlage</div>
+                <span class="status-label check">Prüfen</span>
+            </div>
+            <div class="analysis-box">
+                <h4>Kurz erklärt</h4>
+                <p>Falls Sie noch keine oder nur wenige Empfehlungen haben: Das ist der häufigste Fehler und zugleich der schnellste Hebel. Fragen Sie 3 bis 5 zufriedene Kunden persönlich an. Mit dieser Vorlage geht es in 2 Minuten.</p>
+            </div>
+            <div class="example-box">
+                <p><strong>Copy-Paste-Nachricht zum Anfragen</strong></p>
+                <code>Hallo [Name],
+
+die Zusammenarbeit an [Projekt] hat mir sehr viel Spaß gemacht, danke nochmal für das Vertrauen. Würden Sie mir dazu eine kurze Empfehlung auf LinkedIn schreiben? 2 bis 3 Sätze reichen völlig, gern zu dem, was für Sie den Unterschied gemacht hat.
+
+Ich mache das jederzeit gern auch für Sie. Und falls Ihnen jemand einfällt, der komplexe Medizin verständlich zeigen möchte, freue ich mich über eine Verbindung.
+
+Beste Grüße
+Georg</code>
+            </div>
+            <div class="action-steps">
+                <div class="action-step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h5>Erhaltene Empfehlungen als Content teilen</h5>
+                        <p>Mit kurzer Rückfrage dürfen Sie eine Empfehlung auch als Post im Feed teilen, doppelter Nutzen aus einer Anfrage.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ZUSAMMENFASSUNG -->
+<section>
+    <div class="container fade-in">
+        <div class="section-number">Ihr Aktionsplan</div>
+        <h2>Womit Sie anfangen sollten</h2>
+        <p class="section-sub">Alle 9 Bereiche des Grundwerk-Guides sind abgedeckt. Wenn Sie nur 3 Dinge machen, dann diese, in dieser Reihenfolge. Zusammen ca. 60 bis 90 Minuten Aufwand mit sofort sichtbarer Wirkung.</p>
+
+        <div class="summary-grid">
+            <div class="summary-card">
+                <div class="big-num">3</div>
+                <div class="big-label">Sofort-Hebel mit dem größten Effekt</div>
+            </div>
+            <div class="summary-card">
+                <div class="big-num" style="color: var(--green);">9</div>
+                <div class="big-label">Profil-Bereiche analysiert</div>
+            </div>
+        </div>
+
+        <div style="margin-top:40px;">
+            <div class="status-card" style="border-left: 3px solid var(--accent);">
+                <div class="status-header">
+                    <div class="status-icon orange">1</div>
+                    <div class="status-title">Headline auf den Kundennutzen umstellen</div>
+                    <span class="status-label warning">15 Min</span>
+                </div>
+                <div class="analysis-box">
+                    <p>Variante A oder B aus Bereich 04 einsetzen. Ihr Arzt-plus-Regisseur-Winkel gehört in die erste Zeile, das ist Ihre Alleinstellung und erscheint überall auf LinkedIn.</p>
+                </div>
+            </div>
+            <div class="status-card" style="border-left: 3px solid var(--accent);">
+                <div class="status-header">
+                    <div class="status-icon grey">2</div>
+                    <div class="status-title">Info-Text mit dem fertigen Entwurf füllen</div>
+                    <span class="status-label check">30 Min</span>
+                </div>
+                <div class="analysis-box">
+                    <p>Den Entwurf aus Bereich 05 übernehmen, Ihre 1 bis 2 stärksten Referenzen einsetzen, Zwischenüberschriften fett. Das ist Ihr Verkaufstext und der größte einzelne Hebel.</p>
+                </div>
+            </div>
+            <div class="status-card" style="border-left: 3px solid var(--accent);">
+                <div class="status-header">
+                    <div class="status-icon orange">3</div>
+                    <div class="status-title">Featured mit Showreel und COMPRIX-Highlight bestücken</div>
+                    <span class="status-label warning">20 Min</span>
+                </div>
+                <div class="analysis-box">
+                    <p>3 bis 5 beste Arbeiten anpinnen (Bereich 06). Ihre Bilder verkaufen sich selbst, sobald sie direkt sichtbar sind, statt beschrieben zu werden.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <div class="container fade-in">
+        <h2>Sollen wir Ihr Profil gemeinsam durchgehen?</h2>
+        <p>In einem kurzen Kennenlernen (15 Minuten) schauen wir Ihr Profil zusammen an und zeigen, wie Grundwerk aus LinkedIn planbar Anfragen macht, ohne dass es nach Werbung aussieht.</p>
+        <a href="https://calendly.com/tom-soto-schiller/grundwerk-kurzes-kennenlernen?email=gbetz%40gebrueder-betz.de&name=Georg%20Betz" target="_blank" class="cta-btn">Kurzes Kennenlernen buchen &rarr;</a>
+        <p class="cta-alt">Oder direkt per E-Mail: <a href="mailto:tom@grundwerk.digital">tom@grundwerk.digital</a></p>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    Erstellt von <strong>Grundwerk Digital</strong> für Dr. Georg Betz · Gebrüder Betz Medical Animation · 02.07.2026<br>
+    <a href="https://grundwerk.digital" target="_blank">grundwerk.digital</a>
+</footer>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) { entry.target.classList.add('visible'); }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
